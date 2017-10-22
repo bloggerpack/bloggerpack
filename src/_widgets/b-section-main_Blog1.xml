@@ -1,0 +1,387 @@
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+    <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+    <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+    <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+    <b:widget-setting name='showAuthor'>true</b:widget-setting>
+    <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+    <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+    <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+    <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+    <b:widget-setting name='showLabels'>true</b:widget-setting>
+    <b:widget-setting name='showLocation'>true</b:widget-setting>
+    <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+    <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+    <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+    <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+    <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+    <b:widget-setting name='showReactions'>true</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+
+    <b:comment>### Metadata JSON ###</b:comment>
+
+    <b:if cond='data:posts.notEmpty'>
+      <div class='script-application-ld-json' id='script-application-ld-json'>
+        <b:loop values='data:posts' var='post'>
+          <b:include name='postMetadataJSON'/>
+        </b:loop>
+      </div>
+    </b:if>
+
+
+
+    <b:comment>### Breadcrumb ###</b:comment>
+
+    <b:if cond='!data:view.isHomepage'>
+      <div class='blog-breadcrumb'>
+
+        <ol class='breadcrumb'>
+          <b:comment>=== Homepage ===</b:comment>
+          <b:if cond='data:view.isHomepage'>
+            <b:comment>None</b:comment>
+          </b:if>
+
+          <b:comment>=== Item page ===</b:comment>
+          <b:if cond='data:view.isPost'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item active'>Posts</li>
+            <b:loop values='data:posts' var='post'>
+              <li class='breadcrumb-item active'><data:post.title/></li>
+            </b:loop>
+          </b:if>
+
+          <b:comment>=== Static page ===</b:comment>
+          <b:if cond='data:view.isPage'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item active'>Pages</li>
+            <b:loop values='data:posts' var='post'>
+              <li class='breadcrumb-item active'><data:post.title/></li>
+            </b:loop>
+          </b:if>
+
+          <b:comment>=== Search (label) page ===</b:comment>
+          <b:if cond='data:view.search.label'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item'>
+              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+            </li>
+            <li class='breadcrumb-item active'>Label</li>
+            <li class='breadcrumb-item active'><data:view.search.label/></li>
+          </b:if>
+
+          <b:comment>=== Search (query) page ===</b:comment>
+          <b:if cond='data:view.search.query'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item'>
+              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+            </li>
+            <li class='breadcrumb-item active'>Query</li>
+            <li class='breadcrumb-item active'><data:view.search.query/></li>
+          </b:if>
+
+          <b:comment>=== Search (default) page ===</b:comment>
+          <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item active'>Search</li>
+          </b:if>
+
+          <b:comment>=== Archive page ===</b:comment>
+          <b:if cond='data:view.isArchive'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <b:if cond='data:view.archive.month'>
+              <li class='breadcrumb-item'>
+                <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
+              </li>
+              <li class='breadcrumb-item active'><data:view.archive.month/></li>
+            <b:else/>
+              <li class='breadcrumb-item active'><data:view.archive.year/></li>
+            </b:if>
+          </b:if>
+
+          <b:comment>=== Error page ===</b:comment>
+          <b:if cond='data:view.isError'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </li>
+            <li class='breadcrumb-item active'>404</li>
+          </b:if>
+        </ol>
+
+      </div><!-- /.blog-breadcrumb -->
+    </b:if>
+
+
+
+    <b:comment>### Status message ###</b:comment>
+
+    <b:comment>=== Homepage ===</b:comment>
+    <b:if cond='data:view.isHomepage and data:posts.empty'>
+      <div class='blog-status-message'>
+        <div class='alert alert-danger' role='alert'>
+          <data:messages.theresNothingHere/>
+        </div>
+      </div>
+    </b:if>
+
+    <b:comment>=== Search (label) page ===</b:comment>
+    <b:if cond='data:view.search.label'>
+      <b:if cond='data:posts.size gte 1'>
+        <div class='blog-status-message'>
+          <div class='alert alert-success' role='alert'>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+        </div>
+      <b:else/>
+        <div class='blog-status-message'>
+          <div class='alert alert-danger' role='alert'>
+            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+          </div>
+        </div>
+      </b:if>
+    </b:if>
+
+    <b:comment>=== Search (query) page ===</b:comment>
+    <b:if cond='data:view.search.query'>
+      <b:if cond='data:posts.size gte 1'>
+        <div class='blog-status-message'>
+          <div class='alert alert-success' role='alert'>
+            <data:view.search.resultsMessageHtml/>
+          </div>
+        </div>
+      <b:else/>
+        <div class='blog-status-message'>
+          <div class='alert alert-danger' role='alert'>
+            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
+          </div>
+        </div>
+      </b:if>
+    </b:if>
+
+    <b:comment>=== Archive page ===</b:comment>
+    <b:if cond='data:view.isArchive'>
+      <b:if cond='data:posts.size gte 1'>
+        <div class='blog-status-message'>
+          <div class='alert alert-success' role='alert'>
+            <data:view.archive.rangeMessage/>
+          </div>
+        </div>
+      <b:else/>
+        <div class='blog-status-message'>
+          <div class='alert alert-danger' role='alert'>
+            <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
+          </div>
+        </div>
+      </b:if>
+    </b:if>
+
+    <b:comment>=== Error page ===</b:comment>
+    <b:if cond='data:view.isError'>
+      <div class='blog-status-message'>
+        <div class='alert alert-danger' role='alert'>
+          <data:navMessage/>
+        </div>
+      </div>
+    </b:if>
+
+
+
+    <b:comment>### Posts ###</b:comment>
+
+    <b:if cond='data:posts.notEmpty'>
+      <div class='blog-posts'>
+
+        <b:comment>=== Homepage ===</b:comment>
+        <b:if cond='data:view.isHomepage'>
+          <b:loop values='data:posts' var='post'>
+            <h2>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+          </b:loop>
+        </b:if><!-- /Homepage -->
+
+        <b:comment>=== Item page ===</b:comment>
+        <b:if cond='data:view.isPost'>
+          <b:loop values='data:posts' var='post'>
+            <h1>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </h1>
+            <data:post.body/>
+          </b:loop>
+        </b:if><!-- /Item page -->
+
+        <b:comment>=== Static page ===</b:comment>
+        <b:if cond='data:view.isPage'>
+          <b:loop values='data:posts' var='post'>
+            <h1>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </h1>
+            <data:post.body/>
+          </b:loop>
+        </b:if><!-- /Static page -->
+
+        <b:comment>=== Search (label) page ===</b:comment>
+        <b:if cond='data:view.search.label'>
+          <b:loop values='data:posts' var='post'>
+            <h2>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+          </b:loop>
+        </b:if><!-- /Search (label) page -->
+
+        <b:comment>=== Search (query) page ===</b:comment>
+        <b:if cond='data:view.search.query'>
+          <b:loop values='data:posts' var='post'>
+            <h2>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+          </b:loop>
+        </b:if><!-- /Search (query) page -->
+
+        <b:comment>=== Search (default) page ===</b:comment>
+        <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+          <b:loop values='data:posts' var='post'>
+            <h2>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+          </b:loop>
+        </b:if><!-- /Search (default) page -->
+
+        <b:comment>=== Archive page ===</b:comment>
+        <b:if cond='data:view.isArchive'>
+          <b:loop values='data:posts' var='post'>
+            <h2>
+              <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+          </b:loop>
+        </b:if><!-- /Archive page -->
+
+      </div><!-- /.blog-posts -->
+    </b:if>
+
+
+
+    <b:comment>### Comments ###</b:comment>
+
+    <b:if cond='data:view.isPost'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments'>
+
+          <div class='blog-comments' id='comments'>
+
+            <h1 class='blog-comments-title'><data:messages.comments/></h1>
+
+            <b:if cond='data:post.commentSource == 1'>
+
+              <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
+
+            <b:else/>
+
+              <div class='alert alert-info' role='alert'>
+                <h4 class='alert-heading'>Google+</h4>
+                <p><strong>To turn on Google+ comments:</strong></p>
+                <ol>
+                  <li>Make sure you're using Google+ as your profile and your blog is public.</li>
+                  <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
+                  <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+                </ol>
+                <a class='alert-link' href='https://support.google.com/blogger/answer/1752748' target='_blank'>
+                  <data:messages.learnMore/>
+                </a>
+              </div>
+
+            </b:if>
+
+          </div><!-- /.blog-comments -->
+
+        </b:if>
+      </b:loop>
+    </b:if>
+
+
+
+    <b:comment>### Pager ###</b:comment>
+
+    <b:if cond='data:posts.notEmpty and !data:view.isPage'>
+      <nav class='blog-pager'>
+
+        <a class='blog-pager-link blog-pager-newer-link' role='button'>
+          <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
+          <b:class cond='!data:newerPageUrl' name='disabled'/>
+          <data:messages.newer/>
+        </a>
+
+        <a class='blog-pager-link blog-pager-home-link' expr:href='data:blog.homepageUrl' role='button'>
+          <data:messages.home/>
+        </a>
+
+        <a class='blog-pager-link blog-pager-older-link' role='button'>
+          <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
+          <b:class cond='!data:olderPageUrl' name='disabled'/>
+          <data:messages.older/>
+        </a>
+
+      </nav><!-- /.blog-pager -->
+    </b:if>
+
+  </b:includable>
+  <b:includable id='aboutPostAuthor'/>
+  <b:includable id='addComments'/>
+  <b:includable id='commentAuthorAvatar'/>
+  <b:includable id='commentDeleteIcon'/>
+  <b:includable id='commentForm'/>
+  <b:includable id='commentFormIframeSrc'/>
+  <b:includable id='commentItem'/>
+  <b:includable id='commentList'/>
+  <b:includable id='commentPicker'/>
+  <b:includable id='comments'/>
+  <b:includable id='commentsTitle'/>
+  <b:includable id='feedLinks'/>
+  <b:includable id='feedLinksBody'/>
+  <b:includable id='homePageLink'/>
+  <b:includable id='iframeComments'/>
+  <b:includable id='inlineAd'/>
+  <b:includable id='nextPageLink'/>
+  <b:includable id='post'/>
+  <b:includable id='postBody'/>
+  <b:includable id='postBodySnippet'/>
+  <b:includable id='postCommentsAndAd'/>
+  <b:includable id='postCommentsLink'/>
+  <b:includable id='postFooter'/>
+  <b:includable id='postFooterAuthorProfile'/>
+  <b:includable id='postHeader'/>
+  <b:includable id='postJumpLink'/>
+  <b:includable id='postMeta'/>
+  <b:includable id='postPagination'/>
+  <b:includable id='postTitle'/>
+  <b:includable id='previousPageLink'/>
+  <b:includable id='status-message'/>
+  <b:includable id='threadedCommentForm'/>
+  <b:includable id='threadedCommentJs'/>
+  <b:includable id='threadedComments'/>
+</b:widget>

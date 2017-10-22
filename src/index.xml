@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+
+<b:comment>
+#############################################################################
+Settings
+############################################################################# </b:comment>
+
+<b:with value='"https://example.com/1200x630.png"' var='social-logo'>
+<b:with value='"replace me"' var='facebook-app-id'>
+<b:with value='"@replace_me"' var='twitter-username-website'>
+<b:with value='"@replace_me"' var='twitter-username-creator'>
+
+
+<head>
+
+
+<b:comment>
+#############################################################################
+Title, meta and link tags
+############################################################################# </b:comment>
+
+<b:comment>### Required meta tags ###</b:comment>
+
+<!--(bake _includes/head/required-meta-tags.xml)-->
+
+<b:comment>### Title ###</b:comment>
+
+<!--(bake _includes/head/title-tags.xml)-->
+
+<b:comment>### Custom all-head-content ###</b:comment>
+
+<!--(bake _includes/head/custom-all-head-content.xml)-->
+
+<b:comment>### Open Graph ###</b:comment>
+
+<!--(bake _includes/head/open-graph.xml)-->
+
+<b:comment>### Twitter Cards ###</b:comment>
+
+<!--(bake _includes/head/twitter-cards.xml)-->
+
+
+<b:comment>
+#############################################################################
+CSS
+############################################################################# </b:comment>
+
+<b:comment>### Layout mode CSS ###</b:comment>
+
+<b:template-skin>
+<![CDATA[
+<!--(bake _includes/head/layout-mode.css)-->
+]]>
+</b:template-skin>
+
+<b:comment>### Skin ###</b:comment>
+
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+<!--(bake skin.css)-->
+]]>
+</b:skin>
+</b:if>
+
+
+</head>
+<body>
+
+
+<b:comment>
+#############################################################################
+Body classes
+############################################################################# </b:comment>
+
+<b:class cond='data:view.isHomepage' name='blog-view-home'/>
+<b:class cond='data:view.isPost' name='blog-view-item'/>
+<b:class cond='data:view.isPage' name='blog-view-static'/>
+<b:class cond='data:view.search.label' name='blog-view-search-label'/>
+<b:class cond='data:view.search.query' name='blog-view-search-query'/>
+<b:class cond='data:view.search and !data:view.search.label and !data:view.search.query' name='blog-view-search-default'/>
+<b:class cond='data:view.isArchive' name='blog-view-archive'/>
+<b:class cond='data:view.isError' name='blog-view-error'/>
+<b:class cond='data:view.isPreview' name='blog-view-preview'/>
+
+
+<b:comment>
+#############################################################################
+Skip navigation
+############################################################################# </b:comment>
+
+<a class='skiplink' href='#main' id='skiplink'>
+  <span class='skiplink-text'><data:messages.skipToMainContent/></span>
+</a>
+
+
+<b:comment>
+#############################################################################
+Header - example
+############################################################################# </b:comment>
+
+<h1><a expr:href='data:blog.homepageUrl'><data:blog.title/></a></h1>
+
+
+<b:comment>
+#############################################################################
+Main and sidebar
+############################################################################# </b:comment>
+
+<div class='main-layout' id='main-layout'>
+  <div class='container'>
+    <div class='main-layout-row'>
+      <!-- Main -->
+      <main class='main col-main layout-mode-col-8' id='main'>
+        <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+          <!--(bake _widgets/b-section-main_Blog1.xml)-->
+        </b:section>
+      </main><!-- /.main -->
+
+      <!-- Sidebar -->
+      <aside class='sidebar col-sidebar layout-mode-col-4' id='sidebar'>
+        <b:section class='' id='b-section-sidebar' name='Sidebar'>
+          <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
+        </b:section>
+      </aside><!-- /.sidebar -->
+    </div><!-- /.main-layout-row -->
+  </div><!-- /.container -->
+</div><!-- /.main-layout -->
+
+
+<b:comment>
+#############################################################################
+Footer
+############################################################################# </b:comment>
+
+<footer class='footer' id='footer'>
+  <div class='container'>
+    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+      <b:section class='' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+        <!--(bake _widgets/b-section-footer-links_LinkList1.xml)-->
+      </b:section>
+    </b:if>
+    <p>&#169; <data:blog.title/>.</p>
+    <p>
+      <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'>
+        <b:message name='messages.poweredByBlogger'/>
+      </a>
+    </p>
+  </div><!-- /.container -->
+</footer><!-- /.footer -->
+
+
+<b:comment>
+#############################################################################
+JavaScript
+############################################################################# </b:comment>
+
+<b:comment>### Script ###</b:comment>
+
+<script>
+//<![CDATA[
+<!--(bake script.js)-->
+//]]>
+</script>
+
+
+</body>
+</b:with>
+</b:with>
+</b:with>
+</b:with>
+</html>

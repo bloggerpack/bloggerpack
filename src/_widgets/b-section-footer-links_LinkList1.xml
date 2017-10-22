@@ -1,0 +1,21 @@
+<b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='sorting'>NONE</b:widget-setting>
+    <b:widget-setting name='text-0'>Twitter</b:widget-setting>
+    <b:widget-setting name='link-0'>https://twitter.com/username</b:widget-setting>
+    <b:widget-setting name='text-1'>Facebook</b:widget-setting>
+    <b:widget-setting name='link-1'>https://facebook.com/username</b:widget-setting>
+    <b:widget-setting name='text-2'>Google+</b:widget-setting>
+    <b:widget-setting name='link-2'>https://plus.google.com/+username</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <ul class='footer-links'>
+      <b:loop values='data:links' var='link'>
+        <li><a expr:href='data:link.target'><data:link.name/></a></li>
+      </b:loop>
+    </ul>
+  </b:includable>
+</b:widget>

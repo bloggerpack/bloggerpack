@@ -1,1 +1,3 @@
-# blogger-starter
+# Blogger Starter
+
+A starter theme for Blogger.

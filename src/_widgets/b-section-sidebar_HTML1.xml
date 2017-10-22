@@ -1,0 +1,13 @@
+<b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      &lt;p&gt;&lt;strong&gt;Blogger Starter&lt;/strong&gt; is open source. It's developed and maintained on &lt;a href="https://github.com/igoynawamreh/blogger-starter"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    </b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>
