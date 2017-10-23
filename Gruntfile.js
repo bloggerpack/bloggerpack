@@ -28,8 +28,7 @@ module.exports = function(grunt) {
         files: [
           'src/**/*.xml',
           'src/**/*.css',
-          'src/**/*.js',
-          'src/config.json'
+          'src/**/*.js'
         ],
         tasks: [
           'clean:dist',
