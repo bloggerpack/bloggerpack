@@ -1,9 +1,32 @@
 <!--
 
-`128` : size
-`1:1` : aspect ratio
+# About
+
+Photo of the profile of the post author.
+
+Usage:
+
+<b:loop values='data:posts' var='post'>
+  [snippet]
+</b:loop>
+
+# Customize
+
+- `128`: size
+- `1:1`: aspect ratio
+- `128x128`: width = size, height = (size * ratio height) / ratio width
+- `class-name`: classes
+
+# Table of Contents
+
+- Default
+- With default fallback image
+- With anchors
 
 -->
+
+
+<!-- Default -->
 
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -22,7 +45,7 @@
 </b:if>
 
 
-<!-- Set default fallback image -->
+<!-- With default fallback image -->
 
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -38,7 +61,7 @@
       <b:attr expr:value='data:post.author.name' name='alt'/>
     </img>
   </b:if>
-<b:else/>
+<b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <b:class name='class-name'/>
     <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
@@ -67,7 +90,7 @@
       </img>
     </b:tag>
   </b:if>
-<b:else/>
+<b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <b:class name='class-name'/>
     <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
