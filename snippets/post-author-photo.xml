@@ -1,3 +1,10 @@
+<!--
+
+`128` : size
+`1:1` : aspect ratio
+
+-->
+
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <img b:whitespace='remove'>
