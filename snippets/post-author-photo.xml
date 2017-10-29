@@ -12,88 +12,119 @@ Usage:
 
 # Customize
 
-- `128`: size
-- `1:1`: aspect ratio
-- `128x128`: width = size, height = (size * ratio height) / ratio width
-- `class-name`: classes
+- `128` - size
+- `1:1` - aspect ratio
+- `128x128` - width = size, height = (size * ratio height) / ratio width
+              width = 128, height = (128 * 1) / 1
+- `class-name` - classes
 
 # Table of Contents
 
 - Default
-- With default fallback image
-- With anchors
+- Fallback images
+- Anchors
 
 -->
 
 
-<!-- Default -->
+<!-- # Default -->
 
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
-  <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
-      <b:attr expr:value='data:post.author.name' name='alt'/>
-    </img>
-  <b:else/>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
-      <b:attr expr:value='data:post.author.name' name='alt'/>
-    </img>
-  </b:if>
-</b:if>
-
-
-<!-- With default fallback image -->
-
-<b:if cond='data:post.author and data:post.author.authorPhoto'>
-  <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
-      <b:attr expr:value='data:post.author.name' name='alt'/>
-    </img>
-  <b:else/>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
-      <b:attr expr:value='data:post.author.name' name='alt'/>
-    </img>
-  </b:if>
-<b:else/><!-- fallback -->
-  <img b:whitespace='remove'>
-    <b:class name='class-name'/>
-    <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
-    <b:attr expr:value='data:messages.image' name='alt'/>
-  </img>
-</b:if>
-
-
-<!-- With anchors -->
-
-<b:if cond='data:post.author and data:post.author.authorPhoto'>
-  <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
-    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
         <b:attr expr:value='data:post.author.name' name='alt'/>
       </img>
-    </b:tag>
-  <b:else/>
-    <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+    <b:else/>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
         <b:attr expr:value='data:post.author.name' name='alt'/>
       </img>
-    </b:tag>
-  </b:if>
-<b:else/><!-- fallback -->
-  <img b:whitespace='remove'>
-    <b:class name='class-name'/>
-    <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
-    <b:attr expr:value='data:messages.image' name='alt'/>
-  </img>
+    </b:if>
+  </div>
 </b:if>
+
+
+<!-- # Fallback images -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.author and data:post.author.authorPhoto'>
+    <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
+        <b:attr expr:value='data:post.author.name' name='alt'/>
+      </img>
+    <b:else/>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
+        <b:attr expr:value='data:post.author.name' name='alt'/>
+      </img>
+    </b:if>
+  <b:else/><!-- fallback -->
+    <img b:whitespace='remove'>
+      <b:class name='class-name'/>
+      <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
+      <b:attr expr:value='data:messages.image' name='alt'/>
+    </img>
+  </b:if>
+</div>
+
+
+<!-- # Anchors -->
+
+<b:if cond='data:post.author and data:post.author.authorPhoto'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
+      <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
+          <b:attr expr:value='data:post.author.name' name='alt'/>
+        </img>
+      </b:tag>
+    <b:else/>
+      <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
+          <b:attr expr:value='data:post.author.name' name='alt'/>
+        </img>
+      </b:tag>
+    </b:if>
+  </div>
+</b:if>
+
+<!-- + Fallback images -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.author and data:post.author.authorPhoto'>
+    <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
+      <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl, 128, "1:1") : data:post.author.authorPhoto.image.youtubeMaxResDefaultUrl' name='src'/>
+          <b:attr expr:value='data:post.author.name' name='alt'/>
+        </img>
+      </b:tag>
+    <b:else/>
+      <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, 128, "1:1") : data:post.author.authorPhoto.image' name='src'/>
+          <b:attr expr:value='data:post.author.name' name='alt'/>
+        </img>
+      </b:tag>
+    </b:if>
+  <b:else/><!-- fallback -->
+    <img b:whitespace='remove'>
+      <b:class name='class-name'/>
+      <b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
+      <b:attr expr:value='data:messages.image' name='alt'/>
+    </img>
+  </b:if>
+</div>

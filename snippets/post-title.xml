@@ -13,6 +13,7 @@ Usage:
 # Customize
 
 - `h1` - wrapper
+- `class-name` - classes
 
 # Table of Contents
 
@@ -26,7 +27,7 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.title'>
-  <h1>
+  <h1 class='class-name'>
     <data:post.title/>
   </h1>
 </b:if>
@@ -34,7 +35,7 @@ Usage:
 
 <!-- # No title message -->
 
-<h1>
+<h1 class='class-name'>
   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
 </h1>
 
@@ -42,8 +43,8 @@ Usage:
 <!-- # Anchors -->
 
 <b:if cond='data:post.title'>
-  <h1>
-    <a href='data:post.link ? data:post.link : data:post.url'>
+  <h1 class='class-name'>
+    <a class='class-name' expr:href='data:post.link ? data:post.link : data:post.url'>
       <data:post.title/>
     </a>
   </h1>
@@ -51,8 +52,8 @@ Usage:
 
 <!-- + No title message -->
 
-<h1>
-  <a href='data:post.link ? data:post.link : data:post.url'>
+<h1 class='class-name'>
+  <a class='class-name' expr:href='data:post.link ? data:post.link : data:post.url'>
     <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
   </a>
 </h1>

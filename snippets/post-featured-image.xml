@@ -12,134 +12,78 @@ Usage:
 
 # Customize
 
-- `512`: size
-- `16:9`: aspect ratio
-- `512x288`: width = size, height = (size * ratio height) / ratio width
-- `[200,400,800,1200,1600]`: srcset attribute
-- `100vw`: sizes attribute
-- `class-name`: classes
+- `512` - size
+- `16:9` - aspect ratio
+- `512x288` - width = size, height = (size * ratio height) / ratio width
+              width = 512, height = (512 * 9) / 16
+- `[200,400,800,1200,1600]` - srcset attribute
+- `100vw` - sizes attribute
+- `class-name` - classes
 
 # Table of Contents
 
 - Default
-- With default fallback image
-- With responsive images
-- With anchors
-- With responsive images and anchors
-- With CSS background-image
+- Fallback images
+- Responsive images
+- Anchors
+- CSS background-image
 
 -->
 
 
-<!-- Default -->
+<!-- # Default -->
 
 <b:if cond='data:post.featuredImage'>
-  <b:if cond='data:post.featuredImage.isYoutube'>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  <b:else/>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  </b:if>
-</b:if>
-
-
-<!-- With default fallback image -->
-
-<b:if cond='data:post.featuredImage'>
-  <b:if cond='data:post.featuredImage.isYoutube'>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  <b:else/>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  </b:if>
-<b:else/><!-- fallback -->
-  <img b:whitespace='remove'>
-    <b:class name='class-name'/>
-    <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
-    <b:attr expr:value='data:messages.image' name='alt'/>
-  </img>
-</b:if>
-
-
-<!-- With responsive images -->
-
-<b:if cond='data:post.featuredImage'>
-  <b:if cond='data:post.featuredImage.isYoutube'>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
-      <!-- srcset --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, [200,400,800,1200,1600], "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='srcset'/>
-      <!-- sizes --><b:attr name='sizes' value='100vw'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  <b:else/>
-    <img b:whitespace='remove'>
-      <b:class name='class-name'/>
-      <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
-      <!-- srcset --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, [200,400,800,1200,1600], "16:9") : data:post.featuredImage' name='srcset'/>
-      <!-- sizes --><b:attr name='sizes' value='100vw'/>
-      <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
-    </img>
-  </b:if>
-<b:else/><!-- fallback -->
-  <img b:whitespace='remove'>
-    <b:class name='class-name'/>
-    <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
-    <b:attr expr:value='data:messages.image' name='alt'/>
-  </img>
-</b:if>
-
-
-<!-- With anchors -->
-
-<b:if cond='data:post.featuredImage'>
-  <b:if cond='data:post.featuredImage.isYoutube'>
-    <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
-    </b:tag>
-  <b:else/>
-    <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+    <b:else/>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
-    </b:tag>
-  </b:if>
-<b:else/><!-- fallback -->
-  <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+    </b:if>
+  </div>
+</b:if>
+
+
+<!-- # Fallback images -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    <b:else/>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    </b:if>
+  <b:else/><!-- fallback -->
     <img b:whitespace='remove'>
       <b:class name='class-name'/>
       <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
       <b:attr expr:value='data:messages.image' name='alt'/>
     </img>
-  </b:tag>
-</b:if>
+  </b:if>
+</div>
 
 
-<!-- With responsive images and anchors -->
+<!-- # Responsive images -->
 
 <b:if cond='data:post.featuredImage'>
-  <b:if cond='data:post.featuredImage.isYoutube'>
-    <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
@@ -147,9 +91,7 @@ Usage:
         <!-- sizes --><b:attr name='sizes' value='100vw'/>
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
-    </b:tag>
-  <b:else/>
-    <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+    <b:else/>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
         <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
@@ -157,20 +99,175 @@ Usage:
         <!-- sizes --><b:attr name='sizes' value='100vw'/>
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
-    </b:tag>
-  </b:if>
-<b:else/><!-- fallback -->
-  <b:tag expr:href='data:post.link ? data:post.link : data:post.url' name='a'>
+    </b:if>
+  </div>
+</b:if>
+
+<!-- + Fallback images -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+        <!-- srcset --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, [200,400,800,1200,1600], "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='srcset'/>
+        <!-- sizes --><b:attr name='sizes' value='100vw'/>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    <b:else/>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+        <!-- srcset --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, [200,400,800,1200,1600], "16:9") : data:post.featuredImage' name='srcset'/>
+        <!-- sizes --><b:attr name='sizes' value='100vw'/>
+        <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+      </img>
+    </b:if>
+  <b:else/><!-- fallback -->
     <img b:whitespace='remove'>
       <b:class name='class-name'/>
       <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
       <b:attr expr:value='data:messages.image' name='alt'/>
     </img>
-  </b:tag>
+  </b:if>
+</div>
+
+
+<!-- # Anchors -->
+
+<b:if cond='data:post.featuredImage'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    <b:else/>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    </b:if>
+  </div>
 </b:if>
 
+<!-- + Fallback images -->
 
-<!-- With CSS background-image -->
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    <b:else/>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    </b:if>
+  <b:else/><!-- fallback -->
+    <a expr:href='data:post.link ? data:post.link : data:post.url'>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+        <b:attr expr:value='data:messages.image' name='alt'/>
+      </img>
+    </a>
+  </b:if>
+</div>
+
+<!-- + Responsive images -->
+
+<b:if cond='data:post.featuredImage'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+          <!-- srcset --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, [200,400,800,1200,1600], "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='srcset'/>
+          <!-- sizes --><b:attr name='sizes' value='100vw'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    <b:else/>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+          <!-- srcset --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, [200,400,800,1200,1600], "16:9") : data:post.featuredImage' name='srcset'/>
+          <!-- sizes --><b:attr name='sizes' value='100vw'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    </b:if>
+  </div>
+</b:if>
+
+<!-- + Responsive images + Fallback images -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.featuredImage'>
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+          <!-- srcset --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, [200,400,800,1200,1600], "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='srcset'/>
+          <!-- sizes --><b:attr name='sizes' value='100vw'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    <b:else/>
+      <a expr:href='data:post.link ? data:post.link : data:post.url'>
+        <img b:whitespace='remove'>
+          <b:class name='class-name'/>
+          <b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
+          <!-- srcset --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, [200,400,800,1200,1600], "16:9") : data:post.featuredImage' name='srcset'/>
+          <!-- sizes --><b:attr name='sizes' value='100vw'/>
+          <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+        </img>
+      </a>
+    </b:if>
+  <b:else/><!-- fallback -->
+    <a expr:href='data:post.link ? data:post.link : data:post.url'>
+      <img b:whitespace='remove'>
+        <b:class name='class-name'/>
+        <b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+        <b:attr expr:value='data:messages.image' name='alt'/>
+      </img>
+    </a>
+  </b:if>
+</div>
+
+
+<!-- # CSS background-image -->
+
+<b:if cond='data:post.featuredImage'>
+  <div class='class-name'><!-- target -->
+    <b:if cond='data:post.featuredImage.isYoutube'>
+      <b:attr expr:value='"background-image: url(" + (data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl) + ");"' name='style'/>
+    <b:else/>
+      <b:attr expr:value='"background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage) + ");"' name='style'/>
+    </b:if>
+  </div>
+</b:if>
+
+<!-- + Fallback images -->
 
 <div class='class-name'><!-- target -->
   <b:if cond='data:post.featuredImage'>
