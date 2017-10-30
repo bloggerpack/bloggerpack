@@ -1,0 +1,74 @@
+<!--
+
+# About
+
+Name of the author.
+
+Usage:
+
+<b:loop values='data:posts' var='post'>
+  [snippet]
+</b:loop>
+
+# Customize
+
+- `class-name` - classes
+
+# Table of Contents
+
+- Default
+- Fallback
+- Anchors
+
+-->
+
+
+<!-- # Default -->
+
+<b:if cond='data:post.author'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <span class='class-name'><data:post.author.name/></span>
+  </div>
+</b:if>
+
+
+<!-- # Fallback -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.author'>
+    <span class='class-name'><data:post.author.name/></span>
+  <b:else/><!-- fallback -->
+    <span class='class-name'>Anonymous</span>
+  </b:if>
+</div>
+
+
+<!-- # Anchors -->
+
+<b:if cond='data:post.author'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <b:if cond='data:post.author.profileUrl'>
+      <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+        <data:post.author.name/>
+      </a>
+    <b:else/><!-- no profileUrl -->
+      <span class='class-name'><data:post.author.name/></span>
+    </b:if>
+  </div>
+</b:if>
+
+<!-- + Fallback -->
+
+<div class='class-name'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.author'>
+    <b:if cond='data:post.author.profileUrl'>
+      <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+        <data:post.author.name/>
+      </a>
+    <b:else/><!-- no profileUrl -->
+      <span class='class-name'><data:post.author.name/></span>
+    </b:if>
+  <b:else/><!-- fallback -->
+    <span class='class-name'>Anonymous</span>
+  </b:if>
+</div>
