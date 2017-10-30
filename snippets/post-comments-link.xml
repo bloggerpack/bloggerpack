@@ -1,0 +1,38 @@
+<!--
+
+# About
+
+URL linking to the comments on the post.
+
+Usage:
+
+<b:loop values='data:posts' var='post'>
+  [snippet]
+</b:loop>
+
+# Customize
+
+- `class-name` - classes
+
+# Table of Contents
+
+- Default
+
+-->
+
+
+<!-- # Default -->
+
+<b:if cond='data:post.allowComments'>
+  <div class='class-name'><!-- wrapper (if needed) -->
+    <a b:whitespace='remove' class='class-name' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+      <b:if cond='data:post.commentSource != 1'>
+        <b:message name='messages.numberOfComments'>
+          <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+        </b:message>
+      <b:else/><!-- fallback -->
+        <data:messages.comments/>
+      </b:if>
+    </a>
+  </div>
+</b:if>
