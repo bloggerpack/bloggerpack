@@ -3,6 +3,13 @@
 A starter theme for Blogger.
 
 
+## Table of contents
+
+- [Snippets](#snippets)
+- [Contributing](#contributing)
+- [License](#license)
+
+
 ## Snippets
 
 Library of commonly used snippets for Blogger.
