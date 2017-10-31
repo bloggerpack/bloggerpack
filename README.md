@@ -22,6 +22,11 @@ Library of commonly used snippets for Blogger.
 - Snippet - Snippet of the post's content.
 
 
+## Contributing
+
+Have a suggestion or bug fix? Open a pull request or issue.
+
+
 ## License
 
 Licensed under [MIT](LICENSE).
