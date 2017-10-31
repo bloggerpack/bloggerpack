@@ -20,3 +20,8 @@ Library of commonly used snippets for Blogger.
 - [Featured image](snippets/post-featured-image.xml) - The featured image for the post.
 - [Body](snippets/post-body.xml) - The content of the post.
 - Snippet - Snippet of the post's content.
+
+
+## License
+
+Licensed under [MIT](LICENSE).
