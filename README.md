@@ -10,6 +10,16 @@ A starter theme for Blogger.
 - [License](#license)
 
 
+## Getting started
+
+### Download
+
+Choose one of the following options:
+
+- [Download the latest release.](#)
+- Clone the repo: `git clone https://github.com/igoynawamreh/blogger-starter.git`
+
+
 ## Snippets
 
 Library of commonly used snippets for Blogger.
