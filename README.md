@@ -5,6 +5,7 @@ A starter theme for Blogger.
 
 ## Table of contents
 
+- [Getting started](#getting-started)
 - [Snippets](#snippets)
 - [Contributing](#contributing)
 - [License](#license)
