@@ -1,0 +1,52 @@
+<!--
+
+# About
+
+Snippet of the post's content.
+
+Usage:
+
+<b:loop values='data:posts' var='post'>
+  [snippet]
+</b:loop>
+
+# Table of Contents
+
+- Short
+- Long
+- Custom
+
+-->
+
+
+<!-- # Short -->
+
+<div class='data:parentDivClass' expr:id='"post-snippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.hasJumpLink'>
+    <data:post.body/>
+  <b:else/>
+    <data:post.snippets.short/>
+  </b:if>
+</div>
+
+
+<!-- # Long -->
+
+<div class='data:parentDivClass' expr:id='"post-snippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.hasJumpLink'>
+    <data:post.body/>
+  <b:else/>
+    <data:post.snippets.long/>
+  </b:if>
+</div>
+
+
+<!-- # Custom -->
+
+<div class='data:parentDivClass' expr:id='"post-snippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+  <b:if cond='data:post.hasJumpLink'>
+    <data:post.body/>
+  <b:else/>
+    <b:eval expr='snippet(data:post.snippets.long, { length: 150, links: false, linebreaks: false, ellipsis: true })'/>
+  </b:if>
+</div>
