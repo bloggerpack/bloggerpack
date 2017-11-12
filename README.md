@@ -34,7 +34,7 @@ Library of commonly used snippets for Blogger.
 - [Labels](snippets/post-labels.xml) - Labels of the post.
 - [Comments link](snippets/post-comments-link.xml) - Link to the comments on the post.
 - [Read more link](snippets/post-read-more-link.xml) - Link to the full post.
-- Sharing - The share buttons for the post.
+- [Sharing](snippets/post-sharing.xml) - The share buttons for the post.
 - [Featured image](snippets/post-featured-image.xml) - The featured image for the post.
 - [Body](snippets/post-body.xml) - The content of the post.
 - Snippet - Snippet of the post's content.
