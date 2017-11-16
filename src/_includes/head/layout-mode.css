@@ -2,8 +2,8 @@
 body#layout .container::after,
 body#layout .section::after {
   display: block;
-  content: "";
   clear: both;
+  content: "";
 }
 
 /* Grid */
