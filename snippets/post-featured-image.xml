@@ -34,7 +34,7 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.featuredImage'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
@@ -48,13 +48,13 @@ Usage:
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
     </b:if>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 
 <!-- # Fallback images -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
@@ -76,13 +76,13 @@ Usage:
       <b:attr expr:value='data:messages.image' name='alt'/>
     </img>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # Responsive images -->
 
 <b:if cond='data:post.featuredImage'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
         <b:class name='class-name'/>
@@ -100,12 +100,12 @@ Usage:
         <b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
       </img>
     </b:if>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 <!-- + Fallback images -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <img b:whitespace='remove'>
@@ -131,13 +131,13 @@ Usage:
       <b:attr expr:value='data:messages.image' name='alt'/>
     </img>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # Anchors -->
 
 <b:if cond='data:post.featuredImage'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <a expr:href='data:post.link ? data:post.link : data:post.url'>
         <img b:whitespace='remove'>
@@ -155,12 +155,12 @@ Usage:
         </img>
       </a>
     </b:if>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 <!-- + Fallback images -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <a expr:href='data:post.link ? data:post.link : data:post.url'>
@@ -188,12 +188,12 @@ Usage:
       </img>
     </a>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 <!-- + Responsive images -->
 
 <b:if cond='data:post.featuredImage'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <a expr:href='data:post.link ? data:post.link : data:post.url'>
         <img b:whitespace='remove'>
@@ -215,12 +215,12 @@ Usage:
         </img>
       </a>
     </b:if>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 <!-- + Responsive images + Fallback images -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
       <a expr:href='data:post.link ? data:post.link : data:post.url'>
@@ -252,7 +252,7 @@ Usage:
       </img>
     </a>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # CSS background-image -->
@@ -264,7 +264,7 @@ Usage:
     <b:else/>
       <b:attr expr:value='"background-image: url(" + (data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage) + ");"' name='style'/>
     </b:if>
-  </div>
+  </div><!-- /target -->
 </b:if>
 
 <!-- + Fallback images -->
@@ -279,4 +279,4 @@ Usage:
   <b:else/><!-- fallback -->
     <b:attr name='style' value='background-image: url(https://placehold.it/512x288/777/eee?text=No+Image);'/>
   </b:if>
-</div>
+</div><!-- /target -->

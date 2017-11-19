@@ -26,27 +26,27 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.author'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <span class='class-name'><data:post.author.name/></span>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 
 <!-- # Fallback -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.author'>
     <span class='class-name'><data:post.author.name/></span>
   <b:else/><!-- fallback -->
     <span class='class-name'>Anonymous</span>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # Anchors -->
 
 <b:if cond='data:post.author'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <b:if cond='data:post.author.profileUrl'>
       <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
         <data:post.author.name/>
@@ -54,12 +54,12 @@ Usage:
     <b:else/><!-- no profileUrl -->
       <span class='class-name'><data:post.author.name/></span>
     </b:if>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
 
 <!-- + Fallback -->
 
-<div class='class-name'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name'>
   <b:if cond='data:post.author'>
     <b:if cond='data:post.author.profileUrl'>
       <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
@@ -71,4 +71,4 @@ Usage:
   <b:else/><!-- fallback -->
     <span class='class-name'>Anonymous</span>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>

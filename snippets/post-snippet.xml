@@ -21,32 +21,32 @@ Usage:
 
 <!-- # Short -->
 
-<div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>
     <data:post.snippets.short/>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # Long -->
 
-<div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>
     <data:post.snippets.long/>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>
 
 
 <!-- # Custom -->
 
-<div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>
     <b:eval expr='snippet(data:post.snippets.long, { length: 150, links: false, linebreaks: false, ellipsis: true })'/>
   </b:if>
-</div>
+<!-- /wrapper (if needed) --></div>

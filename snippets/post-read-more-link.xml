@@ -24,19 +24,19 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.hasJumpLink'>
-  <div class='class-name' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'>
     <a b:whitespace='remove' expr:class='data:linkClass' expr:href='fragment(data:post.url, "more")' role='button'>
       <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
       <data:blog.jumpLinkMessage/>
     </a>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 <b:else/>
   <b:if cond='data:post.snippets'>
-    <div class='class-name' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'><!-- wrapper (if needed) -->
+    <!-- wrapper (if needed) --><div class='class-name' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'>
       <a b:whitespace='remove' class='class-name' expr:href='data:post.url' role='button'>
         <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
         <data:messages.keepReading/>
       </a>
-    </div>
+    <!-- /wrapper (if needed) --></div>
   </b:if>
 </b:if>

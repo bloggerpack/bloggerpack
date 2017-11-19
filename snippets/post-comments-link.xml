@@ -24,7 +24,7 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.allowComments'>
-  <div class='class-name'><!-- wrapper (if needed) -->
+  <!-- wrapper (if needed) --><div class='class-name'>
     <a b:whitespace='remove' class='class-name' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
       <b:if cond='data:post.commentSource != 1'>
         <b:message name='messages.numberOfComments'>
@@ -34,5 +34,5 @@ Usage:
         <data:messages.comments/>
       </b:if>
     </a>
-  </div>
+  <!-- /wrapper (if needed) --></div>
 </b:if>
