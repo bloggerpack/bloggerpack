@@ -26,19 +26,19 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.author'>
-  <!-- wrapper (if needed) --><div class='class-name'>
-    <span class='class-name'><data:post.author.name/></span>
+  <!-- wrapper (if needed) --><div class='wrapper-class-name'>
+    <span class='author-class-name'><data:post.author.name/></span>
   <!-- /wrapper (if needed) --></div>
 </b:if>
 
 
 <!-- # Fallback -->
 
-<!-- wrapper (if needed) --><div class='class-name'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author'>
-    <span class='class-name'><data:post.author.name/></span>
+    <span class='author-class-name'><data:post.author.name/></span>
   <b:else/><!-- fallback -->
-    <span class='class-name'>Anonymous</span>
+    <span class='author-anonymous-class-name'>Anonymous</span>
   </b:if>
 <!-- /wrapper (if needed) --></div>
 
@@ -46,29 +46,29 @@ Usage:
 <!-- # Anchors -->
 
 <b:if cond='data:post.author'>
-  <!-- wrapper (if needed) --><div class='class-name'>
+  <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.author.profileUrl'>
-      <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+      <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
         <data:post.author.name/>
       </a>
     <b:else/><!-- no profileUrl -->
-      <span class='class-name'><data:post.author.name/></span>
+      <span class='author-no-url-class-name'><data:post.author.name/></span>
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
 
 <!-- + Fallback -->
 
-<!-- wrapper (if needed) --><div class='class-name'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author'>
     <b:if cond='data:post.author.profileUrl'>
-      <a b:whitespace='remove' class='class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+      <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
         <data:post.author.name/>
       </a>
     <b:else/><!-- no profileUrl -->
-      <span class='class-name'><data:post.author.name/></span>
+      <span class='author-no-url-class-name'><data:post.author.name/></span>
     </b:if>
   <b:else/><!-- fallback -->
-    <span class='class-name'>Anonymous</span>
+    <span class='author-anonymous-class-name'>Anonymous</span>
   </b:if>
 <!-- /wrapper (if needed) --></div>

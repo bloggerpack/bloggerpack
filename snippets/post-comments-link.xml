@@ -24,8 +24,8 @@ Usage:
 <!-- # Default -->
 
 <b:if cond='data:post.allowComments'>
-  <!-- wrapper (if needed) --><div class='class-name'>
-    <a b:whitespace='remove' class='class-name' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+  <!-- wrapper (if needed) --><div class='wrapper-class-name'>
+    <a b:whitespace='remove' class='comments-link-class-name' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
       <b:if cond='data:post.commentSource != 1'>
         <b:message name='messages.numberOfComments'>
           <b:param expr:value='data:post.numberOfComments' name='numComments'/>

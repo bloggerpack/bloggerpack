@@ -21,7 +21,7 @@ Usage:
 
 <!-- # Short -->
 
-<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>
@@ -32,7 +32,7 @@ Usage:
 
 <!-- # Long -->
 
-<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>
@@ -43,7 +43,7 @@ Usage:
 
 <!-- # Custom -->
 
-<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
   <b:if cond='data:post.hasJumpLink'>
     <data:post.body/>
   <b:else/>

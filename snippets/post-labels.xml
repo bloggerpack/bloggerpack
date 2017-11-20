@@ -27,12 +27,12 @@ Usage:
 
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' class='class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a b:whitespace='remove' class='label-class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
       <data:label.name/>
     </a>
   </b:loop>
 <b:else/><!-- unlabelled -->
-  <span class='class-name'>Unlabelled</span>
+  <span class='unlabelled-class-name'>Unlabelled</span>
 </b:if>
 
 
@@ -40,10 +40,10 @@ Usage:
 
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' class='class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a b:whitespace='remove' class='label-class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
       <data:label.name/>
     </a><b:if cond='data:i != (data:post.labels.size - 1)'>,</b:if>
   </b:loop>
 <b:else/><!-- unlabelled -->
-  <span class='class-name'>Unlabelled</span>
+  <span class='unlabelled-class-name'>Unlabelled</span>
 </b:if>

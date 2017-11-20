@@ -23,6 +23,6 @@ Usage:
 
 <!-- # Default -->
 
-<!-- wrapper (if needed) --><div class='class-name' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
+<!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
   <data:post.body/>
 <!-- /wrapper (if needed) --></div>

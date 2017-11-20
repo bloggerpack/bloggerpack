@@ -12,7 +12,7 @@ Usage:
 
 # Customize
 
-- `class-name` - classes
+- `date-class-name` - classes
 
 # Table of Contents
 
@@ -24,24 +24,24 @@ Usage:
 
 <!-- # Default (published) -->
 
-<time class='class-name' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+<time class='date-class-name' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
   <data:post.date/>
 </time>
 
 <!-- * Custom format -->
-<time class='class-name' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+<time class='date-class-name' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
   <b:eval expr='format(data:post.date, "dd/MM/YYYY")'/>
 </time>
 
 
 <!-- # Last updated -->
 
-<time class='class-name' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+<time class='date-class-name' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
   <data:post.lastUpdated/>
 </time>
 
 <!-- * Custom format -->
-<time class='class-name' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+<time class='date-class-name' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
   <b:eval expr='format(data:post.lastUpdated, "dd/MM/YYYY")'/>
 </time>
 
