@@ -1,28 +1,20 @@
-<!--
-
 # About
 
 Link to the comments on the post.
 
-Usage:
+
+## Usage
 
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
 
-# Customize
 
-- `class-name` - classes
+## Snippet
 
-# Table of Contents
+### Default
 
-- Default
-
--->
-
-
-<!-- # Default -->
-
+```html
 <b:if cond='data:post.allowComments'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <a b:whitespace='remove' class='comments-link-class-name' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
@@ -36,3 +28,4 @@ Usage:
     </a>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```

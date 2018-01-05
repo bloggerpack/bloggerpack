@@ -1,34 +1,30 @@
-<!--
-
 # About
 
 Photo of the profile of the post author.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
+```
 
-# Customize
+##### Options
 
 - `128` - size
 - `1:1` - aspect ratio
-- `128x128` - width = size, height = (size * ratio height) / ratio width
-              width = 128, height = (128 * 1) / 1
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-- Fallback images
-- Anchors
-
--->
+- `128x128`
+  - width = size, height = (size * ratio height) / ratio width
+  - width = 128, height = (128 * 1) / 1
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -46,10 +42,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
+### Fallback images
 
-<!-- # Fallback images -->
-
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author and data:post.author.authorPhoto'>
     <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -73,10 +70,11 @@ Usage:
     </img>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
+### Anchors
 
-<!-- # Anchors -->
-
+```html
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -98,9 +96,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
-<!-- + Fallback images -->
+##### + Fallback images
 
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author and data:post.author.authorPhoto'>
     <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
@@ -128,3 +128,4 @@ Usage:
     </img>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```

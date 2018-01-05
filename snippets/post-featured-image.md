@@ -1,38 +1,30 @@
-<!--
-
 # About
 
 The featured image for the post.
 
-Usage:
+
+## Usage
 
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
 
-# Customize
+##### Options
 
 - `512` - size
 - `16:9` - aspect ratio
-- `512x288` - width = size, height = (size * ratio height) / ratio width
-              width = 512, height = (512 * 9) / 16
+- `512x288`
+  - width = size, height = (size * ratio height) / ratio width
+  - width = 512, height = (512 * 9) / 16
 - `[200,400,800,1200,1600]` - srcset attribute
 - `100vw` - sizes attribute
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-- Fallback images
-- Responsive images
-- Anchors
-- CSS background-image
-
--->
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <b:if cond='data:post.featuredImage'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -50,10 +42,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
+### Fallback images
 
-<!-- # Fallback images -->
-
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -77,10 +70,11 @@ Usage:
     </img>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
+### Responsive images
 
-<!-- # Responsive images -->
-
+```html
 <b:if cond='data:post.featuredImage'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -102,9 +96,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
-<!-- + Fallback images -->
+##### + Fallback images
 
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -132,10 +128,11 @@ Usage:
     </img>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
+### Anchors
 
-<!-- # Anchors -->
-
+```html
 <b:if cond='data:post.featuredImage'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -157,9 +154,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
-<!-- + Fallback images -->
+##### + Fallback images
 
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -189,9 +188,11 @@ Usage:
     </a>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
-<!-- + Responsive images -->
+##### + Responsive images
 
+```html
 <b:if cond='data:post.featuredImage'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -217,9 +218,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
-<!-- + Responsive images + Fallback images -->
+##### + Responsive images + Fallback images
 
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -253,10 +256,11 @@ Usage:
     </a>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
+### CSS background-image
 
-<!-- # CSS background-image -->
-
+```html
 <b:if cond='data:post.featuredImage'>
   <div class='target-class-name'><!-- target -->
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -266,9 +270,11 @@ Usage:
     </b:if>
   </div><!-- /target -->
 </b:if>
+```
 
-<!-- + Fallback images -->
+##### + Fallback images
 
+```html
 <div class='target-class-name'><!-- target -->
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -281,3 +287,4 @@ Usage:
     <b:attr name='style' value='background-image: url(https://placehold.it/512x288/777/eee?text=No+Image);'/>
   </b:if>
 </div><!-- /target -->
+```

@@ -1,28 +1,22 @@
-<!--
-
 # About
 
 Link to the full post.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
-
-# Customize
-
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-
--->
+```
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <b:if cond='data:post.hasJumpLink'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"More_" + data:widget.instanceId + "_" + data:post.id'>
     <a b:whitespace='remove' class='more-link-class-name' expr:href='fragment(data:post.url, "more")' role='button'>
@@ -40,3 +34,4 @@ Usage:
     <!-- /wrapper (if needed) --></div>
   </b:if>
 </b:if>
+```

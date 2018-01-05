@@ -1,39 +1,32 @@
-<!--
-
 # About
 
 Name of the profile of the post author.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
-
-# Customize
-
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-- Fallback
-- Anchors
-
--->
+```
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <b:if cond='data:post.author'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <span class='author-class-name'><data:post.author.name/></span>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
+### Fallback
 
-<!-- # Fallback -->
-
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author'>
     <span class='author-class-name'><data:post.author.name/></span>
@@ -41,10 +34,11 @@ Usage:
     <span class='author-anonymous-class-name'>Anonymous</span>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```
 
+### Anchors
 
-<!-- # Anchors -->
-
+```html
 <b:if cond='data:post.author'>
   <!-- wrapper (if needed) --><div class='wrapper-class-name'>
     <b:if cond='data:post.author.profileUrl'>
@@ -56,9 +50,11 @@ Usage:
     </b:if>
   <!-- /wrapper (if needed) --></div>
 </b:if>
+```
 
-<!-- + Fallback -->
+##### + Fallback
 
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name'>
   <b:if cond='data:post.author'>
     <b:if cond='data:post.author.profileUrl'>
@@ -72,3 +68,4 @@ Usage:
     <span class='author-anonymous-class-name'>Anonymous</span>
   </b:if>
 <!-- /wrapper (if needed) --></div>
+```

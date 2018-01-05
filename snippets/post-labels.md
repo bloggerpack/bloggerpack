@@ -1,30 +1,26 @@
-<!--
-
 # About
 
 Labels of the post.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
+```
 
-# Customize
+##### Options
 
 - `12` - maximum number of posts in label page
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-- Comma
-
--->
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
     <a b:whitespace='remove' class='label-class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
@@ -34,10 +30,11 @@ Usage:
 <b:else/><!-- unlabelled -->
   <span class='unlabelled-class-name'>Unlabelled</span>
 </b:if>
+```
 
+### Comma
 
-<!-- # Comma -->
-
+```html
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
     <a b:whitespace='remove' class='label-class-name' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
@@ -47,3 +44,4 @@ Usage:
 <b:else/><!-- unlabelled -->
   <span class='unlabelled-class-name'>Unlabelled</span>
 </b:if>
+```

@@ -1,25 +1,22 @@
-<!--
-
 # About
 
 The share buttons for the post.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
-
-# Table of Contents
-
-- Default
-- Dropdown example
-
--->
+```
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <a class='share-class-name' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=twitter"' target='_blank'>
   <i aria-hidden='true' class='icon icon-twitter'/>
   Twitter
@@ -44,10 +41,11 @@ Usage:
   <i aria-hidden='true' class='icon icon-blogger'/>
   BlogThis!
 </a>
+```
 
+### Dropdown example
 
-<!-- # Dropdown example -->
-
+```html
 <div class='dropdown-wrapper'>
   <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' class='dropdown-toggle' data-toggle='dropdown' expr:id='"DropdownMenuSharing_" + data:widget.instanceId + "_" + data:post.id' expr:title='data:messages.share' href='#'>
     <i aria-hidden='true' class='icon icon-share'/>
@@ -80,3 +78,4 @@ Usage:
     </a>
   </div>
 </div>
+```

@@ -1,28 +1,23 @@
-<!--
-
 # About
 
 The content of the post.
 
-Usage:
 
+## Usage
+
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
-
-# Customize
-
-- `class-name` - classes
-
-# Table of Contents
-
-- Default
-
--->
+```
 
 
-<!-- # Default -->
+## Snippet
 
+### Default
+
+```html
 <!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
   <data:post.body/>
 <!-- /wrapper (if needed) --></div>
+```
