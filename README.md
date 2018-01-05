@@ -27,17 +27,17 @@ Library of commonly used snippets for Blogger.
 
 ### Posts
 
-- [Title](snippets/post-title.xml) - Title of the post.
-- [Author name](snippets/post-author-name.xml) - Name of the profile of the post author.
-- [Author photo](snippets/post-author-photo.xml) - Photo of the profile of the post author.
-- [Date](snippets/post-date.xml) - Date of the post.
-- [Labels](snippets/post-labels.xml) - Labels of the post.
-- [Comments link](snippets/post-comments-link.xml) - Link to the comments on the post.
-- [Read more link](snippets/post-read-more-link.xml) - Link to the full post.
-- [Sharing](snippets/post-sharing.xml) - The share buttons for the post.
-- [Featured image](snippets/post-featured-image.xml) - The featured image for the post.
-- [Body](snippets/post-body.xml) - The content of the post.
-- [Snippet](snippets/post-snippet.xml) - Snippet of the post's content.
+- [Title](snippets/post-title.md) - Title of the post.
+- [Author name](snippets/post-author-name.md) - Name of the profile of the post author.
+- [Author photo](snippets/post-author-photo.md) - Photo of the profile of the post author.
+- [Date](snippets/post-date.md) - Date of the post.
+- [Labels](snippets/post-labels.md) - Labels of the post.
+- [Comments link](snippets/post-comments-link.md) - Link to the comments on the post.
+- [Read more link](snippets/post-read-more-link.md) - Link to the full post.
+- [Sharing](snippets/post-sharing.md) - The share buttons for the post.
+- [Featured image](snippets/post-featured-image.md) - The featured image for the post.
+- [Body](snippets/post-body.md) - The content of the post.
+- [Snippet](snippets/post-snippet.md) - Snippet of the post's content.
 
 
 ## Contributing
