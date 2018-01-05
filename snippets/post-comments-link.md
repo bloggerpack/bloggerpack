@@ -5,9 +5,11 @@ Link to the comments on the post.
 
 ## Usage
 
+```html
 <b:loop values='data:posts' var='post'>
   [snippet]
 </b:loop>
+```
 
 
 ## Snippet
