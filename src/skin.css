@@ -13,15 +13,334 @@
  * License URL   : https://opensource.org/licenses/MIT
  */
 
-/**
- * Style guides
- *
- * github.com/necolas/idiomatic-css#comments
- */
-
-
 /* ==========================================================================
    Global styles
    ========================================================================== */
 
-body {}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+.skiplink {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+.skiplink:active,
+.skiplink:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f7f7f7;
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Layout
+   ========================================================================== */
+
+.main-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.blog-main,
+.blog-sidebar {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.blog-sidebar {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .blog-main {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .blog-sidebar {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 0;
+  }
+}
+
+/* Blog main
+   ========================================================================== */
+
+/* Breadcrumb
+   ========================================= */
+
+.blog-main .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #f7f7f7;
+  border-radius: 0.25rem;
+}
+
+.blog-main .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #6c757d;
+  content: "/";
+}
+
+.blog-main .breadcrumb-item.active {
+  color: #6c757d;
+}
+
+.blog-main .breadcrumb-item.active + .breadcrumb-item.active::before {
+  color: #6c757d;
+  content: ":";
+}
+
+/* Status message
+   ========================================= */
+
+.blog-main .status-message {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.blog-main .status-message .search-label,
+.blog-main .status-message .search-query {
+  font-weight: bold;
+}
+
+.blog-main .status-message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.blog-main .status-message-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Posts
+   ========================================= */
+
+.blog-main .posts .post {
+  margin-bottom: 2rem;
+}
+
+/* Comments
+   ========================================= */
+
+.blog-main .comments {
+  margin: 2rem 0;
+}
+
+/* Pager
+   ========================================= */
+
+.blog-main .pager {
+  text-align: center;
+}
+
+.blog-main .pager .pager-newer-link {
+  float: left;
+}
+.blog-main .pager .pager-home-link {
+  float: none;
+}
+.blog-main .pager .pager-older-link {
+  float: right;
+}
+
+/* Blog sidebar
+   ========================================================================== */
+
+.blog-sidebar .widget {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f7f7f7;
+  border-radius: .25rem;
+}
+.blog-sidebar .widget:last-child {
+  margin-bottom: 0;
+}
+.blog-sidebar .widget .title {
+  margin-bottom: 1rem;
+}
+.blog-sidebar .widget .widget-content > :first-child {
+  margin-top: 0;
+}
+.blog-sidebar .widget .widget-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 85%;
+  color: #777;
+  text-align: left;
+  background-color: #f7f7f7;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer .footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer .footer-links li {
+  display: inline-block;
+}
+.footer .footer-links li:not(:last-child) {
+  margin-right: .5rem;
+}

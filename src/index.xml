@@ -9,7 +9,7 @@ Settings
 ############################################################################# </b:comment>
 
 <b:with value='"https://example.com/1200x630.png"' var='social-logo'>
-<b:with value='"replace me"' var='facebook-app-id'>
+<b:with value='"replace_me"' var='facebook-app-id'>
 <b:with value='"@replace_me"' var='twitter-username-website'>
 <b:with value='"@replace_me"' var='twitter-username-creator'>
 
@@ -99,10 +99,16 @@ Skip navigation
 
 <b:comment>
 #############################################################################
-Header - example
+Header
 ############################################################################# </b:comment>
 
-<h1><a expr:href='data:blog.homepageUrl'><data:blog.title/></a></h1>
+<header class="header">
+  <div class="container">
+    <h1>
+      <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+    </h1>
+  </div>
+</header>
 
 
 <b:comment>
@@ -110,25 +116,25 @@ Header - example
 Main and sidebar
 ############################################################################# </b:comment>
 
-<div class='main-layout' id='main-layout'>
+<main class='main' id='main'>
   <div class='container'>
-    <div class='main-layout-row'>
-      <!-- Main -->
-      <main class='main col-main layout-mode-col-8' id='main'>
+    <div class='main-inner'>
+      <!-- Blog main -->
+      <div class='blog-main layout-mode-col-8' id='blog-main'>
         <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
           <!--(bake _widgets/b-section-main_Blog1.xml)-->
         </b:section>
-      </main><!-- /.main -->
+      </div><!-- /.blog-main -->
 
-      <!-- Sidebar -->
-      <aside class='sidebar col-sidebar layout-mode-col-4' id='sidebar'>
+      <!-- Blog sidebar -->
+      <aside class='blog-sidebar layout-mode-col-4' id='blog-sidebar'>
         <b:section class='' id='b-section-sidebar' name='Sidebar'>
           <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
         </b:section>
-      </aside><!-- /.sidebar -->
-    </div><!-- /.main-layout-row -->
+      </aside><!-- /.blog-sidebar -->
+    </div><!-- /.main-inner -->
   </div><!-- /.container -->
-</div><!-- /.main-layout -->
+</main><!-- /.main -->
 
 
 <b:comment>
@@ -143,12 +149,8 @@ Footer
         <!--(bake _widgets/b-section-footer-links_LinkList1.xml)-->
       </b:section>
     </b:if>
-    <p>&#169; <data:blog.title/>.</p>
-    <p>
-      <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'>
-        <b:message name='messages.poweredByBlogger'/>
-      </a>
-    </p>
+    <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
+    <p>Blogger Starter is open source. It's developed and maintained on <a href="https://github.com/igoynawamreh/blogger-starter">GitHub</a>.</p>
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 

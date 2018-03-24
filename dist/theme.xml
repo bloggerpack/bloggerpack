@@ -9,7 +9,7 @@ Settings
 ############################################################################# </b:comment>
 
 <b:with value='"https://example.com/1200x630.png"' var='social-logo'>
-<b:with value='"replace me"' var='facebook-app-id'>
+<b:with value='"replace_me"' var='facebook-app-id'>
 <b:with value='"@replace_me"' var='twitter-username-website'>
 <b:with value='"@replace_me"' var='twitter-username-creator'>
 
@@ -332,6 +332,7 @@ CSS
 <b:template-skin>
 <![CDATA[
 /* Clearfix */
+body#layout .container::after,
 body#layout .section::after {
   display: block;
   clear: both;
@@ -423,18 +424,337 @@ body#layout hr {
  * License URL   : https://opensource.org/licenses/MIT
  */
 
-/**
- * Style guides
- *
- * github.com/necolas/idiomatic-css#comments
- */
-
-
 /* ==========================================================================
    Global styles
    ========================================================================== */
 
-body {}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+.skiplink {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+.skiplink:active,
+.skiplink:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f7f7f7;
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+.main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Layout
+   ========================================================================== */
+
+.main-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.blog-main,
+.blog-sidebar {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.blog-sidebar {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .blog-main {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .blog-sidebar {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 0;
+  }
+}
+
+/* Blog main
+   ========================================================================== */
+
+/* Breadcrumb
+   ========================================= */
+
+.blog-main .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #f7f7f7;
+  border-radius: 0.25rem;
+}
+
+.blog-main .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #6c757d;
+  content: "/";
+}
+
+.blog-main .breadcrumb-item.active {
+  color: #6c757d;
+}
+
+.blog-main .breadcrumb-item.active + .breadcrumb-item.active::before {
+  color: #6c757d;
+  content: ":";
+}
+
+/* Status message
+   ========================================= */
+
+.blog-main .status-message {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.blog-main .status-message .search-label,
+.blog-main .status-message .search-query {
+  font-weight: bold;
+}
+
+.blog-main .status-message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.blog-main .status-message-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Posts
+   ========================================= */
+
+.blog-main .posts .post {
+  margin-bottom: 2rem;
+}
+
+/* Comments
+   ========================================= */
+
+.blog-main .comments {
+  margin: 2rem 0;
+}
+
+/* Pager
+   ========================================= */
+
+.blog-main .pager {
+  text-align: center;
+}
+
+.blog-main .pager .pager-newer-link {
+  float: left;
+}
+.blog-main .pager .pager-home-link {
+  float: none;
+}
+.blog-main .pager .pager-older-link {
+  float: right;
+}
+
+/* Blog sidebar
+   ========================================================================== */
+
+.blog-sidebar .widget {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f7f7f7;
+  border-radius: .25rem;
+}
+.blog-sidebar .widget:last-child {
+  margin-bottom: 0;
+}
+.blog-sidebar .widget .title {
+  margin-bottom: 1rem;
+}
+.blog-sidebar .widget .widget-content > :first-child {
+  margin-top: 0;
+}
+.blog-sidebar .widget .widget-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 85%;
+  color: #777;
+  text-align: left;
+  background-color: #f7f7f7;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer .footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer .footer-links li {
+  display: inline-block;
+}
+.footer .footer-links li:not(:last-child) {
+  margin-right: .5rem;
+}
 ]]>
 </b:skin>
 </b:if>
@@ -472,10 +792,16 @@ Skip navigation
 
 <b:comment>
 #############################################################################
-Header - example
+Header
 ############################################################################# </b:comment>
 
-<h1><a expr:href='data:blog.homepageUrl'><data:blog.title/></a></h1>
+<header class="header">
+  <div class="container">
+    <h1>
+      <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+    </h1>
+  </div>
+</header>
 
 
 <b:comment>
@@ -483,11 +809,11 @@ Header - example
 Main and sidebar
 ############################################################################# </b:comment>
 
-<div class='main-layout' id='main-layout'>
+<main class='main' id='main'>
   <div class='container'>
-    <div class='main-layout-row'>
-      <!-- Main -->
-      <main class='main col-main layout-mode-col-8' id='main'>
+    <div class='main-inner'>
+      <!-- Blog main -->
+      <div class='blog-main layout-mode-col-8' id='blog-main'>
         <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
           <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
             <b:widget-settings>
@@ -528,93 +854,91 @@ Main and sidebar
               <b:comment>### Breadcrumb ###</b:comment>
 
               <b:if cond='!data:view.isHomepage'>
-                <div class='blog-breadcrumb'>
 
-                  <ol class='breadcrumb'>
-                    <b:comment>=== Homepage ===</b:comment>
-                    <b:if cond='data:view.isHomepage'>
-                      <b:comment>None</b:comment>
+                <ol class='breadcrumb'>
+                  <b:comment>=== Homepage ===</b:comment>
+                  <b:if cond='data:view.isHomepage'>
+                    <b:comment>None</b:comment>
+                  </b:if>
+
+                  <b:comment>=== Item page ===</b:comment>
+                  <b:if cond='data:view.isPost'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item active'>Posts</li>
+                    <b:loop values='data:posts' var='post'>
+                      <li class='breadcrumb-item active'><data:post.title/></li>
+                    </b:loop>
+                  </b:if>
+
+                  <b:comment>=== Static page ===</b:comment>
+                  <b:if cond='data:view.isPage'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item active'>Pages</li>
+                    <b:loop values='data:posts' var='post'>
+                      <li class='breadcrumb-item active'><data:post.title/></li>
+                    </b:loop>
+                  </b:if>
+
+                  <b:comment>=== Search (label) page ===</b:comment>
+                  <b:if cond='data:view.search.label'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+                    </li>
+                    <li class='breadcrumb-item active'>Label</li>
+                    <li class='breadcrumb-item active'><data:view.search.label/></li>
+                  </b:if>
+
+                  <b:comment>=== Search (query) page ===</b:comment>
+                  <b:if cond='data:view.search.query'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+                    </li>
+                    <li class='breadcrumb-item active'>Query</li>
+                    <li class='breadcrumb-item active'><data:view.search.query/></li>
+                  </b:if>
+
+                  <b:comment>=== Search (default) page ===</b:comment>
+                  <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item active'>Search</li>
+                  </b:if>
+
+                  <b:comment>=== Archive page ===</b:comment>
+                  <b:if cond='data:view.isArchive'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <b:if cond='data:view.archive.month'>
+                      <li class='breadcrumb-item'>
+                        <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
+                      </li>
+                      <li class='breadcrumb-item active'><data:view.archive.month/></li>
+                    <b:else/>
+                      <li class='breadcrumb-item active'><data:view.archive.year/></li>
                     </b:if>
+                  </b:if>
 
-                    <b:comment>=== Item page ===</b:comment>
-                    <b:if cond='data:view.isPost'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item active'>Posts</li>
-                      <b:loop values='data:posts' var='post'>
-                        <li class='breadcrumb-item active'><data:post.title/></li>
-                      </b:loop>
-                    </b:if>
+                  <b:comment>=== Error page ===</b:comment>
+                  <b:if cond='data:view.isError'>
+                    <li class='breadcrumb-item'>
+                      <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                    </li>
+                    <li class='breadcrumb-item active'>404</li>
+                  </b:if>
+                </ol>
 
-                    <b:comment>=== Static page ===</b:comment>
-                    <b:if cond='data:view.isPage'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item active'>Pages</li>
-                      <b:loop values='data:posts' var='post'>
-                        <li class='breadcrumb-item active'><data:post.title/></li>
-                      </b:loop>
-                    </b:if>
-
-                    <b:comment>=== Search (label) page ===</b:comment>
-                    <b:if cond='data:view.search.label'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
-                      </li>
-                      <li class='breadcrumb-item active'>Label</li>
-                      <li class='breadcrumb-item active'><data:view.search.label/></li>
-                    </b:if>
-
-                    <b:comment>=== Search (query) page ===</b:comment>
-                    <b:if cond='data:view.search.query'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
-                      </li>
-                      <li class='breadcrumb-item active'>Query</li>
-                      <li class='breadcrumb-item active'><data:view.search.query/></li>
-                    </b:if>
-
-                    <b:comment>=== Search (default) page ===</b:comment>
-                    <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item active'>Search</li>
-                    </b:if>
-
-                    <b:comment>=== Archive page ===</b:comment>
-                    <b:if cond='data:view.isArchive'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <b:if cond='data:view.archive.month'>
-                        <li class='breadcrumb-item'>
-                          <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
-                        </li>
-                        <li class='breadcrumb-item active'><data:view.archive.month/></li>
-                      <b:else/>
-                        <li class='breadcrumb-item active'><data:view.archive.year/></li>
-                      </b:if>
-                    </b:if>
-
-                    <b:comment>=== Error page ===</b:comment>
-                    <b:if cond='data:view.isError'>
-                      <li class='breadcrumb-item'>
-                        <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-                      </li>
-                      <li class='breadcrumb-item active'>404</li>
-                    </b:if>
-                  </ol>
-
-                </div><!-- /.blog-breadcrumb -->
               </b:if>
 
 
@@ -623,26 +947,20 @@ Main and sidebar
 
               <b:comment>=== Homepage ===</b:comment>
               <b:if cond='data:view.isHomepage and data:posts.empty'>
-                <div class='blog-status-message'>
-                  <div class='alert alert-danger' role='alert'>
-                    <data:messages.theresNothingHere/>
-                  </div>
+                <div class='status-message status-message-danger' role='alert'>
+                  <data:messages.theresNothingHere/>
                 </div>
               </b:if>
 
               <b:comment>=== Search (label) page ===</b:comment>
               <b:if cond='data:view.search.label'>
                 <b:if cond='data:posts.size gte 1'>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-success' role='alert'>
-                      <data:view.search.resultsMessageHtml/>
-                    </div>
+                  <div class='status-message status-message-success' role='alert'>
+                    <data:view.search.resultsMessageHtml/>
                   </div>
                 <b:else/>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-danger' role='alert'>
-                      <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
-                    </div>
+                  <div class='status-message status-message-danger' role='alert'>
+                    <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
                   </div>
                 </b:if>
               </b:if>
@@ -650,16 +968,12 @@ Main and sidebar
               <b:comment>=== Search (query) page ===</b:comment>
               <b:if cond='data:view.search.query'>
                 <b:if cond='data:posts.size gte 1'>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-success' role='alert'>
-                      <data:view.search.resultsMessageHtml/>
-                    </div>
+                  <div class='status-message status-message-success' role='alert'>
+                    <data:view.search.resultsMessageHtml/>
                   </div>
                 <b:else/>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-danger' role='alert'>
-                      <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
-                    </div>
+                  <div class='status-message status-message-danger' role='alert'>
+                    <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
                   </div>
                 </b:if>
               </b:if>
@@ -667,26 +981,20 @@ Main and sidebar
               <b:comment>=== Archive page ===</b:comment>
               <b:if cond='data:view.isArchive'>
                 <b:if cond='data:posts.size gte 1'>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-success' role='alert'>
-                      <data:view.archive.rangeMessage/>
-                    </div>
+                  <div class='status-message status-message-success' role='alert'>
+                    <data:view.archive.rangeMessage/>
                   </div>
                 <b:else/>
-                  <div class='blog-status-message'>
-                    <div class='alert alert-danger' role='alert'>
-                      <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
-                    </div>
+                  <div class='status-message status-message-danger' role='alert'>
+                    <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
                   </div>
                 </b:if>
               </b:if>
 
               <b:comment>=== Error page ===</b:comment>
               <b:if cond='data:view.isError'>
-                <div class='blog-status-message'>
-                  <div class='alert alert-danger' role='alert'>
-                    <data:navMessage/>
-                  </div>
+                <div class='status-message status-message-danger' role='alert'>
+                  <data:navMessage/>
                 </div>
               </b:if>
 
@@ -695,16 +1003,32 @@ Main and sidebar
               <b:comment>### Posts ###</b:comment>
 
               <b:if cond='data:posts.notEmpty'>
-                <div class='blog-posts'>
+                <div class='posts'>
 
                   <b:comment>=== Homepage ===</b:comment>
                   <b:if cond='data:view.isHomepage'>
                     <b:loop values='data:posts' var='post'>
-                      <h2>
-                        <a expr:href='data:post.link ? data:post.link : data:post.url'>
-                          <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                        </a>
-                      </h2>
+                      <article class='post' expr:id='"post-" + data:post.id'>
+                        <h2>
+                          <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                            <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                          </a>
+                        </h2>
+                        <h5>
+                          <data:messages.postedBy/>
+                          <b:if cond='data:post.author'>
+                            <b:if cond='data:post.author.profileUrl'>
+                              <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                <data:post.author.name/>
+                              </a>
+                            <b:else/><!-- no profileUrl -->
+                              <span class='author-no-url-class-name'><data:post.author.name/></span>
+                            </b:if>
+                          <b:else/><!-- fallback -->
+                            <span class='author-anonymous-class-name'>Anonymous</span>
+                          </b:if>
+                        </h5>
+                      </article>
                     </b:loop>
                   </b:if><!-- /Homepage -->
 
@@ -714,6 +1038,20 @@ Main and sidebar
                       <h1>
                         <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                       </h1>
+                      <h5>
+                        <data:messages.postedBy/>
+                        <b:if cond='data:post.author'>
+                          <b:if cond='data:post.author.profileUrl'>
+                            <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                              <data:post.author.name/>
+                            </a>
+                          <b:else/><!-- no profileUrl -->
+                            <span class='author-no-url-class-name'><data:post.author.name/></span>
+                          </b:if>
+                        <b:else/><!-- fallback -->
+                          <span class='author-anonymous-class-name'>Anonymous</span>
+                        </b:if>
+                      </h5>
                       <data:post.body/>
                     </b:loop>
                   </b:if><!-- /Item page -->
@@ -772,7 +1110,7 @@ Main and sidebar
                     </b:loop>
                   </b:if><!-- /Archive page -->
 
-                </div><!-- /.blog-posts -->
+                </div><!-- /.posts -->
               </b:if>
 
 
@@ -783,9 +1121,9 @@ Main and sidebar
                 <b:loop values='data:posts' var='post'>
                   <b:if cond='data:post.allowComments'>
 
-                    <div class='blog-comments' id='comments'>
+                    <div class='comments' id='comments'>
 
-                      <h1 class='blog-comments-title'><data:messages.comments/></h1>
+                      <h1 class='comments-title'><data:messages.comments/></h1>
 
                       <b:if cond='data:post.commentSource == 1'>
 
@@ -808,7 +1146,7 @@ Main and sidebar
 
                       </b:if>
 
-                    </div><!-- /.blog-comments -->
+                    </div><!-- /.comments -->
 
                   </b:if>
                 </b:loop>
@@ -819,25 +1157,25 @@ Main and sidebar
               <b:comment>### Pager ###</b:comment>
 
               <b:if cond='data:posts.notEmpty and !data:view.isPage'>
-                <nav class='blog-pager'>
+                <nav class='pager'>
 
-                  <a class='blog-pager-link blog-pager-newer-link' role='button'>
+                  <a class='pager-link pager-newer-link' role='button'>
                     <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
                     <b:class cond='!data:newerPageUrl' name='disabled'/>
                     <data:messages.newer/>
                   </a>
 
-                  <a class='blog-pager-link blog-pager-home-link' expr:href='data:blog.homepageUrl' role='button'>
+                  <a class='pager-link pager-home-link' expr:href='data:blog.homepageUrl' role='button'>
                     <data:messages.home/>
                   </a>
 
-                  <a class='blog-pager-link blog-pager-older-link' role='button'>
+                  <a class='pager-link pager-older-link' role='button'>
                     <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
                     <b:class cond='!data:olderPageUrl' name='disabled'/>
                     <data:messages.older/>
                   </a>
 
-                </nav><!-- /.blog-pager -->
+                </nav><!-- /.pager -->
               </b:if>
 
             </b:includable>
@@ -877,15 +1215,29 @@ Main and sidebar
             <b:includable id='threadedComments'/>
           </b:widget>
         </b:section>
-      </main><!-- /.main -->
+      </div><!-- /.blog-main -->
 
-      <!-- Sidebar -->
-      <aside class='sidebar col-sidebar layout-mode-col-4' id='sidebar'>
+      <!-- Blog sidebar -->
+      <aside class='blog-sidebar layout-mode-col-4' id='blog-sidebar'>
         <b:section class='' id='b-section-sidebar' name='Sidebar'>
           <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
             <b:widget-settings>
               <b:widget-setting name='content'>
-                &lt;p&gt;&lt;strong&gt;Blogger Starter&lt;/strong&gt; is open source. It's developed and maintained on &lt;a href="https://github.com/igoynawamreh/blogger-starter"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;a href="/"&gt;Homepage&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/2016/11/sample-blog-post-01.html"&gt;Item page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/p/static-page.html"&gt;Static page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/search"&gt;Search (default) page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/search/label/Sample"&gt;Search (label) page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/search?q=sample"&gt;Search (query) page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/2016"&gt;Archive page&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/404"&gt;Error page&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;a href="/search/label/Nope"&gt;Search (label) page (x)&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/search?q=nope"&gt;Search (query) page (x)&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href="/2010"&gt;Archive page (x)&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
               </b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
@@ -896,10 +1248,10 @@ Main and sidebar
             </b:includable>
           </b:widget>
         </b:section>
-      </aside><!-- /.sidebar -->
-    </div><!-- /.main-layout-row -->
+      </aside><!-- /.blog-sidebar -->
+    </div><!-- /.main-inner -->
   </div><!-- /.container -->
-</div><!-- /.main-layout -->
+</main><!-- /.main -->
 
 
 <b:comment>
@@ -934,12 +1286,8 @@ Footer
         </b:widget>
       </b:section>
     </b:if>
-    <p>&#169; <data:blog.title/>.</p>
-    <p>
-      <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'>
-        <b:message name='messages.poweredByBlogger'/>
-      </a>
-    </p>
+    <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
+    <p>Blogger Starter is open source. It's developed and maintained on <a href="https://github.com/igoynawamreh/blogger-starter">GitHub</a>.</p>
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 

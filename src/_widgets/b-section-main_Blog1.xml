@@ -37,93 +37,91 @@
     <b:comment>### Breadcrumb ###</b:comment>
 
     <b:if cond='!data:view.isHomepage'>
-      <div class='blog-breadcrumb'>
 
-        <ol class='breadcrumb'>
-          <b:comment>=== Homepage ===</b:comment>
-          <b:if cond='data:view.isHomepage'>
-            <b:comment>None</b:comment>
+      <ol class='breadcrumb'>
+        <b:comment>=== Homepage ===</b:comment>
+        <b:if cond='data:view.isHomepage'>
+          <b:comment>None</b:comment>
+        </b:if>
+
+        <b:comment>=== Item page ===</b:comment>
+        <b:if cond='data:view.isPost'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item active'>Posts</li>
+          <b:loop values='data:posts' var='post'>
+            <li class='breadcrumb-item active'><data:post.title/></li>
+          </b:loop>
+        </b:if>
+
+        <b:comment>=== Static page ===</b:comment>
+        <b:if cond='data:view.isPage'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item active'>Pages</li>
+          <b:loop values='data:posts' var='post'>
+            <li class='breadcrumb-item active'><data:post.title/></li>
+          </b:loop>
+        </b:if>
+
+        <b:comment>=== Search (label) page ===</b:comment>
+        <b:if cond='data:view.search.label'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item'>
+            <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+          </li>
+          <li class='breadcrumb-item active'>Label</li>
+          <li class='breadcrumb-item active'><data:view.search.label/></li>
+        </b:if>
+
+        <b:comment>=== Search (query) page ===</b:comment>
+        <b:if cond='data:view.search.query'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item'>
+            <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+          </li>
+          <li class='breadcrumb-item active'>Query</li>
+          <li class='breadcrumb-item active'><data:view.search.query/></li>
+        </b:if>
+
+        <b:comment>=== Search (default) page ===</b:comment>
+        <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item active'>Search</li>
+        </b:if>
+
+        <b:comment>=== Archive page ===</b:comment>
+        <b:if cond='data:view.isArchive'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <b:if cond='data:view.archive.month'>
+            <li class='breadcrumb-item'>
+              <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
+            </li>
+            <li class='breadcrumb-item active'><data:view.archive.month/></li>
+          <b:else/>
+            <li class='breadcrumb-item active'><data:view.archive.year/></li>
           </b:if>
+        </b:if>
 
-          <b:comment>=== Item page ===</b:comment>
-          <b:if cond='data:view.isPost'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item active'>Posts</li>
-            <b:loop values='data:posts' var='post'>
-              <li class='breadcrumb-item active'><data:post.title/></li>
-            </b:loop>
-          </b:if>
+        <b:comment>=== Error page ===</b:comment>
+        <b:if cond='data:view.isError'>
+          <li class='breadcrumb-item'>
+            <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          </li>
+          <li class='breadcrumb-item active'>404</li>
+        </b:if>
+      </ol>
 
-          <b:comment>=== Static page ===</b:comment>
-          <b:if cond='data:view.isPage'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item active'>Pages</li>
-            <b:loop values='data:posts' var='post'>
-              <li class='breadcrumb-item active'><data:post.title/></li>
-            </b:loop>
-          </b:if>
-
-          <b:comment>=== Search (label) page ===</b:comment>
-          <b:if cond='data:view.search.label'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item'>
-              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
-            </li>
-            <li class='breadcrumb-item active'>Label</li>
-            <li class='breadcrumb-item active'><data:view.search.label/></li>
-          </b:if>
-
-          <b:comment>=== Search (query) page ===</b:comment>
-          <b:if cond='data:view.search.query'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item'>
-              <a expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
-            </li>
-            <li class='breadcrumb-item active'>Query</li>
-            <li class='breadcrumb-item active'><data:view.search.query/></li>
-          </b:if>
-
-          <b:comment>=== Search (default) page ===</b:comment>
-          <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item active'>Search</li>
-          </b:if>
-
-          <b:comment>=== Archive page ===</b:comment>
-          <b:if cond='data:view.isArchive'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <b:if cond='data:view.archive.month'>
-              <li class='breadcrumb-item'>
-                <a expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
-              </li>
-              <li class='breadcrumb-item active'><data:view.archive.month/></li>
-            <b:else/>
-              <li class='breadcrumb-item active'><data:view.archive.year/></li>
-            </b:if>
-          </b:if>
-
-          <b:comment>=== Error page ===</b:comment>
-          <b:if cond='data:view.isError'>
-            <li class='breadcrumb-item'>
-              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
-            </li>
-            <li class='breadcrumb-item active'>404</li>
-          </b:if>
-        </ol>
-
-      </div><!-- /.blog-breadcrumb -->
     </b:if>
 
 
@@ -132,26 +130,20 @@
 
     <b:comment>=== Homepage ===</b:comment>
     <b:if cond='data:view.isHomepage and data:posts.empty'>
-      <div class='blog-status-message'>
-        <div class='alert alert-danger' role='alert'>
-          <data:messages.theresNothingHere/>
-        </div>
+      <div class='status-message status-message-danger' role='alert'>
+        <data:messages.theresNothingHere/>
       </div>
     </b:if>
 
     <b:comment>=== Search (label) page ===</b:comment>
     <b:if cond='data:view.search.label'>
       <b:if cond='data:posts.size gte 1'>
-        <div class='blog-status-message'>
-          <div class='alert alert-success' role='alert'>
-            <data:view.search.resultsMessageHtml/>
-          </div>
+        <div class='status-message status-message-success' role='alert'>
+          <data:view.search.resultsMessageHtml/>
         </div>
       <b:else/>
-        <div class='blog-status-message'>
-          <div class='alert alert-danger' role='alert'>
-            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
-          </div>
+        <div class='status-message status-message-danger' role='alert'>
+          <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
         </div>
       </b:if>
     </b:if>
@@ -159,16 +151,12 @@
     <b:comment>=== Search (query) page ===</b:comment>
     <b:if cond='data:view.search.query'>
       <b:if cond='data:posts.size gte 1'>
-        <div class='blog-status-message'>
-          <div class='alert alert-success' role='alert'>
-            <data:view.search.resultsMessageHtml/>
-          </div>
+        <div class='status-message status-message-success' role='alert'>
+          <data:view.search.resultsMessageHtml/>
         </div>
       <b:else/>
-        <div class='blog-status-message'>
-          <div class='alert alert-danger' role='alert'>
-            <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
-          </div>
+        <div class='status-message status-message-danger' role='alert'>
+          <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
         </div>
       </b:if>
     </b:if>
@@ -176,26 +164,20 @@
     <b:comment>=== Archive page ===</b:comment>
     <b:if cond='data:view.isArchive'>
       <b:if cond='data:posts.size gte 1'>
-        <div class='blog-status-message'>
-          <div class='alert alert-success' role='alert'>
-            <data:view.archive.rangeMessage/>
-          </div>
+        <div class='status-message status-message-success' role='alert'>
+          <data:view.archive.rangeMessage/>
         </div>
       <b:else/>
-        <div class='blog-status-message'>
-          <div class='alert alert-danger' role='alert'>
-            <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
-          </div>
+        <div class='status-message status-message-danger' role='alert'>
+          <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
         </div>
       </b:if>
     </b:if>
 
     <b:comment>=== Error page ===</b:comment>
     <b:if cond='data:view.isError'>
-      <div class='blog-status-message'>
-        <div class='alert alert-danger' role='alert'>
-          <data:navMessage/>
-        </div>
+      <div class='status-message status-message-danger' role='alert'>
+        <data:navMessage/>
       </div>
     </b:if>
 
@@ -204,16 +186,32 @@
     <b:comment>### Posts ###</b:comment>
 
     <b:if cond='data:posts.notEmpty'>
-      <div class='blog-posts'>
+      <div class='posts'>
 
         <b:comment>=== Homepage ===</b:comment>
         <b:if cond='data:view.isHomepage'>
           <b:loop values='data:posts' var='post'>
-            <h2>
-              <a expr:href='data:post.link ? data:post.link : data:post.url'>
-                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-              </a>
-            </h2>
+            <article class='post' expr:id='"post-" + data:post.id'>
+              <h2>
+                <a expr:href='data:post.link ? data:post.link : data:post.url'>
+                  <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                </a>
+              </h2>
+              <h5>
+                <data:messages.postedBy/>
+                <b:if cond='data:post.author'>
+                  <b:if cond='data:post.author.profileUrl'>
+                    <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                      <data:post.author.name/>
+                    </a>
+                  <b:else/><!-- no profileUrl -->
+                    <span class='author-no-url-class-name'><data:post.author.name/></span>
+                  </b:if>
+                <b:else/><!-- fallback -->
+                  <span class='author-anonymous-class-name'>Anonymous</span>
+                </b:if>
+              </h5>
+            </article>
           </b:loop>
         </b:if><!-- /Homepage -->
 
@@ -223,6 +221,20 @@
             <h1>
               <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
             </h1>
+            <h5>
+              <data:messages.postedBy/>
+              <b:if cond='data:post.author'>
+                <b:if cond='data:post.author.profileUrl'>
+                  <a b:whitespace='remove' class='author-class-name' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                    <data:post.author.name/>
+                  </a>
+                <b:else/><!-- no profileUrl -->
+                  <span class='author-no-url-class-name'><data:post.author.name/></span>
+                </b:if>
+              <b:else/><!-- fallback -->
+                <span class='author-anonymous-class-name'>Anonymous</span>
+              </b:if>
+            </h5>
             <data:post.body/>
           </b:loop>
         </b:if><!-- /Item page -->
@@ -281,7 +293,7 @@
           </b:loop>
         </b:if><!-- /Archive page -->
 
-      </div><!-- /.blog-posts -->
+      </div><!-- /.posts -->
     </b:if>
 
 
@@ -292,9 +304,9 @@
       <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.allowComments'>
 
-          <div class='blog-comments' id='comments'>
+          <div class='comments' id='comments'>
 
-            <h1 class='blog-comments-title'><data:messages.comments/></h1>
+            <h1 class='comments-title'><data:messages.comments/></h1>
 
             <b:if cond='data:post.commentSource == 1'>
 
@@ -317,7 +329,7 @@
 
             </b:if>
 
-          </div><!-- /.blog-comments -->
+          </div><!-- /.comments -->
 
         </b:if>
       </b:loop>
@@ -328,25 +340,25 @@
     <b:comment>### Pager ###</b:comment>
 
     <b:if cond='data:posts.notEmpty and !data:view.isPage'>
-      <nav class='blog-pager'>
+      <nav class='pager'>
 
-        <a class='blog-pager-link blog-pager-newer-link' role='button'>
+        <a class='pager-link pager-newer-link' role='button'>
           <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
           <b:class cond='!data:newerPageUrl' name='disabled'/>
           <data:messages.newer/>
         </a>
 
-        <a class='blog-pager-link blog-pager-home-link' expr:href='data:blog.homepageUrl' role='button'>
+        <a class='pager-link pager-home-link' expr:href='data:blog.homepageUrl' role='button'>
           <data:messages.home/>
         </a>
 
-        <a class='blog-pager-link blog-pager-older-link' role='button'>
+        <a class='pager-link pager-older-link' role='button'>
           <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
           <b:class cond='!data:olderPageUrl' name='disabled'/>
           <data:messages.older/>
         </a>
 
-      </nav><!-- /.blog-pager -->
+      </nav><!-- /.pager -->
     </b:if>
 
   </b:includable>
