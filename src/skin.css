@@ -145,7 +145,18 @@ ul ol {
 .header {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: #f7f7f7;
+  background-color: #24292e;
+}
+
+.header h1 {
+  margin: 0;
+}
+.header h1 a {
+  color: #fff;
+}
+.header h1 a:hover,
+.header h1 a:focus {
+  text-decoration: none;
 }
 
 /* ==========================================================================
