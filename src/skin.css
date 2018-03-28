@@ -143,20 +143,79 @@ ul ol {
    ========================================================================== */
 
 .header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
   background-color: #24292e;
 }
 
 .header h1 {
   margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 .header h1 a {
   color: #fff;
+  text-decoration: none;
 }
 .header h1 a:hover,
 .header h1 a:focus {
   text-decoration: none;
+}
+
+.header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-right: -.25rem;
+  margin-left: -.25rem;
+}
+.header nav a {
+  display: block;
+  padding: .5rem 1rem;
+  margin: .25rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .25rem;
+}
+.header nav a:hover,
+.header nav a:focus,
+.header nav a.active {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.25);
+}
+
+@media (min-width: 576px) {
+  .header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .header h1 {
+    margin-right: 1rem;
+  }
+  .header nav {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    margin-top: 0;
+  }
 }
 
 /* ==========================================================================

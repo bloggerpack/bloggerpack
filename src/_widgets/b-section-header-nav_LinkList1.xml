@@ -1,0 +1,27 @@
+<b:widget id='LinkList1' locked='true' title='Header nav' type='LinkList' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='sorting'>NONE</b:widget-setting>
+    <b:widget-setting name='text-0'>Home</b:widget-setting>
+    <b:widget-setting name='link-0'>/</b:widget-setting>
+    <b:widget-setting name='text-1'>GitHub</b:widget-setting>
+    <b:widget-setting name='link-1'>https://github.com/igoynawamreh/blogger-starter</b:widget-setting>
+    <b:widget-setting name='text-2'>Issues</b:widget-setting>
+    <b:widget-setting name='link-2'>https://github.com/igoynawamreh/blogger-starter/issues</b:widget-setting>
+    <b:widget-setting name='text-3'>Screenshots</b:widget-setting>
+    <b:widget-setting name='link-3'>/p/screenshots.html</b:widget-setting>
+    <b:widget-setting name='text-4'>Downloads</b:widget-setting>
+    <b:widget-setting name='link-4'>https://github.com/igoynawamreh/blogger-starter/releases</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <nav>
+      <b:loop values='data:links' var='link'>
+        <a expr:href='data:link.target'>
+          <data:link.name/>
+        </a>
+      </b:loop>
+    </nav>
+  </b:includable>
+</b:widget>

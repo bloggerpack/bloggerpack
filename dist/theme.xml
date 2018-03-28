@@ -554,20 +554,79 @@ ul ol {
    ========================================================================== */
 
 .header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
   background-color: #24292e;
 }
 
 .header h1 {
   margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 .header h1 a {
   color: #fff;
+  text-decoration: none;
 }
 .header h1 a:hover,
 .header h1 a:focus {
   text-decoration: none;
+}
+
+.header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  margin-right: -.25rem;
+  margin-left: -.25rem;
+}
+.header nav a {
+  display: block;
+  padding: .5rem 1rem;
+  margin: .25rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .25rem;
+}
+.header nav a:hover,
+.header nav a:focus,
+.header nav a.active {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0,0,0,.25);
+}
+
+@media (min-width: 576px) {
+  .header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .header h1 {
+    margin-right: 1rem;
+  }
+  .header nav {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    margin-top: 0;
+  }
 }
 
 /* ==========================================================================
@@ -811,6 +870,35 @@ Header
     <h1>
       <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
     </h1>
+    <b:section class='' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
+      <b:widget id='LinkList1' locked='true' title='Header nav' type='LinkList' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>NONE</b:widget-setting>
+          <b:widget-setting name='text-0'>Home</b:widget-setting>
+          <b:widget-setting name='link-0'>/</b:widget-setting>
+          <b:widget-setting name='text-1'>GitHub</b:widget-setting>
+          <b:widget-setting name='link-1'>https://github.com/igoynawamreh/blogger-starter</b:widget-setting>
+          <b:widget-setting name='text-2'>Issues</b:widget-setting>
+          <b:widget-setting name='link-2'>https://github.com/igoynawamreh/blogger-starter/issues</b:widget-setting>
+          <b:widget-setting name='text-3'>Screenshots</b:widget-setting>
+          <b:widget-setting name='link-3'>/p/screenshots.html</b:widget-setting>
+          <b:widget-setting name='text-4'>Downloads</b:widget-setting>
+          <b:widget-setting name='link-4'>https://github.com/igoynawamreh/blogger-starter/releases</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <b:include name='content'/>
+        </b:includable>
+        <b:includable id='content'>
+          <nav>
+            <b:loop values='data:links' var='link'>
+              <a expr:href='data:link.target'>
+                <data:link.name/>
+              </a>
+            </b:loop>
+          </nav>
+        </b:includable>
+      </b:widget>
+    </b:section>
   </div>
 </header>
 
@@ -1338,7 +1426,7 @@ Footer
   <div class='container'>
     <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
       <b:section class='' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-        <b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+        <b:widget id='LinkList2' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='sorting'>NONE</b:widget-setting>
             <b:widget-setting name='text-0'>Twitter</b:widget-setting>

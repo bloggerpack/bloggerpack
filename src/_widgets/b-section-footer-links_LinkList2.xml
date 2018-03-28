@@ -1,4 +1,4 @@
-<b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+<b:widget id='LinkList2' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='sorting'>NONE</b:widget-setting>
     <b:widget-setting name='text-0'>Twitter</b:widget-setting>
