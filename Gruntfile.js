@@ -1,3 +1,5 @@
+const webpackConfig = require('./webpack.config');
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -9,7 +11,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
-      'dist': 'dist',
+      'dist': 'dist'
     },
 
     bake: {
@@ -22,17 +24,25 @@ module.exports = function(grunt) {
         }
       }
     },
+    
+    webpack: {
+      main: webpackConfig
+    },
 
     watch: {
-      template: {
+      main: {
         files: [
           'src/**/*.xml',
           'src/**/*.css',
-          'src/**/*.js'
+          'src/**/*.js',
+          'src/index.scss',
+          'src/_scss/**/*.scss',
+          '!src/bundle/**'
         ],
         tasks: [
           'clean:dist',
-          'template-compile'
+          'webpack:main',
+          'bake:main'
         ]
       }
     },
@@ -40,7 +50,7 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: 'blogger-starter-<%= pkg.version %>-dist.zip',
+          archive: 'blogger-starter-dist.zip',
           mode: 'zip',
           level: 9,
           pretty: true
@@ -49,7 +59,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'dist/',
           src: ['**'],
-          dest: 'blogger-starter-<%= pkg.version %>-dist'
+          dest: 'blogger-starter-dist'
         }]
       }
     }
@@ -59,14 +69,8 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
-  // Template task.
-  grunt.registerTask('template-compile', ['bake:main']);
-
-  // Test task.
-  grunt.registerTask('test', ['template-compile']);
-
   // Default task.
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default', ['clean:dist', 'webpack:main', 'bake:main']);
 
   // Release task.
   grunt.registerTask('prep-release', ['default', 'compress:main']);

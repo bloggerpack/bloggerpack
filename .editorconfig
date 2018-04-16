@@ -13,14 +13,5 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[*.py]
-indent_size = 4
-
-[src/**.xml]
-insert_final_newline = false
-
-[src/**.css]
-insert_final_newline = false
-
-[src/**.js]
+[{src/**.xml,src/skin.css,src/bundle/**}]
 insert_final_newline = false

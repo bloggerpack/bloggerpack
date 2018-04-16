@@ -56,6 +56,14 @@ CSS
 ]]>
 </b:template-skin>
 
+<b:comment>### Bundle CSS ###</b:comment>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+<!--(bake bundle/bundle.css)-->
+</style>
+</b:if>
+
 <b:comment>### Skin ###</b:comment>
 
 <b:if cond='!data:view.isLayoutMode'>
@@ -163,11 +171,11 @@ Footer
 JavaScript
 ############################################################################# </b:comment>
 
-<b:comment>### Script ###</b:comment>
+<b:comment>### Bundle JS ###</b:comment>
 
 <script>
 //<![CDATA[
-<!--(bake script.js)-->
+<!--(bake bundle/bundle.js)-->
 //]]>
 </script>
 
