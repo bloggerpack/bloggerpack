@@ -218,34 +218,38 @@
         <b:comment>=== Item page ===</b:comment>
         <b:if cond='data:view.isPost'>
           <b:loop values='data:posts' var='post'>
-            <h1>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </h1>
-            <h5>
-              <data:messages.postedBy/>
-              <b:if cond='data:post.author'>
-                <b:if cond='data:post.author.profileUrl'>
-                  <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
-                    <data:post.author.name/>
-                  </a>
-                <b:else/><!-- no profileUrl -->
-                  <span><data:post.author.name/></span>
+            <article class='post' expr:id='"post-" + data:post.id'>
+              <h1>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </h1>
+              <h5>
+                <data:messages.postedBy/>
+                <b:if cond='data:post.author'>
+                  <b:if cond='data:post.author.profileUrl'>
+                    <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                      <data:post.author.name/>
+                    </a>
+                  <b:else/><!-- no profileUrl -->
+                    <span><data:post.author.name/></span>
+                  </b:if>
+                <b:else/><!-- fallback -->
+                  <span>Anonymous</span>
                 </b:if>
-              <b:else/><!-- fallback -->
-                <span>Anonymous</span>
-              </b:if>
-            </h5>
-            <data:post.body/>
+              </h5>
+              <data:post.body/>
+            </article>
           </b:loop>
         </b:if><!-- /Item page -->
 
         <b:comment>=== Static page ===</b:comment>
         <b:if cond='data:view.isPage'>
           <b:loop values='data:posts' var='post'>
-            <h1>
-              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-            </h1>
-            <data:post.body/>
+            <article class='post' expr:id='"post-" + data:post.id'>
+              <h1>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </h1>
+              <data:post.body/>
+            </article>
           </b:loop>
         </b:if><!-- /Static page -->
 
