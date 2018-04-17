@@ -40,7 +40,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
 p {
@@ -273,17 +273,17 @@ ul ol {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
   background-color: #f7f7f7;
-  border-radius: 0.25rem;
+  border-radius: .25rem;
 }
 
 .blog-main .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: .5rem;
+  padding-left: .5rem;
   color: #6c757d;
   content: "/";
 }
@@ -302,10 +302,10 @@ ul ol {
 
 .blog-main .status-message {
   position: relative;
-  padding: 0.75rem 1.25rem;
+  padding: .75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: .25rem;
 }
 
 .blog-main .status-message .search-label,
