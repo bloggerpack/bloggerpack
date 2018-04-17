@@ -564,7 +564,6 @@ ul ol {
 .header {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  text-align: center;
   background-color: #24292e;
 }
 
@@ -572,6 +571,7 @@ ul ol {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.1;
+  text-align: center;
   text-transform: uppercase;
 }
 .header h1 a {
@@ -601,6 +601,7 @@ ul ol {
   padding: .5rem 1rem;
   margin: .25rem;
   color: #fff;
+  text-align: center;
   text-decoration: none;
   border-radius: .25rem;
 }
@@ -628,6 +629,7 @@ ul ol {
   }
   .header h1 {
     margin-right: 1rem;
+    text-align: left;
   }
   .header nav {
     -webkit-box-pack: start;
