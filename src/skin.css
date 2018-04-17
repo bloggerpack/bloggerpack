@@ -187,11 +187,14 @@ ul ol {
   border-radius: .25rem;
 }
 .header nav a:hover,
-.header nav a:focus,
-.header nav a.active {
+.header nav a:focus {
   color: #fff;
   text-decoration: none;
   background-color: rgba(0,0,0,.25);
+}
+.header nav a.active {
+  color: #fff;
+  background-color: #0056b3;
 }
 
 @media (min-width: 576px) {
