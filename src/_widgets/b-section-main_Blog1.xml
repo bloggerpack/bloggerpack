@@ -49,7 +49,7 @@
           <li class='breadcrumb-item'>
             <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
           </li>
-          <li class='breadcrumb-item active'>Posts</li>
+          <li class='breadcrumb-item active'>Post</li>
           <b:loop values='data:posts' var='post'>
             <li class='breadcrumb-item active'><data:post.title/></li>
           </b:loop>
@@ -60,7 +60,7 @@
           <li class='breadcrumb-item'>
             <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
           </li>
-          <li class='breadcrumb-item active'>Pages</li>
+          <li class='breadcrumb-item active'>Page</li>
           <b:loop values='data:posts' var='post'>
             <li class='breadcrumb-item active'><data:post.title/></li>
           </b:loop>
