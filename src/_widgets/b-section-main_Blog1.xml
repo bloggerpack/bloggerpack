@@ -37,8 +37,8 @@
     <b:comment>### Breadcrumb ###</b:comment>
 
     <b:if cond='!data:view.isHomepage'>
-
       <ol class='breadcrumb'>
+        
         <b:comment>=== Homepage ===</b:comment>
         <b:if cond='data:view.isHomepage'>
           <b:comment>None</b:comment>
@@ -120,8 +120,8 @@
           </li>
           <li class='breadcrumb-item active'>404</li>
         </b:if>
-      </ol>
-
+        
+      </ol><!-- /.breadcrumb -->
     </b:if>
 
 
