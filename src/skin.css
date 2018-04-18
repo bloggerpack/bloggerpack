@@ -351,9 +351,15 @@ ul ol {
 }
 .blog-main .pager .pager-home-link {
   float: none;
+  margin: 0 .5rem;
 }
 .blog-main .pager .pager-older-link {
   float: right;
+}
+
+.blog-main .pager .pager-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
 }
 
 /* Blog sidebar
