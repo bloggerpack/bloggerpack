@@ -1,2 +1,74 @@
-$foo: #000 !default;
-$bar: #fff !default;
+// Reboot
+// =========================================
+
+//
+// Body
+//
+
+$body-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$body-font-size:    1rem !default;
+$body-font-weight:  400 !default;
+$body-line-height:  1.5 !default;
+$body-color:        #333 !default;
+$body-bg:           #fff !default;
+
+//
+// Links
+//
+
+$link-color:             #007bff !default;
+$link-hover-color:       #0056b3 !default;
+$link-decoration:        none !default;
+$link-hover-decoration:  underline !default;
+
+//
+// Headings
+//
+
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.2 !default;
+$headings-color:          inherit !default;
+
+$h1-font-size:  2.5rem !default;
+$h2-font-size:  2rem !default;
+$h3-font-size:  1.75rem !default;
+$h4-font-size:  1.5rem !default;
+$h5-font-size:  1.25rem !default;
+$h6-font-size:  1rem !default;
+
+//
+// Code
+//
+
+$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$code-padding:        .2rem .4rem !default;
+$code-font-size:      85% !default;
+$code-color:          #333 !default;
+$code-bg:             #f5f5f5 !default;
+$code-border-radius:  .25rem !default;
+
+$kbd-padding:         .2rem .4rem !default;
+$kbd-font-size:       85% !default;
+$kbd-color:           #fff !default;
+$kbd-bg:              #222 !default;
+$kbd-border-radius:   .25rem !default;
+
+$pre-padding:         1rem !default;
+$pre-font-size:       85% !default;
+$pre-color:           #333 !default;
+$pre-bg:              #f5f5f5 !default;
+$pre-border-width:    1px !default;
+$pre-border-color:    #eee !default;
+$pre-border-radius:   .25rem !default;
+
+//
+// Misc elements
+//
+
+$small-font-size:    80% !default;
+$small-font-weight:  400 !default;
+
+$mark-padding:  .2em !default;
+$mark-bg:       #ffecb3 !default;

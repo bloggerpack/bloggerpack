@@ -1,0 +1,232 @@
+//
+// Document
+//
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+//
+// Body
+//
+
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  color: $body-color;
+  text-align: left;
+  background-color: $body-bg;
+}
+
+//
+// Links
+//
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1 { font-size: $h1-font-size; }
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+h4 { font-size: $h4-font-size; }
+h5 { font-size: $h5-font-size; }
+h6 { font-size: $h6-font-size; }
+
+//
+// Paragraph
+//
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+//
+// Lists
+//
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+//
+// Tables
+//
+
+table {
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+}
+
+//
+// Blockquote
+//
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+//
+// Address
+//
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+//
+// Code
+//
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-family-monospace;
+}
+
+code {
+  padding: $code-padding;
+  font-size: $code-font-size;
+  color: $code-color;
+  word-break: break-word;
+  background-color: $code-bg;
+  border-radius: $code-border-radius;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
+}
+
+kbd {
+  padding: $kbd-padding;
+  font-size: $kbd-font-size;
+  color: $kbd-color;
+  background-color: $kbd-bg;
+  border-radius: $kbd-border-radius;
+
+  kbd {
+    padding: 0;
+    font-size: 100%;
+  }
+}
+
+pre {
+  display: block;
+  padding: $pre-padding;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  font-size: $pre-font-size;
+  color: $pre-color;
+  background-color: $pre-bg;
+  border: $pre-border-width solid $pre-border-color;
+  border-radius: $pre-border-radius;
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+//
+// Horizontal rules
+//
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+//
+// Figures
+//
+
+figure {
+  margin: 0 0 1rem;
+}
+
+//
+// Images
+//
+
+img {
+  vertical-align: middle;
+}
+
+//
+// Misc elements
+//
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+}
+
+small {
+  font-size: $small-font-size;
+  font-weight: $small-font-weight;
+}
+
+mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
