@@ -1,3 +1,20 @@
+// Global variables
+// =========================================
+
+$font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-size:              1rem !default;
+$font-weight-light:      300 !default;
+$font-weight-normal:     400 !default;
+$font-weight-bold:       700 !default;
+$line-height:            1.5 !default;
+$border-width:           1px !default;
+$border-color:           #ddd !default;
+$border-radius:          .25rem !default;
+$box-shadow:             0 .5rem 1rem rgba(#000, .15) !default;
+
+$spacer:                 1rem !default;
+
 // Reboot
 // =========================================
 
@@ -5,10 +22,10 @@
 // Body
 //
 
-$body-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$body-font-size:    1rem !default;
-$body-font-weight:  400 !default;
-$body-line-height:  1.5 !default;
+$body-font-family:  $font-family !default;
+$body-font-size:    $font-size !default;
+$body-font-weight:  $font-weight-normal !default;
+$body-line-height:  $line-height !default;
 $body-color:        #333 !default;
 $body-bg:           #fff !default;
 
@@ -25,48 +42,48 @@ $link-hover-decoration:  underline !default;
 // Headings
 //
 
-$headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
-$headings-line-height:    1.2 !default;
-$headings-color:          inherit !default;
+$headings-font-family:  inherit !default;
+$headings-font-weight:  500 !default;
+$headings-line-height:  1.2 !default;
+$headings-color:        inherit !default;
 
-$h1-font-size:  2.5rem !default;
-$h2-font-size:  2rem !default;
-$h3-font-size:  1.75rem !default;
-$h4-font-size:  1.5rem !default;
-$h5-font-size:  1.25rem !default;
-$h6-font-size:  1rem !default;
-
-//
-// Blockquote
-//
-
-$blockquote-font-size:  1.25rem !default;
+$h1-font-size:          $font-size * 2.5 !default;
+$h2-font-size:          $font-size * 2 !default;
+$h3-font-size:          $font-size * 1.75 !default;
+$h4-font-size:          $font-size * 1.5 !default;
+$h5-font-size:          $font-size * 1.25 !default;
+$h6-font-size:          $font-size !default;
 
 //
 // Code
 //
 
-$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$code-font-size:     85% !default;
+$code-color:         #e83e8c !default;
 
-$code-font-size:      85% !default;
-$code-color:          #e83e8c !default;
+$pre-font-size:      $code-font-size !default;
+$pre-color:          #333 !default;
 
-$pre-font-size:       $code-font-size !default;
-$pre-color:           #333 !default;
+$kbd-padding:        .2rem .4rem !default;
+$kbd-font-size:      85% !default;
+$kbd-color:          #fff !default;
+$kbd-bg:             #222 !default;
+$kbd-border-radius:  $border-radius !default;
 
-$kbd-padding:         .2rem .4rem !default;
-$kbd-font-size:       85% !default;
-$kbd-color:           #fff !default;
-$kbd-bg:              #222 !default;
-$kbd-border-radius:   .25rem !default;
+//
+// Horizontal rules
+//
+
+$hr-border-width:  $border-width !default;
+$hr-border-color:  rgba(#000, .1) !default;
 
 //
 // Misc elements
 //
 
 $small-font-size:    80% !default;
-$small-font-weight:  400 !default;
+$small-font-weight:  $font-weight-normal !default;
 
 $mark-padding:  .2em !default;
+$mark-color:    #000 !default;
 $mark-bg:       #ffecb3 !default;
