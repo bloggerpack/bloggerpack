@@ -1,0 +1,172 @@
+//
+// Remove margin
+//
+
+.post-body-type {
+  h1, h2, h3, h4, h5, h6,
+  p,
+  ol, ul, dl,
+  table,
+  blockquote,
+  address,
+  pre,
+  figure {
+    margin: 0 !important;
+  }
+}
+
+//
+// Images
+//
+
+.post-body-type .separator,
+.post-body-type .tr-caption-container {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.post-body-type .separator a,
+.post-body-type .separator img,
+.post-body-type .tr-caption-container a,
+.post-body-type .tr-caption-container img {
+  margin: 0 !important;
+}
+
+.post-body-type .separator img,
+.post-body-type .tr-caption-container img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-body-type .separator[style*="float: left"],
+.post-body-type .separator a[style*="float: left"],
+.post-body-type .separator img[style*="float: left"],
+.post-body-type .tr-caption-container[style*="float: left"],
+.post-body-type .tr-caption-container a[style*="float: left"],
+.post-body-type .tr-caption-container img[style*="float: left"],
+.post-body-type .separator[style*="float:left"],
+.post-body-type .separator a[style*="float:left"],
+.post-body-type .separator img[style*="float:left"],
+.post-body-type .tr-caption-container[style*="float:left"],
+.post-body-type .tr-caption-container a[style*="float:left"],
+.post-body-type .tr-caption-container img[style*="float:left"] {
+  margin-right: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.post-body-type .separator[style*="float: right"],
+.post-body-type .separator a[style*="float: right"],
+.post-body-type .separator img[style*="float: right"],
+.post-body-type .tr-caption-container[style*="float: right"],
+.post-body-type .tr-caption-container a[style*="float: right"],
+.post-body-type .tr-caption-container img[style*="float: right"],
+.post-body-type .separator[style*="float:right"],
+.post-body-type .separator a[style*="float:right"],
+.post-body-type .separator img[style*="float:right"],
+.post-body-type .tr-caption-container[style*="float:right"],
+.post-body-type .tr-caption-container a[style*="float:right"],
+.post-body-type .tr-caption-container img[style*="float:right"] {
+  margin-left: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.post-body-type .tr-caption-container[style*="float: left"],
+.post-body-type .tr-caption-container[style*="float:left"],
+.post-body-type .tr-caption-container[style*="float: right"],
+.post-body-type .tr-caption-container[style*="float:right"] {
+  width: auto !important;
+}
+
+.post-body-type .tr-caption-container .tr-caption {
+  padding: .5rem 0;
+  font-size: 90%;
+  color: #6c757d;
+}
+
+//
+// Tables
+//
+
+.post-body-type table:not([class]) {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.post-body-type table:not([class]) th,
+.post-body-type table:not([class]) td {
+  padding: .75rem;
+  vertical-align: top;
+  border: 1px solid #e5e5e5;
+}
+
+.post-body-type table:not([class]) thead th {
+  vertical-align: bottom;
+}
+.post-body-type table:not([class]) thead th,
+.post-body-type table:not([class]) thead td {
+  border-bottom-width: 2px;
+}
+
+.post-body-type table:not([class]) tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+}
+
+.post-body-type table:not([class]) caption {
+  color: #6c757d;
+}
+
+//
+// Blockquote
+//
+
+.post-body-type blockquote:not([class]) {
+  padding: .5rem 1rem;
+  border-left: 5px solid #e5e5e5;
+}
+
+.post-body-type blockquote:not([class]) footer {
+  display: block;
+  font-size: 80%;
+  color: #6c757d;
+}
+.post-body-type blockquote:not([class]) footer::before {
+  content: "\2014 \00A0";
+}
+
+//
+// Code
+//
+
+.post-body-type {
+  code {
+    padding: .2rem .4rem;
+    font-size: 85%;
+    color: #333;
+    word-break: break-word;
+    background-color: #f5f5f5;
+    border-radius: .25rem;
+  }
+
+  pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+.post-body-type pre:not([class]) {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  border-radius: .25rem;
+}

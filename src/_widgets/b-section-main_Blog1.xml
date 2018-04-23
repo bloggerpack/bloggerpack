@@ -236,7 +236,9 @@
                   <span>Anonymous</span>
                 </b:if>
               </h5>
-              <data:post.body/>
+              <div class='post-body-type'>
+                <data:post.body/>
+              </div>
             </article>
           </b:loop>
         </b:if><!-- /Item page -->
@@ -248,7 +250,9 @@
               <h1>
                 <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
               </h1>
-              <data:post.body/>
+              <div class='post-body-type'>
+                <data:post.body/>
+              </div>
             </article>
           </b:loop>
         </b:if><!-- /Static page -->
