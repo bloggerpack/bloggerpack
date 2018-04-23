@@ -108,11 +108,12 @@ th {
 }
 
 //
-// Blockquotes
+// Blockquote
 //
 
 blockquote {
   margin: 0 0 1rem;
+  font-size: $blockquote-font-size;
 }
 
 //
