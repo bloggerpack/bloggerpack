@@ -137,12 +137,9 @@ samp {
 }
 
 code {
-  padding: $code-padding;
   font-size: $code-font-size;
   color: $code-color;
   word-break: break-word;
-  background-color: $code-bg;
-  border-radius: $code-border-radius;
 
   // Streamline the style when inside anchors to avoid broken underline and more
   a > & {
@@ -165,23 +162,14 @@ kbd {
 
 pre {
   display: block;
-  padding: $pre-padding;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
   font-size: $pre-font-size;
   color: $pre-color;
-  background-color: $pre-bg;
-  border: $pre-border-width solid $pre-border-color;
-  border-radius: $pre-border-radius;
 
+  // Account for some code outputs that place code tags in pre tags
   code {
-    padding: 0;
     font-size: inherit;
     color: inherit;
     word-break: normal;
-    background-color: transparent;
-    border-radius: 0;
   }
 }
 
