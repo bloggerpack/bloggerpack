@@ -219,23 +219,25 @@
         <b:if cond='data:view.isPost'>
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
-              <h1>
-                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-              </h1>
-              <h5>
-                <data:messages.postedBy/>
-                <b:if cond='data:post.author'>
-                  <b:if cond='data:post.author.profileUrl'>
-                    <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
-                      <data:post.author.name/>
-                    </a>
-                  <b:else/><!-- no profileUrl -->
-                    <span><data:post.author.name/></span>
+              <header class='post-single-header'>
+                <h1>
+                  <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                </h1>
+                <h5>
+                  <data:messages.postedBy/>
+                  <b:if cond='data:post.author'>
+                    <b:if cond='data:post.author.profileUrl'>
+                      <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                        <data:post.author.name/>
+                      </a>
+                    <b:else/><!-- no profileUrl -->
+                      <span><data:post.author.name/></span>
+                    </b:if>
+                  <b:else/><!-- fallback -->
+                    <span>Anonymous</span>
                   </b:if>
-                <b:else/><!-- fallback -->
-                  <span>Anonymous</span>
-                </b:if>
-              </h5>
+                </h5>
+              </header>
               <div class='post-body-type'>
                 <data:post.body/>
               </div>
@@ -247,9 +249,11 @@
         <b:if cond='data:view.isPage'>
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
-              <h1>
-                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-              </h1>
+              <header class='post-single-header'>
+                <h1>
+                  <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                </h1>
+              </header>
               <div class='post-body-type'>
                 <data:post.body/>
               </div>
