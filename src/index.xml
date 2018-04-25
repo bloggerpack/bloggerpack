@@ -110,8 +110,8 @@ Skip navigation
 Header
 ############################################################################# </b:comment>
 
-<header class="header">
-  <div class="container">
+<header class='header'>
+  <div class='container'>
     <h1>
       <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
     </h1>
@@ -161,7 +161,7 @@ Footer
       </b:section>
     </b:if>
     <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
-    <p>Blogger Starter is open source. It's developed and maintained on <a href="https://github.com/igoynawamreh/blogger-starter">GitHub</a>.</p>
+    <p>Blogger Starter is open source. It's developed and maintained on <a href='https://github.com/blogger-starter/blogger-starter'>GitHub</a>.</p>
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 

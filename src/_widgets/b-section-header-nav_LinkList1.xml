@@ -3,14 +3,14 @@
     <b:widget-setting name='sorting'>NONE</b:widget-setting>
     <b:widget-setting name='text-0'>Home</b:widget-setting>
     <b:widget-setting name='link-0'>https://blogger-starter.blogspot.com/</b:widget-setting>
-    <b:widget-setting name='text-1'>GitHub</b:widget-setting>
-    <b:widget-setting name='link-1'>https://github.com/igoynawamreh/blogger-starter</b:widget-setting>
-    <b:widget-setting name='text-2'>Issues</b:widget-setting>
-    <b:widget-setting name='link-2'>https://github.com/igoynawamreh/blogger-starter/issues</b:widget-setting>
-    <b:widget-setting name='text-3'>Screenshots</b:widget-setting>
-    <b:widget-setting name='link-3'>https://blogger-starter.blogspot.com/p/screenshots.html</b:widget-setting>
-    <b:widget-setting name='text-4'>Downloads</b:widget-setting>
-    <b:widget-setting name='link-4'>https://github.com/igoynawamreh/blogger-starter/releases</b:widget-setting>
+    <b:widget-setting name='text-1'>About</b:widget-setting>
+    <b:widget-setting name='link-1'>https://blogger-starter.blogspot.com/p/about.html</b:widget-setting>
+    <b:widget-setting name='text-2'>Docs</b:widget-setting>
+    <b:widget-setting name='link-2'>https://blogger-starter.github.io</b:widget-setting>
+    <b:widget-setting name='text-3'>Themes</b:widget-setting>
+    <b:widget-setting name='link-3'>#</b:widget-setting>
+    <b:widget-setting name='text-4'>GitHub</b:widget-setting>
+    <b:widget-setting name='link-4'>https://github.com/blogger-starter/blogger-starter</b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
     <b:include name='content'/>
