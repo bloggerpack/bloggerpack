@@ -17,7 +17,7 @@ The content of the post.
 ### Default
 
 ```html
-<div class='' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
+<div expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
   <data:post.body/>
 </div>
 ```
