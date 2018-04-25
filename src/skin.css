@@ -324,6 +324,7 @@
 }
 .blog-sidebar .widget .title {
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 .blog-sidebar .widget .widget-content > :first-child {
   margin-top: 0;
