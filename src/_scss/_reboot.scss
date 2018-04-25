@@ -87,6 +87,13 @@ ul ol {
   margin-bottom: 0;
 }
 
+dt {
+  font-weight: $font-weight-bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
 //
 // Tables
 //
