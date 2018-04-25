@@ -1,4 +1,4 @@
-# About
+# Post body
 
 The content of the post.
 
@@ -17,7 +17,7 @@ The content of the post.
 ### Default
 
 ```html
-<!-- wrapper (if needed) --><div class='wrapper-class-name' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
+<div class='' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
   <data:post.body/>
-<!-- /wrapper (if needed) --></div>
+</div>
 ```
