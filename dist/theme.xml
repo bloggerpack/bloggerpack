@@ -825,36 +825,38 @@ Header
     <h1>
       <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
     </h1>
-    <b:section class='' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
-      <b:widget id='LinkList1' locked='true' title='Header nav' type='LinkList' version='2' visible='true'>
-        <b:widget-settings>
-          <b:widget-setting name='sorting'>NONE</b:widget-setting>
-          <b:widget-setting name='text-0'>Home</b:widget-setting>
-          <b:widget-setting name='link-0'>https://blogger-starter.blogspot.com/</b:widget-setting>
-          <b:widget-setting name='text-1'>About</b:widget-setting>
-          <b:widget-setting name='link-1'>https://blogger-starter.blogspot.com/p/about.html</b:widget-setting>
-          <b:widget-setting name='text-2'>Docs</b:widget-setting>
-          <b:widget-setting name='link-2'>https://blogger-starter.github.io</b:widget-setting>
-          <b:widget-setting name='text-3'>Themes</b:widget-setting>
-          <b:widget-setting name='link-3'>#</b:widget-setting>
-          <b:widget-setting name='text-4'>GitHub</b:widget-setting>
-          <b:widget-setting name='link-4'>https://github.com/blogger-starter/blogger-starter</b:widget-setting>
-        </b:widget-settings>
-        <b:includable id='main'>
-          <b:include name='content'/>
-        </b:includable>
-        <b:includable id='content'>
-          <nav id='HeaderNav'>
-            <b:loop values='data:links' var='link'>
-              <a expr:href='data:link.target'>
-                <b:class cond='data:link.target == data:view.url.canonical' name='active'/>
-                <data:link.name/>
-              </a>
-            </b:loop>
-          </nav>
-        </b:includable>
-      </b:widget>
-    </b:section>
+    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header-nav")'>
+      <b:section class='' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
+        <b:widget id='LinkList1' locked='true' title='Header nav' type='LinkList' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='sorting'>NONE</b:widget-setting>
+            <b:widget-setting name='text-0'>Home</b:widget-setting>
+            <b:widget-setting name='link-0'>https://blogger-starter.blogspot.com/</b:widget-setting>
+            <b:widget-setting name='text-1'>About</b:widget-setting>
+            <b:widget-setting name='link-1'>https://blogger-starter.blogspot.com/p/about.html</b:widget-setting>
+            <b:widget-setting name='text-2'>Docs</b:widget-setting>
+            <b:widget-setting name='link-2'>https://blogger-starter.github.io</b:widget-setting>
+            <b:widget-setting name='text-3'>Themes</b:widget-setting>
+            <b:widget-setting name='link-3'>#</b:widget-setting>
+            <b:widget-setting name='text-4'>GitHub</b:widget-setting>
+            <b:widget-setting name='link-4'>https://github.com/blogger-starter/blogger-starter</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='content'/>
+          </b:includable>
+          <b:includable id='content'>
+            <nav id='HeaderNav'>
+              <b:loop values='data:links' var='link'>
+                <a expr:href='data:link.target'>
+                  <b:class cond='data:link.target == data:view.url.canonical' name='active'/>
+                  <data:link.name/>
+                </a>
+              </b:loop>
+            </nav>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </b:if>
   </div>
 </header>
 
@@ -1110,7 +1112,7 @@ Main and sidebar
                             </b:if>
                           </h5>
                         </header>
-                        <div class='post-body-type'>
+                        <div class='post-body-type' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
                           <data:post.body/>
                         </div>
                       </article>
@@ -1126,7 +1128,7 @@ Main and sidebar
                             <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                           </h1>
                         </header>
-                        <div class='post-body-type'>
+                        <div class='post-body-type' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
                           <data:post.body/>
                         </div>
                       </article>
