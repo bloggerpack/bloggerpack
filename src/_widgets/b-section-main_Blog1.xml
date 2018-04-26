@@ -238,7 +238,7 @@
                   </b:if>
                 </h5>
               </header>
-              <div class='post-body-type'>
+              <div class='post-body-type' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
                 <data:post.body/>
               </div>
             </article>
@@ -254,7 +254,7 @@
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </h1>
               </header>
-              <div class='post-body-type'>
+              <div class='post-body-type' expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>
                 <data:post.body/>
               </div>
             </article>
