@@ -18,8 +18,6 @@ The featured image for the post.
 - `512x288`
   - width = size, height = (size * ratio height) / ratio width
     - width = `512`, height = (`512` * `9`) / `16`
-- `[200,400,800,1200,1600]` - srcset attribute
-- `100vw` - sizes attribute
 
 
 ## Snippet
