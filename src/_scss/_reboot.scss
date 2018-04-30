@@ -170,7 +170,9 @@ kbd {
 
 pre {
   display: block;
+  margin-top: 0;
   margin-bottom: $spacer;
+  overflow: auto;
   font-size: $pre-font-size;
   color: $pre-color;
 
