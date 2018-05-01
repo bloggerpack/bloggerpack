@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Post title | Snippets</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="bundle/bundle.css"><link rel="stylesheet" href="style.css"></head><body class="doc-page"><nav class="doc-nav" id="DocsNav"><a class="doc-nav-link" href="index.html">Home</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">Getting started</h6><a class="doc-nav-link" href="getting-started-introduction.html">Introduction</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">Core template</h6><a class="doc-nav-link" href="core-overview.html">Overview</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">Preview</h6><a class="doc-nav-link" href="preview-reboot.html">Reboot</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">Snippets</h6><a class="doc-nav-link" href="snippets-post-title.html">Post title</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">Blogger-starter Links</h6><a class="doc-nav-link" href="https://blogger-starter.github.io">Documentation</a> <a class="doc-nav-link" href="https://blogger-starter.blogspot.com">Demo</a> <a class="doc-nav-link" href="#">Themes</a> <a class="doc-nav-link" href="https://github.com/blogger-starter/blogger-starter">GitHub</a></nav><main class="doc-content"><div class="v-info"><ul><li>Currently v1.0.0</li></ul></div><h1 id="post-title">Post title</h1><p>Title of the post.</p><h5 id="usage">Usage</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:loop</span> <span class="hljs-attribute">values</span>=<span class="hljs-value">'data:posts'</span> <span class="hljs-attribute">var</span>=<span class="hljs-value">'post'</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">b:loop</span>&gt;</span>
+</code></pre><h2 id="default">Default</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.title'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">data:post.title</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
+</code></pre><h2 id="no-title-message">No title message</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ? data:post.title : data:messages.noTitle'</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+</code></pre><h2 id="anchors">Anchors</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.title'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">data:post.title</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
+</code></pre><h5 id="-no-title-message">+ No title message</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ? data:post.title : data:messages.noTitle'</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+</code></pre></main><script src="bundle/bundle.js"></script><script>(function() {
+        var nav = document.getElementById('DocsNav'),
+            url = window.location.pathname,
+            anchor = nav.getElementsByTagName('a'),
+            current = url.substring(url.lastIndexOf('/')+1);
+        for (var i = 0; i < anchor.length; i++) {
+          var href = anchor[i].href.substring(anchor[i].href.lastIndexOf('/')+1);
+          if ((href == current) && (href != '')) {
+            anchor[i].classList.add('active');
+          }
+        }
+      })();</script></body></html>
