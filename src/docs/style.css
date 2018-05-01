@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Nav and content
+   ========================================================================== */
+
+/* Nav
+   ========================================================================== */
+
+.doc-nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  padding-bottom: 1rem;
+  width: 200px;
+  overflow-y: auto;
+  background-color: #1c1c1c;
+}
+
+.doc-nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+}
+.doc-nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #474747;
+}
+.doc-nav-link.active {
+  color: #fff;
+  background-color: #373737;
+  border-color: #ff5722;
+}
+.doc-nav-link:first-child {
+  margin-top: .5rem;
+}
+
+.doc-nav-header {
+  padding: 0 1rem;
+  margin: .5rem 0;
+  font-size: .75rem;
+  color: #9d9d9d;
+  text-transform: uppercase;
+  border-left: 4px solid transparent;
+}
+
+.doc-nav-divider {
+  height: 0;
+  margin: .5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #2e2e2e;
+}
+.doc-nav-divider + .doc-nav-header {
+  margin-top: 1rem;
+}
+
+/* Content
+   ========================================================================== */
+
+.doc-content {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.doc-content > pre {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: .25rem;
+}
+.doc-content > pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.doc-content > .v-info {
+  padding: .5rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  font-size: .75rem;
+  color: #e5e5e5;
+  background-color: #757575;
+}
+.doc-content > .v-info > ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+.doc-content > .v-info > ul > li {
+  display: inline-block;
+}
+.doc-content > .v-info > ul > li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.doc-content > h1 {
+  padding: 1rem;
+  margin-top: 0;
+  margin-right: -1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  color: #333;
+  background-color: #f5f5f5;
+  border-bottom: 4px solid #ddd;
+}
+
+.doc-content > h2 {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-right: -1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  color: #333;
+  background-color: #f5f5f5;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+.doc-content > .doc-example {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-right: -1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  background-color: #f5f5f5;
+}
+.doc-content > .doc-example > .doc-example-content {
+  position: relative;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .25rem;
+}
+.doc-content > .doc-example + pre {
+  padding: 1rem;
+  margin-top: -2rem;
+  margin-right: -1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 0;
+}
+.doc-content > .doc-example + pre code {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  background-color: #eee;
+  border-radius: .25rem;
+}
+
+@media (min-width: 768px) {
+  .doc-nav {
+    display: block;
+    overflow-y: hidden;
+  }
+  .doc-nav:hover {
+    overflow-y: auto;
+  }
+  .doc-content {
+    padding-right: 5rem;
+    padding-left: 5rem;
+    margin-left: 200px;
+  }
+  .doc-content > .v-info,
+  .doc-content > h1,
+  .doc-content > h2,
+  .doc-content > .doc-example,
+  .doc-content > .doc-example + pre {
+    padding-right: 5rem;
+    padding-left: 5rem;
+    margin-right: -5rem;
+    margin-left: -5rem;
+  }
+}
+
+/* ==========================================================================
+   highlight.js
+   ========================================================================== */
+
+/* github.com style (c) Vasily Polovnyov <vast@whiteants.net> */
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-javadoc {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rules .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
+}

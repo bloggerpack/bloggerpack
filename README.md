@@ -36,7 +36,7 @@ Our `Gruntfile.js` includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
-| `grunt` | `grunt` compiles and minifies CSS and JavaScript, and creates the `/dist` directory with compiled theme. |
+| `grunt dist` | `grunt dist` creates the `/dist` directory with compiled files. |
 | `grunt watch` | Watches the source files and automatically building them whenever you save. |
 
 
