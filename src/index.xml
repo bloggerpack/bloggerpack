@@ -100,7 +100,7 @@ Body classes
 Skip navigation
 ############################################################################# </b:comment>
 
-<a class='skiplink' href='#main' id='skiplink'>
+<a class='skiplink' href='#main-content' id='skiplink'>
   <span class='skiplink-text'><data:messages.skipToMainContent/></span>
 </a>
 
@@ -129,25 +129,25 @@ Header
 Main and sidebar
 ############################################################################# </b:comment>
 
-<main class='main' id='main'>
+<main class='main-content' id='main-content'>
   <div class='container'>
-    <div class='main-inner'>
-      <!-- Blog main -->
-      <div class='blog-main layout-mode-col-8' id='blog-main'>
+    <div class='main-content-row'>
+      <!-- Main -->
+      <div class='main layout-mode-col-8' id='main'>
         <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
           <!--(bake _widgets/b-section-main_Blog1.xml)-->
         </b:section>
-      </div><!-- /.blog-main -->
+      </div><!-- /.main -->
 
-      <!-- Blog sidebar -->
-      <aside class='blog-sidebar layout-mode-col-4' id='blog-sidebar'>
+      <!-- Sidebar -->
+      <aside class='sidebar layout-mode-col-4' id='sidebar'>
         <b:section class='' id='b-section-sidebar' name='Sidebar'>
           <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
         </b:section>
-      </aside><!-- /.blog-sidebar -->
-    </div><!-- /.main-inner -->
+      </aside><!-- /.sidebar -->
+    </div><!-- /.main-content-row -->
   </div><!-- /.container -->
-</main><!-- /.main -->
+</main><!-- /.main-content -->
 
 
 <b:comment>

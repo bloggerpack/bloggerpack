@@ -157,10 +157,10 @@
 }
 
 /* ==========================================================================
-   Main
+   Main content
    ========================================================================== */
 
-.main {
+.main-content {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -168,7 +168,7 @@
 /* Layout
    ========================================================================== */
 
-.main-inner {
+.main-content-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,8 +178,8 @@
   margin-left: -15px;
 }
 
-.blog-main,
-.blog-sidebar {
+.main,
+.sidebar {
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -187,18 +187,18 @@
   padding-left: 15px;
 }
 
-.blog-sidebar {
+.sidebar {
   margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
-  .blog-main {
+  .main {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 66.666667%;
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
-  .blog-sidebar {
+  .sidebar {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
@@ -207,13 +207,13 @@
   }
 }
 
-/* Blog main
+/* Main
    ========================================================================== */
 
 /* Breadcrumb
    ========================================= */
 
-.blog-main .breadcrumb {
+.main .breadcrumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,7 +226,7 @@
   border-radius: .25rem;
 }
 
-.blog-main .breadcrumb-item + .breadcrumb-item::before {
+.main .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: .5rem;
   padding-left: .5rem;
@@ -234,11 +234,11 @@
   content: "/";
 }
 
-.blog-main .breadcrumb-item.active {
+.main .breadcrumb-item.active {
   color: #777;
 }
 
-.blog-main .breadcrumb-item.active + .breadcrumb-item.active::before {
+.main .breadcrumb-item.active + .breadcrumb-item.active::before {
   color: #777;
   content: ":";
 }
@@ -246,7 +246,7 @@
 /* Status message
    ========================================= */
 
-.blog-main .status-message {
+.main .status-message {
   position: relative;
   padding: .75rem 1.25rem;
   margin-bottom: 1rem;
@@ -254,18 +254,18 @@
   border-radius: .25rem;
 }
 
-.blog-main .status-message .search-label,
-.blog-main .status-message .search-query {
+.main .status-message .search-label,
+.main .status-message .search-query {
   font-weight: bold;
 }
 
-.blog-main .status-message-success {
+.main .status-message-success {
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb;
 }
 
-.blog-main .status-message-danger {
+.main .status-message-danger {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
@@ -274,69 +274,69 @@
 /* Posts
    ========================================= */
 
-.blog-main .posts .post {
+.main .posts .post {
   margin-bottom: 2rem;
 }
 
-.blog-main .posts .post-single-header {
+.main .posts .post-single-header {
   margin-bottom: 2rem;
 }
 
 /* Comments
    ========================================= */
 
-.blog-main .comments {
+.main .comments {
   margin: 2rem 0;
 }
 
 /* Pager
    ========================================= */
 
-.blog-main .pager {
+.main .pager {
   text-align: center;
 }
 
-.blog-main .pager .pager-newer-link {
+.main .pager .pager-newer-link {
   float: left;
 }
-.blog-main .pager .pager-home-link {
+.main .pager .pager-home-link {
   float: none;
   margin: 0 .5rem;
 }
-.blog-main .pager .pager-older-link {
+.main .pager .pager-older-link {
   float: right;
 }
 
-.blog-main .pager .pager-link.disabled {
+.main .pager .pager-link.disabled {
   color: #777;
   pointer-events: none;
 }
 
-/* Blog sidebar
+/* Sidebar
    ========================================================================== */
 
-.blog-sidebar .widget {
+.sidebar .widget {
   padding: 2rem;
   margin-bottom: 1rem;
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;
   border-radius: .25rem;
 }
-.blog-sidebar .widget:last-child {
+.sidebar .widget:last-child {
   margin-bottom: 0;
 }
-.blog-sidebar .widget .title {
+.sidebar .widget .title {
   margin-bottom: 1rem;
   font-size: 1rem;
 }
-.blog-sidebar .widget .widget-content > :first-child {
+.sidebar .widget .widget-content > :first-child {
   margin-top: 0;
 }
-.blog-sidebar .widget .widget-content > :last-child {
+.sidebar .widget .widget-content > :last-child {
   margin-bottom: 0;
 }
 
-.blog-sidebar .list-page-types {
+.sidebar .list-page-types {
   padding-left: 0;
   list-style: none;
 }
