@@ -21,7 +21,7 @@ Choose one of the following options:
 
 ### Build tools
 
-Blogger-Starter uses [Grunt](https://gruntjs.com/) for its build system.
+Blogger-starter uses [Grunt](https://gruntjs.com/) for its build system.
 
 #### Installing Grunt
 
