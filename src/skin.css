@@ -316,9 +316,10 @@
    ========================================================================== */
 
 .blog-sidebar .widget {
-  padding: 1rem;
+  padding: 2rem;
   margin-bottom: 1rem;
   background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
   border-radius: .25rem;
 }
 .blog-sidebar .widget:last-child {
@@ -333,6 +334,11 @@
 }
 .blog-sidebar .widget .widget-content > :last-child {
   margin-bottom: 0;
+}
+
+.blog-sidebar .list-page-types {
+  padding-left: 0;
+  list-style: none;
 }
 
 /* ==========================================================================
