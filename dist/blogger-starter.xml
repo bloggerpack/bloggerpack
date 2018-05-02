@@ -735,9 +735,10 @@ body#layout hr {
    ========================================================================== */
 
 .blog-sidebar .widget {
-  padding: 1rem;
+  padding: 2rem;
   margin-bottom: 1rem;
   background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
   border-radius: .25rem;
 }
 .blog-sidebar .widget:last-child {
@@ -752,6 +753,11 @@ body#layout hr {
 }
 .blog-sidebar .widget .widget-content > :last-child {
   margin-bottom: 0;
+}
+
+.blog-sidebar .list-page-types {
+  padding-left: 0;
+  list-style: none;
 }
 
 /* ==========================================================================
@@ -1359,7 +1365,7 @@ Main and sidebar
           <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
             <b:widget-settings>
               <b:widget-setting name='content'>
-                &lt;ul&gt;
+                &lt;ul class="list-page-types"&gt;
                   &lt;li&gt;&lt;a href="/"&gt;Homepage&lt;/a&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;a href="/2016/11/sample-blog-post-01.html"&gt;Item page&lt;/a&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;a href="/p/static-page.html"&gt;Static page&lt;/a&gt;&lt;/li&gt;
@@ -1369,7 +1375,7 @@ Main and sidebar
                   &lt;li&gt;&lt;a href="/2016"&gt;Archive page&lt;/a&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;a href="/404"&gt;Error page&lt;/a&gt;&lt;/li&gt;
                 &lt;/ul&gt;
-                &lt;ul&gt;
+                &lt;ul class="list-page-types"&gt;
                   &lt;li&gt;&lt;a href="/search/label/Nope"&gt;Search (label) page (x)&lt;/a&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;a href="/search?q=nope"&gt;Search (query) page (x)&lt;/a&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;a href="/2010"&gt;Archive page (x)&lt;/a&gt;&lt;/li&gt;
