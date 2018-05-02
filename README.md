@@ -17,7 +17,7 @@ A starter theme for Blogger.
 Choose one of the following options:
 
 - [Download the latest release.](#)
-- Clone the repo: `git clone https://github.com/igoynawamreh/blogger-starter.git`
+- Clone the repo: `git clone https://github.com/blogger-starter/blogger-starter.git`
 
 ### Build tools
 
