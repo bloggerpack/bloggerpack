@@ -60,7 +60,7 @@ CSS
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
-<!--(bake bundle/bundle.css)-->
+<!--(bake ../dist/bundle/bundle.css)-->
 </style>
 </b:if>
 
@@ -177,7 +177,7 @@ JavaScript
 
 <script>
 //<![CDATA[
-<!--(bake bundle/bundle.js)-->
+<!--(bake ../dist/bundle/bundle.js)-->
 //]]>
 </script>
 

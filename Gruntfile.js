@@ -11,8 +11,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
-      'dist': 'dist',
-      'bundle': 'src/bundle'
+      'dist': 'dist'
     },
 
     bake: {
@@ -27,7 +26,7 @@ module.exports = function(grunt) {
     },
 
     webpack: {
-      main: webpackConfig
+      core: webpackConfig
     },
 
     markdown: {
@@ -93,7 +92,7 @@ module.exports = function(grunt) {
       },
       docsBundle: {
         expand: true,
-        cwd: 'src/',
+        cwd: 'dist/',
         src: 'bundle/*',
         dest: 'dist/docs'
       }
@@ -119,13 +118,11 @@ module.exports = function(grunt) {
           'src/**/*.jst',
           'src/**/*.md',
           'src/index.scss',
-          'src/_scss/**/*.scss',
-          '!src/bundle/**'
+          'src/_scss/**/*.scss'
         ],
         tasks: [
           'clean:dist',
-          'clean:bundle',
-          'webpack:main',
+          'webpack:core',
           'bake:theme',
           'markdown:docs',
           'copy:docsFiles',
@@ -159,7 +156,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   // Theme task.
-  grunt.registerTask('theme-bundle', ['clean:bundle', 'webpack:main']);
+  grunt.registerTask('theme-bundle', ['webpack:core']);
   grunt.registerTask('theme-compile', ['bake:theme']);
   grunt.registerTask('dist-theme', ['theme-bundle', 'theme-compile']);
 
