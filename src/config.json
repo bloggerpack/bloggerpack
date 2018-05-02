@@ -1,0 +1,14 @@
+{
+  "templateName": "Template name",
+  "templateUrl": "https://example.com/template",
+  "templateAuthorName": "Your name",
+  "templateAuthorUrl": "https://example.com/you",
+  "templateVersion": "1.0",
+  "templateDate": "August 17, 1945",
+  "templateLicense": "MIT",
+  "templateLicenseUrl": "https://opensource.org/licenses/MIT",
+
+  "build": {
+    "templateFilename": "blogger-starter"
+  }
+}

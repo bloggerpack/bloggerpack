@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
+    config: grunt.file.readJSON('src/config.json'),
 
     clean: {
       'dist': 'dist'
@@ -17,11 +18,18 @@ module.exports = function(grunt) {
     bake: {
       theme: {
         options: {
-          basePath: 'src'
+          basePath: 'src',
+          content: 'src/config.json'
         },
-        files: {
-          'dist/themes/theme.xml': 'src/index.xml'
-        }
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: 'index.xml',
+          dest: 'dist/',
+          rename: function (dest, src) {
+            return dest + src.replace('index', '<%= config.build.templateFilename %>');
+          }
+        }]
       }
     },
 
@@ -136,7 +144,7 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: 'blogger-starter-dist.zip',
+          archive: '<%= config.build.templateFilename %>-dist.zip',
           mode: 'zip',
           level: 9,
           pretty: true
@@ -145,7 +153,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'dist/',
           src: ['**'],
-          dest: 'blogger-starter-dist'
+          dest: '<%= config.build.templateFilename %>-dist'
         }]
       }
     }

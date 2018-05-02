@@ -3,14 +3,14 @@
    ========================================================================== */
 
 /**
- * Template Name : Template name
- * Template URL  : https://example.com/template
- * Author Name   : Your name
- * Author URL    : https://example.com
- * Date          : August 17, 1945
- * Version       : 1.0
- * License       : MIT
- * License URL   : https://opensource.org/licenses/MIT
+ * Template Name : {{ templateName }}
+ * Template URL  : {{ templateUrl }}
+ * Author Name   : {{ templateAuthorName }}
+ * Author URL    : {{ templateAuthorUrl }}
+ * Version       : {{ templateVersion }}
+ * Date          : {{ templateDate }}
+ * License       : {{ templateLicense }}
+ * License URL   : {{ templateLicenseUrl }}
  */
 
 /* ==========================================================================
