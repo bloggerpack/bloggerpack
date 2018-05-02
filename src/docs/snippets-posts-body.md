@@ -1,20 +1,22 @@
-# Post body
+<!--
+@@@title:Posts body@@@
+@@@section:Snippets@@@
+-->
+
+# Posts body
 
 The content of the post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <div expr:id='"PostBody_" + data:widget.instanceId + "_" + data:post.id'>

@@ -1,20 +1,22 @@
-# Post sharing
+<!--
+@@@title:Posts sharing@@@
+@@@section:Snippets@@@
+-->
+
+# Posts sharing
 
 The share buttons for the post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=twitter"' target='_blank'>
@@ -43,7 +45,8 @@ The share buttons for the post.
 </a>
 ```
 
-### Dropdown example
+
+## Dropdown example
 
 ```html
 <div class='dropdown'>

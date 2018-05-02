@@ -1,9 +1,9 @@
 <!--
-@@@title:Post title@@@
+@@@title:Posts title@@@
 @@@section:Snippets@@@
 -->
 
-# Post title
+# Posts title
 
 Title of the post.
 

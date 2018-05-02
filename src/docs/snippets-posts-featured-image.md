@@ -1,13 +1,17 @@
-# Post featured image
+<!--
+@@@title:Posts featured image@@@
+@@@section:Snippets@@@
+-->
+
+# Posts featured image
 
 The featured image for the post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
@@ -20,9 +24,7 @@ The featured image for the post.
     - width = `512`, height = (`512` * `9`) / `16`
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <b:if cond='data:post.featuredImage'>
@@ -42,7 +44,8 @@ The featured image for the post.
 </b:if>
 ```
 
-### Fallback images
+
+## Fallback images
 
 ```html
 <b:if cond='data:post.featuredImage'>
@@ -68,7 +71,8 @@ The featured image for the post.
 </b:if>
 ```
 
-### Responsive images
+
+## Responsive images
 
 ```html
 <b:if cond='data:post.featuredImage'>
@@ -122,7 +126,8 @@ The featured image for the post.
 </b:if>
 ```
 
-### Anchors
+
+## Anchors
 
 ```html
 <b:if cond='data:post.featuredImage'>
@@ -242,7 +247,8 @@ The featured image for the post.
 </b:if>
 ```
 
-### CSS background-image
+
+## CSS background-image
 
 ```html
 <b:if cond='data:post.featuredImage'>

@@ -1,13 +1,17 @@
-# Post labels
+<!--
+@@@title:Posts labels@@@
+@@@section:Snippets@@@
+-->
+
+# Posts labels
 
 Labels of the post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
@@ -16,9 +20,7 @@ Labels of the post.
 - `12` - maximum number of posts in label page
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <b:if cond='data:post.labels'>
@@ -32,7 +34,8 @@ Labels of the post.
 </b:if>
 ```
 
-### Comma
+
+## Comma
 
 ```html
 <b:if cond='data:post.labels'>

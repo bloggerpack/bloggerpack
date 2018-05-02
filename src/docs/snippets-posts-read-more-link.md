@@ -1,20 +1,22 @@
-# Post read more link
+<!--
+@@@title:Posts read more link@@@
+@@@section:Snippets@@@
+-->
+
+# Posts read more link
 
 Link to the full post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <b:if cond='data:post.hasJumpLink'>

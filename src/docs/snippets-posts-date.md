@@ -1,20 +1,22 @@
-# Post date
+<!--
+@@@title:Posts date@@@
+@@@section:Snippets@@@
+-->
+
+# Posts date
 
 Date of the post.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Default (published)
+## Default (published)
 
 ```html
 <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -30,7 +32,8 @@ Date of the post.
 </time>
 ```
 
-### Last updated
+
+## Last updated
 
 ```html
 <time expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>

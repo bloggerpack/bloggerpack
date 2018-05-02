@@ -1,13 +1,17 @@
-# Post author photo
+<!--
+@@@title:Posts author photo@@@
+@@@section:Snippets@@@
+-->
+
+# Posts author photo
 
 Photo of the profile of the post author.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
@@ -20,9 +24,7 @@ Photo of the profile of the post author.
     - width = `128`, height = (`128` * `1`) / `1`
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
@@ -42,7 +44,8 @@ Photo of the profile of the post author.
 </b:if>
 ```
 
-### Fallback images
+
+## Fallback images
 
 ```html
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
@@ -68,7 +71,8 @@ Photo of the profile of the post author.
 </b:if>
 ```
 
-### Anchors
+
+## Anchors
 
 ```html
 <b:if cond='data:post.author and data:post.author.authorPhoto'>

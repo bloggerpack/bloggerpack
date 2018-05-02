@@ -1,20 +1,22 @@
-# Post snippet
+<!--
+@@@title:Posts content snippet@@@
+@@@section:Snippets@@@
+-->
+
+# Posts content snippet
 
 Snippet of the post's content.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Short
+## Short
 
 ```html
 <div expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
@@ -26,7 +28,8 @@ Snippet of the post's content.
 </div>
 ```
 
-### Long
+
+## Long
 
 ```html
 <div expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>
@@ -38,7 +41,8 @@ Snippet of the post's content.
 </div>
 ```
 
-### Custom
+
+## Custom
 
 ```html
 <div expr:id='"PostSnippet_" + data:widget.instanceId + "_" + data:post.id'>

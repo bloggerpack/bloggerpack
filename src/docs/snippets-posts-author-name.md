@@ -1,20 +1,22 @@
-# Post author name
+<!--
+@@@title:Posts author name@@@
+@@@section:Snippets@@@
+-->
+
+# Posts author name
 
 Name of the profile of the post author.
 
-
-## Usage
+##### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
-  [snippet]
+  ...
 </b:loop>
 ```
 
 
-## Snippet
-
-### Default
+## Default
 
 ```html
 <b:if cond='data:post.author'>
@@ -22,7 +24,8 @@ Name of the profile of the post author.
 </b:if>
 ```
 
-### Fallback
+
+## Fallback
 
 ```html
 <b:if cond='data:post.author'>
@@ -32,7 +35,8 @@ Name of the profile of the post author.
 </b:if>
 ```
 
-### Anchors
+
+## Anchors
 
 ```html
 <b:if cond='data:post.author'>
