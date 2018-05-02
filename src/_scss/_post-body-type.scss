@@ -82,7 +82,7 @@
 .post-body-type .tr-caption-container .tr-caption {
   padding: .5rem 0;
   font-size: 90%;
-  color: #6c757d;
+  color: #777;
 }
 
 //
@@ -115,7 +115,7 @@
 }
 
 .post-body-type table:not([class]) caption {
-  color: #6c757d;
+  color: #777;
 }
 
 //
@@ -130,7 +130,7 @@
 .post-body-type blockquote:not([class]) footer {
   display: block;
   font-size: 80%;
-  color: #6c757d;
+  color: #777;
 }
 .post-body-type blockquote:not([class]) footer::before {
   content: "\2014 \00A0";

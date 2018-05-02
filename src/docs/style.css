@@ -71,7 +71,7 @@
   overflow: auto;
   font-size: 85%;
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   border-radius: .25rem;
 }
 .doc-content > pre code {
@@ -132,7 +132,7 @@
   margin-right: -1rem;
   margin-bottom: 1rem;
   margin-left: -1rem;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
 }
 .doc-content > .doc-example > .doc-example-content {
   position: relative;
@@ -148,14 +148,14 @@
   margin-bottom: 1rem;
   margin-left: -1rem;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
   border-radius: 0;
 }
 .doc-content > .doc-example + pre code {
   display: block;
   padding: 1rem;
   overflow: auto;
-  background-color: #eee;
+  background-color: #f5f5f5;
   border-radius: .25rem;
 }
 
