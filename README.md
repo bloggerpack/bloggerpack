@@ -27,7 +27,7 @@ Blogger-starter uses [Grunt](https://gruntjs.com/) for its build system.
 
 1. [Download and install Node.js](https://nodejs.org/download/), which we use to manage our dependencies.
 2. Install `grunt-cli` globally with `npm install -g grunt-cli`.
-3. Navigate to the root `/blogger-starter/` directory, then run `npm install`. npm will look at the `package.json` file and automatically install the necessary local dependencies listed there.
+3. Navigate to the root `/blogger-starter` directory and run `npm install` to install our local dependencies listed in `package.json`.
 
 #### Available Grunt commands
 
