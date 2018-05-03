@@ -1,4 +1,4 @@
-# Blogger Starter
+# b:starter
 
 A starter theme for Blogger.
 
@@ -21,7 +21,7 @@ Choose one of the following options:
 
 ### Build tools
 
-Blogger-starter uses [Grunt](https://gruntjs.com/) for its build system.
+b:starter uses [Grunt](https://gruntjs.com/) for its build system.
 
 #### Installing Grunt
 
