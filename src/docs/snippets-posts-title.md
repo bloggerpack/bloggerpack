@@ -31,7 +31,7 @@ Title of the post.
 
 ```html
 <h1>
-  <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+  <b:eval expr='data:post.title ?: data:messages.noTitle'/>
 </h1>
 ```
 
@@ -41,7 +41,7 @@ Title of the post.
 ```html
 <b:if cond='data:post.title'>
   <h1>
-    <a expr:href='data:post.link ? data:post.link : data:post.url'>
+    <a expr:href='data:post.link ?: data:post.url'>
       <data:post.title/>
     </a>
   </h1>
@@ -52,8 +52,8 @@ Title of the post.
 
 ```html
 <h1>
-  <a expr:href='data:post.link ? data:post.link : data:post.url'>
-    <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+  <a expr:href='data:post.link ?: data:post.url'>
+    <b:eval expr='data:post.title ?: data:messages.noTitle'/>
   </a>
 </h1>
 ```
