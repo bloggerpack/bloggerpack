@@ -81,11 +81,20 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      options: {
+        level: 1,
+        sourceMap: true,
+        sourceMapInlineSources: true,
+        advanced: false
+      },
       docs: {
+        options: {
+          sourceMap: false
+        },
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.css', '!**/*.min.css'],
+          src: ['**/*.css', '!**/*.min.css', '!bundle/*.css'],
           dest: 'dist/docs'
         }]
       }
