@@ -13,5 +13,5 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[{src/**.xml,src/skin.css,src/bundle/**}]
+[{src/**/*.xml,src/skin.css,src/**/layout-mode.css}]
 insert_final_newline = false
