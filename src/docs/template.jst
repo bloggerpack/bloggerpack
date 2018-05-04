@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%=title || 'b:starter'%><%if(section != 'Home'){%> | <%=section%><%}%></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="bundle/bundle.css">
@@ -9,7 +10,7 @@
   </head>
   <body class="doc-page">
 
-    <nav class="doc-nav" id="DocsNav">
+    <nav class="doc-nav" id="navDoc">
       <a class="doc-nav-link" href="index.html">Home</a>
       <div class="doc-nav-divider"></div>
       <h6 class="doc-nav-header">Getting started</h6>
@@ -41,6 +42,13 @@
       <a class="doc-nav-link" href="https://github.com/blogger-starter/blogger-starter">GitHub</a>
     </nav>
 
+    <button class="doc-nav-toggle" id="navDocToggle" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+        <title>Menu</title>
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+      </svg>
+    </button>
+
     <main class="doc-content">
       <div class="v-info">
         <ul>
@@ -53,16 +61,23 @@
     <script src="bundle/bundle.js"></script>
     <script>
       (function() {
-        var nav = document.getElementById('DocsNav'),
-            url = window.location.pathname,
-            anchor = nav.getElementsByTagName('a'),
-            current = url.substring(url.lastIndexOf('/')+1);
-        for (var i = 0; i < anchor.length; i++) {
-          var href = anchor[i].href.substring(anchor[i].href.lastIndexOf('/')+1);
-          if ((href == current) && (href != '')) {
-            anchor[i].classList.add('active');
+        'use strict';
+        var nav = document.getElementById('navDoc'),
+            navToggle = document.getElementById('navDocToggle'),
+            navUrl = window.location.pathname,
+            navAnchor = nav.getElementsByTagName('a'),
+            navCurrent = navUrl.substring(navUrl.lastIndexOf('/')+1);
+
+        for (var i = 0; i < navAnchor.length; i++) {
+          var navHref = navAnchor[i].href.substring(navAnchor[i].href.lastIndexOf('/')+1);
+          if ((navHref == navCurrent) && (navHref != '')) {
+            navAnchor[i].classList.add('active');
           }
         }
+
+        navToggle.addEventListener('click', function() {
+          document.body.classList.toggle('is--doc-nav--active');
+        }, false);
       })();
     </script>
   </body>

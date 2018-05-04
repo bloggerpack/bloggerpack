@@ -9,10 +9,10 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
-  display: none;
+  left: -100%;
+  z-index: 1030;
+  width: 100%;
   padding-bottom: 1rem;
-  width: 200px;
   overflow-y: auto;
   background-color: #1c1c1c;
 }
@@ -57,12 +57,80 @@
   margin-top: 1rem;
 }
 
+.doc-nav-toggle {
+  position: fixed;
+  bottom: 0;
+  left: -100%;
+  z-index: 1030;
+  display: block;
+  padding: .5rem;
+  margin: 1rem;
+  line-height: 0;
+  color: #fff;
+  cursor: pointer;
+  background-color: #ff5722;
+  border: 1px solid #f4511e;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.doc-nav-toggle:hover {
+  color: #fff;
+  background-color: #f4511e;
+  border-color: #e64a19;
+}
+.doc-nav-toggle:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(255,87,34,.5);
+}
+
 /* Content
    ========================================================================== */
 
 .doc-content {
   padding: 1rem;
   padding-top: 0;
+}
+
+.doc-content > h3,
+.doc-content > h4,
+.doc-content > h5,
+.doc-content > h6,
+.doc-content > p,
+.doc-content > ol,
+.doc-content > ul,
+.doc-content > dl,
+.doc-content > table,
+.doc-content > blockquote,
+.doc-content > address,
+.doc-content > pre,
+.doc-content > figure {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.doc-content > table {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+.doc-content > table th,
+.doc-content > table td {
+  padding: .75rem;
+  vertical-align: top;
+  border: 1px solid #e5e5e5;
+}
+.doc-content > table thead th {
+  vertical-align: bottom;
+}
+.doc-content > table thead th,
+.doc-content > table thead td {
+  border-bottom-width: 2px;
+}
+.doc-content > table tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+}
+.doc-content > table caption {
+  color: #777;
 }
 
 .doc-content > pre {
@@ -111,7 +179,7 @@
   margin-left: -1rem;
   color: #333;
   background-color: #f5f5f5;
-  border-bottom: 4px solid #ddd;
+  border-bottom: 4px solid #e5e5e5;
 }
 
 .doc-content > h2 {
@@ -122,8 +190,8 @@
   margin-left: -1rem;
   color: #333;
   background-color: #f5f5f5;
-  border-top: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
 }
 
 .doc-content > .doc-example {
@@ -138,7 +206,7 @@
   position: relative;
   padding: 1rem;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #e5e5e5;
   border-radius: .25rem;
 }
 .doc-content > .doc-example + pre {
@@ -159,9 +227,39 @@
   border-radius: .25rem;
 }
 
+/* Responsive
+   ========================================================================== */
+
 @media (min-width: 768px) {
   .doc-nav {
-    display: block;
+    left: 0;
+    width: 230px;
+    overflow-y: hidden;
+  }
+  .doc-nav:hover {
+    overflow-y: auto;
+  }
+  .doc-content {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    margin-left: 230px;
+  }
+  .doc-content > .v-info,
+  .doc-content > h1,
+  .doc-content > h2,
+  .doc-content > .doc-example,
+  .doc-content > .doc-example + pre {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    margin-right: -2.5rem;
+    margin-left: -2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .doc-nav {
+    left: 0;
+    width: 250px;
     overflow-y: hidden;
   }
   .doc-nav:hover {
@@ -170,7 +268,7 @@
   .doc-content {
     padding-right: 5rem;
     padding-left: 5rem;
-    margin-left: 200px;
+    margin-left: 250px;
   }
   .doc-content > .v-info,
   .doc-content > h1,
@@ -182,6 +280,28 @@
     margin-right: -5rem;
     margin-left: -5rem;
   }
+}
+
+@media (max-width: 767.98px) {
+  .doc-nav,
+  .doc-content {
+    padding-bottom: 5rem;
+  }
+  .doc-nav-toggle {
+    left: 0;
+  }
+  .is--doc-nav--active {
+    overflow: hidden;
+  }
+  .is--doc-nav--active .doc-nav {
+    left: 0;
+  }
+}
+
+.doc-nav,
+.doc-nav-toggle,
+.doc-content {
+  transition: all .25s ease-out;
 }
 
 /* ==========================================================================
