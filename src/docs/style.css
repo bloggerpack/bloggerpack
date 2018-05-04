@@ -113,8 +113,8 @@
 .doc-content > table,
 .doc-content > blockquote,
 .doc-content > address,
-.doc-content > pre,
-.doc-content > figure {
+.doc-content > figure,
+.doc-content > pre {
   margin-top: 0;
   margin-bottom: 1rem;
 }

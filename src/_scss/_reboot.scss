@@ -92,7 +92,7 @@ dt {
 }
 dd {
   margin-bottom: .5rem;
-  margin-left: 0; // Undo browser default
+  margin-left: 0;
 }
 
 //
@@ -131,6 +131,22 @@ address {
   margin-bottom: $spacer;
   font-style: normal;
   line-height: inherit;
+}
+
+//
+// Figures
+//
+
+figure {
+  margin: 0 0 $spacer;
+}
+
+//
+// Images
+//
+
+img {
+  vertical-align: middle;
 }
 
 //
@@ -182,22 +198,6 @@ pre {
     color: inherit;
     word-break: normal;
   }
-}
-
-//
-// Figures
-//
-
-figure {
-  margin: 0 0 $spacer;
-}
-
-//
-// Images
-//
-
-img {
-  vertical-align: middle;
 }
 
 //
