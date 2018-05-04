@@ -4,22 +4,4 @@
 </code></pre><h2 id="default">Default</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">expr:id</span>=<span class="hljs-value">'"PostBody_" + data:widget.instanceId + "_" + data:post.id'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">data:post.body</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre></main><script src="bundle/bundle.js"></script><script>(function() {
-        'use strict';
-        var nav = document.getElementById('navDoc'),
-            navToggle = document.getElementById('navDocToggle'),
-            navUrl = window.location.pathname,
-            navAnchor = nav.getElementsByTagName('a'),
-            navCurrent = navUrl.substring(navUrl.lastIndexOf('/')+1);
-
-        for (var i = 0; i < navAnchor.length; i++) {
-          var navHref = navAnchor[i].href.substring(navAnchor[i].href.lastIndexOf('/')+1);
-          if ((navHref == navCurrent) && (navHref != '')) {
-            navAnchor[i].classList.add('active');
-          }
-        }
-
-        navToggle.addEventListener('click', function() {
-          document.body.classList.toggle('is--doc-nav--active');
-        }, false);
-      })();</script></body></html>
+</code></pre></main><script src="bundle/bundle.js"></script><script src="script.js"></script></body></html>
