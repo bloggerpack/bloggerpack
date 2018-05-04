@@ -91,6 +91,27 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      options: {
+        compress: {
+          warnings: false
+        },
+        mangle: true,
+        sourceMap: true
+      },
+      docs: {
+        options: {
+          sourceMap: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/docs/',
+          src: ['**/*.js', '!**/*.min.js', '!bundle/*.js'],
+          dest: 'dist/docs'
+        }]
+      }
+    },
+
     copy: {
       docsFiles: {
         expand: true,
@@ -170,7 +191,7 @@ module.exports = function(grunt) {
 
   // Docs task.
   grunt.registerTask('docs-compile', ['markdown:docs', 'copy:docsFiles', 'copy:docsBundle']);
-  grunt.registerTask('docs-minify', ['htmlmin:docs', 'cssmin:docs']);
+  grunt.registerTask('docs-minify', ['htmlmin:docs', 'cssmin:docs', 'uglify:docs']);
   grunt.registerTask('docs-serve', ['connect:docs']);
   grunt.registerTask('dist-docs', ['docs-compile', 'docs-minify']);
 
