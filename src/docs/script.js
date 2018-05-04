@@ -3,9 +3,8 @@
 
   var nav = document.getElementById('navDoc');
   var navToggle = document.getElementById('navDocToggle');
-  var navUrl = window.location.pathname;
   var navAnchor = nav.getElementsByTagName('a');
-  var navCurrent = navUrl.substring(navUrl.lastIndexOf('/')+1);
+  var navCurrent = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
 
   for (var i = 0; i < navAnchor.length; i++) {
     var navHref = navAnchor[i].href.substring(navAnchor[i].href.lastIndexOf('/')+1);
