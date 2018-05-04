@@ -11,6 +11,9 @@
     if ((navHref == navCurrent) && (navHref != '')) {
       navAnchor[i].classList.add('active');
     }
+    if ((navCurrent == '') && (navHref == 'index.html')) {
+      navAnchor[i].classList.add('active');
+    }
   }
 
   navToggle.addEventListener('click', function() {
