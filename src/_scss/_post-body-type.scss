@@ -90,8 +90,10 @@
 //
 
 .post-body-type table:not([class]) {
+  display: block;
   width: 100%;
   max-width: 100%;
+  overflow-x: auto;
   background-color: transparent;
 }
 

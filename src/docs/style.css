@@ -120,8 +120,10 @@
 }
 
 .doc-content > table {
+  display: block;
   width: 100%;
   max-width: 100%;
+  overflow-x: auto;
   background-color: transparent;
 }
 .doc-content > table th,
