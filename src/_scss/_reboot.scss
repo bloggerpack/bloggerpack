@@ -27,8 +27,10 @@ body {
 }
 
 //
-// Links
+// Inline text elements
 //
+
+// Links
 
 a {
   color: $link-color;
@@ -38,6 +40,28 @@ a {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
   }
+}
+
+// Small
+
+small {
+  font-size: $small-font-size;
+  font-weight: $small-font-weight;
+}
+
+// Mark
+
+mark {
+  padding: $mark-padding;
+  color: $mark-color;
+  background-color: $mark-bg;
+}
+
+// Abbreviations
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
 }
 
 //
@@ -155,8 +179,8 @@ img {
 //
 
 code,
-kbd,
 pre,
+kbd,
 samp {
   font-family: $font-family-monospace;
 }
@@ -169,19 +193,6 @@ code {
   // Streamline the style when inside anchors to avoid broken underline and more
   a > & {
     color: inherit;
-  }
-}
-
-kbd {
-  padding: $kbd-padding;
-  font-size: $kbd-font-size;
-  color: $kbd-color;
-  background-color: $kbd-bg;
-  border-radius: $kbd-border-radius;
-
-  kbd {
-    padding: 0;
-    font-size: 100%;
   }
 }
 
@@ -201,6 +212,19 @@ pre {
   }
 }
 
+kbd {
+  padding: $kbd-padding;
+  font-size: $kbd-font-size;
+  color: $kbd-color;
+  background-color: $kbd-bg;
+  border-radius: $kbd-border-radius;
+
+  kbd {
+    padding: 0;
+    font-size: 100%;
+  }
+}
+
 //
 // Horizontal rules
 //
@@ -210,24 +234,4 @@ hr {
   margin-bottom: $spacer;
   border: 0;
   border-top: $hr-border-width solid $hr-border-color;
-}
-
-//
-// Misc elements
-//
-
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-}
-
-small {
-  font-size: $small-font-size;
-  font-weight: $small-font-weight;
-}
-
-mark {
-  padding: $mark-padding;
-  color: $mark-color;
-  background-color: $mark-bg;
 }

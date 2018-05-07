@@ -1,5 +1,6 @@
+//
 // Global variables
-// =========================================
+//
 
 $font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
@@ -15,9 +16,6 @@ $box-shadow:             0 .5rem 1rem rgba(#000, .15) !default;
 
 $spacer:                 1rem !default;
 
-// Reboot
-// =========================================
-
 //
 // Body
 //
@@ -30,13 +28,26 @@ $body-color:        #333 !default;
 $body-bg:           #fff !default;
 
 //
-// Links
+// Inline text elements
 //
+
+// Links
 
 $link-color:             #007bff !default;
 $link-hover-color:       #0056b3 !default;
 $link-decoration:        none !default;
 $link-hover-decoration:  underline !default;
+
+// Small
+
+$small-font-size:    80% !default;
+$small-font-weight:  $font-weight-normal !default;
+
+// Mark
+
+$mark-padding:  .2em !default;
+$mark-color:    #000 !default;
+$mark-bg:       #ffecb3 !default;
 
 //
 // Headings
@@ -76,14 +87,3 @@ $kbd-border-radius:  $border-radius !default;
 
 $hr-border-width:  $border-width !default;
 $hr-border-color:  rgba(#000, .1) !default;
-
-//
-// Misc elements
-//
-
-$small-font-size:    80% !default;
-$small-font-weight:  $font-weight-normal !default;
-
-$mark-padding:  .2em !default;
-$mark-color:    #000 !default;
-$mark-bg:       #ffecb3 !default;
