@@ -66,6 +66,23 @@ $h5-font-size:          $font-size * 1.25 !default;
 $h6-font-size:          $font-size !default;
 
 //
+// Tables
+//
+
+$table-cell-padding:   .75rem !default;
+
+$table-bg:             transparent !default;
+$table-hover-bg:       #f5f5f5 !default;
+
+$table-border-width:   $border-width !default;
+$table-border-color:   #e5e5e5 !default;
+
+$table-head-color:     #333 !default;
+$table-head-bg:        #f9f9f9 !default;
+
+$table-caption-color:  #777 !default;
+
+//
 // Code
 //
 

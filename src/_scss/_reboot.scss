@@ -128,9 +128,9 @@ table {
 }
 
 caption {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  color: #777;
+  padding-top: $table-cell-padding;
+  padding-bottom: $table-cell-padding;
+  color: $table-caption-color;
   text-align: left;
   caption-side: bottom;
 }
