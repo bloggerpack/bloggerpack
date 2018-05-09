@@ -4,6 +4,7 @@
   var nav = document.getElementById('navDoc');
   var navToggle = document.getElementById('navDocToggle');
   var navAnchor = nav.getElementsByTagName('a');
+  var navActive = nav.getElementsByClassName('active');
   var navCurrent = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
 
   for (var i = 0; i < navAnchor.length; i++) {
@@ -15,6 +16,8 @@
       navAnchor[i].classList.add('active');
     }
   }
+
+  nav.scrollTo(0, (navActive[0].offsetTop - 45));
 
   navToggle.addEventListener('click', function() {
     document.body.classList.toggle('is--doc-nav--active');
