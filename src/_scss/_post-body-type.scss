@@ -128,17 +128,22 @@
 //
 
 .post-body-type blockquote:not([class]) {
-  padding: .5rem 1rem;
-  border-left: 5px solid #e5e5e5;
-}
+  padding: $blockquote-padding;
+  font-size: $blockquote-font-size;
+  color: $blockquote-color;
+  background-color: $blockquote-bg;
+  border-width: $blockquote-border-width;
+  border-style: solid;
+  border-color: $blockquote-border-color;
 
-.post-body-type blockquote:not([class]) footer {
-  display: block;
-  font-size: 80%;
-  color: #777;
-}
-.post-body-type blockquote:not([class]) footer::before {
-  content: "\2014 \00A0";
+  footer {
+    display: block;
+    font-size: $blockquote-footer-font-size;
+    color: $blockquote-footer-color;
+  }
+  footer::before {
+    content: "\2014 \00A0";
+  }
 }
 
 //
