@@ -128,11 +128,11 @@ table {
 }
 
 caption {
-  padding-top: $table-cell-padding;
-  padding-bottom: $table-cell-padding;
+  padding-top: $table-caption-padding;
+  padding-bottom: $table-caption-padding;
   color: $table-caption-color;
-  text-align: left;
-  caption-side: bottom;
+  text-align: $table-caption-text-align;
+  caption-side: $table-caption-side;
 }
 
 th {
