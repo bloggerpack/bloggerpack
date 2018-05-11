@@ -86,14 +86,14 @@
       border-color: $table-light-border-color;
     }
 
-    tbody + tbody {
-      border-color: $table-light-border-color;
-    }
-
     .thead-light th {
       color: $table-head-light-color;
       background-color: $table-head-light-bg;
       border-color: $table-head-light-border-color;
+    }
+
+    tbody + tbody {
+      border-color: $table-light-border-color;
     }
   }
 
@@ -121,14 +121,14 @@
       border-color: $table-dark-border-color;
     }
 
-    tbody + tbody {
-      border-color: $table-dark-border-color;
-    }
-
     .thead-dark th {
       color: $table-head-dark-color;
       background-color: $table-head-dark-bg;
       border-color: $table-head-dark-border-color;
+    }
+
+    tbody + tbody {
+      border-color: $table-dark-border-color;
     }
   }
 }
