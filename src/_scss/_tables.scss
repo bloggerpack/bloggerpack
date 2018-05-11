@@ -1,0 +1,164 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $spacer;
+  background-color: $table-bg;
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+}
+
+//
+// Bordered table
+//
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+}
+
+//
+// Borderless table
+//
+
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    border: 0;
+  }
+}
+
+//
+// Responsive table
+//
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+//
+// Theme
+//
+
+.table {
+  &.table-light {
+    color: $table-light-color;
+    background-color: $table-light-bg;
+
+    &.table-bordered {
+      border-color: $table-light-border-color;
+    }
+
+    &.table-striped {
+      tbody tr:nth-of-type(#{$table-striped-order}) {
+        background-color: $table-light-accent-bg;
+      }
+    }
+
+    &.table-hover tbody tr:hover {
+      color: $table-light-row-hover-color;
+      background-color: $table-light-row-hover-bg;
+    }
+
+    th,
+    td {
+      border-color: $table-light-border-color;
+    }
+
+    tbody + tbody {
+      border-color: $table-light-border-color;
+    }
+
+    .thead-light th {
+      color: $table-head-light-color;
+      background-color: $table-head-light-bg;
+      border-color: $table-head-light-border-color;
+    }
+  }
+
+  &.table-dark {
+    color: $table-dark-color;
+    background-color: $table-dark-bg;
+
+    &.table-bordered {
+      border-color: $table-dark-border-color;
+    }
+
+    &.table-striped {
+      tbody tr:nth-of-type(#{$table-striped-order}) {
+        background-color: $table-dark-accent-bg;
+      }
+    }
+
+    &.table-hover tbody tr:hover {
+      color: $table-dark-row-hover-color;
+      background-color: $table-dark-row-hover-bg;
+    }
+
+    th,
+    td {
+      border-color: $table-dark-border-color;
+    }
+
+    tbody + tbody {
+      border-color: $table-dark-border-color;
+    }
+
+    .thead-dark th {
+      color: $table-head-dark-color;
+      background-color: $table-head-dark-bg;
+      border-color: $table-head-dark-border-color;
+    }
+  }
+}
+
+.table {
+  &:not(.table-light) {
+    .thead-light th {
+      color: $table-light-color;
+      background-color: $table-light-bg;
+      border-color: $table-light-border-color;
+    }
+  }
+
+  &:not(.table-dark) {
+    .thead-dark th {
+      color: $table-dark-color;
+      background-color: $table-dark-bg;
+      border-color: $table-dark-border-color;
+    }
+  }
+
+  &:not(.table-light):not(.table-dark) {
+    &.table-striped {
+      tbody tr:nth-of-type(#{$table-striped-order}) {
+        background-color: $table-accent-bg;
+      }
+    }
+    &.table-hover tbody tr:hover {
+      color: $table-row-hover-color;
+      background-color: $table-row-hover-bg;
+    }
+  }
+}

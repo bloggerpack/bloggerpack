@@ -69,18 +69,54 @@ $h6-font-size:          $font-size !default;
 // Tables
 //
 
-$table-cell-padding:   .75rem !default;
+$table-cell-padding:             .75rem !default;
+$table-border-width:             $border-width !default;
 
-$table-bg:             transparent !default;
-$table-hover-bg:       #f5f5f5 !default;
 
-$table-border-width:   $border-width !default;
-$table-border-color:   #e5e5e5 !default;
+// Default
+$table-bg:                       transparent !default;
+$table-accent-bg:                rgba(#000, .025) !default;
+$table-border-color:             #e5e5e5 !default;
+$table-row-hover-color:          #333 !default;
+$table-row-hover-bg:             #eee !default;
 
-$table-head-color:     #333 !default;
-$table-head-bg:        #f9f9f9 !default;
+// Light
+$table-light-color:              #333 !default;
+$table-light-bg:                 #f9f9f9 !default;
+$table-light-accent-bg:          rgba(#000, .025) !default;
+$table-light-border-color:       #e5e5e5 !default;
+$table-light-row-hover-color:    #333 !default;
+$table-light-row-hover-bg:       #eee !default;
 
-$table-caption-color:  #777 !default;
+// Dark
+$table-dark-color:               #fff !default;
+$table-dark-bg:                  #212529 !default;
+$table-dark-accent-bg:           rgba(#fff, .025) !default;
+$table-dark-border-color:        #32383e !default;
+$table-dark-row-hover-color:     #fff !default;
+$table-dark-row-hover-bg:        #151719 !default;
+
+
+// Light head
+$table-head-light-color:         #333 !default;
+$table-head-light-bg:            #f5f5f5 !default;
+$table-head-light-border-color:  #e5e5e5 !default;
+
+// Dark head
+$table-head-dark-color:          #fff !default;
+$table-head-dark-bg:             #1c1e21 !default;
+$table-head-dark-border-color:   #32383e !default;
+
+
+// Caption
+$table-caption-padding:          .75rem !default;
+$table-caption-color:            #777 !default;
+$table-caption-text-align:       left !default;
+$table-caption-side:             bottom !default;
+
+
+// Striped rows
+$table-striped-order:            odd !default;
 
 //
 // Blockquotes

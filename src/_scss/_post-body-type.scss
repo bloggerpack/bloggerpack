@@ -94,7 +94,7 @@
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  background-color: $table-bg;
+  background-color: transparent;
 
   th,
   td {
@@ -104,22 +104,15 @@
   }
 
   thead th {
-    color: $table-head-color;
+    color: $table-light-color;
     vertical-align: bottom;
-    background-color: $table-head-bg;
+    background-color: $table-light-bg;
     border-bottom-width: (2 * $table-border-width);
-  }
-
-  tbody tr:hover {
-    background-color: $table-hover-bg;
+    border-color: $table-light-border-color;
   }
 
   tbody + tbody {
     border-top: (2 * $table-border-width) solid $table-border-color;
-  }
-
-  caption {
-    color: $table-caption-color;
   }
 }
 
