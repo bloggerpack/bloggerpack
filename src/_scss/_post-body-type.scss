@@ -121,11 +121,14 @@
 //
 
 .post-body-type blockquote:not([class]) {
-  padding: $blockquote-padding;
+  padding: $blockquote-padding-y $blockquote-padding-x;
   font-size: $blockquote-font-size;
   color: $blockquote-color;
   background-color: $blockquote-bg;
-  border-width: $blockquote-border-width;
+  border-top-width: $blockquote-border-top-width;
+  border-right-width: $blockquote-border-right-width;
+  border-bottom-width: $blockquote-border-bottom-width;
+  border-left-width: $blockquote-border-left-width;
   border-style: solid;
   border-color: $blockquote-border-color;
 

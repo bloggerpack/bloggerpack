@@ -122,15 +122,19 @@ $table-striped-order:            odd !default;
 // Blockquotes
 //
 
-$blockquote-padding:           .5rem 1rem !default;
-$blockquote-font-size:         ($font-size * 1.25) !default;
-$blockquote-color:             #333 !default;
-$blockquote-bg:                #f9f9f9 !default;
-$blockquote-border-width:      0 0 0 5px !default;
-$blockquote-border-color:      #e5e5e5 !default;
+$blockquote-padding-y:            .5rem !default;
+$blockquote-padding-x:            1rem !default;
+$blockquote-font-size:            ($font-size * 1.25) !default;
+$blockquote-color:                #333 !default;
+$blockquote-bg:                   #f9f9f9 !default;
+$blockquote-border-top-width:     0 !default;
+$blockquote-border-right-width:   0 !default;
+$blockquote-border-bottom-width:  0 !default;
+$blockquote-border-left-width:    4px !default;
+$blockquote-border-color:         #e5e5e5 !default;
 
-$blockquote-footer-font-size:  80% !default;
-$blockquote-footer-color:      #777 !default;
+$blockquote-footer-font-size:     80% !default;
+$blockquote-footer-color:         #777 !default;
 
 //
 // Code
