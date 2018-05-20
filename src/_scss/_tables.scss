@@ -61,6 +61,7 @@
 // Theme
 //
 
+// stylelint-disable no-duplicate-selectors
 .table {
   &.table-light {
     color: $table-light-color;
@@ -162,3 +163,4 @@
     }
   }
 }
+// stylelint-enable no-duplicate-selectors

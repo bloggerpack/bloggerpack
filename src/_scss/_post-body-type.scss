@@ -1,3 +1,6 @@
+// stylelint-disable
+// stylelint-enable order/properties-order
+
 //
 // Remove margin
 //
@@ -68,8 +71,8 @@
 .post-body-type .tr-caption-container[style*="float:right"],
 .post-body-type .tr-caption-container a[style*="float:right"],
 .post-body-type .tr-caption-container img[style*="float:right"] {
-  margin-left: 1em !important;
   margin-bottom: 1em !important;
+  margin-left: 1em !important;
 }
 
 .post-body-type .tr-caption-container[style*="float: left"],
@@ -167,3 +170,4 @@
   background-color: #f8f9fa;
   border-radius: .25rem;
 }
+// stylelint-enable

@@ -2,8 +2,10 @@
 // Fonts
 //
 
+// stylelint-disable value-keyword-case
 $font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable value-keyword-case
 $font-size:              1rem !default;
 $font-weight-light:      300 !default;
 $font-weight-normal:     400 !default;
