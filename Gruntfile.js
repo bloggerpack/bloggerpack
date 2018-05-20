@@ -87,6 +87,17 @@ module.exports = function(grunt) {
         sourceMapInlineSources: true,
         advanced: false
       },
+      bundle: {
+        options: {
+          sourceMap: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/bundle/',
+          src: ['**/*.css', '!**/*.min.css'],
+          dest: 'dist/bundle'
+        }]
+      },
       docs: {
         options: {
           sourceMap: false
@@ -107,6 +118,17 @@ module.exports = function(grunt) {
         },
         mangle: true,
         sourceMap: true
+      },
+      bundle: {
+        options: {
+          sourceMap: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/bundle/',
+          src: ['**/*.js', '!**/*.min.js'],
+          dest: 'dist/bundle'
+        }]
       },
       docs: {
         options: {
@@ -161,6 +183,8 @@ module.exports = function(grunt) {
         tasks: [
           'clean:dist',
           'webpack:core',
+          'cssmin:bundle',
+          'uglify:bundle',
           'bake:theme',
           'markdown:docs',
           'copy:docsFiles',
@@ -194,7 +218,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   // Theme task.
-  grunt.registerTask('theme-bundle', ['webpack:core']);
+  grunt.registerTask('theme-bundle', ['webpack:core', 'cssmin:bundle', 'uglify:bundle']);
   grunt.registerTask('theme-compile', ['bake:theme']);
   grunt.registerTask('dist-theme', ['theme-bundle', 'theme-compile']);
 
