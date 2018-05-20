@@ -130,17 +130,16 @@
 .doc-content > table td {
   padding: .75rem;
   vertical-align: top;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #dee2e6;
 }
 .doc-content > table thead th {
-  color: #333;
+  color: #212529;
   vertical-align: bottom;
-  background-color: #f9f9f9;
-  border-bottom-width: 2px;
-  border-color: #e5e5e5;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
 }
 .doc-content > table tbody + tbody {
-  border-top: 2px solid #e5e5e5;
+  border-top: 2px solid #dee2e6;
 }
 
 .doc-content > pre {
@@ -148,7 +147,7 @@
   padding: 1rem;
   overflow: auto;
   font-size: 85%;
-  color: #333;
+  color: #212529;
   background-color: #f8f9fa;
   border-radius: .25rem;
 }
@@ -179,9 +178,9 @@
   margin-right: -1rem;
   margin-bottom: 1rem;
   margin-left: -1rem;
-  color: #333;
-  background-color: #f5f5f5;
-  border-bottom: 4px solid #e5e5e5;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-bottom: 4px solid #dee2e6;
 }
 
 .doc-content > h2 {
@@ -190,10 +189,10 @@
   margin-right: -1rem;
   margin-bottom: 1rem;
   margin-left: -1rem;
-  color: #333;
-  background-color: #f5f5f5;
-  border-top: 2px solid #e5e5e5;
-  border-bottom: 2px solid #e5e5e5;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-top: 2px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
 }
 
 .doc-content > .doc-example {
@@ -309,7 +308,7 @@
 .hljs-subst,
 .hljs-request,
 .hljs-status {
-  color: #333;
+  color: #212529;
   font-weight: bold;
 }
 

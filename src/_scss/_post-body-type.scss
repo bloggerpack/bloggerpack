@@ -82,7 +82,7 @@
 .post-body-type .tr-caption-container .tr-caption {
   padding: .5rem 0;
   font-size: 90%;
-  color: #777;
+  color: #6c757d;
 }
 
 //
@@ -100,16 +100,16 @@
   td {
     padding: .75rem;
     vertical-align: top;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #dee2e6;
   }
 
   thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 2px solid #dee2e6;
   }
 
   tbody + tbody {
-    border-top: 2px solid #e5e5e5;
+    border-top: 2px solid #dee2e6;
   }
 }
 
@@ -120,14 +120,14 @@
 .post-body-type blockquote:not([class]) {
   padding: .5rem 1rem;
   font-size: 1.25rem;
-  color: #333;
-  background-color: #f9f9f9;
-  border-left: 4px solid #e5e5e5;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-left: 4px solid #dee2e6;
 
   footer {
     display: block;
     font-size: 80%;
-    color: #777;
+    color: #6c757d;
   }
   footer::before {
     content: "\2014 \00A0";
@@ -163,8 +163,7 @@
   padding: 1rem;
   overflow: auto;
   font-size: 85%;
-  color: #333;
-  background-color: #f9f9f9;
-  border: 1px solid #e5e5e5;
+  color: #212529;
+  background-color: #f8f9fa;
   border-radius: .25rem;
 }

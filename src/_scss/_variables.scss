@@ -1,5 +1,5 @@
 //
-// Global variables
+// Fonts
 //
 
 $font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
@@ -8,13 +8,35 @@ $font-size:              1rem !default;
 $font-weight-light:      300 !default;
 $font-weight-normal:     400 !default;
 $font-weight-bold:       700 !default;
-$line-height:            1.5 !default;
-$border-width:           1px !default;
-$border-color:           #ddd !default;
-$border-radius:          .25rem !default;
-$box-shadow:             0 .5rem 1rem rgba(#000, .15) !default;
 
-$spacer:                 1rem !default;
+//
+// Color system
+//
+
+$white:     #fff !default;
+$gray-100:  #f8f9fa !default;
+$gray-200:  #e9ecef !default;
+$gray-300:  #dee2e6 !default;
+$gray-400:  #ced4da !default;
+$gray-500:  #adb5bd !default;
+$gray-600:  #6c757d !default;
+$gray-700:  #495057 !default;
+$gray-800:  #343a40 !default;
+$gray-900:  #212529 !default;
+$black:     #000 !default;
+
+$light:     $gray-100 !default;
+$dark:      $gray-900 !default;
+
+//
+// Components
+//
+
+$line-height:    1.5 !default;
+$spacer:         1rem !default;
+$border-width:   1px !default;
+$border-radius:  .25rem !default;
+$box-shadow:     0 .5rem 1rem rgba($black, .15) !default;
 
 //
 // Body
@@ -24,8 +46,8 @@ $body-font-family:  $font-family !default;
 $body-font-size:    $font-size !default;
 $body-font-weight:  $font-weight-normal !default;
 $body-line-height:  $line-height !default;
-$body-color:        #333 !default;
-$body-bg:           #fff !default;
+$body-color:        $gray-900 !default;
+$body-bg:           $white !default;
 
 //
 // Inline text elements
@@ -46,7 +68,7 @@ $small-font-weight:  $font-weight-normal !default;
 // Mark
 
 $mark-padding:  .2em !default;
-$mark-color:    #000 !default;
+$mark-color:    $black !default;
 $mark-bg:       #ffecb3 !default;
 
 //
@@ -75,42 +97,42 @@ $table-border-width:             $border-width !default;
 
 // Default
 $table-bg:                       transparent !default;
-$table-accent-bg:                rgba(#000, .025) !default;
-$table-border-color:             #e5e5e5 !default;
-$table-row-hover-color:          #333 !default;
-$table-row-hover-bg:             #eee !default;
+$table-accent-bg:                darken($light, 3%) !default;
+$table-border-color:             $gray-300 !default;
+$table-row-hover-color:          $gray-900 !default;
+$table-row-hover-bg:             darken($light, 5%) !default;
 
 // Light
-$table-light-color:              #333 !default;
-$table-light-bg:                 #f9f9f9 !default;
-$table-light-accent-bg:          rgba(#000, .025) !default;
-$table-light-border-color:       #e5e5e5 !default;
-$table-light-row-hover-color:    #333 !default;
-$table-light-row-hover-bg:       #eee !default;
+$table-light-color:              $gray-900 !default;
+$table-light-bg:                 $light !default;
+$table-light-accent-bg:          darken($table-light-bg, 3%) !default;
+$table-light-border-color:       $gray-300 !default;
+$table-light-row-hover-color:    $gray-900 !default;
+$table-light-row-hover-bg:       darken($table-light-bg, 5%) !default;
 
 // Dark
-$table-dark-color:               #fff !default;
-$table-dark-bg:                  #212529 !default;
-$table-dark-accent-bg:           rgba(#fff, .025) !default;
+$table-dark-color:               $white !default;
+$table-dark-bg:                  $dark !default;
+$table-dark-accent-bg:           darken($table-dark-bg, 3%) !default;
 $table-dark-border-color:        #32383e !default;
-$table-dark-row-hover-color:     #fff !default;
-$table-dark-row-hover-bg:        #151719 !default;
+$table-dark-row-hover-color:     $white !default;
+$table-dark-row-hover-bg:        darken($table-dark-bg, 5%) !default;
 
 
 // Light head
-$table-head-light-color:         #333 !default;
-$table-head-light-bg:            #f5f5f5 !default;
-$table-head-light-border-color:  #e5e5e5 !default;
+$table-head-light-color:         $gray-900 !default;
+$table-head-light-bg:            darken($table-light-bg, 6%) !default;
+$table-head-light-border-color:  $table-light-border-color !default;
 
 // Dark head
-$table-head-dark-color:          #fff !default;
-$table-head-dark-bg:             #1c1e21 !default;
-$table-head-dark-border-color:   #32383e !default;
+$table-head-dark-color:          $white !default;
+$table-head-dark-bg:             darken($table-dark-bg, 6%) !default;
+$table-head-dark-border-color:   $table-dark-border-color !default;
 
 
 // Caption
 $table-caption-padding:          .75rem !default;
-$table-caption-color:            #777 !default;
+$table-caption-color:            $gray-600 !default;
 $table-caption-text-align:       left !default;
 $table-caption-side:             bottom !default;
 
@@ -125,16 +147,16 @@ $table-striped-order:            odd !default;
 $blockquote-padding-y:            .5rem !default;
 $blockquote-padding-x:            1rem !default;
 $blockquote-font-size:            ($font-size * 1.25) !default;
-$blockquote-color:                #333 !default;
-$blockquote-bg:                   #f9f9f9 !default;
+$blockquote-color:                $gray-900 !default;
+$blockquote-bg:                   $light !default;
 $blockquote-border-top-width:     0 !default;
 $blockquote-border-right-width:   0 !default;
 $blockquote-border-bottom-width:  0 !default;
 $blockquote-border-left-width:    4px !default;
-$blockquote-border-color:         #e5e5e5 !default;
+$blockquote-border-color:         $gray-300 !default;
 
 $blockquote-footer-font-size:     80% !default;
-$blockquote-footer-color:         #777 !default;
+$blockquote-footer-color:         $gray-600 !default;
 
 //
 // Code
@@ -144,12 +166,12 @@ $code-font-size:     85% !default;
 $code-color:         #e83e8c !default;
 
 $pre-font-size:      $code-font-size !default;
-$pre-color:          #333 !default;
+$pre-color:          $gray-900 !default;
 
 $kbd-padding:        .2rem .4rem !default;
 $kbd-font-size:      85% !default;
-$kbd-color:          #fff !default;
-$kbd-bg:             #222 !default;
+$kbd-color:          $white !default;
+$kbd-bg:             $dark !default;
 $kbd-border-radius:  $border-radius !default;
 
 //
@@ -157,4 +179,4 @@ $kbd-border-radius:  $border-radius !default;
 //
 
 $hr-border-width:  $border-width !default;
-$hr-border-color:  rgba(#000, .1) !default;
+$hr-border-color:  rgba($black, .1) !default;
