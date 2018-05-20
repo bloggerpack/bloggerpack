@@ -100,7 +100,7 @@ Body classes
 Skip navigation
 ############################################################################# </b:comment>
 
-<a class='skiplink' href='#main-content' id='skiplink'>
+<a class='skiplink' href='#main' id='skiplink'>
   <span class='skiplink-text'><data:messages.skipToMainContent/></span>
 </a>
 
@@ -129,15 +129,15 @@ Header
 Main and sidebar
 ############################################################################# </b:comment>
 
-<main class='main-content' id='main-content'>
+<div class='main-content' id='main-content'>
   <div class='container'>
     <div class='main-content-row'>
       <!-- Main -->
-      <div class='main layout-mode-col-8' id='main'>
+      <main class='main layout-mode-col-8' id='main' role='main'>
         <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
           <!--(bake _widgets/b-section-main_Blog1.xml)-->
         </b:section>
-      </div><!-- /.main -->
+      </main><!-- /.main -->
 
       <!-- Sidebar -->
       <aside class='sidebar layout-mode-col-4' id='sidebar'>
@@ -147,7 +147,7 @@ Main and sidebar
       </aside><!-- /.sidebar -->
     </div><!-- /.main-content-row -->
   </div><!-- /.container -->
-</main><!-- /.main-content -->
+</div><!-- /.main-content -->
 
 
 <b:comment>
