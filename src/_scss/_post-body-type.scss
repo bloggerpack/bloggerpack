@@ -98,21 +98,18 @@
 
   th,
   td {
-    padding: $table-cell-padding;
+    padding: .75rem;
     vertical-align: top;
-    border: $table-border-width solid $table-border-color;
+    border: 1px solid #e5e5e5;
   }
 
   thead th {
-    color: $table-light-color;
     vertical-align: bottom;
-    background-color: $table-light-bg;
-    border-bottom-width: (2 * $table-border-width);
-    border-color: $table-light-border-color;
+    border-bottom: 2px solid #e5e5e5;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    border-top: 2px solid #e5e5e5;
   }
 }
 
@@ -121,21 +118,16 @@
 //
 
 .post-body-type blockquote:not([class]) {
-  padding: $blockquote-padding-y $blockquote-padding-x;
-  font-size: $blockquote-font-size;
-  color: $blockquote-color;
-  background-color: $blockquote-bg;
-  border-top-width: $blockquote-border-top-width;
-  border-right-width: $blockquote-border-right-width;
-  border-bottom-width: $blockquote-border-bottom-width;
-  border-left-width: $blockquote-border-left-width;
-  border-style: solid;
-  border-color: $blockquote-border-color;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  color: #333;
+  background-color: #f9f9f9;
+  border-left: 4px solid #e5e5e5;
 
   footer {
     display: block;
-    font-size: $blockquote-footer-font-size;
-    color: $blockquote-footer-color;
+    font-size: 80%;
+    color: #777;
   }
   footer::before {
     content: "\2014 \00A0";
