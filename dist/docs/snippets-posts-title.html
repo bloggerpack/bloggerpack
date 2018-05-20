@@ -7,7 +7,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h2 id="no-title-message">No title message</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ?: data:messages.noTitle'</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ? data:post.title : data:messages.noTitle'</span>/&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 </code></pre><h2 id="anchors">Anchors</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.title'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
@@ -18,7 +18,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h5 id="-no-title-message">+ No title message</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ?: data:messages.noTitle'</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b:eval</span> <span class="hljs-attribute">expr</span>=<span class="hljs-value">'data:post.title ? data:post.title : data:messages.noTitle'</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 </code></pre></main><script src="bundle/bundle.js"></script><script src="script.js"></script></body></html>
