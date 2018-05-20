@@ -9,101 +9,99 @@
 ## Examples
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <h5>Default</h5>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <h5>Light</h5>
-    <table class="table table-light">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <h5>Dark</h5>
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h5>Default</h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5>Light</h5>
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5>Dark</h5>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -174,70 +172,69 @@
 
 ## Table head options
 
+##### Light head
+
 <div class="doc-example">
-  <div class="doc-example-content">
-    <h5>Light head</h5>
-    <table class="table">
-      <thead class="thead-light">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-light">
-      <thead class="thead-light">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-light">
+    <thead class="thead-light">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -254,70 +251,69 @@
 </table>
 ```
 
+##### Dark head
+
 <div class="doc-example">
-  <div class="doc-example-content">
-    <h5>Dark head</h5>
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-dark">
-      <thead class="thead-dark">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -338,98 +334,96 @@
 ## Striped rows
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-light table-striped">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-light table-striped">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -450,98 +444,96 @@
 ## Bordered table
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-light table-bordered">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-dark table-bordered">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-light table-bordered">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-dark table-bordered">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -562,98 +554,96 @@
 ## Borderless table
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-light table-borderless">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-dark table-borderless">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-light table-borderless">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-dark table-borderless">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -674,98 +664,96 @@
 ## Hoverable rows
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-light table-hover">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-light table-hover">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -786,74 +774,72 @@
 ## Mix and match
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-light table-bordered table-striped table-hover">
-      <thead class="thead-light">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-light table-bordered table-striped table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -879,74 +865,72 @@
 ```
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <table class="table table-dark table-bordered table-striped table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-dark table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ```html
@@ -975,83 +959,81 @@
 ## Responsive table
 
 <div class="doc-example">
-  <div class="doc-example-content">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-            <th>Heading</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+          <th>Heading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
