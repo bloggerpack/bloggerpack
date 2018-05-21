@@ -22,7 +22,6 @@
   padding: .5rem 1rem;
   color: #eee;
   text-decoration: none;
-  border-left: 4px solid transparent;
 }
 .doc-nav-link:hover {
   color: #fff;
@@ -30,9 +29,8 @@
   background-color: #171a1d;
 }
 .doc-nav-link.active {
-  color: #fff;
-  background-color: #131619;
-  border-color: #ff5722;
+  font-weight: 700;
+  color: #ffddb0;
 }
 .doc-nav-link:first-child {
   margin-top: .5rem;
@@ -44,7 +42,6 @@
   font-size: .75rem;
   color: #9d9d9d;
   text-transform: uppercase;
-  border-left: 4px solid transparent;
 }
 
 .doc-nav-subheader {
@@ -55,7 +52,6 @@
   text-transform: uppercase;
   border-top: 1px solid #32383e;
   border-bottom: 1px solid #32383e;
-  border-left: 4px solid transparent;
 }
 
 .doc-nav-divider {
