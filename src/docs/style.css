@@ -14,24 +14,24 @@
   width: 100%;
   padding-bottom: 1rem;
   overflow-y: auto;
-  background-color: #1c1c1c;
+  background-color: #212529;
 }
 
 .doc-nav-link {
   display: block;
   padding: .5rem 1rem;
-  color: #fff;
+  color: #eee;
   text-decoration: none;
   border-left: 4px solid transparent;
 }
 .doc-nav-link:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #474747;
+  background-color: #171a1d;
 }
 .doc-nav-link.active {
   color: #fff;
-  background-color: #373737;
+  background-color: #131619;
   border-color: #ff5722;
 }
 .doc-nav-link:first-child {
@@ -53,8 +53,8 @@
   font-size: .65rem;
   color: #9d9d9d;
   text-transform: uppercase;
-  border-top: 1px solid #2e2e2e;
-  border-bottom: 1px solid #2e2e2e;
+  border-top: 1px solid #32383e;
+  border-bottom: 1px solid #32383e;
   border-left: 4px solid transparent;
 }
 
@@ -62,7 +62,7 @@
   height: 0;
   margin: .5rem 0;
   overflow: hidden;
-  border-top: 1px solid #2e2e2e;
+  border-top: 1px solid #32383e;
 }
 .doc-nav-divider + .doc-nav-header {
   margin-top: 1rem;
@@ -157,8 +157,8 @@
   margin-right: -1rem;
   margin-left: -1rem;
   font-size: .75rem;
-  color: #e5e5e5;
-  background-color: #757575;
+  color: #fff;
+  background-color: #40454a;
 }
 .doc-content > .v-info > ul {
   padding-left: 0;
