@@ -17,9 +17,9 @@
     }
   }
 
-  nav.scrollTo(0, (navActive[0].offsetTop - 45));
+  nav.scroll(0, (navActive[0].offsetTop - 45));
 
   navToggle.addEventListener('click', function() {
-    document.body.classList.toggle('is--doc-nav--active');
+    document.body.classList.toggle('show-nav');
   }, false);
 })();
