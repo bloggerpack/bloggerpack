@@ -30,6 +30,17 @@ module.exports = function(grunt) {
             return dest + src.replace('index', '<%= config.build.templateFilename %>');
           }
         }]
+      },
+      themeSkin: {
+        options: {
+          content: 'src/config.json'
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['skin.css', 'template-skin.css'],
+          dest: 'dist/skin'
+        }]
       }
     },
 
@@ -156,11 +167,26 @@ module.exports = function(grunt) {
       bundle: {
         src: 'src/_scss/**/*.scss'
       },
-      theme: {
+      themeSkin: {
         src: ['src/skin.css', 'src/template-skin.css']
       },
       docs: {
         src: 'src/docs/style.css'
+      }
+    },
+
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')({ cascade: false })
+        ]
+      },
+      themeSkin: {
+        src: ['dist/skin/skin.css', 'dist/skin/template-skin.css']
+      },
+      docs: {
+        src: 'dist/docs/style.css'
       }
     },
 
@@ -207,12 +233,15 @@ module.exports = function(grunt) {
           'webpack:bundle',
           'cssmin:bundle',
           'uglify:bundle',
-          'stylelint:theme',
+          'stylelint:themeSkin',
+          'bake:themeSkin',
+          'postcss:themeSkin',
           'bake:theme',
           'stylelint:docs',
           'markdown:docs',
           'copy:docsFiles',
           'copy:docsBundle',
+          'postcss:docs',
           'htmlmin:docs',
           'cssmin:docs'
         ]
@@ -243,11 +272,11 @@ module.exports = function(grunt) {
 
   // Theme task.
   grunt.registerTask('theme-bundle', ['stylelint:bundle', 'webpack:bundle', 'cssmin:bundle', 'uglify:bundle']);
-  grunt.registerTask('theme-compile', ['stylelint:theme', 'bake:theme']);
+  grunt.registerTask('theme-compile', ['stylelint:themeSkin', 'bake:themeSkin', 'postcss:themeSkin', 'bake:theme']);
   grunt.registerTask('dist-theme', ['theme-bundle', 'theme-compile']);
 
   // Docs task.
-  grunt.registerTask('docs-compile', ['stylelint:docs', 'markdown:docs', 'copy:docsFiles', 'copy:docsBundle']);
+  grunt.registerTask('docs-compile', ['stylelint:docs', 'markdown:docs', 'copy:docsFiles', 'copy:docsBundle', 'postcss:docs']);
   grunt.registerTask('docs-minify', ['htmlmin:docs', 'cssmin:docs', 'uglify:docs']);
   grunt.registerTask('docs-serve', ['connect:docs']);
   grunt.registerTask('dist-docs', ['docs-compile', 'docs-minify']);
