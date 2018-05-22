@@ -20,7 +20,7 @@
 .doc-nav-link {
   display: block;
   padding: .5rem 1rem;
-  color: #eee;
+  color: #cecece;
   text-decoration: none;
 }
 .doc-nav-link:hover {
@@ -30,7 +30,7 @@
 }
 .doc-nav-link.active {
   font-weight: 700;
-  color: #ffddb0;
+  color: #fff;
 }
 .doc-nav-link:first-child {
   margin-top: .5rem;
@@ -40,7 +40,7 @@
   padding: 0 1rem;
   margin: .5rem 0;
   font-size: .75rem;
-  color: #9d9d9d;
+  color: #999;
   text-transform: uppercase;
 }
 
@@ -48,7 +48,7 @@
   padding: .5rem 0;
   margin: .5rem 1rem;
   font-size: .65rem;
-  color: #9d9d9d;
+  color: #999;
   text-transform: uppercase;
   border-top: 1px solid #32383e;
   border-bottom: 1px solid #32383e;
