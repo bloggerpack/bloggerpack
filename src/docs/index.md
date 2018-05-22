@@ -1,6 +1,6 @@
 <!--
 @@@title:Documentation@@@
-@@@section:Home@@@
+@@@section:None@@@
 -->
 
 # Documentation
