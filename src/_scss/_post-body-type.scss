@@ -1,10 +1,10 @@
-// stylelint-disable
-// stylelint-enable order/properties-order
+// stylelint-disable declaration-no-important, no-duplicate-selectors, selector-max-type, selector-no-qualifying-type
 
 //
 // Remove margin
 //
 
+// stylelint-disable selector-list-comma-newline-after
 .post-body-type {
   h1, h2, h3, h4, h5, h6,
   p,
@@ -17,6 +17,7 @@
     margin: 0 !important;
   }
 }
+// stylelint-enable selector-list-comma-newline-after
 
 //
 // Images
@@ -170,4 +171,5 @@
   background-color: #f8f9fa;
   border-radius: .25rem;
 }
+
 // stylelint-enable

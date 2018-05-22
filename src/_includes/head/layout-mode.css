@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-id, selector-no-qualifying-type, no-missing-end-of-source-newline */
+
 /* Clearfix */
 body#layout .container::after,
 body#layout .section::after {
