@@ -30,5 +30,17 @@
     "stylelint-scss": "^3.1.0",
     "time-grunt": "^1.4.0",
     "webpack": "^4.8.3"
-  }
+  },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ]
 }
