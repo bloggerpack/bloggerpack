@@ -331,6 +331,8 @@ CSS
 
 <b:template-skin>
 <![CDATA[
+/* stylelint-disable selector-max-id, selector-no-qualifying-type, no-missing-end-of-source-newline */
+
 /* Clearfix */
 body#layout .container::after,
 body#layout .section::after {
@@ -417,6 +419,8 @@ body#layout hr {
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
+/* stylelint-disable selector-max-class, no-missing-end-of-source-newline */
+
 /* ==========================================================================
    Template details
    ========================================================================== */
@@ -444,7 +448,6 @@ body#layout hr {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   border: 0;
 }
@@ -456,7 +459,6 @@ body#layout hr {
   overflow: visible;
   clip: auto;
   white-space: normal;
-  -webkit-clip-path: none;
   clip-path: none;
 }
 
@@ -517,13 +519,8 @@ body#layout hr {
 }
 
 .header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 1.5rem;
   margin-right: -.25rem;
@@ -544,32 +541,23 @@ body#layout hr {
   text-decoration: none;
   background-color: #f5f5f5;
 }
-.header nav a.active {
+.header nav .active {
   color: #212529;
   background-color: #f0f0f0;
 }
 
 @media (min-width: 576px) {
   .header .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+    justify-content: space-between;
   }
   .header h1 {
     margin-right: 1rem;
     text-align: left;
   }
   .header nav {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
     justify-content: start;
     margin-top: 0;
   }
@@ -588,10 +576,7 @@ body#layout hr {
    ========================================================================== */
 
 .main-content-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
@@ -612,14 +597,10 @@ body#layout hr {
 
 @media (min-width: 768px) {
   .main {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 66.666667%;
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
   .sidebar {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
     margin-top: 0;
@@ -633,10 +614,7 @@ body#layout hr {
    ========================================= */
 
 .main .breadcrumb {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: .75rem 1rem;
   margin-bottom: 1rem;
@@ -675,7 +653,7 @@ body#layout hr {
 
 .main .status-message .search-label,
 .main .status-message .search-query {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .main .status-message-success {
