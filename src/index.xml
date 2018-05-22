@@ -52,7 +52,7 @@ CSS
 
 <b:template-skin>
 <![CDATA[
-<!--(bake layout-mode.css)-->
+<!--(bake template-skin.css)-->
 ]]>
 </b:template-skin>
 
