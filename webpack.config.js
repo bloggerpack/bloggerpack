@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
@@ -41,7 +40,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new StyleLintPlugin(),
     extractSass
   ]
 };

@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
 
     webpack: {
-      core: webpackConfig
+      bundle: webpackConfig
     },
 
     markdown: {
@@ -143,6 +143,27 @@ module.exports = function(grunt) {
       }
     },
 
+    stylelint: {
+      options: {
+        configFile: '.stylelintrc',
+        formatter: 'string',
+        ignoreDisables: false,
+        failOnError: true,
+        outputFile: '',
+        reportNeedlessDisables: false,
+        syntax: ''
+      },
+      bundle: {
+        src: 'src/_scss/**/*.scss'
+      },
+      theme: {
+        src: ['src/skin.css', 'src/**/layout-mode.css']
+      },
+      docs: {
+        src: 'src/docs/style.css'
+      }
+    },
+
     copy: {
       docsFiles: {
         expand: true,
@@ -182,10 +203,13 @@ module.exports = function(grunt) {
         ],
         tasks: [
           'clean:dist',
-          'webpack:core',
+          'stylelint:bundle',
+          'webpack:bundle',
           'cssmin:bundle',
           'uglify:bundle',
+          'stylelint:theme',
           'bake:theme',
+          'stylelint:docs',
           'markdown:docs',
           'copy:docsFiles',
           'copy:docsBundle',
@@ -218,12 +242,12 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   // Theme task.
-  grunt.registerTask('theme-bundle', ['webpack:core', 'cssmin:bundle', 'uglify:bundle']);
-  grunt.registerTask('theme-compile', ['bake:theme']);
+  grunt.registerTask('theme-bundle', ['stylelint:bundle', 'webpack:bundle', 'cssmin:bundle', 'uglify:bundle']);
+  grunt.registerTask('theme-compile', ['stylelint:theme', 'bake:theme']);
   grunt.registerTask('dist-theme', ['theme-bundle', 'theme-compile']);
 
   // Docs task.
-  grunt.registerTask('docs-compile', ['markdown:docs', 'copy:docsFiles', 'copy:docsBundle']);
+  grunt.registerTask('docs-compile', ['stylelint:docs', 'markdown:docs', 'copy:docsFiles', 'copy:docsBundle']);
   grunt.registerTask('docs-minify', ['htmlmin:docs', 'cssmin:docs', 'uglify:docs']);
   grunt.registerTask('docs-serve', ['connect:docs']);
   grunt.registerTask('dist-docs', ['docs-compile', 'docs-minify']);

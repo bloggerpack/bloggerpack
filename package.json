@@ -15,6 +15,7 @@
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-markdown": "^0.7.0",
+    "grunt-stylelint": "^0.10.0",
     "grunt-webpack": "^3.1.1",
     "load-grunt-tasks": "^3.5.2",
     "node-sass": "^4.8.3",
@@ -27,7 +28,6 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^0.8.1",
     "stylelint-scss": "^3.1.0",
-    "stylelint-webpack-plugin": "^0.10.5",
     "time-grunt": "^1.4.0",
     "webpack": "^4.8.3"
   }
