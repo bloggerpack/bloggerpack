@@ -83,7 +83,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h2 id="anchors">Anchors</h2><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage.isYoutube'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -91,7 +91,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">img</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -102,7 +102,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h5 id="-fallback-images">+ Fallback images</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage.isYoutube'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -110,7 +110,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">img</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -119,7 +119,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span><span class="hljs-comment">&lt;!-- fallback --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
       <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
       <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">'https://placehold.it/512x288/777/eee?text=No+Image'</span>/&gt;</span>
@@ -129,7 +129,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h5 id="-responsive-images">+ Responsive images</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage.isYoutube'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -139,7 +139,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">img</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -152,7 +152,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 </code></pre><h5 id="-responsive-images-fallback-images">+ Responsive images + Fallback images</h5><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.featuredImage.isYoutube'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -162,7 +162,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">img</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
         <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">expr:value</span>=<span class="hljs-value">'data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage'</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span>/&gt;</span>
@@ -173,7 +173,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">b:if</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span><span class="hljs-comment">&lt;!-- fallback --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ? data:post.link : data:post.url'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.link ?: data:post.url'</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span>&gt;</span>
       <span class="hljs-comment">&lt;!-- class --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:class</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">''</span>/&gt;</span>
       <span class="hljs-comment">&lt;!-- src --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'src'</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">'https://placehold.it/512x288/777/eee?text=No+Image'</span>/&gt;</span>
