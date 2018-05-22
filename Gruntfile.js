@@ -157,7 +157,7 @@ module.exports = function(grunt) {
         src: 'src/_scss/**/*.scss'
       },
       theme: {
-        src: ['src/skin.css', 'src/**/layout-mode.css']
+        src: ['src/skin.css', 'src/layout-mode.css']
       },
       docs: {
         src: 'src/docs/style.css'
