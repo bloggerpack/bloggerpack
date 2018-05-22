@@ -448,6 +448,7 @@ body#layout hr {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   border: 0;
 }
@@ -459,6 +460,7 @@ body#layout hr {
   overflow: visible;
   clip: auto;
   white-space: normal;
+  -webkit-clip-path: none;
   clip-path: none;
 }
 
@@ -519,8 +521,11 @@ body#layout hr {
 }
 
 .header nav {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 1.5rem;
   margin-right: -.25rem;
@@ -548,9 +553,13 @@ body#layout hr {
 
 @media (min-width: 576px) {
   .header .container {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   .header h1 {
@@ -558,6 +567,7 @@ body#layout hr {
     text-align: left;
   }
   .header nav {
+    -ms-flex-pack: start;
     justify-content: start;
     margin-top: 0;
   }
@@ -576,7 +586,9 @@ body#layout hr {
    ========================================================================== */
 
 .main-content-row {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
@@ -597,10 +609,12 @@ body#layout hr {
 
 @media (min-width: 768px) {
   .main {
+    -ms-flex: 0 0 66.666667%;
     flex: 0 0 66.666667%;
     max-width: 66.666667%;
   }
   .sidebar {
+    -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
     margin-top: 0;
@@ -614,7 +628,9 @@ body#layout hr {
    ========================================= */
 
 .main .breadcrumb {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: .75rem 1rem;
   margin-bottom: 1rem;
