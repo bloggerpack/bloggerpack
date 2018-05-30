@@ -1,18 +1,27 @@
 /* stylelint-disable selector-max-class, no-missing-end-of-source-newline */
 
 /* ==========================================================================
-   Template details
+   Theme details
    ========================================================================== */
 
-/**
- * Template Name : {{ templateName }}
- * Template URL  : {{ templateUrl }}
- * Author Name   : {{ templateAuthorName }}
- * Author URL    : {{ templateAuthorUrl }}
- * Version       : {{ templateVersion }}
- * Date          : {{ templateDate }}
- * License       : {{ templateLicense }}
- * License URL   : {{ templateLicenseUrl }}
+/*!
+ * Name            : {{ theme.name }}
+ * Version         : {{ theme.version }}
+ * Date            : {{ theme.date }}
+ * Homepage        : {{ theme.homepage }}
+ * Author Name     : {{ theme.author.name }}
+ * Author URL      : {{ theme.author.url }}
+ * Repository Type : {{ theme.repository.type }}
+ * Repository URL  : {{ theme.repository.url }}
+ * License         : {{ theme.license.name }}
+ * License URL     : {{ theme.license.url }}
+ * Based on {{ base.1.name }}
+ */
+
+/*!
+ * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})
+ * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})
+ * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})
  */
 
 /* ==========================================================================

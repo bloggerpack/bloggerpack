@@ -1,6 +1,6 @@
 const webpackConfig = require('./webpack.config');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
 
   // Force use of Unix newlines
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           src: 'index.xml',
           dest: 'dist/',
           rename: function (dest, src) {
-            return dest + src.replace('index', '<%= config.build.templateFilename %>');
+            return dest + src.replace('index', '<%= config.theme.filename %>');
           }
         }]
       },
@@ -40,6 +40,28 @@ module.exports = function(grunt) {
           cwd: 'src/',
           src: ['skin.css', 'template-skin.css'],
           dest: 'dist/skin'
+        }]
+      },
+      bundle: {
+        options: {
+          content: 'src/config.json'
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/bundle/',
+          src: ['bundle.css', 'bundle.js'],
+          dest: 'dist/bundle'
+        }]
+      },
+      docs: {
+        options: {
+          content: 'src/config.json'
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/docs/',
+          src: ['*.html', 'docs.css', 'docs.js'],
+          dest: 'dist/docs'
         }]
       }
     },
@@ -105,7 +127,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/bundle/',
-          src: ['**/*.css', '!**/*.min.css'],
+          src: ['bundle.css'],
           dest: 'dist/bundle'
         }]
       },
@@ -116,7 +138,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.css', '!**/*.min.css', '!bundle/*.css'],
+          src: ['**/*.css', '!**/*.min.css', '!bundle/bundle.css'],
           dest: 'dist/docs'
         }]
       }
@@ -128,7 +150,9 @@ module.exports = function(grunt) {
           warnings: false
         },
         mangle: true,
-        sourceMap: true
+        output: {
+          comments: /^!|@preserve|@license|@cc_on/i
+        }
       },
       bundle: {
         options: {
@@ -137,7 +161,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/bundle/',
-          src: ['**/*.js', '!**/*.min.js'],
+          src: ['bundle.js'],
           dest: 'dist/bundle'
         }]
       },
@@ -148,7 +172,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.js', '!**/*.min.js', '!bundle/*.js'],
+          src: ['**/*.js', '!**/*.min.js', '!bundle/bundle.js'],
           dest: 'dist/docs'
         }]
       }
@@ -164,14 +188,14 @@ module.exports = function(grunt) {
         reportNeedlessDisables: false,
         syntax: ''
       },
-      bundle: {
-        src: 'src/_scss/**/*.scss'
-      },
       themeSkin: {
         src: ['src/skin.css', 'src/template-skin.css']
       },
+      bundle: {
+        src: 'src/_scss/**/*.scss'
+      },
       docs: {
-        src: 'src/docs/style.css'
+        src: 'src/docs/docs.css'
       }
     },
 
@@ -186,7 +210,7 @@ module.exports = function(grunt) {
         src: ['dist/skin/skin.css', 'dist/skin/template-skin.css']
       },
       docs: {
-        src: 'dist/docs/style.css'
+        src: 'dist/docs/docs.css'
       }
     },
 
@@ -223,14 +247,15 @@ module.exports = function(grunt) {
           'src/**/*.css',
           'src/**/*.js',
           'src/**/*.jst',
+          'src/**/*.json',
           'src/**/*.md',
-          'src/index.scss',
-          'src/_scss/**/*.scss'
+          'src/**/*.scss'
         ],
         tasks: [
           'clean:dist',
           'stylelint:bundle',
           'webpack:bundle',
+          'bake:bundle',
           'cssmin:bundle',
           'uglify:bundle',
           'stylelint:themeSkin',
@@ -242,8 +267,10 @@ module.exports = function(grunt) {
           'copy:docsFiles',
           'copy:docsBundle',
           'postcss:docs',
+          'bake:docs',
           'htmlmin:docs',
-          'cssmin:docs'
+          'cssmin:docs',
+          'uglify:docs'
         ]
       }
     },
@@ -251,7 +278,7 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: '<%= config.build.templateFilename %>-dist.zip',
+          archive: '<%= config.theme.filename %>-dist.zip',
           mode: 'zip',
           level: 9,
           pretty: true
@@ -260,7 +287,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'dist/',
           src: ['**'],
-          dest: '<%= config.build.templateFilename %>-dist'
+          dest: '<%= config.theme.filename %>-dist'
         }]
       }
     }
@@ -270,23 +297,33 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
+  // Bundle task.
+  grunt.registerTask('bundle-lint', ['stylelint:bundle']);
+  grunt.registerTask('bundle-compile', ['webpack:bundle', 'bake:bundle']);
+  grunt.registerTask('bundle-minify', ['cssmin:bundle', 'uglify:bundle']);
+  grunt.registerTask('dist-bundle', ['bundle-lint', 'bundle-compile', 'bundle-minify']);
+
   // Theme task.
-  grunt.registerTask('theme-bundle', ['stylelint:bundle', 'webpack:bundle', 'cssmin:bundle', 'uglify:bundle']);
-  grunt.registerTask('theme-compile', ['stylelint:themeSkin', 'bake:themeSkin', 'postcss:themeSkin', 'bake:theme']);
-  grunt.registerTask('dist-theme', ['theme-bundle', 'theme-compile']);
+  grunt.registerTask('theme-lint', ['stylelint:themeSkin']);
+  grunt.registerTask('theme-compile', ['bake:themeSkin', 'postcss:themeSkin', 'bake:theme']);
+  grunt.registerTask('dist-theme', ['theme-lint', 'theme-compile']);
 
   // Docs task.
-  grunt.registerTask('docs-compile', ['stylelint:docs', 'markdown:docs', 'copy:docsFiles', 'copy:docsBundle', 'postcss:docs']);
+  grunt.registerTask('docs-lint', ['stylelint:docs']);
+  grunt.registerTask('docs-compile', ['markdown:docs', 'copy:docsFiles', 'copy:docsBundle', 'postcss:docs', 'bake:docs']);
   grunt.registerTask('docs-minify', ['htmlmin:docs', 'cssmin:docs', 'uglify:docs']);
   grunt.registerTask('docs-serve', ['connect:docs']);
-  grunt.registerTask('dist-docs', ['docs-compile', 'docs-minify']);
+  grunt.registerTask('dist-docs', ['docs-lint', 'docs-compile', 'docs-minify']);
 
   // Dist task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-theme', 'dist-docs']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-bundle', 'dist-theme', 'dist-docs']);
+
+  // Test task.
+  grunt.registerTask('test', ['dist-bundle', 'dist-theme', 'dist-docs']);
 
   // Default task.
-  grunt.registerTask('default', ['dist-theme', 'dist-docs']);
+  grunt.registerTask('default', ['clean:dist', 'test']);
 
   // Release task.
-  grunt.registerTask('prep-release', ['dist', 'compress:main']);
+  grunt.registerTask('release', ['dist', 'compress']);
 };

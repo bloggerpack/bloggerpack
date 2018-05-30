@@ -5,7 +5,7 @@
 
 # Reboot
 
-b:starter provide an elegant, consistent, and simple baseline to build upon. Some code and documentation manually forked from [Bootstrap](https://getbootstrap.com).
+An elegant, consistent, and simple baseline to build upon. Some code and documentation manually forked from [Bootstrap](https://getbootstrap.com).
 
 
 ## Normalize.css

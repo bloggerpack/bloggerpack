@@ -1,1 +1,6 @@
-// alert('Hello, world!');
+(function () {
+  'use strict';
+
+  // alert('Hello, world!');
+
+})();

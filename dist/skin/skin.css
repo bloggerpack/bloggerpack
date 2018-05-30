@@ -1,18 +1,27 @@
 /* stylelint-disable selector-max-class, no-missing-end-of-source-newline */
 
 /* ==========================================================================
-   Template details
+   Theme details
    ========================================================================== */
 
-/**
- * Template Name : Template name
- * Template URL  : https://example.com/template
- * Author Name   : Your name
- * Author URL    : https://example.com/you
- * Version       : 1.0
- * Date          : August 17, 1945
- * License       : MIT
- * License URL   : https://opensource.org/licenses/MIT
+/*!
+ * Name            : Theme name
+ * Version         : 1.0
+ * Date            : August 17, 1945
+ * Homepage        : https://example.com/theme
+ * Author Name     : Your name
+ * Author URL      : https://example.com
+ * Repository Type : None
+ * Repository URL  : None
+ * License         : MIT
+ * License URL     : https://opensource.org/licenses/MIT
+ * Based on b:starter
+ */
+
+/*!
+ * b:starter v1.0.0 (https://blogger-starter.github.io)
+ * Copyright 2017-2018 Igoy Nawamreh (https://twitter.com/igoynawamreh)
+ * Licensed under MIT (https://github.com/blogger-starter/blogger-starter/blob/master/LICENSE)
  */
 
 /* ==========================================================================

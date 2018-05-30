@@ -6,9 +6,9 @@
     <title><%=title || 'Documentation'%><%if(section != 'None'){%> | <%=section%><%}%></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="bundle/bundle.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="docs.css">
   </head>
-  <body class="doc-page">
+  <body>
 
     <nav class="doc-nav" id="navDoc">
       <a class="doc-nav-link" href="index.html">Home</a>
@@ -39,7 +39,7 @@
       <a class="doc-nav-link" href="snippets-posts-sharing.html">Posts sharing</a>
       <a class="doc-nav-link" href="snippets-posts-title.html">Posts title</a>
       <div class="doc-nav-divider"></div>
-      <h6 class="doc-nav-header">b:starter Links</h6>
+      <h6 class="doc-nav-header">{{ base.1.name }} Links</h6>
       <a class="doc-nav-link" href="https://blogger-starter.github.io">Documentation</a>
       <a class="doc-nav-link" href="https://blogger-starter.blogspot.com">Demo</a>
       <a class="doc-nav-link" href="#">Themes</a>
@@ -56,13 +56,13 @@
     <main class="doc-content">
       <div class="v-info">
         <ul>
-          <li>Currently v1.0.0</li>
+          <li>Currently {{ base.1.name }} v{{ base.1.version }}</li>
         </ul>
       </div>
       <%=content%>
     </main>
 
     <script src="bundle/bundle.js"></script>
-    <script src="script.js"></script>
+    <script src="docs.js"></script>
   </body>
 </html>
