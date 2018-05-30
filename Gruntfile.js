@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['*.html', 'docs.css', 'docs.js'],
+          src: ['**/*.html', 'docs.css', 'docs.js'],
           dest: 'dist/docs'
         }]
       }
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/bundle/',
-          src: ['bundle.css'],
+          src: 'bundle.css',
           dest: 'dist/bundle'
         }]
       },
@@ -146,10 +146,11 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
+        mangle: true,
+        sourceMap: true,
         compress: {
           warnings: false
         },
-        mangle: true,
         output: {
           comments: /^!|@preserve|@license|@cc_on/i
         }
@@ -161,7 +162,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/bundle/',
-          src: ['bundle.js'],
+          src: 'bundle.js',
           dest: 'dist/bundle'
         }]
       },
@@ -207,7 +208,7 @@ module.exports = function (grunt) {
         ]
       },
       themeSkin: {
-        src: ['dist/skin/skin.css', 'dist/skin/template-skin.css']
+        src: 'dist/skin/skin.css'
       },
       docs: {
         src: 'dist/docs/docs.css'
