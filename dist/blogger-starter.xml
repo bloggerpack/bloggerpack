@@ -331,7 +331,8 @@ CSS
 
 <b:template-skin>
 <![CDATA[
-/* stylelint-disable selector-max-id, selector-no-qualifying-type, no-missing-end-of-source-newline */
+/* stylelint-disable */
+/* stylelint-enable order/properties-order */
 
 /* Clearfix */
 body#layout .container::after,
@@ -392,16 +393,6 @@ body#layout .layout-mode-col-11 {
 }
 body#layout .layout-mode-col-12 {
   width: 100%;
-}
-
-/* Reset and hide */
-body#layout ul,
-body#layout ol {
-  padding-left: 0;
-  list-style: none;
-}
-body#layout hr {
-  display: none;
 }
 ]]>
 </b:template-skin>
