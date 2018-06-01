@@ -256,7 +256,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -331,7 +331,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -460,7 +460,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -557,7 +557,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -654,7 +654,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -751,7 +751,7 @@
                 <li>
                   <details class='share'>
                     <summary b:whitespace='remove' class='share-toggle'>
-                      <data:messages.share/>
+                      <span class='share-toggle-text'><data:messages.share/></span>
                     </summary>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>

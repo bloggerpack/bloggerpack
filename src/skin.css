@@ -450,7 +450,8 @@
   color: #6c757d;
   cursor: pointer;
 }
-.post .post-meta .share-toggle:hover {
+.post .post-meta .share-toggle:hover .share-toggle-text,
+.post .post-meta .share[open] .share-toggle-text {
   color: #007bff;
 }
 
