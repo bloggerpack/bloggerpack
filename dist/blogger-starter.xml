@@ -888,7 +888,8 @@ body#layout .layout-mode-col-12 {
   color: #6c757d;
   cursor: pointer;
 }
-.post .post-meta .share-toggle:hover {
+.post .post-meta .share-toggle:hover .share-toggle-text,
+.post .post-meta .share[open] .share-toggle-text {
   color: #007bff;
 }
 
@@ -1435,7 +1436,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -1510,7 +1511,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -1639,7 +1640,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -1736,7 +1737,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -1833,7 +1834,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
@@ -1930,7 +1931,7 @@ Main content (main and sidebar)
                               <li>
                                 <details class='share'>
                                   <summary b:whitespace='remove' class='share-toggle'>
-                                    <data:messages.share/>
+                                    <span class='share-toggle-text'><data:messages.share/></span>
                                   </summary>
                                   <div class='share-menu'>
                                     <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
