@@ -16,9 +16,9 @@
     <b:include name='content'/>
   </b:includable>
   <b:includable id='content'>
-    <nav id='HeaderNav'>
+    <nav class='header-nav'>
       <b:loop values='data:links' var='link'>
-        <a expr:href='data:link.target'>
+        <a class='header-nav-link' expr:href='data:link.target'>
           <b:class cond='data:link.target == data:view.url.canonical' name='active'/>
           <data:link.name/>
         </a>

@@ -1,7 +1,10 @@
 /* stylelint-disable */
 /* stylelint-enable order/properties-order */
 
-/* Clearfix */
+/**
+ * Clearfix
+ */
+
 body#layout .container::after,
 body#layout .section::after {
   display: block;
@@ -9,7 +12,10 @@ body#layout .section::after {
   content: "";
 }
 
-/* Grid */
+/**
+ * Grid
+ */
+
 body#layout .layout-mode-col-1,
 body#layout .layout-mode-col-2,
 body#layout .layout-mode-col-3,

@@ -5,7 +5,7 @@
 
 <b:comment>
 #############################################################################
-Settings
+Config
 ############################################################################# </b:comment>
 
 <b:with value='"https://example.com/1200x630.png"' var='social-logo'>
@@ -100,8 +100,8 @@ Body classes
 Skip navigation
 ############################################################################# </b:comment>
 
-<a class='skiplink' href='#main' id='skiplink'>
-  <span class='skiplink-text'><data:messages.skipToMainContent/></span>
+<a class='skiplink' href='#main-content' id='skiplink'>
+  <data:messages.skipToMainContent/>
 </a>
 
 
@@ -110,42 +110,50 @@ Skip navigation
 Header
 ############################################################################# </b:comment>
 
-<header class='header'>
+<header class='header' id='header'>
   <div class='container'>
-    <h1>
-      <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
-    </h1>
-    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header-nav")'>
-      <b:section class='' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
-        <!--(bake _widgets/b-section-header-nav_LinkList1.xml)-->
-      </b:section>
-    </b:if>
-  </div>
+    <div class='header-wrap'>
+      <h1 class='header-title'>
+        <a class='header-title-link' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+      </h1>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header-nav")'>
+        <b:section class='b-section-header-nav' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
+          <!--(bake _widgets/b-section-header-nav_LinkList1.xml)-->
+        </b:section>
+      </b:if>
+    </div><!-- /.header-wrap -->
+  </div><!-- /.container -->
 </header>
 
 
 <b:comment>
 #############################################################################
-Main and sidebar
+Main content (main and sidebar)
 ############################################################################# </b:comment>
 
 <div class='main-content' id='main-content'>
   <div class='container'>
-    <div class='main-content-row'>
-      <!-- Main -->
-      <main class='main layout-mode-col-8' id='main' role='main'>
-        <b:section class='' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
-          <!--(bake _widgets/b-section-main_Blog1.xml)-->
-        </b:section>
-      </main><!-- /.main -->
+    <div class='main-content-wrap'>
+      <div class='main-content-row'>
+        <!-- Main -->
+        <main class='main-col layout-mode-col-8' id='main-col' role='main'>
+          <div class='main' id='main'>
+            <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
+              <!--(bake _widgets/b-section-main_Blog1.xml)-->
+            </b:section>
+          </div><!-- /.main -->
+        </main><!-- /.main-col -->
 
-      <!-- Sidebar -->
-      <aside class='sidebar layout-mode-col-4' id='sidebar'>
-        <b:section class='' id='b-section-sidebar' name='Sidebar'>
-          <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
-        </b:section>
-      </aside><!-- /.sidebar -->
-    </div><!-- /.main-content-row -->
+        <!-- Sidebar -->
+        <aside class='sidebar-col layout-mode-col-4' id='sidebar-col'>
+          <div class='sidebar' id='sidebar'>
+            <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'>
+              <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
+            </b:section>
+          </div><!-- /.sidebar -->
+        </aside><!-- /.sidebar-col -->
+      </div><!-- /.main-content-row -->
+    </div><!-- /.main-content-wrap -->
   </div><!-- /.container -->
 </div><!-- /.main-content -->
 
@@ -157,13 +165,15 @@ Footer
 
 <footer class='footer' id='footer'>
   <div class='container'>
-    <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
-      <b:section class='' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-        <!--(bake _widgets/b-section-footer-links_LinkList2.xml)-->
-      </b:section>
-    </b:if>
-    <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
-    <p>b:starter is open source. It's developed and maintained on <a href='https://github.com/blogger-starter/blogger-starter'>GitHub</a>.</p>
+    <div class='footer-wrap'>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
+        <b:section class='b-section-footer-links' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
+          <!--(bake _widgets/b-section-footer-links_LinkList2.xml)-->
+        </b:section>
+      </b:if>
+      <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
+      <p><data:blog.title/> is open source. It's developed and maintained on <a href='https://github.com/blogger-starter/blogger-starter'>GitHub</a>.</p>
+    </div><!-- /.footer-wrap -->
   </div><!-- /.container -->
 </footer><!-- /.footer -->
 
