@@ -254,10 +254,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -278,7 +278,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
             </article>
@@ -329,10 +329,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -353,7 +353,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
               <!-- Labels -->
@@ -458,10 +458,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -482,7 +482,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
             </article>
@@ -555,10 +555,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -579,7 +579,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
             </article>
@@ -652,10 +652,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -676,7 +676,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
             </article>
@@ -749,10 +749,10 @@
                 </b:if>
                 <!-- Sharing -->
                 <li>
-                  <details class='share'>
-                    <summary b:whitespace='remove' class='share-toggle'>
-                      <span class='share-toggle-text'><data:messages.share/></span>
-                    </summary>
+                  <div class='share'>
+                    <span b:whitespace='remove' class='share-toggle' tabindex='0'>
+                      <data:messages.share/>
+                    </span>
                     <div class='share-menu'>
                       <a b:whitespace='remove' class='share-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
                         Twitter
@@ -773,7 +773,7 @@
                         BlogThis!
                       </a>
                     </div>
-                  </details>
+                  </div>
                 </li>
               </ul>
             </article>
