@@ -4,11 +4,11 @@
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
-  <title><data:blog.pageName/> | <data:blog.title/></title>
+  <title><b:eval expr='data:blog.pageName ? data:blog.pageName : data:messages.noTitle'/> | <data:blog.title/></title>
 </b:if>
 <b:comment>=== Static page ===</b:comment>
 <b:if cond='data:view.isPage'>
-  <title><data:blog.pageName/> | <data:blog.title/></title>
+  <title><b:eval expr='data:blog.pageName ? data:blog.pageName : data:messages.noTitle'/> | <data:blog.title/></title>
 </b:if>
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>

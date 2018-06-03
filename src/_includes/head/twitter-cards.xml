@@ -18,11 +18,11 @@
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
-  <meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " | " + data:blog.title' name='twitter:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
   <b:else/>
-    <meta expr:content='data:blog.pageName' name='twitter:description'/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' name='twitter:description'/>
   </b:if>
   <b:if cond='data:view.featuredImage'>
     <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
@@ -34,11 +34,11 @@
 </b:if>
 <b:comment>=== Static page ===</b:comment>
 <b:if cond='data:view.isPage'>
-  <meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " | " + data:blog.title' name='twitter:title'/>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
   <b:else/>
-    <meta expr:content='data:blog.pageName' name='twitter:description'/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' name='twitter:description'/>
   </b:if>
   <b:if cond='data:view.featuredImage'>
     <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
