@@ -19,27 +19,27 @@ The share buttons for the post.
 ## Default
 
 ```html
-<a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=twitter"' target='_blank'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-twitter'/>
   Twitter
 </a>
-<a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=facebook"' target='_blank'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-facebook'/>
   Facebook
 </a>
-<a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=googlePlus"' target='_blank'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-gplus'/>
   Google+
 </a>
-<a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=pinterest"' target='_blank'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-pinterest'/>
   Pinterest
 </a>
-<a expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=email"' target='_blank'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-email'/>
   Email
 </a>
-<a expr:onclick='"window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=" + data:blog.title + ": " + (data:post.title ? data:post.title : data:messages.noTitle) + "&amp;u=" + data:post.url + "&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);"' href='javascript:void(0)'>
+<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-blogger'/>
   BlogThis!
 </a>
@@ -55,27 +55,27 @@ The share buttons for the post.
     <data:messages.share/>
   </a>
   <div class='dropdown-menu' expr:aria-labelledby='"DropdownMenuSharing_" + data:widget.instanceId + "_" + data:post.id'>
-    <a class='dropdown-item' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=twitter"' target='_blank'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-twitter'/>
       Twitter
     </a>
-    <a class='dropdown-item' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=facebook"' target='_blank'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-facebook'/>
       Facebook
     </a>
-    <a class='dropdown-item' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=googlePlus"' target='_blank'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-gplus'/>
       Google+
     </a>
-    <a class='dropdown-item' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=pinterest"' target='_blank'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-pinterest'/>
       Pinterest
     </a>
-    <a class='dropdown-item' expr:href='"https://www.blogger.com/share-post.g?blogID=" + data:blog.blogId + "&amp;postID=" + data:post.id + "&amp;target=email"' target='_blank'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-email'/>
       Email
     </a>
-    <a class='dropdown-item' expr:onclick='"window.open(&amp;quot;https://www.blogger.com/blog-this.g?n=" + data:blog.title + ": " + (data:post.title ? data:post.title : data:messages.noTitle) + "&amp;u=" + data:post.url + "&amp;t=&amp;quot;, &amp;quot;_blank&amp;quot;, &amp;quot;directories=no, titlebar=no, toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=800, height=600&amp;quot;);"' href='javascript:void(0)'>
+    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-blogger'/>
       BlogThis!
     </a>
