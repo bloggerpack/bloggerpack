@@ -52,13 +52,13 @@
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta expr:content='"https://placehold.it/1200x630/777/eee?text=" + data:blog.pageName' property='twitter:image'/>
+  <meta expr:content='data:social-logo' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta content='https://placehold.it/1200x630/777/eee?text=Search+Results' property='twitter:image'/>
+  <meta expr:content='data:social-logo' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -74,11 +74,11 @@
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.archive.rangeMessage' name='twitter:description'/>
-  <meta expr:content='"https://placehold.it/1200x630/777/eee?text=" + data:view.archive.year' property='twitter:image'/>
+  <meta expr:content='data:social-logo' property='twitter:image'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='"404 | " + data:blog.title' name='twitter:title'/>
   <meta content='404' name='twitter:description'/>
-  <meta content='https://placehold.it/1200x630/777/eee?text=404' property='twitter:image'/>
+  <meta expr:content='data:social-logo' property='twitter:image'/>
 </b:if>

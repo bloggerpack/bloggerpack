@@ -54,13 +54,13 @@
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
-  <meta expr:content='"https://placehold.it/1200x630/777/eee?text=" + data:blog.pageName' property='og:image'/>
+  <meta expr:content='data:social-logo' property='og:image'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
-  <meta content='https://placehold.it/1200x630/777/eee?text=Search+Results' property='og:image'/>
+  <meta expr:content='data:social-logo' property='og:image'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -76,11 +76,11 @@
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.archive.rangeMessage' property='og:description'/>
-  <meta expr:content='"https://placehold.it/1200x630/777/eee?text=" + data:view.archive.year' property='og:image'/>
+  <meta expr:content='data:social-logo' property='og:image'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='"404 | " + data:blog.title' property='og:title'/>
   <meta content='404' property='og:description'/>
-  <meta content='https://placehold.it/1200x630/777/eee?text=404' property='og:image'/>
+  <meta expr:content='data:social-logo' property='og:image'/>
 </b:if>
