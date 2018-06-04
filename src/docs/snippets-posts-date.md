@@ -19,6 +19,7 @@ Date of the post.
 ## Default (published)
 
 ```html
+<!-- Date (published) -->
 <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
   <data:post.date/>
 </time>
@@ -27,6 +28,7 @@ Date of the post.
 ##### + Custom format
 
 ```html
+<!-- Date (published) -->
 <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
   <b:eval expr='format(data:post.date, "dd/MM/YYYY")'/>
 </time>
@@ -36,6 +38,7 @@ Date of the post.
 ## Last updated
 
 ```html
+<!-- Date (updated) -->
 <time expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
   <data:post.lastUpdated/>
 </time>
@@ -44,6 +47,7 @@ Date of the post.
 ##### + Custom format
 
 ```html
+<!-- Date (updated) -->
 <time expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
   <b:eval expr='format(data:post.lastUpdated, "dd/MM/YYYY")'/>
 </time>

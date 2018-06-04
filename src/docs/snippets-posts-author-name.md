@@ -19,6 +19,7 @@ Name of the profile of the post author.
 ## Default
 
 ```html
+<!-- Author name -->
 <b:if cond='data:post.author'>
   <span><data:post.author.name/></span>
 </b:if>
@@ -28,6 +29,7 @@ Name of the profile of the post author.
 ## Fallback
 
 ```html
+<!-- Author name -->
 <b:if cond='data:post.author'>
   <span><data:post.author.name/></span>
 <b:else/><!-- fallback -->
@@ -39,6 +41,7 @@ Name of the profile of the post author.
 ## Anchors
 
 ```html
+<!-- Author name -->
 <b:if cond='data:post.author'>
   <b:if cond='data:post.author.profileUrl'>
     <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
@@ -53,6 +56,7 @@ Name of the profile of the post author.
 ##### + Fallback
 
 ```html
+<!-- Author name -->
 <b:if cond='data:post.author'>
   <b:if cond='data:post.author.profileUrl'>
     <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>

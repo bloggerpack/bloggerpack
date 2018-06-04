@@ -23,13 +23,28 @@ Labels of the post.
 ## Default
 
 ```html
+<!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
     <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
       <data:label.name/>
     </a>
   </b:loop>
-<b:else/><!-- unlabelled -->
+</b:if>
+```
+
+
+## Fallback
+
+```html
+<!-- Labels -->
+<b:if cond='data:post.labels'>
+  <b:loop index='i' values='data:post.labels' var='label'>
+    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <data:label.name/>
+    </a>
+  </b:loop>
+<b:else/><!-- fallback -->
   <span>Unlabelled</span>
 </b:if>
 ```
@@ -38,13 +53,27 @@ Labels of the post.
 ## Comma
 
 ```html
+<!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
     <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
       <data:label.name/>
     </a><b:if cond='data:i != (data:post.labels.size - 1)'>,</b:if>
   </b:loop>
-<b:else/><!-- unlabelled -->
+</b:if>
+```
+
+##### + Fallback
+
+```html
+<!-- Labels -->
+<b:if cond='data:post.labels'>
+  <b:loop index='i' values='data:post.labels' var='label'>
+    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <data:label.name/>
+    </a><b:if cond='data:i != (data:post.labels.size - 1)'>,</b:if>
+  </b:loop>
+<b:else/><!-- fallback -->
   <span>Unlabelled</span>
 </b:if>
 ```

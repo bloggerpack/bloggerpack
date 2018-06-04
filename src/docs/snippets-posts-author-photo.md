@@ -27,6 +27,7 @@ Photo of the profile of the post author.
 ## Default
 
 ```html
+<!-- Author photo -->
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <img b:whitespace='remove'>
@@ -45,9 +46,10 @@ Photo of the profile of the post author.
 ```
 
 
-## Fallback images
+## Fallback
 
 ```html
+<!-- Author photo -->
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <img b:whitespace='remove'>
@@ -75,6 +77,7 @@ Photo of the profile of the post author.
 ## Anchors
 
 ```html
+<!-- Author photo -->
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>
@@ -96,9 +99,10 @@ Photo of the profile of the post author.
 </b:if>
 ```
 
-##### + Fallback images
+##### + Fallback
 
 ```html
+<!-- Author photo -->
 <b:if cond='data:post.author and data:post.author.authorPhoto'>
   <b:if cond='data:post.author.authorPhoto.image.isYoutube'>
     <b:tag cond='data:post.author.profileUrl' expr:href='data:post.author.profileUrl' name='a'>

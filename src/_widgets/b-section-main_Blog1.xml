@@ -194,7 +194,7 @@
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
               <h3 class='post-title'>
-                <a expr:href='data:post.link ?: data:post.url'>
+                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
@@ -235,7 +235,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -310,7 +310,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -398,7 +398,7 @@
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
               <h3 class='post-title'>
-                <a expr:href='data:post.link ?: data:post.url'>
+                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
@@ -439,7 +439,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -495,7 +495,7 @@
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
               <h3 class='post-title'>
-                <a expr:href='data:post.link ?: data:post.url'>
+                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
@@ -536,7 +536,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -592,7 +592,7 @@
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
               <h3 class='post-title'>
-                <a expr:href='data:post.link ?: data:post.url'>
+                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
@@ -633,7 +633,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
@@ -689,7 +689,7 @@
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
               <h3 class='post-title'>
-                <a expr:href='data:post.link ?: data:post.url'>
+                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
@@ -730,7 +730,7 @@
                     <span>Anonymous</span>
                   </b:if>
                 </li>
-                <!-- Date -->
+                <!-- Date (published) -->
                 <li>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>

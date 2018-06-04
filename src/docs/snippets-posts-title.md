@@ -19,6 +19,7 @@ Title of the post.
 ## Default
 
 ```html
+<!-- Title -->
 <b:if cond='data:post.title'>
   <h1>
     <data:post.title/>
@@ -30,6 +31,7 @@ Title of the post.
 ## No title message
 
 ```html
+<!-- Title -->
 <h1>
   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
 </h1>
@@ -39,9 +41,10 @@ Title of the post.
 ## Anchors
 
 ```html
+<!-- Title -->
 <b:if cond='data:post.title'>
   <h1>
-    <a expr:href='data:post.link ?: data:post.url'>
+    <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
       <data:post.title/>
     </a>
   </h1>
@@ -51,8 +54,9 @@ Title of the post.
 ##### + No title message
 
 ```html
+<!-- Title -->
 <h1>
-  <a expr:href='data:post.link ?: data:post.url'>
+  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
     <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
   </a>
 </h1>

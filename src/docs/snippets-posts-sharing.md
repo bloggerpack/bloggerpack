@@ -19,6 +19,7 @@ The share buttons for the post.
 ## Default
 
 ```html
+<!-- Sharing -->
 <a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
   <i aria-hidden='true' class='icon icon-twitter'/>
   Twitter
@@ -49,12 +50,13 @@ The share buttons for the post.
 ## Dropdown example
 
 ```html
+<!-- Sharing -->
 <div class='dropdown'>
-  <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' class='dropdown-toggle' data-toggle='dropdown' expr:id='"DropdownMenuSharing_" + data:widget.instanceId + "_" + data:post.id' expr:title='data:messages.share' href='#'>
+  <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' class='dropdown-toggle' data-toggle='dropdown' expr:title='data:messages.share' href='#'>
     <i aria-hidden='true' class='icon icon-share'/>
     <data:messages.share/>
   </a>
-  <div class='dropdown-menu' expr:aria-labelledby='"DropdownMenuSharing_" + data:widget.instanceId + "_" + data:post.id'>
+  <div class='dropdown-menu'>
     <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
       <i aria-hidden='true' class='icon icon-twitter'/>
       Twitter

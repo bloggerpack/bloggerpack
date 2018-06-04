@@ -27,6 +27,7 @@ The featured image for the post.
 ## Default
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <img b:whitespace='remove'>
@@ -45,9 +46,10 @@ The featured image for the post.
 ```
 
 
-## Fallback images
+## Fallback
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <img b:whitespace='remove'>
@@ -75,6 +77,7 @@ The featured image for the post.
 ## Responsive images
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <img b:whitespace='remove'>
@@ -96,9 +99,10 @@ The featured image for the post.
 </b:if>
 ```
 
-##### + Fallback images
+##### + Fallback
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <img b:whitespace='remove'>
@@ -130,6 +134,7 @@ The featured image for the post.
 ## Anchors
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <a expr:href='data:post.link ?: data:post.url'>
@@ -151,9 +156,10 @@ The featured image for the post.
 </b:if>
 ```
 
-##### + Fallback images
+##### + Fallback
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <a expr:href='data:post.link ?: data:post.url'>
@@ -186,6 +192,7 @@ The featured image for the post.
 ##### + Responsive images
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <a expr:href='data:post.link ?: data:post.url'>
@@ -211,9 +218,10 @@ The featured image for the post.
 </b:if>
 ```
 
-##### + Responsive images + Fallback images
+##### + Responsive images + Fallback
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <b:if cond='data:post.featuredImage.isYoutube'>
     <a expr:href='data:post.link ?: data:post.url'>
@@ -251,6 +259,7 @@ The featured image for the post.
 ## CSS background-image
 
 ```html
+<!-- Featured image -->
 <b:if cond='data:post.featuredImage'>
   <div class=''><!-- target -->
     <b:if cond='data:post.featuredImage.isYoutube'>
@@ -262,9 +271,10 @@ The featured image for the post.
 </b:if>
 ```
 
-##### + Fallback images
+##### + Fallback
 
 ```html
+<!-- Featured image -->
 <div class=''><!-- target -->
   <b:if cond='data:post.featuredImage'>
     <b:if cond='data:post.featuredImage.isYoutube'>
