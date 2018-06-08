@@ -1,0 +1,75 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <b:include cond='data:this.style == "MENU"' name='menu'/>
+    <b:include cond='data:this.style == "FLAT"' name='flat'/>
+    <b:include cond='data:this.style == "HIERARCHY"' name='hierarchy'/>
+  </div>
+</b:includable>
+<b:includable id='menu'>
+  <select class='archive-menu' onchange='if (this.value) window.location.href = this.value'>
+    <option selected='selected' value=''><data:messages.archive/></option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'>
+        <data:i.name/> (<data:i.post-count/>)
+      </option>
+    </b:loop>
+  </select>
+</b:includable>
+<b:includable id='flat'>
+  <ol class='archive-flat'>
+    <b:loop values='data:data' var='i'>
+      <li>
+        <a expr:href='data:i.url'>
+          <data:i.name/> <span class='archive-flat-count'>(<data:i.post-count/>)</span>
+        </a>
+      </li>
+    </b:loop>
+  </ol>
+</b:includable>
+<b:includable id='hierarchy'>
+  <ol class='archive-hierarchy-first'>
+    <b:loop values='data:data' var='i'>
+      <li>
+        <details class='archive-hierarchy-details'>
+          <summary class='archive-hierarchy-summary'>
+            <a expr:href='data:i.url'>
+              <data:i.name/> <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
+            </a>
+          </summary>
+
+          <ul class='archive-hierarchy-second'>
+            <b:loop values='data:i.data' var='j'>
+              <li>
+                <b:tag class='archive-hierarchy-details' cond='data:j.data' name='details'>
+                  <b:tag class='archive-hierarchy-summary' cond='data:j.data' name='summary'>
+                    <a expr:href='data:j.url'>
+                      <data:j.name/> <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
+                    </a>
+                  </b:tag>
+
+                  <b:if cond='data:j.data'>
+                    <ul class='archive-hierarchy-third'>
+                      <b:loop values='data:j.data' var='k'>
+                        <li>
+                          <a expr:href='data:k.url'>
+                            <data:k.name/> <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
+                          </a>
+                        </li>
+                      </b:loop>
+                    </ul>
+                  </b:if>
+                </b:tag>
+              </li>
+            </b:loop>
+          </ul>
+        </details>
+      </li>
+    </b:loop>
+  </ol>
+</b:includable>
+<b:includable id='interval' var='intervals'/>
+<b:includable id='posts' var='posts'/>

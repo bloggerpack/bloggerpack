@@ -1,0 +1,97 @@
+//
+// list
+//
+
+.label-gadget-list {
+  display: flex;
+  flex-direction: column;
+
+  .label-gadget-list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    color: #495057;
+    text-align: left;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .125);
+
+    &:first-child {
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom-right-radius: .25rem;
+      border-bottom-left-radius: .25rem;
+    }
+    &:hover,
+    &:focus {
+      z-index: 1;
+      color: #495057;
+      text-decoration: none;
+      background-color: #f8f9fa;
+    }
+    &:active {
+      background-color: #e9ecef;
+    }
+    &.active {
+      z-index: 2;
+      color: #fff;
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+  }
+
+  .label-gadget-list-count {
+    display: inline-block;
+    padding: .25em .6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #6c757d;
+    border-radius: 10rem;
+  }
+  .active > .label-gadget-list-count {
+    color: #6c757d;
+    background-color: #fff;
+  }
+}
+
+//
+// cloud
+//
+
+.label-gadget-cloud {
+  .label-gadget-cloud-item {
+    display: inline-block;
+    padding: .25rem .5rem;
+    margin: .25rem .25rem .25rem 0;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #6c757d;
+    border-radius: .25rem;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+      background-color: #495057;
+    }
+    &.active {
+      color: #fff;
+      background-color: #343a40;
+    }
+  }
+}

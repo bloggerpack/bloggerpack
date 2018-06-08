@@ -1,0 +1,59 @@
+//
+// MENU
+//
+
+.archive-menu {
+  width: 100%;
+}
+
+//
+// FLAT
+//
+
+.archive-flat {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+//
+// HIERARCHY
+//
+
+.archive-hierarchy-first,
+.archive-hierarchy-second,
+.archive-hierarchy-third {
+  margin-bottom: 0;
+  list-style: none;
+}
+.archive-hierarchy-first {
+  padding-left: 0;
+}
+.archive-hierarchy-second,
+.archive-hierarchy-third {
+  padding-left: 2rem;
+  margin-left: .25rem;
+  border-left: 1px solid #e5e5e5;
+}
+.archive-hierarchy-third {
+  margin-bottom: .25rem;
+}
+
+.archive-hierarchy-first li,
+.archive-hierarchy-second li,
+.archive-hierarchy-third li {
+  position: relative;
+}
+.archive-hierarchy-second li::before,
+.archive-hierarchy-third li::before {
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  color: #e5e5e5;
+  content: "\2014 \00A0";
+}
+
+.archive-hierarchy-summary {
+  cursor: default;
+  outline: 0;
+}

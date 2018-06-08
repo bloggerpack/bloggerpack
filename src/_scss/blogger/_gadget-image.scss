@@ -1,0 +1,17 @@
+.image-gadget {
+  margin: 0;
+
+  .image-gadget-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: .25rem;
+  }
+
+  .image-gadget-caption {
+    margin-top: .5rem;
+    font-size: 90%;
+    color: #6c757d;
+  }
+}

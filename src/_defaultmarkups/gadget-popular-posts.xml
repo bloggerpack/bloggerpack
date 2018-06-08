@@ -1,0 +1,64 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <b:loop index='i' values='data:posts' var='post'>
+      <div class='popular-post'>
+
+       <b:comment>=== Featured image ===</b:comment>
+        <b:if cond='data:postDisplay.showFeaturedImage'>
+          <b:if cond='data:post.featuredImage'>
+            <b:if cond='data:post.featuredImage.isYoutube'>
+              <a expr:href='data:post.link ?: data:post.url'>
+                <img b:whitespace='remove'>
+                  <!-- class --><b:class name='popular-post-img'/>
+                  <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 64, "1:1") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                  <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                </img>
+              </a>
+            <b:else/>
+              <a expr:href='data:post.link ?: data:post.url'>
+                <img b:whitespace='remove'>
+                  <!-- class --><b:class name='popular-post-img'/>
+                  <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 64, "1:1") : data:post.featuredImage' name='src'/>
+                  <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                </img>
+              </a>
+            </b:if>
+          <b:else/><!-- fallback -->
+            <a expr:href='data:post.link ?: data:post.url'>
+              <img b:whitespace='remove'>
+                <!-- class --><b:class name='popular-post-img popular-post-noimg'/>
+                <!-- src --><b:attr name='src' value='https://via.placeholder.com/64x64/eee/777?text=No+Image'/>
+                <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
+              </img>
+            </a>
+          </b:if>
+        </b:if>
+
+        <div class='popular-post-body'>
+          <b:comment>=== Title ===</b:comment>
+          <h3 class='popular-post-title'>
+            <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </a>
+          </h3>
+          <ul class='popular-post-meta'>
+            <b:comment>=== Date (published) ===</b:comment>
+            <li class='popular-post-meta-item'>
+              <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+              </time>
+            </li>
+          </ul>
+          <b:comment>=== Snippet ===</b:comment>
+          <b:if cond='data:postDisplay.showSnippet'>
+            <div class='popular-post-snippet'>
+              <b:eval expr='snippet(data:post.snippets.long, { length: 100, links: false, linebreaks: false, ellipsis: true })'/>
+            </div>
+          </b:if>
+        </div>
+
+      </div>
+    </b:loop>
+  </div>
+</b:includable>

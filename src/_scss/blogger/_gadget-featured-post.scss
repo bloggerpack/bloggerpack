@@ -1,0 +1,20 @@
+.featured-post {
+  .featured-post-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: .25rem;
+  }
+
+  .featured-post-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .featured-post-divider {
+    margin-top: .75rem;
+  }
+}
