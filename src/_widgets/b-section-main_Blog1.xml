@@ -369,7 +369,7 @@
                 </b:if>
               </div>
               <!-- Body -->
-              <div class='post-body post-body-type'>
+              <div class='post-body post-body-typography'>
                 <data:post.body/>
               </div>
             </article>
@@ -385,7 +385,7 @@
                 <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
               </h1>
               <!-- Body -->
-              <div class='post-body post-body-type'>
+              <div class='post-body post-body-typography'>
                 <data:post.body/>
               </div>
             </article>

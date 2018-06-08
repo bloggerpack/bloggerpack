@@ -1,0 +1,175 @@
+// stylelint-disable declaration-no-important, no-duplicate-selectors, selector-max-type, selector-no-qualifying-type
+
+//
+// Remove margin
+//
+
+// stylelint-disable selector-list-comma-newline-after
+.post-body-typography {
+  h1, h2, h3, h4, h5, h6,
+  p,
+  ol, ul, dl,
+  table,
+  blockquote,
+  address,
+  figure,
+  pre {
+    margin: 0 !important;
+  }
+}
+// stylelint-enable selector-list-comma-newline-after
+
+//
+// Images
+//
+
+.post-body-typography .separator,
+.post-body-typography .tr-caption-container {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.post-body-typography .separator a,
+.post-body-typography .separator img,
+.post-body-typography .tr-caption-container a,
+.post-body-typography .tr-caption-container img {
+  margin: 0 !important;
+}
+
+.post-body-typography .separator img,
+.post-body-typography .tr-caption-container img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-body-typography .separator[style*="float: left"],
+.post-body-typography .separator a[style*="float: left"],
+.post-body-typography .separator img[style*="float: left"],
+.post-body-typography .tr-caption-container[style*="float: left"],
+.post-body-typography .tr-caption-container a[style*="float: left"],
+.post-body-typography .tr-caption-container img[style*="float: left"],
+.post-body-typography .separator[style*="float:left"],
+.post-body-typography .separator a[style*="float:left"],
+.post-body-typography .separator img[style*="float:left"],
+.post-body-typography .tr-caption-container[style*="float:left"],
+.post-body-typography .tr-caption-container a[style*="float:left"],
+.post-body-typography .tr-caption-container img[style*="float:left"] {
+  margin-right: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.post-body-typography .separator[style*="float: right"],
+.post-body-typography .separator a[style*="float: right"],
+.post-body-typography .separator img[style*="float: right"],
+.post-body-typography .tr-caption-container[style*="float: right"],
+.post-body-typography .tr-caption-container a[style*="float: right"],
+.post-body-typography .tr-caption-container img[style*="float: right"],
+.post-body-typography .separator[style*="float:right"],
+.post-body-typography .separator a[style*="float:right"],
+.post-body-typography .separator img[style*="float:right"],
+.post-body-typography .tr-caption-container[style*="float:right"],
+.post-body-typography .tr-caption-container a[style*="float:right"],
+.post-body-typography .tr-caption-container img[style*="float:right"] {
+  margin-bottom: 1em !important;
+  margin-left: 1em !important;
+}
+
+.post-body-typography .tr-caption-container[style*="float: left"],
+.post-body-typography .tr-caption-container[style*="float:left"],
+.post-body-typography .tr-caption-container[style*="float: right"],
+.post-body-typography .tr-caption-container[style*="float:right"] {
+  width: auto !important;
+}
+
+.post-body-typography .tr-caption-container .tr-caption {
+  padding: .5rem 0;
+  font-size: 90%;
+  color: #6c757d;
+}
+
+//
+// Tables
+//
+
+.post-body-typography table:not([class]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: transparent;
+
+  th,
+  td {
+    padding: .75rem;
+    vertical-align: top;
+    border: 1px solid #dee2e6;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+}
+
+//
+// Blockquotes
+//
+
+.post-body-typography blockquote:not([class]) {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-left: 4px solid #dee2e6;
+
+  footer {
+    display: block;
+    font-size: 80%;
+    color: #6c757d;
+  }
+  footer::before {
+    content: "\2014 \00A0";
+  }
+}
+
+//
+// Code
+//
+
+.post-body-typography {
+  code {
+    padding: .2rem .4rem;
+    font-size: 85%;
+    color: #c7254e;
+    word-break: break-word;
+    background-color: #f9f2f4;
+    border-radius: .25rem;
+  }
+
+  pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+.post-body-typography pre:not([class]) {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+}
+
+// stylelint-enable
