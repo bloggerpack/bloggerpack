@@ -146,18 +146,18 @@ $table-striped-order:            odd !default;
 // Blockquotes
 //
 
-$blockquote-padding-y:            .5rem !default;
+$blockquote-padding-y:            .75rem !default;
 $blockquote-padding-x:            1rem !default;
-$blockquote-font-size:            ($font-size * 1.25) !default;
 $blockquote-color:                $gray-900 !default;
 $blockquote-bg:                   $light !default;
+$blockquote-border-color:         $gray-300 !default;
 $blockquote-border-top-width:     0 !default;
 $blockquote-border-right-width:   0 !default;
 $blockquote-border-bottom-width:  0 !default;
-$blockquote-border-left-width:    4px !default;
-$blockquote-border-color:         $gray-300 !default;
+$blockquote-border-left-width:    8px !default;
+$blockquote-border-radius:        $border-radius !default;
 
-$blockquote-footer-font-size:     80% !default;
+$blockquote-footer-font-size:     90% !default;
 $blockquote-footer-color:         $gray-600 !default;
 
 //

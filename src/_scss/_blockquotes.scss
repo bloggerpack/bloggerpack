@@ -1,0 +1,29 @@
+.blockquote {
+  padding: $blockquote-padding-y $blockquote-padding-x;
+  color: $blockquote-color;
+  background-color: $blockquote-bg;
+  border-color: $blockquote-border-color;
+  border-style: solid;
+  border-top-width: $blockquote-border-top-width;
+  border-right-width: $blockquote-border-right-width;
+  border-bottom-width: $blockquote-border-bottom-width;
+  border-left-width: $blockquote-border-left-width;
+  border-radius: $blockquote-border-radius;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .blockquote-footer {
+    display: block;
+    font-size: $blockquote-footer-font-size;
+    color: $blockquote-footer-color;
+
+    &::before {
+      content: "\2014 \00A0";
+    }
+  }
+}

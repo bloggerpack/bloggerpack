@@ -122,19 +122,20 @@
 //
 
 .post-body-typography blockquote:not([class]) {
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
+  padding: .75rem 1rem;
   color: #212529;
   background-color: #f8f9fa;
-  border-left: 4px solid #dee2e6;
+  border-left: 8px solid #dee2e6;
+  border-radius: .25rem;
 
   footer {
     display: block;
-    font-size: 80%;
+    font-size: 90%;
     color: #6c757d;
-  }
-  footer::before {
-    content: "\2014 \00A0";
+
+    &::before {
+      content: "\2014 \00A0";
+    }
   }
 }
 
