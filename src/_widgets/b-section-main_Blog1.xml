@@ -221,7 +221,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -236,7 +236,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -244,7 +244,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -253,7 +253,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>
@@ -296,7 +296,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -311,7 +311,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -319,7 +319,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -328,7 +328,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>
@@ -425,7 +425,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -440,7 +440,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -448,7 +448,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -457,7 +457,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>
@@ -522,7 +522,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -537,7 +537,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -545,7 +545,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -554,7 +554,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>
@@ -619,7 +619,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -634,7 +634,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -642,7 +642,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -651,7 +651,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>
@@ -716,7 +716,7 @@
               <!-- Meta -->
               <ul class='post-meta'>
                 <!-- Author name -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.postedBy/>
                   <b:if cond='data:post.author'>
                     <b:if cond='data:post.author.profileUrl'>
@@ -731,7 +731,7 @@
                   </b:if>
                 </li>
                 <!-- Date (published) -->
-                <li>
+                <li class='post-meta-item'>
                   <data:messages.on/>
                   <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                     <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
@@ -739,7 +739,7 @@
                 </li>
                 <!-- Number of comments -->
                 <b:if cond='data:post.allowComments'>
-                  <li>
+                  <li class='post-meta-item'>
                     <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
                       <b:message name='messages.numberOfComments'>
                         <b:param expr:value='data:post.numberOfComments' name='numComments'/>
@@ -748,7 +748,7 @@
                   </li>
                 </b:if>
                 <!-- Sharing -->
-                <li>
+                <li class='post-meta-item'>
                   <div class='share'>
                     <span b:whitespace='remove' class='share-toggle' tabindex='0'>
                       <data:messages.share/>

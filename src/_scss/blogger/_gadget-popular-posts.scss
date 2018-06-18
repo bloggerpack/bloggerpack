@@ -27,14 +27,23 @@
 
   .popular-post-meta {
     padding-left: 0;
+    margin-top: 0;
     margin-bottom: .5rem;
     font-size: .875rem;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #6c757d;
     list-style: none;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    .popular-post-meta-item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
     }
 
     a {
@@ -44,14 +53,6 @@
       &:hover {
         color: #343a40;
         text-decoration: none;
-      }
-    }
-
-    .popular-post-meta-item {
-      display: inline-block;
-
-      &:not(:last-child) {
-        margin-right: .5rem;
       }
     }
   }

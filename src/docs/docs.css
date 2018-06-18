@@ -26,6 +26,7 @@
 .doc-nav-link {
   display: block;
   padding: .5rem 1rem;
+  line-height: 1.5;
   color: #cecece;
   text-decoration: none;
 }
@@ -44,8 +45,10 @@
 
 .doc-nav-header {
   padding: 0 1rem;
-  margin: .5rem 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
   font-size: .75rem;
+  line-height: 1.2;
   color: #999;
   text-transform: uppercase;
 }
@@ -54,6 +57,7 @@
   padding: .5rem 0;
   margin: .5rem 1rem;
   font-size: .65rem;
+  line-height: 1.2;
   color: #999;
   text-transform: uppercase;
   border-top: 1px solid #32383e;
@@ -120,19 +124,38 @@
   margin-top: 0;
   margin-bottom: 1rem;
 }
+.doc-content > h1,
+.doc-content > h2,
+.doc-content > h3,
+.doc-content > h4,
+.doc-content > h5,
+.doc-content > h6 {
+  line-height: 1.2;
+}
 
 .doc-content > table {
   display: block;
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  border-collapse: collapse;
   background-color: transparent;
+}
+.doc-content > table caption {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom;
 }
 .doc-content > table th,
 .doc-content > table td {
   padding: .75rem;
   vertical-align: top;
   border: 1px solid #dee2e6;
+}
+.doc-content > table th {
+  text-align: inherit;
 }
 /* stylelint-disable-next-line selector-max-type */
 .doc-content > table thead th {
@@ -151,6 +174,7 @@
   padding: 1rem;
   overflow: auto;
   font-size: 85%;
+  line-height: 1.5;
   color: #212529;
   background-color: #f8f9fa;
   border-radius: .25rem;
@@ -166,7 +190,9 @@
 }
 .doc-content > .v-info > ul {
   padding-left: 0;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
   list-style: none;
 }
 .doc-content > .v-info > ul > li {
@@ -223,10 +249,6 @@
   .doc-nav {
     left: 0;
     width: 230px;
-    overflow-y: hidden;
-  }
-  .doc-nav:hover {
-    overflow-y: auto;
   }
   .doc-content {
     padding-right: 2.5rem;
@@ -247,10 +269,6 @@
   .doc-nav {
     left: 0;
     width: 250px;
-    overflow-y: hidden;
-  }
-  .doc-nav:hover {
-    overflow-y: auto;
   }
   .doc-content {
     padding-right: 5rem;

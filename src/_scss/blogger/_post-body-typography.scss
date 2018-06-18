@@ -98,13 +98,25 @@
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  border-collapse: collapse;
   background-color: transparent;
+
+  caption {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #6c757d;
+    text-align: left;
+    caption-side: bottom;
+  }
 
   th,
   td {
     padding: .75rem;
     vertical-align: top;
     border: 1px solid #dee2e6;
+  }
+  th {
+    text-align: inherit;
   }
 
   thead th {

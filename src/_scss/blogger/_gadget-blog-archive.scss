@@ -12,7 +12,9 @@
 
 .archive-flat {
   padding-left: 0;
+  margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.5;
   list-style: none;
 }
 
@@ -23,7 +25,9 @@
 .archive-hierarchy-first,
 .archive-hierarchy-second,
 .archive-hierarchy-third {
+  margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.5;
   list-style: none;
 }
 .archive-hierarchy-first {
