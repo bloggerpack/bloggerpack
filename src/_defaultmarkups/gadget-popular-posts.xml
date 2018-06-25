@@ -12,6 +12,8 @@
                 <img b:whitespace='remove'>
                   <!-- class --><b:class name='popular-post-img'/>
                   <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 64, "1:1") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                  <!-- width --><b:attr name='width' value='64'/>
+                  <!-- height --><b:attr name='height' value='64'/>
                   <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
                 </img>
               </a>
@@ -20,6 +22,8 @@
                 <img b:whitespace='remove'>
                   <!-- class --><b:class name='popular-post-img'/>
                   <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 64, "1:1") : data:post.featuredImage' name='src'/>
+                  <!-- width --><b:attr name='width' value='64'/>
+                  <!-- height --><b:attr name='height' value='64'/>
                   <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
                 </img>
               </a>
@@ -29,6 +33,8 @@
               <img b:whitespace='remove'>
                 <!-- class --><b:class name='popular-post-img popular-post-noimg'/>
                 <!-- src --><b:attr name='src' value='https://via.placeholder.com/64x64/eee/777?text=No+Image'/>
+                <!-- width --><b:attr name='width' value='64'/>
+                <!-- height --><b:attr name='height' value='64'/>
                 <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
               </img>
             </a>
