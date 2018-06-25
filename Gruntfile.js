@@ -6,10 +6,14 @@ module.exports = function (grunt) {
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
 
+  var path = require('path');
+
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-    config: grunt.file.readJSON('src/config.json'),
+    configBase: grunt.file.readJSON('src/config.base.json'),
+    configTheme: grunt.file.readJSON('src/config.theme.json'),
+    configDocs: grunt.file.readJSON('src/config.docs.json'),
 
     clean: {
       'dist': 'dist'
@@ -19,7 +23,22 @@ module.exports = function (grunt) {
       theme: {
         options: {
           basePath: 'src',
-          content: 'src/config.json'
+          content: function () {
+            var files = [{
+              path: 'src/config.base.json',
+              alias: 'base'
+            }, {
+              path: 'src/config.theme.json',
+              alias: 'theme'
+            }, {
+              path: 'src/config.docs.json',
+              alias: 'docs'
+            }];
+            return files.reduce(function (content, file) {
+              content[file.alias] = grunt.file.readJSON(file.path);
+              return content;
+            }, {});
+          }
         },
         files: [{
           expand: true,
@@ -27,13 +46,29 @@ module.exports = function (grunt) {
           src: 'index.xml',
           dest: 'dist/',
           rename: function (dest, src) {
-            return dest + src.replace('index', '<%= config.theme.filename %>');
+            return dest + src.replace('index', 'theme');
           }
         }]
       },
       themeSkin: {
         options: {
-          content: 'src/config.json'
+          basePath: 'src',
+          content: function () {
+            var files = [{
+              path: 'src/config.base.json',
+              alias: 'base'
+            }, {
+              path: 'src/config.theme.json',
+              alias: 'theme'
+            }, {
+              path: 'src/config.docs.json',
+              alias: 'docs'
+            }];
+            return files.reduce(function (content, file) {
+              content[file.alias] = grunt.file.readJSON(file.path);
+              return content;
+            }, {});
+          }
         },
         files: [{
           expand: true,
@@ -44,7 +79,23 @@ module.exports = function (grunt) {
       },
       bundle: {
         options: {
-          content: 'src/config.json'
+          basePath: 'src',
+          content: function () {
+            var files = [{
+              path: 'src/config.base.json',
+              alias: 'base'
+            }, {
+              path: 'src/config.theme.json',
+              alias: 'theme'
+            }, {
+              path: 'src/config.docs.json',
+              alias: 'docs'
+            }];
+            return files.reduce(function (content, file) {
+              content[file.alias] = grunt.file.readJSON(file.path);
+              return content;
+            }, {});
+          }
         },
         files: [{
           expand: true,
@@ -55,7 +106,25 @@ module.exports = function (grunt) {
       },
       docs: {
         options: {
-          content: 'src/config.json'
+          basePath: 'src',
+          content: function () {
+            var files = [{
+              path: 'src/config.base.json',
+              alias: 'base'
+            }, {
+              path: 'src/config.theme.json',
+              alias: 'theme'
+            }, {
+              path: 'src/config.docs.json',
+              alias: 'docs'
+            }];
+            return files.reduce(function (content, file) {
+              content[file.alias] = grunt.file.readJSON(file.path);
+              return content;
+            }, {
+              "rootDirname": __dirname.split(path.sep).pop()
+            });
+          }
         },
         files: [{
           expand: true,
@@ -279,7 +348,7 @@ module.exports = function (grunt) {
     compress: {
       main: {
         options: {
-          archive: '<%= config.theme.filename %>-dist.zip',
+          archive: __dirname.split(path.sep).pop() + '-dist.zip',
           mode: 'zip',
           level: 9,
           pretty: true
@@ -288,7 +357,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'dist/',
           src: ['**'],
-          dest: '<%= config.theme.filename %>-dist'
+          dest: __dirname.split(path.sep).pop() + '-dist'
         }]
       }
     }

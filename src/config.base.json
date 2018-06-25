@@ -1,0 +1,20 @@
+{
+  "1": {
+    "name": "Bloggerable",
+    "version": "1.0.0",
+    "date": "2017-2018",
+    "homepage": "https://blogger-starter.github.io/bloggerable",
+    "author": {
+      "name": "Igoy Nawamreh",
+      "url": "https://twitter.com/igoynawamreh"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/blogger-starter/bloggerable.git"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/blogger-starter/bloggerable/blob/master/LICENSE"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /*!
- * b:starter Docs (https://blogger-starter.github.io)
+ * Bloggerable Docs (https://blogger-starter.github.io/bloggerable)
  * Copyright 2017-2018 Igoy Nawamreh (https://twitter.com/igoynawamreh)
  * Licensed under the Creative Commons Attribution 3.0 Unported License (https://creativecommons.org/licenses/by/3.0)
  */

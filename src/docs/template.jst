@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%=title || 'Documentation'%><%if(section != 'None'){%> | <%=section%><%}%></title>
+    <title><%if(section != 'None'){%><%=section%> - <%}%><%=title%> &middot; {{ docs.title }}</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="bundle/bundle.css">
     <link rel="stylesheet" href="docs.css">
@@ -13,9 +13,7 @@
     <nav class="doc-nav" id="navDoc">
       <a class="doc-nav-link" href="index.html">Home</a>
       <div class="doc-nav-divider"></div>
-      <h6 class="doc-nav-header">Getting started</h6>
-      <a class="doc-nav-link" href="getting-started-introduction.html">Introduction</a>
-      <a class="doc-nav-link" href="getting-started-build-tools.html">Build tools</a>
+      <a class="doc-nav-link" href="getting-started.html">Getting started</a>
       <div class="doc-nav-divider"></div>
       <h6 class="doc-nav-header">Core template</h6>
       <a class="doc-nav-link" href="core-overview.html">Overview</a>
@@ -41,10 +39,12 @@
       <a class="doc-nav-link" href="snippets-posts-title.html">Posts title</a>
       <div class="doc-nav-divider"></div>
       <h6 class="doc-nav-header">{{ base.1.name }} Links</h6>
-      <a class="doc-nav-link" href="https://blogger-starter.github.io">Documentation</a>
-      <a class="doc-nav-link" href="https://blogger-starter.blogspot.com">Demo</a>
-      <a class="doc-nav-link" href="#">Themes</a>
-      <a class="doc-nav-link" href="https://github.com/blogger-starter/blogger-starter">GitHub</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.documentation }}" target="_blank">Documentation</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.demo }}" target="_blank">Demo</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.themes }}" target="_blank">Themes</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.github }}" target="_blank">GitHub</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.facebook }}" target="_blank">Facebook</a>
+      <a class="doc-nav-link" href="{{ docs.links.bloggerable.twitter }}" target="_blank">Twitter</a>
     </nav>
 
     <button class="doc-nav-toggle" id="navDocToggle" type="button">
