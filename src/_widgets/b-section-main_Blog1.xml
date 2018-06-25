@@ -51,7 +51,7 @@
           </li>
           <li class='blog-breadcrumb-item active'>Post</li>
           <b:loop values='data:posts' var='post'>
-            <li class='blog-breadcrumb-item active'><data:post.title/></li>
+            <li class='blog-breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
           </b:loop>
         </b:if>
 
@@ -62,7 +62,7 @@
           </li>
           <li class='blog-breadcrumb-item active'>Page</li>
           <b:loop values='data:posts' var='post'>
-            <li class='blog-breadcrumb-item active'><data:post.title/></li>
+            <li class='blog-breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
           </b:loop>
         </b:if>
 
