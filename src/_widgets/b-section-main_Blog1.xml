@@ -253,7 +253,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>
@@ -334,7 +334,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>
@@ -469,7 +469,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>
@@ -572,7 +572,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>
@@ -675,7 +675,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>
@@ -778,7 +778,7 @@
                         </b:message>
                       <b:else/>
                         <!-- Google+ Comments (Yes) -->
-                        <span><data:messages.comments/></span>
+                        <data:messages.comments/>
                       </b:if>
                     </a>
                   </li>

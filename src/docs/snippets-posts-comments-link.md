@@ -29,7 +29,7 @@ Link to the comments on the post.
       </b:message>
     <b:else/>
       <!-- Google+ Comments (Yes) -->
-      <span><data:messages.comments/></span>
+      <data:messages.comments/>
     </b:if>
   </a>
 </b:if>
@@ -49,7 +49,7 @@ Link to the comments on the post.
       </b:message>
     <b:else/>
       <!-- Google+ Comments (Yes) -->
-      <span><data:messages.comments/></span>
+      <data:messages.comments/>
     </b:if>
   </a>
 <b:else/><!-- fallback -->
