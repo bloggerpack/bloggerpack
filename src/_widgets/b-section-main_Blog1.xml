@@ -193,11 +193,11 @@
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
-              <h3 class='post-title'>
+              <h2 class='post-title'>
                 <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
-              </h3>
+              </h2>
               <!-- Snippet -->
               <div class='post-snippet'>
                 <b:if cond='data:post.hasJumpLink'>
@@ -409,11 +409,11 @@
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
-              <h3 class='post-title'>
+              <h2 class='post-title'>
                 <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
-              </h3>
+              </h2>
               <!-- Snippet -->
               <div class='post-snippet'>
                 <b:if cond='data:post.hasJumpLink'>
@@ -512,11 +512,11 @@
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
-              <h3 class='post-title'>
+              <h2 class='post-title'>
                 <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
-              </h3>
+              </h2>
               <!-- Snippet -->
               <div class='post-snippet'>
                 <b:if cond='data:post.hasJumpLink'>
@@ -615,11 +615,11 @@
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
-              <h3 class='post-title'>
+              <h2 class='post-title'>
                 <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
-              </h3>
+              </h2>
               <!-- Snippet -->
               <div class='post-snippet'>
                 <b:if cond='data:post.hasJumpLink'>
@@ -718,11 +718,11 @@
           <b:loop values='data:posts' var='post'>
             <article class='post' expr:id='"post-" + data:post.id'>
               <!-- Title -->
-              <h3 class='post-title'>
+              <h2 class='post-title'>
                 <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
-              </h3>
+              </h2>
               <!-- Snippet -->
               <div class='post-snippet'>
                 <b:if cond='data:post.hasJumpLink'>
