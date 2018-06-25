@@ -140,6 +140,13 @@
   border-left: 8px solid #dee2e6;
   border-radius: .25rem;
 
+  > :first-child {
+    margin-top: 0;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+
   footer {
     display: block;
     font-size: 90%;

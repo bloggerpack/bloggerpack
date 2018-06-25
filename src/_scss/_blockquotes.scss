@@ -10,10 +10,10 @@
   border-left-width: $blockquote-border-left-width;
   border-radius: $blockquote-border-radius;
 
-  > *:first-child {
+  > :first-child {
     margin-top: 0;
   }
-  > *:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 
