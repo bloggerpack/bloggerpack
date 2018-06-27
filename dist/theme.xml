@@ -588,13 +588,13 @@ body#layout .layout-mode-col-12 {
 }
 .header-nav .header-nav-link:hover,
 .header-nav .header-nav-link:focus {
-  color: #212529;
+  color: #495057;
   text-decoration: none;
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, .025);
 }
 .header-nav .header-nav-link.active {
-  color: #212529;
-  background-color: #f0f0f0;
+  color: #495057;
+  background-color: rgba(0, 0, 0, .045);
 }
 
 /**
