@@ -6,8 +6,6 @@
 # Tables
 
 
-## Examples
-
 <div class="doc-example">
   <h5>Default</h5>
   <table class="table">
@@ -172,7 +170,7 @@
 
 ## Table head options
 
-##### Light head
+### Light head
 
 <div class="doc-example">
   <table class="table">
@@ -251,7 +249,7 @@
 </table>
 ```
 
-##### Dark head
+### Dark head
 
 <div class="doc-example">
   <table class="table">

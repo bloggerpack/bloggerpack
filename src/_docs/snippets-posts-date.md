@@ -7,7 +7,7 @@
 
 Date of the post.
 
-##### Usage
+### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -25,7 +25,7 @@ Date of the post.
 </time>
 ```
 
-##### + Custom format
+### + Custom format
 
 ```html
 <!-- Date (published) -->
@@ -44,7 +44,7 @@ Date of the post.
 </time>
 ```
 
-##### + Custom format
+### + Custom format
 
 ```html
 <!-- Date (updated) -->

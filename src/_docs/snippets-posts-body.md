@@ -7,7 +7,7 @@
 
 The content of the post.
 
-##### Usage
+### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>

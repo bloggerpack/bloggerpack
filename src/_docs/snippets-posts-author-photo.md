@@ -7,7 +7,7 @@
 
 Photo of the profile of the post author.
 
-##### Usage
+### Usage
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -15,7 +15,7 @@ Photo of the profile of the post author.
 </b:loop>
 ```
 
-##### Options
+### Options
 
 - `128` - size
 - `1:1` - aspect ratio
@@ -99,7 +99,7 @@ Photo of the profile of the post author.
 </b:if>
 ```
 
-##### + Fallback
+### + Fallback
 
 ```html
 <!-- Author photo -->
