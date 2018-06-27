@@ -37,7 +37,7 @@
 .archive-hierarchy-third {
   padding-left: 2rem;
   margin-left: .25rem;
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid rgba(0, 0, 0, .125);
 }
 .archive-hierarchy-third {
   margin-bottom: .25rem;
@@ -53,7 +53,7 @@
   position: absolute;
   top: 0;
   left: -2rem;
-  color: #e5e5e5;
+  color: rgba(0, 0, 0, .125);
   content: "\2014 \00A0";
 }
 
