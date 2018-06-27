@@ -105,8 +105,8 @@
 .header {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .header-wrap {
@@ -339,7 +339,7 @@
 .post {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .post.post-static {
@@ -633,7 +633,7 @@
   padding: 2rem;
   margin-bottom: 1rem;
   background-color: #fff;
-  border: 1px solid #e5e5e5;
+  border: 1px solid rgba(0, 0, 0, .125);
   border-radius: .25rem;
 }
 .sidebar .widget:last-child {
@@ -661,8 +661,8 @@
   padding-bottom: 2rem;
   font-size: .875rem;
   color: #6c757d;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+  background-color: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, .125);
 }
 
 .footer-wrap {
