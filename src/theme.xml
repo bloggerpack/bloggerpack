@@ -118,7 +118,7 @@ Header
       </h1>
       <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header-nav")'>
         <b:section class='b-section-header-nav' id='b-section-header-nav' maxwidgets='1' name='Header nav' showaddelement='no'>
-          <!--(bake _widgets/b-section-header-nav_PageList1.xml)-->
+          <!--(bake _includes/widgets/b-section-header-nav_PageList1.xml)-->
         </b:section>
       </b:if>
     </div><!-- /.header-wrap -->
@@ -139,7 +139,7 @@ Main content (main and sidebar)
         <main class='main-col layout-mode-col-8' id='main-col' role='main'>
           <div class='main' id='main'>
             <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
-              <!--(bake _widgets/b-section-main_Blog1.xml)-->
+              <!--(bake _includes/widgets/b-section-main_Blog1.xml)-->
             </b:section>
           </div><!-- /.main -->
         </main><!-- /.main-col -->
@@ -148,7 +148,7 @@ Main content (main and sidebar)
         <aside class='sidebar-col layout-mode-col-4' id='sidebar-col'>
           <div class='sidebar' id='sidebar'>
             <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'>
-              <!--(bake _widgets/b-section-sidebar_HTML1.xml)-->
+              <!--(bake _includes/widgets/b-section-sidebar_HTML1.xml)-->
             </b:section>
           </div><!-- /.sidebar -->
         </aside><!-- /.sidebar-col -->
@@ -168,7 +168,7 @@ Footer
     <div class='footer-wrap'>
       <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer-links")'>
         <b:section class='b-section-footer-links' id='b-section-footer-links' maxwidgets='1' name='Footer links' showaddelement='no'>
-          <!--(bake _widgets/b-section-footer-links_LinkList1.xml)-->
+          <!--(bake _includes/widgets/b-section-footer-links_LinkList1.xml)-->
         </b:section>
       </b:if>
       <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
@@ -197,7 +197,48 @@ JavaScript
 Default markups
 ############################################################################# </b:comment>
 
-<!--(bake _includes/defaultmarkups.xml)-->
+<b:defaultmarkups>
+  <b:comment>### Blog Archive ###</b:comment>
+  <b:defaultmarkup type='BlogArchive'>
+    <!--(bake _includes/defaultmarkups/gadget-blog-archive.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Blog Search ###</b:comment>
+  <b:defaultmarkup type='BlogSearch'>
+    <!--(bake _includes/defaultmarkups/gadget-blog-search.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Contact Form ###</b:comment>
+  <b:defaultmarkup type='ContactForm'>
+    <!--(bake _includes/defaultmarkups/gadget-contact-form.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Featured Post ###</b:comment>
+  <b:defaultmarkup type='FeaturedPost'>
+    <!--(bake _includes/defaultmarkups/gadget-featured-post.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Follow by Email ###</b:comment>
+  <b:defaultmarkup type='FollowByEmail'>
+    <!--(bake _includes/defaultmarkups/gadget-follow-by-email.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Page Header ###</b:comment>
+  <b:defaultmarkup type='Header'>
+    <!--(bake _includes/defaultmarkups/gadget-header.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Image ###</b:comment>
+  <b:defaultmarkup type='Image'>
+    <!--(bake _includes/defaultmarkups/gadget-image.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Labels ###</b:comment>
+  <b:defaultmarkup type='Label'>
+    <!--(bake _includes/defaultmarkups/gadget-label.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Popular Posts ###</b:comment>
+  <b:defaultmarkup type='PopularPosts'>
+    <!--(bake _includes/defaultmarkups/gadget-popular-posts.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Translate ###</b:comment>
+  <b:defaultmarkup type='Translate'>
+    <!--(bake _includes/defaultmarkups/gadget-translate.xml)-->
+  </b:defaultmarkup>
+</b:defaultmarkups>
 
 
 </body>

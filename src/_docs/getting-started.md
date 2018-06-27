@@ -17,26 +17,23 @@ Learn how to compile the source code, builds the theme and documentation, and mo
 Once downloaded, you’ll see something like this:
 
 ```plaintext
-{{ rootDirname }}/
-├── dist/
-│   ├── bundle/
-│   ├── docs/
-│   ├── skin/
+{{ rootDirname }}
+├── dist
+│   ├── bundle
+│   ├── docs
+│   ├── skin
 │   └── theme.xml
-└── src/
-    ├── _defaultmarkups/
-    ├── _includes/
-    ├── _scss/
-    ├── _widgets/
-    ├── docs/
+└── src
+    ├── _docs
+    ├── _includes
+    ├── _js
+    ├── _scss
     ├── config.base.json
     ├── config.docs.json
     ├── config.theme.json
-    ├── index.js
-    ├── index.scss
-    ├── index.xml
     ├── skin.css
-    └── template-skin.css
+    ├── template-skin.css
+    └── theme.xml
 ```
 
 

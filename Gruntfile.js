@@ -43,10 +43,10 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: 'index.xml',
+          src: 'theme.xml',
           dest: 'dist/',
           rename: function (dest, src) {
-            return dest + src.replace('index', 'theme');
+            return dest + src.replace('theme', 'theme');
           }
         }]
       },
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.html', 'docs.css', 'docs.js'],
+          src: ['**/*.html', 'assets/css/**/*.css', 'assets/js/**/*.js'],
           dest: 'dist/docs'
         }]
       }
@@ -159,7 +159,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/docs/',
+          cwd: 'src/_docs/',
           src: '**/*.md',
           dest: 'dist/docs',
           ext: '.html'
@@ -265,7 +265,7 @@ module.exports = function (grunt) {
         src: 'src/_scss/**/*.scss'
       },
       docs: {
-        src: 'src/docs/docs.css'
+        src: 'src/_docs/assets/css/docs.css'
       }
     },
 
@@ -280,14 +280,14 @@ module.exports = function (grunt) {
         src: 'dist/skin/skin.css'
       },
       docs: {
-        src: 'dist/docs/docs.css'
+        src: 'dist/docs/assets/css/docs.css'
       }
     },
 
     copy: {
       docsFiles: {
         expand: true,
-        cwd: 'src/docs/',
+        cwd: 'src/_docs/',
         src: ['**/*', '!**/*.md', '!**/*.jst'],
         dest: 'dist/docs'
       },
