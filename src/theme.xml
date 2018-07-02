@@ -172,7 +172,7 @@ Footer
         </b:section>
       </b:if>
       <p>&#169; <data:blog.title/>. <a b:whitespace='remove' expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/>.</a></p>
-      <p><data:blog.title/> is open source. It's developed and maintained on <a href='https://github.com/blogger-starter/blogger-starter'>GitHub</a>.</p>
+      <p>Bloggerable is open source. It's developed and maintained on <a href='https://github.com/blogger-starter/blogger-starter'>GitHub</a>.</p>
     </div><!-- /.footer-wrap -->
   </div><!-- /.container -->
 </footer><!-- /.footer -->
