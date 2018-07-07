@@ -12,3 +12,8 @@
     @return $yiq-text-light;
   }
 }
+
+// Retrieve color Sass maps
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
