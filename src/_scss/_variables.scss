@@ -115,27 +115,27 @@ $h6-font-size:          $font-size !default;
 // Buttons
 //
 
-$button-padding-y:                .375rem !default;
-$button-padding-x:                .75rem !default;
-$button-font-size:                $font-size !default;
-$button-font-weight:              $font-weight-normal !default;
-$button-line-height:              $line-height !default;
-$button-border-width:             $border-width !default;
-$button-border-radius:            $border-radius !default;
-$button-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-$button-focus-box-shadow:         0 0 0 1px #007bff !default;
-$button-disabled-opacity:         .65 !default;
+$button-padding-y:            .375rem !default;
+$button-padding-x:            .75rem !default;
+$button-font-size:            $font-size !default;
+$button-font-weight:          $font-weight-normal !default;
+$button-line-height:          $line-height !default;
+$button-border-width:         $border-width !default;
+$button-border-radius:        $border-radius !default;
+$button-transition:           color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$button-focus-box-shadow:     0 0 0 1px #007bff !default;
+$button-disabled-opacity:     .65 !default;
 
 // Default
-$button-color:                    $gray-900 !default;
-$button-bg:                       $gray-400 !default;
-$button-border-color:             darken($button-bg, 3%) !default;
-$button-hover-color:              $gray-900 !default;
-$button-hover-bg:                 darken($button-bg, 7%) !default;
-$button-hover-border-color:       darken($button-hover-bg, 3%) !default;
-$button-active-color:             $gray-900 !default;
-$button-active-bg:                darken($button-bg, 12%) !default;
-$button-active-border-color:      darken($button-active-bg, 3%) !default;
+$button-color:                $gray-900 !default;
+$button-bg:                   $gray-400 !default;
+$button-border-color:         darken($button-bg, 3%) !default;
+$button-hover-color:          $gray-900 !default;
+$button-hover-bg:             darken($button-bg, 7%) !default;
+$button-hover-border-color:   darken($button-hover-bg, 3%) !default;
+$button-active-color:         $gray-900 !default;
+$button-active-bg:            darken($button-bg, 12%) !default;
+$button-active-border-color:  darken($button-active-bg, 3%) !default;
 
 //
 // Tables
