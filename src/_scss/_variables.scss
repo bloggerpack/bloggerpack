@@ -27,8 +27,6 @@ $gray-800:   #343a40 !default;
 $gray-900:   #212529 !default;
 $black:      #000 !default;
 
-$muted:      $gray-600 !default;
-
 $primary:    #007bff !default;
 $secondary:  $gray-600 !default;
 $light:      $gray-100 !default;
@@ -74,7 +72,7 @@ $body-color:        $gray-900 !default;
 $body-bg:           $white !default;
 
 //
-// Inline text elements
+// Text elements
 //
 
 // Links
@@ -94,6 +92,10 @@ $small-font-weight:  $font-weight-normal !default;
 $mark-padding:  .2em !default;
 $mark-color:    $black !default;
 $mark-bg:       #ffecb3 !default;
+
+// Text muted
+
+$text-muted:  $gray-600 !default;
 
 //
 // Headings
