@@ -1,4 +1,4 @@
-@mixin button-variant($background, $border: darken($background, 3%), $hover-background: darken($background, 7%), $hover-border: darken($hover-background, 3%), $active-background: darken($background, 12%), $active-border: darken($active-background, 3%)) {
+@mixin button-variant($background, $border: darken($background, 2.5%), $hover-background: darken($background, 7.5%), $hover-border: darken($hover-background, 2.5%), $active-background: darken($background, 15%), $active-border: darken($active-background, 2.5%)) {
   color: color-yiq($background);
   background-color: $background;
   border-color: $border;
