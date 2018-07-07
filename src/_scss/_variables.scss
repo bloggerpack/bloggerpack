@@ -147,37 +147,38 @@ $table-cell-padding:             .75rem !default;
 $table-border-width:             $border-width !default;
 
 // Default
+$table-color:                    $body-color !default;
 $table-bg:                       transparent !default;
-$table-accent-bg:                darken($light, 3%) !default;
+$table-accent-bg:                rgba($black, .05) !default;
 $table-border-color:             $gray-300 !default;
 $table-row-hover-color:          $gray-900 !default;
-$table-row-hover-bg:             darken($light, 5%) !default;
+$table-row-hover-bg:             rgba($black, .075) !default;
 
 // Light
 $table-light-color:              $gray-900 !default;
 $table-light-bg:                 $light !default;
-$table-light-accent-bg:          darken($table-light-bg, 3%) !default;
-$table-light-border-color:       $gray-300 !default;
+$table-light-accent-bg:          rgba($black, .05) !default;
+$table-light-border-color:       darken($table-light-bg, 7.5%) !default;
 $table-light-row-hover-color:    $gray-900 !default;
-$table-light-row-hover-bg:       darken($table-light-bg, 5%) !default;
+$table-light-row-hover-bg:       rgba($black, .075) !default;
 
 // Dark
 $table-dark-color:               $white !default;
-$table-dark-bg:                  $dark !default;
-$table-dark-accent-bg:           darken($table-dark-bg, 3%) !default;
-$table-dark-border-color:        #32383e !default;
+$table-dark-bg:                  $gray-900 !default;
+$table-dark-accent-bg:           rgba($white, .05) !default;
+$table-dark-border-color:        lighten($table-dark-bg, 7.5%) !default;
 $table-dark-row-hover-color:     $white !default;
-$table-dark-row-hover-bg:        darken($table-dark-bg, 5%) !default;
+$table-dark-row-hover-bg:        rgba($white, .075) !default;
 
 // Light head
 $table-head-light-color:         $gray-900 !default;
-$table-head-light-bg:            darken($table-light-bg, 6%) !default;
-$table-head-light-border-color:  $table-light-border-color !default;
+$table-head-light-bg:            darken($table-light-bg, 7.5%) !default;
+$table-head-light-border-color:  darken($table-head-light-bg, 7.5%) !default;
 
 // Dark head
 $table-head-dark-color:          $white !default;
-$table-head-dark-bg:             darken($table-dark-bg, 6%) !default;
-$table-head-dark-border-color:   $table-dark-border-color !default;
+$table-head-dark-bg:             darken($table-dark-bg, 7.5%) !default;
+$table-head-dark-border-color:   lighten($table-head-dark-bg, 15%) !default;
 
 // Caption
 $table-caption-padding:          .75rem !default;
