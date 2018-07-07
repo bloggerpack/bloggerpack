@@ -144,7 +144,6 @@ $button-active-border-color:  darken($button-active-bg, 3%) !default;
 $table-cell-padding:             .75rem !default;
 $table-border-width:             $border-width !default;
 
-
 // Default
 $table-bg:                       transparent !default;
 $table-accent-bg:                darken($light, 3%) !default;
@@ -168,7 +167,6 @@ $table-dark-border-color:        #32383e !default;
 $table-dark-row-hover-color:     $white !default;
 $table-dark-row-hover-bg:        darken($table-dark-bg, 5%) !default;
 
-
 // Light head
 $table-head-light-color:         $gray-900 !default;
 $table-head-light-bg:            darken($table-light-bg, 6%) !default;
@@ -179,13 +177,11 @@ $table-head-dark-color:          $white !default;
 $table-head-dark-bg:             darken($table-dark-bg, 6%) !default;
 $table-head-dark-border-color:   $table-dark-border-color !default;
 
-
 // Caption
 $table-caption-padding:          .75rem !default;
 $table-caption-color:            $gray-600 !default;
 $table-caption-text-align:       left !default;
 $table-caption-side:             bottom !default;
-
 
 // Striped rows
 $table-striped-order:            odd !default;
