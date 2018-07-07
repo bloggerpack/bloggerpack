@@ -241,6 +241,9 @@
   margin-top: -1rem;
   border-radius: 0;
 }
+.doc-content > .doc-example > .button {
+  margin: .25rem .25rem .25rem 0;
+}
 
 /* Responsive
    ========================================================================== */

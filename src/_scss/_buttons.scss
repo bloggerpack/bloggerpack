@@ -1,0 +1,87 @@
+// stylelint-disable selector-no-qualifying-type
+
+.button {
+  display: inline-block;
+  padding: $button-padding-y $button-padding-x;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $button-border-width solid transparent;
+  border-radius: $button-border-radius;
+  transition: $button-transition;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $button-focus-box-shadow;
+  }
+
+  &.disabled,
+  &:disabled {
+    box-shadow: none;
+    opacity: $button-disabled-opacity;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-image: none;
+  }
+}
+
+a.button.disabled,
+fieldset:disabled a.button {
+  pointer-events: none;
+}
+
+//
+// Alternate buttons
+//
+
+// Default
+// stylelint-disable no-duplicate-selectors
+.button {
+  color: $button-color;
+  background-color: $button-bg;
+  border-color: $button-border-color;
+
+  &:hover,
+  &:focus {
+    color: $button-hover-color;
+    background-color: $button-hover-bg;
+    border-color: $button-hover-border-color;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $button-color;
+    background-color: $button-bg;
+    border-color: $button-border-color;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $button-active-color;
+    background-color: $button-active-bg;
+    border-color: $button-active-border-color;
+  }
+}
+// stylelint-enable no-duplicate-selectors
+
+@each $color, $value in $theme-colors {
+  .button-#{$color} {
+    @include button-variant($value);
+  }
+}
