@@ -39,7 +39,8 @@
       background-color: #f8f9fa;
     }
     &:active {
-      background-color: #e9ecef;
+      z-index: 3;
+      background-color: darken(#f8f9fa, 7.5%);
     }
     &.active {
       z-index: 2;
@@ -90,11 +91,11 @@
     &:focus {
       color: #fff;
       text-decoration: none;
-      background-color: #495057;
+      background-color: darken(#6c757d, 7.5%);
     }
     &.active {
       color: #fff;
-      background-color: #343a40;
+      background-color: darken(#6c757d, 15%);
     }
   }
 }

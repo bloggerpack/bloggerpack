@@ -3,11 +3,14 @@
   background-color: $background;
   border-color: $border;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: color-yiq($hover-background);
     background-color: $hover-background;
     border-color: $hover-border;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 $button-focus-width rgba($border, .5);
   }
 
   &.disabled,
@@ -22,5 +25,9 @@
     color: color-yiq($active-background);
     background-color: $active-background;
     border-color: $active-border;
+
+    &:focus {
+      box-shadow: 0 0 0 $button-focus-width rgba($active-border, .5);
+    }
   }
 }

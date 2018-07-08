@@ -125,7 +125,7 @@ $button-line-height:          $line-height !default;
 $button-border-width:         $border-width !default;
 $button-border-radius:        $border-radius !default;
 $button-transition:           color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-$button-focus-box-shadow:     0 0 0 1px #007bff !default;
+$button-focus-width:          .2rem !default;
 $button-disabled-opacity:     .65 !default;
 
 // Default

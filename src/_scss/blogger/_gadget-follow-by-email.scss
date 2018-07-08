@@ -15,9 +15,9 @@
     &:focus {
       color: #495057;
       background-color: #fff;
-      border-color: #ffc107;
+      border-color: lighten(#ffc107, 25%);
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .5);
+      box-shadow: 0 0 0 .2rem rgba(#ffc107, .25);
     }
   }
 
@@ -38,23 +38,27 @@
     cursor: pointer;
     user-select: none;
     background-color: #ffc107;
-    border: 1px solid #ffc107;
+    border: 1px solid darken(#ffc107, 2.5%);
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &:hover {
       color: #212529;
-      background-color: #e0a800;
-      border-color: #d39e00;
+      background-color: darken(#ffc107, 7.5);
+      border-color: darken(#ffc107, 10%);
     }
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .5);
+      box-shadow: 0 0 0 .2rem rgba(#ffc107, .5);
     }
     &:active {
       color: #212529;
-      background-color: #d39e00;
-      border-color: #c69500;
+      background-color: darken(#ffc107, 15%);
+      border-color: darken(#ffc107, 17.5%);
+
+      &:focus {
+        box-shadow: 0 0 0 .2rem rgba(darken(#ffc107, 17.5%), .5);
+      }
     }
   }
 }

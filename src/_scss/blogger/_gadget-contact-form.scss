@@ -26,9 +26,9 @@
     &:focus {
       color: #495057;
       background-color: #fff;
-      border-color: #28a745;
+      border-color: lighten(#28a745, 25%);
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5);
+      box-shadow: 0 0 0 .2rem rgba(#28a745, .25);
     }
   }
 
@@ -45,23 +45,27 @@
     cursor: pointer;
     user-select: none;
     background-color: #28a745;
-    border: 1px solid #28a745;
+    border: 1px solid darken(#28a745, 2.5%);
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &:hover {
       color: #fff;
-      background-color: #218838;
-      border-color: #1e7e34;
+      background-color: darken(#28a745, 7.5%);
+      border-color: darken(#28a745, 10%);
     }
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5);
+      box-shadow: 0 0 0 .2rem rgba(#28a745, .5);
     }
     &:active {
       color: #fff;
-      background-color: #1e7e34;
-      border-color: #1c7430;
+      background-color: darken(#28a745, 15%);
+      border-color: darken(#28a745, 17.5%);
+
+      &:focus {
+        box-shadow: 0 0 0 .2rem rgba(darken(#28a745, 17.5%), .5);
+      }
     }
   }
 
@@ -81,9 +85,9 @@
   }
   .contact-form-error-message-with-border {
     padding-right: 4rem;
-    color: #a94442;
+    color: darken(#f2dede, 45%);
     background-color: #f2dede;
-    border-color: #ebcccc;
+    border-color: darken(#f2dede, 2.5%);
 
     .contact-form-cross {
       position: absolute;
@@ -93,8 +97,8 @@
     }
   }
   .contact-form-success-message-with-border {
-    color: #3c763d;
+    color: darken(#dff0d8, 45%);
     background-color: #dff0d8;
-    border-color: #d0e9c6;
+    border-color: darken(#dff0d8, 2.5%);
   }
 }

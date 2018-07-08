@@ -39,9 +39,9 @@
     &:focus {
       color: #495057;
       background-color: #fff;
-      border-color: #80bdff;
+      border-color: lighten(#007bff, 25%);
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+      box-shadow: 0 0 0 .2rem rgba(#007bff, .25);
     }
   }
 
@@ -58,23 +58,27 @@
     cursor: pointer;
     user-select: none;
     background-color: #007bff;
-    border: 1px solid #007bff;
+    border: 1px solid darken(#007bff, 2.5%);
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     &:hover {
       color: #fff;
-      background-color: #0069d9;
-      border-color: #0062cc;
+      background-color: darken(#007bff, 7.5%);
+      border-color: darken(#007bff, 10%);
     }
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .5);
+      box-shadow: 0 0 0 .2rem rgba(#007bff, .5);
     }
     &:active {
       color: #fff;
-      background-color: #0062cc;
-      border-color: #005cbf;
+      background-color: darken(#007bff, 15%);
+      border-color: darken(#007bff, 17.5%);
+
+      &:focus {
+        box-shadow: 0 0 0 .2rem rgba(darken(#007bff, 17.5%), .5);
+      }
     }
   }
 }
