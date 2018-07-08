@@ -2,14 +2,12 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacer;
-  color: $table-color;
-  background-color: $table-bg;
 
   th,
   td {
     padding: $table-cell-padding;
     vertical-align: top;
-    border: $table-border-width solid $table-border-color;
+    border: $table-border-width solid transparent;
     border-width: $table-border-width 0 0;
   }
 
@@ -19,22 +17,11 @@
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
-  }
-
-  .thead-light th {
-    color: $table-light-color;
-    background-color: $table-light-bg;
-    border-color: $table-light-border-color;
-  }
-  .thead-dark th {
-    color: $table-dark-color;
-    background-color: $table-dark-bg;
-    border-color: $table-dark-border-color;
+    border-top: (2 * $table-border-width) solid transparent;
   }
 
   &.table-bordered {
-    border: $table-border-width solid $table-border-color;
+    border: $table-border-width solid transparent;
 
     th,
     td {
@@ -53,6 +40,41 @@
       border: 0;
     }
   }
+}
+
+//
+// Theme
+//
+
+// stylelint-disable no-duplicate-selectors
+.table {
+  // Default
+  color: $table-color;
+  background-color: $table-bg;
+
+  th,
+  td {
+    border-color: $table-border-color;
+  }
+
+  tbody + tbody {
+    border-color: $table-border-color;
+  }
+
+  .thead-light th {
+    color: $table-light-color;
+    background-color: $table-light-bg;
+    border-color: $table-light-border-color;
+  }
+  .thead-dark th {
+    color: $table-dark-color;
+    background-color: $table-dark-bg;
+    border-color: $table-dark-border-color;
+  }
+
+  &.table-bordered {
+    border-color: $table-border-color;
+  }
 
   &.table-striped tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
@@ -62,14 +84,8 @@
     color: $table-row-hover-color;
     background-color: $table-row-hover-bg;
   }
-}
 
-//
-// Theme
-//
-
-// stylelint-disable-next-line no-duplicate-selectors
-.table {
+  // Light
   &.table-light {
     color: $table-light-color;
     background-color: $table-light-bg;
@@ -103,6 +119,7 @@
     }
   }
 
+  // Dark
   &.table-dark {
     color: $table-dark-color;
     background-color: $table-dark-bg;
@@ -136,6 +153,7 @@
     }
   }
 }
+// stylelint-enable no-duplicate-selectors
 
 //
 // Responsive table
