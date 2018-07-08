@@ -127,7 +127,6 @@
 
 .header-title .header-title-link {
   color: #6c757d;
-  text-decoration: none;
 }
 .header-title .header-title-link:hover,
 .header-title .header-title-link:focus {
@@ -155,7 +154,6 @@
   line-height: 1.5;
   color: #6c757d;
   text-align: center;
-  text-decoration: none;
   background-color: transparent;
   border-radius: .25rem;
 }
@@ -326,15 +324,15 @@
   border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
+.blog-breadcrumb + .blog-posts .post,
+.blog-status-message + .blog-posts .post {
+  margin-top: 2rem;
+}
+
 .post.post-static {
   padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: 0;
-}
-
-.blog-breadcrumb + .blog-posts .post,
-.blog-status-message + .blog-posts .post {
-  margin-top: 2rem;
 }
 
 /**
@@ -352,11 +350,9 @@
 
 .post .post-title a {
   color: #007bff;
-  text-decoration: none;
 }
 .post .post-title a:hover {
   color: #0056b3;
-  text-decoration: underline;
 }
 
 /**
@@ -400,7 +396,6 @@
   font-size: .875rem;
   line-height: 1.5;
   color: #007bff;
-  text-decoration: none;
   white-space: nowrap;
   background-color: #f1f8ff;
   border-radius: .25rem;
@@ -445,7 +440,6 @@
 
 .post .post-meta a {
   color: #6c757d;
-  text-decoration: none;
 }
 .post .post-meta a:hover {
   color: #007bff;
@@ -495,7 +489,6 @@
   line-height: 1.5;
   color: #212529;
   text-align: inherit;
-  text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
 }
@@ -539,11 +532,9 @@
 
 .blog-comments-alert a {
   color: #533f03;
-  text-decoration: none;
 }
 .blog-comments-alert a:hover {
   color: #533f03;
-  text-decoration: underline;
 }
 
 .blog-comments-alert > * {
@@ -578,7 +569,6 @@
   padding: .5rem .75rem;
   line-height: 1.25;
   color: #007bff;
-  text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 2rem;
