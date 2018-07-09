@@ -1,7 +1,7 @@
 <b:includable id='main' var='this'>
   <b:comment>=== REPLACE ===</b:comment>
   <b:if cond='data:imagePlacement == "REPLACE"'>
-    <div class='header-gadget image-placement-replace'>
+    <div class='page-header image-placement-replace'>
       <b:class cond='data:image' name='is-image'/>
       <b:class cond='!data:image' name='is-noimage'/>
       <div class='container'>
@@ -15,7 +15,7 @@
   </b:if>
   <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
   <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
-    <div class='header-gadget image-placement-before-description'>
+    <div class='page-header image-placement-before-description'>
       <b:class cond='data:image' name='is-image'/>
       <b:class cond='!data:image' name='is-noimage'/>
       <div class='container'>
@@ -25,23 +25,23 @@
           </a>
         </b:if>
         <b:if cond='data:description'>
-          <p class='header-gadget-description'><data:description/></p>
+          <p class='page-header-description'><data:description/></p>
         </b:if>
       </div>
     </div>
   </b:if>
   <b:comment>=== BEHIND ===</b:comment>
   <b:if cond='data:imagePlacement == "BEHIND"'>
-    <div class='header-gadget image-placement-behind'>
+    <div class='page-header image-placement-behind'>
       <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
       <b:class cond='data:image' name='is-image'/>
       <b:class cond='!data:image' name='is-noimage'/>
       <div class='container'>
         <b:if cond='data:title'>
-          <h1 class='header-gadget-title'><a class='header-gadget-title-link' expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+          <h1 class='page-header-title'><a class='page-header-title-link' expr:href='data:blog.homepageUrl'><data:title/></a></h1>
         </b:if>
         <b:if cond='data:description'>
-          <p class='header-gadget-description'><data:description/></p>
+          <p class='page-header-description'><data:description/></p>
         </b:if>
       </div>
     </div>

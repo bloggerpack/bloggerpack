@@ -1,11 +1,11 @@
-.search-gadget-form {
-  .search-gadget-form-row {
+.search-form {
+  .search-form-row {
     display: flex;
     flex-wrap: nowrap;
     margin-right: -5px;
     margin-left: -5px;
   }
-  .search-gadget-form-col {
+  .search-form-col {
     position: relative;
     flex-basis: 0;
     flex-grow: 1;
@@ -14,7 +14,7 @@
     padding-right: 5px;
     padding-left: 5px;
   }
-  .search-gadget-form-col-auto {
+  .search-form-col-auto {
     position: relative;
     flex: 0 0 auto;
     width: auto;
@@ -23,7 +23,7 @@
     padding-left: 5px;
   }
 
-  .search-gadget-form-input {
+  .search-form-input {
     display: block;
     width: 100%;
     padding: .375rem .75rem;
@@ -45,7 +45,7 @@
     }
   }
 
-  .search-gadget-form-submit {
+  .search-form-submit {
     display: inline-block;
     padding: .375rem .75rem;
     font-size: 1rem;

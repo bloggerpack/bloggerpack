@@ -218,17 +218,17 @@ Default markups
   <b:defaultmarkup type='FollowByEmail'>
     <!--(bake _includes/defaultmarkups/gadget-follow-by-email.xml)-->
   </b:defaultmarkup>
-  <b:comment>### Page Header ###</b:comment>
-  <b:defaultmarkup type='Header'>
-    <!--(bake _includes/defaultmarkups/gadget-header.xml)-->
-  </b:defaultmarkup>
   <b:comment>### Image ###</b:comment>
   <b:defaultmarkup type='Image'>
     <!--(bake _includes/defaultmarkups/gadget-image.xml)-->
   </b:defaultmarkup>
   <b:comment>### Labels ###</b:comment>
   <b:defaultmarkup type='Label'>
-    <!--(bake _includes/defaultmarkups/gadget-label.xml)-->
+    <!--(bake _includes/defaultmarkups/gadget-labels.xml)-->
+  </b:defaultmarkup>
+  <b:comment>### Page Header ###</b:comment>
+  <b:defaultmarkup type='Header'>
+    <!--(bake _includes/defaultmarkups/gadget-page-header.xml)-->
   </b:defaultmarkup>
   <b:comment>### Popular Posts ###</b:comment>
   <b:defaultmarkup type='PopularPosts'>

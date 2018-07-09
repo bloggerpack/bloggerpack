@@ -1,4 +1,4 @@
-.header-gadget {
+.page-header {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,14 +13,14 @@
 
   // Title
 
-  .header-gadget-title {
+  .page-header-title {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
 
-    .header-gadget-title-link  {
+    .page-header-title-link  {
       color: #fff;
       text-decoration: none;
 
@@ -39,7 +39,7 @@
 
   // Description
 
-  .header-gadget-description {
+  .page-header-description {
     max-width: 700px;
     margin-top: 0;
     margin-right: auto;

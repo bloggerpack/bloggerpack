@@ -4,14 +4,14 @@
 </b:includable>
 <b:includable id='content'>
   <div class='widget-content'>
-    <figure class='image-gadget'>
+    <figure class='image'>
       <b:tag cond='data:link' expr:href='data:link' name='a'>
         <b:if cond='data:sourceUrl'>
-          <img class='image-gadget-img' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
+          <img class='image-img' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
         </b:if>
       </b:tag>
       <b:if cond='data:caption'>
-        <figcaption class='image-gadget-caption'>
+        <figcaption class='image-caption'>
           <data:caption/>
         </figcaption>
       </b:if>

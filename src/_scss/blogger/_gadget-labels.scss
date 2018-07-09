@@ -1,12 +1,12 @@
 //
-// list
+// List
 //
 
-.label-gadget-list {
+.label-list {
   display: flex;
   flex-direction: column;
 
-  .label-gadget-list-item {
+  .label-list-item {
     position: relative;
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@
     }
   }
 
-  .label-gadget-list-count {
+  .label-list-count {
     display: inline-block;
     padding: .25em .6em;
     font-size: 75%;
@@ -63,18 +63,18 @@
     background-color: #6c757d;
     border-radius: 10rem;
   }
-  .active > .label-gadget-list-count {
+  .active > .label-list-count {
     color: #fff;
     background-color: #6c757d;
   }
 }
 
 //
-// cloud
+// Cloud
 //
 
-.label-gadget-cloud {
-  .label-gadget-cloud-item {
+.label-cloud {
+  .label-cloud-item {
     display: inline-block;
     padding: .25rem .5rem;
     margin: .25rem .25rem .25rem 0;
