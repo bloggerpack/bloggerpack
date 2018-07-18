@@ -7,13 +7,15 @@
     <b:include name='content'/>
   </b:includable>
   <b:includable id='content'>
-    <nav class='header-nav'>
+    <ul class='header-nav'>
       <b:loop values='data:links' var='link'>
-        <a class='header-nav-link' expr:href='data:link.href'>
-          <b:class cond='data:link.isCurrentPage' name='active'/>
-          <data:link.title/>
-        </a>
+        <li class='header-nav-item'>
+          <a class='header-nav-link' expr:href='data:link.href'>
+            <b:class cond='data:link.isCurrentPage' name='active'/>
+            <data:link.title/>
+          </a>
+        </li>
       </b:loop>
-    </nav>
+    </ul>
   </b:includable>
 </b:widget>

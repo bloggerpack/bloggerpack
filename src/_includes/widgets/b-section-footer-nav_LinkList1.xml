@@ -1,4 +1,4 @@
-<b:widget id='LinkList1' locked='true' title='Footer links' type='LinkList' version='2' visible='true'>
+<b:widget id='LinkList1' locked='true' title='Footer nav' type='LinkList' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='sorting'>NONE</b:widget-setting>
     <b:widget-setting name='text-0'>Twitter</b:widget-setting>
@@ -12,9 +12,11 @@
     <b:include name='content'/>
   </b:includable>
   <b:includable id='content'>
-    <ul class='footer-links'>
+    <ul class='footer-nav'>
       <b:loop values='data:links' var='link'>
-        <li><a expr:href='data:link.target'><data:link.name/></a></li>
+        <li class='footer-nav-item'>
+          <a class='footer-nav-link' expr:href='data:link.target'><data:link.name/></a>
+        </li>
       </b:loop>
     </ul>
   </b:includable>

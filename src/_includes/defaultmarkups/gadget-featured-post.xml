@@ -55,7 +55,7 @@
               <data:post.snippets.short/>
             <b:else/>
               <data:post.snippets.short/><br/>
-              <a b:whitespace='remove' expr:href='data:post.url' role='button'>
+              <a b:whitespace='remove' class='featured-post-snippet-link' expr:href='data:post.url' role='button'>
                 <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
                 <data:messages.keepReading/>
               </a>

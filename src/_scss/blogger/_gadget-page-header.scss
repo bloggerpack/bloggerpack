@@ -1,3 +1,5 @@
+//= Base class
+
 .page-header {
   position: relative;
   display: flex;
@@ -11,47 +13,7 @@
   text-align: center;
   background-color: #212529;
 
-  // Title
-
-  .page-header-title {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-
-    .page-header-title-link  {
-      color: #fff;
-      text-decoration: none;
-
-      &:hover {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    @media (min-width: 768px) {
-      & {
-        font-size: 3.5rem;
-      }
-    }
-  }
-
-  // Description
-
-  .page-header-description {
-    max-width: 700px;
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
-    font-size: 1.25rem;
-    font-weight: 300;
-    line-height: 1.3;
-  }
-
   // Image placement: REPLACE
-
   &.image-placement-replace {
     &.is-image img {
       max-width: 100%;
@@ -60,7 +22,6 @@
   }
 
   // Image placement: BEFORE_DESCRIPTION
-
   &.image-placement-before-description {
     &.is-image img {
       max-width: 100%;
@@ -70,7 +31,6 @@
   }
 
   // Image placement: BEHIND
-
   &.image-placement-behind {
     background-repeat: no-repeat;
     background-position: center;
@@ -90,4 +50,44 @@
       background-image: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25));
     }
   }
+}
+
+//= Title
+
+.page-header-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+// Title link
+.page-header-title-link  {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+//= Description
+
+.page-header-description {
+  max-width: 700px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.3;
 }

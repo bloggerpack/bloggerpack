@@ -18,6 +18,18 @@
   list-style: none;
 }
 
+//= Item
+
+// .archive-flat-item {}
+
+//= Link
+
+// .archive-flat-link {}
+
+//= Count
+
+// .archive-flat-count {}
+
 //
 // Hierarchy
 //
@@ -43,13 +55,15 @@
   margin-bottom: .25rem;
 }
 
-.archive-hierarchy-first li,
-.archive-hierarchy-second li,
-.archive-hierarchy-third li {
+//= Item
+
+.archive-hierarchy-first-item,
+.archive-hierarchy-second-item,
+.archive-hierarchy-third-item {
   position: relative;
 }
-.archive-hierarchy-second li::before,
-.archive-hierarchy-third li::before {
+.archive-hierarchy-second-item::before,
+.archive-hierarchy-third-item::before {
   position: absolute;
   top: 0;
   left: -2rem;
@@ -57,7 +71,19 @@
   content: "\2014 \00A0";
 }
 
+//= Details
+
+// .archive-hierarchy-details {}
+
 .archive-hierarchy-summary {
   cursor: default;
   outline: 0;
 }
+
+//= Link
+
+// .archive-hierarchy-link {}
+
+//= Count
+
+// .archive-hierarchy-count {}

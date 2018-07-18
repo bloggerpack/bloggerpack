@@ -1,17 +1,23 @@
+//= Base class
+
 .image {
   margin: 0;
+}
 
-  .image-img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: .25rem;
-  }
+//= Image
 
-  .image-caption {
-    margin-top: .5rem;
-    font-size: 90%;
-    color: #6c757d;
-  }
+.image-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: .25rem;
+}
+
+//= Caption
+
+.image-caption {
+  margin-top: .5rem;
+  font-size: 90%;
+  color: #6c757d;
 }
