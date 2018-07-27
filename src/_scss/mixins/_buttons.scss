@@ -25,9 +25,5 @@
     color: color-yiq($active-background);
     background-color: $active-background;
     border-color: $active-border;
-
-    &:focus {
-      box-shadow: 0 0 0 $button-focus-width rgba($active-border, .5);
-    }
   }
 }

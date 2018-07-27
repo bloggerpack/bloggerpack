@@ -84,9 +84,5 @@
     color: #fff;
     background-color: darken(#007bff, 15%);
     border-color: darken(#007bff, 17.5%);
-
-    &:focus {
-      box-shadow: 0 0 0 .2rem rgba(darken(#007bff, 17.5%), .5);
-    }
   }
 }

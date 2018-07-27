@@ -77,10 +77,6 @@ fieldset:disabled a.button {
     color: $button-active-color;
     background-color: $button-active-bg;
     border-color: $button-active-border-color;
-
-    &:focus {
-      box-shadow: 0 0 0 $button-focus-width rgba($button-active-border-color, .5);
-    }
   }
 }
 // stylelint-enable no-duplicate-selectors
