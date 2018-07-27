@@ -86,3 +86,46 @@ fieldset:disabled a.button {
     @include button-variant($value);
   }
 }
+
+//
+// Button group
+//
+
+
+.button-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+
+  > .button {
+    position: relative;
+    flex: 0 1 auto;
+
+    &:hover {
+      z-index: 1;
+    }
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+    &:focus {
+      z-index: 3;
+    }
+  }
+
+  // Prevent double borders when buttons are next to each other
+  > .button + .button {
+    margin-left: -$button-border-width;
+  }
+  > .button:first-child {
+    margin-left: 0;
+  }
+
+  // Reset rounded corners
+  > .button:not(:first-child) {
+    @include border-left-radius(0);
+  }
+  > .button:not(:last-child) {
+    @include border-right-radius(0);
+  }
+}

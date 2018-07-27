@@ -137,3 +137,14 @@
 <button class="button button-dark" type="button" disabled>Disabled button</button>
 <a class="button button-dark disabled" href="#" tabindex="-1" role="button">Disabled button link</a>
 ```
+
+
+## Button group
+
+<div class="doc-example">
+  <div class="button-group">
+    <button class="button button-secondary" type="button">Button</button>
+    <button class="button button-secondary" type="button">Button</button>
+    <button class="button button-secondary" type="button">Button</button>
+  </div>
+</div>
