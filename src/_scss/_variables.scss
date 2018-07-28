@@ -3,7 +3,9 @@
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-rounded:  true !default;
+$enable-rounded:      true !default;
+$enable-shadows:      false !default;
+$enable-transitions:  true !default;
 
 //
 // Fonts
