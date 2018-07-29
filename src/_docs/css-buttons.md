@@ -107,3 +107,11 @@
     <button class="button button-secondary" type="button">Button</button>
   </div>
 </div>
+
+```html
+<div class="button-group">
+  <button class="button button-secondary" type="button">Button</button>
+  <button class="button button-secondary" type="button">Button</button>
+  <button class="button button-secondary" type="button">Button</button>
+</div>
+```
