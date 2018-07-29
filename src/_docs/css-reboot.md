@@ -1,6 +1,6 @@
 <!--
 @@@title:Reboot@@@
-@@@section:Preview@@@
+@@@section:CSS@@@
 -->
 
 # Reboot

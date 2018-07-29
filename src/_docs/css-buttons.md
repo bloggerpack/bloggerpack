@@ -1,6 +1,6 @@
 <!--
 @@@title:Buttons@@@
-@@@section:Preview@@@
+@@@section:CSS@@@
 -->
 
 # Buttons

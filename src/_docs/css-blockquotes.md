@@ -1,6 +1,6 @@
 <!--
 @@@title:Blockquotes@@@
-@@@section:Preview@@@
+@@@section:CSS@@@
 -->
 
 # Blockquotes
