@@ -109,6 +109,10 @@
       border-color: $table-light-border-color;
     }
 
+    &:not(.table-bordered):not(.table-borderless) {
+      border: $table-border-width solid $table-light-border-color;
+    }
+
     &.table-striped tbody tr:nth-of-type(#{$table-striped-order}) {
       background-color: $table-light-accent-bg;
     }
@@ -141,6 +145,10 @@
 
     &.table-bordered {
       border-color: $table-dark-border-color;
+    }
+
+    &:not(.table-bordered):not(.table-borderless) {
+      border: $table-border-width solid $table-dark-border-color;
     }
 
     &.table-striped tbody tr:nth-of-type(#{$table-striped-order}) {

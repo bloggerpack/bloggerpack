@@ -6,8 +6,11 @@
 # Tables
 
 
+## Examples
+
+### Default
+
 <div class="doc-example">
-  <h5>Default</h5>
   <table class="table">
     <thead>
       <tr>
@@ -38,7 +41,33 @@
       </tr>
     </tbody>
   </table>
-  <h5>Light</h5>
+</div>
+
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    ...
+  </tbody>
+</table>
+```
+
+### Light
+
+<div class="doc-example">
   <table class="table table-light">
     <thead>
       <tr>
@@ -69,7 +98,34 @@
       </tr>
     </tbody>
   </table>
-  <h5>Dark</h5>
+</div>
+
+```html
+<!-- Light -->
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+      <th>Table heading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+      <td>Table cell</td>
+    </tr>
+    ...
+  </tbody>
+</table>
+```
+
+### Dark
+
+<div class="doc-example">
   <table class="table table-dark">
     <thead>
       <tr>
@@ -103,49 +159,6 @@
 </div>
 
 ```html
-<!-- Default -->
-<table class="table">
-  <thead>
-    <tr>
-      <th>Table heading</th>
-      <th>Table heading</th>
-      <th>Table heading</th>
-      <th>Table heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-    </tr>
-    ...
-  </tbody>
-</table>
-
-<!-- Light -->
-<table class="table table-light">
-  <thead>
-    <tr>
-      <th>Table heading</th>
-      <th>Table heading</th>
-      <th>Table heading</th>
-      <th>Table heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-      <td>Table cell</td>
-    </tr>
-    ...
-  </tbody>
-</table>
-
-<!-- Dark -->
 <table class="table table-dark">
   <thead>
     <tr>
