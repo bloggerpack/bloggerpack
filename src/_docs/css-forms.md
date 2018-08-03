@@ -95,13 +95,13 @@
 
 <div class="doc-example">
   <div class="form-check">
-    <input class="form-check-input" id="defaultCheck1" type="checkbox" value="">
+    <input class="form-check-input" id="defaultCheck1" type="checkbox" value="option1">
     <label class="form-check-label" for="defaultCheck1">
       Default checkbox
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" id="defaultCheck2" type="checkbox" value="">
+    <input class="form-check-input" id="defaultCheck2" type="checkbox" value="option2">
     <label class="form-check-label" for="defaultCheck2">
       Second default checkbox
     </label>
@@ -110,13 +110,13 @@
 
 ```html
 <div class="form-check">
-  <input class="form-check-input" id="defaultCheck1" type="checkbox" value="">
+  <input class="form-check-input" id="defaultCheck1" type="checkbox" value="option1">
   <label class="form-check-label" for="defaultCheck1">
     Default checkbox
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" id="defaultCheck2" type="checkbox" value="">
+  <input class="form-check-input" id="defaultCheck2" type="checkbox" value="option2">
   <label class="form-check-label" for="defaultCheck2">
     Second default checkbox
   </label>
@@ -214,7 +214,7 @@
     </div>
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" id="formGroupExampleCheck" type="checkbox">
+        <input class="form-check-input" id="formGroupExampleCheck" type="checkbox" value="option">
         <label class="form-check-label" for="formGroupExampleCheck">
           Check this
         </label>
@@ -236,7 +236,7 @@
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" id="formGroupExampleCheck" type="checkbox">
+      <input class="form-check-input" id="formGroupExampleCheck" type="checkbox" value="option">
       <label class="form-check-label" for="formGroupExampleCheck">
         Check this
       </label>
@@ -252,6 +252,7 @@
 <div class="doc-example">
   <form>
     <div class="form-group">
+      <label for="disabledInput">Disabled input</label>
       <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
     </div>
     <div class="form-group">
@@ -284,6 +285,7 @@
 ```html
 <form>
   <div class="form-group">
+    <label for="disabledInput">Disabled input</label>
     <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
   </div>
   <div class="form-group">
@@ -328,7 +330,7 @@
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" id="disabledFieldsetCheck" type="checkbox">
+          <input class="form-check-input" id="disabledFieldsetCheck" type="checkbox" value="option">
           <label class="form-check-label" for="disabledFieldsetCheck">
             Check this
           </label>
@@ -352,7 +354,7 @@
     </div>
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" id="disabledFieldsetCheck" type="checkbox">
+        <input class="form-check-input" id="disabledFieldsetCheck" type="checkbox" value="option">
         <label class="form-check-label" for="disabledFieldsetCheck">
           Check this
         </label>
