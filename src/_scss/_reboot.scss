@@ -180,6 +180,49 @@ img {
 }
 
 //
+// Forms
+//
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+label {
+  // Allow labels to use `margin` for spacing.
+  display: inline-block;
+  margin-bottom: $label-margin-bottom;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+output {
+  // Correct element displays
+  display: inline-block;
+}
+
+//
 // Code
 //
 

@@ -328,6 +328,187 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
 ```
 
 
+## Forms
+
+Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:
+
+- `<fieldset>`s have no borders, padding, or margin so they can be easily used as wrappers for individual inputs or groups of inputs.
+- `<legend>`s, like fieldsets, have also been restyled to be displayed as a heading of sorts.
+- `<label>`s are set to display: inline-block to allow margin to be applied.
+- `<input>`s, `<select>`s, `<textarea>`s, and `<button>`s are mostly addressed by Normalize, but Reboot sets `font-size: inherit` and `line-height: inherit`, too.
+- `<textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
+
+These changes, and more, are demonstrated below.
+
+<div class="doc-example">
+  <form>
+    <fieldset>
+      <legend>Example legend</legend>
+
+      <p>
+        <label for="input">Example input</label>
+        <input type="text" id="input" placeholder="Example input">
+      </p>
+
+      <p>
+        <label for="select">Example select</label>
+        <select id="select">
+          <option value="">Choose...</option>
+          <optgroup label="Option group 1">
+            <option value="">Option 1</option>
+            <option value="">Option 2</option>
+            <option value="">Option 3</option>
+          </optgroup>
+          <optgroup label="Option group 2">
+            <option value="">Option 4</option>
+            <option value="">Option 5</option>
+            <option value="">Option 6</option>
+          </optgroup>
+        </select>
+      </p>
+
+      <p>
+        <label>
+          <input type="checkbox" value="">
+          Check this checkbox
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          Option one is this and that
+        </label>
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
+        </label>
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+          Option three is disabled
+        </label>
+      </p>
+
+      <p>
+        <label for="textarea">Example textarea</label>
+        <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 84px;"></textarea>
+      </p>
+
+      <p>
+        <label for="date">Example date</label>
+        <input type="date" id="date">
+      </p>
+
+      <p>
+        <label for="time">Example time</label>
+        <input type="time" id="time">
+      </p>
+
+      <p>
+        <label for="output">Example output</label>
+        <output name="result" id="output">100</output>
+      </p>
+
+      <p>
+        <button type="submit">Button submit</button>
+        <input type="submit" value="Input submit button">
+        <input type="button" value="Input button">
+      </p>
+
+      <p>
+        <button type="submit" disabled="">Button submit</button>
+        <input type="submit" value="Input submit button" disabled="">
+        <input type="button" value="Input button" disabled="">
+      </p>
+    </fieldset>
+  </form>
+</div>
+
+```html
+<form>
+  <fieldset>
+    <legend>Example legend</legend>
+
+    <p>
+      <label for="input">Example input</label>
+      <input type="text" id="input" placeholder="Example input">
+    </p>
+
+    <p>
+      <label for="select">Example select</label>
+      <select id="select">
+        <option value="">Choose...</option>
+        <optgroup label="Option group 1">
+          <option value="">Option 1</option>
+          <option value="">Option 2</option>
+          <option value="">Option 3</option>
+        </optgroup>
+        <optgroup label="Option group 2">
+          <option value="">Option 4</option>
+          <option value="">Option 5</option>
+          <option value="">Option 6</option>
+        </optgroup>
+      </select>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" value="">
+        Check this checkbox
+      </label>
+    </p>
+
+    <p>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        Option one is this and that
+      </label>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
+      </label>
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+        Option three is disabled
+      </label>
+    </p>
+
+    <p>
+      <label for="textarea">Example textarea</label>
+      <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 84px;"></textarea>
+    </p>
+
+    <p>
+      <label for="date">Example date</label>
+      <input type="date" id="date">
+    </p>
+
+    <p>
+      <label for="time">Example time</label>
+      <input type="time" id="time">
+    </p>
+
+    <p>
+      <label for="output">Example output</label>
+      <output name="result" id="output">100</output>
+    </p>
+
+    <p>
+      <button type="submit">Button submit</button>
+      <input type="submit" value="Input submit button">
+      <input type="button" value="Input button">
+    </p>
+
+    <p>
+      <button type="submit" disabled="">Button submit</button>
+      <input type="submit" value="Input submit button" disabled="">
+      <input type="button" value="Input button" disabled="">
+    </p>
+  </fieldset>
+</form>
+```
+
+
 ## Addresses
 
 The `<address>` element is updated to reset the browser default `font-style` from `italic` to `normal`. `line-height` is also now inherited, and `margin-bottom: 1rem` has been added. `<address>`s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with `<br>`.

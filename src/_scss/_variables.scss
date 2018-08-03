@@ -59,27 +59,30 @@ $yiq-text-light:            $text-white !default;
 //
 
 // stylelint-disable value-keyword-case
-$font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family:             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace:   SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 
-$font-size:              1rem !default;
+$font-size:               1rem !default;
 
-$font-weight-lighter:    lighter !default;
-$font-weight-light:      300 !default;
-$font-weight-normal:     400 !default;
-$font-weight-bold:       700 !default;
-$font-weight-bolder:     bolder !default;
+$font-weight-lighter:     lighter !default;
+$font-weight-light:       300 !default;
+$font-weight-normal:      400 !default;
+$font-weight-bold:        700 !default;
+$font-weight-bolder:      bolder !default;
 
-$line-height:            1.5 !default;
+$line-height:             1.5 !default;
 
-$border-width:           1px !default;
+$border-width:            1px !default;
 
-$border-radius:          .25rem !default;
+$border-radius:           .25rem !default;
 
-$box-shadow:             0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow:              0 .5rem 1rem rgba($black, .15) !default;
 
-$spacer:                 1rem !default;
+$component-active-color:  $white !default;
+$component-active-bg:     theme-color("primary") !default;
+
+$spacer:                  1rem !default;
 
 //
 // Body
@@ -155,6 +158,42 @@ $button-hover-border-color:   darken($button-hover-bg, 3%) !default;
 $button-active-color:         $text-dark !default;
 $button-active-bg:            darken($button-bg, 12%) !default;
 $button-active-border-color:  darken($button-active-bg, 3%) !default;
+
+//
+// Forms
+//
+
+$label-margin-bottom:               .5rem !default;
+
+$input-padding-y:                   $button-padding-y !default;
+$input-padding-x:                   $button-padding-x !default;
+$input-font-size:                   $button-font-size !default;
+$input-line-height:                 $button-line-height !default;
+$input-color:                       $gray-700 !default;
+$input-bg:                          $white !default;
+$input-disabled-bg:                 $gray-200 !default;
+$input-border-width:                $button-border-width !default;
+$input-border-color:                $gray-400 !default;
+$input-border-radius:               $button-border-radius !default;
+$input-transition:                  border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$input-height:                      calc(#{($input-font-size * $input-line-height) + ($input-padding-y * 2)} + #{($input-border-width * 2)}) !default;
+
+$input-focus-color:                 $input-color !default;
+$input-focus-bg:                    $input-bg !default;
+$input-focus-border-color:          lighten($component-active-bg, 25%) !default;
+$input-focus-width:                 $button-focus-width !default;
+
+$input-placeholder-color:           $text-muted !default;
+
+$form-text-margin-top:              .25rem !default;
+
+$form-check-input-gutter:           1.25rem !default;
+$form-check-input-margin-y:         .3rem !default;
+$form-check-input-margin-x:         .25rem !default;
+$form-check-inline-margin-x:        .75rem !default;
+$form-check-inline-input-margin-x:  .3125rem !default;
+
+$form-group-margin-bottom:          $spacer !default;
 
 //
 // Tables
