@@ -12,7 +12,7 @@ Learn how to compile the source code, builds the theme and documentation, and mo
 
 ### Quick start
 
-Download the source and try to apply the default theme (`dist/theme.xml`) to your blog. Customize and builds the theme and documentation to suit your needs.
+Download the source and try to apply the precompiled theme (`dist/theme.xml`) to your blog. Customize and builds the theme and documentation to suit your needs.
 
 ### Download
 
