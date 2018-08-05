@@ -1,6 +1,5 @@
-(function () {
-  'use strict';
+import { hello } from './hello';
 
-  // alert('Hello, world!');
+let val = hello();
 
-})();
+// console.log(val);

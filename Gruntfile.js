@@ -1,4 +1,4 @@
-const webpackConfig = require('./webpack.config');
+const sass = require('node-sass');
 
 module.exports = function (grunt) {
   'use strict';
@@ -15,8 +15,35 @@ module.exports = function (grunt) {
     configTheme: grunt.file.readJSON('src/config.theme.json'),
     configDocs: grunt.file.readJSON('src/config.docs.json'),
 
+    banner: '/*!\n' +
+            ' * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})\n' +
+            ' * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})\n' +
+            ' * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})\n' +
+            ' */\n',
+
     clean: {
       'dist': 'dist'
+    },
+
+    stylelint: {
+      options: {
+        configFile: '.stylelintrc',
+        formatter: 'string',
+        ignoreDisables: false,
+        failOnError: true,
+        outputFile: '',
+        reportNeedlessDisables: false,
+        syntax: ''
+      },
+      themeSkin: {
+        src: ['src/skin.css', 'src/template-skin.css']
+      },
+      bundle: {
+        src: 'src/_scss/**/*.scss'
+      },
+      docs: {
+        src: 'src/_docs/assets/css/docs.css'
+      }
     },
 
     bake: {
@@ -135,8 +162,38 @@ module.exports = function (grunt) {
       }
     },
 
-    webpack: {
-      bundle: webpackConfig
+    sass: {
+      options: {
+        implementation: sass,
+        sourceMap: true
+      },
+      bundle: {
+        options: {
+          sourceMap: false
+        },
+        files: {
+          'dist/bundle/bundle.css': 'src/_scss/index.scss'
+        }
+      }
+    },
+
+    browserify: {
+      options: {
+        browserifyOptions: {
+          debug: true
+        },
+        banner: '<%= banner %>',
+        transform: [
+          ['babelify', {
+            'presets': ['@babel/preset-env']
+          }]
+        ]
+      },
+      bundle: {
+        files: {
+          'dist/bundle/bundle.js': 'src/_js/index.js'
+        }
+      }
     },
 
     markdown: {
@@ -164,6 +221,24 @@ module.exports = function (grunt) {
           dest: 'dist/docs',
           ext: '.html'
         }]
+      }
+    },
+
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')({ cascade: false })
+        ]
+      },
+      themeSkin: {
+        src: 'dist/skin/skin.css'
+      },
+      bundle: {
+        src: 'dist/bundle/bundle.css'
+      },
+      docs: {
+        src: 'dist/docs/assets/css/docs.css'
       }
     },
 
@@ -248,42 +323,6 @@ module.exports = function (grunt) {
       }
     },
 
-    stylelint: {
-      options: {
-        configFile: '.stylelintrc',
-        formatter: 'string',
-        ignoreDisables: false,
-        failOnError: true,
-        outputFile: '',
-        reportNeedlessDisables: false,
-        syntax: ''
-      },
-      themeSkin: {
-        src: ['src/skin.css', 'src/template-skin.css']
-      },
-      bundle: {
-        src: 'src/_scss/**/*.scss'
-      },
-      docs: {
-        src: 'src/_docs/assets/css/docs.css'
-      }
-    },
-
-    postcss: {
-      options: {
-        map: false,
-        processors: [
-          require('autoprefixer')({ cascade: false })
-        ]
-      },
-      themeSkin: {
-        src: 'dist/skin/skin.css'
-      },
-      docs: {
-        src: 'dist/docs/assets/css/docs.css'
-      }
-    },
-
     copy: {
       docsFiles: {
         expand: true,
@@ -324,7 +363,9 @@ module.exports = function (grunt) {
         tasks: [
           'clean:dist',
           'stylelint:bundle',
-          'webpack:bundle',
+          'sass:bundle',
+          'postcss:bundle',
+          'browserify:bundle',
           'bake:bundle',
           'cssmin:bundle',
           'uglify:bundle',
@@ -369,7 +410,7 @@ module.exports = function (grunt) {
 
   // Bundle task.
   grunt.registerTask('bundle-lint', ['stylelint:bundle']);
-  grunt.registerTask('bundle-compile', ['webpack:bundle', 'bake:bundle']);
+  grunt.registerTask('bundle-compile', ['sass:bundle', 'postcss:bundle', 'browserify:bundle', 'bake:bundle']);
   grunt.registerTask('bundle-minify', ['cssmin:bundle', 'uglify:bundle']);
   grunt.registerTask('dist-bundle', ['bundle-lint', 'bundle-compile', 'bundle-minify']);
 
