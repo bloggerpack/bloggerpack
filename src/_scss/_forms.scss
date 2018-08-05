@@ -100,7 +100,13 @@ textarea.form-control {
   margin-bottom: $form-group-margin-bottom;
 }
 
+//
+// Help text
+//
+
 .form-text {
   display: block;
   margin-top: $form-text-margin-top;
+  font-size: $form-text-font-size;
+  color: $form-text-color;
 }

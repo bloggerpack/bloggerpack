@@ -247,6 +247,35 @@
 ```
 
 
+## Help text
+
+<div class="doc-example">
+  <form>
+    <div class="form-group">
+      <label for="inputHelpText">Password</label>
+      <input class="form-control" id="inputHelpText" type="password">
+      <span class="form-text">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+      </span>
+    </div>
+    <button class="button button-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+```html
+<form>
+  <div class="form-group">
+    <label for="inputHelpText">Password</label>
+    <input class="form-control" id="inputHelpText" type="password">
+    <span class="form-text">
+      Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+    </span>
+  </div>
+  <button class="button button-primary" type="submit">Submit</button>
+</form>
+```
+
+
 ## Disabled forms
 
 <div class="doc-example">
