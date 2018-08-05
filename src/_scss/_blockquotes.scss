@@ -8,7 +8,7 @@
   border-right-width: $blockquote-border-right-width;
   border-bottom-width: $blockquote-border-bottom-width;
   border-left-width: $blockquote-border-left-width;
-  border-radius: $blockquote-border-radius;
+  @include border-radius($blockquote-border-radius);
 
   > :first-child {
     margin-top: 0;

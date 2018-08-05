@@ -11,8 +11,8 @@
   vertical-align: middle;
   user-select: none;
   border: $button-border-width solid transparent;
-  border-radius: $button-border-radius;
-  transition: $button-transition;
+  @include border-radius($button-border-radius);
+  @include transition($button-transition);
 
   &:hover,
   &:focus {
