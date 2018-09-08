@@ -8,6 +8,8 @@
 
 ## data:messages.adsGoHere
 
+Gadget type: `Global`
+
 ### Usage
 
 ```html
@@ -36,6 +38,8 @@
 
 ## data:messages.archive
 
+Gadget type: `Global`
+
 ### Usage
 
 ```html
@@ -63,6 +67,8 @@
 
 
 ## data:messages.at
+
+Gadget type: `Global`
 
 ### Usage
 
