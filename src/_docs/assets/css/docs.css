@@ -149,14 +149,18 @@
 
 /** Link **/
 
-.doc-toc .toc-list a {
+.doc-toc .toc-list .toc-link {
   display: block;
   padding: .125rem 1.5rem;
   color: #495057;
 }
-.doc-toc .toc-list a:hover {
+.doc-toc .toc-list .toc-link:hover {
   color: #007bff;
   text-decoration: none;
+}
+.doc-toc .toc-list .is-active-link {
+  font-weight: 700;
+  color: #007bff;
 }
 
 /** Toggle **/
