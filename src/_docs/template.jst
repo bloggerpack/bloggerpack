@@ -54,13 +54,26 @@
     </nav>
 
     <button class="doc-nav-toggle" id="navDocToggle" type="button">
-      <span aria-hidden="true">→</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+        <title>Menu</title>
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+      </svg>
+    </button>
+
+    <div class="doc-toc" id="tocDoc"></div>
+    <div class="doc-toc-overlay" id="tocDocOverlay"></div>
+
+    <button class="doc-toc-toggle" id="tocDocToggle" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+        <title>Menu</title>
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+      </svg>
     </button>
 
     <main class="doc-content">
-      <div class="v-info">
+      <div class="topbar">
         <ul>
-          <li>Currently {{ base.1.name }} v{{ base.1.version }}</li>
+          <li>{{ base.1.name }} v{{ base.1.version }}</li>
         </ul>
       </div>
       <%=content%>
@@ -68,6 +81,7 @@
 
     <script src="bundle/bundle.js"></script>
     <script src="assets/js/anchor.min.js"></script>
+    <script src="assets/js/tocbot.min.js"></script>
     <script src="assets/js/docs.js"></script>
   </body>
 </html>

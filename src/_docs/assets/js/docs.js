@@ -27,10 +27,35 @@
 
   navToggle.addEventListener('click', function() {
     document.body.classList.toggle('show-nav');
+    document.body.classList.remove('show-toc');
   }, false);
+
+  // ===
+
+  var tocToggle = document.getElementById('tocDocToggle');
+  var tocOverlay = document.getElementById('tocDocOverlay');
+
+  tocToggle.addEventListener('click', function() {
+    document.body.classList.toggle('show-toc');
+    document.body.classList.remove('show-nav');
+  }, false);
+
+  tocOverlay.addEventListener('click', function() {
+    document.body.classList.remove('show-toc');
+  }, false);
+
+  // ===
 
   anchors.options = {
     icon: '#'
   }
   anchors.add('.doc-content > h2, .doc-content > h3, .doc-content > h4, .doc-content > h5');
+
+  // ===
+
+  tocbot.init({
+    tocSelector: '.doc-toc',
+    contentSelector: '.doc-content',
+    headingSelector: 'h2, h3, h4, h5',
+  });
 })();
