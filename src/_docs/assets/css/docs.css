@@ -278,6 +278,20 @@
   margin: .25rem .25rem .25rem 0;
 }
 
+/**
+ * AnchorJS
+ */
+
+.anchorjs-link {
+  font-weight: 400;
+  color: rgba(0, 123, 255, .5);
+  transition: color .16s linear;
+}
+.anchorjs-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
 /* Responsive
    ========================================================================== */
 

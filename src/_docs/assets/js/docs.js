@@ -28,4 +28,9 @@
   navToggle.addEventListener('click', function() {
     document.body.classList.toggle('show-nav');
   }, false);
+
+  anchors.options = {
+    icon: '#'
+  }
+  anchors.add('.doc-content > h2, .doc-content > h3, .doc-content > h4, .doc-content > h5');
 })();
