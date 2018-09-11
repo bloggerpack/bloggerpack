@@ -139,10 +139,162 @@ Our `Gruntfile.js` includes the following commands and tasks:
 | `grunt dist` | `grunt dist` creates the `/dist` directory with compiled files. |
 | `grunt watch` | Watches the source files and automatically building them whenever you save. |
 
-
-## Local documentation
+### Local documentation
 
 You can run the documentation locally via Grunt commands:
 
 1. From the root `/{{ rootDirname }}` directory, run `grunt docs-serve` in the command line.
 2. Open `http://localhost:9001` in your browser.
+
+
+## Code guide
+
+### XML: Layouts and gadget version
+
+Layouts version: `3`
+
+```html
+<html b:layoutsVersion='3'>
+  ...
+</html>
+```
+
+Gadget version: `2`
+
+```html
+<html b:defaultwidgetversion='2'>
+  ...
+</html>
+
+<b:widget version='2'>
+  ...
+</b:widget>
+```
+
+### XML: Comments and organization
+
+```html
+<b:comment>
+#############################################################################
+Heading 1
+############################################################################# </b:comment>
+↓
+<b:comment>### Heading 1.1 ###</b:comment>
+↓
+<b:comment>=== Heading 1.1.1 ===</b:comment>
+<div>...</div>
+↓
+<b:comment>=== Heading 1.1.2 ===</b:comment>
+<div>...</div>
+↓
+↓
+#############################################################################
+Heading 2
+############################################################################# </b:comment>
+↓
+<b:comment>### Heading 2.1 ###</b:comment>
+↓
+<div>...</div>
+↓
+<b:comment>### Heading 2.2 ###</b:comment>
+↓
+<div>
+  <b:comment>=== Heading 2.2.1 ===</b:comment>
+  <div>...</div>
+↓
+  <b:comment>=== Heading 2.2.2 ===</b:comment>
+  <div>
+    <b:comment>= Heading 2.2.2.1 =</b:comment>
+    <div>...</div>
+↓
+    <b:comment>= Heading 2.2.2.2 =</b:comment>
+    <div>...</div>
+  </div>
+</div>
+```
+
+### XML: `<b:section>` and `<b:widget>`
+
+`<b:section>`:
+
+- Classes and IDs are named using the format `b-section-{name}`.
+- Use `name` attribute for naming the section.
+
+`<b:widget>`:
+
+- Always use `title`, `version`, and `visible` attribute.
+
+Example:
+
+```html
+<b:section class='b-section-header-nav' id='b-section-header-nav' name='Header nav'>
+  <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+    ...
+  </b:widget>
+</b:section>
+```
+
+### CSS: Comments and organization
+
+```css
+/* ==========================================================================
+   Heading 1
+   ========================================================================== */
+↓
+.example {}
+↓
+/**
+ * Sub-heading or description
+ */
+↓
+.example {}
+↓
+/** Another sub-heading **/
+↓
+.example {}
+↓
+/* Basic comment */
+.example {}
+↓
+/* Heading 1.2
+   ========================================================================== */
+↓
+.example {}
+↓
+/**
+ * Sub-heading or description
+ */
+↓
+.example {}
+↓
+/** Another sub-heading **/
+↓
+.example {}
+↓
+/* Basic comment */
+.example {}
+↓
+/* Heading 1.2.1
+   ========================================= */
+↓
+.example {}
+↓
+/**
+ * Sub-heading or description
+ */
+↓
+.example {}
+↓
+/** Another sub-heading **/
+↓
+.example {}
+↓
+/* Basic comment */
+.example {}
+↓
+/* ==========================================================================
+   Heading 2
+   ========================================================================== */
+↓
+.example {}
+```
