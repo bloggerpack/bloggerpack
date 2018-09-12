@@ -10,7 +10,7 @@
 
 Gadget type: `Global`
 
-### Usage
+**Usage**
 
 ```html
 <data:messages.adsGoHere/>
@@ -24,7 +24,7 @@ Gadget type: `Global`
 <b:message name='messages.adsGoHere'/>
 ```
 
-### Values
+**Values**
 
 | Language | Value |
 | --- | --- |
@@ -40,7 +40,7 @@ Gadget type: `Global`
 
 Gadget type: `Global`
 
-### Usage
+**Usage**
 
 ```html
 <data:messages.archive/>
@@ -54,7 +54,7 @@ Gadget type: `Global`
 <b:message name='messages.archive'/>
 ```
 
-### Values
+**Values**
 
 | Language | Value |
 | --- | --- |
@@ -70,7 +70,7 @@ Gadget type: `Global`
 
 Gadget type: `Global`
 
-### Usage
+**Usage**
 
 ```html
 <data:messages.at/>
@@ -84,7 +84,7 @@ Gadget type: `Global`
 <b:message name='messages.at'/>
 ```
 
-### Values
+**Values**
 
 | Language | Value |
 | --- | --- |

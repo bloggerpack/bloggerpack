@@ -7,7 +7,7 @@
 
 Labels of the post.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -15,7 +15,7 @@ Labels of the post.
 </b:loop>
 ```
 
-### Options
+**Options**
 
 - `12` - maximum number of posts in label page
 
@@ -63,7 +63,7 @@ Labels of the post.
 </b:if>
 ```
 
-### + Fallback
+**+ Fallback**
 
 ```html
 <!-- Labels -->

@@ -7,7 +7,7 @@
 
 The featured image for the post.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -15,7 +15,7 @@ The featured image for the post.
 </b:loop>
 ```
 
-### Options
+**Options**
 
 - `512` - size
 - `16:9` - aspect ratio
@@ -99,7 +99,7 @@ The featured image for the post.
 </b:if>
 ```
 
-### + Fallback
+**+ Fallback**
 
 ```html
 <!-- Featured image -->
@@ -156,7 +156,7 @@ The featured image for the post.
 </b:if>
 ```
 
-### + Fallback
+**+ Fallback**
 
 ```html
 <!-- Featured image -->
@@ -189,7 +189,7 @@ The featured image for the post.
 </b:if>
 ```
 
-### + Responsive images
+**+ Responsive images**
 
 ```html
 <!-- Featured image -->
@@ -218,7 +218,7 @@ The featured image for the post.
 </b:if>
 ```
 
-### + Responsive images + Fallback
+**+ Responsive images** **+ Fallback**
 
 ```html
 <!-- Featured image -->
@@ -271,7 +271,7 @@ The featured image for the post.
 </b:if>
 ```
 
-### + Fallback
+**+ Fallback**
 
 ```html
 <!-- Featured image -->

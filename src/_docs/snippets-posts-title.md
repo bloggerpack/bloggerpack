@@ -7,7 +7,7 @@
 
 Title of the post.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -51,7 +51,7 @@ Title of the post.
 </b:if>
 ```
 
-### + No title message
+**+ No title message**
 
 ```html
 <!-- Title -->

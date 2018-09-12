@@ -7,7 +7,7 @@
 
 Link to the full post.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>

@@ -7,7 +7,7 @@
 
 Name of the profile of the post author.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>
@@ -53,7 +53,7 @@ Name of the profile of the post author.
 </b:if>
 ```
 
-### + Fallback
+**+ Fallback**
 
 ```html
 <!-- Author name -->

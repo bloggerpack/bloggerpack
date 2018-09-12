@@ -18,17 +18,17 @@ For improved cross-browser rendering, we use [Normalize.css](https://necolas.git
 All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-top` removed. Headings have `margin-bottom: .5rem` added and paragraphs `margin-bottom: 1rem` for easy spacing.
 
 <div class="doc-example">
-  <h1>h1. heading</h1>
+  <h1 class="js-toc-ignore">h1. heading</h1>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  <h2>h2. heading</h2>
+  <h2 class="js-toc-ignore">h2. heading</h2>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  <h3>h3. heading</h3>
+  <h3 class="js-toc-ignore">h3. heading</h3>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  <h4>h4. heading</h4>
+  <h4 class="js-toc-ignore">h4. heading</h4>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  <h5>h5. heading</h5>
+  <h5 class="js-toc-ignore">h5. heading</h5>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-  <h6>h6. heading</h6>
+  <h6 class="js-toc-ignore">h6. heading</h6>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 </div>
 
@@ -93,55 +93,55 @@ Styling for common inline HTML5 elements.
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
 
 <div class="doc-example">
-  <h4>Inline code</h4>
+  <h4 class="js-toc-ignore">Inline code</h4>
 
   <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
 
-  <h4>Code block</h4>
+  <h4 class="js-toc-ignore">Code block</h4>
 
 <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
 &lt;p&gt;And another line of sample text here...&lt;/p&gt;
 </code></pre>
 
-  <h4>Variables</h4>
+  <h4 class="js-toc-ignore">Variables</h4>
 
   <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
 
-  <h4>User input</h4>
+  <h4 class="js-toc-ignore">User input</h4>
 
   <p>
     To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
     To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
   </p>
 
-  <h4>Sample output</h4>
+  <h4 class="js-toc-ignore">Sample output</h4>
 
   <p><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
 </div>
 
 ```html
-<h4>Inline code</h4>
+<!-- Inline code -->
 
 <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
 
-<h4>Code block</h4>
+<!-- Code block -->
 
 <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
 &lt;p&gt;And another line of sample text here...&lt;/p&gt;
 </code></pre>
 
-<h4>Variables</h4>
+<!-- Variables -->
 
 <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
 
-<h4>User input</h4>
+<!-- User input -->
 
 <p>
   To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
   To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
 </p>
 
-<h4>Sample output</h4>
+<!-- Sample output -->
 
 <p><samp>This text is meant to be treated as sample output from a computer program.</samp></p>
 ```

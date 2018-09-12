@@ -7,7 +7,7 @@
 
 Snippet of the post's content.
 
-### Usage
+**Usage**
 
 ```html
 <b:loop values='data:posts' var='post'>
