@@ -345,6 +345,26 @@
 }
 
 /**
+ * Blockquote
+ */
+
+.doc-content > blockquote {
+  padding: 0 .5rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  color: #6c757d;
+  border-left: 4px solid #dee2e6;
+}
+
+.doc-content > blockquote > :first-child {
+  margin-top: 0;
+}
+.doc-content > blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/**
  * Code
  */
 
