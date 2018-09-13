@@ -123,7 +123,7 @@
   bottom: 0;
   z-index: 1030;
   width: 100%;
-  max-width: 210px;
+  max-width: 200px;
   overflow-y: auto;
   word-wrap: break-word;
   background-color: #f8f9fa;
@@ -442,10 +442,10 @@
   }
   .doc-toc {
     right: 0;
-    width: 210px;
+    width: 200px;
   }
   .doc-content {
-    margin-right: 210px;
+    margin-right: 200px;
     margin-left: 250px;
   }
   .doc-content > .doc-example {
