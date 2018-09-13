@@ -5,12 +5,14 @@
 
 # Reboot
 
-An elegant, consistent, and simple baseline to build upon. Some code and documentation manually forked from [Bootstrap](https://getbootstrap.com).
+Reboot providing many HTML elements with somewhat opinionated styles using only element selectors to provide an elegant, consistent, and simple baseline to build upon. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
 
 
 ## Normalize.css
 
 For improved cross-browser rendering, we use [Normalize.css](https://necolas.github.io/normalize.css).
+
+> Normalize.css makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
 
 
 ## Headings and paragraphs

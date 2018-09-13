@@ -5,6 +5,8 @@
 
 # Forms
 
+Simple form control styles.
+
 
 ## Form controls
 

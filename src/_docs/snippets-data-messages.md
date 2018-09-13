@@ -5,6 +5,8 @@
 
 # Data messages
 
+Messages which will be translated into the language used by the blog.
+
 
 ## data:messages.adsGoHere
 

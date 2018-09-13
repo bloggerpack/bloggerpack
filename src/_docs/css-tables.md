@@ -5,6 +5,8 @@
 
 # Tables
 
+Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible.
+
 
 ## Examples
 
