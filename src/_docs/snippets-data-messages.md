@@ -96,3 +96,286 @@ Gadget type: `Global`
 | Portuguese | `à(s)` |
 | Spanish | `a las` |
 | Vietnamese | `lúc` |
+
+
+## data:messages.authorSaid
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<b:message name='messages.authorSaid'>
+  <b:param expr:value='value' name='authorName'/>
+</b:message>
+
+<!-- Example -->
+
+<b:message name='messages.authorSaid'>
+  <b:param expr:value='data:post.author.name' name='authorName'/>
+</b:message>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `author_name said...` |
+| French | `author_name a dit...` |
+| Indonesian | `author_name mengatakan...` |
+| Portuguese | `author_name disse...` |
+| Spanish | `author_name ha dicho...` |
+| Vietnamese | `author_name nói...` |
+
+
+## data:messages.authorSaidWithLink
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<b:message name='messages.authorSaidWithLink'>
+  <b:param expr:value='value' name='authorName'/>
+  <b:param expr:value='value' name='authorUrl'/>
+</b:message>
+
+<!-- Examples -->
+
+<b:message name='messages.authorSaidWithLink'>
+  <b:param expr:value='data:post.author.name' name='authorName'/>
+  <b:param expr:value='data:post.author.profileUrl' name='authorUrl'/>
+</b:message>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `<a href='profile_link'>author_name</a> said...` |
+| French | `<a href='profile_link'>author_name</a> a dit...` |
+| Indonesian | `<a href='profile_link'>author_name</a> mengatakan...` |
+| Portuguese | `<a href='profile_link'>author_name</a> disse...` |
+| Spanish | `<a href='profile_link'>author_name</a> ha dicho...` |
+| Vietnamese | `<a href='profile_link'>author_name</a> nói...` |
+
+
+## data:messages.blogArchive
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.blogArchive/>
+```
+
+```html
+<b:eval expr='data:messages.blogArchive'/>
+```
+
+```html
+<b:message name='messages.blogArchive'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `Blog Archive` |
+| French | `Archives du blog` |
+| Indonesian | `Arsip Blog` |
+| Portuguese | `Arquivo do blogue` |
+| Spanish | `Archivo del blog` |
+| Vietnamese | `Lưu trữ Blog` |
+
+
+## data:messages.blogAuthors
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.blogAuthors/>
+```
+
+```html
+<b:eval expr='data:messages.blogAuthors'/>
+```
+
+```html
+<b:message name='messages.blogAuthors'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `Contributors` |
+| French | `Contributeurs` |
+| Indonesian | `Penulis blog` |
+| Portuguese | `Autores do blog` |
+| Spanish | `Autores del blog` |
+| Vietnamese | `Tác giả blog` |
+
+
+## data:messages.by
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.by/>
+```
+
+```html
+<b:eval expr='data:messages.by'/>
+```
+
+```html
+<b:message name='messages.by'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `By` |
+| French | `Par` |
+| Indonesian | `Oleh` |
+| Portuguese | `Por` |
+| Spanish | `De` |
+| Vietnamese | `Bởi` |
+
+
+## data:messages.byAuthor
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<b:message name='messages.byAuthor'>
+  <b:param expr:value='value' name='authorName'/>
+</b:message>
+
+<!-- Examples -->
+
+<b:message name='messages.byAuthor'>
+  <b:param expr:value='data:post.author.name' name='authorName'/>
+</b:message>
+
+<b:message name='messages.byAuthor'>
+  <b:param value='John Doe' name='authorName'/>
+</b:message>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `By author_name` |
+| French | `Par author_name` |
+| Indonesian | `Oleh author_name` |
+| Portuguese | `Por author_name` |
+| Spanish | `De author_name` |
+| Vietnamese | `Bởi author_name` |
+
+
+## data:messages.byAuthorLink
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<b:message name='messages.byAuthorLink'>
+  <b:param expr:value='value' name='authorName'/>
+  <b:param expr:value='value' name='authorUrl'/>
+</b:message>
+
+<!-- Examples -->
+
+<b:message name='messages.byAuthorLink'>
+  <b:param expr:value='data:post.author.name' name='authorName'/>
+  <b:param expr:value='data:post.author.profileUrl' name='authorUrl'/>
+</b:message>
+
+<b:message name='messages.byAuthorLink'>
+  <b:param value='John Doe' name='authorName'/>
+  <b:param value='https://example.com' name='authorUrl'/>
+</b:message>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `By <a href='profile_link'>author_name</a>` |
+| French | `Par <a href='profile_link'>author_name</a>` |
+| Indonesian | `Oleh <a href='profile_link'>author_name</a>` |
+| Portuguese | `Por <a href='profile_link'>author_name</a>` |
+| Spanish | `De <a href='profile_link'>author_name</a>` |
+| Vietnamese | `Bởi <a href='profile_link'>author_name</a>` |
+
+
+## data:messages.comments
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.comments/>
+```
+
+```html
+<b:eval expr='data:messages.comments'/>
+```
+
+```html
+<b:message name='messages.comments'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `Comments` |
+| French | `Commentaires` |
+| Indonesian | `Komentar` |
+| Portuguese | `Comentários` |
+| Spanish | `Comentarios` |
+| Vietnamese | `Nhận xét` |
+
+
+## data:messages.configurationRequired
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.configurationRequired/>
+```
+
+```html
+<b:eval expr='data:messages.configurationRequired'/>
+```
+
+```html
+<b:message name='messages.configurationRequired'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `Configuration required` |
+| French | `Configuration obligatoire` |
+| Indonesian | `Konfigurasi yang diperlukan` |
+| Portuguese | `Configuração necessária` |
+| Spanish | `Necesita configuración` |
+| Vietnamese | `Đã yêu cầu cấu hình` |
