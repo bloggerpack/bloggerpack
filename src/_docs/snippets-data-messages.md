@@ -379,3 +379,33 @@ Gadget type: `Global`
 | Portuguese | `Configuração necessária` |
 | Spanish | `Necesita configuración` |
 | Vietnamese | `Đã yêu cầu cấu hình` |
+
+
+## data:messages.copy
+
+Gadget type: `Global`
+
+**Usage**
+
+```html
+<data:messages.copy/>
+```
+
+```html
+<b:eval expr='data:messages.copy'/>
+```
+
+```html
+<b:message name='messages.copy'/>
+```
+
+**Values**
+
+| Language | Value |
+| --- | --- |
+| English | `Copy` |
+| French | `Copier` |
+| Indonesian | `Salin` |
+| Portuguese | `Copiar` |
+| Spanish | `Copiar` |
+| Vietnamese | `Sao chép` |
