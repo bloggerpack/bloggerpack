@@ -1,18 +1,28 @@
 <!--
-@@@title:Reboot@@@
+@@@title:Base@@@
 @@@section:CSS@@@
 -->
 
-# Reboot
+# Base CSS
 
-Reboot providing many HTML elements with somewhat opinionated styles using only element selectors to provide an elegant, consistent, and simple baseline to build upon. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
+Base CSS builds upon Normalize and Bootstrap Reboot, providing many HTML elements with somewhat opinionated styles using only element selectors to provide an elegant, consistent, and simple baseline to build upon. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
+
+Here are our guidelines and reasons for choosing what to override in base CSS:
+
+- Update some browser default values to use `rem`s instead of `em`s for scalable component spacing.
+- Avoid `margin-top`. Vertical margins can collapse, yielding unexpected results. More importantly though, a single direction of `margin` is a simpler mental model.
+- For easier scaling across device sizes, block elements should use `rem`s for `margin`s.
+- Keep declarations of `font`-related properties to a minimum, using `inherit` whenever possible.
 
 
-## Normalize.css
+## Document and body
 
-For improved cross-browser rendering, we use [Normalize.css](https://necolas.github.io/normalize.css).
+The `<html>` and `<body>` elements are updated to provide better page-wide defaults. More specifically:
 
-> Normalize.css makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
+- The `box-sizing` is globally set on every element—including `*::before` and `*::after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
+  - No base `font-size` is declared on the `<html>`, but `16px` is assumed (the browser default). `font-size: 1rem` is applied on the `<body>` for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach.
+- The `<body>` also sets a global `font-family`, `line-height`, and `text-align`. This is inherited later by some form elements to prevent font inconsistencies.
+- For safety, the `<body>` has a declared `background-color`, defaulting to `#fff`.
 
 
 ## Headings and paragraphs
@@ -61,38 +71,75 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 ```
 
 
+## Horizontal rules
+
+The HTML `<hr>` element.
+
+<div class="doc-example">
+  <p>
+    This is the first paragraph of text.
+    This is the first paragraph of text.
+    This is the first paragraph of text.
+    This is the first paragraph of text.
+  </p>
+
+  <hr>
+
+  <p>
+    This is the second paragraph of text.
+    This is the second paragraph of text.
+    This is the second paragraph of text.
+    This is the second paragraph of text.
+  </p>
+</div>
+
+```html
+<p>
+  This is the first paragraph of text.
+  This is the first paragraph of text.
+  This is the first paragraph of text.
+  This is the first paragraph of text.
+</p>
+
+<hr>
+
+<p>
+  This is the second paragraph of text.
+  This is the second paragraph of text.
+  This is the second paragraph of text.
+  This is the second paragraph of text.
+</p>
+```
+
+
 ## Inline text elements
 
 Styling for common inline HTML5 elements.
 
 <div class="doc-example">
-  <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-  <p><del>This line of text is meant to be treated as deleted text.</del></p>
-  <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-  <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-  <p><u>This line of text will render as underlined.</u></p>
-  <p><small>This line of text is meant to be treated as fine print.</small></p>
-  <p><strong>This line rendered as bold text.</strong></p>
-  <p><em>This line rendered as italicized text.</em></p>
+  <p><a href="#">Link</a></p>
+  <p><strong>Bold</strong></p>
+  <p><small>Small</small></p>
+  <p><mark>Mark</mark></p>
   <p><abbr title="HyperText Markup Language">HTML</abbr> abbreviations.</p>
+  <p><sub>Subscript</sub> and <sup>Superscript</sup></p>
+  <p>The <strong>HTML Definition element</strong> (<strong><dfn>&lt;dfn&gt;</dfn></strong>).</p>
 </div>
 
 ```html
-<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-<p><del>This line of text is meant to be treated as deleted text.</del></p>
-<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-<p><u>This line of text will render as underlined.</u></p>
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-<p><strong>This line rendered as bold text.</strong></p>
-<p><em>This line rendered as italicized text.</em></p>
+<p><a href="#">Link</a></p>
+<p><strong>Bold</strong></p>
+<p><small>Small</small></p>
+<p><mark>Mark</mark></p>
 <p><abbr title="HyperText Markup Language">HTML</abbr> abbreviations.</p>
+<p><sub>Subscript</sub> and <sup>Superscript</sup></p>
+<p>The <strong>HTML Definition element</strong> (<strong><dfn>&lt;dfn&gt;</dfn></strong>).</p>
 ```
 
 
 ## Code
 
-The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
+The `<pre>` element is reset to remove its `margin-top` and add `margin-bottom: 1rem`.
 
 <div class="doc-example">
   <h4 class="js-toc-ignore">Inline code</h4>
@@ -330,6 +377,39 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
 ```
 
 
+## Addresses
+
+The `<address>` element is updated to reset the browser default `font-style` from `italic` to `normal`. `line-height` is also now inherited, and `margin-bottom: 1rem` has been added. `<address>`s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with `<br>`.
+
+<div class="doc-example">
+  <address>
+    <strong>Example, Inc.</strong><br>
+    123 Example Street, Suite 000<br>
+    City, ABC 00000<br>
+    <abbr title="Phone">P:</abbr> (123) 000-0000
+  </address>
+
+  <address>
+    <strong>Full Name</strong><br>
+    <a href="mailto:#">first.last@example.com</a>
+  </address>
+</div>
+
+```html
+<address>
+  <strong>Example, Inc.</strong><br>
+  123 Example Street, Suite 000<br>
+  City, ABC 00000<br>
+  <abbr title="Phone">P:</abbr> (123) 000-0000
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">first.last@example.com</a>
+</address>
+```
+
+
 ## Forms
 
 Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:
@@ -508,37 +588,4 @@ These changes, and more, are demonstrated below.
     </p>
   </fieldset>
 </form>
-```
-
-
-## Addresses
-
-The `<address>` element is updated to reset the browser default `font-style` from `italic` to `normal`. `line-height` is also now inherited, and `margin-bottom: 1rem` has been added. `<address>`s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with `<br>`.
-
-<div class="doc-example">
-  <address>
-    <strong>Example, Inc.</strong><br>
-    123 Example Street, Suite 000<br>
-    City, ABC 00000<br>
-    <abbr title="Phone">P:</abbr> (123) 000-0000
-  </address>
-
-  <address>
-    <strong>Full Name</strong><br>
-    <a href="mailto:#">first.last@example.com</a>
-  </address>
-</div>
-
-```html
-<address>
-  <strong>Example, Inc.</strong><br>
-  123 Example Street, Suite 000<br>
-  City, ABC 00000<br>
-  <abbr title="Phone">P:</abbr> (123) 000-0000
-</address>
-
-<address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">first.last@example.com</a>
-</address>
 ```

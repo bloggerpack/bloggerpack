@@ -80,6 +80,13 @@
   margin-top: 1rem;
 }
 
+.doc-nav-subdivider {
+  height: 0;
+  margin: .5rem 1rem;
+  overflow: hidden;
+  border-top: 1px solid #32383e;
+}
+
 /** Toggle **/
 
 .doc-nav-toggle {
@@ -222,24 +229,16 @@
 .doc-content > h5,
 .doc-content > h6,
 .doc-content > p,
+.doc-content > pre,
 .doc-content > ol,
 .doc-content > ul,
 .doc-content > dl,
 .doc-content > table,
 .doc-content > blockquote,
 .doc-content > address,
-.doc-content > figure,
-.doc-content > pre {
+.doc-content > figure {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-.doc-content > h1,
-.doc-content > h2,
-.doc-content > h3,
-.doc-content > h4,
-.doc-content > h5,
-.doc-content > h6 {
-  line-height: 1.2;
 }
 
 /**
@@ -278,8 +277,17 @@
 }
 
 /**
- * Heading
+ * Headings
  */
+
+.doc-content > h1,
+.doc-content > h2,
+.doc-content > h3,
+.doc-content > h4,
+.doc-content > h5,
+.doc-content > h6 {
+  line-height: 1.2;
+}
 
 .doc-content > h1 {
   padding: 1rem 1.5rem;
@@ -302,6 +310,21 @@
   background-color: #f8f9fa;
   border-top: 2px solid #dee2e6;
   border-bottom: 2px solid #dee2e6;
+}
+
+/**
+ * Code
+ */
+
+.doc-content > pre {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
 }
 
 /**
@@ -345,7 +368,7 @@
 }
 
 /**
- * Blockquote
+ * Blockquotes
  */
 
 .doc-content > blockquote {
@@ -361,21 +384,6 @@
 }
 .doc-content > blockquote > :last-child {
   margin-bottom: 0;
-}
-
-/**
- * Code
- */
-
-.doc-content > pre {
-  display: block;
-  padding: 1rem;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #f8f9fa;
-  border-radius: .25rem;
 }
 
 /**

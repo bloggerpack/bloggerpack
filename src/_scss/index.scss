@@ -7,12 +7,14 @@
 @import "functions";
 @import "variables";
 @import "mixins";
-@import "normalize";
-@import "reboot";
+
+@import "base";
+
+@import "blockquotes";
 @import "buttons";
 @import "forms";
 @import "tables";
-@import "blockquotes";
+
 @import "blogger/gadget-blog-archive";
 @import "blogger/gadget-blog-search";
 @import "blogger/gadget-contact-form";
