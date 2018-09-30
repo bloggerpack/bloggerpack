@@ -16,7 +16,7 @@ Download the source and try to apply the precompiled theme (`dist/theme.xml`) to
 
 ### Download
 
-<a href="{{ docs.links.download }}">Download source</a>
+<a href="{{ docs.links.download }}">Download source</a> | [Best practices](#best-practices)
 
 ### Contents
 
@@ -145,6 +145,227 @@ You can run the documentation locally via Grunt commands:
 
 1. From the root `/{{ rootDirname }}` directory, run `grunt docs-serve` in the command line.
 2. Open `http://localhost:9001` in your browser.
+
+
+## Sass
+
+Utilize our source Sass files to take advantage of variables, maps, mixins, and more.
+
+### File structure
+
+```plaintext
+your-project/
+└── src/
+    └── _scss/
+        ├── blogger/
+        └── **/*.scss
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>File / Directory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code style="white-space: nowrap;">blogger/</code></td>
+      <td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn't use any variables, functions, or mixins. This styles also doesn't depend on <a href="css-base.html"><code>_base.scss</code></a>.</td>
+    </tr>
+    <tr>
+      <td><code style="white-space: nowrap;">\*\*/*.scss</code></td>
+      <td>Other sass files are variables, functions, mixins and components.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Remove default Sass
+
+You can remove default styles and write your own styles. To do that, remove all `src/_scss/*.scss` except `index.scss` and `blogger/`. Then, create your own `.scss` file and then import in `index.scss`.
+
+If you remove the default styles, you also must remove its documentation. If you create your own styles, you also must create its documentation.
+
+
+## Best practices
+
+### Basic
+
+Basic steps to create a theme.
+
+<details>
+  <summary>1. Download</summary>
+  <p>[Download the source](#download). Extract downloaded source file (`zip`) and then rename `/{{ rootDirname }}` to the name of your theme.</p>
+</details>
+
+<details>
+  <summary>2. Configurations and customization</summary>
+  <div>
+    <ul>
+      <li>Configure theme: `src/config.theme.json`.</li>
+      <li>Configure docs: `src/config.docs.json`.</li>
+    </ul>
+
+    <p>All important text and links in the theme, CSS, JS and documentation is taken from configuration data, such as theme name, version number and more. So, you only need to change it in the configuration file.</p>
+
+    <p>You can also customize the docs to suit your needs.</p>
+  </div>
+</details>
+
+<details>
+  <summary>3. Update README</summary>
+  <p>Update `README.md` for your theme.</p>
+</details>
+
+<details>
+  <summary>4. Publish</summary>
+  <div>
+    <p>After you have finished everything, it's time to share your theme to the world.</p>
+
+    <ul>
+      <li>Run `grunt release`, this command will generate a `zip` file, that file is the release of your theme.</li>
+      <li>Share your theme (the `zip` file) to the world.</li>
+    </ul>
+  </div>
+</details>
+
+### Create a new starter theme
+
+You might want to create a new starter theme. For example, adding new features, adding a CSS framework or completely rewrite theme and styles. Follow these steps:
+
+**Add config to `src/config.base.json`:**
+
+```json
+{
+  "1": {
+    ...
+  },
+  "2": {
+    "name": "Starter Theme Name",
+    "version": "1.0.0",
+    "date": "2017-2018",
+    "homepage": "https://example.com/starter-theme-name",
+    "author": {
+      "name": "Your Name",
+      "url": "https://example.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/example/starter-theme-name.git"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/example/starter-theme-name/blob/master/LICENSE"
+    }
+  }
+}
+```
+
+**Update banner in `src/skin.css`:**
+
+<!--(bake-start _process="false")-->
+```css
+/* ==========================================================================
+   Theme details
+   ========================================================================== */
+
+/*!
+ * Name            : {{ theme.name }}
+ * Version         : {{ theme.version }}
+ * Date            : {{ theme.date }}
+ * Homepage        : {{ theme.homepage }}
+ * Author Name     : {{ theme.author.name }}
+ * Author URL      : {{ theme.author.url }}
+ * Repository Type : {{ theme.repository.type }}
+ * Repository URL  : {{ theme.repository.url }}
+ * License         : {{ theme.license.name }}
+ * License URL     : {{ theme.license.url }}
+ * Based on {{ base.2.name }}
+ */
+
+/*!
+ * {{ base.2.name }} v{{ base.2.version }} ({{ base.2.homepage }})
+ * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})
+ * Licensed under {{ base.2.license.name }} ({{ base.2.license.url }})
+ * Based on {{ base.1.name }}
+ */
+
+/*!
+ * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})
+ * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})
+ * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})
+ */
+```
+<!--(bake-end)-->
+
+**Update banner in `src/_scss/index.scss`:**
+
+<!--(bake-start _process="false")-->
+```css
+/*!
+ * {{ base.2.name }} v{{ base.2.version }} ({{ base.2.homepage }})
+ * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})
+ * Licensed under {{ base.2.license.name }} ({{ base.2.license.url }})
+ * Based on {{ base.1.name }}
+ */
+
+/*!
+ * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})
+ * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})
+ * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})
+ */
+```
+<!--(bake-end)-->
+
+**Update banner in `Gruntfile.js`:**
+
+<!--(bake-start _process="false")-->
+```js
+module.exports = function (grunt) {
+  'use strict';
+
+  grunt.initConfig({
+
+    banner: '/*!\n' +
+            ' * {{ base.2.name }} v{{ base.2.version }} ({{ base.2.homepage }})\n' +
+            ' * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})\n' +
+            ' * Licensed under {{ base.2.license.name }} ({{ base.2.license.url }})\n' +
+            ' * Based on {{ base.1.name }}\n' +
+            ' */\n' +
+            '/*!\n' +
+            ' * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})\n' +
+            ' * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})\n' +
+            ' * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})\n' +
+            ' */\n',
+
+    ...
+  });
+};
+```
+<!--(bake-end)-->
+
+**Update banner in `src/_docs/assets/css/docs.css` and `src/_docs/assets/js/docs.js`:**
+
+<!--(bake-start _process="false")-->
+```css
+/*!
+ * {{ base.2.name }} Docs ({{ base.2.homepage }})
+ * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})
+ * Licensed under the Creative Commons Attribution 3.0 Unported License (https://creativecommons.org/licenses/by/3.0)
+ * Based on {{ base.1.name }}
+ */
+
+/*!
+ * {{ base.1.name }} Docs ({{ base.1.homepage }})
+ * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})
+ * Licensed under the Creative Commons Attribution 3.0 Unported License (https://creativecommons.org/licenses/by/3.0)
+ */
+```
+<!--(bake-end)-->
+
+**Remove and/or add styles:** [see above](#remove-default-sass).
+
+**Update documentation:** update whatever you want.
 
 
 ## Code guide
