@@ -387,6 +387,18 @@
 }
 
 /**
+ * Details
+ */
+
+.doc-content > details {
+  margin-bottom: 1rem;
+}
+.doc-content > details > summary {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+/**
  * Example
  */
 
