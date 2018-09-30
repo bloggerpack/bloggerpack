@@ -158,6 +158,7 @@ your-project/
 └── src/
     └── _scss/
         ├── blogger/
+        ├── _custom.scss
         └── **/*.scss
 ```
 
@@ -174,11 +175,39 @@ your-project/
       <td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn't use any variables, functions, or mixins. This styles also doesn't depend on <a href="css-base.html"><code>_base.scss</code></a>.</td>
     </tr>
     <tr>
+      <td><code style="white-space: nowrap;">_custom.scss</code></td>
+      <td>Copy variables from `_variables.scss` to this file to override default values without modifying source files.</td>
+    </tr>
+    <tr>
       <td><code style="white-space: nowrap;">\*\*/*.scss</code></td>
       <td>Other sass files are variables, functions, mixins and components.</td>
     </tr>
   </tbody>
 </table>
+
+### Modify variables and maps
+
+Every Sass variable includes the `!default` flag allowing you to override the variable’s default value in `_custom.scss` without modifying source code.
+
+Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
+
+```scss
+_custom.scss
+
+// Variable overrides
+$body-color:  #fff;
+$body-bg:     #000;
+
+// Modify map
+$theme-colors: (
+  "primary": #000,
+);
+
+// Add to map
+$theme-colors: (
+  "custom-color": #900
+);
+```
 
 ### Remove default Sass
 
