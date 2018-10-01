@@ -25,15 +25,14 @@ Once downloaded, you’ll see something like this:
 ```plaintext
 {{ rootDirname }}
 ├── dist
-│   ├── bundle
 │   ├── docs
-│   ├── skin
 │   └── theme.xml
 └── src
     ├── _docs
     ├── _includes
     ├── _js
     ├── _scss
+    ├── dist
     ├── config.base.json
     ├── config.docs.json
     ├── config.theme.json
@@ -52,7 +51,7 @@ Once downloaded, you’ll see something like this:
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">dist</code></td>
-      <td>The <code>dist</code> folder includes precompiled files. We provide compiled theme (<code>theme.xml</code>), compiled and minified CSS and JS (<code>bundle.css</code> and <code>bundle.js</code>), as well as compiled and minified documentation files.</td>
+      <td>The <code>dist</code> folder includes precompiled theme (<code>theme.xml</code>), as well as compiled and minified documentation files.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src</code></td>
@@ -76,11 +75,15 @@ Once downloaded, you’ll see something like this:
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_js</code></td>
-      <td>The source code for JavaScript (<code>dist/bundle/bundle.js</code>).</td>
+      <td>The source code for JavaScript (<code>src/dist/bundle/bundle.js</code>).</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_scss</code></td>
-      <td>The source code for CSS (<code>dist/bundle/bundle.css</code>).</td>
+      <td>The source code for CSS (<code>src/dist/bundle/bundle.css</code>).</td>
+    </tr>
+    <tr>
+      <td><code style="white-space: nowrap;">src/dist</code></td>
+      <td>`src/skin.css`, `src/template-skin.css`, `_scss` and `_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
     </tr>
     <tr>
       <td rowspan="2">
@@ -136,7 +139,7 @@ Our `Gruntfile.js` includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
-| `grunt dist` | `grunt dist` creates the `/dist` directory with compiled files. |
+| `grunt` | `grunt` creates the `/dist` directory with compiled files. |
 | `grunt watch` | Watches the source files and automatically building them whenever you save. |
 
 ### Local documentation

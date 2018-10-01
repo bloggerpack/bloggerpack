@@ -52,7 +52,7 @@ CSS
 
 <b:template-skin>
 <![CDATA[
-<!--(bake ../dist/skin/template-skin.css)-->
+<!--(bake dist/skin/template-skin.css)-->
 ]]>
 </b:template-skin>
 
@@ -60,7 +60,7 @@ CSS
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
-<!--(bake ../dist/bundle/bundle.css)-->
+<!--(bake dist/bundle/bundle.css)-->
 </style>
 </b:if>
 
@@ -69,7 +69,7 @@ CSS
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
-<!--(bake ../dist/skin/skin.css)-->
+<!--(bake dist/skin/skin.css)-->
 ]]>
 </b:skin>
 </b:if>
@@ -188,7 +188,7 @@ JavaScript
 
 <script>
 //<![CDATA[
-<!--(bake ../dist/bundle/bundle.js)-->
+<!--(bake dist/bundle/bundle.js)-->
 //]]>
 </script>
 

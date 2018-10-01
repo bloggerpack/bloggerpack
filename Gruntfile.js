@@ -22,7 +22,7 @@ module.exports = function (grunt) {
             ' */\n',
 
     clean: {
-      'dist': 'dist'
+      'dist': ['dist', 'src/dist']
     },
 
     stylelint: {
@@ -101,7 +101,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'src/',
           src: ['skin.css', 'template-skin.css'],
-          dest: 'dist/skin'
+          dest: 'src/dist/skin'
         }]
       },
       bundle: {
@@ -126,9 +126,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'dist/bundle/',
+          cwd: 'src/dist/bundle/',
           src: ['bundle.css', 'bundle.js'],
-          dest: 'dist/bundle'
+          dest: 'src/dist/bundle'
         }]
       },
       docs: {
@@ -172,7 +172,7 @@ module.exports = function (grunt) {
           sourceMap: false
         },
         files: {
-          'dist/bundle/bundle.css': 'src/_scss/index.scss'
+          'src/dist/bundle/bundle.css': 'src/_scss/index.scss'
         }
       }
     },
@@ -191,7 +191,7 @@ module.exports = function (grunt) {
       },
       bundle: {
         files: {
-          'dist/bundle/bundle.js': 'src/_js/index.js'
+          'src/dist/bundle/bundle.js': 'src/_js/index.js'
         }
       }
     },
@@ -232,10 +232,10 @@ module.exports = function (grunt) {
         ]
       },
       themeSkin: {
-        src: 'dist/skin/skin.css'
+        src: 'src/dist/skin/skin.css'
       },
       bundle: {
-        src: 'dist/bundle/bundle.css'
+        src: 'src/dist/bundle/bundle.css'
       },
       docs: {
         src: 'dist/docs/assets/css/docs.css'
@@ -270,9 +270,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'dist/bundle/',
+          cwd: 'src/dist/bundle/',
           src: 'bundle.css',
-          dest: 'dist/bundle'
+          dest: 'src/dist/bundle'
         }]
       },
       docs: {
@@ -305,9 +305,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'dist/bundle/',
+          cwd: 'src/dist/bundle/',
           src: 'bundle.js',
-          dest: 'dist/bundle'
+          dest: 'src/dist/bundle'
         }]
       },
       docs: {
@@ -332,7 +332,7 @@ module.exports = function (grunt) {
       },
       docsBundle: {
         expand: true,
-        cwd: 'dist/',
+        cwd: 'src/dist/',
         src: 'bundle/*',
         dest: 'dist/docs'
       }
@@ -358,7 +358,8 @@ module.exports = function (grunt) {
           'src/**/*.jst',
           'src/**/*.json',
           'src/**/*.md',
-          'src/**/*.scss'
+          'src/**/*.scss',
+          '!src/dist/**/*'
         ],
         tasks: [
           'clean:dist',
@@ -396,8 +397,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'dist/',
-          src: ['**'],
+          src: ['**', '.*', '!.git', '!*.zip', '!node_modules/**'],
           dest: __dirname.split(path.sep).pop() + '-dist'
         }]
       }
@@ -426,9 +426,6 @@ module.exports = function (grunt) {
   grunt.registerTask('docs-serve', ['connect:docs']);
   grunt.registerTask('dist-docs', ['docs-lint', 'docs-compile', 'docs-minify']);
 
-  // Dist task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-bundle', 'dist-theme', 'dist-docs']);
-
   // Test task.
   grunt.registerTask('test', ['dist-bundle', 'dist-theme', 'dist-docs']);
 
@@ -436,5 +433,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['clean:dist', 'test']);
 
   // Release task.
-  grunt.registerTask('release', ['dist', 'compress']);
+  grunt.registerTask('release', ['default', 'compress']);
 };
