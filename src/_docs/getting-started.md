@@ -16,7 +16,7 @@ Download the source and try to apply the precompiled theme (`dist/theme.xml`) to
 
 ### Download
 
-<a href="{{ docs.links.download }}">Download source</a> | [Best practices](#best-practices)
+<a href="{{ docs.links.download }}">Download source</a> | [Step by Step Tutorial](#step-by-step-tutorial)
 
 ### Contents
 
@@ -51,7 +51,7 @@ Once downloaded, you’ll see something like this:
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">dist</code></td>
-      <td>The <code>dist</code> folder includes precompiled theme (<code>theme.xml</code>), as well as compiled and minified documentation files.</td>
+      <td>The <code>dist</code> folder includes precompiled theme, as well as compiled and minified documentation files.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src</code></td>
@@ -62,16 +62,8 @@ Once downloaded, you’ll see something like this:
       <td>The source code for documentation (<code>dist/docs</code>).</td>
     </tr>
     <tr>
-      <td rowspan="2"><code style="white-space: nowrap;">src/_includes</code></td>
-      <td>The partials that can be mixed and matched by your theme.</td>
-    </tr>
-    <tr>
-      <td>
-        <div>The grunt-bake tag:</div>
-        <div style="white-space: nowrap;"><code style="white-space: nowrap;">&lt;!--(bake _includes/file.ext)--&gt;</code> - relative</div>
-        <div style="white-space: nowrap;"><code style="white-space: nowrap;">&lt;!--(bake /_includes/file.ext)--&gt;</code> - absolute</div>
-        <div style="white-space: nowrap;">can be used to include the partial in <code style="white-space: nowrap;">_includes/file.ext</code>.</div>
-      </td>
+      <td><code style="white-space: nowrap;">src/_includes</code></td>
+      <td>The partials that can be mixed and matched by your theme. [Read partials docs](#partials)</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_js</code></td>
@@ -83,29 +75,22 @@ Once downloaded, you’ll see something like this:
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/dist</code></td>
-      <td>`src/skin.css`, `src/template-skin.css`, `_scss` and `_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
+      <td>`src/skin.css`, `src/template-skin.css`, `src/_scss` and `src/_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
     </tr>
     <tr>
-      <td rowspan="2">
+      <td>
         <div><code style="white-space: nowrap;">src/config.base.json</code></div>
         <div><code style="white-space: nowrap;">src/config.docs.json</code></div>
         <div><code style="white-space: nowrap;">src/config.theme.json</code></div>
       </td>
-      <td>Stores configuration data.</td>
-    </tr>
-    <tr>
-      <td>
-        <div style="white-space: nowrap;"><code style="white-space: nowrap;">config.base.json</code> - you can access the data using <code style="white-space: nowrap;">&lbrace;&lbrace; base.data &rbrace;&rbrace;</code>.</div>
-        <div style="white-space: nowrap;"><code style="white-space: nowrap;">config.docs.json</code> - you can access the data using <code style="white-space: nowrap;">&lbrace;&lbrace; docs.data &rbrace;&rbrace;</code>.</div>
-        <div style="white-space: nowrap;"><code style="white-space: nowrap;">config.theme.json</code> - you can access the data using <code style="white-space: nowrap;">&lbrace;&lbrace; theme.data &rbrace;&rbrace;</code>.</div>
-      </td>
+      <td>Stores configuration data. [Read configuration docs](#configuration)</td>
     </tr>
     <tr>
       <td rowspan="2">
         <div><code style="white-space: nowrap;">src/skin.css</code></div>
         <div><code style="white-space: nowrap;">src/template-skin.css</code></div>
       </td>
-      <td>Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871" target="_blank">skin variables</a>.</td>
+      <td>Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871">skin variables</a>.</td>
     </tr>
     <tr>
       <td>Styles in <code style="white-space: nowrap;">template-skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:template-skin&gt;</code> tag.</td>
@@ -149,6 +134,98 @@ You can run the documentation locally via Grunt commands:
 
 1. From the root `/{{ rootDirname }}` directory, run `grunt docs-serve` in the command line.
 2. Open `http://localhost:9001` in your browser.
+
+
+## Templating
+
+We uses [grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake) for creating modular files in order to ease the process while in development.
+
+### Blogger version
+
+We uses layouts version `3`:
+
+```html
+<html b:layoutsVersion='3'>
+  ...
+</html>
+```
+
+We uses gadget version `2`:
+
+```html
+<html b:defaultwidgetversion='2'>
+  ...
+</html>
+
+<b:widget version='2'>
+  ...
+</b:widget>
+```
+
+### Partials
+
+By default, the partial files are stored in `src/_includes` directory.
+
+Here is the grunt-bake tag that can be used to include the partial in `_includes/file.ext`:
+
+```html
+// Relative to the file
+<!--(bake _includes/file.ext)-->
+
+// Relative to the `src` path
+<!--(bake /_includes/file.ext)-->
+```
+
+### Configuration
+
+There is three configuration file for stores configuration data:
+
+1. `src/config.base.json`
+2. `src/config.docs.json`
+3. `src/config.theme.json`
+
+You can access the data in: 
+
+- `src/theme.xml` (or any other `.xml` file that included in this file)
+- `src/skin.css`
+- `src/template-skin.css`
+- `src/_scss`
+- `src/_js`
+- `src/_docs`
+
+Here is how to access the data:
+
+- `config.base.json` - access the data using <code>&lbrace;&lbrace; base.dataName &rbrace;&rbrace;</code>
+- `config.docs.json` - access the data using <code>&lbrace;&lbrace; docs.dataName &rbrace;&rbrace;</code>
+- `config.theme.json` - access the data using <code>&lbrace;&lbrace; theme.dataName &rbrace;&rbrace;</code>
+
+Example:
+
+```json
+config.theme.json
+
+{
+  "example": "Lorem ipsum dolor sit amet"
+}
+```
+
+<!--(bake-start _process="false")-->
+```html
+your-file.xml
+
+<p>{{ theme.example }}.</p>
+```
+<!--(bake-end)-->
+
+```html
+Output:
+
+<p>Lorem ipsum dolor sit amet.</p>
+```
+
+### More
+
+Learn more about using grunt-bake by reading its [documentation](https://github.com/MathiasPaumgarten/grunt-bake).
 
 
 ## Sass
@@ -218,7 +295,7 @@ $theme-colors: (
 
 ### Sass options
 
-You can find and customize these variables for key global options in `src/_scss/_variables.scss` file.
+You can find and customize these variables for key global options in `_variables.scss`.
 
 | Variable | Values | Description |
 | --- | --- | --- |
@@ -228,7 +305,7 @@ You can find and customize these variables for key global options in `src/_scss/
 
 ### Functions
 
-We utilizes several Sass functions in `src/_scss/_functions.scss`.
+We utilizes several Sass functions in `_functions.scss`.
 
 **Functions for getting values from the color maps:**
 
@@ -286,16 +363,16 @@ $bg: #000;
 
 ### Remove default Sass
 
-You can remove default styles and write your own styles. To do that, remove all `src/_scss/*.scss` except `index.scss` and `blogger/`. Then, create your own `.scss` file and then import in `index.scss`.
+You can remove default styles and write your own styles. To do that, remove all `*.scss` except `index.scss` and `blogger/`. Then, create your own `.scss` file and then import it in `index.scss`.
 
 If you remove the default styles, you also must remove its documentation. If you create your own styles, you also must create its documentation.
 
 
 ## Best practices
 
-### Basic
+### Step by Step Tutorial
 
-Basic steps to create a theme.
+The goal of this tutorial is to take you from having some development experience to building your first theme.
 
 <details>
   <summary>1. Download and setup</summary>
@@ -316,7 +393,7 @@ Basic steps to create a theme.
 </details>
 
 <details>
-  <summary>2. Configurations and customization</summary>
+  <summary>2. Configuration and customization</summary>
   <div>
     <ul>
       <li>Configure theme: `src/config.theme.json`.</li>
@@ -487,28 +564,6 @@ module.exports = function (grunt) {
 
 ## Code guide
 
-### XML: Layouts and gadget version
-
-Layouts version: `3`
-
-```html
-<html b:layoutsVersion='3'>
-  ...
-</html>
-```
-
-Gadget version: `2`
-
-```html
-<html b:defaultwidgetversion='2'>
-  ...
-</html>
-
-<b:widget version='2'>
-  ...
-</b:widget>
-```
-
 ### XML: Comments and organization
 
 ```html
@@ -560,7 +615,7 @@ Heading 2
 
 `<b:widget>`:
 
-- Always use `title`, `version`, and `visible` attribute.
+- Always use `locked`, `title`, `version`, and `visible` attribute.
 
 Example:
 
