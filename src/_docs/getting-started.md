@@ -141,6 +141,7 @@ Our `Gruntfile.js` includes the following commands and tasks:
 | --- | --- |
 | `grunt` | `grunt` creates the `/dist` directory with compiled files. |
 | `grunt watch` | Watches the source files and automatically building them whenever you save. |
+| `grunt release` | Same as `grunt` plus it zip your theme and the source. |
 
 ### Local documentation
 
