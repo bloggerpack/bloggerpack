@@ -298,8 +298,21 @@ If you remove the default styles, you also must remove its documentation. If you
 Basic steps to create a theme.
 
 <details>
-  <summary>1. Download</summary>
-  <p>[Download the source](#download). Extract downloaded source file (`zip`) and then rename `/{{ rootDirname }}` to the name of your theme.</p>
+  <summary>1. Download and setup</summary>
+  <div>
+    <p>[Download the source](#download). Extract downloaded source file (`zip`) and then rename `/{{ rootDirname }}` to the name of your theme.</p>
+
+    <p>Run through the [tooling setup](#tooling-setup) above to use our build system.</p>
+
+    <p><strong>Change, build, and preview:</strong></p>
+
+    <ol>
+      <li>Change the source</li>
+      <li>Run `grunt` to build your changes</li>
+      <li>To preview your changes, apply the new compiled theme (<code>dist/theme.xml</code>) to your blog</li>
+      <li>Repeat.</li>
+    </ol>
+  </div>
 </details>
 
 <details>
