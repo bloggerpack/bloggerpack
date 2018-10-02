@@ -5,13 +5,12 @@
 
 <b:comment>
 #############################################################################
-Config
+Configuration
 ############################################################################# </b:comment>
 
-<b:with value='"https://example.com/1200x630.png"' var='social-logo'>
-<b:with value='"replace_me"' var='facebook-app-id'>
-<b:with value='"@replace_me"' var='twitter-username-website'>
-<b:with value='"@replace_me"' var='twitter-username-creator'>
+<b:with value='"https://example.com/1200x630.png"' var='socialImage'>
+<b:with value='{ appId: "replace_me" }' var='facebook'>
+<b:with value='{ usernameCreator: "@replace_me", usernameSite: "@replace_me" }' var='twitter'>
 
 
 <head>
@@ -83,7 +82,7 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' name='description'/>
   </b:if>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
@@ -97,7 +96,7 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <link expr:href='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' rel='image_src'/>
   <b:else/>
-    <link expr:href='data:social-logo' rel='image_src'/>
+    <link expr:href='data:socialImage' rel='image_src'/>
   </b:if>
 </b:if>
 <b:comment>=== Static page ===</b:comment>
@@ -112,18 +111,18 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <link expr:href='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' rel='image_src'/>
   <b:else/>
-    <link expr:href='data:social-logo' rel='image_src'/>
+    <link expr:href='data:socialImage' rel='image_src'/>
   </b:if>
 </b:if>
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:view.search.resultsMessage' name='description'/>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage' name='description'/>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -132,17 +131,17 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' name='description'/>
   </b:if>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage' name='description'/>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta content='404' name='description'/>
-  <link expr:href='data:social-logo' rel='image_src'/>
+  <link expr:href='data:socialImage' rel='image_src'/>
 </b:if>
 
 <b:comment>### Open Graph ###</b:comment>
@@ -153,7 +152,7 @@ Title, meta and link tags
   <meta content='website' property='og:type'/>
 </b:if>
 <meta expr:content='data:blog.title' property='og:site_name'/>
-<meta expr:content='data:facebook-app-id' property='fb:app_id'/>
+<meta expr:content='data:facebook.appId' property='fb:app_id'/>
 <meta expr:content='data:view.url.canonical' property='og:url'/>
 <meta content='1200' property='og:image:width'/>
 <meta content='630' property='og:image:height'/>
@@ -165,7 +164,7 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' property='og:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
@@ -180,7 +179,7 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='og:image'/>
+    <meta expr:content='data:socialImage' property='og:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Static page ===</b:comment>
@@ -196,20 +195,20 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='og:image'/>
+    <meta expr:content='data:socialImage' property='og:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -219,19 +218,19 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' property='og:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + " | " + data:blog.title' property='og:title'/>
   <meta expr:content='data:view.archive.rangeMessage' property='og:description'/>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='"404 | " + data:blog.title' property='og:title'/>
   <meta content='404' property='og:description'/>
-  <meta expr:content='data:social-logo' property='og:image'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
 </b:if>
 
 <b:comment>### Twitter Cards ###</b:comment>
@@ -241,8 +240,8 @@ Title, meta and link tags
 <b:else/>
   <meta content='summary' name='twitter:card'/>
 </b:if>
-<meta expr:content='data:twitter-username-website' name='twitter:site'/>
-<meta expr:content='data:twitter-username-creator' name='twitter:creator'/>
+<meta expr:content='data:twitter.usernameCreator' name='twitter:creator'/>
+<meta expr:content='data:twitter.usernameSite' name='twitter:site'/>
 <meta expr:content='data:view.url.canonical' name='twitter:url'/>
 <b:comment>=== Homepage ===</b:comment>
 <b:if cond='data:view.isHomepage'>
@@ -252,7 +251,7 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
@@ -267,7 +266,7 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='twitter:image'/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Static page ===</b:comment>
@@ -283,20 +282,20 @@ Title, meta and link tags
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='twitter:image'/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -306,19 +305,19 @@ Title, meta and link tags
   <b:else/>
     <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.archive.rangeMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='"404 | " + data:blog.title' name='twitter:title'/>
   <meta content='404' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 
 
@@ -2908,7 +2907,6 @@ Default markups
 
 
 </body>
-</b:with>
 </b:with>
 </b:with>
 </b:with>
