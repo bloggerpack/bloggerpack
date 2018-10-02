@@ -3,8 +3,8 @@
 <b:else/>
   <meta content='summary' name='twitter:card'/>
 </b:if>
-<meta expr:content='data:twitter-username-website' name='twitter:site'/>
-<meta expr:content='data:twitter-username-creator' name='twitter:creator'/>
+<meta expr:content='data:twitter.usernameCreator' name='twitter:creator'/>
+<meta expr:content='data:twitter.usernameSite' name='twitter:site'/>
 <meta expr:content='data:view.url.canonical' name='twitter:url'/>
 <b:comment>=== Homepage ===</b:comment>
 <b:if cond='data:view.isHomepage'>
@@ -14,7 +14,7 @@
   <b:else/>
     <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Item page ===</b:comment>
 <b:if cond='data:view.isPost'>
@@ -29,7 +29,7 @@
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='twitter:image'/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Static page ===</b:comment>
@@ -45,20 +45,20 @@
   <b:elseif cond='data:blog.postImageUrl'/>
     <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
   <b:else/>
-    <meta expr:content='data:social-logo' property='twitter:image'/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
   </b:if>
 </b:if>
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <meta expr:content='data:view.search.resultsMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Search (default) page ===</b:comment>
 <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
@@ -68,17 +68,17 @@
   <b:else/>
     <meta expr:content='data:blog.title' name='twitter:description'/>
   </b:if>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <meta expr:content='data:view.archive.rangeMessage + " | " + data:blog.title' name='twitter:title'/>
   <meta expr:content='data:view.archive.rangeMessage' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>
 <b:comment>=== Error page ===</b:comment>
 <b:if cond='data:view.isError'>
   <meta expr:content='"404 | " + data:blog.title' name='twitter:title'/>
   <meta content='404' name='twitter:description'/>
-  <meta expr:content='data:social-logo' property='twitter:image'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
 </b:if>

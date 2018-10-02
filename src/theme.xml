@@ -5,13 +5,12 @@
 
 <b:comment>
 #############################################################################
-Config
+Configuration
 ############################################################################# </b:comment>
 
-<b:with value='"https://example.com/1200x630.png"' var='social-logo'>
-<b:with value='"replace_me"' var='facebook-app-id'>
-<b:with value='"@replace_me"' var='twitter-username-website'>
-<b:with value='"@replace_me"' var='twitter-username-creator'>
+<b:with value='"{{ theme.metadata.socialImage }}"' var='socialImage'>
+<b:with value='{ appId: "{{ theme.metadata.facebook.appId }}" }' var='facebook'>
+<b:with value='{ usernameCreator: "{{ theme.metadata.twitter.usernameCreator }}", usernameSite: "{{ theme.metadata.twitter.usernameSite }}" }' var='twitter'>
 
 
 <head>
@@ -243,7 +242,6 @@ Default markups
 
 
 </body>
-</b:with>
 </b:with>
 </b:with>
 </b:with>

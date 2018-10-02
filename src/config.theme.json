@@ -14,5 +14,16 @@
   "license": {
     "name": "MIT",
     "url": "https://opensource.org/licenses/MIT"
+  },
+
+  "metadata": {
+    "socialImage": "https://example.com/1200x630.png",
+    "facebook": {
+      "appId": "replace_me"
+    },
+    "twitter": {
+      "usernameCreator": "@replace_me",
+      "usernameSite": "@replace_me"
+    }
   }
 }
