@@ -22,19 +22,58 @@
         └── <span class="hljs-keyword">*</span><span class="hljs-keyword">*</span>/<span class="hljs-keyword">*</span>.scss
 </code></pre><table><thead><tr><th>File / Directory</th><th>Description</th></tr></thead><tbody><tr><td><code style="white-space: nowrap;">blogger/</code></td><td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn&#39;t use any variables, functions, or mixins. This styles also doesn&#39;t depend on <a href="css-base.html"><code>_base.scss</code></a>.</td></tr><tr><td><code style="white-space: nowrap;">_custom.scss</code></td><td>Copy variables from <code>_variables.scss</code> to this file to override default values without modifying source files.</td></tr><tr><td><code style="white-space: nowrap;">**/*.scss</code></td><td>Other sass files are variables, functions, mixins and components.</td></tr></tbody></table><h3 id="modify-variables-and-maps">Modify variables and maps</h3><p>Every Sass variable includes the <code>!default</code> flag allowing you to override the variable’s default value in <code>_custom.scss</code> without modifying source code.</p><p>Just like Sass variables, all Sass maps include the <code>!default</code> flag and can be overridden and extended.</p><pre><code class="lang-scss">_custom<span class="hljs-class">.scss</span>
 
+<span class="hljs-comment">// Customize options</span>
+<span class="hljs-variable">$enable-rounded</span><span class="hljs-value">: false;</span>
+
 <span class="hljs-comment">// Variable overrides</span>
 <span class="hljs-variable">$body-color</span><span class="hljs-value">:  <span class="hljs-hexcolor">#fff</span>;</span>
 <span class="hljs-variable">$body-bg</span><span class="hljs-value">:     <span class="hljs-hexcolor">#000</span>;</span>
 
 <span class="hljs-comment">// Modify map</span>
 <span class="hljs-variable">$theme-colors</span><span class="hljs-value">: (
-  <span class="hljs-string">"primary"</span>: <span class="hljs-hexcolor">#000</span>,
+  <span class="hljs-string">"primary"</span>: <span class="hljs-hexcolor">#000</span>
 );</span>
 
 <span class="hljs-comment">// Add to map</span>
 <span class="hljs-variable">$theme-colors</span><span class="hljs-value">: (
   <span class="hljs-string">"custom-color"</span>: <span class="hljs-hexcolor">#900</span>
 );</span>
+</code></pre><h3 id="sass-options">Sass options</h3><p>You can find and customize these variables for key global options in <code>src/_scss/_variables.scss</code> file.</p><table><thead><tr><th>Variable</th><th>Values</th><th>Description</th></tr></thead><tbody><tr><td><code>$enable-rounded</code></td><td><code>true</code> (default) or <code>false</code></td><td>Enables predefined <code>border-radius</code> styles on various components.</td></tr><tr><td><code>$enable-shadows</code></td><td><code>true</code> or <code>false</code> (default)</td><td>Enables predefined <code>box-shadow</code> styles on various components.</td></tr><tr><td><code>$enable-transitions</code></td><td><code>true</code> (default) or <code>false</code></td><td>Enables predefined <code>transition</code>s on various components.</td></tr></tbody></table><h3 id="functions">Functions</h3><p>We utilizes several Sass functions in <code>src/_scss/_functions.scss</code>.</p><p><strong>Functions for getting values from the color maps:</strong></p><pre><code class="lang-scss"><span class="hljs-comment">// Retrieve color Sass maps</span>
+<span class="hljs-at_rule">@function<span class="hljs-preprocessor"> theme-color</span>(<span class="hljs-variable">$key</span>: <span class="hljs-string">"primary"</span>) {</span>
+  <span class="hljs-at_rule">@return<span class="hljs-preprocessor"> map-get</span>(<span class="hljs-variable">$theme-colors</span>, <span class="hljs-variable">$key</span>);</span>
+}
+</code></pre><pre><code class="lang-scss"><span class="hljs-comment">// Example to pick one color from a Sass map</span>
+
+<span class="hljs-class">.custom-element</span> {
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-function">theme-color</span>(<span class="hljs-string">"dark"</span>);</span>
+}
+</code></pre><p><strong>Color contrast:</strong></p><p>The color contrast function, <code>color-yiq</code>. It utilizes the <a href="https://en.wikipedia.org/wiki/YIQ">YIQ color space</a> to automatically return a light (<code>#fff</code>) or dark (<code>#111</code>) contrast color based on the specified base color.</p><pre><code class="lang-scss"><span class="hljs-comment">// Color contrast</span>
+<span class="hljs-at_rule">@function<span class="hljs-preprocessor"> color-yiq</span>(<span class="hljs-variable">$color</span>) {</span>
+  <span class="hljs-variable">$r</span><span class="hljs-value">: <span class="hljs-function">red</span>(<span class="hljs-variable">$color</span>);</span>
+  <span class="hljs-variable">$g</span><span class="hljs-value">: <span class="hljs-function">green</span>(<span class="hljs-variable">$color</span>);</span>
+  <span class="hljs-variable">$b</span><span class="hljs-value">: <span class="hljs-function">blue</span>(<span class="hljs-variable">$color</span>);</span>
+
+  <span class="hljs-variable">$yiq</span><span class="hljs-value">: ((<span class="hljs-variable">$r</span> * <span class="hljs-number">299</span>) + (<span class="hljs-variable">$g</span> * <span class="hljs-number">587</span>) + (<span class="hljs-variable">$b</span> * <span class="hljs-number">114</span>)) / <span class="hljs-number">1000</span>;</span>
+
+  <span class="hljs-at_rule">@<span class="hljs-keyword">if</span> (<span class="hljs-variable">$yiq</span> &gt;= <span class="hljs-variable">$yiq-contrasted-threshold</span>) {</span>
+    <span class="hljs-at_rule">@return <span class="hljs-variable">$yiq-text-dark</span>;</span>
+  } <span class="hljs-at_rule">@<span class="hljs-keyword">else</span> {</span>
+    <span class="hljs-at_rule">@return <span class="hljs-variable">$yiq-text-light</span>;</span>
+  }
+}
+</code></pre><pre><code class="lang-scss"><span class="hljs-comment">// Example</span>
+
+<span class="hljs-variable">$bg</span><span class="hljs-value">: <span class="hljs-hexcolor">#000</span>;</span>
+
+<span class="hljs-class">.custom-element</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-function">color-yiq</span>(<span class="hljs-hexcolor">#000</span>);</span> <span class="hljs-comment">// returns `color: #fff`</span>
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#000</span>;</span>
+}
+
+<span class="hljs-class">.custom-element2</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-function">color-yiq</span>(<span class="hljs-variable">$bg</span>);</span> <span class="hljs-comment">// returns `color: #fff`</span>
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-variable">$bg</span>;</span>
+}
 </code></pre><h3 id="remove-default-sass">Remove default Sass</h3><p>You can remove default styles and write your own styles. To do that, remove all <code>src/_scss/*.scss</code> except <code>index.scss</code> and <code>blogger/</code>. Then, create your own <code>.scss</code> file and then import in <code>index.scss</code>.</p><p>If you remove the default styles, you also must remove its documentation. If you create your own styles, you also must create its documentation.</p><h2 id="best-practices">Best practices</h2><h3 id="basic">Basic</h3><p>Basic steps to create a theme.</p><details><summary>1. Download</summary><p><a href="#download">Download the source</a>. Extract downloaded source file (<code>zip</code>) and then rename <code>/bloggerable</code> to the name of your theme.</p></details><details><summary>2. Configurations and customization</summary><div><ul><li>Configure theme: <code>src/config.theme.json</code>.</li><li>Configure docs: <code>src/config.docs.json</code>.</li></ul><p>All important text and links in the theme, CSS, JS and documentation is taken from configuration data, such as theme name, version number and more. So, you only need to change it in the configuration file.</p><p>You can also customize the docs to suit your needs.</p></div></details><details><summary>3. Update README</summary><p>Update <code>README.md</code> for your theme.</p></details><details><summary>4. Publish</summary><div><p>After you have finished everything, it&#39;s time to share your theme to the world.</p><ul><li>Run <code>grunt release</code>, this command will generate a <code>zip</code> file, that file is the release of your theme.</li><li>Share your theme (the <code>zip</code> file) to the world.</li></ul></div></details><h3 id="create-a-new-starter-theme">Create a new starter theme</h3><p>You might want to create a new starter theme. For example, adding new features, adding a CSS framework or completely rewrite theme and styles. Follow these steps:</p><p><strong>Add config to <code>src/config.base.json</code>:</strong></p><pre><code class="lang-json">{
   &quot;1&quot;: {
     ...
