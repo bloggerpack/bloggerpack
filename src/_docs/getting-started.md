@@ -197,19 +197,90 @@ Just like Sass variables, all Sass maps include the `!default` flag and can be o
 ```scss
 _custom.scss
 
+// Customize options
+$enable-rounded: false;
+
 // Variable overrides
 $body-color:  #fff;
 $body-bg:     #000;
 
 // Modify map
 $theme-colors: (
-  "primary": #000,
+  "primary": #000
 );
 
 // Add to map
 $theme-colors: (
   "custom-color": #900
 );
+```
+
+### Sass options
+
+You can find and customize these variables for key global options in `src/_scss/_variables.scss` file.
+
+| Variable | Values | Description |
+| --- | --- | --- |
+| `$enable-rounded` | `true` (default) or `false` | Enables predefined `border-radius` styles on various components. |
+| `$enable-shadows` | `true` or `false` (default) | Enables predefined `box-shadow` styles on various components. |
+| `$enable-transitions` | `true` (default) or `false` | Enables predefined `transition`s on various components. |
+
+### Functions
+
+We utilizes several Sass functions in `src/_scss/_functions.scss`.
+
+**Functions for getting values from the color maps:**
+
+```scss
+// Retrieve color Sass maps
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+```
+
+```scss
+// Example to pick one color from a Sass map
+
+.custom-element {
+  background-color: theme-color("dark");
+}
+```
+
+**Color contrast:**
+
+The color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color.
+
+```scss
+// Color contrast
+@function color-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= $yiq-contrasted-threshold) {
+    @return $yiq-text-dark;
+  } @else {
+    @return $yiq-text-light;
+  }
+}
+```
+
+```scss
+// Example
+
+$bg: #000;
+
+.custom-element {
+  color: color-yiq(#000); // returns `color: #fff`
+  background-color: #000;
+}
+
+.custom-element2 {
+  color: color-yiq($bg); // returns `color: #fff`
+  background-color: $bg;
+}
 ```
 
 ### Remove default Sass
