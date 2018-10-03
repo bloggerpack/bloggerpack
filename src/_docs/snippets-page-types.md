@@ -61,23 +61,23 @@ Conditional tags for different page types, which allows you to specify a part of
 
 ```html
 <b:comment>=== Specific item page ===</b:comment>
-<b:if cond='data:view.url == "https://example.blogspot.com/1945/08/merdeka.html"'>
-  <!-- https://example.blogspot.com/1945/08/merdeka.html -->
+<b:if cond='data:view.url == "https://example.blogspot.com/1945/08/wow.html"'>
+  <!-- https://example.blogspot.com/1945/08/wow.html -->
 </b:if>
 
 <b:comment>=== Specific static page ===</b:comment>
-<b:if cond='data:view.url == "https://example.blogspot.com/p/merdeka.html"'>
-  <!-- https://example.blogspot.com/p/merdeka.html -->
+<b:if cond='data:view.url == "https://example.blogspot.com/p/wow.html"'>
+  <!-- https://example.blogspot.com/p/wow.html -->
 </b:if>
 
 <b:comment>=== Specific search (label) page ===</b:comment>
-<b:if cond='data:view.search.label == "Merdeka"'>
-  <!-- 1. https://example.blogspot.com/search/label/Merdeka -->
-  <!-- 2. https://example.blogspot.com/search?label=Merdeka -->
+<b:if cond='data:view.search.label == "WOW"'>
+  <!-- 1. https://example.blogspot.com/search/label/WOW -->
+  <!-- 2. https://example.blogspot.com/search?label=WOW -->
 </b:if>
 
 <b:comment>=== Specific search (query) page ===</b:comment>
-<b:if cond='data:view.search.query == "merdeka"'>
-  <!-- https://example.blogspot.com/search?q=merdeka -->
+<b:if cond='data:view.search.query == "wow"'>
+  <!-- https://example.blogspot.com/search?q=wow -->
 </b:if>
 ```
