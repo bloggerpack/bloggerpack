@@ -140,28 +140,6 @@ You can run the documentation locally via Grunt commands:
 
 We uses [grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake) for creating modular files in order to ease the process while in development.
 
-### Blogger version
-
-We uses layouts version `3`:
-
-```html
-<html b:layoutsVersion='3'>
-  ...
-</html>
-```
-
-We uses gadget version `2`:
-
-```html
-<html b:defaultwidgetversion='2'>
-  ...
-</html>
-
-<b:widget version='2'>
-  ...
-</b:widget>
-```
-
 ### Partials
 
 By default, the partial files are stored in `src/_includes` directory.
@@ -223,7 +201,7 @@ Output:
 <p>Lorem ipsum dolor sit amet.</p>
 ```
 
-### More
+### Learn more
 
 Learn more about using grunt-bake by reading its [documentation](https://github.com/MathiasPaumgarten/grunt-bake).
 
