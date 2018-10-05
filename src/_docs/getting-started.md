@@ -208,7 +208,9 @@ Learn more about using grunt-bake by reading its [documentation](https://github.
 
 ## Sass
 
-Utilize our source Sass files to take advantage of variables, maps, mixins, and more.
+Utilize our source Sass files to take advantage of variables, functions, mixins, and more.
+
+> From the beginning, we adopted [Bootstrap](https://getbootstrap.com/)'s code guidelines as a convention for writing our Sass/CSS. We also utilize several useful Bootstrap's variables, functions, mixins, and components.
 
 ### File structure
 
@@ -231,7 +233,7 @@ your-project/
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">blogger/</code></td>
-      <td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn't use any variables, functions, or mixins. This styles also doesn't depend on <a href="css-base.html"><code>_base.scss</code></a>.</td>
+      <td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn't use any variables, functions and mixins. This styles also doesn't depend on <a href="css-base.html"><code>_base.scss</code></a>.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">_custom.scss</code></td>
@@ -285,7 +287,9 @@ You can find and customize these variables for key global options in `_variables
 
 We utilizes several Sass functions in `_functions.scss`.
 
-**Functions for getting values from the color maps:**
+#### Color maps
+
+Functions for getting values from the color maps.
 
 ```scss
 // Retrieve color Sass maps
@@ -302,7 +306,7 @@ We utilizes several Sass functions in `_functions.scss`.
 }
 ```
 
-**Color contrast:**
+#### Color contrast
 
 The color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color.
 
@@ -337,6 +341,142 @@ $bg: #000;
   color: color-yiq($bg); // returns `color: #fff`
   background-color: $bg;
 }
+```
+
+### Responsive breakpoints
+
+[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) for creating sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
+
+#### Breakpoint up
+
+CSS:
+
+```css
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
+```
+
+Sass mixins:
+
+```scss
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.custom-class {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  .custom-class {
+    display: block;
+  }
+}
+```
+
+#### Breakpoint down
+
+Media queries that go in the other direction (the given screen size or smaller).
+
+CSS:
+
+```css
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { ... }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { ... }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { ... }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { ... }
+
+/* Extra large devices (large desktops) */
+/* No media query since the extra-large breakpoint has no upper bound on its width */
+```
+
+Sass mixins:
+
+```scss
+@include media-breakpoint-down(xs) { ... }
+@include media-breakpoint-down(sm) { ... }
+@include media-breakpoint-down(md) { ... }
+@include media-breakpoint-down(lg) { ... }
+// No media query necessary for xl breakpoint as it has no upper bound on its width
+
+// Example: Style from medium breakpoint and down
+@include media-breakpoint-down(md) {
+  .custom-class {
+    display: block;
+  }
+}
+```
+
+#### Breakpoint only
+
+Media queries for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
+
+CSS:
+
+```css
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { ... }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }
+```
+
+Sass mixins:
+
+```scss
+@include media-breakpoint-only(xs) { ... }
+@include media-breakpoint-only(sm) { ... }
+@include media-breakpoint-only(md) { ... }
+@include media-breakpoint-only(lg) { ... }
+@include media-breakpoint-only(xl) { ... }
+```
+
+#### Breakpoint between
+
+Similarly, media queries may span multiple breakpoint widths.
+
+CSS:
+
+```css
+/* Example */
+/* Apply styles starting from medium devices and up to extra large devices */
+@media (min-width: 768px) and (max-width: 1199.98px) { ... }
+```
+
+Sass mixins:
+
+```scss
+@include media-breakpoint-between(md, xl) { ... }
 ```
 
 ### Remove default Sass
@@ -537,7 +677,7 @@ module.exports = function (grunt) {
 
 **Remove and/or add styles:** [see above](#remove-default-sass).
 
-**Update documentation:** update whatever you want.
+**Update documentation:** customize the docs to suit your needs.
 
 
 ## Code guide
