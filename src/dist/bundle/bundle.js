@@ -1,4 +1,8 @@
 /*!
+ * Theme name v1.0
+ * Based on Bloggerable
+ */
+/*!
  * Bloggerable v1.0.0 (https://blogger-starter.github.io/bloggerable)
  * Copyright 2017-2018 Igoy Nawamreh (https://twitter.com/igoynawamreh)
  * Licensed under MIT (https://github.com/blogger-starter/bloggerable/blob/master/LICENSE)
