@@ -18,4 +18,8 @@
       </b:loop>
     </ul>
   </b:includable>
+  <b:includable id='overflowButton'/>
+  <b:includable id='overflowablePageList'/>
+  <b:includable id='pageLink'/>
+  <b:includable id='pageList'/>
 </b:widget>
