@@ -16,6 +16,10 @@ module.exports = function (grunt) {
     configDocs: grunt.file.readJSON('src/config.docs.json'),
 
     banner: '/*!\n' +
+            ' * {{ theme.name }} v{{ theme.version }}\n' +
+            ' * Based on {{ base.1.name }}\n' +
+            ' */\n' +
+            '/*!\n' +
             ' * {{ base.1.name }} v{{ base.1.version }} ({{ base.1.homepage }})\n' +
             ' * Copyright {{ base.1.date }} {{ base.1.author.name }} ({{ base.1.author.url }})\n' +
             ' * Licensed under {{ base.1.license.name }} ({{ base.1.license.url }})\n' +

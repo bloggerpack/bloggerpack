@@ -615,6 +615,11 @@ You might want to create a new starter theme. For example, adding new features, 
 <!--(bake-start _process="false")-->
 ```css
 /*!
+ * {{ theme.name }} v{{ theme.version }}
+ * Based on {{ base.2.name }}
+ */
+
+/*!
  * {{ base.2.name }} v{{ base.2.version }} ({{ base.2.homepage }})
  * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})
  * Licensed under {{ base.2.license.name }} ({{ base.2.license.url }})
@@ -639,6 +644,10 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     banner: '/*!\n' +
+            ' * {{ theme.name }} v{{ theme.version }}\n' +
+            ' * Based on {{ base.2.name }}\n' +
+            ' */\n' +
+            '/*!\n' +
             ' * {{ base.2.name }} v{{ base.2.version }} ({{ base.2.homepage }})\n' +
             ' * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})\n' +
             ' * Licensed under {{ base.2.license.name }} ({{ base.2.license.url }})\n' +
@@ -660,6 +669,11 @@ module.exports = function (grunt) {
 
 <!--(bake-start _process="false")-->
 ```css
+/*!
+ * {{ theme.name }} Docs
+ * Based on {{ base.2.name }}
+ */
+
 /*!
  * {{ base.2.name }} Docs ({{ base.2.homepage }})
  * Copyright {{ base.2.date }} {{ base.2.author.name }} ({{ base.2.author.url }})
