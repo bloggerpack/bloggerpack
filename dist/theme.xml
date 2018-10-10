@@ -1250,6 +1250,10 @@ Header
                 </b:loop>
               </ul>
             </b:includable>
+            <b:includable id='overflowButton'/>
+            <b:includable id='overflowablePageList'/>
+            <b:includable id='pageLink'/>
+            <b:includable id='pageList'/>
           </b:widget>
         </b:section>
       </b:if>
@@ -1305,18 +1309,12 @@ Main content (main and sidebar)
                     </div>
                   </b:if>
 
-
-
                   <b:comment>### Breadcrumb ###</b:comment>
 
                   <b:if cond='!data:view.isHomepage'>
                     <ol class='breadcrumb'>
-
                       <b:comment>=== Homepage ===</b:comment>
-                      <b:if cond='data:view.isHomepage'>
-                        <b:comment>None</b:comment>
-                      </b:if>
-
+                      <b:comment>None</b:comment>
                       <b:comment>=== Item page ===</b:comment>
                       <b:if cond='data:view.isPost'>
                         <li class='breadcrumb-item'>
@@ -1327,7 +1325,6 @@ Main content (main and sidebar)
                           <li class='breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
                         </b:loop>
                       </b:if>
-
                       <b:comment>=== Static page ===</b:comment>
                       <b:if cond='data:view.isPage'>
                         <li class='breadcrumb-item'>
@@ -1338,7 +1335,6 @@ Main content (main and sidebar)
                           <li class='breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
                         </b:loop>
                       </b:if>
-
                       <b:comment>=== Search (label) page ===</b:comment>
                       <b:if cond='data:view.search.label'>
                         <li class='breadcrumb-item'>
@@ -1350,7 +1346,6 @@ Main content (main and sidebar)
                         <li class='breadcrumb-item active'>Label</li>
                         <li class='breadcrumb-item active'><data:view.search.label/></li>
                       </b:if>
-
                       <b:comment>=== Search (query) page ===</b:comment>
                       <b:if cond='data:view.search.query'>
                         <li class='breadcrumb-item'>
@@ -1362,7 +1357,6 @@ Main content (main and sidebar)
                         <li class='breadcrumb-item active'>Query</li>
                         <li class='breadcrumb-item active'><data:view.search.query/></li>
                       </b:if>
-
                       <b:comment>=== Search (default) page ===</b:comment>
                       <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
                         <li class='breadcrumb-item'>
@@ -1370,7 +1364,6 @@ Main content (main and sidebar)
                         </li>
                         <li class='breadcrumb-item active'>Search</li>
                       </b:if>
-
                       <b:comment>=== Archive page ===</b:comment>
                       <b:if cond='data:view.isArchive'>
                         <li class='breadcrumb-item'>
@@ -1385,7 +1378,6 @@ Main content (main and sidebar)
                           <li class='breadcrumb-item active'><data:view.archive.year/></li>
                         </b:if>
                       </b:if>
-
                       <b:comment>=== Error page ===</b:comment>
                       <b:if cond='data:view.isError'>
                         <li class='breadcrumb-item'>
@@ -1393,21 +1385,27 @@ Main content (main and sidebar)
                         </li>
                         <li class='breadcrumb-item active'>404</li>
                       </b:if>
-
-                    </ol><!-- /.breadcrumb -->
+                    </ol>
                   </b:if>
-
-
 
                   <b:comment>### Status message ###</b:comment>
 
                   <b:comment>=== Homepage ===</b:comment>
-                  <b:if cond='data:view.isHomepage and data:posts.empty'>
-                    <div class='status-message status-message-danger' role='alert'>
-                      <data:messages.theresNothingHere/>
-                    </div>
+                  <b:if cond='data:view.isHomepage'>
+                    <b:if cond='data:posts.empty'>
+                      <div class='status-message status-message-danger' role='alert'>
+                        <data:messages.theresNothingHere/>
+                      </div>
+                    </b:if>
                   </b:if>
-
+                  <b:comment>=== Item page ===</b:comment>
+                  <b:if cond='data:view.isPost'>
+                    <b:comment>None</b:comment>
+                  </b:if>
+                  <b:comment>=== Static page ===</b:comment>
+                  <b:if cond='data:view.isPage'>
+                    <b:comment>None</b:comment>
+                  </b:if>
                   <b:comment>=== Search (label) page ===</b:comment>
                   <b:if cond='data:view.search.label'>
                     <b:if cond='data:posts.size gte 1'>
@@ -1420,7 +1418,6 @@ Main content (main and sidebar)
                       </div>
                     </b:if>
                   </b:if>
-
                   <b:comment>=== Search (query) page ===</b:comment>
                   <b:if cond='data:view.search.query'>
                     <b:if cond='data:posts.size gte 1'>
@@ -1433,7 +1430,10 @@ Main content (main and sidebar)
                       </div>
                     </b:if>
                   </b:if>
-
+                  <b:comment>=== Search (default) page ===</b:comment>
+                  <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+                    <b:comment>None</b:comment>
+                  </b:if>
                   <b:comment>=== Archive page ===</b:comment>
                   <b:if cond='data:view.isArchive'>
                     <b:if cond='data:posts.size gte 1'>
@@ -1446,7 +1446,6 @@ Main content (main and sidebar)
                       </div>
                     </b:if>
                   </b:if>
-
                   <b:comment>=== Error page ===</b:comment>
                   <b:if cond='data:view.isError'>
                     <div class='status-message status-message-danger' role='alert'>
@@ -1454,13 +1453,10 @@ Main content (main and sidebar)
                     </div>
                   </b:if>
 
-
-
                   <b:comment>### Posts ###</b:comment>
 
                   <b:if cond='data:posts.notEmpty'>
                     <div class='posts'>
-
                       <b:comment>=== Homepage ===</b:comment>
                       <b:if cond='data:view.isHomepage'>
                         <b:loop values='data:posts' var='post'>
@@ -1578,8 +1574,7 @@ Main content (main and sidebar)
                             </ul>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Homepage -->
-
+                      </b:if>
                       <b:comment>=== Item page ===</b:comment>
                       <b:if cond='data:view.isPost'>
                         <b:loop values='data:posts' var='post'>
@@ -1691,8 +1686,7 @@ Main content (main and sidebar)
                             </div>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Item page -->
-
+                      </b:if>
                       <b:comment>=== Static page ===</b:comment>
                       <b:if cond='data:view.isPage'>
                         <b:loop values='data:posts' var='post'>
@@ -1707,8 +1701,7 @@ Main content (main and sidebar)
                             </div>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Static page -->
-
+                      </b:if>
                       <b:comment>=== Search (label) page ===</b:comment>
                       <b:if cond='data:view.search.label'>
                         <b:loop values='data:posts' var='post'>
@@ -1826,8 +1819,7 @@ Main content (main and sidebar)
                             </ul>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Search (label) page -->
-
+                      </b:if>
                       <b:comment>=== Search (query) page ===</b:comment>
                       <b:if cond='data:view.search.query'>
                         <b:loop values='data:posts' var='post'>
@@ -1945,8 +1937,7 @@ Main content (main and sidebar)
                             </ul>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Search (query) page -->
-
+                      </b:if>
                       <b:comment>=== Search (default) page ===</b:comment>
                       <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
                         <b:loop values='data:posts' var='post'>
@@ -2064,8 +2055,7 @@ Main content (main and sidebar)
                             </ul>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Search (default) page -->
-
+                      </b:if>
                       <b:comment>=== Archive page ===</b:comment>
                       <b:if cond='data:view.isArchive'>
                         <b:loop values='data:posts' var='post'>
@@ -2183,12 +2173,9 @@ Main content (main and sidebar)
                             </ul>
                           </article>
                         </b:loop>
-                      </b:if><!-- /Archive page -->
-
-                    </div><!-- /.posts -->
+                      </b:if>
+                    </div>
                   </b:if>
-
-
 
                   <b:comment>### Comments ###</b:comment>
 
@@ -2197,60 +2184,47 @@ Main content (main and sidebar)
                       <b:if cond='data:post.allowComments'>
 
                         <div class='comments' id='comments'>
-
                           <h1 class='comments-title'><data:messages.comments/></h1>
-
                           <b:if cond='data:post.commentSource == 1'>
-
                             <div class='cmt_iframe_holder' expr:data-href='data:post.url'/>
-
                           <b:else/>
-
                             <div class='comments-alert' role='alert'>
                               <h4>Google+</h4>
                               <p><strong>Please turn on Google+ comments:</strong></p>
                               <ol>
                                 <li>Make sure you're using Google+ as your profile and your blog is public.</li>
                                 <li>In the left menu, click <strong>Settings &gt; Posts, comments and sharing</strong>.</li>
-                                <li>Under "Google+ Comments," choose <strong>Yes</strong>. At the top right, click Save settings.</li>
+                                <li>Under "Google+ Comments", choose <strong>Yes</strong>. At the top right, click Save settings.</li>
                               </ol>
                               <a class='comments-alert-link' href='https://support.google.com/blogger' target='_blank'>
                                 <strong><data:messages.learnMore/></strong>
                               </a>
                             </div>
-
                           </b:if>
-
-                        </div><!-- /.comments -->
+                        </div>
 
                       </b:if>
                     </b:loop>
                   </b:if>
 
-
-
                   <b:comment>### Pager ###</b:comment>
 
                   <b:if cond='data:posts.notEmpty and !data:view.isPage'>
                     <nav class='pager'>
-
                       <a class='pager-newer pager-link' role='button'>
                         <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
                         <b:class cond='!data:newerPageUrl' name='disabled'/>
                         <data:messages.newer/>
                       </a>
-
                       <a class='pager-home pager-link' expr:href='data:blog.homepageUrl' role='button'>
                         <data:messages.home/>
                       </a>
-
                       <a class='pager-older pager-link' role='button'>
                         <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
                         <b:class cond='!data:olderPageUrl' name='disabled'/>
                         <data:messages.older/>
                       </a>
-
-                    </nav><!-- /.pager -->
+                    </nav>
                   </b:if>
 
                 </b:includable>
