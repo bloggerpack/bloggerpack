@@ -1,0 +1,115 @@
+<b:loop values='data:posts' var='post'>
+  <article class='post' expr:id='"post-" + data:post.id'>
+    <!-- Title -->
+    <h2 class='post-title'>
+      <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+        <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+      </a>
+    </h2>
+    <!-- Snippet -->
+    <div class='post-snippet'>
+      <b:if cond='data:post.hasJumpLink'>
+        <data:post.body/>
+      <b:else/>
+        <data:post.snippets.short/>
+      </b:if>
+    </div>
+    <!-- Labels -->
+    <ul class='post-label'>
+      <b:if cond='data:post.labels'>
+        <b:loop index='i' values='data:post.labels' var='label'>
+          <li class='post-label-item'>
+            <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+              <data:label.name/>
+            </a>
+          </li>
+        </b:loop>
+      <b:else/><!-- fallback -->
+        <li class='post-label-item'>
+          <span class='post-label-link nolabel'>Unlabelled</span>
+        </li>
+      </b:if>
+    </ul>
+    <!-- Meta -->
+    <ul class='post-meta'>
+      <!-- Author name -->
+      <li class='post-meta-item'>
+        <data:messages.postedBy/>
+        <b:if cond='data:post.author'>
+          <b:if cond='data:post.author.profileUrl'>
+            <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+              <data:post.author.name/>
+            </a>
+          <b:else/><!-- no profileUrl -->
+            <span><data:post.author.name/></span>
+          </b:if>
+        <b:else/><!-- fallback -->
+          <span>Anonymous</span>
+        </b:if>
+      </li>
+      <!-- Date (published) -->
+      <li class='post-meta-item'>
+        <data:messages.on/>
+        <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+          <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+        </time>
+      </li>
+      <!-- Number of comments -->
+      <b:if cond='data:post.allowComments'>
+        <li class='post-meta-item'>
+          <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+            <b:if cond='data:post.commentSource != 1'>
+              <!-- Google+ Comments (No) -->
+              <b:message name='messages.numberOfComments'>
+                <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+              </b:message>
+            <b:else/>
+              <!-- Google+ Comments (Yes) -->
+              <data:messages.comments/>
+            </b:if>
+          </a>
+        </li>
+      </b:if>
+      <!-- Sharing -->
+      <li class='post-meta-item'>
+        <div class='post-share'>
+          <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+            <data:messages.share/>
+          </span>
+          <ul class='post-share-menu'>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                Twitter
+              </a>
+            </li>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                Facebook
+              </a>
+            </li>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                Google+
+              </a>
+            </li>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                Pinterest
+              </a>
+            </li>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                Email
+              </a>
+            </li>
+            <li class='post-share-menu-item'>
+              <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                BlogThis!
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </article>
+</b:loop>

@@ -1,0 +1,12 @@
+<b:loop values='data:posts' var='post'>
+  <article class='post' expr:id='"post-" + data:post.id'>
+    <!-- Title -->
+    <h1 class='post-title'>
+      <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+    </h1>
+    <!-- Body -->
+    <div class='post-body post-body-typography'>
+      <data:post.body/>
+    </div>
+  </article>
+</b:loop>

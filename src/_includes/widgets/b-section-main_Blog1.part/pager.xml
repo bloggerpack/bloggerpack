@@ -1,0 +1,17 @@
+<b:if cond='data:posts.notEmpty and !data:view.isPage'>
+  <nav class='pager'>
+    <a class='pager-newer pager-link' role='button'>
+      <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
+      <b:class cond='!data:newerPageUrl' name='disabled'/>
+      <data:messages.newer/>
+    </a>
+    <a class='pager-home pager-link' expr:href='data:blog.homepageUrl' role='button'>
+      <data:messages.home/>
+    </a>
+    <a class='pager-older pager-link' role='button'>
+      <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
+      <b:class cond='!data:olderPageUrl' name='disabled'/>
+      <data:messages.older/>
+    </a>
+  </nav>
+</b:if>
