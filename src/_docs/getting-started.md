@@ -706,11 +706,15 @@ Heading 1
 ↓
 <b:comment>### Heading 1.1 ###</b:comment>
 ↓
-<b:comment>=== Heading 1.1.1 ===</b:comment>
-<div>...</div>
+<div>
+  .........
+</div>
 ↓
-<b:comment>=== Heading 1.1.2 ===</b:comment>
-<div>...</div>
+<b:comment>### Heading 1.2 ###</b:comment>
+↓
+<div>
+  .........
+</div>
 ↓
 ↓
 #############################################################################
@@ -719,21 +723,61 @@ Heading 2
 ↓
 <b:comment>### Heading 2.1 ###</b:comment>
 ↓
-<div>...</div>
+<b:comment>=== Heading 2.1.1 ===</b:comment>
+<div>
+  .........
+</div>
+<b:comment>=== Heading 2.1.2 ===</b:comment>
+<div>
+  .........
+</div>
 ↓
 <b:comment>### Heading 2.2 ###</b:comment>
 ↓
 <div>
   <b:comment>=== Heading 2.2.1 ===</b:comment>
-  <div>...</div>
-↓
+  <div>
+    .........
+  </div>
   <b:comment>=== Heading 2.2.2 ===</b:comment>
   <div>
-    <b:comment>= Heading 2.2.2.1 =</b:comment>
-    <div>...</div>
+    <b:comment>=== Heading 2.2.2.1 ===</b:comment>
+    <div>
+      .........
+    </div>
+    <b:comment>=== Heading 2.2.2.2 ===</b:comment>
+    <div>
+      .........
+    </div>
+  </div>
+</div>
 ↓
-    <b:comment>= Heading 2.2.2.2 =</b:comment>
-    <div>...</div>
+<b:comment>### Heading 2.3 ###</b:comment>
+↓
+<div>
+  ↓
+  <b:comment>### Heading 2.3.1 ###</b:comment>
+  ↓
+  <div>
+    .........
+  </div>
+  ↓
+  <b:comment>### Heading 2.3.2 ###</b:comment>
+  ↓
+  <b:comment>=== Heading 2.3.2.1 ===</b:comment>
+  <div>
+    .........
+  </div>
+  <b:comment>=== Heading 2.3.2.2 ===</b:comment>
+  <div>
+    <b:comment>=== Heading 2.3.2.2.1 ===</b:comment>
+    <div>
+      .........
+    </div>
+    <b:comment>=== Heading 2.3.2.2.2 ===</b:comment>
+    <div>
+      .........
+    </div>
   </div>
 </div>
 ```

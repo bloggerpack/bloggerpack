@@ -40,7 +40,7 @@
             </a>
           </b:if>
         </b:if>
-
+        <b:comment>=== Content ===</b:comment>
         <div class='popular-post-body'>
           <b:comment>=== Title ===</b:comment>
           <h3 class='popular-post-title'>
@@ -48,6 +48,7 @@
               <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
             </a>
           </h3>
+          <b:comment>=== Meta ===</b:comment>
           <ul class='popular-post-meta'>
             <b:comment>=== Date (published) ===</b:comment>
             <li class='popular-post-meta-item'>

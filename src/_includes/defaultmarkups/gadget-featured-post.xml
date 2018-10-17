@@ -34,9 +34,7 @@
             </a>
           </b:if>
         </b:if>
-
         <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'><div class='featured-post-divider'/></b:if>
-
         <b:comment>=== Title ===</b:comment>
         <b:if cond='data:postDisplay.showTitle'>
           <h3 class='featured-post-title'>
@@ -45,9 +43,7 @@
             </a>
           </h3>
         </b:if>
-
         <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'><div class='featured-post-divider'/></b:if>
-
         <b:comment>=== Snippet ===</b:comment>
         <b:if cond='data:postDisplay.showSnippet'>
           <div class='featured-post-snippet'>

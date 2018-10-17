@@ -198,43 +198,63 @@ Default markups
 ############################################################################# </b:comment>
 
 <b:defaultmarkups>
+
   <b:comment>### Blog Archive ###</b:comment>
+
   <b:defaultmarkup type='BlogArchive'>
     <!--(bake _includes/defaultmarkups/gadget-blog-archive.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Blog Search ###</b:comment>
+
   <b:defaultmarkup type='BlogSearch'>
     <!--(bake _includes/defaultmarkups/gadget-blog-search.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Contact Form ###</b:comment>
+
   <b:defaultmarkup type='ContactForm'>
     <!--(bake _includes/defaultmarkups/gadget-contact-form.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Featured Post ###</b:comment>
+
   <b:defaultmarkup type='FeaturedPost'>
     <!--(bake _includes/defaultmarkups/gadget-featured-post.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Follow by Email ###</b:comment>
+
   <b:defaultmarkup type='FollowByEmail'>
     <!--(bake _includes/defaultmarkups/gadget-follow-by-email.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Image ###</b:comment>
+
   <b:defaultmarkup type='Image'>
     <!--(bake _includes/defaultmarkups/gadget-image.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Labels ###</b:comment>
+
   <b:defaultmarkup type='Label'>
     <!--(bake _includes/defaultmarkups/gadget-labels.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Page Header ###</b:comment>
+
   <b:defaultmarkup type='Header'>
     <!--(bake _includes/defaultmarkups/gadget-page-header.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Popular Posts ###</b:comment>
+
   <b:defaultmarkup type='PopularPosts'>
     <!--(bake _includes/defaultmarkups/gadget-popular-posts.xml)-->
   </b:defaultmarkup>
+
   <b:comment>### Translate ###</b:comment>
+
   <b:defaultmarkup type='Translate'>
     <!--(bake _includes/defaultmarkups/gadget-translate.xml)-->
   </b:defaultmarkup>
