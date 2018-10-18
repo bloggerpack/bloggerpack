@@ -246,6 +246,16 @@ your-project/
   </tbody>
 </table>
 
+### Sass options
+
+You can find and customize these variables for key global options in `_variables.scss`.
+
+| Variable | Values | Description |
+| --- | --- | --- |
+| `$enable-rounded` | `true` (default) or `false` | Enables predefined `border-radius` styles on various components. |
+| `$enable-shadows` | `true` or `false` (default) | Enables predefined `box-shadow` styles on various components. |
+| `$enable-transitions` | `true` (default) or `false` | Enables predefined `transition`s on various components. |
+
 ### Modify variables and maps
 
 Every Sass variable includes the `!default` flag allowing you to override the variable’s default value in `_custom.scss` without modifying source code.
@@ -272,16 +282,6 @@ $theme-colors: (
   "custom-color": #900
 );
 ```
-
-### Sass options
-
-You can find and customize these variables for key global options in `_variables.scss`.
-
-| Variable | Values | Description |
-| --- | --- | --- |
-| `$enable-rounded` | `true` (default) or `false` | Enables predefined `border-radius` styles on various components. |
-| `$enable-shadows` | `true` or `false` (default) | Enables predefined `box-shadow` styles on various components. |
-| `$enable-transitions` | `true` (default) or `false` | Enables predefined `transition`s on various components. |
 
 ### Functions
 
