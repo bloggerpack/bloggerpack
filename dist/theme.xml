@@ -2441,7 +2441,9 @@ Default markups
 ############################################################################# </b:comment>
 
 <b:defaultmarkups>
+
   <b:comment>### Blog Archive ###</b:comment>
+
   <b:defaultmarkup type='BlogArchive'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2519,7 +2521,9 @@ Default markups
     <b:includable id='interval' var='intervals'/>
     <b:includable id='posts' var='posts'/>
   </b:defaultmarkup>
+
   <b:comment>### Blog Search ###</b:comment>
+
   <b:defaultmarkup type='BlogSearch'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2547,7 +2551,9 @@ Default markups
       <button class='search-form-submit' type='submit'><data:messages.search/></button>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Contact Form ###</b:comment>
+
   <b:defaultmarkup type='ContactForm'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2579,7 +2585,9 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Featured Post ###</b:comment>
+
   <b:defaultmarkup type='FeaturedPost'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2617,9 +2625,7 @@ Default markups
                 </a>
               </b:if>
             </b:if>
-
             <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'><div class='featured-post-divider'/></b:if>
-
             <b:comment>=== Title ===</b:comment>
             <b:if cond='data:postDisplay.showTitle'>
               <h3 class='featured-post-title'>
@@ -2628,9 +2634,7 @@ Default markups
                 </a>
               </h3>
             </b:if>
-
             <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'><div class='featured-post-divider'/></b:if>
-
             <b:comment>=== Snippet ===</b:comment>
             <b:if cond='data:postDisplay.showSnippet'>
               <div class='featured-post-snippet'>
@@ -2651,7 +2655,9 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Follow by Email ###</b:comment>
+
   <b:defaultmarkup type='FollowByEmail'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2668,7 +2674,9 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Image ###</b:comment>
+
   <b:defaultmarkup type='Image'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -2691,7 +2699,9 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Labels ###</b:comment>
+
   <b:defaultmarkup type='Label'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2732,7 +2742,9 @@ Default markups
       </ul>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Page Header ###</b:comment>
+
   <b:defaultmarkup type='Header'>
     <b:includable id='main' var='this'>
       <b:comment>=== REPLACE ===</b:comment>
@@ -2788,7 +2800,9 @@ Default markups
     <b:includable id='image'/>
     <b:includable id='title'/>
   </b:defaultmarkup>
+
   <b:comment>### Popular Posts ###</b:comment>
+
   <b:defaultmarkup type='PopularPosts'>
     <b:includable id='main' var='this'>
       <b:include name='widget-title'/>
@@ -2832,7 +2846,7 @@ Default markups
                 </a>
               </b:if>
             </b:if>
-
+            <b:comment>=== Content ===</b:comment>
             <div class='popular-post-body'>
               <b:comment>=== Title ===</b:comment>
               <h3 class='popular-post-title'>
@@ -2840,6 +2854,7 @@ Default markups
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
+              <b:comment>=== Meta ===</b:comment>
               <ul class='popular-post-meta'>
                 <b:comment>=== Date (published) ===</b:comment>
                 <li class='popular-post-meta-item'>
@@ -2861,7 +2876,9 @@ Default markups
       </div>
     </b:includable>
   </b:defaultmarkup>
+
   <b:comment>### Translate ###</b:comment>
+
   <b:defaultmarkup type='Translate'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
