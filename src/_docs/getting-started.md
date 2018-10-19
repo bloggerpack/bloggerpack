@@ -51,11 +51,11 @@ Once downloaded, you’ll see something like this:
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">dist</code></td>
-      <td>The <code>dist</code> folder includes precompiled theme, as well as compiled and minified documentation files.</td>
+      <td>The <code>/dist</code> folder includes precompiled theme, as well as compiled and minified documentation files.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src</code></td>
-      <td>These are the source code that will be compiled into <code>dist</code>.</td>
+      <td>These are the source code that will be compiled into <code>/dist</code>.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_docs</code></td>
