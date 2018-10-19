@@ -10,8 +10,19 @@
  */
 
 /* ==========================================================================
-   Nav and content
+   Nav, TOC, and content
    ========================================================================== */
+
+.doc-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1020;
+  display: none;
+  background-color: rgba(0, 0, 0, .5);
+}
 
 /* Nav
    ========================================================================== */
@@ -23,6 +34,7 @@
   left: -100%;
   z-index: 1030;
   width: 100%;
+  max-width: 250px;
   overflow-y: auto;
   background-color: #212529;
 }
@@ -206,19 +218,6 @@
   color: #212529;
   background-color: #abb5c0;
   border-color: #a2aeb9;
-}
-
-/** Overlay **/
-
-.doc-toc-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1020;
-  display: none;
-  background-color: rgba(0, 0, 0, .5);
 }
 
 /* Content
@@ -493,6 +492,9 @@
   .show-nav .doc-nav {
     left: 0;
   }
+  .show-nav .doc-overlay {
+    display: block;
+  }
 
   .doc-toc-toggle {
     right: 0;
@@ -503,7 +505,7 @@
   .show-toc .doc-toc {
     right: 0;
   }
-  .show-toc .doc-toc-overlay {
+  .show-toc .doc-overlay {
     display: block;
   }
 }

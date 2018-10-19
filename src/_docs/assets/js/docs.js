@@ -12,8 +12,8 @@
 (function() {
   'use strict';
 
-  var nav = document.getElementById('navDoc');
-  var navToggle = document.getElementById('navDocToggle');
+  var nav = document.getElementById('docNav');
+  var navToggle = document.getElementById('docNavToggle');
   var navAnchor = nav.getElementsByTagName('a');
   var navActive = nav.getElementsByClassName('active');
   var navCurrent = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);
@@ -37,15 +37,19 @@
 
   // ===
 
-  var tocToggle = document.getElementById('tocDocToggle');
-  var tocOverlay = document.getElementById('tocDocOverlay');
+  var tocToggle = document.getElementById('docTocToggle');
 
   tocToggle.addEventListener('click', function() {
     document.body.classList.toggle('show-toc');
     document.body.classList.remove('show-nav');
   }, false);
 
-  tocOverlay.addEventListener('click', function() {
+  // ===
+
+  var overlay = document.getElementById('docOverlay');
+
+  overlay.addEventListener('click', function() {
+    document.body.classList.remove('show-nav');
     document.body.classList.remove('show-toc');
   }, false);
 
