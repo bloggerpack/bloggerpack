@@ -28,6 +28,7 @@ Once downloaded, you’ll see something like this:
 │   ├── docs
 │   └── theme.xml
 └── src
+    ├── _css
     ├── _docs
     ├── _includes
     ├── _js
@@ -36,8 +37,6 @@ Once downloaded, you’ll see something like this:
     ├── config.base.json
     ├── config.docs.json
     ├── config.theme.json
-    ├── skin.css
-    ├── template-skin.css
     └── theme.xml
 ```
 
@@ -58,6 +57,16 @@ Once downloaded, you’ll see something like this:
       <td>These are the source code that will be compiled into <code>/dist</code>.</td>
     </tr>
     <tr>
+      <td rowspan="3"><code style="white-space: nowrap;">src/_css</code></td>
+      <td>The source code for CSS (<code>src/dist/css</code>).</td>
+    </tr>
+    <tr>
+      <td>Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871">skin variables</a>.</td>
+    </tr>
+    <tr>
+      <td>Styles in <code style="white-space: nowrap;">template-skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:template-skin&gt;</code> tag.</td>
+    </tr>
+    <tr>
       <td><code style="white-space: nowrap;">src/_docs</code></td>
       <td>The source code for documentation (<code>dist/docs</code>).</td>
     </tr>
@@ -75,7 +84,7 @@ Once downloaded, you’ll see something like this:
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/dist</code></td>
-      <td>`src/skin.css`, `src/template-skin.css`, `src/_scss` and `src/_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
+      <td>`src/_css`, `src/_scss` and `src/_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
     </tr>
     <tr>
       <td>
@@ -84,16 +93,6 @@ Once downloaded, you’ll see something like this:
         <div><code style="white-space: nowrap;">src/config.theme.json</code></div>
       </td>
       <td>Stores configuration data. [Read configuration docs](#configuration)</td>
-    </tr>
-    <tr>
-      <td rowspan="2">
-        <div><code style="white-space: nowrap;">src/skin.css</code></div>
-        <div><code style="white-space: nowrap;">src/template-skin.css</code></div>
-      </td>
-      <td>Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871">skin variables</a>.</td>
-    </tr>
-    <tr>
-      <td>Styles in <code style="white-space: nowrap;">template-skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:template-skin&gt;</code> tag.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/theme.xml</code></td>
@@ -165,8 +164,7 @@ There is three configuration file for stores configuration data:
 You can access the data in: 
 
 - `src/theme.xml` (or any other `.xml` file that included in this file)
-- `src/skin.css`
-- `src/template-skin.css`
+- `src/_css`
 - `src/_scss`
 - `src/_js`
 - `src/_docs`
@@ -573,7 +571,7 @@ You might want to create a new starter theme. For example, adding new features, 
 }
 ```
 
-**Update banner in `src/skin.css`:**
+**Update banner in `src/_css/skin.css`:**
 
 <!--(bake-start _process="false")-->
 ```css

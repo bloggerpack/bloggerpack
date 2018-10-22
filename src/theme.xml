@@ -51,7 +51,7 @@ CSS
 
 <b:template-skin>
 <![CDATA[
-<!--(bake dist/skin/template-skin.css)-->
+<!--(bake dist/css/template-skin.css)-->
 ]]>
 </b:template-skin>
 
@@ -68,7 +68,7 @@ CSS
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
-<!--(bake dist/skin/skin.css)-->
+<!--(bake dist/css/skin.css)-->
 ]]>
 </b:skin>
 </b:if>
