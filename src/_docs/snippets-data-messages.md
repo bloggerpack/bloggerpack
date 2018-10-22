@@ -7,8 +7,28 @@
 
 Messages which will be translated into the language used by the blog.
 
+**Usage**
 
-## data:messages.adsGoHere
+```html
+<data:messages.[name]/>
+```
+
+```html
+<b:eval expr='data:messages.[name]'/>
+```
+
+```html
+<b:message name='messages.[name]'/>
+```
+
+```html
+<b:message name='messages.[name]'>
+  <b:param value='...' name='...'/>
+</b:message>
+```
+
+
+## .adsGoHere
 
 Gadget type: `Global`
 
@@ -38,7 +58,7 @@ Gadget type: `Global`
 | Vietnamese | `Quảng cáo hiển thị ở đây` |
 
 
-## data:messages.archive
+## .archive
 
 Gadget type: `Global`
 
@@ -68,7 +88,7 @@ Gadget type: `Global`
 | Vietnamese | `Lưu trữ` |
 
 
-## data:messages.at
+## .at
 
 Gadget type: `Global`
 
@@ -98,19 +118,13 @@ Gadget type: `Global`
 | Vietnamese | `lúc` |
 
 
-## data:messages.authorSaid
+## .authorSaid
 
 Gadget type: `Global`
 
 **Usage**
 
 ```html
-<b:message name='messages.authorSaid'>
-  <b:param expr:value='value' name='authorName'/>
-</b:message>
-
-<!-- Example -->
-
 <b:message name='messages.authorSaid'>
   <b:param expr:value='data:post.author.name' name='authorName'/>
 </b:message>
@@ -128,20 +142,13 @@ Gadget type: `Global`
 | Vietnamese | `author_name nói...` |
 
 
-## data:messages.authorSaidWithLink
+## .authorSaidWithLink
 
 Gadget type: `Global`
 
 **Usage**
 
 ```html
-<b:message name='messages.authorSaidWithLink'>
-  <b:param expr:value='value' name='authorName'/>
-  <b:param expr:value='value' name='authorUrl'/>
-</b:message>
-
-<!-- Examples -->
-
 <b:message name='messages.authorSaidWithLink'>
   <b:param expr:value='data:post.author.name' name='authorName'/>
   <b:param expr:value='data:post.author.profileUrl' name='authorUrl'/>
@@ -160,7 +167,7 @@ Gadget type: `Global`
 | Vietnamese | `<a href='profile_link'>author_name</a> nói...` |
 
 
-## data:messages.blogArchive
+## .blogArchive
 
 Gadget type: `Global`
 
@@ -190,7 +197,7 @@ Gadget type: `Global`
 | Vietnamese | `Lưu trữ Blog` |
 
 
-## data:messages.blogAuthors
+## .blogAuthors
 
 Gadget type: `Global`
 
@@ -220,7 +227,7 @@ Gadget type: `Global`
 | Vietnamese | `Tác giả blog` |
 
 
-## data:messages.by
+## .by
 
 Gadget type: `Global`
 
@@ -250,7 +257,7 @@ Gadget type: `Global`
 | Vietnamese | `Bởi` |
 
 
-## data:messages.byAuthor
+## .byAuthor
 
 Gadget type: `Global`
 
@@ -258,17 +265,7 @@ Gadget type: `Global`
 
 ```html
 <b:message name='messages.byAuthor'>
-  <b:param expr:value='value' name='authorName'/>
-</b:message>
-
-<!-- Examples -->
-
-<b:message name='messages.byAuthor'>
   <b:param expr:value='data:post.author.name' name='authorName'/>
-</b:message>
-
-<b:message name='messages.byAuthor'>
-  <b:param value='John Doe' name='authorName'/>
 </b:message>
 ```
 
@@ -284,7 +281,7 @@ Gadget type: `Global`
 | Vietnamese | `Bởi author_name` |
 
 
-## data:messages.byAuthorLink
+## .byAuthorLink
 
 Gadget type: `Global`
 
@@ -292,20 +289,8 @@ Gadget type: `Global`
 
 ```html
 <b:message name='messages.byAuthorLink'>
-  <b:param expr:value='value' name='authorName'/>
-  <b:param expr:value='value' name='authorUrl'/>
-</b:message>
-
-<!-- Examples -->
-
-<b:message name='messages.byAuthorLink'>
   <b:param expr:value='data:post.author.name' name='authorName'/>
   <b:param expr:value='data:post.author.profileUrl' name='authorUrl'/>
-</b:message>
-
-<b:message name='messages.byAuthorLink'>
-  <b:param value='John Doe' name='authorName'/>
-  <b:param value='https://example.com' name='authorUrl'/>
 </b:message>
 ```
 
@@ -321,7 +306,7 @@ Gadget type: `Global`
 | Vietnamese | `Bởi <a href='profile_link'>author_name</a>` |
 
 
-## data:messages.comments
+## .comments
 
 Gadget type: `Global`
 
@@ -351,7 +336,7 @@ Gadget type: `Global`
 | Vietnamese | `Nhận xét` |
 
 
-## data:messages.configurationRequired
+## .configurationRequired
 
 Gadget type: `Global`
 
@@ -381,7 +366,7 @@ Gadget type: `Global`
 | Vietnamese | `Đã yêu cầu cấu hình` |
 
 
-## data:messages.copy
+## .copy
 
 Gadget type: `Global`
 
