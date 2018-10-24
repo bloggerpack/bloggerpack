@@ -7,21 +7,15 @@
 
 Photo of the profile of the post author.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 **Options**
 
 - `128` - size
 - `1:1` - aspect ratio
 - `128x128`
-  - width = size, height = (size * ratio height) / ratio width
-    - width = `128`, height = (`128` * `1`) / `1`
+  - width = size
+  - height = (size * ratio height) / ratio width
+    - width = `128`
+    - height = (`128` * `1`) / `1` = `128`
 
 
 ## Default

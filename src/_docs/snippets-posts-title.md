@@ -7,34 +7,26 @@
 
 Title of the post.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 
 ## Default
 
 ```html
 <!-- Title -->
 <b:if cond='data:post.title'>
-  <h1>
-    <data:post.title/>
-  </h1>
+  <data:post.title/>
 </b:if>
 ```
 
 
-## No title message
+## Fallback
 
 ```html
 <!-- Title -->
-<h1>
-  <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-</h1>
+<b:if cond='data:post.title'>
+  <data:post.title/>
+<b:else/><!-- fallback -->
+  <data:messages.noTitle/>
+</b:if>
 ```
 
 
@@ -43,21 +35,23 @@ Title of the post.
 ```html
 <!-- Title -->
 <b:if cond='data:post.title'>
-  <h1>
-    <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
-      <data:post.title/>
-    </a>
-  </h1>
+  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+    <data:post.title/>
+  </a>
 </b:if>
 ```
 
-**+ No title message**
+**+ Fallback**
 
 ```html
 <!-- Title -->
-<h1>
+<b:if cond='data:post.title'>
   <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
-    <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+    <data:post.title/>
   </a>
-</h1>
+<b:else/><!-- fallback -->
+  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+    <data:messages.noTitle/>
+  </a>
+</b:if>
 ```

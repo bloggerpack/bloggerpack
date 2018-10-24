@@ -7,14 +7,6 @@
 
 The share buttons for the post.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 
 ## Default
 

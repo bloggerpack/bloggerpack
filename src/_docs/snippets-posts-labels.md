@@ -7,14 +7,6 @@
 
 Labels of the post.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 **Options**
 
 - `12` - maximum number of posts in label page

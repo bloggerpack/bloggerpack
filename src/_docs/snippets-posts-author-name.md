@@ -7,14 +7,6 @@
 
 Name of the profile of the post author.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 
 ## Default
 

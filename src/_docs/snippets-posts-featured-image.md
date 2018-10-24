@@ -7,21 +7,15 @@
 
 The featured image for the post.
 
-**Usage**
-
-```html
-<b:loop values='data:posts' var='post'>
-  ...
-</b:loop>
-```
-
 **Options**
 
 - `512` - size
 - `16:9` - aspect ratio
 - `512x288`
-  - width = size, height = (size * ratio height) / ratio width
-    - width = `512`, height = (`512` * `9`) / `16`
+  - width = size
+  - height = (size * ratio height) / ratio width
+    - width = `512`
+    - height = (`512` * `9`) / `16` = `288`
 
 
 ## Default
