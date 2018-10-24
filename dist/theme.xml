@@ -1193,8 +1193,10 @@ body#layout .layout-mode-col-12 {
 
 <b:comment>
 #############################################################################
-Body classes
+Body classes and skip navigation
 ############################################################################# </b:comment>
+
+<b:comment>### Body classes ###</b:comment>
 
 <b:class cond='data:view.isHomepage' name='is-homepage'/>
 <b:class cond='data:view.isPost' name='is-post'/>
@@ -1206,11 +1208,7 @@ Body classes
 <b:class cond='data:view.isError' name='is-error'/>
 <b:class cond='data:view.isPreview' name='is-preview'/>
 
-
-<b:comment>
-#############################################################################
-Skip navigation
-############################################################################# </b:comment>
+<b:comment>### Skip navigation ###</b:comment>
 
 <a class='skiplink' href='#main-content' id='skiplink'>
   <data:messages.skipToMainContent/>
