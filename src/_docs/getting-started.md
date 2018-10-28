@@ -76,11 +76,11 @@ Once downloaded, you’ll see something like this:
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_js</code></td>
-      <td>The source code for JavaScript (<code>src/dist/bundle/bundle.js</code>).</td>
+      <td>The source code for JavaScript bundle (<code>src/dist/bundle/bundle.js</code>).</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_scss</code></td>
-      <td>The source code for CSS (<code>src/dist/bundle/bundle.css</code>).</td>
+      <td>The source code for CSS bundle (<code>src/dist/bundle/bundle.css</code>).</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/dist</code></td>

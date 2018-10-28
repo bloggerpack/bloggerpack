@@ -47,7 +47,7 @@ Title, meta and link tags
 CSS
 ############################################################################# </b:comment>
 
-<b:comment>### Layout mode CSS ###</b:comment>
+<b:comment>### Layout mode ###</b:comment>
 
 <b:template-skin>
 <![CDATA[
@@ -55,7 +55,7 @@ CSS
 ]]>
 </b:template-skin>
 
-<b:comment>### Bundle CSS ###</b:comment>
+<b:comment>### Bundle ###</b:comment>
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
@@ -181,7 +181,7 @@ Footer
 JavaScript
 ############################################################################# </b:comment>
 
-<b:comment>### Bundle JS ###</b:comment>
+<b:comment>### Bundle ###</b:comment>
 
 <script>
 //<![CDATA[
