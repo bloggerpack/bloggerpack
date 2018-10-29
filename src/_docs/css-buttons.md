@@ -31,6 +31,8 @@ Custom button styles.
 
 ## Styles
 
+### Normal
+
 <div class="doc-example">
   <button class="button" type="button">Default</button>
   <button class="button button-primary" type="button">Primary</button>
