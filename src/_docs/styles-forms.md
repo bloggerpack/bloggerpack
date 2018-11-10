@@ -1,6 +1,6 @@
 <!--
 @@@title:Forms@@@
-@@@section:CSS@@@
+@@@section:Styles@@@
 -->
 
 # Forms

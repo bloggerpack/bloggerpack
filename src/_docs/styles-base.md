@@ -1,6 +1,6 @@
 <!--
 @@@title:Base@@@
-@@@section:CSS@@@
+@@@section:Styles@@@
 -->
 
 # Base CSS

@@ -1,6 +1,6 @@
 <!--
 @@@title:Buttons@@@
-@@@section:CSS@@@
+@@@section:Styles@@@
 -->
 
 # Buttons
@@ -29,7 +29,7 @@ Custom button styles.
 ```
 
 
-## Styles
+## Style
 
 ### Normal
 

@@ -1,6 +1,6 @@
 <!--
 @@@title:Tables@@@
-@@@section:CSS@@@
+@@@section:Styles@@@
 -->
 
 # Tables
