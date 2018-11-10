@@ -20,12 +20,12 @@ Custom button styles.
 </div>
 
 ```html
-<a class="button button-primary" href="#" role="button">Link</a>
-<button class="button button-primary" type="button">Button type button</button>
-<button class="button button-primary" type="submit">Button type submit</button>
-<input class="button button-primary" type="button" value="Input type button">
-<input class="button button-primary" type="submit" value="Input type submit">
-<input class="button button-primary" type="reset" value="Input type reset">
+<a class='button button-primary' href='#' role='button'>Link</a>
+<button class='button button-primary' type='button'>Button type button</button>
+<button class='button button-primary' type='submit'>Button type submit</button>
+<input class='button button-primary' type='button' value='Input type button'/>
+<input class='button button-primary' type='submit' value='Input type submit'/>
+<input class='button button-primary' type='reset' value='Input type reset'/>
 ```
 
 
@@ -42,11 +42,11 @@ Custom button styles.
 </div>
 
 ```html
-<button class="button" type="button">Default</button>
-<button class="button button-primary" type="button">Primary</button>
-<button class="button button-secondary" type="button">Secondary</button>
-<button class="button button-light" type="button">Light</button>
-<button class="button button-dark" type="button">Dark</button>
+<button class='button' type='button'>Default</button>
+<button class='button button-primary' type='button'>Primary</button>
+<button class='button button-secondary' type='button'>Secondary</button>
+<button class='button button-light' type='button'>Light</button>
+<button class='button button-dark' type='button'>Dark</button>
 ```
 
 ### Active state
@@ -60,11 +60,11 @@ Custom button styles.
 </div>
 
 ```html
-<button class="button active" type="button">Default</button>
-<button class="button button-primary active" type="button">Primary</button>
-<button class="button button-secondary active" type="button">Secondary</button>
-<button class="button button-light active" type="button">Light</button>
-<button class="button button-dark active" type="button">Dark</button>
+<button class='button active' type='button'>Default</button>
+<button class='button button-primary active' type='button'>Primary</button>
+<button class='button button-secondary active' type='button'>Secondary</button>
+<button class='button button-light active' type='button'>Light</button>
+<button class='button button-dark active' type='button'>Dark</button>
 ```
 
 ### Disabled state
@@ -78,11 +78,11 @@ Custom button styles.
 </div>
 
 ```html
-<button class="button" type="button" disabled>Default</button>
-<button class="button button-primary" type="button" disabled>Primary</button>
-<button class="button button-secondary" type="button" disabled>Secondary</button>
-<button class="button button-light" type="button" disabled>Light</button>
-<button class="button button-dark" type="button" disabled>Dark</button>
+<button class='button' disabled='' type='button'>Default</button>
+<button class='button button-primary' disabled='' type='button'>Primary</button>
+<button class='button button-secondary' disabled='' type='button'>Secondary</button>
+<button class='button button-light' disabled='' type='button'>Light</button>
+<button class='button button-dark' disabled='' type='button'>Dark</button>
 ```
 
 <div class="doc-example">
@@ -94,11 +94,11 @@ Custom button styles.
 </div>
 
 ```html
-<a class="button disabled" href="#" role="button">Default</a>
-<a class="button button-primary disabled" href="#" role="button">Primary</a>
-<a class="button button-secondary disabled" href="#" role="button">Secondary</a>
-<a class="button button-light disabled" href="#" role="button">Light</a>
-<a class="button button-dark disabled" href="#" role="button">Dark</a>
+<a class='button disabled' href='#' role='button'>Default</a>
+<a class='button button-primary disabled' href='#' role='button'>Primary</a>
+<a class='button button-secondary disabled' href='#' role='button'>Secondary</a>
+<a class='button button-light disabled' href='#' role='button'>Light</a>
+<a class='button button-dark disabled' href='#' role='button'>Dark</a>
 ```
 
 
@@ -113,9 +113,9 @@ Custom button styles.
 </div>
 
 ```html
-<div class="button-group">
-  <button class="button button-secondary" type="button">Button</button>
-  <button class="button button-secondary" type="button">Button</button>
-  <button class="button button-secondary" type="button">Button</button>
+<div class='button-group'>
+  <button class='button button-secondary' type='button'>Button</button>
+  <button class='button button-secondary' type='button'>Button</button>
+  <button class='button button-secondary' type='button'>Button</button>
 </div>
 ```

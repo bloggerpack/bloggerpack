@@ -5,7 +5,7 @@
 
 # Blockquotes
 
-For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any HTML as the quote.
+For quoting blocks of content from another source within your document. Wrap `<blockquote class='blockquote'>` around any HTML as the quote.
 
 
 ## Examples
@@ -17,7 +17,7 @@ For quoting blocks of content from another source within your document. Wrap `<b
 </div>
 
 ```html
-<blockquote class="blockquote">
+<blockquote class='blockquote'>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote>
 ```
@@ -32,8 +32,8 @@ For quoting blocks of content from another source within your document. Wrap `<b
 </div>
 
 ```html
-<blockquote class="blockquote">
+<blockquote class='blockquote'>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+  <footer class='blockquote-footer'>Someone famous in <cite title='Source Title'>Source Title</cite></footer>
 </blockquote>
 ```

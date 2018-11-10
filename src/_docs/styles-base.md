@@ -45,7 +45,7 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 </div>
 
 ```html
-<h1>h1. heading</h1>
+</p><h1>h1. heading</h1>
 
 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
@@ -101,7 +101,7 @@ The HTML `<hr>` element.
   This is the first paragraph of text.
 </p>
 
-<hr>
+<hr/>
 
 <p>
   This is the second paragraph of text.
@@ -127,11 +127,11 @@ Styling for common inline HTML5 elements.
 </div>
 
 ```html
-<p><a href="#">Link</a></p>
+<p><a href='#'>Link</a></p>
 <p><strong>Bold</strong></p>
 <p><small>Small</small></p>
 <p><mark>Mark</mark></p>
-<p><abbr title="HyperText Markup Language">HTML</abbr> abbreviations.</p>
+<p><abbr title='HyperText Markup Language'>HTML</abbr> abbreviations.</p>
 <p><sub>Subscript</sub> and <sup>Superscript</sup></p>
 <p>The <strong>HTML Definition element</strong> (<strong><dfn>&lt;dfn&gt;</dfn></strong>).</p>
 ```
@@ -397,15 +397,15 @@ The `<address>` element is updated to reset the browser default `font-style` fro
 
 ```html
 <address>
-  <strong>Example, Inc.</strong><br>
-  123 Example Street, Suite 000<br>
-  City, ABC 00000<br>
-  <abbr title="Phone">P:</abbr> (123) 000-0000
+  <strong>Example, Inc.</strong><br/>
+  123 Example Street, Suite 000<br/>
+  City, ABC 00000<br/>
+  <abbr title='Phone'>P:</abbr> (123) 000-0000
 </address>
 
 <address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">first.last@example.com</a>
+  <strong>Full Name</strong><br/>
+  <a href='mailto:#'>first.last@example.com</a>
 </address>
 ```
 
@@ -423,7 +423,7 @@ Reset `margin` to `0 0 1rem`.
 
 ```html
 <figure>
-  <img src="/path/to/image" alt="...">
+  <img alt='...' src='/path/to/image'/>
   <figcaption>Figure caption</figcaption>
 </figure>
 ```
@@ -436,8 +436,8 @@ Various form elements have been rebooted for simpler base styles. Here are some 
 - `<fieldset>`s have no borders, padding, or margin so they can be easily used as wrappers for individual inputs or groups of inputs.
 - `<legend>`s, like fieldsets, have also been restyled to be displayed as a heading of sorts.
 - `<label>`s are set to display: inline-block to allow margin to be applied.
-- `<input>`s, `<select>`s, `<textarea>`s, and `<button>`s are mostly addressed by Normalize, but Reboot sets `font-size: inherit` and `line-height: inherit`, too.
-- `<textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
+- `<input>`s, `<select>`s, `</select><textarea>`s, and `</textarea><button>`s are mostly addressed by Normalize, but Reboot sets `font-size: inherit` and `line-height: inherit`, too.
+- `</button><textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
 
 These changes, and more, are demonstrated below.
 
@@ -448,7 +448,7 @@ These changes, and more, are demonstrated below.
 
       <p>
         <label for="input">Example input</label>
-        <input type="text" id="input" placeholder="Example input">
+        <input id="input" type="text" placeholder="Example input">
       </p>
 
       <p>
@@ -470,44 +470,44 @@ These changes, and more, are demonstrated below.
 
       <p>
         <label>
-          <input type="checkbox" value="">
+          <input type="checkbox" value>
           Check this checkbox
         </label>
       </p>
 
       <p>
         <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          <input id="optionsRadios1" name="optionsRadios" type="radio" value="option1" checked>
           Option one is this and that
         </label>
         <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          <input id="optionsRadios2" name="optionsRadios" type="radio" value="option2">
           Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
         </label>
         <label>
-          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+          <input id="optionsRadios3" name="optionsRadios" type="radio" value="option3" disabled>
           Option three is disabled
         </label>
       </p>
 
       <p>
         <label for="textarea">Example textarea</label>
-        <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 84px;"></textarea>
+        <textarea id="textarea" rows="3"></textarea>
       </p>
 
       <p>
         <label for="date">Example date</label>
-        <input type="date" id="date">
+        <input id="date" type="date">
       </p>
 
       <p>
         <label for="time">Example time</label>
-        <input type="time" id="time">
+        <input id="time" type="time">
       </p>
 
       <p>
         <label for="output">Example output</label>
-        <output name="result" id="output">100</output>
+        <output id="output" name="result">100</output>
       </p>
 
       <p>
@@ -517,9 +517,9 @@ These changes, and more, are demonstrated below.
       </p>
 
       <p>
-        <button type="submit" disabled="">Button submit</button>
-        <input type="submit" value="Input submit button" disabled="">
-        <input type="button" value="Input button" disabled="">
+        <button type="submit" disabled>Button submit</button>
+        <input type="submit" value="Input submit button" disabled>
+        <input type="button" value="Input button" disabled>
       </p>
     </fieldset>
   </form>
@@ -531,79 +531,79 @@ These changes, and more, are demonstrated below.
     <legend>Example legend</legend>
 
     <p>
-      <label for="input">Example input</label>
-      <input type="text" id="input" placeholder="Example input">
+      <label for='input'>Example input</label>
+      <input id='input' placeholder='Example input' type='text'/>
     </p>
 
     <p>
-      <label for="select">Example select</label>
-      <select id="select">
-        <option value="">Choose...</option>
-        <optgroup label="Option group 1">
-          <option value="">Option 1</option>
-          <option value="">Option 2</option>
-          <option value="">Option 3</option>
+      <label for='select'>Example select</label>
+      <select id='select'>
+        <option value=''>Choose...</option>
+        <optgroup label='Option group 1'>
+          <option value=''>Option 1</option>
+          <option value=''>Option 2</option>
+          <option value=''>Option 3</option>
         </optgroup>
-        <optgroup label="Option group 2">
-          <option value="">Option 4</option>
-          <option value="">Option 5</option>
-          <option value="">Option 6</option>
+        <optgroup label='Option group 2'>
+          <option value=''>Option 4</option>
+          <option value=''>Option 5</option>
+          <option value=''>Option 6</option>
         </optgroup>
       </select>
     </p>
 
     <p>
       <label>
-        <input type="checkbox" value="">
+        <input type='checkbox' value=''/>
         Check this checkbox
       </label>
     </p>
 
     <p>
       <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        <input checked='' id='optionsRadios1' name='optionsRadios' type='radio' value='option1'/>
         Option one is this and that
       </label>
       <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-        Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
+        <input id='optionsRadios2' name='optionsRadios' type='radio' value='option2'/>
+        Option two is something else that&#39;s also super long to demonstrate the wrapping of these fancy form controls.
       </label>
       <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+        <input disabled='' id='optionsRadios3' name='optionsRadios' type='radio' value='option3'/>
         Option three is disabled
       </label>
     </p>
 
     <p>
-      <label for="textarea">Example textarea</label>
-      <textarea id="textarea" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 84px;"></textarea>
+      <label for='textarea'>Example textarea</label>
+      <textarea id='textarea' rows='3'/>
     </p>
 
     <p>
-      <label for="date">Example date</label>
-      <input type="date" id="date">
+      <label for='date'>Example date</label>
+      <input id='date' type='date'/>
     </p>
 
     <p>
-      <label for="time">Example time</label>
-      <input type="time" id="time">
+      <label for='time'>Example time</label>
+      <input id='time' type='time'/>
     </p>
 
     <p>
-      <label for="output">Example output</label>
-      <output name="result" id="output">100</output>
+      <label for='output'>Example output</label>
+      <output id='output' name='result'>100</output>
     </p>
 
     <p>
-      <button type="submit">Button submit</button>
-      <input type="submit" value="Input submit button">
-      <input type="button" value="Input button">
+      <button type='submit'>Button submit</button>
+      <input type='submit' value='Input submit button'/>
+      <input type='button' value='Input button'/>
     </p>
 
     <p>
-      <button type="submit" disabled="">Button submit</button>
-      <input type="submit" value="Input submit button" disabled="">
-      <input type="button" value="Input button" disabled="">
+      <button disabled='' type='submit'>Button submit</button>
+      <input disabled='' type='submit' value='Input submit button'/>
+      <input disabled='' type='button' value='Input button'/>
     </p>
   </fieldset>
 </form>

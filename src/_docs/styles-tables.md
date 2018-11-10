@@ -46,7 +46,7 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table">
+<table class='table'>
   <thead>
     <tr>
       <th>Table heading</th>
@@ -104,7 +104,7 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 
 ```html
 <!-- Light -->
-<table class="table table-light">
+<table class='table table-light'>
   <thead>
     <tr>
       <th>Table heading</th>
@@ -161,7 +161,7 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-dark">
+<table class='table table-dark'>
   <thead>
     <tr>
       <th>Table heading</th>
@@ -251,14 +251,14 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table">
-  <thead class="thead-light">
+<table class='table'>
+  <thead class='thead-light'>
     ...
   </thead>
 </table>
 
-<table class="table table-light">
-  <thead class="thead-light">
+<table class='table table-light'>
+  <thead class='thead-light'>
     ...
   </thead>
 </table>
@@ -330,14 +330,14 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table">
-  <thead class="thead-dark">
+<table class='table'>
+  <thead class='thead-dark'>
     ...
   </thead>
 </table>
 
-<table class="table table-dark">
-  <thead class="thead-dark">
+<table class='table table-dark'>
+  <thead class='thead-dark'>
     ...
   </thead>
 </table>
@@ -440,15 +440,15 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-striped">
+<table class='table table-striped'>
   ...
 </table>
 
-<table class="table table-light table-striped">
+<table class='table table-light table-striped'>
   ...
 </table>
 
-<table class="table table-dark table-striped">
+<table class='table table-dark table-striped'>
   ...
 </table>
 ```
@@ -550,15 +550,15 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-bordered">
+<table class='table table-bordered'>
   ...
 </table>
 
-<table class="table table-light table-bordered">
+<table class='table table-light table-bordered'>
   ...
 </table>
 
-<table class="table table-dark table-bordered">
+<table class='table table-dark table-bordered'>
   ...
 </table>
 ```
@@ -660,15 +660,15 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-borderless">
+<table class='table table-borderless'>
   ...
 </table>
 
-<table class="table table-light table-borderless">
+<table class='table table-light table-borderless'>
   ...
 </table>
 
-<table class="table table-dark table-borderless">
+<table class='table table-dark table-borderless'>
   ...
 </table>
 ```
@@ -770,15 +770,15 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-hover">
+<table class='table table-hover'>
   ...
 </table>
 
-<table class="table table-light table-hover">
+<table class='table table-light table-hover'>
   ...
 </table>
 
-<table class="table table-dark table-hover">
+<table class='table table-dark table-hover'>
   ...
 </table>
 ```
@@ -856,8 +856,8 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-light table-bordered table-striped table-hover">
-  <thead class="thead-light">
+<table class='table table-light table-bordered table-striped table-hover'>
+  <thead class='thead-light'>
     <tr>
       <th>Table heading</th>
       <th>Table heading</th>
@@ -947,8 +947,8 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<table class="table table-dark table-bordered table-striped table-hover">
-  <thead class="thead-dark">
+<table class='table table-dark table-bordered table-striped table-hover'>
+  <thead class='thead-dark'>
     <tr>
       <th>Table heading</th>
       <th>Table heading</th>
@@ -1051,8 +1051,8 @@ Tables are a nice way to organize a lot of data. We provide a few utility classe
 </div>
 
 ```html
-<div class="table-responsive">
-  <table class="table">
+<div class='table-responsive'>
+  <table class='table'>
     ...
   </table>
 </div>
