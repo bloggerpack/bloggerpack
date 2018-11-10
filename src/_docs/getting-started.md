@@ -509,10 +509,7 @@ The goal of this tutorial is to take you from having some development experience
       <li>Configure theme: `src/config.theme.json`.</li>
       <li>Configure docs: `src/config.docs.json`.</li>
     </ul>
-
-    <p>All important text and links in the theme, CSS, JS and documentation is taken from configuration data, such as theme name, version number and more. So, you only need to change it in the configuration file.</p>
-
-    <p>You can also customize the docs to suit your needs.</p>
+    <p>Customize and builds the theme and documentation to suit your needs.</p>
   </div>
 </details>
 
