@@ -8,9 +8,12 @@
 Configuration
 ############################################################################# </b:comment>
 
-<b:with value='"{{ theme.metadata.socialImage }}"' var='socialImage'>
-<b:with value='{ appId: "{{ theme.metadata.facebook.appId }}" }' var='facebook'>
-<b:with value='{ usernameCreator: "{{ theme.metadata.twitter.usernameCreator }}", usernameSite: "{{ theme.metadata.twitter.usernameSite }}" }' var='twitter'>
+<b:comment>=== Metadata ===</b:comment>
+<b:with value='"{{ theme.config.metadata.socialImage }}"' var='socialImage'>
+<b:with value='{ appId: "{{ theme.config.metadata.facebook.appId }}" }' var='facebook'>
+<b:with value='{ usernameSite: "{{ theme.config.metadata.twitter.usernameSite }}", usernameCreator: "{{ theme.config.metadata.twitter.usernameCreator }}" }' var='twitter'>
+<b:comment>=== Status message ===</b:comment>
+<b:with value='{{ theme.config.showStatusMessageSuccess }}' var='showStatusMessageSuccess'>
 
 
 <head>
@@ -260,6 +263,7 @@ Default markups
 
 
 </body>
+</b:with>
 </b:with>
 </b:with>
 </b:with>
