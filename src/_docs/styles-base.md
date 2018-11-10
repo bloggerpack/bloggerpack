@@ -410,6 +410,25 @@ The `<address>` element is updated to reset the browser default `font-style` fro
 ```
 
 
+## Figures
+
+Reset `margin` to `0 0 1rem`.
+
+<div class="doc-example">
+  <figure>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9BAMAAAB9rnEWAAAAG1BMVEXMzMyWlpacnJy3t7ejo6OxsbGqqqrFxcW+vr4ohmgvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAzUlEQVRYhe3OOwvCMBiF4VOrjWOioGt1saOI4KoI1lFBnOutrilIsxYnf7ZpFB3N7nmWcOB7IQARERERERHRf4px7Omtyt6zgWhwxXf/MpVRWmanh37NcIGzyfHZP+1lQwuZ2vPWvNBoHTBCgdQ3B2Qb7XjYsUFysTNAhTvc9uyBSbUu5/aJXY8wgdu+/e0KCNsGG9eLlX5t3/8nEOP6ftd3/b16b8++OTOmW2YQo9z1S2NEvX37QCk56QFRVlR1r5RCvYmIiIiIiOhvPQH4zR98/KFAbwAAAABJRU5ErkJggg==" alt="Figure example">
+    <figcaption>Figure caption</figcaption>
+  </figure>
+</div>
+
+```html
+<figure>
+  <img src="/path/to/image" alt="...">
+  <figcaption>Figure caption</figcaption>
+</figure>
+```
+
+
 ## Forms
 
 Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:
