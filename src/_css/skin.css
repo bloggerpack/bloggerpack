@@ -402,6 +402,16 @@
 }
 
 /**
+ * Post featured image
+ */
+
+.post-featured-image {
+  float: left;
+  margin-right: 1rem;
+  border-radius: .5rem;
+}
+
+/**
  * Post labels
  */
 

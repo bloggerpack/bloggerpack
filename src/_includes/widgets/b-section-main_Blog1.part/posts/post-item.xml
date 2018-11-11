@@ -2,7 +2,11 @@
   <article class='post' expr:id='"post-" + data:post.id'>
     <!-- Title -->
     <h1 class='post-title'>
-      <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+      <b:if cond='data:post.title'>
+        <data:post.title/>
+      <b:else/><!-- fallback -->
+        <data:messages.noTitle/>
+      </b:if>
     </h1>
     <!-- Meta -->
     <ul class='post-meta'>
