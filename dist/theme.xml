@@ -844,6 +844,16 @@ body#layout .layout-mode-col-12 {
 }
 
 /**
+ * Post featured image
+ */
+
+.post-featured-image {
+  float: left;
+  margin-right: 1rem;
+  border-radius: .5rem;
+}
+
+/**
  * Post labels
  */
 
@@ -1471,17 +1481,19 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h2 class='post-title'>
-                              <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
-                                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                              </a>
+                              <b:if cond='data:post.title'>
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:post.title/>
+                                </a>
+                              <b:else/><!-- fallback -->
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:messages.noTitle/>
+                                </a>
+                              </b:if>
                             </h2>
                             <!-- Snippet -->
                             <div class='post-snippet'>
-                              <b:if cond='data:post.hasJumpLink'>
-                                <data:post.body/>
-                              <b:else/>
-                                <data:post.snippets.short/>
-                              </b:if>
+                              <data:post.snippets.short/>
                             </div>
                             <!-- Labels -->
                             <ul class='post-label'>
@@ -1589,7 +1601,11 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h1 class='post-title'>
-                              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                              <b:if cond='data:post.title'>
+                                <data:post.title/>
+                              <b:else/><!-- fallback -->
+                                <data:messages.noTitle/>
+                              </b:if>
                             </h1>
                             <!-- Meta -->
                             <ul class='post-meta'>
@@ -1701,7 +1717,11 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h1 class='post-title'>
-                              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                              <b:if cond='data:post.title'>
+                                <data:post.title/>
+                              <b:else/><!-- fallback -->
+                                <data:messages.noTitle/>
+                              </b:if>
                             </h1>
                             <!-- Body -->
                             <div class='post-body post-body-typography'>
@@ -1716,17 +1736,19 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h2 class='post-title'>
-                              <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
-                                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                              </a>
+                              <b:if cond='data:post.title'>
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:post.title/>
+                                </a>
+                              <b:else/><!-- fallback -->
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:messages.noTitle/>
+                                </a>
+                              </b:if>
                             </h2>
                             <!-- Snippet -->
                             <div class='post-snippet'>
-                              <b:if cond='data:post.hasJumpLink'>
-                                <data:post.body/>
-                              <b:else/>
-                                <data:post.snippets.short/>
-                              </b:if>
+                              <data:post.snippets.short/>
                             </div>
                             <!-- Labels -->
                             <ul class='post-label'>
@@ -1834,17 +1856,19 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h2 class='post-title'>
-                              <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
-                                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                              </a>
+                              <b:if cond='data:post.title'>
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:post.title/>
+                                </a>
+                              <b:else/><!-- fallback -->
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:messages.noTitle/>
+                                </a>
+                              </b:if>
                             </h2>
                             <!-- Snippet -->
                             <div class='post-snippet'>
-                              <b:if cond='data:post.hasJumpLink'>
-                                <data:post.body/>
-                              <b:else/>
-                                <data:post.snippets.short/>
-                              </b:if>
+                              <data:post.snippets.short/>
                             </div>
                             <!-- Labels -->
                             <ul class='post-label'>
@@ -1952,17 +1976,19 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h2 class='post-title'>
-                              <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
-                                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                              </a>
+                              <b:if cond='data:post.title'>
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:post.title/>
+                                </a>
+                              <b:else/><!-- fallback -->
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:messages.noTitle/>
+                                </a>
+                              </b:if>
                             </h2>
                             <!-- Snippet -->
                             <div class='post-snippet'>
-                              <b:if cond='data:post.hasJumpLink'>
-                                <data:post.body/>
-                              <b:else/>
-                                <data:post.snippets.short/>
-                              </b:if>
+                              <data:post.snippets.short/>
                             </div>
                             <!-- Labels -->
                             <ul class='post-label'>
@@ -2070,17 +2096,19 @@ Main content (main and sidebar)
                           <article class='post' expr:id='"post-" + data:post.id'>
                             <!-- Title -->
                             <h2 class='post-title'>
-                              <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
-                                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
-                              </a>
+                              <b:if cond='data:post.title'>
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:post.title/>
+                                </a>
+                              <b:else/><!-- fallback -->
+                                <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+                                  <data:messages.noTitle/>
+                                </a>
+                              </b:if>
                             </h2>
                             <!-- Snippet -->
                             <div class='post-snippet'>
-                              <b:if cond='data:post.hasJumpLink'>
-                                <data:post.body/>
-                              <b:else/>
-                                <data:post.snippets.short/>
-                              </b:if>
+                              <data:post.snippets.short/>
                             </div>
                             <!-- Labels -->
                             <ul class='post-label'>
