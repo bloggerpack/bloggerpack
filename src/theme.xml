@@ -148,8 +148,9 @@ Main content (main and sidebar)
         <aside class='sidebar-col layout-mode-col-4' id='sidebar-col'>
           <div class='sidebar' id='sidebar'>
             <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'>
+              <!--(bake _includes/widgets/b-section-sidebar_BlogSearch1.xml)-->
+              <!--(bake _includes/widgets/b-section-sidebar_Label1.xml)-->
               <!--(bake _includes/widgets/b-section-sidebar_HTML1.xml)-->
-              <!--(bake _includes/defaultmarkups/test-gadget.xml)-->
             </b:section>
           </div><!-- /.sidebar -->
         </aside><!-- /.sidebar-col -->
