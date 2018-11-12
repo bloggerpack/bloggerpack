@@ -2307,6 +2307,16 @@ Main content (main and sidebar)
         <aside class='sidebar-col layout-mode-col-4' id='sidebar-col'>
           <div class='sidebar' id='sidebar'>
             <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'>
+              <b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
+              <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                  <b:widget-setting name='display'>LIST</b:widget-setting>
+                  <b:widget-setting name='selectedLabelsList'/>
+                  <b:widget-setting name='showType'>ALL</b:widget-setting>
+                  <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+                </b:widget-settings>
+              </b:widget>
               <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
                   <b:widget-setting name='content'>
@@ -2314,16 +2324,16 @@ Main content (main and sidebar)
                       &lt;li&gt;&lt;a href="/"&gt;Homepage&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/2016/11/sample-blog-post-01.html"&gt;Item page&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/p/static-page.html"&gt;Static page&lt;/a&gt;&lt;/li&gt;
-                      &lt;li&gt;&lt;a href="/search"&gt;Search (default) page&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/search/label/Sample"&gt;Search (label) page&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/search?q=sample"&gt;Search (query) page&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="/search"&gt;Search (default) page&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/2016"&gt;Archive page&lt;/a&gt;&lt;/li&gt;
                       &lt;li&gt;&lt;a href="/404"&gt;Error page&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;ul style="padding-left: 0; list-style: none;"&gt;
-                      &lt;li&gt;&lt;a href="/search/label/Nope"&gt;Search (label) page (x)&lt;/a&gt;&lt;/li&gt;
-                      &lt;li&gt;&lt;a href="/search?q=nope"&gt;Search (query) page (x)&lt;/a&gt;&lt;/li&gt;
-                      &lt;li&gt;&lt;a href="/2010"&gt;Archive page (x)&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="/search/label/Nope"&gt;(x) Search (label) page&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="/search?q=nope"&gt;(x) Search (query) page&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href="/2010"&gt;(x) Archive page&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                   </b:widget-setting>
                 </b:widget-settings>
@@ -2333,69 +2343,6 @@ Main content (main and sidebar)
                     <data:content/>
                   </div>
                 </b:includable>
-              </b:widget>
-              <b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
-                  <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
-                  <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
-                  <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
-                  <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
-                  <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
-                  <b:widget-setting name='chronological'>false</b:widget-setting>
-                  <b:widget-setting name='showPosts'>false</b:widget-setting>
-                  <b:widget-setting name='frequency'>DAILY</b:widget-setting>
-                </b:widget-settings>
-              </b:widget>
-              <b:widget id='BlogSearch10' locked='false' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
-              <b:widget id='ContactForm10' locked='false' title='Contact Form' type='ContactForm' version='2' visible='true'/>
-              <b:widget id='FeaturedPost10' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='showSnippet'>true</b:widget-setting>
-                  <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-                  <b:widget-setting name='showFirstImage'>true</b:widget-setting>
-                  <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
-                </b:widget-settings>
-              </b:widget>
-              <b:widget id='FollowByEmail10' locked='false' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
-              <b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='displayUrl'>http://1.bp.blogspot.com/-zddJkTpFFJQ/WxamZWsnQ0I/AAAAAAAACWM/UqGDbcaMop4FYnDUZsOAzQi5hxvKpbAdQCK4BGAYYCw/s1600/Screenshot%2Bfrom%2B2018-05-11%2B19-32-42.png</b:widget-setting>
-                  <b:widget-setting name='displayHeight'>768</b:widget-setting>
-                  <b:widget-setting name='sectionWidth'>258</b:widget-setting>
-                  <b:widget-setting name='useImage'>true</b:widget-setting>
-                  <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-                  <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
-                  <b:widget-setting name='displayWidth'>1366</b:widget-setting>
-                </b:widget-settings>
-              </b:widget>
-              <b:widget id='Image10' locked='false' title='Image' type='Image' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='displayUrl'>http://3.bp.blogspot.com/-gENoVXNpoa4/WxhHgrPK0YI/AAAAAAAACWc/fyxBY_208N8tEvl7UXm4ONEzDOBlDo-ggCK4BGAYYCw/s1600/download.jpeg</b:widget-setting>
-                  <b:widget-setting name='displayHeight'>172</b:widget-setting>
-                  <b:widget-setting name='sectionWidth'>258</b:widget-setting>
-                  <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
-                  <b:widget-setting name='displayWidth'>258</b:widget-setting>
-                  <b:widget-setting name='link'>https://blogger.com</b:widget-setting>
-                  <b:widget-setting name='caption'>A caption for the above image.</b:widget-setting>
-                </b:widget-settings>
-              </b:widget>
-              <b:widget id='Label10' locked='false' title='Labels' type='Label' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                  <b:widget-setting name='display'>LIST</b:widget-setting>
-                  <b:widget-setting name='selectedLabelsList'/>
-                  <b:widget-setting name='showType'>ALL</b:widget-setting>
-                  <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-                </b:widget-settings>
-              </b:widget>
-              <b:widget id='PopularPosts10' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
-                <b:widget-settings>
-                  <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
-                  <b:widget-setting name='showThumbnails'>true</b:widget-setting>
-                  <b:widget-setting name='showSnippets'>true</b:widget-setting>
-                  <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
-                </b:widget-settings>
               </b:widget>
             </b:section>
           </div><!-- /.sidebar -->
