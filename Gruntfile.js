@@ -1,5 +1,5 @@
-const sass = require('node-sass');
 const path = require('path');
+const sass = require('node-sass');
 
 module.exports = function (grunt) {
   'use strict';
