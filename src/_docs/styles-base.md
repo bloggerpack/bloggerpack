@@ -1,9 +1,27 @@
 <!--
-@@@title:Base@@@
+@@@title:Base CSS@@@
 @@@section:Styles@@@
 -->
 
 # Base CSS
+
+Base CSS.
+
+<figure>
+  <div class="doc-badges">
+    <div class="doc-badge">
+      <span class="doc-badge-item">Source</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/_base.scss</span>
+    </div>
+    <div class="doc-badge">
+      <span class="doc-badge-item">Variables</span>
+      <span class="doc-badge-item doc-badge-item-success">Yes</span>
+    </div>
+  </div>
+</figure>
+
+
+## Overview
 
 Base CSS builds upon Normalize and Bootstrap Reboot, providing many HTML elements with somewhat opinionated styles using only element selectors to provide an elegant, consistent, and simple baseline to build upon. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
 
@@ -429,7 +447,7 @@ Reset `margin` to `0 0 1rem`.
 ```
 
 
-## Forms
+## Forms and buttons
 
 Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:
 

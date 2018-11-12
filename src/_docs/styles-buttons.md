@@ -7,6 +7,23 @@
 
 Custom button styles.
 
+<figure>
+  <div class="doc-badges">
+    <div class="doc-badge">
+      <span class="doc-badge-item">Source</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/_buttons.scss</span>
+    </div>
+    <div class="doc-badge">
+      <span class="doc-badge-item">Variables</span>
+      <span class="doc-badge-item doc-badge-item-success">Yes</span>
+    </div>
+    <div class="doc-badge">
+      <span class="doc-badge-item">Depend on Base CSS</span>
+      <span class="doc-badge-item doc-badge-item-success">Yes</span>
+    </div>
+  </div>
+</figure>
+
 
 ## Button tags
 
