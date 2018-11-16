@@ -1,0 +1,242 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>CSS - Overview &middot; Bloggerable</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="bundle/css/bundle.css"><link rel="stylesheet" href="assets/css/docs.css"></head><body><nav class="doc-nav" id="docNav"><div class="doc-nav-wrap"><a class="doc-nav-link" href="index.html">Home</a><div class="doc-nav-divider"></div><a class="doc-nav-link" href="getting-started.html">Getting started</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">CSS</h6><a class="doc-nav-link" href="css-overview.html">Overview</a><h6 class="doc-nav-subheader">Base</h6><a class="doc-nav-link" href="css-base.html">Base CSS</a><h6 class="doc-nav-subheader">Components</h6><a class="doc-nav-link" href="css-blockquotes.html">Blockquotes</a> <a class="doc-nav-link" href="css-buttons.html">Buttons</a> <a class="doc-nav-link" href="css-forms.html">Forms</a> <a class="doc-nav-link" href="css-tables.html">Tables</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header">XML</h6><a class="doc-nav-link" href="xml-overview.html">Overview</a><h6 class="doc-nav-subheader">Snippets &middot; Views</h6><a class="doc-nav-link" href="xml-snippets-page-types.html">Page types</a><h6 class="doc-nav-subheader">Snippets &middot; Posts</h6><a class="doc-nav-link" href="xml-snippets-posts-usage.html">Usage</a> <a class="doc-nav-link" href="xml-snippets-posts-author-name.html">Posts author name</a> <a class="doc-nav-link" href="xml-snippets-posts-author-photo.html">Posts author photo</a> <a class="doc-nav-link" href="xml-snippets-posts-body.html">Posts body</a> <a class="doc-nav-link" href="xml-snippets-posts-comments-link.html">Posts comments link</a> <a class="doc-nav-link" href="xml-snippets-posts-content-snippet.html">Posts content snippet</a> <a class="doc-nav-link" href="xml-snippets-posts-date.html">Posts date</a> <a class="doc-nav-link" href="xml-snippets-posts-featured-image.html">Posts featured image</a> <a class="doc-nav-link" href="xml-snippets-posts-labels.html">Posts labels</a> <a class="doc-nav-link" href="xml-snippets-posts-read-more-link.html">Posts read more link</a> <a class="doc-nav-link" href="xml-snippets-posts-sharing.html">Posts sharing</a> <a class="doc-nav-link" href="xml-snippets-posts-title.html">Posts title</a><h6 class="doc-nav-subheader">Snippets &middot; Data</h6><a class="doc-nav-link" href="xml-snippets-data-messages.html">Messages</a><div class="doc-nav-divider"></div><h6 class="doc-nav-header doc-nav-header-secondary">Bloggerable Links</h6><a class="doc-nav-link" href="https://blogger-starter-bloggerable.blogspot.com" target="_blank">Demo</a> <a class="doc-nav-link" href="https://blogger-starter.github.io/bloggerable" target="_blank">Documentation</a> <a class="doc-nav-link" href="https://blogger-starter.blogspot.com" target="_blank">Themes</a> <a class="doc-nav-link" href="https://github.com/blogger-starter/bloggerable" target="_blank">GitHub</a> <a class="doc-nav-link" href="https://facebook.com/bloggerable" target="_blank">Facebook</a> <a class="doc-nav-link" href="https://twitter.com/bloggerable" target="_blank">Twitter</a></div></nav><button class="doc-nav-toggle" id="docNavToggle" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><div class="doc-toc" id="docToc"></div><button class="doc-toc-toggle" id="docTocToggle" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><div class="doc-overlay" id="docOverlay"></div><main class="doc-content"><div class="topbar"><ul><li>Bloggerable v1.0.0</li></ul></div><h1 id="overview">Overview</h1><p>Utilize our source Sass files to take advantage of variables, functions, mixins, and more.</p><figure><div class="doc-badges"><div class="doc-badge"><span class="doc-badge-item">Source</span> <span class="doc-badge-item doc-badge-item-info">src/_scss</span></div><div class="doc-badge"><span class="doc-badge-item">Compiled version</span> <span class="doc-badge-item doc-badge-item-info">src/tmp/css/bundle.css</span></div></div></figure><h2 id="file-structure">File structure</h2><pre><code class="lang-plaintext">[root project directory]
+└── src/
+    └── _scss/
+        ├── blogger/
+        ├── _custom.scss
+        └── <span class="hljs-keyword">*</span><span class="hljs-keyword">*</span>/<span class="hljs-keyword">*</span>.scss
+</code></pre><table><thead><tr><th>File / Directory</th><th>Description</th></tr></thead><tbody><tr><td><code style="white-space: nowrap;">blogger/</code></td><td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_xml/defaultmarkups</code>).</td></tr><tr><td><code style="white-space: nowrap;">_custom.scss</code></td><td>Copy variables from <code>_variables.scss</code> to this file to override default values without modifying source files.</td></tr><tr><td><code style="white-space: nowrap;">**/*.scss</code></td><td>Other Sass files are variables, functions, mixins and components.</td></tr></tbody></table><h2 id="sass-options">Sass options</h2><p>You can find and customize these variables for key global options in <code>_variables.scss</code>.</p><table><thead><tr><th>Variable</th><th>Values</th><th>Description</th></tr></thead><tbody><tr><td><code>$enable-rounded</code></td><td><code>true</code> (default) or <code>false</code></td><td>Enables predefined <code>border-radius</code> styles on various components.</td></tr><tr><td><code>$enable-shadows</code></td><td><code>true</code> or <code>false</code> (default)</td><td>Enables predefined <code>box-shadow</code> styles on various components.</td></tr><tr><td><code>$enable-transitions</code></td><td><code>true</code> (default) or <code>false</code></td><td>Enables predefined <code>transition</code>s on various components.</td></tr></tbody></table><h2 id="modify-variables-and-maps">Modify variables and maps</h2><p>Every Sass variable includes the <code>!default</code> flag allowing you to override the variable’s default value in <code>_custom.scss</code> without modifying source code.</p><p>Just like Sass variables, all Sass maps include the <code>!default</code> flag and can be overridden and extended.</p><p>Example:</p><pre><code class="lang-scss">_custom<span class="hljs-class">.scss</span>
+
+<span class="hljs-comment">// Customize options</span>
+<span class="hljs-variable">$enable-rounded</span><span class="hljs-value">: false;</span>
+
+<span class="hljs-comment">// Variable overrides</span>
+<span class="hljs-variable">$body-color</span><span class="hljs-value">:  <span class="hljs-hexcolor">#fff</span>;</span>
+<span class="hljs-variable">$body-bg</span><span class="hljs-value">:     <span class="hljs-hexcolor">#000</span>;</span>
+
+<span class="hljs-comment">// Modify map</span>
+<span class="hljs-variable">$theme-colors</span><span class="hljs-value">: (
+  <span class="hljs-string">"primary"</span>: <span class="hljs-hexcolor">#000</span>
+);</span>
+
+<span class="hljs-comment">// Add to map</span>
+<span class="hljs-variable">$theme-colors</span><span class="hljs-value">: (
+  <span class="hljs-string">"custom-color"</span>: <span class="hljs-hexcolor">#900</span>
+);</span>
+</code></pre><h2 id="functions">Functions</h2><p>We utilizes several Sass functions in <code>_functions.scss</code>.</p><h3 id="color-maps">Color maps</h3><p>Functions for getting values from the color maps.</p><pre><code class="lang-scss"><span class="hljs-comment">// Retrieve color Sass maps</span>
+<span class="hljs-at_rule">@function<span class="hljs-preprocessor"> theme-color</span>(<span class="hljs-variable">$key</span>: <span class="hljs-string">"primary"</span>) {</span>
+  <span class="hljs-at_rule">@return<span class="hljs-preprocessor"> map-get</span>(<span class="hljs-variable">$theme-colors</span>, <span class="hljs-variable">$key</span>);</span>
+}
+</code></pre><p>Example:</p><pre><code class="lang-scss"><span class="hljs-comment">// Example to pick one color from a Sass map</span>
+<span class="hljs-class">.custom-element</span> {
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-function">theme-color</span>(<span class="hljs-string">"dark"</span>);</span>
+}
+</code></pre><h3 id="color-contrast">Color contrast</h3><p>The color contrast function, <code>color-yiq</code>. It utilizes the <a href="https://en.wikipedia.org/wiki/YIQ">YIQ color space</a> to automatically return a light (<code>#fff</code>) or dark (<code>#111</code>) contrast color based on the specified base color.</p><pre><code class="lang-scss"><span class="hljs-comment">// Color contrast</span>
+<span class="hljs-at_rule">@function<span class="hljs-preprocessor"> color-yiq</span>(<span class="hljs-variable">$color</span>) {</span>
+  <span class="hljs-variable">$r</span><span class="hljs-value">: <span class="hljs-function">red</span>(<span class="hljs-variable">$color</span>);</span>
+  <span class="hljs-variable">$g</span><span class="hljs-value">: <span class="hljs-function">green</span>(<span class="hljs-variable">$color</span>);</span>
+  <span class="hljs-variable">$b</span><span class="hljs-value">: <span class="hljs-function">blue</span>(<span class="hljs-variable">$color</span>);</span>
+
+  <span class="hljs-variable">$yiq</span><span class="hljs-value">: ((<span class="hljs-variable">$r</span> * <span class="hljs-number">299</span>) + (<span class="hljs-variable">$g</span> * <span class="hljs-number">587</span>) + (<span class="hljs-variable">$b</span> * <span class="hljs-number">114</span>)) / <span class="hljs-number">1000</span>;</span>
+
+  <span class="hljs-at_rule">@<span class="hljs-keyword">if</span> (<span class="hljs-variable">$yiq</span> &gt;= <span class="hljs-variable">$yiq-contrasted-threshold</span>) {</span>
+    <span class="hljs-at_rule">@return <span class="hljs-variable">$yiq-text-dark</span>;</span>
+  } <span class="hljs-at_rule">@<span class="hljs-keyword">else</span> {</span>
+    <span class="hljs-at_rule">@return <span class="hljs-variable">$yiq-text-light</span>;</span>
+  }
+}
+</code></pre><p>Example:</p><pre><code class="lang-scss"><span class="hljs-variable">$bg</span><span class="hljs-value">: <span class="hljs-hexcolor">#000</span>;</span>
+
+<span class="hljs-class">.custom-element</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-function">color-yiq</span>(<span class="hljs-hexcolor">#000</span>);</span> <span class="hljs-comment">// returns `color: #fff`</span>
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#000</span>;</span>
+}
+
+<span class="hljs-class">.custom-element2</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-function">color-yiq</span>(<span class="hljs-variable">$bg</span>);</span> <span class="hljs-comment">// returns `color: #fff`</span>
+  <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-variable">$bg</span>;</span>
+}
+</code></pre><h2 id="responsive-breakpoints">Responsive breakpoints</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Media queries</a> for creating sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p><h3 id="breakpoint-up">Breakpoint up</h3><p>CSS:</p><pre><code class="lang-css"><span class="hljs-comment">/* Extra small devices (portrait phones, less than 576px) */</span>
+<span class="hljs-comment">/* No media query for `xs` since this is the default */</span>
+
+<span class="hljs-comment">/* Small devices (landscape phones, 576px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">576px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Medium devices (tablets, 768px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">768px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Large devices (desktops, 992px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">992px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Extra large devices (large desktops, 1200px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">1200px</span>) </span>{ ... }
+</code></pre><p>Sass mixins:</p><pre><code class="lang-scss"><span class="hljs-comment">// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-up</span>(sm) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-up</span>(md) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-up</span>(lg) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-up</span>(xl) {</span> ... }
+
+<span class="hljs-comment">// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint</span>
+<span class="hljs-class">.custom-class</span> {
+  <span class="hljs-attribute">display</span><span class="hljs-value">: none;</span>
+}
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-up</span>(sm) {</span>
+  <span class="hljs-class">.custom-class</span> {
+    <span class="hljs-attribute">display</span><span class="hljs-value">: block;</span>
+  }
+}
+</code></pre><h3 id="breakpoint-down">Breakpoint down</h3><p>Media queries that go in the other direction (the given screen size or smaller).</p><p>CSS:</p><pre><code class="lang-css"><span class="hljs-comment">/* Extra small devices (portrait phones, less than 576px) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">575.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Small devices (landscape phones, less than 768px) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">767.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Medium devices (tablets, less than 992px) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">991.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Large devices (desktops, less than 1200px) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">1199.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Extra large devices (large desktops) */</span>
+<span class="hljs-comment">/* No media query since the extra-large breakpoint has no upper bound on its width */</span>
+</code></pre><p>Sass mixins:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-down</span>(xs) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-down</span>(sm) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-down</span>(md) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-down</span>(lg) {</span> ... }
+<span class="hljs-comment">// No media query necessary for xl breakpoint as it has no upper bound on its width</span>
+
+<span class="hljs-comment">// Example: Style from medium breakpoint and down</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-down</span>(md) {</span>
+  <span class="hljs-class">.custom-class</span> {
+    <span class="hljs-attribute">display</span><span class="hljs-value">: block;</span>
+  }
+}
+</code></pre><h3 id="breakpoint-only">Breakpoint only</h3><p>Media queries for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.</p><p>CSS:</p><pre><code class="lang-css"><span class="hljs-comment">/* Extra small devices (portrait phones, less than 576px) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">575.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Small devices (landscape phones, 576px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">576px</span>) and (max-width: <span class="hljs-number">767.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Medium devices (tablets, 768px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">768px</span>) and (max-width: <span class="hljs-number">991.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Large devices (desktops, 992px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">992px</span>) and (max-width: <span class="hljs-number">1199.98px</span>) </span>{ ... }
+
+<span class="hljs-comment">/* Extra large devices (large desktops, 1200px and up) */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">1200px</span>) </span>{ ... }
+</code></pre><p>Sass mixins:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-only</span>(xs) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-only</span>(sm) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-only</span>(md) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-only</span>(lg) {</span> ... }
+<span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-only</span>(xl) {</span> ... }
+</code></pre><h3 id="breakpoint-between">Breakpoint between</h3><p>Similarly, media queries may span multiple breakpoint widths.</p><p>CSS:</p><pre><code class="lang-css"><span class="hljs-comment">/* Example */</span>
+<span class="hljs-comment">/* Apply styles starting from medium devices and up to extra large devices */</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">768px</span>) and (max-width: <span class="hljs-number">1199.98px</span>) </span>{ ... }
+</code></pre><p>Sass mixins:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> media-breakpoint-between</span>(md,<span class="hljs-preprocessor"> xl</span>) {</span> ... }
+</code></pre><h2 id="create-your-own-sass">Create your own Sass</h2><ul><li>Under the <code>src/_scss</code> folder, create a new folder.</li><li>In this new folder, create your Sass files.</li><li>In the same folder create a new file <code>_variables.scss</code>, <code>_mixins.scss</code>, and <code>all.scss</code>.</li><li>In the same folder create a new folder called <code>mixins</code>.</li></ul><h3 id="example">Example</h3><pre><code class="lang-plaintext">[root project directory]
+└── src/
+    └── _scss/
+        ├── my-styles/              # Your Sass
+        │   ├── mixins/             # Create mixin files <span class="hljs-keyword">for</span> your components <span class="hljs-keyword">in</span> this folder
+        │   │   └── _my-mixin.scss  # Example mixin
+        │   ├── _mixins.scss        # Import your mixins from <span class="hljs-string">"mixins"</span> folder <span class="hljs-keyword">to</span> this <span class="hljs-keyword">file</span>
+        │   ├── _my-<span class="hljs-keyword">component</span>.scss  # Example <span class="hljs-keyword">component</span>
+        │   ├── _variables.scss     # Write variables <span class="hljs-keyword">for</span> your components <span class="hljs-keyword">in</span> this <span class="hljs-keyword">file</span>
+        │   └── <span class="hljs-keyword">all</span>.scss            # Import <span class="hljs-keyword">all</span> your Sass files <span class="hljs-keyword">to</span> this <span class="hljs-keyword">file</span>
+        └── index.scss              # Import <span class="hljs-keyword">all</span>.scss <span class="hljs-keyword">to</span> this <span class="hljs-keyword">file</span>
+</code></pre><p>In <code>_mixins.scss</code> file add this code:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"mixins/my-mixin"</span>;</span>
+</code></pre><p>In <code>all.scss</code> file add this code:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"variables"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"mixins"</span>;</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"my-component"</span>;</span>
+</code></pre><p>At the end of the <code>index.scss</code> file, add this line:</p><pre><code class="lang-scss"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"my-styles/all"</span>;</span>
+</code></pre><p>In your Sass files, you can use our built-in Sass variables, functions and mixins. And the <code>_custom.scss</code> can also work for your Sass.</p><p>Now, you can just build the source with <code>grunt</code>, and the output will be available in the <code>src/tmp/css/bundle.css</code>.</p><h2 id="code-guide">Code guide</h2><h3 id="comments-and-organization">Comments and organization</h3><p>Sass:</p><pre><code class="lang-scss"><span class="hljs-comment">//</span>
+<span class="hljs-comment">// Heading 1</span>
+<span class="hljs-comment">//</span>
+↓
+<span class="hljs-class">.example</span> {}
+↓
+<span class="hljs-comment">// Sub-heading</span>
+↓
+<span class="hljs-class">.example</span> {}
+↓
+<span class="hljs-comment">// Basic comment</span>
+<span class="hljs-class">.example</span> {}
+↓
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Heading 2</span>
+<span class="hljs-comment">//</span>
+↓
+<span class="hljs-class">.example</span> {}
+↓
+<span class="hljs-comment">// Sub-heading</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Description...</span>
+<span class="hljs-comment">// ...</span>
+↓
+<span class="hljs-class">.example</span> {}
+↓
+<span class="hljs-comment">// Description...</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-class">.example</span> {}
+</code></pre><p>CSS:</p><pre><code class="lang-css"><span class="hljs-comment">/* ==========================================================================
+   Heading 1
+   ========================================================================== */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/**
+ * Sub-heading
+ */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/** Another sub-heading **/</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* Basic comment */</span>
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* Heading 1.2
+   ========================================================================== */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/**
+ * Sub-heading
+ */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/** Another sub-heading **/</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* Basic comment */</span>
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* Heading 1.2.1
+   ========================================= */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/**
+ * Sub-heading
+ */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/** Another sub-heading **/</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* Basic comment */</span>
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+↓
+<span class="hljs-comment">/* ==========================================================================
+   Heading 2
+   ========================================================================== */</span>
+↓
+<span class="hljs-class">.example</span> <span class="hljs-rules">{<span class="hljs-rule">}</span></span>
+</code></pre></main><script src="bundle/js/bundle.js"></script><script src="assets/js/anchor.min.js"></script><script src="assets/js/tocbot.min.js"></script><script src="assets/js/docs.js"></script></body></html>

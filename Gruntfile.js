@@ -25,32 +25,11 @@ module.exports = function (grunt) {
             ' */\n',
 
     clean: {
-      'dist': ['dist', 'src/dist']
-    },
-
-    stylelint: {
-      options: {
-        configFile: '.stylelintrc',
-        formatter: 'string',
-        ignoreDisables: false,
-        failOnError: true,
-        outputFile: '',
-        reportNeedlessDisables: false,
-        syntax: ''
-      },
-      css: {
-        src: ['src/_css/**/*.css', '!src/_css/**/*.min.css']
-      },
-      bundle: {
-        src: 'src/_scss/**/*.scss'
-      },
-      docs: {
-        src: 'src/_docs/assets/css/docs.css'
-      }
+      'dist': ['dist', 'src/tmp']
     },
 
     bake: {
-      theme: {
+      xml: {
         options: {
           basePath: 'src',
           content: function () {
@@ -100,14 +79,13 @@ module.exports = function (grunt) {
             }, {});
           }
         },
-        files: [{
-          expand: true,
-          cwd: 'src/_css/',
-          src: '**/*.css',
-          dest: 'src/dist/css'
-        }]
+        files: [
+          { src: 'src/skin.css', dest: 'src/tmp/css/skin.css' },
+          { src: 'src/template-skin.css', dest: 'src/tmp/css/template-skin.css' },
+          { src: 'src/tmp/css/bundle.css', dest: 'src/tmp/css/bundle.css' }
+        ]
       },
-      bundle: {
+      js: {
         options: {
           basePath: 'src',
           content: function () {
@@ -129,9 +107,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/dist/bundle/',
-          src: ['bundle.css', 'bundle.js'],
-          dest: 'src/dist/bundle'
+          cwd: 'src/tmp/js/',
+          src: 'bundle.js',
+          dest: 'src/tmp/js'
         }]
       },
       docs: {
@@ -165,40 +143,6 @@ module.exports = function (grunt) {
       }
     },
 
-    sass: {
-      options: {
-        implementation: sass,
-        sourceMap: true
-      },
-      bundle: {
-        options: {
-          sourceMap: false
-        },
-        files: {
-          'src/dist/bundle/bundle.css': 'src/_scss/index.scss'
-        }
-      }
-    },
-
-    browserify: {
-      options: {
-        browserifyOptions: {
-          debug: true
-        },
-        banner: '<%= banner %>',
-        transform: [
-          ['babelify', {
-            'presets': ['@babel/preset-env']
-          }]
-        ]
-      },
-      bundle: {
-        files: {
-          'src/dist/bundle/bundle.js': 'src/_js/index.js'
-        }
-      }
-    },
-
     markdown: {
       docs: {
         options: {
@@ -227,24 +171,6 @@ module.exports = function (grunt) {
       }
     },
 
-    postcss: {
-      options: {
-        map: false,
-        processors: [
-          require('autoprefixer')({ cascade: false })
-        ]
-      },
-      css: {
-        src: ['src/dist/css/**/*.css', '!src/dist/css/**/*.min.css']
-      },
-      bundle: {
-        src: 'src/dist/bundle/bundle.css'
-      },
-      docs: {
-        src: 'dist/docs/assets/css/docs.css'
-      }
-    },
-
     htmlmin: {
       docs: {
         options: {
@@ -257,6 +183,54 @@ module.exports = function (grunt) {
           src: '**/*.html',
           dest: 'dist/docs'
         }]
+      }
+    },
+
+    stylelint: {
+      options: {
+        configFile: '.stylelintrc',
+        formatter: 'string',
+        ignoreDisables: false,
+        failOnError: true,
+        outputFile: '',
+        reportNeedlessDisables: false,
+        syntax: ''
+      },
+      css: {
+        src: ['src/skin.css', 'src/template-skin.css', 'src/_scss/**/*.scss']
+      },
+      docs: {
+        src: 'src/_docs/assets/css/docs.css'
+      }
+    },
+
+    sass: {
+      options: {
+        implementation: sass,
+        sourceMap: true
+      },
+      css: {
+        options: {
+          sourceMap: false
+        },
+        files: {
+          'src/tmp/css/bundle.css': 'src/_scss/index.scss'
+        }
+      }
+    },
+
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')({ cascade: false })
+        ]
+      },
+      css: {
+        src: 'src/tmp/css/**/*.css'
+      },
+      docs: {
+        src: 'dist/docs/assets/css/docs.css'
       }
     },
 
@@ -273,20 +247,9 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/dist/css/',
-          src: ['**/*.css', '!skin.css', '!template-skin.css', '!**/*.min.css'],
-          dest: 'src/dist/css'
-        }]
-      },
-      bundle: {
-        options: {
-          sourceMap: false
-        },
-        files: [{
-          expand: true,
-          cwd: 'src/dist/bundle/',
-          src: 'bundle.css',
-          dest: 'src/dist/bundle'
+          cwd: 'src/tmp/css/',
+          src: ['**/*.css', '!skin.css', '!template-skin.css'],
+          dest: 'src/tmp/css'
         }]
       },
       docs: {
@@ -296,9 +259,28 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.css', '!**/*.min.css', '!bundle/bundle.css'],
+          src: ['**/*.css', '!**/*.min.css', '!bundle/css/bundle.css'],
           dest: 'dist/docs'
         }]
+      }
+    },
+
+    browserify: {
+      options: {
+        browserifyOptions: {
+          debug: true
+        },
+        banner: '<%= banner %>',
+        transform: [
+          ['babelify', {
+            'presets': ['@babel/preset-env']
+          }]
+        ]
+      },
+      js: {
+        files: {
+          'src/tmp/js/bundle.js': 'src/_js/index.js'
+        }
       }
     },
 
@@ -313,15 +295,15 @@ module.exports = function (grunt) {
           comments: /^!|@preserve|@license|@cc_on/i
         }
       },
-      bundle: {
+      js: {
         options: {
           sourceMap: false
         },
         files: [{
           expand: true,
-          cwd: 'src/dist/bundle/',
+          cwd: 'src/tmp/js/',
           src: 'bundle.js',
-          dest: 'src/dist/bundle'
+          dest: 'src/tmp/js'
         }]
       },
       docs: {
@@ -331,7 +313,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.js', '!**/*.min.js', '!bundle/bundle.js'],
+          src: ['**/*.js', '!**/*.min.js', '!bundle/js/bundle.js'],
           dest: 'dist/docs'
         }]
       }
@@ -346,9 +328,9 @@ module.exports = function (grunt) {
       },
       docsBundle: {
         expand: true,
-        cwd: 'src/dist/',
-        src: 'bundle/*',
-        dest: 'dist/docs'
+        cwd: 'src/tmp/',
+        src: ['css/**/*', '!css/skin.css', '!css/template-skin.css', 'js/**/*'],
+        dest: 'dist/docs/bundle'
       }
     },
 
@@ -365,30 +347,24 @@ module.exports = function (grunt) {
     watch: {
       main: {
         files: [
-          'src/**/*.xml',
-          'src/**/*.html',
-          'src/**/*.css',
-          'src/**/*.js',
-          'src/**/*.jst',
-          'src/**/*.json',
-          'src/**/*.md',
-          'src/**/*.scss',
-          '!src/dist/**/*'
+          'src/**/*',
+          '!src/tmp/**/*'
         ],
         tasks: [
           'clean:dist',
-          'stylelint:bundle',
-          'sass:bundle',
-          'postcss:bundle',
-          'browserify:bundle',
-          'bake:bundle',
-          'cssmin:bundle',
-          'uglify:bundle',
+
           'stylelint:css',
+          'sass:css',
           'bake:css',
           'postcss:css',
           'cssmin:css',
-          'bake:theme',
+
+          'browserify:js',
+          'bake:js',
+          'uglify:js',
+
+          'bake:xml',
+
           'stylelint:docs',
           'markdown:docs',
           'copy:docsFiles',
@@ -412,8 +388,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          src: ['**', '.*', '!.git', '!*.zip', '!node_modules/**'],
-          dest: __dirname.split(path.sep).pop() + '-dist'
+          src: ['**', '.*', '!.git', '!*.zip', '!node_modules/**']
         }]
       }
     }
@@ -423,21 +398,20 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
-  // Bundle task.
-  grunt.registerTask('bundle-lint', ['stylelint:bundle']);
-  grunt.registerTask('bundle-compile', ['sass:bundle', 'postcss:bundle', 'browserify:bundle', 'bake:bundle']);
-  grunt.registerTask('bundle-minify', ['cssmin:bundle', 'uglify:bundle']);
-  grunt.registerTask('dist-bundle', ['bundle-lint', 'bundle-compile', 'bundle-minify']);
+  // XML task.
+  grunt.registerTask('xml-compile', ['bake:xml']);
+  grunt.registerTask('dist-xml', ['xml-compile']);
 
   // CSS task.
   grunt.registerTask('css-lint', ['stylelint:css']);
-  grunt.registerTask('css-compile', ['bake:css', 'postcss:css']);
+  grunt.registerTask('css-compile', ['sass:css', 'bake:css', 'postcss:css']);
   grunt.registerTask('css-minify', ['cssmin:css']);
   grunt.registerTask('dist-css', ['css-lint', 'css-compile', 'css-minify']);
 
-  // Theme task.
-  grunt.registerTask('theme-compile', ['bake:theme']);
-  grunt.registerTask('dist-theme', ['theme-compile']);
+  // JS task.
+  grunt.registerTask('js-compile', ['browserify:js', 'bake:js']);
+  grunt.registerTask('js-minify', ['uglify:js']);
+  grunt.registerTask('dist-js', ['js-compile', 'js-minify']);
 
   // Docs task.
   grunt.registerTask('docs-lint', ['stylelint:docs']);
@@ -447,7 +421,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', ['docs-lint', 'docs-compile', 'docs-minify']);
 
   // Test task.
-  grunt.registerTask('test', ['dist-bundle', 'dist-css', 'dist-theme', 'dist-docs']);
+  grunt.registerTask('test', ['dist-css', 'dist-js', 'dist-xml', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'test']);

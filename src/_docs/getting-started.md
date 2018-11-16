@@ -12,28 +12,27 @@ Learn how to compile the source code, builds the theme and documentation, and mo
 
 ### Quick start
 
-Download the source and try to apply the precompiled theme (`dist/theme.xml`) to your blog. Customize and builds the theme and documentation to suit your needs.
+Download and try to apply the precompiled theme (`dist/theme.xml`) to your blog.
 
 ### Download
 
-<a href="{{ docs.links.download }}">Download source</a> | [Step by Step Tutorial](#step-by-step-tutorial)
+<a href="{{ docs.downloadUrl }}">Download</a>
 
 ### Contents
 
-Once downloaded, you’ll see something like this:
+Once downloaded, unzip the compressed folder and you’ll see something like this:
 
 ```plaintext
-{{ rootDirname }}
+[root project directory]
 ├── dist
 │   ├── docs
 │   └── theme.xml
 └── src
-    ├── _css
     ├── _docs
-    ├── _includes
     ├── _js
     ├── _scss
-    ├── dist
+    ├── _xml
+    ├── tmp
     ├── config.base.json
     ├── config.docs.json
     ├── config.theme.json
@@ -50,41 +49,31 @@ Once downloaded, you’ll see something like this:
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">dist</code></td>
-      <td>The <code>/dist</code> folder includes precompiled theme, as well as compiled and minified documentation files.</td>
+      <td>The <code>dist</code> folder includes precompiled theme, as well as compiled and minified documentation files.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src</code></td>
-      <td>These are the source code that will be compiled into <code>/dist</code>.</td>
-    </tr>
-    <tr>
-      <td rowspan="3"><code style="white-space: nowrap;">src/_css</code></td>
-      <td>The source code for CSS (<code>src/dist/css</code>).</td>
-    </tr>
-    <tr>
-      <td>Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871">skin variables</a>.</td>
-    </tr>
-    <tr>
-      <td>Styles in <code style="white-space: nowrap;">template-skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:template-skin&gt;</code> tag.</td>
+      <td>These are the source code that will be compiled into <code>dist</code>.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_docs</code></td>
       <td>The source code for documentation (<code>dist/docs</code>).</td>
     </tr>
     <tr>
-      <td><code style="white-space: nowrap;">src/_includes</code></td>
-      <td>The partials that can be mixed and matched by your theme. [Read partials docs](#partials)</td>
-    </tr>
-    <tr>
       <td><code style="white-space: nowrap;">src/_js</code></td>
-      <td>The source code for JavaScript bundle (<code>src/dist/bundle/bundle.js</code>).</td>
+      <td>The source code for JavaScript (<code>src/tmp/js/bundle.js</code>).</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/_scss</code></td>
-      <td>The source code for CSS bundle (<code>src/dist/bundle/bundle.css</code>).</td>
+      <td>The source code for CSS (<code>src/tmp/css/bundle.css</code>).</td>
     </tr>
     <tr>
-      <td><code style="white-space: nowrap;">src/dist</code></td>
-      <td>`src/_css`, `src/_scss` and `src/_js` need to be compiled, we compile it into this directory, then we include it in `src/theme.xml`.</td>
+      <td><code style="white-space: nowrap;">src/_xml</code></td>
+      <td>The Blogger XML that can be mixed and matched by your theme.</td>
+    </tr>
+    <tr>
+      <td><code style="white-space: nowrap;">src/tmp</code></td>
+      <td>CSS and JS are compiled into this folder.</td>
     </tr>
     <tr>
       <td>
@@ -92,11 +81,23 @@ Once downloaded, you’ll see something like this:
         <div><code style="white-space: nowrap;">src/config.docs.json</code></div>
         <div><code style="white-space: nowrap;">src/config.theme.json</code></div>
       </td>
-      <td>Stores configuration data. [Read configuration docs](#configuration)</td>
+      <td>Configuration data.</td>
+    </tr>
+    <tr>
+      <td rowspan="3">
+        <div><code style="white-space: nowrap;">src/skin.css</code></div>
+        <div><code style="white-space: nowrap;">src/template-skin.css</code></div>
+      </td>
+    </tr>
+    <tr>
+      <td>The main stylesheet. Styles in <code style="white-space: nowrap;">skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:skin&gt;</code> tag. You can use the <a href="https://support.google.com/blogger/answer/46871">skin variables</a>.</td>
+    </tr>
+    <tr>
+      <td>Styles in <code style="white-space: nowrap;">template-skin.css</code> are defined within the <code style="white-space: nowrap;">&lt;b:template-skin&gt;</code> tag.</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">src/theme.xml</code></td>
-      <td>The main file for the theme.</td>
+      <td>The main file for the theme. All the compiled CSS and JS, and the XML partials will be included in this file.</td>
     </tr>
     <tr>
       <td>Other files/folders</td>
@@ -105,6 +106,29 @@ Once downloaded, you’ll see something like this:
   </tbody>
 </table>
 
+### Step by Step Tutorial
+
+The goal of this tutorial is to take you from having some development experience to building your first theme.
+
+0. Download. Once downloaded, unzip the compressed folder and rename `{{ rootDirname }}-dist` to your project name.
+1. Run through the [tooling setup](#tooling-setup) below to use our build system.
+2. Configure theme `src/config.theme.json`.
+3. Configure docs `src/config.docs.json`.
+   - Important: change `title` and `downloadUrl`.
+4. Customize the theme and documentation to suit your needs.
+5. Run `grunt` to build your changes.
+6. To preview your changes, apply the new compiled theme (`dist/theme.xml`) to your blog. Reload the local documentation in your browser to preview documentation changes.
+7. Done? (**Yes**: next) / (**No**: back to number `2`).
+8. Edit `src/_docs/getting-started.md`: remove this section (Step by Step Tutorial).
+9. Update `README.md` for your theme.
+10. Version control: You can use [Git](https://git-scm.com) for your theme development (this is not required, but will help to manage changes to source code over time).
+    1. `git init`
+    2. `git add .`
+    3. `git commit -m "Initial commit"`
+    4. Push your theme source code to [GitHub](https://github.com) or other services for Git.
+11. To release your theme, run `grunt release`, this command will zip your theme and the source (exclude: `.git`, `.zip`, `node_modules`).
+12. Share your theme (the `zip` file).
+
 
 ## Tooling setup
 
@@ -112,7 +136,7 @@ We uses [Grunt](https://gruntjs.com/) for its build system. To use our build sys
 
 1. [Download and install Node.js](https://nodejs.org/download/), which we use to manage our dependencies.
 2. Install `grunt-cli` globally with `npm install -g grunt-cli`.
-3. Navigate to the root `/{{ rootDirname }}` directory and run `npm install` to install our local dependencies listed in `package.json`.
+3. Navigate to the root project directory and run `npm install` to install our local dependencies listed in `package.json`.
 
 When completed, you’ll be able to run the various commands provided from the command line.
 
@@ -123,15 +147,15 @@ Our `Gruntfile.js` includes the following commands and tasks:
 
 | Task | Description |
 | --- | --- |
-| `grunt` | `grunt` creates the `/dist` directory with compiled files. |
+| `grunt` | `grunt` creates the `dist` directory with compiled files. |
 | `grunt watch` | Watches the source files and automatically building them whenever you save. |
-| `grunt release` | Same as `grunt` plus it zip your theme and the source. |
+| `grunt release` | Same as `grunt` plus it zip your theme and the source (exclude: `.git`, `.zip`, `node_modules`). |
 
 ### Local documentation
 
 You can run the documentation locally via Grunt commands:
 
-1. From the root `/{{ rootDirname }}` directory, run `grunt docs-serve` in the command line.
+1. From the root project directory, run `grunt docs-serve` in the command line.
 2. Open `http://localhost:9001` in your browser.
 
 
@@ -141,21 +165,21 @@ We uses [grunt-bake](https://github.com/MathiasPaumgarten/grunt-bake) for creati
 
 ### Partials
 
-By default, the partial files are stored in `src/_includes` directory.
-
-Here is the grunt-bake tag that can be used to include the partial in `_includes/file.ext`:
+For example, the grunt-bake tag that can be used to include the partial in `src/_xml/file.xml`:
 
 ```html
-// Relative to the file
-<!--(bake _includes/file.ext)-->
+src/theme.xml
 
-// Relative to the `src` path
-<!--(bake /_includes/file.ext)-->
+// Relative to the file
+<!--(bake _xml/file.xml)-->
+
+// Relative to the "src" path
+<!--(bake /_xml/file.xml)-->
 ```
 
 ### Configuration
 
-There is three configuration file for stores configuration data:
+Configuration data:
 
 1. `src/config.base.json`
 2. `src/config.docs.json`
@@ -163,13 +187,15 @@ There is three configuration file for stores configuration data:
 
 You can access the data in: 
 
-- `src/theme.xml` (or any other `.xml` file that included in this file)
-- `src/_css`
+- `src/theme.xml`
+- `src/skin.css`
+- `src/template-skin.css`
+- `src/_xml`
 - `src/_scss`
 - `src/_js`
 - `src/_docs`
 
-Here is how to access the data:
+Access the data:
 
 - `config.base.json` - access the data using <code>&lbrace;&lbrace; base.dataName &rbrace;&rbrace;</code>
 - `config.docs.json` - access the data using <code>&lbrace;&lbrace; docs.dataName &rbrace;&rbrace;</code>
@@ -202,505 +228,3 @@ Output:
 ### Learn more
 
 Learn more about using grunt-bake by reading its [documentation](https://github.com/MathiasPaumgarten/grunt-bake).
-
-
-## Sass
-
-Utilize our source Sass files to take advantage of variables, functions, mixins, and more.
-
-> From the beginning, we adopted [Bootstrap](https://getbootstrap.com/)'s code guidelines as a convention for writing our Sass/CSS. We also utilize several useful Bootstrap's variables, functions, mixins, and components.
-
-### File structure
-
-```plaintext
-your-project/
-└── src/
-    └── _scss/
-        ├── blogger/
-        ├── _custom.scss
-        └── **/*.scss
-```
-
-<table>
-  <thead>
-    <tr>
-      <th>File / Directory</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code style="white-space: nowrap;">blogger/</code></td>
-      <td>Styles for custom gadgets (<code style="white-space: nowrap;">src/_includes/defaultmarkups/</code>). This styles doesn't use any variables, functions and mixins. This styles also doesn't depend on <a href="css-base.html"><code>_base.scss</code></a>.</td>
-    </tr>
-    <tr>
-      <td><code style="white-space: nowrap;">_custom.scss</code></td>
-      <td>Copy variables from `_variables.scss` to this file to override default values without modifying source files.</td>
-    </tr>
-    <tr>
-      <td><code style="white-space: nowrap;">\*\*/*.scss</code></td>
-      <td>Other sass files are variables, functions, mixins and components.</td>
-    </tr>
-  </tbody>
-</table>
-
-### Sass options
-
-You can find and customize these variables for key global options in `_variables.scss`.
-
-| Variable | Values | Description |
-| --- | --- | --- |
-| `$enable-rounded` | `true` (default) or `false` | Enables predefined `border-radius` styles on various components. |
-| `$enable-shadows` | `true` or `false` (default) | Enables predefined `box-shadow` styles on various components. |
-| `$enable-transitions` | `true` (default) or `false` | Enables predefined `transition`s on various components. |
-
-### Modify variables and maps
-
-Every Sass variable includes the `!default` flag allowing you to override the variable’s default value in `_custom.scss` without modifying source code.
-
-Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
-
-```scss
-_custom.scss
-
-// Customize options
-$enable-rounded: false;
-
-// Variable overrides
-$body-color:  #fff;
-$body-bg:     #000;
-
-// Modify map
-$theme-colors: (
-  "primary": #000
-);
-
-// Add to map
-$theme-colors: (
-  "custom-color": #900
-);
-```
-
-### Functions
-
-We utilizes several Sass functions in `_functions.scss`.
-
-#### Color maps
-
-Functions for getting values from the color maps.
-
-```scss
-// Retrieve color Sass maps
-@function theme-color($key: "primary") {
-  @return map-get($theme-colors, $key);
-}
-```
-
-```scss
-// Example to pick one color from a Sass map
-
-.custom-element {
-  background-color: theme-color("dark");
-}
-```
-
-#### Color contrast
-
-The color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color.
-
-```scss
-// Color contrast
-@function color-yiq($color) {
-  $r: red($color);
-  $g: green($color);
-  $b: blue($color);
-
-  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
-
-  @if ($yiq >= $yiq-contrasted-threshold) {
-    @return $yiq-text-dark;
-  } @else {
-    @return $yiq-text-light;
-  }
-}
-```
-
-```scss
-// Example
-
-$bg: #000;
-
-.custom-element {
-  color: color-yiq(#000); // returns `color: #fff`
-  background-color: #000;
-}
-
-.custom-element2 {
-  color: color-yiq($bg); // returns `color: #fff`
-  background-color: $bg;
-}
-```
-
-### Responsive breakpoints
-
-[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) for creating sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
-
-#### Breakpoint up
-
-CSS:
-
-```css
-/* Extra small devices (portrait phones, less than 576px) */
-/* No media query for `xs` since this is the default */
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { ... }
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { ... }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
-```
-
-Sass mixins:
-
-```scss
-// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
-@include media-breakpoint-up(sm) { ... }
-@include media-breakpoint-up(md) { ... }
-@include media-breakpoint-up(lg) { ... }
-@include media-breakpoint-up(xl) { ... }
-
-// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
-.custom-class {
-  display: none;
-}
-@include media-breakpoint-up(sm) {
-  .custom-class {
-    display: block;
-  }
-}
-```
-
-#### Breakpoint down
-
-Media queries that go in the other direction (the given screen size or smaller).
-
-CSS:
-
-```css
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { ... }
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { ... }
-
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { ... }
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { ... }
-
-/* Extra large devices (large desktops) */
-/* No media query since the extra-large breakpoint has no upper bound on its width */
-```
-
-Sass mixins:
-
-```scss
-@include media-breakpoint-down(xs) { ... }
-@include media-breakpoint-down(sm) { ... }
-@include media-breakpoint-down(md) { ... }
-@include media-breakpoint-down(lg) { ... }
-// No media query necessary for xl breakpoint as it has no upper bound on its width
-
-// Example: Style from medium breakpoint and down
-@include media-breakpoint-down(md) {
-  .custom-class {
-    display: block;
-  }
-}
-```
-
-#### Breakpoint only
-
-Media queries for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
-
-CSS:
-
-```css
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { ... }
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { ... }
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { ... }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) { ... }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
-```
-
-Sass mixins:
-
-```scss
-@include media-breakpoint-only(xs) { ... }
-@include media-breakpoint-only(sm) { ... }
-@include media-breakpoint-only(md) { ... }
-@include media-breakpoint-only(lg) { ... }
-@include media-breakpoint-only(xl) { ... }
-```
-
-#### Breakpoint between
-
-Similarly, media queries may span multiple breakpoint widths.
-
-CSS:
-
-```css
-/* Example */
-/* Apply styles starting from medium devices and up to extra large devices */
-@media (min-width: 768px) and (max-width: 1199.98px) { ... }
-```
-
-Sass mixins:
-
-```scss
-@include media-breakpoint-between(md, xl) { ... }
-```
-
-
-## Best practices
-
-### Step by Step Tutorial
-
-The goal of this tutorial is to take you from having some development experience to building your first theme.
-
-<details>
-  <summary>1. Download and setup</summary>
-  <div>
-    <p>[Download the source](#download). Extract downloaded source file (`zip`) and then rename `/{{ rootDirname }}` to the name of your theme.</p>
-
-    <p>Run through the [tooling setup](#tooling-setup) above to use our build system.</p>
-
-    <p><strong>Change, build, and preview:</strong></p>
-
-    <ol>
-      <li>Change the source</li>
-      <li>Run `grunt` to build your changes</li>
-      <li>To preview your changes, apply the new compiled theme (<code>dist/theme.xml</code>) to your blog</li>
-      <li>Repeat.</li>
-    </ol>
-  </div>
-</details>
-
-<details>
-  <summary>2. Configuration and customization</summary>
-  <div>
-    <ul>
-      <li>Configure theme: `src/config.theme.json`.</li>
-      <li>Configure docs: `src/config.docs.json`.</li>
-    </ul>
-    <p>Customize and builds the theme and documentation to suit your needs.</p>
-  </div>
-</details>
-
-<details>
-  <summary>3. Update README</summary>
-  <p>Update `README.md` for your theme.</p>
-</details>
-
-<details>
-  <summary>4. Publish</summary>
-  <div>
-    <p>After you have finished everything, it's time to share your theme to the world.</p>
-
-    <ul>
-      <li>Run `grunt release`, this command will generate a `zip` file, that file is the release of your theme.</li>
-      <li>Share your theme (the `zip` file) to the world.</li>
-    </ul>
-  </div>
-</details>
-
-
-## Code guide
-
-### XML: Comments and organization
-
-```html
-<b:comment>
-#############################################################################
-Heading 1
-############################################################################# </b:comment>
-↓
-<b:comment>### Heading 1.1 ###</b:comment>
-↓
-<div>
-  .........
-</div>
-↓
-<b:comment>### Heading 1.2 ###</b:comment>
-↓
-<div>
-  .........
-</div>
-↓
-↓
-#############################################################################
-Heading 2
-############################################################################# </b:comment>
-↓
-<b:comment>### Heading 2.1 ###</b:comment>
-↓
-<b:comment>=== Heading 2.1.1 ===</b:comment>
-<div>
-  .........
-</div>
-<b:comment>=== Heading 2.1.2 ===</b:comment>
-<div>
-  .........
-</div>
-↓
-<b:comment>### Heading 2.2 ###</b:comment>
-↓
-<div>
-  <b:comment>=== Heading 2.2.1 ===</b:comment>
-  <div>
-    .........
-  </div>
-  <b:comment>=== Heading 2.2.2 ===</b:comment>
-  <div>
-    <b:comment>=== Heading 2.2.2.1 ===</b:comment>
-    <div>
-      .........
-    </div>
-    <b:comment>=== Heading 2.2.2.2 ===</b:comment>
-    <div>
-      .........
-    </div>
-  </div>
-</div>
-↓
-<b:comment>### Heading 2.3 ###</b:comment>
-↓
-<div>
-  ↓
-  <b:comment>### Heading 2.3.1 ###</b:comment>
-  ↓
-  <div>
-    .........
-  </div>
-  ↓
-  <b:comment>### Heading 2.3.2 ###</b:comment>
-  ↓
-  <b:comment>=== Heading 2.3.2.1 ===</b:comment>
-  <div>
-    .........
-  </div>
-  <b:comment>=== Heading 2.3.2.2 ===</b:comment>
-  <div>
-    <b:comment>=== Heading 2.3.2.2.1 ===</b:comment>
-    <div>
-      .........
-    </div>
-    <b:comment>=== Heading 2.3.2.2.2 ===</b:comment>
-    <div>
-      .........
-    </div>
-  </div>
-</div>
-```
-
-### XML: `<b:section>` and `<b:widget>`
-
-`<b:section>`:
-
-- Classes and IDs are named using the format `b-section-{name}`.
-- Use `name` attribute for naming the section.
-
-`<b:widget>`:
-
-- Always use `locked`, `title`, `version`, and `visible` attribute.
-
-Example:
-
-```html
-<b:section class='b-section-header-nav' id='b-section-header-nav' name='Header nav'>
-  <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
-    ...
-  </b:widget>
-</b:section>
-```
-
-### CSS: Comments and organization
-
-```css
-/* ==========================================================================
-   Heading 1
-   ========================================================================== */
-↓
-.example {}
-↓
-/**
- * Sub-heading or description
- */
-↓
-.example {}
-↓
-/** Another sub-heading **/
-↓
-.example {}
-↓
-/* Basic comment */
-.example {}
-↓
-/* Heading 1.2
-   ========================================================================== */
-↓
-.example {}
-↓
-/**
- * Sub-heading or description
- */
-↓
-.example {}
-↓
-/** Another sub-heading **/
-↓
-.example {}
-↓
-/* Basic comment */
-.example {}
-↓
-/* Heading 1.2.1
-   ========================================= */
-↓
-.example {}
-↓
-/**
- * Sub-heading or description
- */
-↓
-.example {}
-↓
-/** Another sub-heading **/
-↓
-.example {}
-↓
-/* Basic comment */
-.example {}
-↓
-/* ==========================================================================
-   Heading 2
-   ========================================================================== */
-↓
-.example {}
-```

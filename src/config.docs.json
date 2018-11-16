@@ -1,10 +1,10 @@
 {
   "title": "Bloggerable",
+  "downloadUrl": "#",
   "links": {
-    "download": "#",
     "bloggerable": {
-      "documentation": "https://blogger-starter.github.io/bloggerable",
       "demo": "https://blogger-starter-bloggerable.blogspot.com",
+      "documentation": "https://blogger-starter.github.io/bloggerable",
       "themes": "https://blogger-starter.blogspot.com",
       "github": "https://github.com/blogger-starter/bloggerable",
       "facebook": "https://facebook.com/bloggerable",

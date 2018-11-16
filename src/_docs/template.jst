@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%if(section != 'None'){%><%=section%> - <%}%><%=title%> &middot; {{ docs.title }}</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="bundle/bundle.css">
+    <link rel="stylesheet" href="bundle/css/bundle.css">
     <link rel="stylesheet" href="assets/css/docs.css">
   </head>
   <body>
@@ -16,38 +16,39 @@
         <div class="doc-nav-divider"></div>
         <a class="doc-nav-link" href="getting-started.html">Getting started</a>
         <div class="doc-nav-divider"></div>
-        <h6 class="doc-nav-header">Styles</h6>
-        <a class="doc-nav-link" href="styles-base.html">Base CSS</a>
+        <h6 class="doc-nav-header">CSS</h6>
+        <a class="doc-nav-link" href="css-overview.html">Overview</a>
+        <h6 class="doc-nav-subheader">Base</h6>
+        <a class="doc-nav-link" href="css-base.html">Base CSS</a>
         <h6 class="doc-nav-subheader">Components</h6>
-        <a class="doc-nav-link" href="styles-blockquotes.html">Blockquotes</a>
-        <a class="doc-nav-link" href="styles-buttons.html">Buttons</a>
-        <a class="doc-nav-link" href="styles-forms.html">Forms</a>
-        <a class="doc-nav-link" href="styles-tables.html">Tables</a>
+        <a class="doc-nav-link" href="css-blockquotes.html">Blockquotes</a>
+        <a class="doc-nav-link" href="css-buttons.html">Buttons</a>
+        <a class="doc-nav-link" href="css-forms.html">Forms</a>
+        <a class="doc-nav-link" href="css-tables.html">Tables</a>
         <div class="doc-nav-divider"></div>
-        <h6 class="doc-nav-header">Snippets</h6>
-        <a class="doc-nav-link" href="snippets-overview.html">Overview</a>
-        <h6 class="doc-nav-subheader">Views</h6>
-        <a class="doc-nav-link" href="snippets-page-types.html">Page types</a>
-        <h6 class="doc-nav-subheader">Posts</h6>
-        <a class="doc-nav-link" href="snippets-posts-usage.html">Usage</a>
-        <div class="doc-nav-subdivider"></div>
-        <a class="doc-nav-link" href="snippets-posts-author-name.html">Posts author name</a>
-        <a class="doc-nav-link" href="snippets-posts-author-photo.html">Posts author photo</a>
-        <a class="doc-nav-link" href="snippets-posts-body.html">Posts body</a>
-        <a class="doc-nav-link" href="snippets-posts-comments-link.html">Posts comments link</a>
-        <a class="doc-nav-link" href="snippets-posts-content-snippet.html">Posts content snippet</a>
-        <a class="doc-nav-link" href="snippets-posts-date.html">Posts date</a>
-        <a class="doc-nav-link" href="snippets-posts-featured-image.html">Posts featured image</a>
-        <a class="doc-nav-link" href="snippets-posts-labels.html">Posts labels</a>
-        <a class="doc-nav-link" href="snippets-posts-read-more-link.html">Posts read more link</a>
-        <a class="doc-nav-link" href="snippets-posts-sharing.html">Posts sharing</a>
-        <a class="doc-nav-link" href="snippets-posts-title.html">Posts title</a>
-        <h6 class="doc-nav-subheader">Data</h6>
-        <a class="doc-nav-link" href="snippets-data-messages.html">Messages</a>
+        <h6 class="doc-nav-header">XML</h6>
+        <a class="doc-nav-link" href="xml-overview.html">Overview</a>
+        <h6 class="doc-nav-subheader">Snippets &middot; Views</h6>
+        <a class="doc-nav-link" href="xml-snippets-page-types.html">Page types</a>
+        <h6 class="doc-nav-subheader">Snippets &middot; Posts</h6>
+        <a class="doc-nav-link" href="xml-snippets-posts-usage.html">Usage</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-author-name.html">Posts author name</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-author-photo.html">Posts author photo</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-body.html">Posts body</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-comments-link.html">Posts comments link</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-content-snippet.html">Posts content snippet</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-date.html">Posts date</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-featured-image.html">Posts featured image</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-labels.html">Posts labels</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-read-more-link.html">Posts read more link</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-sharing.html">Posts sharing</a>
+        <a class="doc-nav-link" href="xml-snippets-posts-title.html">Posts title</a>
+        <h6 class="doc-nav-subheader">Snippets &middot; Data</h6>
+        <a class="doc-nav-link" href="xml-snippets-data-messages.html">Messages</a>
         <div class="doc-nav-divider"></div>
-        <h6 class="doc-nav-header">{{ base.1.name }} Links</h6>
-        <a class="doc-nav-link" href="{{ docs.links.bloggerable.documentation }}" target="_blank">Documentation</a>
+        <h6 class="doc-nav-header doc-nav-header-secondary">{{ base.1.name }} Links</h6>
         <a class="doc-nav-link" href="{{ docs.links.bloggerable.demo }}" target="_blank">Demo</a>
+        <a class="doc-nav-link" href="{{ docs.links.bloggerable.documentation }}" target="_blank">Documentation</a>
         <a class="doc-nav-link" href="{{ docs.links.bloggerable.themes }}" target="_blank">Themes</a>
         <a class="doc-nav-link" href="{{ docs.links.bloggerable.github }}" target="_blank">GitHub</a>
         <a class="doc-nav-link" href="{{ docs.links.bloggerable.facebook }}" target="_blank">Facebook</a>
@@ -80,7 +81,7 @@
       <%=content%>
     </main>
 
-    <script src="bundle/bundle.js"></script>
+    <script src="bundle/js/bundle.js"></script>
     <script src="assets/js/anchor.min.js"></script>
     <script src="assets/js/tocbot.min.js"></script>
     <script src="assets/js/docs.js"></script>

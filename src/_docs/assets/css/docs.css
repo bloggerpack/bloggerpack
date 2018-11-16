@@ -53,13 +53,13 @@
   color: #cecece;
 }
 .doc-nav-link:hover {
-  color: #fff;
+  color: #eee;
   text-decoration: none;
   background-color: #171a1d;
 }
 .doc-nav-link.active {
-  font-weight: 700;
-  color: #fff;
+  color: #eee;
+  background-color: #111416;
 }
 
 /** Header **/
@@ -70,7 +70,7 @@
   margin-bottom: .5rem;
   font-size: .75rem;
   line-height: 1.2;
-  color: #999;
+  color: #ff8a65;
   text-transform: uppercase;
 }
 
@@ -79,10 +79,14 @@
   margin: .5rem 1rem;
   font-size: .65rem;
   line-height: 1.2;
-  color: #999;
+  color: #fff;
   text-transform: uppercase;
   border-top: 1px solid #32383e;
   border-bottom: 1px solid #32383e;
+}
+
+.doc-nav-header-secondary {
+  color: #009688;
 }
 
 /** Divider **/
@@ -94,7 +98,7 @@
   border-top: 1px solid #32383e;
 }
 .doc-nav-divider + .doc-nav-header {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .doc-nav-subdivider {
