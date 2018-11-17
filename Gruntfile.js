@@ -330,7 +330,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: 'src/tmp/',
         src: ['css/**/*', '!css/skin.css', '!css/template-skin.css', 'js/**/*'],
-        dest: 'dist/docs/bundle'
+        dest: 'dist/docs/assets/bundle'
       }
     },
 
