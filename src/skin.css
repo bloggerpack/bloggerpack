@@ -120,6 +120,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
@@ -363,8 +364,16 @@
 .post-title {
   margin-top: 0;
   margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.2;
 }
+
+.is-post .post-title,
+.is-page .post-title {
+  font-size: 2.5rem;
+}
+
 .post-title:last-child {
   margin-bottom: 0;
 }
@@ -576,6 +585,8 @@
 .comments-title {
   margin-top: 0;
   margin-bottom: .5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -689,6 +700,7 @@
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.1;
 }
 
