@@ -117,4 +117,18 @@
 
 //= Count
 
-// .label-cloud-count {}
+.label-cloud-count {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+}
