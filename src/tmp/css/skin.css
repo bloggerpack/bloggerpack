@@ -122,6 +122,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
@@ -230,7 +231,9 @@
 /* Layout
    ========================================================================== */
 
-/** Row **/
+/**
+ * Row
+ */
 
 .main-content-row {
   display: -ms-flexbox;
@@ -241,7 +244,9 @@
   margin-left: -15px;
 }
 
-/** Column **/
+/**
+ * Column
+ */
 
 .main-col,
 .sidebar-col {
@@ -296,7 +301,9 @@
   border-radius: .25rem;
 }
 
-/** Item **/
+/**
+ * Item
+ */
 
 .breadcrumb-item {
   color: #212529;
@@ -316,7 +323,9 @@
   content: ":";
 }
 
-/** Link **/
+/**
+ * Link
+ */
 
 /* .breadcrumb-link {} */
 
@@ -379,8 +388,16 @@
 .post-title {
   margin-top: 0;
   margin-bottom: .5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1.2;
 }
+
+.is-post .post-title,
+.is-page .post-title {
+  font-size: 2.5rem;
+}
+
 .post-title:last-child {
   margin-bottom: 0;
 }
@@ -415,16 +432,6 @@
 }
 .post-body:last-child {
   margin-bottom: 0;
-}
-
-/**
- * Post featured image
- */
-
-.post-featured-image {
-  float: left;
-  margin-right: 1rem;
-  border-radius: .5rem;
 }
 
 /**
@@ -592,6 +599,8 @@
 .comments-title {
   margin-top: 0;
   margin-bottom: .5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -632,7 +641,9 @@
   text-align: center;
 }
 
-/** Float **/
+/**
+ * Alignment
+ */
 
 .pager-newer {
   float: left;
@@ -646,7 +657,9 @@
   float: right;
 }
 
-/** Link **/
+/**
+ * Link
+ */
 
 .pager-link {
   position: relative;
@@ -705,6 +718,7 @@
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.1;
 }
 
@@ -736,16 +750,6 @@
 }
 
 /**
- * Text
- */
-
-.footer-text {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-/**
  * Navs
  */
 
@@ -769,3 +773,13 @@
 /** Link **/
 
 /* .footer-nav-link {} */
+
+/**
+ * Text
+ */
+
+.footer-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
