@@ -358,7 +358,7 @@ Sass:
 ↓
 .example {}
 ↓
-// Sub-heading
+//= Sub-heading
 ↓
 .example {}
 ↓
@@ -368,10 +368,12 @@ Sass:
 //
 // Heading 2
 //
+// Description...
+// ...
 ↓
 .example {}
 ↓
-// Sub-heading
+//= Sub-heading
 //
 // Description...
 // ...
@@ -393,12 +395,12 @@ CSS:
 .example {}
 ↓
 /**
- * Sub-heading
+ * Sub-heading x
  */
 ↓
 .example {}
 ↓
-/** Another sub-heading **/
+/** Sub-heading x.x **/
 ↓
 .example {}
 ↓
@@ -411,12 +413,12 @@ CSS:
 .example {}
 ↓
 /**
- * Sub-heading
+ * Sub-heading x
  */
 ↓
 .example {}
 ↓
-/** Another sub-heading **/
+/** Sub-heading x.x **/
 ↓
 .example {}
 ↓
@@ -429,12 +431,12 @@ CSS:
 .example {}
 ↓
 /**
- * Sub-heading
+ * Sub-heading x
  */
 ↓
 .example {}
 ↓
-/** Another sub-heading **/
+/** Sub-heading x.x **/
 ↓
 .example {}
 ↓

@@ -132,7 +132,7 @@ hr {
 // Inline text elements
 //
 
-// Links
+//= Links
 
 a {
   color: $link-color;
@@ -165,7 +165,7 @@ a:not([href]):not([tabindex]) {
   }
 }
 
-// Bold
+//= Bold
 //
 // Add the correct font weight in Chrome, Edge, and Safari.
 
@@ -175,7 +175,7 @@ strong {
   font-weight: bolder;
 }
 
-// Small
+//= Small
 //
 // Add the correct font size in all browsers.
 
@@ -184,7 +184,7 @@ small {
   font-weight: $small-font-weight;
 }
 
-// Mark
+//= Mark
 
 mark {
   padding: $mark-padding;
@@ -192,7 +192,7 @@ mark {
   background-color: $mark-bg;
 }
 
-// Abbreviations
+//= Abbreviations
 //
 // 1. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 // 2. Add explicit cursor to indicate changed behavior.
@@ -205,7 +205,7 @@ abbr[title] {
   border-bottom: none; // 3
 }
 
-// Subscript and Superscript
+//= Subscript and Superscript
 //
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 
@@ -225,7 +225,7 @@ sup {
   top: -.5em;
 }
 
-// Definition
+//= Definition
 //
 // Add the correct font style in Android 4.3-.
 

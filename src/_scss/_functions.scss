@@ -1,4 +1,7 @@
+//
 // Color contrast
+//
+
 @function color-yiq($color) {
   $r: red($color);
   $g: green($color);
@@ -13,7 +16,10 @@
   }
 }
 
+//
 // Retrieve color Sass maps
+//
+
 @function theme-color($key: "primary") {
   @return map-get($theme-colors, $key);
 }

@@ -48,7 +48,8 @@ fieldset:disabled a.button {
 // Alternate buttons
 //
 
-// Default
+//= Default
+
 // stylelint-disable no-duplicate-selectors
 .button {
   color: $button-color;
@@ -80,6 +81,8 @@ fieldset:disabled a.button {
   }
 }
 // stylelint-enable no-duplicate-selectors
+
+//= Variants
 
 @each $color, $value in $theme-colors {
   .button-#{$color} {

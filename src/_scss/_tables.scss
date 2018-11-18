@@ -48,7 +48,9 @@
 
 // stylelint-disable no-duplicate-selectors
 .table {
-  // Default
+
+  //= Default
+
   color: $table-color;
   background-color: $table-bg;
 
@@ -85,7 +87,8 @@
     background-color: $table-row-hover-bg;
   }
 
-  // Light
+  //= Light
+
   &.table-light {
     color: $table-light-color;
     background-color: $table-light-bg;
@@ -123,7 +126,8 @@
     }
   }
 
-  // Dark
+  //= Dark
+
   &.table-dark {
     color: $table-dark-color;
     background-color: $table-dark-bg;
