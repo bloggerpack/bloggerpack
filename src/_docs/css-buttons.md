@@ -29,12 +29,14 @@ Simple CSS for buttons.
 ## Button tags
 
 <div class="doc-example">
-  <a class="button button-primary" href="#" role="button">Link</a>
-  <button class="button button-primary" type="button">Button type button</button>
-  <button class="button button-primary" type="submit">Button type submit</button>
-  <input class="button button-primary" type="button" value="Input type button">
-  <input class="button button-primary" type="submit" value="Input type submit">
-  <input class="button button-primary" type="reset" value="Input type reset">
+  <div class="button-toolbar">
+    <a class="button button-primary" href="#" role="button">Link</a>
+    <button class="button button-primary" type="button">Button type button</button>
+    <button class="button button-primary" type="submit">Button type submit</button>
+    <input class="button button-primary" type="button" value="Input type button">
+    <input class="button button-primary" type="submit" value="Input type submit">
+    <input class="button button-primary" type="reset" value="Input type reset">
+  </div>
 </div>
 
 ```html
@@ -52,11 +54,13 @@ Simple CSS for buttons.
 ### Normal
 
 <div class="doc-example">
-  <button class="button" type="button">Default</button>
-  <button class="button button-primary" type="button">Primary</button>
-  <button class="button button-secondary" type="button">Secondary</button>
-  <button class="button button-light" type="button">Light</button>
-  <button class="button button-dark" type="button">Dark</button>
+  <div class="button-toolbar">
+    <button class="button" type="button">Default</button>
+    <button class="button button-primary" type="button">Primary</button>
+    <button class="button button-secondary" type="button">Secondary</button>
+    <button class="button button-light" type="button">Light</button>
+    <button class="button button-dark" type="button">Dark</button>
+  </div>
 </div>
 
 ```html
@@ -70,11 +74,13 @@ Simple CSS for buttons.
 ### Active state
 
 <div class="doc-example">
-  <button class="button active" type="button">Default</button>
-  <button class="button button-primary active" type="button">Primary</button>
-  <button class="button button-secondary active" type="button">Secondary</button>
-  <button class="button button-light active" type="button">Light</button>
-  <button class="button button-dark active" type="button">Dark</button>
+  <div class="button-toolbar">
+    <button class="button active" type="button">Default</button>
+    <button class="button button-primary active" type="button">Primary</button>
+    <button class="button button-secondary active" type="button">Secondary</button>
+    <button class="button button-light active" type="button">Light</button>
+    <button class="button button-dark active" type="button">Dark</button>
+  </div>
 </div>
 
 ```html
@@ -88,11 +94,13 @@ Simple CSS for buttons.
 ### Disabled state
 
 <div class="doc-example">
-  <button class="button" type="button" disabled>Default</button>
-  <button class="button button-primary" type="button" disabled>Primary</button>
-  <button class="button button-secondary" type="button" disabled>Secondary</button>
-  <button class="button button-light" type="button" disabled>Light</button>
-  <button class="button button-dark" type="button" disabled>Dark</button>
+  <div class="button-toolbar">
+    <button class="button" type="button" disabled>Default</button>
+    <button class="button button-primary" type="button" disabled>Primary</button>
+    <button class="button button-secondary" type="button" disabled>Secondary</button>
+    <button class="button button-light" type="button" disabled>Light</button>
+    <button class="button button-dark" type="button" disabled>Dark</button>
+  </div>
 </div>
 
 ```html
@@ -104,11 +112,13 @@ Simple CSS for buttons.
 ```
 
 <div class="doc-example">
-  <a class="button disabled" href="#" role="button">Default</a>
-  <a class="button button-primary disabled" href="#" role="button">Primary</a>
-  <a class="button button-secondary disabled" href="#" role="button">Secondary</a>
-  <a class="button button-light disabled" href="#" role="button">Light</a>
-  <a class="button button-dark disabled" href="#" role="button">Dark</a>
+  <div class="button-toolbar">
+    <a class="button disabled" href="#" role="button">Default</a>
+    <a class="button button-primary disabled" href="#" role="button">Primary</a>
+    <a class="button button-secondary disabled" href="#" role="button">Secondary</a>
+    <a class="button button-light disabled" href="#" role="button">Light</a>
+    <a class="button button-dark disabled" href="#" role="button">Dark</a>
+  </div>
 </div>
 
 ```html
@@ -135,5 +145,38 @@ Simple CSS for buttons.
   <button class='button button-secondary' type='button'>Button</button>
   <button class='button button-secondary' type='button'>Button</button>
   <button class='button button-secondary' type='button'>Button</button>
+</div>
+```
+
+
+## Button toolbar
+
+<div class="doc-example">
+  <div class="button-toolbar">
+    <button class="button button-primary" type="button">Button</button>
+    <button class="button button-primary" type="button">Button</button>
+    <button class="button button-primary" type="button">Button</button>
+    <button class="button button-primary" type="button">Button</button>
+    <button class="button button-primary" type="button">Button</button>
+    <div class="button-group">
+      <button class="button button-secondary" type="button">Button</button>
+      <button class="button button-secondary" type="button">Button</button>
+      <button class="button button-secondary" type="button">Button</button>
+    </div>
+  </div>
+</div>
+
+```html
+<div class='button-toolbar'>
+  <button class='button button-primary' type='button'>Button</button>
+  <button class='button button-primary' type='button'>Button</button>
+  <button class='button button-primary' type='button'>Button</button>
+  <button class='button button-primary' type='button'>Button</button>
+  <button class='button button-primary' type='button'>Button</button>
+  <div class='button-group'>
+    <button class='button button-secondary' type='button'>Button</button>
+    <button class='button button-secondary' type='button'>Button</button>
+    <button class='button button-secondary' type='button'>Button</button>
+  </div>
 </div>
 ```

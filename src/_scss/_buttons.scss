@@ -131,3 +131,18 @@ fieldset:disabled a.button {
     @include border-right-radius(0);
   }
 }
+
+//
+// Button toolbar
+//
+
+.button-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -.5rem;
+
+  > .button,
+  > .button-group {
+    margin: 0 .5rem .5rem 0;
+  }
+}
