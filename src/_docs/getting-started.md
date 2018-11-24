@@ -1,5 +1,6 @@
 <!--
 @@@title:Getting started@@@
+@@@description:Learn how to compile the source code, builds the theme and documentation, and more.@@@
 @@@section:None@@@
 -->
 

@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts title@@@
+@@@description:Title of the post.@@@
 @@@section:XML Snippets@@@
 -->
 

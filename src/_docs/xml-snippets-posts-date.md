@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts date@@@
+@@@description:Date of the post.@@@
 @@@section:XML Snippets@@@
 -->
 

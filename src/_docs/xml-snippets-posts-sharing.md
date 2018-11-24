@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts sharing@@@
+@@@description:The share buttons for the post.@@@
 @@@section:XML Snippets@@@
 -->
 

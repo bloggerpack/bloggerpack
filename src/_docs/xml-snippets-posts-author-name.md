@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts author name@@@
+@@@description:Name of the profile of the post author.@@@
 @@@section:XML Snippets@@@
 -->
 

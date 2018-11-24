@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts author photo@@@
+@@@description:Photo of the profile of the post author.@@@
 @@@section:XML Snippets@@@
 -->
 

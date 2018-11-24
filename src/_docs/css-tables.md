@@ -1,11 +1,12 @@
 <!--
 @@@title:Tables@@@
+@@@description:Simple CSS for HTML tables.@@@
 @@@section:CSS@@@
 -->
 
 # Tables
 
-Tables are a nice way to organize a lot of data. We provide a few utility classes to help you style your table as easily as possible.
+Simple CSS for HTML tables.
 
 <figure>
   <div class="doc-badges">

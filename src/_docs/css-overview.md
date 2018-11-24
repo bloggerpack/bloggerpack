@@ -1,5 +1,6 @@
 <!--
 @@@title:Overview@@@
+@@@description:Utilize our source Sass files to take advantage of variables, functions, mixins, and more.@@@
 @@@section:CSS@@@
 -->
 

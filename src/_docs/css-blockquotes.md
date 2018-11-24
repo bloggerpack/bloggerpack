@@ -1,11 +1,12 @@
 <!--
 @@@title:Blockquotes@@@
+@@@description:Simple CSS for blockquotes.@@@
 @@@section:CSS@@@
 -->
 
 # Blockquotes
 
-For quoting blocks of content from another source within your document. Wrap `<blockquote class='blockquote'>` around any HTML as the quote.
+Simple CSS for blockquotes.
 
 <figure>
   <div class="doc-badges">

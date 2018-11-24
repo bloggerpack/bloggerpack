@@ -1,11 +1,12 @@
 <!--
 @@@title:Forms@@@
+@@@description:Simple CSS for HTML forms.@@@
 @@@section:CSS@@@
 -->
 
 # Forms
 
-Simple form control styles.
+Simple CSS for HTML forms.
 
 <figure>
   <div class="doc-badges">

@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts read more link@@@
+@@@description:Link to the full post.@@@
 @@@section:XML Snippets@@@
 -->
 

@@ -1,5 +1,6 @@
 <!--
 @@@title:Base CSS@@@
+@@@description:Base CSS.@@@
 @@@section:CSS@@@
 -->
 

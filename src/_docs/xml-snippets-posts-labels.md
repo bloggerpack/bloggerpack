@@ -1,5 +1,6 @@
 <!--
 @@@title:Posts labels@@@
+@@@description:Labels of the post.@@@
 @@@section:XML Snippets@@@
 -->
 

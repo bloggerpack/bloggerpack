@@ -1,5 +1,6 @@
 <!--
 @@@title:Data messages@@@
+@@@description:Messages which will be translated into the language used by the blog.@@@
 @@@section:XML Snippets@@@
 -->
 

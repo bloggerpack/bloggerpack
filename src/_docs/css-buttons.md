@@ -1,11 +1,12 @@
 <!--
 @@@title:Buttons@@@
+@@@description:Simple CSS for buttons.@@@
 @@@section:CSS@@@
 -->
 
 # Buttons
 
-Custom button styles.
+Simple CSS for buttons.
 
 <figure>
   <div class="doc-badges">

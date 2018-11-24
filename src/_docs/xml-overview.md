@@ -1,5 +1,6 @@
 <!--
 @@@title:Overview@@@
+@@@description:Blogger XML.@@@
 @@@section:XML@@@
 -->
 
