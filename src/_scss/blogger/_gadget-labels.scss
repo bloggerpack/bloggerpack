@@ -78,17 +78,19 @@
 //
 
 .label-cloud {
+  display: flex;
+  flex-wrap: wrap;
   padding-left: 0;
   margin-top: 0;
-  margin-bottom: 0;
+  // stylelint-disable-next-line declaration-no-important
+  margin-bottom: -.5rem !important;
   list-style: none;
 }
 
 //= Item
 
 .label-cloud-item {
-  display: inline-block;
-  margin: .25rem .25rem .25rem 0;
+  margin: 0 .5rem .5rem 0;
 }
 
 //= Link
@@ -122,6 +124,7 @@
   top: -1px;
   display: inline-block;
   padding: .25em .4em;
+  margin-left: .4em;
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
