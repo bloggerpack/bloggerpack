@@ -263,7 +263,7 @@
   padding: .5rem 1.5rem;
   margin-right: -1.5rem;
   margin-left: -1.5rem;
-  font-size: .75rem;
+  font-size: 85%;
   color: #212529;
   background-color: #e9ecef;
   border-bottom: 4px solid #dee2e6;
@@ -283,10 +283,11 @@
 }
 
 .doc-content > .topbar a {
-  color: #007bff;
+  font-weight: 500;
+  color: #495057;
 }
 .doc-content > .topbar a:hover {
-  color: #0056b3;
+  color: #007bff;
   text-decoration: none;
 }
 
