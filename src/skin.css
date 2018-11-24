@@ -148,8 +148,7 @@
   padding-left: 0;
   margin-top: 1.5rem;
   margin-right: -.25rem;
-  margin-bottom: 0;
-  margin-left: -.25rem;
+  margin-bottom: -.25rem;
   list-style: none;
 }
 
@@ -157,7 +156,8 @@
 
 .header-nav-item {
   display: block;
-  margin: .25rem;
+  margin-right: .25rem;
+  margin-bottom: .25rem;
 }
 
 /** Link **/
