@@ -596,6 +596,8 @@ body#layout .layout-mode-col-12 {
 .header-nav-link {
   display: block;
   padding: .5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.5;
   color: #6c757d;
   text-align: center;
@@ -1198,7 +1200,9 @@ body#layout .layout-mode-col-12 {
 
 /** Link **/
 
-/* .footer-nav-link {} */
+.footer-nav-link {
+  font-weight: 500;
+}
 
 /**
  * Text
