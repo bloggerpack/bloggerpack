@@ -1,4 +1,6 @@
-//= Base class
+//
+// Base class
+//
 
 .popular-post {
   display: flex;
@@ -10,7 +12,9 @@
   }
 }
 
-//= Image
+//
+// Image
+//
 
 .popular-post-img {
   margin-right: 1rem;
@@ -20,13 +24,17 @@
   // &.popular-post-noimg {}
 }
 
-//= Body
+//
+// Body
+//
 
 .popular-post-body {
   flex: 1;
 }
 
-//= Title
+//
+// Title
+//
 
 .popular-post-title {
   margin-top: 0;
@@ -36,10 +44,13 @@
   line-height: 1.1;
 }
 
-// Title link
+//= Title link
+
 // .popular-post-title-link {}
 
-//= Meta
+//
+// Meta
+//
 
 .popular-post-meta {
   padding-left: 0;
@@ -55,7 +66,8 @@
   }
 }
 
-// Meta item
+//= Meta item
+
 .popular-post-meta-item {
   display: inline-block;
 
@@ -64,7 +76,8 @@
   }
 }
 
-// Meta link
+//= Meta link
+
 .popular-post-meta-link {
   color: #6c757d;
 
@@ -74,6 +87,8 @@
   }
 }
 
-//= Snippet
+//
+// Snippet
+//
 
 // .popular-post-snippet {}

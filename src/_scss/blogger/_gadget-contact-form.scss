@@ -1,8 +1,12 @@
-//= Base class
+//
+// Base class
+//
 
 // .contact-form {}
 
-//= Group
+//
+// Group
+//
 
 .contact-form-group {
   margin-bottom: 1rem;
@@ -13,7 +17,9 @@
   }
 }
 
-//= Input
+//
+// Input
+//
 
 .contact-form-name,
 .contact-form-email,
@@ -39,7 +45,9 @@
   }
 }
 
-//= Submit
+//
+// Submit
+//
 
 .contact-form-button-submit {
   display: inline-block;
@@ -74,7 +82,9 @@
   }
 }
 
-//= Alert
+//
+// Alert
+//
 
 .contact-form-error-message,
 .contact-form-success-message {

@@ -1,8 +1,12 @@
-//= Base class
+//
+// Base class
+//
 
 // .search-form {}
 
-//= Layout
+//
+// Layout
+//
 
 .search-form-row {
   display: flex;
@@ -28,7 +32,9 @@
   padding-left: 5px;
 }
 
-//= Input
+//
+// Input
+//
 
 .search-form-input {
   display: block;
@@ -52,7 +58,9 @@
   }
 }
 
-//= Submit
+//
+// Submit
+//
 
 .search-form-submit {
   display: inline-block;

@@ -1,8 +1,12 @@
-//= Base class
+//
+// Base class
+//
 
 // .featured-post {}
 
-//= Image
+//
+// Image
+//
 
 .featured-post-img {
   display: block;
@@ -15,7 +19,9 @@
   // &.featured-post-noimg {}
 }
 
-//= Title
+//
+// Title
+//
 
 .featured-post-title {
   margin-top: 0;
@@ -25,17 +31,23 @@
   line-height: 1.1;
 }
 
-// Title link
+//= Title link
+
 // .featured-post-title-link {}
 
-//= Snippet
+//
+// Snippet
+//
 
 // .featured-post-snippet {}
 
-// Snippet link
+//= Snippet link
+
 // .featured-post-snippet-link {}
 
-//= Divider
+//
+// Divider
+//
 
 .featured-post-divider {
   margin-top: .75rem;
