@@ -601,6 +601,8 @@ a.doc-badge-item-danger {
    highlight.js
    ========================================================================== */
 
+/* stylelint-disable selector-class-pattern */
+
 /* github.com style (c) Vasily Polovnyov <vast@whiteants.net> */
 
 .hljs-comment,
