@@ -9,7 +9,7 @@
  * Version         : {{ theme.version }}
  * Date            : {{ theme.date }}
  * Homepage        : {{ theme.homepage }}
- * Author Name     : {{ theme.author.name }}
+ * Author          : {{ theme.author.name }}
  * Author URL      : {{ theme.author.url }}
  * Repository Type : {{ theme.repository.type }}
  * Repository URL  : {{ theme.repository.url }}
