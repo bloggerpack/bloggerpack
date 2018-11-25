@@ -14,10 +14,6 @@ Blogger XML.
       <span class="doc-badge-item">Source</span>
       <span class="doc-badge-item doc-badge-item-info">src/_xml</span>
     </div>
-    <div class="doc-badge">
-      <span class="doc-badge-item">Compiled version</span>
-      <span class="doc-badge-item doc-badge-item-danger">None</span>
-    </div>
   </div>
 </figure>
 
