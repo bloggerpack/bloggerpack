@@ -62,7 +62,7 @@ The featured image for the post.
 <b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <!-- class --><b:class name=''/>
-    <!-- src --><b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+    <!-- src --><b:attr name='src' value='https://via.placeholder.com/512x288/777/eee?text=No+Image'/>
     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
   </img>
 </b:if>
@@ -119,7 +119,7 @@ The featured image for the post.
 <b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <!-- class --><b:class name=''/>
-    <!-- src --><b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+    <!-- src --><b:attr name='src' value='https://via.placeholder.com/512x288/777/eee?text=No+Image'/>
     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
   </img>
 </b:if>
@@ -177,7 +177,7 @@ The featured image for the post.
   <a expr:href='data:post.link ?: data:post.url'>
     <img b:whitespace='remove'>
       <!-- class --><b:class name=''/>
-      <!-- src --><b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+      <!-- src --><b:attr name='src' value='https://via.placeholder.com/512x288/777/eee?text=No+Image'/>
       <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
     </img>
   </a>
@@ -243,7 +243,7 @@ The featured image for the post.
   <a expr:href='data:post.link ?: data:post.url'>
     <img b:whitespace='remove'>
       <!-- class --><b:class name=''/>
-      <!-- src --><b:attr name='src' value='https://placehold.it/512x288/777/eee?text=No+Image'/>
+      <!-- src --><b:attr name='src' value='https://via.placeholder.com/512x288/777/eee?text=No+Image'/>
       <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
     </img>
   </a>
@@ -279,7 +279,7 @@ The featured image for the post.
     </b:if>
   <b:else/><!-- fallback -->
     <!-- class --><b:class name=''/>
-    <!-- style --><b:attr name='style' value='background-image: url(https://placehold.it/512x288/777/eee?text=No+Image);'/>
+    <!-- style --><b:attr name='style' value='background-image: url(https://via.placeholder.com/512x288/777/eee?text=No+Image);'/>
   </b:if>
 </div><!-- /target -->
 ```

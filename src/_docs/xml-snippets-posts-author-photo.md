@@ -62,7 +62,7 @@ Photo of the profile of the post author.
 <b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <!-- class --><b:class name=''/>
-    <!-- src --><b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
+    <!-- src --><b:attr name='src' value='https://via.placeholder.com/128x128/777/eee?text=No+Image'/>
     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
   </img>
 </b:if>
@@ -119,7 +119,7 @@ Photo of the profile of the post author.
 <b:else/><!-- fallback -->
   <img b:whitespace='remove'>
     <!-- class --><b:class name=''/>
-    <!-- src --><b:attr name='src' value='https://placehold.it/128x128/777/eee?text=No+Image'/>
+    <!-- src --><b:attr name='src' value='https://via.placeholder.com/128x128/777/eee?text=No+Image'/>
     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
   </img>
 </b:if>
