@@ -22,17 +22,6 @@
   </b:widget-settings>
 </b:widget>
 <b:widget id='FollowByEmail10' locked='false' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
-<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630</b:widget-setting>
-    <b:widget-setting name='displayHeight'>768</b:widget-setting>
-    <b:widget-setting name='sectionWidth'>258</b:widget-setting>
-    <b:widget-setting name='useImage'>true</b:widget-setting>
-    <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-    <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
-    <b:widget-setting name='displayWidth'>1366</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
 <b:widget id='Image10' locked='false' title='Image' type='Image' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512</b:widget-setting>
@@ -51,6 +40,17 @@
     <b:widget-setting name='selectedLabelsList'/>
     <b:widget-setting name='showType'>ALL</b:widget-setting>
     <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630</b:widget-setting>
+    <b:widget-setting name='displayHeight'>768</b:widget-setting>
+    <b:widget-setting name='sectionWidth'>258</b:widget-setting>
+    <b:widget-setting name='useImage'>true</b:widget-setting>
+    <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+    <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+    <b:widget-setting name='displayWidth'>1366</b:widget-setting>
   </b:widget-settings>
 </b:widget>
 <b:widget id='PopularPosts10' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>

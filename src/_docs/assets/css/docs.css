@@ -458,6 +458,21 @@
   border-radius: 0;
 }
 
+/** Widget **/
+
+/* stylelint-disable-next-line selector-class-pattern */
+.doc-content > .doc-example > .widget:not(.Header) {
+  max-width: 300px;
+}
+
+.doc-content > .doc-example > .widget > .title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
 /**
  * Badge
  */
