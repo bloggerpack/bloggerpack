@@ -254,12 +254,6 @@ Default markups
   <b:defaultmarkup type='PopularPosts'>
     <!--(bake _xml/defaultmarkups/gadget-popular-posts.xml)-->
   </b:defaultmarkup>
-
-  <b:comment>### Translate ###</b:comment>
-
-  <b:defaultmarkup type='Translate'>
-    <!--(bake _xml/defaultmarkups/gadget-translate.xml)-->
-  </b:defaultmarkup>
 </b:defaultmarkups>
 
 
