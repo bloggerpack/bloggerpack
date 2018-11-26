@@ -468,8 +468,6 @@ body#layout .layout-mode-col-12 {
   clip: rect(0, 0, 0, 0);
   text-align: center;
   white-space: nowrap;
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
   border: 0;
 }
 .skiplink:active,
@@ -480,8 +478,6 @@ body#layout .layout-mode-col-12 {
   overflow: visible;
   clip: auto;
   white-space: normal;
-  -webkit-clip-path: none;
-  clip-path: none;
 }
 
 /**
