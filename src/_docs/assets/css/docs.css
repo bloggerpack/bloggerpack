@@ -480,6 +480,45 @@
 }
 
 /**
+ * Buttons
+ */
+
+.doc-button {
+  display: inline-block;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  background-color: #ff5722;
+  border: 1px solid #ff4d15;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.doc-button:hover,
+.doc-button:focus {
+  text-decoration: none;
+}
+.doc-button:hover {
+  color: #fff;
+  background-color: #fb3c00;
+  border-color: #ee3900;
+}
+.doc-button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(255, 87, 34, .5);
+}
+.doc-button:active {
+  color: #fff;
+  background-color: #d53300;
+  border-color: #c83000;
+}
+
+/**
  * Badge
  */
 

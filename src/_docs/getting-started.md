@@ -17,7 +17,7 @@ Download and try to apply the precompiled theme (`dist/theme.xml`) to your blog.
 
 ### Download
 
-<a href="{{ docs.downloadUrl }}">Download</a>
+<a class="doc-button" href="{{ docs.downloadUrl }}">Download</a>
 
 ### Contents
 
