@@ -1,7 +1,7 @@
 <!--
 @@@title:Posts featured image@@@
 @@@description:The featured image for the post.@@@
-@@@section:XML Snippets@@@
+@@@section:Snippets@@@
 -->
 
 # Posts featured image

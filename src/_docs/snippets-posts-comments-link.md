@@ -1,7 +1,7 @@
 <!--
 @@@title:Posts comments link@@@
 @@@description:Link to the comments on the post.@@@
-@@@section:XML Snippets@@@
+@@@section:Snippets@@@
 -->
 
 # Posts comments link

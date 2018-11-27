@@ -1,7 +1,7 @@
 <!--
 @@@title:Posts content snippet@@@
 @@@description:Snippet of the post's content.@@@
-@@@section:XML Snippets@@@
+@@@section:Snippets@@@
 -->
 
 # Posts content snippet

@@ -1,7 +1,7 @@
 <!--
 @@@title:Posts usage@@@
 @@@description:Learn how to use posts snippets.@@@
-@@@section:XML Snippets@@@
+@@@section:Snippets@@@
 -->
 
 # Posts usage
