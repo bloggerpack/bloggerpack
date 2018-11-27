@@ -8,14 +8,16 @@
 
 Default markups for gadget.
 
-<figure>
-  <div class="doc-badges">
-    <div class="doc-badge">
-      <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-*.xml</span>
+<div style="overflow-x: auto; overflow-y: hidden;">
+  <figure>
+    <div class="doc-badges">
+      <div class="doc-badge">
+        <span class="doc-badge-item">Source</span>
+        <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-*.xml</span>
+      </div>
     </div>
-  </div>
-</figure>
+  </figure>
+</div>
 
 
 ## Blog Archive

@@ -250,13 +250,15 @@
 .doc-content > table,
 .doc-content > blockquote,
 .doc-content > address,
-.doc-content > figure {
+.doc-content > figure,
+.doc-content > div:not(.doc-example) > figure {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 .doc-content > blockquote,
-.doc-content > figure {
+.doc-content > figure,
+.doc-content > div:not(.doc-example) > figure {
   margin-right: 0;
   margin-left: 0;
 }
