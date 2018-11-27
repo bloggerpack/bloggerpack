@@ -50,7 +50,7 @@
   display: block;
   padding: .5rem 1rem;
   line-height: 1.5;
-  color: #cecece;
+  color: #ccc;
 }
 .doc-nav-link:hover {
   color: #eee;
@@ -58,8 +58,12 @@
   background-color: #171a1d;
 }
 .doc-nav-link.active {
-  color: #eee;
+  color: #fff;
   background-color: #111416;
+}
+.doc-nav-link.active:hover {
+  color: #fff;
+  background-color: #0b0d0f;
 }
 
 /** Header **/
@@ -69,6 +73,7 @@
   margin-top: .5rem;
   margin-bottom: .5rem;
   font-size: .75rem;
+  font-weight: 700;
   line-height: 1.2;
   color: #ff8a65;
   text-transform: uppercase;
@@ -78,8 +83,9 @@
   padding: .5rem 0;
   margin: .5rem 1rem;
   font-size: .65rem;
+  font-weight: 700;
   line-height: 1.2;
-  color: #fff;
+  color: #888;
   text-transform: uppercase;
   border-top: 1px solid #32383e;
   border-bottom: 1px solid #32383e;
