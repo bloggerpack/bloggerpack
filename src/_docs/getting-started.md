@@ -115,7 +115,7 @@ The goal of this tutorial is to take you from having some development experience
 1. Run through the [tooling setup](#tooling-setup) below to use our build system.
 2. Configure theme `src/config.theme.json`.
 3. Configure docs `src/config.docs.json`.
-   - Important: change `title` and `downloadUrl`.
+   - Important: change `title` (docs title) and `downloadUrl` (URL to download your theme).
 4. Customize the theme and documentation to suit your needs.
 5. Run `grunt` to build your changes.
 6. To preview your changes, apply the new compiled theme (`dist/theme.xml`) to your blog. Reload the local documentation in your browser to preview documentation changes.
@@ -126,9 +126,10 @@ The goal of this tutorial is to take you from having some development experience
     1. `git init`
     2. `git add .`
     3. `git commit -m "Initial commit"`
-    4. Push your theme source code to [GitHub](https://github.com) or other services for Git.
-11. To release your theme, run `grunt release`, this command will zip your theme and the source (exclude: `.git`, `.zip`, `node_modules`).
-12. Share your theme (the `zip` file).
+    4. Push to [GitHub](https://github.com) or other services for Git.
+11. To release your theme, run `grunt release`, this command will compile the source and zip your theme and the source (exclude: `.git`, `.zip`, `node_modules`).
+12. Share or sell your theme (the `zip` file).
+13. You can publish your theme documentation (`dist/docs`) to [GitHub Pages](https://pages.github.com) or other services.
 
 
 ## Tooling setup
@@ -158,6 +159,8 @@ You can run the documentation locally via Grunt commands:
 
 1. From the root project directory, run `grunt docs-serve` in the command line.
 2. Open `http://localhost:9001` in your browser.
+
+Or open `dist/docs/index.html` in your browser.
 
 
 ## Templating
