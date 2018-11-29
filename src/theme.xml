@@ -150,6 +150,7 @@ Main content (main and sidebar)
             <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar'>
               <!--(bake _xml/widgets/b-section-sidebar_BlogSearch1.xml)-->
               <!--(bake _xml/widgets/b-section-sidebar_Label1.xml)-->
+              <!--(bake _xml/widgets/b-section-sidebar_BlogArchive1.xml)-->
               <!--(bake _xml/widgets/b-section-sidebar_HTML1.xml)-->
             </b:section>
           </div><!-- /.sidebar -->
