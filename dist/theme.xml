@@ -2343,7 +2343,7 @@ Main content (main and sidebar)
                   <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
                 </b:widget-settings>
               </b:widget>
-              <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+              <b:widget id='HTML1' locked='false' title='Pages' type='HTML' version='2' visible='true'>
                 <b:widget-settings>
                   <b:widget-setting name='content'>
                     &lt;ul style="padding-left: 0; list-style: none;"&gt;
