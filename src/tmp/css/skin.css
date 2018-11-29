@@ -117,11 +117,14 @@
 .header-title {
   margin-top: 0;
   margin-bottom: 0;
+  overflow: hidden;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.1;
   text-align: center;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /** Link **/
@@ -201,6 +204,7 @@
     justify-content: space-between;
   }
   .header-title {
+    max-width: 300px;
     margin-right: 3rem;
     text-align: left;
   }

@@ -539,11 +539,14 @@ body#layout .layout-mode-col-12 {
 .header-title {
   margin-top: 0;
   margin-bottom: 0;
+  overflow: hidden;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.1;
   text-align: center;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /** Link **/
@@ -623,6 +626,7 @@ body#layout .layout-mode-col-12 {
     justify-content: space-between;
   }
   .header-title {
+    max-width: 300px;
     margin-right: 3rem;
     text-align: left;
   }
@@ -2320,10 +2324,23 @@ Main content (main and sidebar)
               <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
                 <b:widget-settings>
                   <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                  <b:widget-setting name='display'>LIST</b:widget-setting>
+                  <b:widget-setting name='display'>CLOUD</b:widget-setting>
                   <b:widget-setting name='selectedLabelsList'/>
                   <b:widget-setting name='showType'>ALL</b:widget-setting>
                   <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+                </b:widget-settings>
+              </b:widget>
+              <b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+                <b:widget-settings>
+                  <b:widget-setting name='showStyle'>MENU</b:widget-setting>
+                  <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+                  <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+                  <b:widget-setting name='monthPattern'>MMMM yyyy</b:widget-setting>
+                  <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+                  <b:widget-setting name='weekPattern'>MMMM d</b:widget-setting>
+                  <b:widget-setting name='chronological'>false</b:widget-setting>
+                  <b:widget-setting name='showPosts'>false</b:widget-setting>
+                  <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
                 </b:widget-settings>
               </b:widget>
               <b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
