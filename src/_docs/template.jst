@@ -105,6 +105,16 @@
           </li>
         </ul>
       </div>
+      <%if(section != 'None'){%>
+        <div class="doc-breadcrumb">
+          <ol>
+            <li><%=section%></li>
+            <%if(subsection != 'None'){%>
+              <li><%=subsection%></li>
+            <%}%>
+          </ol>
+        </div>
+      <%}%>
       <%=content%>
     </main>
 
