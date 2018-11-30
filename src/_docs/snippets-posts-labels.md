@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts labels@@@
+@@@title:Labels@@@
 @@@description:Labels of the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts labels
+# Labels
 
 Labels of the post.
 

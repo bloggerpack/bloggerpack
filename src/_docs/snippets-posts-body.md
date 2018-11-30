@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts body@@@
+@@@title:Body@@@
 @@@description:The content of the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts body
+# Body
 
 The content of the post.
 

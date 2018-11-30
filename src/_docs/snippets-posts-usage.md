@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts usage@@@
+@@@title:Usage@@@
 @@@description:Learn how to use posts snippets.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts usage
+# Usage
 
 Learn how to use posts snippets.
 

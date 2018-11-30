@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts sharing@@@
+@@@title:Sharing@@@
 @@@description:The share buttons for the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts sharing
+# Sharing
 
 The share buttons for the post.
 

@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts title@@@
+@@@title:Title@@@
 @@@description:Title of the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts title
+# Title
 
 Title of the post.
 

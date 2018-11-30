@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts featured image@@@
+@@@title:Featured image@@@
 @@@description:The featured image for the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts featured image
+# Featured image
 
 The featured image for the post.
 

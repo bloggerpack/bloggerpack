@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts content snippet@@@
+@@@title:Content snippet@@@
 @@@description:Snippet of the post's content.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts content snippet
+# Content snippet
 
 Snippet of the post's content.
 

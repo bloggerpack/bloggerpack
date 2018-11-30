@@ -1,10 +1,10 @@
 <!--
-@@@title:Data messages@@@
+@@@title:Messages@@@
 @@@description:Messages which will be translated into the language used by the blog.@@@
 @@@section:Snippets@@@
 -->
 
-# Data messages
+# Messages
 
 Messages which will be translated into the language used by the blog.
 

@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts comments link@@@
+@@@title:Comments link@@@
 @@@description:Link to the comments on the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts comments link
+# Comments link
 
 Link to the comments on the post.
 

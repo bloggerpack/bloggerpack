@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts author photo@@@
+@@@title:Author photo@@@
 @@@description:Photo of the profile of the post author.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts author photo
+# Author photo
 
 Photo of the profile of the post author.
 

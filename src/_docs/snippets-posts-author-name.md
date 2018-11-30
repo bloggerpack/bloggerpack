@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts author name@@@
+@@@title:Author name@@@
 @@@description:Name of the profile of the post author.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts author name
+# Author name
 
 Name of the profile of the post author.
 

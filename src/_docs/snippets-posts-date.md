@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts date@@@
+@@@title:Date@@@
 @@@description:Date of the post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts date
+# Date
 
 Date of the post.
 

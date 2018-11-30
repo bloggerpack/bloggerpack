@@ -1,10 +1,10 @@
 <!--
-@@@title:Posts read more link@@@
+@@@title:Read more link@@@
 @@@description:Link to the full post.@@@
 @@@section:Snippets@@@
 -->
 
-# Posts read more link
+# Read more link
 
 Link to the full post.
 

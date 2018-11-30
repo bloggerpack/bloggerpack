@@ -108,6 +108,7 @@
 }
 
 .doc-nav-subdivider {
+  width: 60%;
   height: 0;
   margin: .5rem 1rem;
   overflow: hidden;
