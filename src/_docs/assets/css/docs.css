@@ -292,7 +292,7 @@
  * Topbar
  */
 
-.doc-content > .topbar {
+.doc-content > .doc-topbar {
   padding: .5rem 1.5rem;
   margin-right: -1.5rem;
   margin-left: -1.5rem;
@@ -301,25 +301,25 @@
   background-color: #e9ecef;
   border-bottom: 4px solid #dee2e6;
 }
-.doc-content > .topbar > ul {
+.doc-content > .doc-topbar > ul {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1.5;
   list-style: none;
 }
-.doc-content > .topbar > ul > li {
+.doc-content > .doc-topbar > ul > li {
   display: inline-block;
 }
-.doc-content > .topbar > ul > li:not(:last-child) {
+.doc-content > .doc-topbar > ul > li:not(:last-child) {
   margin-right: 1rem;
 }
 
-.doc-content > .topbar a {
+.doc-content > .doc-topbar a {
   font-weight: 500;
   color: #495057;
 }
-.doc-content > .topbar a:hover {
+.doc-content > .doc-topbar a:hover {
   color: #007bff;
   text-decoration: none;
 }
