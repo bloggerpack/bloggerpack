@@ -2,6 +2,7 @@
 @@@title:Read more link@@@
 @@@description:Link to the full post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Read more link

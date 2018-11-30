@@ -2,6 +2,7 @@
 @@@title:Gadgets@@@
 @@@description:Default markups for gadgets.@@@
 @@@section:XML@@@
+@@@subsection:Default markups@@@
 -->
 
 # Gadgets

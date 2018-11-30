@@ -2,6 +2,7 @@
 @@@title:Buttons@@@
 @@@description:Simple CSS for buttons.@@@
 @@@section:CSS@@@
+@@@subsection:Components@@@
 -->
 
 # Buttons

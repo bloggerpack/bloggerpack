@@ -2,6 +2,7 @@
 @@@title:Comments link@@@
 @@@description:Link to the comments on the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Comments link

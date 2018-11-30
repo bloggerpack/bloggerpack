@@ -2,6 +2,7 @@
 @@@title:Body@@@
 @@@description:The content of the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Body

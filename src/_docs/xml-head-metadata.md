@@ -2,6 +2,7 @@
 @@@title:Metadata@@@
 @@@description:Metadata.@@@
 @@@section:XML@@@
+@@@subsection:Head@@@
 -->
 
 # Metadata

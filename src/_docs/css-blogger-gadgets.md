@@ -2,6 +2,7 @@
 @@@title:Gadgets@@@
 @@@description:CSS for custom gadgets.@@@
 @@@section:CSS@@@
+@@@subsection:Blogger@@@
 -->
 
 # Gadgets

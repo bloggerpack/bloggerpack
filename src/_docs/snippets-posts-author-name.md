@@ -2,6 +2,7 @@
 @@@title:Author name@@@
 @@@description:Name of the profile of the post author.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Author name

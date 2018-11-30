@@ -2,6 +2,7 @@
 @@@title:Usage@@@
 @@@description:Learn how to use posts snippets.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Usage

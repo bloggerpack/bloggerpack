@@ -2,6 +2,7 @@
 @@@title:Labels@@@
 @@@description:Labels of the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Labels

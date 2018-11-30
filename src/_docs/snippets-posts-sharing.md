@@ -2,6 +2,7 @@
 @@@title:Sharing@@@
 @@@description:The share buttons for the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Sharing

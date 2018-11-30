@@ -2,6 +2,7 @@
 @@@title:Date@@@
 @@@description:Date of the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Date

@@ -2,6 +2,7 @@
 @@@title:Featured image@@@
 @@@description:The featured image for the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Featured image

@@ -2,6 +2,7 @@
 @@@title:Title@@@
 @@@description:Title of the post.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Title

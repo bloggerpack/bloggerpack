@@ -2,6 +2,7 @@
 @@@title:Home@@@
 @@@description:Documentation.@@@
 @@@section:None@@@
+@@@subsection:None@@@
 -->
 
 # Home
@@ -78,7 +79,7 @@
 
 <figure>
   <div class="doc-badges">
-  
+
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Name</span>
       <span class="doc-badge-item doc-badge-item-info">{{ base.1.name }}</span>

@@ -2,6 +2,7 @@
 @@@title:Author photo@@@
 @@@description:Photo of the profile of the post author.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Author photo

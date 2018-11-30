@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%if(section != 'None'){%><%=section%> - <%}%><%=title%> &middot; {{ docs.title }}</title>
+    <title><%if(section != 'None'){%><%=section%> - <%}%><%if(subsection != 'None'){%><%=subsection%>: <%}%><%=title%> &middot; {{ docs.title }}</title>
     <meta name="description" content="<%=description%>">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/bundle/css/bundle.css">
@@ -23,7 +23,6 @@
         <div class="doc-nav-divider"></div>
         <h6 class="doc-nav-header">CSS</h6>
         <a class="doc-nav-link" href="css-overview.html">Overview</a>
-        <h6 class="doc-nav-subheader">Base</h6>
         <a class="doc-nav-link" href="css-base.html">Base CSS</a>
         <h6 class="doc-nav-subheader">Components</h6>
         <a class="doc-nav-link" href="css-components-blockquotes.html">Blockquotes</a>
@@ -42,8 +41,7 @@
         <div class="doc-nav-divider"></div>
         <h6 class="doc-nav-header">Snippets</h6>
         <a class="doc-nav-link" href="snippets-overview.html">Overview</a>
-        <h6 class="doc-nav-subheader">Views</h6>
-        <a class="doc-nav-link" href="snippets-views-page-types.html">Page types</a>
+        <a class="doc-nav-link" href="snippets-page-types.html">Page types</a>
         <h6 class="doc-nav-subheader">Posts</h6>
         <a class="doc-nav-link" href="snippets-posts-usage.html">Usage</a>
         <div class="doc-nav-subdivider"></div>

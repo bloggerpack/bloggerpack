@@ -2,6 +2,7 @@
 @@@title:Tables@@@
 @@@description:Simple CSS for HTML tables.@@@
 @@@section:CSS@@@
+@@@subsection:Components@@@
 -->
 
 # Tables

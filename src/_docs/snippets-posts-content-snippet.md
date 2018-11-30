@@ -2,6 +2,7 @@
 @@@title:Content snippet@@@
 @@@description:Snippet of the post's content.@@@
 @@@section:Snippets@@@
+@@@subsection:Posts@@@
 -->
 
 # Content snippet

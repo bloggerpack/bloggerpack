@@ -2,6 +2,7 @@
 @@@title:Page types@@@
 @@@description:Conditional tags for different page types, which allows you to specify a part of your template code on specific types of pages or specific URLs.@@@
 @@@section:Snippets@@@
+@@@subsection:None@@@
 -->
 
 # Page types

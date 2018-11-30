@@ -2,6 +2,7 @@
 @@@title:Blockquotes@@@
 @@@description:Simple CSS for blockquotes.@@@
 @@@section:CSS@@@
+@@@subsection:Components@@@
 -->
 
 # Blockquotes
