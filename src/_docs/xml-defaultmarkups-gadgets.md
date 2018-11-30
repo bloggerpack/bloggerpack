@@ -1,12 +1,12 @@
 <!--
-@@@title:Gadget@@@
-@@@description:Default markups for gadget.@@@
+@@@title:Gadgets@@@
+@@@description:Default markups for gadgets.@@@
 @@@section:XML@@@
 -->
 
-# Gadget
+# Gadgets
 
-Default markups for gadget.
+Default markups for gadgets.
 
 <figure>
   <div class="doc-badges">

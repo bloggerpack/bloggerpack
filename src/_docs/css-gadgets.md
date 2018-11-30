@@ -1,12 +1,12 @@
 <!--
-@@@title:Gadget@@@
-@@@description:CSS for custom gadget.@@@
+@@@title:Gadgets@@@
+@@@description:CSS for custom gadgets.@@@
 @@@section:CSS@@@
 -->
 
-# Gadget
+# Gadgets
 
-CSS for custom gadget.
+CSS for custom gadgets.
 
 <figure>
   <div class="doc-badges">
@@ -28,4 +28,4 @@ CSS for custom gadget.
 
 ## Preview and details
 
-[Read the docs for preview and details](xml-defaultmarkups-gadget.html).
+[Read the docs for preview and details](xml-defaultmarkups-gadgets.html).
