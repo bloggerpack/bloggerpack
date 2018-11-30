@@ -250,15 +250,13 @@
 .doc-content > table,
 .doc-content > blockquote,
 .doc-content > address,
-.doc-content > figure,
-.doc-content > div:not(.doc-example) > figure {
+.doc-content > figure {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 .doc-content > blockquote,
-.doc-content > figure,
-.doc-content > div:not(.doc-example) > figure {
+.doc-content > figure {
   margin-right: 0;
   margin-left: 0;
 }
@@ -530,6 +528,7 @@
   align-items: center;
   justify-content: flex-start;
   margin-bottom: -.5rem;
+  overflow-x: auto;
 }
 .doc-badges > .doc-badge {
   margin-right: .5rem;
