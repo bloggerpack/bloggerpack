@@ -12,7 +12,7 @@ Default markups for gadgets.
   <div class="doc-badges">
     <div class="doc-badge">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-*.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets</span>
     </div>
   </div>
 </figure>
@@ -26,11 +26,11 @@ Make it easy for visitors to navigate your blog with links to older posts.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-blog-archive.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-archive.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-blog-archive.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_blog-archive.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -232,11 +232,11 @@ Let visitors search your blog.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-blog-search.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-search.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-blog-search.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_blog-search.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -278,11 +278,11 @@ Add a Contact Form to your Blog.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-contact-form.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/contact-form.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-contact-form.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_contact-form.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -335,11 +335,11 @@ Highlight a special post on your blog.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-featured-post.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/featured-post.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-featured-post.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_featured-post.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -393,11 +393,11 @@ Make it easy for visitors to subscribe to email delivery when you publish a post
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-follow-by-email.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/follow-by-email.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-follow-by-email.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_follow-by-email.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -435,11 +435,11 @@ Add an image from your computer, or from somewhere else on the web.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-image.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/image.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-image.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_image.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -489,11 +489,11 @@ Show all the labels of posts in your blog.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-labels.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/labels.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-labels.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_labels.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -593,11 +593,11 @@ Display your blog's title and description.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-page-header.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/page-header.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-page-header.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_page-header.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -699,11 +699,11 @@ Display a list of the most popular posts from your blog.
   <div class="doc-badges">
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadget-popular-posts.xml</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/popular-posts.xml</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-popular-posts.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets/_popular-posts.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>

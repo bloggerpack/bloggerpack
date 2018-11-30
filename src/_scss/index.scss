@@ -21,13 +21,13 @@
 @import "forms";
 @import "tables";
 
-@import "blogger/gadget-blog-archive";
-@import "blogger/gadget-blog-search";
-@import "blogger/gadget-contact-form";
-@import "blogger/gadget-featured-post";
-@import "blogger/gadget-follow-by-email";
-@import "blogger/gadget-image";
-@import "blogger/gadget-labels";
-@import "blogger/gadget-page-header";
-@import "blogger/gadget-popular-posts";
 @import "blogger/post-body-typography";
+@import "blogger/gadgets/blog-archive";
+@import "blogger/gadgets/blog-search";
+@import "blogger/gadgets/contact-form";
+@import "blogger/gadgets/featured-post";
+@import "blogger/gadgets/follow-by-email";
+@import "blogger/gadgets/image";
+@import "blogger/gadgets/labels";
+@import "blogger/gadgets/page-header";
+@import "blogger/gadgets/popular-posts";

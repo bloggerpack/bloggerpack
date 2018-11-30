@@ -12,7 +12,7 @@ CSS for custom gadgets.
   <div class="doc-badges">
     <div class="doc-badge">
       <span class="doc-badge-item">Source</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/_gadget-*.scss</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_scss/blogger/gadgets</span>
     </div>
     <div class="doc-badge">
       <span class="doc-badge-item">Variables</span>

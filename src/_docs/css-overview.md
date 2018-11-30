@@ -43,7 +43,7 @@ Utilize our source Sass files to take advantage of variables, functions, mixins,
   <tbody>
     <tr>
       <td><code style="white-space: nowrap;">blogger/</code></td>
-      <td>Styles for custom gadgets (<a href="xml-defaultmarkups-gadgets.html"><code style="white-space: nowrap;">src/_xml/defaultmarkups</code></a>).</td>
+      <td>Styles for custom gadgets (<a href="xml-defaultmarkups-gadgets.html"><code style="white-space: nowrap;">src/_xml/defaultmarkups/gadgets</code></a>).</td>
     </tr>
     <tr>
       <td><code style="white-space: nowrap;">_custom.scss</code></td>
