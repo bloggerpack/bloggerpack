@@ -419,6 +419,8 @@
 
 .post-snippet {
   margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: 400;
   color: #6c757d;
 }
 .post-snippet:last-child {
@@ -463,6 +465,7 @@
   display: inline-block;
   padding: .25rem .5rem;
   font-size: .875rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #007bff;
   white-space: nowrap;
@@ -491,6 +494,7 @@
   margin-top: 0;
   margin-bottom: .5rem;
   font-size: .875rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #6c757d;
   list-style: none;
@@ -667,6 +671,8 @@
   position: relative;
   display: inline-block;
   padding: .5rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.25;
   color: #007bff;
   background-color: #fff;
@@ -741,6 +747,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-size: .875rem;
+  font-weight: 400;
   color: #6c757d;
   background-color: #f8f9fa;
   border-top: 1px solid rgba(0, 0, 0, .125);
