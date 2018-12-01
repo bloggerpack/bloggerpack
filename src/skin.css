@@ -630,23 +630,23 @@
    ========================================= */
 
 .pager {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -.5rem;
 }
-
-/**
- * Alignment
- */
 
 .pager-newer {
-  float: left;
+  margin-right: .25rem;
+  margin-left: .25rem;
 }
 .pager-home {
-  float: none;
-  margin-right: .5rem;
-  margin-left: .5rem;
+  margin-right: .25rem;
+  margin-left: .25rem;
 }
 .pager-older {
-  float: right;
+  margin-right: .25rem;
+  margin-left: .25rem;
 }
 
 /**
@@ -657,6 +657,7 @@
   position: relative;
   display: inline-block;
   padding: .5rem .75rem;
+  margin-bottom: .5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
