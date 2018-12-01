@@ -57,6 +57,7 @@
   margin-top: 0;
   margin-bottom: .5rem;
   font-size: .875rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #6c757d;
   list-style: none;
@@ -91,4 +92,8 @@
 // Snippet
 //
 
-// .popular-post-snippet {}
+.popular-post-snippet {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}

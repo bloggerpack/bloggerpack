@@ -49,6 +49,8 @@
 .doc-nav-link {
   display: block;
   padding: .5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #ccc;
 }
@@ -187,6 +189,7 @@
 .doc-toc .toc-list .toc-link {
   display: block;
   padding: .125rem 1.5rem;
+  font-weight: 400;
   color: #495057;
 }
 .doc-toc .toc-list .toc-link:hover {
@@ -296,7 +299,9 @@
   padding: .5rem 1.5rem;
   margin-right: -1.5rem;
   margin-left: -1.5rem;
-  font-size: 85%;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
   color: #212529;
   background-color: #e9ecef;
   border-bottom: 4px solid #dee2e6;
@@ -305,7 +310,6 @@
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.5;
   list-style: none;
 }
 .doc-content > .doc-topbar > ul > li {
@@ -331,10 +335,11 @@
 .doc-content > .doc-breadcrumb {
   padding: .5rem 1.5rem;
   margin-right: -1.5rem;
-  margin-bottom: -1.25rem;
+  margin-bottom: -1rem;
   margin-left: -1.5rem;
-  font-size: 1rem;
+  font-size: .875rem;
   font-weight: 500;
+  line-height: 1.5;
   color: #6c757d;
   text-transform: uppercase;
   user-select: none;
@@ -346,7 +351,6 @@
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.5;
   list-style: none;
 }
 .doc-content > .doc-breadcrumb > ol > li:first-child {
