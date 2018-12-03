@@ -43,7 +43,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 ### Hierarchy
 
 <div class="doc-example">
-  <div class="widget BlogArchive" data-version="2">
+  <div class="widget BlogArchive">
     <h3 class="title js-toc-ignore">
       Archive
     </h3>
@@ -139,7 +139,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 ### Flat
 
 <div class="doc-example">
-  <div class="widget BlogArchive" data-version="2">
+  <div class="widget BlogArchive">
     <h3 class="title js-toc-ignore">
       Archive
     </h3>
@@ -187,7 +187,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 ### Menu
 
 <div class="doc-example">
-  <div class="widget BlogArchive" data-version="2">
+  <div class="widget BlogArchive">
     <h3 class="title js-toc-ignore">
       Archive
     </h3>
@@ -247,7 +247,7 @@ Let visitors search your blog.
 </figure>
 
 <div class="doc-example">
-  <div class="widget BlogSearch" data-version="2">
+  <div class="widget BlogSearch">
     <h3 class="title js-toc-ignore">
       Search This Blog
     </h3>
@@ -293,7 +293,7 @@ Add a Contact Form to your Blog.
 </figure>
 
 <div class="doc-example">
-  <div class="widget ContactForm" data-version="2">
+  <div class="widget ContactForm">
     <h3 class="title js-toc-ignore">
       Contact Form
     </h3>
@@ -350,7 +350,7 @@ Highlight a special post on your blog.
 </figure>
 
 <div class="doc-example">
-  <div class="widget FeaturedPost" data-version="2">
+  <div class="widget FeaturedPost">
     <h3 class="title js-toc-ignore">
       Featured Post
     </h3>
@@ -408,7 +408,7 @@ Make it easy for visitors to subscribe to email delivery when you publish a post
 </figure>
 
 <div class="doc-example">
-  <div class="widget FollowByEmail" data-version="2">
+  <div class="widget FollowByEmail">
     <h3 class="title js-toc-ignore">
       Follow by Email
     </h3>
@@ -450,7 +450,7 @@ Add an image from your computer, or from somewhere else on the web.
 </figure>
 
 <div class="doc-example">
-  <div class="widget Image" data-version="2">
+  <div class="widget Image">
     <h3 class="title js-toc-ignore">
       Image
     </h3>
@@ -506,7 +506,7 @@ Show all the labels of posts in your blog.
 ### List
 
 <div class="doc-example">
-  <div class="widget Label" data-version="2">
+  <div class="widget Label">
     <h3 class="title js-toc-ignore">
       Labels
     </h3>
@@ -544,7 +544,7 @@ Show all the labels of posts in your blog.
 ### Cloud
 
 <div class="doc-example">
-  <div class="widget Label" data-version="2">
+  <div class="widget Label">
     <h3 class="title js-toc-ignore">
       Labels
     </h3>
@@ -610,7 +610,7 @@ Display your blog's title and description.
 ### Behind
 
 <div class="doc-example">
-  <div class="widget Header" data-version="2">
+  <div class="widget Header">
     <div class="page-header image-placement-behind is-image" style="background-image: url(https://via.placeholder.com/1200x630);">
       <div class="container" style="width: 100% !important; padding: 0 1rem !important;">
         <h1 class="page-header-title"><a class="page-header-title-link" href="#">Blog Title</a></h1>
@@ -637,7 +637,7 @@ Display your blog's title and description.
 ### Replace
 
 <div class="doc-example">
-  <div class="widget Header" data-version="2">
+  <div class="widget Header">
     <div class="page-header image-placement-replace is-image">
       <div class="container" style="width: 100% !important; padding: 0 1rem !important;">
         <a href="#">
@@ -665,7 +665,7 @@ Display your blog's title and description.
 ### Before description
 
 <div class="doc-example">
-  <div class="widget Header" data-version="2">
+  <div class="widget Header">
     <div class="page-header image-placement-before-description is-image">
       <div class="container" style="width: 100% !important; padding: 0 1rem !important;">
         <a href="#">
@@ -714,7 +714,7 @@ Display a list of the most popular posts from your blog.
 </figure>
 
 <div class="doc-example">
-  <div class="widget PopularPosts" data-version="2">
+  <div class="widget PopularPosts">
     <h3 class="title js-toc-ignore">
       Popular Posts
     </h3>
