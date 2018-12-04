@@ -28,7 +28,10 @@
 
 //= Count
 
-// .archive-flat-count {}
+.archive-flat-count {
+  font-size: 90%;
+  color: #6c757d;
+}
 
 //
 // Hierarchy
@@ -39,37 +42,29 @@
 .archive-hierarchy-third {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   list-style: none;
 }
+
 .archive-hierarchy-first {
   padding-left: 0;
 }
-.archive-hierarchy-second,
+
+.archive-hierarchy-second {
+  padding-left: 2rem;
+}
+
 .archive-hierarchy-third {
   padding-left: 2rem;
-  margin-left: .25rem;
-  border-left: 1px solid rgba(0, 0, 0, .125);
-}
-.archive-hierarchy-third {
-  margin-bottom: .25rem;
 }
 
 //= Item
 
-.archive-hierarchy-first-item,
-.archive-hierarchy-second-item,
-.archive-hierarchy-third-item {
-  position: relative;
-}
-.archive-hierarchy-second-item::before,
-.archive-hierarchy-third-item::before {
-  position: absolute;
-  top: 0;
-  left: -2rem;
-  color: rgba(0, 0, 0, .125);
-  content: "\2014 \00A0";
-}
+// .archive-hierarchy-first-item {}
+// .archive-hierarchy-second-item {}
+// .archive-hierarchy-third-item {}
 
 //= Details
 
@@ -86,4 +81,7 @@
 
 //= Count
 
-// .archive-hierarchy-count {}
+.archive-hierarchy-count {
+  font-size: 90%;
+  color: #6c757d;
+}

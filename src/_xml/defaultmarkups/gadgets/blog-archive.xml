@@ -23,9 +23,8 @@
   <ol class='archive-flat'>
     <b:loop values='data:data' var='i'>
       <li class='archive-flat-item'>
-        <a class='archive-flat-link' expr:href='data:i.url'>
-          <data:i.name/> <span class='archive-flat-count'>(<data:i.post-count/>)</span>
-        </a>
+        <a b:whitespace='remove' class='archive-flat-link' expr:href='data:i.url'><data:i.name/></a>
+        <span class='archive-flat-count'>(<data:i.post-count/>)</span>
       </li>
     </b:loop>
   </ol>
@@ -36,9 +35,8 @@
       <li class='archive-hierarchy-first-item'>
         <details class='archive-hierarchy-details'>
           <summary class='archive-hierarchy-summary'>
-            <a class='archive-hierarchy-link' expr:href='data:i.url'>
-              <data:i.name/> <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
-            </a>
+            <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:i.url'><data:i.name/></a>
+            <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
           </summary>
 
           <ul class='archive-hierarchy-second'>
@@ -46,18 +44,16 @@
               <li class='archive-hierarchy-second-item'>
                 <b:tag class='archive-hierarchy-details' cond='data:j.data' name='details'>
                   <b:tag class='archive-hierarchy-summary' cond='data:j.data' name='summary'>
-                    <a class='archive-hierarchy-link' expr:href='data:j.url'>
-                      <data:j.name/> <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
-                    </a>
+                    <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:j.url'><data:j.name/></a>
+                    <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
                   </b:tag>
 
                   <b:if cond='data:j.data'>
                     <ul class='archive-hierarchy-third'>
                       <b:loop values='data:j.data' var='k'>
                         <li class='archive-hierarchy-third-item'>
-                          <a class='archive-hierarchy-link' expr:href='data:k.url'>
-                            <data:k.name/> <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
-                          </a>
+                          <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:k.url'><data:k.name/></a>
+                          <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
                         </li>
                       </b:loop>
                     </ul>
