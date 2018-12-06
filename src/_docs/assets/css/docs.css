@@ -488,19 +488,6 @@
 }
 
 /**
- * Details
- */
-
-.doc-content > details {
-  margin-bottom: 1rem;
-}
-.doc-content > details > summary {
-  margin-bottom: 1rem;
-  color: #007bff;
-  cursor: pointer;
-}
-
-/**
  * Example
  */
 
@@ -646,6 +633,20 @@ a.doc-badge-item-danger {
   background-color: #ff3860;
 }
 /* stylelint-enable selector-no-qualifying-type */
+
+/**
+ * Details
+ */
+
+ .doc-content > details {
+  display: block;
+  margin-bottom: 1rem;
+}
+.doc-content > details > summary {
+  display: list-item;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
 
 /**
  * AnchorJS
