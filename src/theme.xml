@@ -50,14 +50,6 @@ Title, meta and link tags
 CSS
 ############################################################################# </b:comment>
 
-<b:comment>### Layout mode ###</b:comment>
-
-<b:template-skin>
-<![CDATA[
-<!--(bake tmp/css/template-skin.css)-->
-]]>
-</b:template-skin>
-
 <b:comment>### Bundle ###</b:comment>
 
 <b:if cond='!data:view.isLayoutMode'>
@@ -65,6 +57,14 @@ CSS
 <!--(bake tmp/css/bundle.css)-->
 </style>
 </b:if>
+
+<b:comment>### Layout mode ###</b:comment>
+
+<b:template-skin>
+<![CDATA[
+<!--(bake tmp/css/template-skin.css)-->
+]]>
+</b:template-skin>
 
 <b:comment>### Skin ###</b:comment>
 
