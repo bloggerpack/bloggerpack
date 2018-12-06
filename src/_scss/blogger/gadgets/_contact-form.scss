@@ -28,6 +28,7 @@
   width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -43,6 +44,11 @@
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(#28a745, .25);
   }
+}
+
+.contact-form-email-message {
+  overflow: auto;
+  resize: vertical;
 }
 
 //
@@ -96,6 +102,8 @@
   display: block;
   padding: .75rem 1.25rem;
   margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   border: 1px solid transparent;
   border-radius: .25rem;

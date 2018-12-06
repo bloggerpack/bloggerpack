@@ -8,7 +8,7 @@
 # Home
 
 <figure>
-  <figcaption style="margin-top: 0; margin-bottom: .5rem; color: #777;">Currently</figcaption>
+  <figcaption style="margin-top: 0; margin-bottom: .5rem; color: #6c757d;">Currently</figcaption>
   <div class="doc-badges">
     <div class="doc-badge">
       <span class="doc-badge-item">Theme v{{ theme.version }}</span>

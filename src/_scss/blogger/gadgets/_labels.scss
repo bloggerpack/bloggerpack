@@ -43,14 +43,12 @@
   }
   &:active {
     z-index: 3;
-    background-color: darken(#f8f9fa, 7.5%);
+    background-color: darken(#f8f9fa, 2.5%);
   }
   &.active {
     z-index: 2;
-    font-weight: 700;
     color: #495057;
-    cursor: default;
-    background-color: #fff;
+    background-color: #f8f9fa;
   }
 }
 
@@ -91,8 +89,10 @@
 //= Item
 
 .label-cloud-item {
-  margin-right: .5rem;
   margin-bottom: .5rem;
+}
+.label-cloud-item:not(:last-child) {
+  margin-right: .5rem;
 }
 
 //= Link
@@ -102,8 +102,9 @@
   padding: .25rem .5rem;
   font-size: .875rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.25;
   color: #fff;
+  text-align: left;
   white-space: nowrap;
   background-color: #6c757d;
   border-radius: .25rem;
@@ -113,6 +114,9 @@
     color: #fff;
     text-decoration: none;
     background-color: darken(#6c757d, 7.5%);
+  }
+  &:active {
+    background-color: darken(#6c757d, 12.5%);
   }
   &.active {
     color: #fff;
@@ -131,10 +135,14 @@
   font-size: 75%;
   font-weight: 700;
   line-height: 1;
-  color: #333;
+  color: #212529;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   background-color: #f8f9fa;
   border-radius: .25rem;
+}
+.active > .label-cloud-count {
+  color: #212529;
+  background-color: #f8f9fa;
 }

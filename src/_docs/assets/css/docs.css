@@ -53,19 +53,21 @@
   font-weight: 400;
   line-height: 1.5;
   color: #ccc;
+  text-align: left;
 }
-.doc-nav-link:hover {
+.doc-nav-link:hover,
+.doc-nav-link:focus {
   color: #eee;
   text-decoration: none;
-  background-color: #171a1d;
+  background-color: rgba(255, 255, 255, .045);
 }
 .doc-nav-link.active {
   color: #fff;
-  background-color: #111416;
+  background-color: rgba(255, 255, 255, .125);
 }
 .doc-nav-link.active:hover {
   color: #fff;
-  background-color: #0b0d0f;
+  background-color: rgba(255, 255, 255, .145);
 }
 
 /** Header **/
@@ -78,7 +80,12 @@
   font-weight: 700;
   line-height: 1.2;
   color: #ff8a65;
+  text-align: left;
   text-transform: uppercase;
+}
+
+.doc-nav-header-secondary {
+  color: #4db6ac;
 }
 
 .doc-nav-subheader {
@@ -88,13 +95,10 @@
   font-weight: 700;
   line-height: 1.2;
   color: #888;
+  text-align: left;
   text-transform: uppercase;
   border-top: 1px solid #32383e;
   border-bottom: 1px solid #32383e;
-}
-
-.doc-nav-header-secondary {
-  color: #009688;
 }
 
 /** Divider **/
@@ -127,6 +131,7 @@
   display: block;
   padding: .5rem;
   margin: 1rem;
+  font-size: 0;
   line-height: 0;
   color: #212529;
   cursor: pointer;
@@ -173,8 +178,6 @@
   padding-left: 1rem;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: .875rem;
-  line-height: 1.5;
   list-style: none;
 }
 
@@ -189,16 +192,20 @@
 .doc-toc .toc-list .toc-link {
   display: block;
   padding: .125rem 1.5rem;
+  font-size: .875rem;
   font-weight: 400;
+  line-height: 1.3;
   color: #495057;
+  text-align: left;
 }
-.doc-toc .toc-list .toc-link:hover {
-  color: #007bff;
+.doc-toc .toc-list .toc-link:hover,
+.doc-toc .toc-list .toc-link:focus {
+  color: #ff8a65;
   text-decoration: none;
 }
 .doc-toc .toc-list .is-active-link {
   font-weight: 700;
-  color: #007bff;
+  color: #ff8a65;
 }
 
 /** Toggle **/
@@ -211,6 +218,7 @@
   display: block;
   padding: .5rem;
   margin: 1rem;
+  font-size: 0;
   line-height: 0;
   color: #212529;
   cursor: pointer;
@@ -302,9 +310,9 @@
   font-size: .875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
-  background-color: #e9ecef;
-  border-bottom: 4px solid #dee2e6;
+  color: #ccc;
+  text-align: left;
+  background-color: #212529;
 }
 .doc-content > .doc-topbar > ul {
   display: flex;
@@ -320,10 +328,11 @@
 
 .doc-content > .doc-topbar a {
   font-weight: 500;
-  color: #495057;
+  color: #eee;
 }
-.doc-content > .doc-topbar a:hover {
-  color: #007bff;
+.doc-content > .doc-topbar a:hover,
+.doc-content > .doc-topbar a:focus {
+  color: #ff8a65;
   text-decoration: none;
 }
 
@@ -332,14 +341,15 @@
  */
 
 .doc-content > .doc-breadcrumb {
-  padding: .5rem 1.5rem;
+  padding: 1rem 1.5rem;
   margin-right: -1.5rem;
-  margin-bottom: -1rem;
+  margin-bottom: -2rem;
   margin-left: -1.5rem;
   font-size: .875rem;
   font-weight: 500;
   line-height: 1.5;
   color: #6c757d;
+  text-align: left;
   text-transform: uppercase;
   user-select: none;
   background-color: #f8f9fa;
@@ -373,6 +383,7 @@
 .doc-content > h4,
 .doc-content > h5,
 .doc-content > h6 {
+  font-weight: 500;
   line-height: 1.2;
 }
 
@@ -384,7 +395,7 @@
   margin-left: -1.5rem;
   color: #212529;
   background-color: #f8f9fa;
-  border-bottom: 4px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
 }
 
 .doc-content > h2 {
@@ -407,7 +418,7 @@
   display: block;
   padding: 1rem;
   overflow: auto;
-  font-size: 85%;
+  font-size: 87.5%;
   line-height: 1.5;
   color: #212529;
   background-color: #f8f9fa;
@@ -481,6 +492,7 @@
 .doc-content > details > summary {
   margin-bottom: 1rem;
   color: #007bff;
+  cursor: pointer;
 }
 
 /**
@@ -581,7 +593,6 @@
   align-items: center;
   justify-content: flex-start;
 }
-
 .doc-badge-item {
   display: inline-block;
   padding: .5em .75em;
@@ -640,7 +651,8 @@ a.doc-badge-item-danger {
   color: rgba(0, 123, 255, .5);
   transition: color .16s linear;
 }
-.anchorjs-link:hover {
+.anchorjs-link:hover,
+.anchorjs-link:focus {
   color: #007bff;
   text-decoration: none;
 }
@@ -651,15 +663,16 @@ a.doc-badge-item-danger {
 @media (min-width: 768px) {
   .doc-nav {
     left: 0;
-    width: 230px;
+    width: 200px;
+    border-right: 2px solid #dee2e6;
   }
   .doc-toc {
     right: 0;
-    width: 180px;
+    width: 160px;
   }
   .doc-content {
-    margin-right: 180px;
-    margin-left: 230px;
+    margin-right: 160px;
+    margin-left: 200px;
   }
 }
 

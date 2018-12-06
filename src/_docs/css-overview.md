@@ -15,10 +15,6 @@ Utilize our source Sass files to take advantage of variables, functions, mixins,
       <span class="doc-badge-item">Source</span>
       <span class="doc-badge-item doc-badge-item-info">src/_scss</span>
     </div>
-    <div class="doc-badge">
-      <span class="doc-badge-item">Compiled version</span>
-      <span class="doc-badge-item doc-badge-item-info">src/tmp/css/bundle.css</span>
-    </div>
   </div>
 </figure>
 

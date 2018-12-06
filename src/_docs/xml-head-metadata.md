@@ -19,7 +19,7 @@ Metadata.
 </figure>
 
 
-## Table
+## Files
 
 <table>
   <thead>

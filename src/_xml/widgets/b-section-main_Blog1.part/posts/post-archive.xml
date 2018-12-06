@@ -3,11 +3,11 @@
     <!-- Title -->
     <h2 class='post-title'>
       <b:if cond='data:post.title'>
-        <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+        <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
           <data:post.title/>
         </a>
       <b:else/><!-- fallback -->
-        <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+        <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
           <data:messages.noTitle/>
         </a>
       </b:if>
@@ -17,21 +17,23 @@
       <data:post.snippets.short/>
     </div>
     <!-- Labels -->
-    <ul class='post-label'>
-      <b:if cond='data:post.labels'>
-        <b:loop index='i' values='data:post.labels' var='label'>
+    <div class='post-label'>
+      <ul class='post-label-list'>
+        <b:if cond='data:post.labels'>
+          <b:loop index='i' values='data:post.labels' var='label'>
+            <li class='post-label-item'>
+              <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                <data:label.name/>
+              </a>
+            </li>
+          </b:loop>
+        <b:else/><!-- fallback -->
           <li class='post-label-item'>
-            <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
-              <data:label.name/>
-            </a>
+            <span class='post-label-link nolabel'>Unlabelled</span>
           </li>
-        </b:loop>
-      <b:else/><!-- fallback -->
-        <li class='post-label-item'>
-          <span class='post-label-link nolabel'>Unlabelled</span>
-        </li>
-      </b:if>
-    </ul>
+        </b:if>
+      </ul>
+    </div>
     <!-- Meta -->
     <ul class='post-meta'>
       <!-- Author name -->

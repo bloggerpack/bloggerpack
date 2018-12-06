@@ -52,26 +52,130 @@ Make it easy for visitors to navigate your blog with links to older posts.
         <li class="archive-hierarchy-first-item">
           <details class="archive-hierarchy-details">
             <summary class="archive-hierarchy-summary">
-              <a class="archive-hierarchy-link" href="#">
-              2018
+              <a class="archive-hierarchy-link" href="#">2018</a>
               <span class="archive-hierarchy-count">(3)</span>
-              </a>
+            </summary>
+            <ul class="archive-hierarchy-second">
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">March</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">February</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">January</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+```html
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+    <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+    <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+    <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+    <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+    <b:widget-setting name='weekPattern'>MMMM d</b:widget-setting>
+    <b:widget-setting name='chronological'>false</b:widget-setting>
+    <b:widget-setting name='showPosts'>false</b:widget-setting>
+    <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+```
+
+<div class="doc-example">
+  <div class="widget BlogArchive">
+    <h3 class="title js-toc-ignore">
+      Archive
+    </h3>
+    <div class="widget-content">
+      <ol class="archive-hierarchy-first">
+        <li class="archive-hierarchy-first-item">
+          <details class="archive-hierarchy-details">
+            <summary class="archive-hierarchy-summary">
+              <a class="archive-hierarchy-link" href="#">2018</a>
+              <span class="archive-hierarchy-count">(2)</span>
+            </summary>
+            <ul class="archive-hierarchy-second">
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">February 25</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">January 28</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li class="archive-hierarchy-first-item">
+          <details class="archive-hierarchy-details">
+            <summary class="archive-hierarchy-summary">
+              <a class="archive-hierarchy-link" href="#">2017</a>
+              <span class="archive-hierarchy-count">(1)</span>
+            </summary>
+            <ul class="archive-hierarchy-second">
+              <li class="archive-hierarchy-second-item">
+                <a class="archive-hierarchy-link" href="#">December 31</a>
+                <span class="archive-hierarchy-count">(1)</span>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+```html
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+    <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+    <b:widget-setting name='showWeekEnd'>false</b:widget-setting>
+    <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+    <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+    <b:widget-setting name='weekPattern'>MMMM d</b:widget-setting>
+    <b:widget-setting name='chronological'>false</b:widget-setting>
+    <b:widget-setting name='showPosts'>false</b:widget-setting>
+    <b:widget-setting name='frequency'>WEEKLY</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+```
+
+<div class="doc-example">
+  <div class="widget BlogArchive">
+    <h3 class="title js-toc-ignore">
+      Archive
+    </h3>
+    <div class="widget-content">
+      <ol class="archive-hierarchy-first">
+        <li class="archive-hierarchy-first-item">
+          <details class="archive-hierarchy-details">
+            <summary class="archive-hierarchy-summary">
+              <a class="archive-hierarchy-link" href="#">2018</a>
+              <span class="archive-hierarchy-count">(3)</span>
             </summary>
             <ul class="archive-hierarchy-second">
               <li class="archive-hierarchy-second-item">
                 <details class="archive-hierarchy-details">
                   <summary class="archive-hierarchy-summary">
-                    <a class="archive-hierarchy-link" href="#">
-                    March
+                    <a class="archive-hierarchy-link" href="#">March</a>
                     <span class="archive-hierarchy-count">(1)</span>
-                    </a>
                   </summary>
                   <ul class="archive-hierarchy-third">
                     <li class="archive-hierarchy-third-item">
-                      <a class="archive-hierarchy-link" href="#">
-                      Mar 01
+                      <a class="archive-hierarchy-link" href="#">Mar 01</a>
                       <span class="archive-hierarchy-count">(1)</span>
-                      </a>
                     </li>
                   </ul>
                 </details>
@@ -79,17 +183,13 @@ Make it easy for visitors to navigate your blog with links to older posts.
               <li class="archive-hierarchy-second-item">
                 <details class="archive-hierarchy-details">
                   <summary class="archive-hierarchy-summary">
-                    <a class="archive-hierarchy-link" href="#">
-                    February
+                    <a class="archive-hierarchy-link" href="#">February</a>
                     <span class="archive-hierarchy-count">(1)</span>
-                    </a>
                   </summary>
                   <ul class="archive-hierarchy-third">
                     <li class="archive-hierarchy-third-item">
-                      <a class="archive-hierarchy-link" href="#">
-                      Feb 01
+                      <a class="archive-hierarchy-link" href="#">Feb 01</a>
                       <span class="archive-hierarchy-count">(1)</span>
-                      </a>
                     </li>
                   </ul>
                 </details>
@@ -97,17 +197,13 @@ Make it easy for visitors to navigate your blog with links to older posts.
               <li class="archive-hierarchy-second-item">
                 <details class="archive-hierarchy-details">
                   <summary class="archive-hierarchy-summary">
-                    <a class="archive-hierarchy-link" href="#">
-                    January
+                    <a class="archive-hierarchy-link" href="#">January</a>
                     <span class="archive-hierarchy-count">(1)</span>
-                    </a>
                   </summary>
                   <ul class="archive-hierarchy-third">
                     <li class="archive-hierarchy-third-item">
-                      <a class="archive-hierarchy-link" href="#">
-                      Jan 01
+                      <a class="archive-hierarchy-link" href="#">Jan 01</a>
                       <span class="archive-hierarchy-count">(1)</span>
-                      </a>
                     </li>
                   </ul>
                 </details>
@@ -121,7 +217,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 </div>
 
 ```html
-<b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
     <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
@@ -146,22 +242,16 @@ Make it easy for visitors to navigate your blog with links to older posts.
     <div class="widget-content">
       <ol class="archive-flat">
         <li class="archive-flat-item">
-          <a class="archive-flat-link" href="#">
-          March 2018
+          <a class="archive-flat-link" href="#">March 2018</a>
           <span class="archive-flat-count">(1)</span>
-          </a>
         </li>
         <li class="archive-flat-item">
-          <a class="archive-flat-link" href="#">
-          February 2018
+          <a class="archive-flat-link" href="#">February 2018</a>
           <span class="archive-flat-count">(1)</span>
-          </a>
         </li>
         <li class="archive-flat-item">
-          <a class="archive-flat-link" href="#">
-          January 2018
+          <a class="archive-flat-link" href="#">January 2018</a>
           <span class="archive-flat-count">(1)</span>
-          </a>
         </li>
       </ol>
     </div>
@@ -169,7 +259,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 </div>
 
 ```html
-<b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='showStyle'>FLAT</b:widget-setting>
     <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
@@ -209,7 +299,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
 </div>
 
 ```html
-<b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='showStyle'>MENU</b:widget-setting>
     <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
@@ -267,7 +357,7 @@ Let visitors search your blog.
 </div>
 
 ```html
-<b:widget id='BlogSearch10' locked='false' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
+<b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
 ```
 
 
@@ -324,7 +414,7 @@ Add a Contact Form to your Blog.
 </div>
 
 ```html
-<b:widget id='ContactForm10' locked='false' title='Contact Form' type='ContactForm' version='2' visible='true'/>
+<b:widget id='ContactForm1' locked='false' title='Contact Form' type='ContactForm' version='2' visible='true'/>
 ```
 
 
@@ -375,7 +465,7 @@ Highlight a special post on your blog.
 </div>
 
 ```html
-<b:widget id='FeaturedPost10' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
+<b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='showSnippet'>true</b:widget-setting>
     <b:widget-setting name='showPostTitle'>true</b:widget-setting>
@@ -424,7 +514,7 @@ Make it easy for visitors to subscribe to email delivery when you publish a post
 </div>
 
 ```html
-<b:widget id='FollowByEmail10' locked='false' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
+<b:widget id='FollowByEmail1' locked='false' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
 ```
 
 
@@ -468,7 +558,7 @@ Add an image from your computer, or from somewhere else on the web.
 </div>
 
 ```html
-<b:widget id='Image10' locked='false' title='Image' type='Image' version='2' visible='true'>
+<b:widget id='Image1' locked='false' title='Image' type='Image' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512</b:widget-setting>
     <b:widget-setting name='displayHeight'>172</b:widget-setting>
@@ -530,7 +620,7 @@ Show all the labels of posts in your blog.
 </div>
 
 ```html
-<b:widget id='Label10' locked='false' title='Labels' type='Label' version='2' visible='true'>
+<b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
     <b:widget-setting name='display'>LIST</b:widget-setting>
@@ -574,7 +664,7 @@ Show all the labels of posts in your blog.
 </div>
 
 ```html
-<b:widget id='Label10' locked='false' title='Labels' type='Label' version='2' visible='true'>
+<b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
     <b:widget-setting name='display'>CLOUD</b:widget-setting>
@@ -621,7 +711,7 @@ Display your blog's title and description.
 </div>
 
 ```html
-<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+<b:widget id='Header1' locked='false' title='(Header)' type='Header' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630</b:widget-setting>
     <b:widget-setting name='displayHeight'>768</b:widget-setting>
@@ -649,7 +739,7 @@ Display your blog's title and description.
 </div>
 
 ```html
-<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+<b:widget id='Header1' locked='false' title='(Header)' type='Header' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='displayUrl'>https://via.placeholder.com/256x256</b:widget-setting>
     <b:widget-setting name='displayHeight'>630</b:widget-setting>
@@ -678,7 +768,7 @@ Display your blog's title and description.
 </div>
 
 ```html
-<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+<b:widget id='Header1' locked='false' title='(Header)' type='Header' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='displayUrl'>https://via.placeholder.com/256x256</b:widget-setting>
     <b:widget-setting name='displayHeight'>630</b:widget-setting>
@@ -790,7 +880,7 @@ Display a list of the most popular posts from your blog.
 </div>
 
 ```html
-<b:widget id='PopularPosts10' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
+<b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
   <b:widget-settings>
     <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
     <b:widget-setting name='showThumbnails'>true</b:widget-setting>
