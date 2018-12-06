@@ -105,16 +105,19 @@
           </li>
         </ul>
       </div>
-      <%if(section != 'None'){%>
-        <div class="doc-breadcrumb">
-          <ol>
+      <div class="doc-breadcrumb">
+        <ol>
+          <%if(section != 'None'){%>
             <li><%=section%></li>
             <%if(subsection != 'None'){%>
               <li><%=subsection%></li>
             <%}%>
-          </ol>
-        </div>
-      <%}%>
+          <%}%>
+          <%if(section == 'None'){%>
+            <li>:=:</li>
+          <%}%>
+        </ol>
+      </div>
       <%=content%>
     </main>
 
