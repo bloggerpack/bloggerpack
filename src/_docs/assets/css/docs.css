@@ -639,7 +639,7 @@ a.doc-badge-item-danger {
  * Details
  */
 
- .doc-content > details {
+.doc-content > details {
   display: block;
   margin-bottom: 1rem;
 }
