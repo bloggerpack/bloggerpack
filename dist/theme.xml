@@ -1293,6 +1293,7 @@ Header
                   <li class='header-nav-item'>
                     <a class='header-nav-link' expr:href='data:link.href'>
                       <b:class cond='data:link.isCurrentPage' name='active'/>
+                      <b:attr name='b:whitespace' value='remove'/>
                       <data:link.title/>
                     </a>
                   </li>
@@ -1367,30 +1368,46 @@ Main content (main and sidebar)
                       <b:comment>=== Item page ===</b:comment>
                       <b:if cond='data:view.isPost'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>Post</li>
                         <b:loop values='data:posts' var='post'>
-                          <li class='breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
+                          <li class='breadcrumb-item active'>
+                            <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                          </li>
                         </b:loop>
                       </b:if>
                       <b:comment>=== Static page ===</b:comment>
                       <b:if cond='data:view.isPage'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>Page</li>
                         <b:loop values='data:posts' var='post'>
-                          <li class='breadcrumb-item active'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></li>
+                          <li class='breadcrumb-item active'>
+                            <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+                          </li>
                         </b:loop>
                       </b:if>
                       <b:comment>=== Search (label) page ===</b:comment>
                       <b:if cond='data:view.search.label'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+                          <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            Search
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>Label</li>
                         <li class='breadcrumb-item active'><data:view.search.label/></li>
@@ -1398,10 +1415,16 @@ Main content (main and sidebar)
                       <b:comment>=== Search (query) page ===</b:comment>
                       <b:if cond='data:view.search.query'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
+                          <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            Search
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>Query</li>
                         <li class='breadcrumb-item active'><data:view.search.query/></li>
@@ -1409,18 +1432,27 @@ Main content (main and sidebar)
                       <b:comment>=== Search (default) page ===</b:comment>
                       <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>Search</li>
                       </b:if>
                       <b:comment>=== Archive page ===</b:comment>
                       <b:if cond='data:view.isArchive'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <b:if cond='data:view.archive.month'>
                           <li class='breadcrumb-item'>
-                            <a class='breadcrumb-link' expr:href='data:blog.homepageUrl + data:view.archive.year'><data:view.archive.year/></a>
+                            <a class='breadcrumb-link' expr:href='data:blog.homepageUrl + data:view.archive.year'>
+                              <b:attr name='b:whitespace' value='remove'/>
+                              <data:view.archive.year/>
+                            </a>
                           </li>
                           <li class='breadcrumb-item active'><data:view.archive.month/></li>
                         <b:else/>
@@ -1430,7 +1462,10 @@ Main content (main and sidebar)
                       <b:comment>=== Error page ===</b:comment>
                       <b:if cond='data:view.isError'>
                         <li class='breadcrumb-item'>
-                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+                          <a class='breadcrumb-link' expr:href='data:blog.homepageUrl'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:messages.home/>
+                          </a>
                         </li>
                         <li class='breadcrumb-item active'>404</li>
                       </b:if>
@@ -1519,11 +1554,13 @@ Main content (main and sidebar)
                             <!-- Title -->
                             <h2 class='post-title'>
                               <b:if cond='data:post.title'>
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:post.title/>
                                 </a>
                               <b:else/><!-- fallback -->
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:messages.noTitle/>
                                 </a>
                               </b:if>
@@ -1538,7 +1575,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -1557,7 +1595,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -1577,7 +1616,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -1593,37 +1633,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -1653,7 +1699,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -1673,7 +1720,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -1689,37 +1737,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -1733,7 +1787,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -1778,11 +1833,13 @@ Main content (main and sidebar)
                             <!-- Title -->
                             <h2 class='post-title'>
                               <b:if cond='data:post.title'>
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:post.title/>
                                 </a>
                               <b:else/><!-- fallback -->
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:messages.noTitle/>
                                 </a>
                               </b:if>
@@ -1797,7 +1854,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -1816,7 +1874,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -1836,7 +1895,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -1852,37 +1912,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -1900,11 +1966,13 @@ Main content (main and sidebar)
                             <!-- Title -->
                             <h2 class='post-title'>
                               <b:if cond='data:post.title'>
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:post.title/>
                                 </a>
                               <b:else/><!-- fallback -->
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:messages.noTitle/>
                                 </a>
                               </b:if>
@@ -1919,7 +1987,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -1938,7 +2007,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -1958,7 +2028,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -1974,37 +2045,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -2022,11 +2099,13 @@ Main content (main and sidebar)
                             <!-- Title -->
                             <h2 class='post-title'>
                               <b:if cond='data:post.title'>
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:post.title/>
                                 </a>
                               <b:else/><!-- fallback -->
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:messages.noTitle/>
                                 </a>
                               </b:if>
@@ -2041,7 +2120,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -2060,7 +2140,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -2080,7 +2161,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -2096,37 +2178,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -2144,11 +2232,13 @@ Main content (main and sidebar)
                             <!-- Title -->
                             <h2 class='post-title'>
                               <b:if cond='data:post.title'>
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:post.title/>
                                 </a>
                               <b:else/><!-- fallback -->
-                                <a b:whitespace='remove' class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                <a class='post-title-link' expr:href='data:post.link ?: data:post.url'>
+                                  <b:attr name='b:whitespace' value='remove'/>
                                   <data:messages.noTitle/>
                                 </a>
                               </b:if>
@@ -2163,7 +2253,8 @@ Main content (main and sidebar)
                                 <b:if cond='data:post.labels'>
                                   <b:loop index='i' values='data:post.labels' var='label'>
                                     <li class='post-label-item'>
-                                      <a b:whitespace='remove' class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                      <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         <data:label.name/>
                                       </a>
                                     </li>
@@ -2182,7 +2273,8 @@ Main content (main and sidebar)
                                 <data:messages.postedBy/>
                                 <b:if cond='data:post.author'>
                                   <b:if cond='data:post.author.profileUrl'>
-                                    <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                    <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+                                      <b:attr name='b:whitespace' value='remove'/>
                                       <data:post.author.name/>
                                     </a>
                                   <b:else/><!-- no profileUrl -->
@@ -2202,7 +2294,8 @@ Main content (main and sidebar)
                               <!-- Number of comments -->
                               <b:if cond='data:post.allowComments'>
                                 <li class='post-meta-item'>
-                                  <a b:whitespace='remove' class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                  <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+                                    <b:attr name='b:whitespace' value='remove'/>
                                     <b:if cond='data:post.commentSource != 1'>
                                       <!-- Google+ Comments (No) -->
                                       <b:message name='messages.numberOfComments'>
@@ -2218,37 +2311,43 @@ Main content (main and sidebar)
                               <!-- Sharing -->
                               <li class='post-meta-item'>
                                 <div class='post-share'>
-                                  <span b:whitespace='remove' class='post-share-toggle' tabindex='0'>
+                                  <span class='post-share-toggle' tabindex='0'>
                                     <data:messages.share/>
                                   </span>
                                   <ul class='post-share-menu'>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Twitter
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Facebook
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Google+
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Pinterest
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         Email
                                       </a>
                                     </li>
                                     <li class='post-share-menu-item'>
-                                      <a b:whitespace='remove' class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                      <a class='post-share-menu-link' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+                                        <b:attr name='b:whitespace' value='remove'/>
                                         BlogThis!
                                       </a>
                                     </li>
@@ -2282,6 +2381,7 @@ Main content (main and sidebar)
                                 <li>Under "Google+ Comments", choose <strong>Yes</strong>. At the top right, click Save settings.</li>
                               </ol>
                               <a class='comments-alert-link' href='https://support.google.com/blogger' target='_blank'>
+                                <b:attr name='b:whitespace' value='remove'/>
                                 <strong><data:messages.learnMore/></strong>
                               </a>
                             </div>
@@ -2297,16 +2397,19 @@ Main content (main and sidebar)
                   <b:if cond='data:posts.notEmpty and !data:view.isPage'>
                     <nav class='pager'>
                       <a class='pager-newer pager-link' role='button'>
-                        <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
                         <b:class cond='!data:newerPageUrl' name='disabled'/>
+                        <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
+                        <b:attr name='b:whitespace' value='remove'/>
                         <data:messages.newer/>
                       </a>
                       <a class='pager-home pager-link' expr:href='data:blog.homepageUrl' role='button'>
+                        <b:attr name='b:whitespace' value='remove'/>
                         <data:messages.home/>
                       </a>
                       <a class='pager-older pager-link' role='button'>
-                        <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
                         <b:class cond='!data:olderPageUrl' name='disabled'/>
+                        <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
+                        <b:attr name='b:whitespace' value='remove'/>
                         <data:messages.older/>
                       </a>
                     </nav>
@@ -2442,7 +2545,10 @@ Footer
               <ul class='footer-nav'>
                 <b:loop values='data:links' var='link'>
                   <li class='footer-nav-item'>
-                    <a class='footer-nav-link' expr:href='data:link.target'><data:link.name/></a>
+                    <a class='footer-nav-link' expr:href='data:link.target'>
+                      <b:attr name='b:whitespace' value='remove'/>
+                      <data:link.name/>
+                    </a>
                   </li>
                 </b:loop>
               </ul>
@@ -2505,9 +2611,7 @@ Default markups
       <select class='archive-menu' onchange='if (this.value) window.location.href = this.value'>
         <option selected='selected' value=''><data:messages.archive/></option>
         <b:loop values='data:data' var='i'>
-          <option expr:value='data:i.url'>
-            <data:i.name/> (<data:i.post-count/>)
-          </option>
+          <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
         </b:loop>
       </select>
     </b:includable>
@@ -2515,7 +2619,10 @@ Default markups
       <ol class='archive-flat'>
         <b:loop values='data:data' var='i'>
           <li class='archive-flat-item'>
-            <a b:whitespace='remove' class='archive-flat-link' expr:href='data:i.url'><data:i.name/></a>
+            <a class='archive-flat-link' expr:href='data:i.url'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:i.name/>
+            </a>
             <span class='archive-flat-count'>(<data:i.post-count/>)</span>
           </li>
         </b:loop>
@@ -2527,7 +2634,10 @@ Default markups
           <li class='archive-hierarchy-first-item'>
             <details class='archive-hierarchy-details'>
               <summary class='archive-hierarchy-summary'>
-                <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:i.url'><data:i.name/></a>
+                <a class='archive-hierarchy-link' expr:href='data:i.url'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <data:i.name/>
+                </a>
                 <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
               </summary>
 
@@ -2536,7 +2646,10 @@ Default markups
                   <li class='archive-hierarchy-second-item'>
                     <b:tag class='archive-hierarchy-details' cond='data:j.data' name='details'>
                       <b:tag class='archive-hierarchy-summary' cond='data:j.data' name='summary'>
-                        <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:j.url'><data:j.name/></a>
+                        <a class='archive-hierarchy-link' expr:href='data:j.url'>
+                          <b:attr name='b:whitespace' value='remove'/>
+                          <data:j.name/>
+                        </a>
                         <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
                       </b:tag>
 
@@ -2544,7 +2657,10 @@ Default markups
                         <ul class='archive-hierarchy-third'>
                           <b:loop values='data:j.data' var='k'>
                             <li class='archive-hierarchy-third-item'>
-                              <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:k.url'><data:k.name/></a>
+                              <a class='archive-hierarchy-link' expr:href='data:k.url'>
+                                <b:attr name='b:whitespace' value='remove'/>
+                                <data:k.name/>
+                              </a>
                               <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
                             </li>
                           </b:loop>
@@ -2641,41 +2757,52 @@ Default markups
               <b:if cond='data:post.featuredImage'>
                 <b:if cond='data:post.featuredImage.isYoutube'>
                   <a expr:href='data:post.link ?: data:post.url'>
-                    <img b:whitespace='remove'>
+                    <b:attr name='b:whitespace' value='remove'/>
+                    <img>
                       <!-- class --><b:class name='featured-post-img'/>
                       <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 512, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
                       <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                      <b:attr name='b:whitespace' value='remove'/>
                     </img>
                   </a>
                 <b:else/>
                   <a expr:href='data:post.link ?: data:post.url'>
-                    <img b:whitespace='remove'>
+                    <b:attr name='b:whitespace' value='remove'/>
+                    <img>
                       <!-- class --><b:class name='featured-post-img'/>
                       <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 512, "16:9") : data:post.featuredImage' name='src'/>
                       <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                      <b:attr name='b:whitespace' value='remove'/>
                     </img>
                   </a>
                 </b:if>
               <b:else/><!-- fallback -->
                 <a expr:href='data:post.link ?: data:post.url'>
-                  <img b:whitespace='remove'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <img>
                     <!-- class --><b:class name='featured-post-img featured-post-noimg'/>
                     <!-- src --><b:attr name='src' value='https://via.placeholder.com/512x288/eee/777?text=No+Image'/>
                     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
+                    <b:attr name='b:whitespace' value='remove'/>
                   </img>
                 </a>
               </b:if>
             </b:if>
-            <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'><div class='featured-post-divider'/></b:if>
+            <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'>
+              <div class='featured-post-divider'/>
+            </b:if>
             <b:comment>=== Title ===</b:comment>
             <b:if cond='data:postDisplay.showTitle'>
               <h3 class='featured-post-title'>
-                <a b:whitespace='remove' class='featured-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                <a class='featured-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                  <b:attr name='b:whitespace' value='remove'/>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>
             </b:if>
-            <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'><div class='featured-post-divider'/></b:if>
+            <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'>
+              <div class='featured-post-divider'/>
+            </b:if>
             <b:comment>=== Snippet ===</b:comment>
             <b:if cond='data:postDisplay.showSnippet'>
               <div class='featured-post-snippet'>
@@ -2683,8 +2810,9 @@ Default markups
                   <data:post.snippets.short/>
                 <b:else/>
                   <data:post.snippets.short/><br/>
-                  <a b:whitespace='remove' class='featured-post-snippet-link' expr:href='data:post.url' role='button'>
+                  <a class='featured-post-snippet-link' expr:href='data:post.url' role='button'>
                     <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
+                    <b:attr name='b:whitespace' value='remove'/>
                     <data:messages.keepReading/>
                   </a>
                 </b:if>
@@ -2708,7 +2836,9 @@ Default markups
       <div class='widget-content'>
         <form class='follow-by-email-form' action='https://feedburner.google.com/fb/a/mailverify' expr:onsubmit='"window.open(\"https://feedburner.google.com/fb/a/mailverify?uri=" + data:feedPath + "\", \"popupwindow\", \"scrollbars=yes,width=550,height=520\"); return true"' method='post' target='popupwindow'>
           <input autocomplete='off' class='follow-by-email-form-input' expr:aria-label='data:messages.emailAddress' expr:placeholder='data:messages.emailAddress' name='email' type='email'/>
-          <button class='follow-by-email-form-submit' expr:title='data:messages.getEmailNotifications' type='submit'><data:messages.getEmailNotifications/></button>
+          <button class='follow-by-email-form-submit' expr:title='data:messages.getEmailNotifications' type='submit'>
+            <data:messages.getEmailNotifications/>
+          </button>
           <input expr:value='data:feedPath' name='uri' type='hidden'/>
           <input name='loc' type='hidden' value='en_US'/>
         </form>
@@ -2727,6 +2857,7 @@ Default markups
       <div class='widget-content'>
         <figure class='image'>
           <b:tag cond='data:link' expr:href='data:link' name='a'>
+            <b:attr cond='data:link' name='b:whitespace' value='remove'/>
             <b:if cond='data:sourceUrl'>
               <img class='image-img' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
             </b:if>
@@ -2757,8 +2888,9 @@ Default markups
     <b:includable id='list'>
       <div class='label-list'>
         <b:loop values='data:labels' var='label'>
-          <a b:whitespace='remove' class='label-list-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+          <a class='label-list-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
             <b:class cond='data:view.search.label == data:label.name' name='active'/>
+            <b:attr name='b:whitespace' value='remove'/>
             <data:label.name/>
             <b:if cond='data:this.showFreqNumbers'>
               <span class='label-list-count'><data:label.count/></span>
@@ -2771,8 +2903,9 @@ Default markups
       <ul class='label-cloud'>
         <b:loop values='data:labels' var='label'>
           <li class='label-cloud-item'>
-            <a b:whitespace='remove' class='label-cloud-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+            <a class='label-cloud-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
               <b:class cond='data:view.search.label == data:label.name' name='active'/>
+              <b:attr name='b:whitespace' value='remove'/>
               <data:label.name/>
               <b:if cond='data:this.showFreqNumbers'>
                 <span class='label-cloud-count'><data:label.count/></span>
@@ -2796,6 +2929,7 @@ Default markups
           <div class='container'>
             <b:if cond='data:image'>
               <a expr:href='data:blog.homepageUrl'>
+                <b:attr name='b:whitespace' value='remove'/>
                 <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
               </a>
             </b:if>
@@ -2810,6 +2944,7 @@ Default markups
           <div class='container'>
             <b:if cond='data:image'>
               <a expr:href='data:blog.homepageUrl'>
+                <b:attr name='b:whitespace' value='remove'/>
                 <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
               </a>
             </b:if>
@@ -2827,7 +2962,12 @@ Default markups
           <b:class cond='!data:image' name='is-noimage'/>
           <div class='container'>
             <b:if cond='data:title'>
-              <h1 class='page-header-title'><a class='page-header-title-link' expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+              <h1 class='page-header-title'>
+                <a class='page-header-title-link' expr:href='data:blog.homepageUrl'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <data:title/>
+                </a>
+              </h1>
             </b:if>
             <b:if cond='data:description'>
               <p class='page-header-description'><data:description/></p>
@@ -2856,33 +2996,39 @@ Default markups
               <b:if cond='data:post.featuredImage'>
                 <b:if cond='data:post.featuredImage.isYoutube'>
                   <a expr:href='data:post.link ?: data:post.url'>
-                    <img b:whitespace='remove'>
+                    <b:attr name='b:whitespace' value='remove'/>
+                    <img>
                       <!-- class --><b:class name='popular-post-img'/>
                       <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 64, "1:1") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
                       <!-- width --><b:attr name='width' value='64'/>
                       <!-- height --><b:attr name='height' value='64'/>
                       <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                      <b:attr name='b:whitespace' value='remove'/>
                     </img>
                   </a>
                 <b:else/>
                   <a expr:href='data:post.link ?: data:post.url'>
-                    <img b:whitespace='remove'>
+                    <b:attr name='b:whitespace' value='remove'/>
+                    <img>
                       <!-- class --><b:class name='popular-post-img'/>
                       <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 64, "1:1") : data:post.featuredImage' name='src'/>
                       <!-- width --><b:attr name='width' value='64'/>
                       <!-- height --><b:attr name='height' value='64'/>
                       <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                      <b:attr name='b:whitespace' value='remove'/>
                     </img>
                   </a>
                 </b:if>
               <b:else/><!-- fallback -->
                 <a expr:href='data:post.link ?: data:post.url'>
-                  <img b:whitespace='remove'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <img>
                     <!-- class --><b:class name='popular-post-img popular-post-noimg'/>
                     <!-- src --><b:attr name='src' value='https://via.placeholder.com/64x64/eee/777?text=No+Image'/>
                     <!-- width --><b:attr name='width' value='64'/>
                     <!-- height --><b:attr name='height' value='64'/>
                     <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
+                    <b:attr name='b:whitespace' value='remove'/>
                   </img>
                 </a>
               </b:if>
@@ -2891,7 +3037,8 @@ Default markups
             <div class='popular-post-body'>
               <b:comment>=== Title ===</b:comment>
               <h3 class='popular-post-title'>
-                <a b:whitespace='remove' class='popular-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                <a class='popular-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                  <b:attr name='b:whitespace' value='remove'/>
                   <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
                 </a>
               </h3>

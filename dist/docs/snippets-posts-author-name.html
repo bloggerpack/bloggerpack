@@ -11,7 +11,8 @@
 </code></pre><h2 id="anchors">Anchors</h2><pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Author name --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.author'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.author.profileUrl'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.author.profileUrl'</span> <span class="hljs-attribute">expr:title</span>=<span class="hljs-value">'data:messages.visitProfile'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.author.profileUrl'</span> <span class="hljs-attribute">expr:title</span>=<span class="hljs-value">'data:messages.visitProfile'</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'b:whitespace'</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">'remove'</span>/&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">data:post.author.name</span>/&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span><span class="hljs-comment">&lt;!-- no profileUrl --&gt;</span>
@@ -21,7 +22,8 @@
 </code></pre><p><strong>+ Fallback</strong></p><pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Author name --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.author'</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:if</span> <span class="hljs-attribute">cond</span>=<span class="hljs-value">'data:post.author.profileUrl'</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">b:whitespace</span>=<span class="hljs-value">'remove'</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.author.profileUrl'</span> <span class="hljs-attribute">expr:title</span>=<span class="hljs-value">'data:messages.visitProfile'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">expr:href</span>=<span class="hljs-value">'data:post.author.profileUrl'</span> <span class="hljs-attribute">expr:title</span>=<span class="hljs-value">'data:messages.visitProfile'</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">b:attr</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'b:whitespace'</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">'remove'</span>/&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">data:post.author.name</span>/&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">b:else</span>/&gt;</span><span class="hljs-comment">&lt;!-- no profileUrl --&gt;</span>
