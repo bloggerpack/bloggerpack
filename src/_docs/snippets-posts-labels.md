@@ -20,7 +20,8 @@ Labels of the post.
 <!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:label.name/>
     </a>
   </b:loop>
@@ -34,7 +35,8 @@ Labels of the post.
 <!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:label.name/>
     </a>
   </b:loop>
@@ -50,7 +52,8 @@ Labels of the post.
 <!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:label.name/>
     </a><b:if cond='data:i != (data:post.labels.size - 1)'>,</b:if>
   </b:loop>
@@ -63,7 +66,8 @@ Labels of the post.
 <!-- Labels -->
 <b:if cond='data:post.labels'>
   <b:loop index='i' values='data:post.labels' var='label'>
-    <a b:whitespace='remove' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+    <a expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:label.name/>
     </a><b:if cond='data:i != (data:post.labels.size - 1)'>,</b:if>
   </b:loop>

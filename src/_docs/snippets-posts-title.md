@@ -37,7 +37,8 @@ Title of the post.
 ```html
 <!-- Title -->
 <b:if cond='data:post.title'>
-  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+  <a expr:href='data:post.link ?: data:post.url'>
+    <b:attr name='b:whitespace' value='remove'/>
     <data:post.title/>
   </a>
 </b:if>
@@ -48,11 +49,13 @@ Title of the post.
 ```html
 <!-- Title -->
 <b:if cond='data:post.title'>
-  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+  <a expr:href='data:post.link ?: data:post.url'>
+    <b:attr name='b:whitespace' value='remove'/>
     <data:post.title/>
   </a>
 <b:else/><!-- fallback -->
-  <a b:whitespace='remove' expr:href='data:post.link ?: data:post.url'>
+  <a expr:href='data:post.link ?: data:post.url'>
+    <b:attr name='b:whitespace' value='remove'/>
     <data:messages.noTitle/>
   </a>
 </b:if>

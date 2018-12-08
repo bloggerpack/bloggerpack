@@ -14,28 +14,28 @@ The share buttons for the post.
 
 ```html
 <!-- Sharing -->
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-twitter'/>
+<a expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   Twitter
 </a>
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-facebook'/>
+<a expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   Facebook
 </a>
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-gplus'/>
+<a expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   Google+
 </a>
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-pinterest'/>
+<a expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   Pinterest
 </a>
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-email'/>
+<a expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   Email
 </a>
-<a b:whitespace='remove' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
-  <i aria-hidden='true' class='icon icon-blogger'/>
+<a expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+  <b:attr name='b:whitespace' value='remove'/>
   BlogThis!
 </a>
 ```
@@ -46,33 +46,33 @@ The share buttons for the post.
 ```html
 <!-- Sharing -->
 <div class='dropdown'>
-  <a aria-expanded='false' aria-haspopup='true' b:whitespace='remove' class='dropdown-toggle' data-toggle='dropdown' expr:title='data:messages.share' href='#'>
-    <i aria-hidden='true' class='icon icon-share'/>
+  <a aria-expanded='false' aria-haspopup='true' class='dropdown-toggle' data-toggle='dropdown' expr:title='data:messages.share' href='#'>
+    <b:attr name='b:whitespace' value='remove'/>
     <data:messages.share/>
   </a>
   <div class='dropdown-menu'>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-twitter'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       Twitter
     </a>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-facebook'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       Facebook
     </a>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-gplus'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "googlePlus" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       Google+
     </a>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-pinterest'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       Pinterest
     </a>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-email'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       Email
     </a>
-    <a b:whitespace='remove' class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
-      <i aria-hidden='true' class='icon icon-blogger'/>
+    <a class='dropdown-item' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+      <b:attr name='b:whitespace' value='remove'/>
       BlogThis!
     </a>
   </div>

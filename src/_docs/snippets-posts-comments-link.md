@@ -15,7 +15,8 @@ Link to the comments on the post.
 ```html
 <!-- Number of comments -->
 <b:if cond='data:post.allowComments'>
-  <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+  <a expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+    <b:attr name='b:whitespace' value='remove'/>
     <b:if cond='data:post.commentSource != 1'>
       <!-- Google+ Comments (No) -->
       <b:message name='messages.numberOfComments'>
@@ -35,7 +36,8 @@ Link to the comments on the post.
 ```html
 <!-- Number of comments -->
 <b:if cond='data:post.allowComments'>
-  <a b:whitespace='remove' expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+  <a expr:href='data:post.commentsUrl' expr:title='data:messages.comments'>
+    <b:attr name='b:whitespace' value='remove'/>
     <b:if cond='data:post.commentSource != 1'>
       <!-- Google+ Comments (No) -->
       <b:message name='messages.numberOfComments'>

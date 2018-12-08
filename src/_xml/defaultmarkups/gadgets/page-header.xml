@@ -7,6 +7,7 @@
       <div class='container'>
         <b:if cond='data:image'>
           <a expr:href='data:blog.homepageUrl'>
+            <b:attr name='b:whitespace' value='remove'/>
             <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
           </a>
         </b:if>
@@ -21,6 +22,7 @@
       <div class='container'>
         <b:if cond='data:image'>
           <a expr:href='data:blog.homepageUrl'>
+            <b:attr name='b:whitespace' value='remove'/>
             <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
           </a>
         </b:if>
@@ -38,7 +40,12 @@
       <b:class cond='!data:image' name='is-noimage'/>
       <div class='container'>
         <b:if cond='data:title'>
-          <h1 class='page-header-title'><a class='page-header-title-link' expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+          <h1 class='page-header-title'>
+            <a class='page-header-title-link' expr:href='data:blog.homepageUrl'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:title/>
+            </a>
+          </h1>
         </b:if>
         <b:if cond='data:description'>
           <p class='page-header-description'><data:description/></p>

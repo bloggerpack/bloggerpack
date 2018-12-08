@@ -16,6 +16,7 @@
               <li>Under "Google+ Comments", choose <strong>Yes</strong>. At the top right, click Save settings.</li>
             </ol>
             <a class='comments-alert-link' href='https://support.google.com/blogger' target='_blank'>
+              <b:attr name='b:whitespace' value='remove'/>
               <strong><data:messages.learnMore/></strong>
             </a>
           </div>

@@ -15,14 +15,16 @@ Link to the full post.
 ```html
 <!-- Read more -->
 <b:if cond='data:post.hasJumpLink'>
-  <a b:whitespace='remove' expr:href='fragment(data:post.url, "more")' role='button'>
+  <a expr:href='fragment(data:post.url, "more")' role='button'>
     <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
+    <b:attr name='b:whitespace' value='remove'/>
     <data:blog.jumpLinkMessage/>
   </a>
 <b:else/>
   <b:if cond='data:post.snippets'>
-    <a b:whitespace='remove' expr:href='data:post.url' role='button'>
+    <a expr:href='data:post.url' role='button'>
       <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:messages.keepReading/>
     </a>
   </b:if>

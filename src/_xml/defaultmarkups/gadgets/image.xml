@@ -6,6 +6,7 @@
   <div class='widget-content'>
     <figure class='image'>
       <b:tag cond='data:link' expr:href='data:link' name='a'>
+        <b:attr cond='data:link' name='b:whitespace' value='remove'/>
         <b:if cond='data:sourceUrl'>
           <img class='image-img' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
         </b:if>

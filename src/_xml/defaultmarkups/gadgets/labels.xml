@@ -11,8 +11,9 @@
 <b:includable id='list'>
   <div class='label-list'>
     <b:loop values='data:labels' var='label'>
-      <a b:whitespace='remove' class='label-list-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+      <a class='label-list-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
         <b:class cond='data:view.search.label == data:label.name' name='active'/>
+        <b:attr name='b:whitespace' value='remove'/>
         <data:label.name/>
         <b:if cond='data:this.showFreqNumbers'>
           <span class='label-list-count'><data:label.count/></span>
@@ -25,8 +26,9 @@
   <ul class='label-cloud'>
     <b:loop values='data:labels' var='label'>
       <li class='label-cloud-item'>
-        <a b:whitespace='remove' class='label-cloud-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+        <a class='label-cloud-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
           <b:class cond='data:view.search.label == data:label.name' name='active'/>
+          <b:attr name='b:whitespace' value='remove'/>
           <data:label.name/>
           <b:if cond='data:this.showFreqNumbers'>
             <span class='label-cloud-count'><data:label.count/></span>

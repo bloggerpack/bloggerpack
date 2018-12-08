@@ -13,9 +13,7 @@
   <select class='archive-menu' onchange='if (this.value) window.location.href = this.value'>
     <option selected='selected' value=''><data:messages.archive/></option>
     <b:loop values='data:data' var='i'>
-      <option expr:value='data:i.url'>
-        <data:i.name/> (<data:i.post-count/>)
-      </option>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
     </b:loop>
   </select>
 </b:includable>
@@ -23,7 +21,10 @@
   <ol class='archive-flat'>
     <b:loop values='data:data' var='i'>
       <li class='archive-flat-item'>
-        <a b:whitespace='remove' class='archive-flat-link' expr:href='data:i.url'><data:i.name/></a>
+        <a class='archive-flat-link' expr:href='data:i.url'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:i.name/>
+        </a>
         <span class='archive-flat-count'>(<data:i.post-count/>)</span>
       </li>
     </b:loop>
@@ -35,7 +36,10 @@
       <li class='archive-hierarchy-first-item'>
         <details class='archive-hierarchy-details'>
           <summary class='archive-hierarchy-summary'>
-            <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:i.url'><data:i.name/></a>
+            <a class='archive-hierarchy-link' expr:href='data:i.url'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:i.name/>
+            </a>
             <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
           </summary>
 
@@ -44,7 +48,10 @@
               <li class='archive-hierarchy-second-item'>
                 <b:tag class='archive-hierarchy-details' cond='data:j.data' name='details'>
                   <b:tag class='archive-hierarchy-summary' cond='data:j.data' name='summary'>
-                    <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:j.url'><data:j.name/></a>
+                    <a class='archive-hierarchy-link' expr:href='data:j.url'>
+                      <b:attr name='b:whitespace' value='remove'/>
+                      <data:j.name/>
+                    </a>
                     <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
                   </b:tag>
 
@@ -52,7 +59,10 @@
                     <ul class='archive-hierarchy-third'>
                       <b:loop values='data:j.data' var='k'>
                         <li class='archive-hierarchy-third-item'>
-                          <a b:whitespace='remove' class='archive-hierarchy-link' expr:href='data:k.url'><data:k.name/></a>
+                          <a class='archive-hierarchy-link' expr:href='data:k.url'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:k.name/>
+                          </a>
                           <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
                         </li>
                       </b:loop>

@@ -38,7 +38,8 @@ Name of the profile of the post author.
 <!-- Author name -->
 <b:if cond='data:post.author'>
   <b:if cond='data:post.author.profileUrl'>
-    <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+    <a expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:post.author.name/>
     </a>
   <b:else/><!-- no profileUrl -->
@@ -53,7 +54,8 @@ Name of the profile of the post author.
 <!-- Author name -->
 <b:if cond='data:post.author'>
   <b:if cond='data:post.author.profileUrl'>
-    <a b:whitespace='remove' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+    <a expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+      <b:attr name='b:whitespace' value='remove'/>
       <data:post.author.name/>
     </a>
   <b:else/><!-- no profileUrl -->

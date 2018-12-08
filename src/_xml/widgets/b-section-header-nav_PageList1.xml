@@ -12,6 +12,7 @@
         <li class='header-nav-item'>
           <a class='header-nav-link' expr:href='data:link.href'>
             <b:class cond='data:link.isCurrentPage' name='active'/>
+            <b:attr name='b:whitespace' value='remove'/>
             <data:link.title/>
           </a>
         </li>

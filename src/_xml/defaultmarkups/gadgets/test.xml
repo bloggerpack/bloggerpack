@@ -1,63 +1,102 @@
-<b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
-    <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
-    <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
-    <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
-    <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
-    <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
-    <b:widget-setting name='chronological'>false</b:widget-setting>
-    <b:widget-setting name='showPosts'>false</b:widget-setting>
-    <b:widget-setting name='frequency'>DAILY</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
-<b:widget id='BlogSearch10' locked='false' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
-<b:widget id='ContactForm10' locked='false' title='Contact Form' type='ContactForm' version='2' visible='true'/>
-<b:widget id='FeaturedPost10' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='showSnippet'>true</b:widget-setting>
-    <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-    <b:widget-setting name='showFirstImage'>true</b:widget-setting>
-    <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
-<b:widget id='FollowByEmail10' locked='false' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
-<b:widget id='Image10' locked='false' title='Image' type='Image' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512</b:widget-setting>
-    <b:widget-setting name='displayHeight'>172</b:widget-setting>
-    <b:widget-setting name='sectionWidth'>258</b:widget-setting>
-    <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
-    <b:widget-setting name='displayWidth'>258</b:widget-setting>
-    <b:widget-setting name='link'>https://blogger.com</b:widget-setting>
-    <b:widget-setting name='caption'>A caption for the above image.</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
-<b:widget id='Label10' locked='false' title='Labels' type='Label' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-    <b:widget-setting name='display'>LIST</b:widget-setting>
-    <b:widget-setting name='selectedLabelsList'/>
-    <b:widget-setting name='showType'>ALL</b:widget-setting>
-    <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
-<b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630</b:widget-setting>
-    <b:widget-setting name='displayHeight'>768</b:widget-setting>
-    <b:widget-setting name='sectionWidth'>258</b:widget-setting>
-    <b:widget-setting name='useImage'>true</b:widget-setting>
-    <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-    <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
-    <b:widget-setting name='displayWidth'>1366</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
-<b:widget id='PopularPosts10' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
-  <b:widget-settings>
-    <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
-    <b:widget-setting name='showThumbnails'>true</b:widget-setting>
-    <b:widget-setting name='showSnippets'>true</b:widget-setting>
-    <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
-  </b:widget-settings>
-</b:widget>
+<b:attr name='style' value='overflow: hidden;'/>
+<div style='position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1050; width: 100%; height: 100%; overflow-y: auto; background-color: #f8f9fa;'>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_BlogArchive' maxwidgets='1' showaddelement='no'>
+      <b:widget id='BlogArchive10' locked='true' title='Archive' type='BlogArchive' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+          <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+          <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+          <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+          <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+          <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+          <b:widget-setting name='chronological'>false</b:widget-setting>
+          <b:widget-setting name='showPosts'>false</b:widget-setting>
+          <b:widget-setting name='frequency'>DAILY</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_BlogSearch' maxwidgets='1' showaddelement='no'>
+      <b:widget id='BlogSearch10' locked='true' title='Search This Blog' type='BlogSearch' version='2' visible='true'/>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_ContactForm' maxwidgets='1' showaddelement='no'>
+      <b:widget id='ContactForm10' locked='true' title='Contact Form' type='ContactForm' version='2' visible='true'/>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_FeaturedPost' maxwidgets='1' showaddelement='no'>
+      <b:widget id='FeaturedPost10' locked='true' title='Featured Post' type='FeaturedPost' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showSnippet'>true</b:widget-setting>
+          <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+          <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+          <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_FollowByEmail' maxwidgets='1' showaddelement='no'>
+      <b:widget id='FollowByEmail10' locked='true' title='Follow by Email' type='FollowByEmail' version='2' visible='true'/>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_Image' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Image10' locked='true' title='Image' type='Image' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512</b:widget-setting>
+          <b:widget-setting name='displayHeight'>172</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>258</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
+          <b:widget-setting name='displayWidth'>258</b:widget-setting>
+          <b:widget-setting name='link'>https://blogger.com</b:widget-setting>
+          <b:widget-setting name='caption'>A caption for the above image.</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_Label' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Label10' locked='true' title='Labels' type='Label' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          <b:widget-setting name='display'>LIST</b:widget-setting>
+          <b:widget-setting name='selectedLabelsList'/>
+          <b:widget-setting name='showType'>ALL</b:widget-setting>
+          <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+  <div style='max-width: 100%; margin: 3rem auto;'>
+    <b:section id='TEST_Header' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Header10' locked='true' title='(Header)' type='Header' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630</b:widget-setting>
+          <b:widget-setting name='displayHeight'>768</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>258</b:widget-setting>
+          <b:widget-setting name='useImage'>true</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+          <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+          <b:widget-setting name='displayWidth'>1366</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+  <div style='max-width: 300px; margin: 3rem auto;'>
+    <b:section id='TEST_PopularPosts' maxwidgets='1' showaddelement='no'>
+      <b:widget id='PopularPosts10' locked='true' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+          <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+          <b:widget-setting name='showSnippets'>true</b:widget-setting>
+          <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+</div>

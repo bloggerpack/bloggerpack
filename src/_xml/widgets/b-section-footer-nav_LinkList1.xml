@@ -15,7 +15,10 @@
     <ul class='footer-nav'>
       <b:loop values='data:links' var='link'>
         <li class='footer-nav-item'>
-          <a class='footer-nav-link' expr:href='data:link.target'><data:link.name/></a>
+          <a class='footer-nav-link' expr:href='data:link.target'>
+            <b:attr name='b:whitespace' value='remove'/>
+            <data:link.name/>
+          </a>
         </li>
       </b:loop>
     </ul>

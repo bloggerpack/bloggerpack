@@ -284,15 +284,9 @@ Make it easy for visitors to navigate your blog with links to older posts.
     <div class="widget-content">
       <select class="archive-menu" onchange="if (this.value) window.location.href = this.value">
         <option selected="selected" value="">Archive</option>
-        <option value="#">
-          March 2018 (1)
-        </option>
-        <option value="#">
-          February 2018 (1)
-        </option>
-        <option value="#">
-          January 2018 (1)
-        </option>
+        <option value="#">March 2018 (1)</option>
+        <option value="#">February 2018 (1)</option>
+        <option value="#">January 2018 (1)</option>
       </select>
     </div>
   </div>
@@ -403,7 +397,7 @@ Add a Contact Form to your Blog.
         </div>
         <div>
           <button class="contact-form-button-submit" id="ContactForm10_contact-form-submit" type="submit">
-          Send
+            Send
           </button>
           <div class="contact-form-error-message" id="ContactForm10_contact-form-error-message"></div>
           <div class="contact-form-success-message" id="ContactForm10_contact-form-success-message"></div>
@@ -451,9 +445,7 @@ Highlight a special post on your blog.
         </a>
         <div class="featured-post-divider"></div>
         <h3 class="featured-post-title js-toc-ignore">
-          <a class="featured-post-title-link" href="#">
-          Post title
-          </a>
+          <a class="featured-post-title-link" href="#">Post title</a>
         </h3>
         <div class="featured-post-divider"></div>
         <div class="featured-post-snippet">
@@ -505,7 +497,9 @@ Make it easy for visitors to subscribe to email delivery when you publish a post
     <div class="widget-content">
       <form action="" class="follow-by-email-form" method="post">
         <input aria-label="Email Address" autocomplete="off" class="follow-by-email-form-input" name="email" placeholder="Email Address" type="email">
-        <button class="follow-by-email-form-submit" title="Get email notifications" type="submit">Get email notifications</button>
+        <button class="follow-by-email-form-submit" title="Get email notifications" type="submit">
+          Get email notifications
+        </button>
         <input name="uri" type="hidden" value="">
         <input name="loc" type="hidden" value="en_US">
       </form>
@@ -546,9 +540,7 @@ Add an image from your computer, or from somewhere else on the web.
     </h3>
     <div class="widget-content">
       <figure class="image">
-        <a href="https://blogger.com">
-        <img alt="Image" class="image-img" src="https://via.placeholder.com/512x512">
-        </a>
+        <a href="https://blogger.com"><img alt="Image" class="image-img" src="https://via.placeholder.com/512x512"></a>
         <figcaption class="image-caption">
           A caption for the above image.
         </figcaption>
@@ -602,18 +594,9 @@ Show all the labels of posts in your blog.
     </h3>
     <div class="widget-content">
       <div class="label-list">
-        <a class="label-list-link" href="#">
-        Foo
-        <span class="label-list-count">10</span>
-        </a>
-        <a class="label-list-link" href="#">
-        Bar
-        <span class="label-list-count">20</span>
-        </a>
-        <a class="label-list-link" href="#">
-        Baz
-        <span class="label-list-count">30</span>
-        </a>
+        <a class="label-list-link" href="#">Foo<span class="label-list-count">10</span></a>
+        <a class="label-list-link" href="#">Bar<span class="label-list-count">20</span></a>
+        <a class="label-list-link" href="#">Baz<span class="label-list-count">30</span></a>
       </div>
     </div>
   </div>
@@ -641,22 +624,13 @@ Show all the labels of posts in your blog.
     <div class="widget-content">
       <ul class="label-cloud">
         <li class="label-cloud-item">
-          <a class="label-cloud-link" href="#">
-          Foo
-          <span class="label-cloud-count">10</span>
-          </a>
+          <a class="label-cloud-link" href="#">Foo<span class="label-cloud-count">10</span></a>
         </li>
         <li class="label-cloud-item">
-          <a class="label-cloud-link" href="#">
-          Bar
-          <span class="label-cloud-count">20</span>
-          </a>
+          <a class="label-cloud-link" href="#">Bar<span class="label-cloud-count">20</span></a>
         </li>
         <li class="label-cloud-item">
-          <a class="label-cloud-link" href="#">
-          Baz
-          <span class="label-cloud-count">30</span>
-          </a>
+          <a class="label-cloud-link" href="#">Baz<span class="label-cloud-count">30</span></a>
         </li>
       </ul>
     </div>
@@ -730,9 +704,7 @@ Display your blog's title and description.
   <div class="widget Header">
     <div class="page-header image-placement-replace is-image">
       <div class="container" style="width: 100% !important; padding: 0 1rem !important;">
-        <a href="#">
-        <img alt="" src="https://via.placeholder.com/256x256">
-        </a>
+        <a href="#"><img alt="" src="https://via.placeholder.com/256x256"></a>
       </div>
     </div>
   </div>
@@ -758,9 +730,7 @@ Display your blog's title and description.
   <div class="widget Header">
     <div class="page-header image-placement-before-description is-image">
       <div class="container" style="width: 100% !important; padding: 0 1rem !important;">
-        <a href="#">
-        <img alt="" src="https://via.placeholder.com/256x256">
-        </a>
+        <a href="#"><img alt="" src="https://via.placeholder.com/256x256"></a>
         <p class="page-header-description">Blog description.</p>
       </div>
     </div>
@@ -810,19 +780,15 @@ Display a list of the most popular posts from your blog.
     </h3>
     <div class="widget-content">
       <div class="popular-post">
-        <a href="#">
-        <img alt="Image" class="popular-post-img popular-post-noimg" height="64" src="https://via.placeholder.com/64x64" width="64">
-        </a>
+        <a href="#"><img alt="Image" class="popular-post-img popular-post-noimg" height="64" src="https://via.placeholder.com/64x64" width="64"></a>
         <div class="popular-post-body">
           <h3 class="popular-post-title js-toc-ignore">
-            <a class="popular-post-title-link" href="#">
-            Post title 01
-            </a>
+            <a class="popular-post-title-link" href="#">Post title 01</a>
           </h3>
           <ul class="popular-post-meta">
             <li class="popular-post-meta-item">
               <time datetime="2018-01-01T05:59:00-08:00" title="2018-01-01T05:59:00-08:00">
-              Jan 01, 2018
+                Jan 01, 2018
               </time>
             </li>
           </ul>
@@ -832,19 +798,15 @@ Display a list of the most popular posts from your blog.
         </div>
       </div>
       <div class="popular-post">
-        <a href="#">
-        <img alt="Image" class="popular-post-img" height="64" src="https://via.placeholder.com/64x64" width="64">
-        </a>
+        <a href="#"><img alt="Image" class="popular-post-img" height="64" src="https://via.placeholder.com/64x64" width="64"></a>
         <div class="popular-post-body">
           <h3 class="popular-post-title js-toc-ignore">
-            <a class="popular-post-title-link" href="#">
-            Post title 02
-            </a>
+            <a class="popular-post-title-link" href="#">Post title 02</a>
           </h3>
           <ul class="popular-post-meta">
             <li class="popular-post-meta-item">
               <time datetime="2018-03-01T07:33:00-08:00" title="2018-03-01T07:33:00-08:00">
-              Mar 01, 2018
+                Mar 01, 2018
               </time>
             </li>
           </ul>
@@ -854,19 +816,15 @@ Display a list of the most popular posts from your blog.
         </div>
       </div>
       <div class="popular-post">
-        <a href="#">
-        <img alt="Image" class="popular-post-img popular-post-noimg" height="64" src="https://via.placeholder.com/64x64" width="64">
-        </a>
+        <a href="#"><img alt="Image" class="popular-post-img popular-post-noimg" height="64" src="https://via.placeholder.com/64x64" width="64"></a>
         <div class="popular-post-body">
           <h3 class="popular-post-title js-toc-ignore">
-            <a class="popular-post-title-link" href="#">
-            Post title 03
-            </a>
+            <a class="popular-post-title-link" href="#">Post title 03</a>
           </h3>
           <ul class="popular-post-meta">
             <li class="popular-post-meta-item">
               <time datetime="2018-02-01T07:32:00-08:00" title="2018-02-01T07:32:00-08:00">
-              Feb 01, 2018
+                Feb 01, 2018
               </time>
             </li>
           </ul>
