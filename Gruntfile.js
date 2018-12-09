@@ -82,7 +82,8 @@ module.exports = function (grunt) {
         files: [
           { src: 'src/skin.css', dest: 'src/tmp/css/skin.css' },
           { src: 'src/template-skin.css', dest: 'src/tmp/css/template-skin.css' },
-          { src: 'src/tmp/css/bundle.css', dest: 'src/tmp/css/bundle.css' }
+          { src: 'src/tmp/css/bundle.css', dest: 'src/tmp/css/bundle.css' },
+          { src: 'src/tmp/css/xml-css.css', dest: 'src/tmp/css/xml-css.css' }
         ]
       },
       js: {
@@ -197,7 +198,7 @@ module.exports = function (grunt) {
         syntax: ''
       },
       css: {
-        src: ['src/skin.css', 'src/template-skin.css', 'src/_scss/**/*.scss']
+        src: ['src/skin.css', 'src/template-skin.css', 'src/_scss/**/*.scss', 'src/_xml/**/*.css']
       },
       docs: {
         src: 'src/_docs/assets/css/docs.css'
@@ -319,6 +320,14 @@ module.exports = function (grunt) {
       }
     },
 
+    concat: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: true,
+        sourceMap: false
+      }
+    },
+
     copy: {
       docsFiles: {
         expand: true,
@@ -355,6 +364,7 @@ module.exports = function (grunt) {
 
           'stylelint:css',
           'sass:css',
+          'concatXmlCss',
           'bake:css',
           'postcss:css',
           'cssmin:css',
@@ -403,8 +413,19 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-xml', ['xml-compile']);
 
   // CSS task.
+  grunt.registerTask('concatXmlCss', 'Finds CSS in src/_xml folder for concatenation.', function () {
+    grunt.file.expand('src/_xml').forEach(function (dir) {
+      var concat = grunt.config.get('concat') || {};
+      concat[dir] = {
+        src: [dir + '/**/*.css'],
+        dest: 'src/tmp/css/xml-css.css'
+      };
+      grunt.config.set('concat', concat);
+    });
+    grunt.task.run('concat');
+  });
   grunt.registerTask('css-lint', ['stylelint:css']);
-  grunt.registerTask('css-compile', ['sass:css', 'bake:css', 'postcss:css']);
+  grunt.registerTask('css-compile', ['sass:css', 'concatXmlCss', 'bake:css', 'postcss:css']);
   grunt.registerTask('css-minify', ['cssmin:css']);
   grunt.registerTask('dist-css', ['css-lint', 'css-compile', 'css-minify']);
 

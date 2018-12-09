@@ -56,6 +56,9 @@ CSS
 <style>
 <!--(bake tmp/css/bundle.css)-->
 </style>
+<style>
+<!--(bake tmp/css/xml-css.css)-->
+</style>
 </b:if>
 
 <b:comment>### Layout mode ###</b:comment>
