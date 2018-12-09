@@ -40,8 +40,8 @@
 }
 
 .doc-nav-wrap {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /** Link **/
@@ -52,12 +52,12 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #ccc;
+  color: #e9ecef;
   text-align: left;
 }
 .doc-nav-link:hover,
 .doc-nav-link:focus {
-  color: #eee;
+  color: #fff;
   text-decoration: none;
   background-color: rgba(255, 255, 255, .045);
 }
@@ -74,8 +74,8 @@
 
 .doc-nav-header {
   padding: 0 1rem;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
   font-size: .75rem;
   font-weight: 700;
   line-height: 1.2;
@@ -89,37 +89,34 @@
 }
 
 .doc-nav-subheader {
-  padding: .5rem 0;
-  margin: .5rem 1rem;
+  margin: .75rem 1rem;
   font-size: .65rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #888;
+  color: #6c757d;
   text-align: left;
   text-transform: uppercase;
-  border-top: 1px solid #32383e;
-  border-bottom: 1px solid #32383e;
 }
 
 /** Divider **/
 
 .doc-nav-divider {
   height: 0;
-  margin: .5rem 0;
+  margin: 1rem 0;
   overflow: hidden;
   border-top: 1px solid #32383e;
 }
 
 .doc-nav-divider + .doc-nav-header {
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .doc-nav-subdivider {
   width: 60%;
-  height: 0;
+  height: 1px;
   margin: .5rem 1rem;
   overflow: hidden;
-  border-top: 1px solid #32383e;
+  background-image: linear-gradient(90deg, #32383e, transparent);
 }
 
 /** Toggle **/
@@ -190,7 +187,7 @@
 
 /** Link **/
 
-.doc-toc .toc-list .toc-link {
+.doc-toc .toc-link {
   display: block;
   padding: .125rem 1.5rem;
   font-size: .875rem;
@@ -199,12 +196,12 @@
   color: #495057;
   text-align: left;
 }
-.doc-toc .toc-list .toc-link:hover,
-.doc-toc .toc-list .toc-link:focus {
+.doc-toc .toc-link:hover,
+.doc-toc .toc-link:focus {
   color: #ff8a65;
   text-decoration: none;
 }
-.doc-toc .toc-list .is-active-link {
+.doc-toc .toc-link.is-active-link {
   font-weight: 700;
   color: #ff8a65;
 }
@@ -311,7 +308,7 @@
   font-size: .875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #ccc;
+  color: #dee2e6;
   text-align: left;
   background-color: #212529;
 }
@@ -329,7 +326,7 @@
 
 .doc-content > .doc-topbar a {
   font-weight: 500;
-  color: #eee;
+  color: #e9ecef;
 }
 .doc-content > .doc-topbar a:hover,
 .doc-content > .doc-topbar a:focus {
@@ -349,7 +346,7 @@
   font-size: .825rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ccc;
+  color: #dee2e6;
   text-align: left;
   text-transform: uppercase;
   user-select: none;
