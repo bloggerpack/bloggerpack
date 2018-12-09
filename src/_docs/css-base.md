@@ -459,9 +459,9 @@ Various form elements have been rebooted for simpler base styles. Here are some 
 
 - `<fieldset>`s have no borders, padding, or margin so they can be easily used as wrappers for individual inputs or groups of inputs.
 - `<legend>`s, like fieldsets, have also been restyled to be displayed as a heading of sorts.
-- `<label>`s are set to display: inline-block to allow margin to be applied.
-- `<input>`s, `<select>`s, `</select><textarea>`s, and `</textarea><button>`s are mostly addressed by Normalize, but Reboot sets `font-size: inherit` and `line-height: inherit`, too.
-- `</button><textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
+- `<label>`s are set to `display: inline-block` to allow `margin` to be applied.
+- `<input>`s, `<select>`s, `<textarea>`s, and `<button>`s are mostly addressed by Normalize, but Reboot removes their `margin` and sets `line-height: inherit`, too.
+- `<textarea>`s are modified to only be resizable vertically as horizontal resizing often “breaks” page layout.
 
 These changes, and more, are demonstrated below.
 
