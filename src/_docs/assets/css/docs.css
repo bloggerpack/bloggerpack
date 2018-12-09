@@ -392,10 +392,20 @@ ul ol {
 .doc-content > h4,
 .doc-content > h5,
 .doc-content > h6 {
+  font-family: inherit;
   font-weight: 500;
   line-height: 1.2;
+  color: inherit;
 }
 
+.doc-content > h1 { font-size: 2.5rem; }
+.doc-content > h2 { font-size: 2rem; }
+.doc-content > h3 { font-size: 1.75rem; }
+.doc-content > h4 { font-size: 1.5rem; }
+.doc-content > h5 { font-size: 1.25rem; }
+.doc-content > h6 { font-size: 1rem; }
+
+/* stylelint-disable-next-line no-duplicate-selectors */
 .doc-content > h1 {
   padding: 1rem 1.5rem;
   padding-bottom: 2rem;
@@ -409,6 +419,7 @@ ul ol {
   box-shadow: 0 4px 8px rgba(0, 0, 0, .125);
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 .doc-content > h2 {
   padding: 1rem 1.5rem;
   margin-top: 1rem;
