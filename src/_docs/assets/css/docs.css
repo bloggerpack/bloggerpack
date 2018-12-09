@@ -248,6 +248,10 @@
   padding-top: 0;
 }
 
+/**
+ * Reset margin
+ */
+
 .doc-content > h3,
 .doc-content > h4,
 .doc-content > h5,
@@ -269,6 +273,13 @@
 .doc-content > figure {
   margin-right: 0;
   margin-left: 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
 }
 
 /**
