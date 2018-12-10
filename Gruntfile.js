@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     },
 
     bake: {
-      xml: {
+      theme: {
         options: {
           basePath: 'src',
           content: function () {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
           dest: 'dist'
         }]
       },
-      css: {
+      coreCss: {
         options: {
           basePath: 'src',
           content: function () {
@@ -83,7 +83,7 @@ module.exports = function (grunt) {
           { src: 'src/tmp/css/xml-css.css', dest: 'src/tmp/css/xml-css.css' }
         ]
       },
-      js: {
+      coreJs: {
         options: {
           basePath: 'src',
           content: function () {
@@ -194,7 +194,7 @@ module.exports = function (grunt) {
         reportNeedlessDisables: false,
         syntax: ''
       },
-      css: {
+      coreCss: {
         src: ['src/skin.css', 'src/template-skin.css', 'src/_scss/**/*.scss', 'src/_xml/**/*.css']
       },
       docs: {
@@ -207,7 +207,7 @@ module.exports = function (grunt) {
         implementation: sass,
         sourceMap: true
       },
-      css: {
+      coreCss: {
         options: {
           sourceMap: false
         },
@@ -224,7 +224,7 @@ module.exports = function (grunt) {
           require('autoprefixer')({ cascade: false })
         ]
       },
-      css: {
+      coreCss: {
         src: 'src/tmp/css/**/*.css'
       },
       docs: {
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         sourceMapInlineSources: true,
         advanced: false
       },
-      css: {
+      coreCss: {
         options: {
           sourceMap: false
         },
@@ -275,7 +275,7 @@ module.exports = function (grunt) {
           }]
         ]
       },
-      js: {
+      coreJs: {
         files: {
           'src/tmp/js/bundle.js': 'src/_js/index.js'
         }
@@ -293,7 +293,7 @@ module.exports = function (grunt) {
           comments: /^!|@preserve|@license|@cc_on/i
         }
       },
-      js: {
+      coreJs: {
         options: {
           sourceMap: false
         },
@@ -357,30 +357,7 @@ module.exports = function (grunt) {
           '!src/tmp/**/*'
         ],
         tasks: [
-          'clean:dist',
-
-          'stylelint:css',
-          'sass:css',
-          'concatXmlCss',
-          'bake:css',
-          'postcss:css',
-          'cssmin:css',
-
-          'browserify:js',
-          'bake:js',
-          'uglify:js',
-
-          'bake:xml',
-
-          'stylelint:docs',
-          'markdown:docs',
-          'copy:docsFiles',
-          'copy:docsBundle',
-          'postcss:docs',
-          'bake:docs',
-          'htmlmin:docs',
-          'cssmin:docs',
-          'uglify:docs'
+          'default'
         ]
       }
     },
@@ -405,9 +382,9 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
   require('time-grunt')(grunt);
 
-  // XML task.
-  grunt.registerTask('xml-compile', ['bake:xml']);
-  grunt.registerTask('dist-xml', ['xml-compile']);
+  // Theme task.
+  grunt.registerTask('theme-compile', ['bake:theme']);
+  grunt.registerTask('dist-theme', ['theme-compile']);
 
   // CSS task.
   grunt.registerTask('concatXmlCss', 'Finds CSS in src/_xml folder for concatenation.', function () {
@@ -421,14 +398,14 @@ module.exports = function (grunt) {
     });
     grunt.task.run('concat');
   });
-  grunt.registerTask('css-lint', ['stylelint:css']);
-  grunt.registerTask('css-compile', ['sass:css', 'concatXmlCss', 'bake:css', 'postcss:css']);
-  grunt.registerTask('css-minify', ['cssmin:css']);
+  grunt.registerTask('css-lint', ['stylelint:coreCss']);
+  grunt.registerTask('css-compile', ['sass:coreCss', 'concatXmlCss', 'bake:coreCss', 'postcss:coreCss']);
+  grunt.registerTask('css-minify', ['cssmin:coreCss']);
   grunt.registerTask('dist-css', ['css-lint', 'css-compile', 'css-minify']);
 
   // JS task.
-  grunt.registerTask('js-compile', ['browserify:js', 'bake:js']);
-  grunt.registerTask('js-minify', ['uglify:js']);
+  grunt.registerTask('js-compile', ['browserify:coreJs', 'bake:coreJs']);
+  grunt.registerTask('js-minify', ['uglify:coreJs']);
   grunt.registerTask('dist-js', ['js-compile', 'js-minify']);
 
   // Docs task.
@@ -439,7 +416,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-docs', ['docs-lint', 'docs-compile', 'docs-minify']);
 
   // Test task.
-  grunt.registerTask('test', ['dist-css', 'dist-js', 'dist-xml', 'dist-docs']);
+  grunt.registerTask('test', ['dist-css', 'dist-js', 'dist-theme', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'test']);
