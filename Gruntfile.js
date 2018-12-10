@@ -257,7 +257,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.css', '!**/*.min.css', '!bundle/css/bundle.css'],
+          src: ['assets/**/*.css', '!assets/**/*.min.css', '!assets/bundle/css/**/*.css'],
           dest: 'dist/docs'
         }]
       }
@@ -311,7 +311,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'dist/docs/',
-          src: ['**/*.js', '!**/*.min.js', '!bundle/js/bundle.js'],
+          src: ['assets/**/*.js', '!assets/**/*.min.js', '!assets/bundle/js/**/*.js'],
           dest: 'dist/docs'
         }]
       }
