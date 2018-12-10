@@ -596,7 +596,7 @@ Show all the labels of posts in your blog.
       <div class="label-list">
         <a class="label-list-link" href="#">Foo<span class="label-list-count">10</span></a>
         <a class="label-list-link" href="#">Bar<span class="label-list-count">20</span></a>
-        <a class="label-list-link" href="#">Baz<span class="label-list-count">30</span></a>
+        <a class="label-list-link active" href="#">Baz (active)<span class="label-list-count">30</span></a>
       </div>
     </div>
   </div>
@@ -630,7 +630,7 @@ Show all the labels of posts in your blog.
           <a class="label-cloud-link" href="#">Bar<span class="label-cloud-count">20</span></a>
         </li>
         <li class="label-cloud-item">
-          <a class="label-cloud-link" href="#">Baz<span class="label-cloud-count">30</span></a>
+          <a class="label-cloud-link active" href="#">Baz (active)<span class="label-cloud-count">30</span></a>
         </li>
       </ul>
     </div>
