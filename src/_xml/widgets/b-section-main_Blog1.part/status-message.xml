@@ -17,11 +17,9 @@
 <b:comment>=== Search (label) page ===</b:comment>
 <b:if cond='data:view.search.label'>
   <b:if cond='data:posts.size gte 1'>
-    <b:if cond='data:showStatusMessageSuccess'>
-      <div class='status-message status-message-success' role='alert'>
-        <data:view.search.resultsMessageHtml/>
-      </div>
-    </b:if>
+    <div class='status-message status-message-success' role='alert'>
+      <data:view.search.resultsMessageHtml/>
+    </div>
   <b:else/>
     <div class='status-message status-message-danger' role='alert'>
       <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
@@ -31,11 +29,9 @@
 <b:comment>=== Search (query) page ===</b:comment>
 <b:if cond='data:view.search.query'>
   <b:if cond='data:posts.size gte 1'>
-    <b:if cond='data:showStatusMessageSuccess'>
-      <div class='status-message status-message-success' role='alert'>
-        <data:view.search.resultsMessageHtml/>
-      </div>
-    </b:if>
+    <div class='status-message status-message-success' role='alert'>
+      <data:view.search.resultsMessageHtml/>
+    </div>
   <b:else/>
     <div class='status-message status-message-danger' role='alert'>
       <data:view.search.resultsMessageHtml/> : <data:messages.noResultsFound/>
@@ -49,11 +45,9 @@
 <b:comment>=== Archive page ===</b:comment>
 <b:if cond='data:view.isArchive'>
   <b:if cond='data:posts.size gte 1'>
-    <b:if cond='data:showStatusMessageSuccess'>
-      <div class='status-message status-message-success' role='alert'>
-        <data:view.archive.rangeMessage/>
-      </div>
-    </b:if>
+    <div class='status-message status-message-success' role='alert'>
+      <data:view.archive.rangeMessage/>
+    </div>
   <b:else/>
     <div class='status-message status-message-danger' role='alert'>
       <data:view.archive.rangeMessage/> : <data:messages.noResultsFound/>
