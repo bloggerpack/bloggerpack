@@ -53,10 +53,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'src/',
           src: 'theme.xml',
-          dest: 'dist/',
-          rename: function (dest, src) {
-            return dest + src.replace('theme', 'theme');
-          }
+          dest: 'dist'
         }]
       },
       css: {
