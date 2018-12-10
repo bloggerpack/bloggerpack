@@ -25,7 +25,6 @@ Utilize our source Sass files to take advantage of variables, functions, mixins,
 [root project directory]
 └── src/
     └── _scss/
-        ├── blogger/
         ├── _custom.scss
         └── **/*.scss
 ```
@@ -38,10 +37,6 @@ Utilize our source Sass files to take advantage of variables, functions, mixins,
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code style="white-space: nowrap;">blogger/</code></td>
-      <td>Styles for custom gadgets (<a href="xml-defaultmarkups-gadgets.html"><code style="white-space: nowrap;">src/_xml/defaultmarkups/gadgets</code></a>).</td>
-    </tr>
     <tr>
       <td><code style="white-space: nowrap;">_custom.scss</code></td>
       <td>Copy variables from `_variables.scss` to this file to override default values without modifying source files.</td>

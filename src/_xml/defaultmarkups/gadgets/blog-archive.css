@@ -1,14 +1,14 @@
-//
-// Menu
-//
+/**
+ * Menu
+ */
 
 .archive-menu {
   width: 100%;
 }
 
-//
-// Flat
-//
+/**
+ * Flat
+ */
 
 .archive-flat {
   padding-left: 0;
@@ -21,24 +21,24 @@
   list-style: none;
 }
 
-//= Item
+/** Item **/
 
-// .archive-flat-item {}
+/* ///.archive-flat-item {} */
 
-//= Link
+/** Link **/
 
-// .archive-flat-link {}
+/* ///.archive-flat-link {} */
 
-//= Count
+/** Count **/
 
 .archive-flat-count {
   font-size: 90%;
   color: #6c757d;
 }
 
-//
-// Hierarchy
-//
+/**
+ * Hierarchy
+ */
 
 .archive-hierarchy-first,
 .archive-hierarchy-second,
@@ -64,26 +64,30 @@
   padding-left: 2rem;
 }
 
-//= Item
+/** Item **/
 
-// .archive-hierarchy-first-item {}
-// .archive-hierarchy-second-item {}
-// .archive-hierarchy-third-item {}
+/* ///.archive-hierarchy-first-item {} */
 
-//= Details
+/* ///.archive-hierarchy-second-item {} */
 
-// .archive-hierarchy-details {}
+/* ///.archive-hierarchy-third-item {} */
 
+/** Details **/
+
+.archive-hierarchy-details {
+  display: block;
+}
 .archive-hierarchy-summary {
+  display: list-item;
   cursor: default;
   outline: 0;
 }
 
-//= Link
+/** Link **/
 
-// .archive-hierarchy-link {}
+/* ///.archive-hierarchy-link {} */
 
-//= Count
+/** Count **/
 
 .archive-hierarchy-count {
   font-size: 90%;

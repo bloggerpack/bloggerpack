@@ -1,12 +1,12 @@
-//
-// Base class
-//
+/**
+ * Base class
+ */
 
-// .featured-post {}
+/* ///.featured-post {} */
 
-//
-// Image
-//
+/**
+ * Image
+ */
 
 .featured-post-img {
   display: block;
@@ -14,14 +14,13 @@
   max-width: 100%;
   height: auto;
   border-radius: .25rem;
-
-  // No image
-  // &.featured-post-noimg {}
 }
 
-//
-// Title
-//
+/* ///.featured-post-noimg {} */
+
+/**
+ * Title
+ */
 
 .featured-post-title {
   margin-top: 0;
@@ -31,13 +30,13 @@
   line-height: 1.1;
 }
 
-//= Title link
+/** Link **/
 
-// .featured-post-title-link {}
+/* ///.featured-post-title-link {} */
 
-//
-// Snippet
-//
+/**
+ * Snippet
+ */
 
 .featured-post-snippet {
   font-size: 1rem;
@@ -45,13 +44,13 @@
   line-height: 1.5;
 }
 
-//= Snippet link
+/** Link **/
 
-// .featured-post-snippet-link {}
+/* ///.featured-post-snippet-link {} */
 
-//
-// Divider
-//
+/**
+ * Divider
+ */
 
 .featured-post-divider {
   margin-top: .75rem;

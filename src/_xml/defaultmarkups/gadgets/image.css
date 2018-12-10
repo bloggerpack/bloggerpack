@@ -1,14 +1,14 @@
-//
-// Base class
-//
+/**
+ * Base class
+ */
 
 .image {
   margin: 0;
 }
 
-//
-// Image
-//
+/**
+ * Image
+ */
 
 .image-img {
   display: block;
@@ -18,9 +18,9 @@
   border-radius: .25rem;
 }
 
-//
-// Caption
-//
+/**
+ * Caption
+ */
 
 .image-caption {
   margin-top: .5rem;

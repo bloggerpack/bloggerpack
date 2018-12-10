@@ -1,61 +1,30 @@
-// stylelint-disable declaration-no-important, no-duplicate-selectors, selector-max-type, selector-no-qualifying-type
+/* stylelint-disable declaration-no-important, no-duplicate-selectors, selector-max-type, selector-no-qualifying-type */
 
-//
-// Remove margin
-//
+/**
+ * Remove margin
+ */
 
-// stylelint-disable selector-list-comma-newline-after
-.post-body-typography {
-  h1, h2, h3, h4, h5, h6,
-  p,
-  pre,
-  ol, ul, dl,
-  table,
-  blockquote,
-  address,
-  figure {
-    margin: 0 !important;
-  }
-}
-// stylelint-enable selector-list-comma-newline-after
-
-//
-// Code
-//
-
-.post-body-typography {
-  code {
-    padding: .2rem .4rem;
-    font-size: 87.5%;
-    color: darken(#f9f2f4, 45%);
-    word-break: break-word;
-    background-color: #f9f2f4;
-    border-radius: .25rem;
-  }
-
-  pre code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    word-break: normal;
-    background-color: transparent;
-    border-radius: 0;
-  }
+.post-body-typography h1,
+.post-body-typography h2,
+.post-body-typography h3,
+.post-body-typography h4,
+.post-body-typography h5,
+.post-body-typography h6,
+.post-body-typography p,
+.post-body-typography pre,
+.post-body-typography ol,
+.post-body-typography ul,
+.post-body-typography dl,
+.post-body-typography table,
+.post-body-typography blockquote,
+.post-body-typography address,
+.post-body-typography figure {
+  margin: 0 !important;
 }
 
-.post-body-typography pre:not([class]) {
-  display: block;
-  padding: 1rem;
-  overflow: auto;
-  font-size: 87.5%;
-  color: #212529;
-  background-color: #f8f9fa;
-  border-radius: .25rem;
-}
-
-//
-// Images
-//
+/**
+ * Images
+ */
 
 .post-body-typography .separator,
 .post-body-typography .tr-caption-container {
@@ -125,9 +94,9 @@
   color: #6c757d;
 }
 
-//
-// Tables
-//
+/**
+ * Tables
+ */
 
 .post-body-typography table:not([class]) {
   display: block;
@@ -136,38 +105,38 @@
   overflow-x: auto;
   border-collapse: collapse;
   background-color: transparent;
-
-  caption {
-    padding-top: .75rem;
-    padding-bottom: 0;
-    color: #6c757d;
-    text-align: left;
-    caption-side: bottom;
-  }
-
-  th,
-  td {
-    padding: .75rem;
-    vertical-align: top;
-    border: 1px solid #dee2e6;
-  }
-  th {
-    text-align: inherit;
-  }
-
-  thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-  }
-
-  tbody + tbody {
-    border-top: 2px solid #dee2e6;
-  }
 }
 
-//
-// Blockquotes
-//
+.post-body-typography table:not([class]) caption {
+  padding-top: .75rem;
+  padding-bottom: 0;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom;
+}
+
+.post-body-typography table:not([class]) th,
+.post-body-typography table:not([class]) td {
+  padding: .75rem;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+}
+.post-body-typography table:not([class]) th {
+  text-align: inherit;
+}
+
+.post-body-typography table:not([class]) thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.post-body-typography table:not([class]) tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+/**
+ * Blockquotes
+ */
 
 .post-body-typography blockquote:not([class]) {
   padding: .75rem 1rem;
@@ -175,21 +144,52 @@
   background-color: #f8f9fa;
   border-left: 8px solid #dee2e6;
   border-radius: .25rem;
+}
 
-  > :first-child {
-    margin-top: 0;
-  }
-  > :last-child {
-    margin-bottom: 0;
-  }
+.post-body-typography blockquote:not([class]) > :first-child {
+  margin-top: 0;
+}
+.post-body-typography blockquote:not([class]) > :last-child {
+  margin-bottom: 0;
+}
 
-  footer {
-    display: block;
-    font-size: 90%;
-    color: #6c757d;
+.post-body-typography blockquote:not([class]) footer {
+  display: block;
+  font-size: 90%;
+  color: #6c757d;
+}
+.post-body-typography blockquote:not([class]) footer::before {
+  content: "\2014 \00A0";
+}
 
-    &::before {
-      content: "\2014 \00A0";
-    }
-  }
+/**
+ * Code
+ */
+
+.post-body-typography code {
+  padding: .2rem .4rem;
+  font-size: 87.5%;
+  color: darken(#f9f2f4, 45%);
+  word-break: break-word;
+  background-color: #f9f2f4;
+  border-radius: .25rem;
+}
+
+.post-body-typography pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.post-body-typography pre:not([class]) {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 87.5%;
+  color: #212529;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
 }
