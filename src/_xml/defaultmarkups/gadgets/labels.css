@@ -45,7 +45,7 @@
 }
 .label-list-link:active {
   z-index: 3;
-  background-color: #f1f3f5; /* darken(#f8f9fa, 2.5%) */
+  background-color: #f1f3f5;
 }
 .label-list-link.active {
   z-index: 2;
@@ -114,14 +114,14 @@
 .label-cloud-link:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #5a6268; /* darken(#6c757d, 7.5%) */
+  background-color: #5a6268;
 }
 .label-cloud-link:active {
-  background-color: #4e555b; /* darken(#6c757d, 12.5%) */
+  background-color: #4e555b;
 }
 .label-cloud-link.active {
   color: #fff;
-  background-color: #494f54; /* darken(#6c757d, 15%) */
+  background-color: #494f54;
 }
 
 /** Count **/

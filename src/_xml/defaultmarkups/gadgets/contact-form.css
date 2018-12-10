@@ -41,9 +41,9 @@
 .contact-form-email-message:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #71dd8a; /* lighten(#28a745, 25%) */
+  border-color: #71dd8a;
   outline: 0;
-  box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .25); /* rgba(#28a745, .25) */
+  box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .25);
 }
 
 .contact-form-email-message {
@@ -68,23 +68,23 @@
   cursor: pointer;
   user-select: none;
   background-color: #28a745;
-  border: 1px solid #269d41; /* darken(#28a745, 2.5%) */
+  border: 1px solid #269d41;
   border-radius: .25rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 .contact-form-button-submit:hover {
   color: #fff;
-  background-color: #218838; /* darken(#28a745, 7.5%) */
-  border-color: #1e7e34; /* darken(#28a745, 10%) */
+  background-color: #218838;
+  border-color: #1e7e34;
 }
 .contact-form-button-submit:focus {
   outline: 0;
-  box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5); /* rgba(#28a745, .5) */
+  box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5);
 }
 .contact-form-button-submit:active {
   color: #fff;
-  background-color: #19692c; /* darken(#28a745, 15%) */
-  border-color: #175f27; /* darken(#28a745, 17.5%) */
+  background-color: #19692c;
+  border-color: #175f27;
 }
 
 /**
@@ -109,9 +109,9 @@
 }
 .contact-form-error-message-with-border {
   padding-right: 4rem;
-  color: #a84242; /* darken(#f2dede, 45%) */
+  color: #a84242;
   background-color: #f2dede;
-  border-color: #eed5d5; /* darken(#f2dede, 2.5%) */
+  border-color: #eed5d5;
 }
 .contact-form-error-message-with-border .contact-form-cross {
   position: absolute;
@@ -120,7 +120,7 @@
   padding: 1.125rem 1.25rem;
 }
 .contact-form-success-message-with-border {
-  color: #5ca43f; /* darken(#dff0d8, 45%) */
+  color: #5ca43f;
   background-color: #dff0d8;
-  border-color: #d7eccf; /* darken(#dff0d8, 2.5%) */
+  border-color: #d7eccf;
 }
