@@ -291,9 +291,7 @@
   border-radius: .25rem;
 }
 
-/**
- * Item
- */
+/** Item **/
 
 .breadcrumb-item {
   color: #212529;
@@ -313,9 +311,7 @@
   content: ":";
 }
 
-/**
- * Link
- */
+/** Link **/
 
 /* .breadcrumb-link {} */
 
@@ -333,11 +329,6 @@
   border-radius: .25rem;
 }
 
-.status-message .search-label,
-.status-message .search-query {
-  font-weight: 700;
-}
-
 .status-message-success {
   color: #155724;
   background-color: #d4edda;
@@ -347,6 +338,11 @@
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.status-message .search-label,
+.status-message .search-query {
+  font-weight: 700;
 }
 
 /* Posts
@@ -559,13 +555,13 @@
   display: block;
 }
 
-/** Menu item **/
+/** Item **/
 
 .post-share-menu-item {
   display: block;
 }
 
-/** Menu link **/
+/** Link **/
 
 .post-share-menu-link {
   display: block;
@@ -661,10 +657,6 @@
   margin-right: .25rem;
   margin-left: .25rem;
 }
-
-/**
- * Link
- */
 
 .pager-link {
   position: relative;
