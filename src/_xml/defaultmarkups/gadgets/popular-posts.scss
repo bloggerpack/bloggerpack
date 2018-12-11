@@ -1,39 +1,41 @@
-/**
- * Base class
- */
+//
+// Base class
+//
 
 .popular-post {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1rem;
   text-align: left;
-}
-.popular-post:last-child {
-  margin-bottom: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-/**
- * Image
- */
+//
+// Image
+//
 
 .popular-post-img {
   margin-right: 1rem;
   border-radius: .25rem;
+
+  // No Image
+  // &.popular-post-noimg {}
 }
 
-/* ///.popular-post-noimg {} */
-
-/**
- * Body
- */
+//
+// Body
+//
 
 .popular-post-body {
   flex: 1;
 }
 
-/**
- * Title
- */
+//
+// Title
+//
 
 .popular-post-title {
   margin-top: 0;
@@ -43,13 +45,13 @@
   line-height: 1.1;
 }
 
-/** Link **/
+//= Link
 
-/* ///.popular-post-title-link {} */
+// .popular-post-title-link {}
 
-/**
- * Meta
- */
+//
+// Meta
+//
 
 .popular-post-meta {
   padding-left: 0;
@@ -60,33 +62,36 @@
   line-height: 1.5;
   color: #6c757d;
   list-style: none;
-}
-.popular-post-meta:last-child {
-  margin-bottom: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-/** Item **/
+//= Item
 
 .popular-post-meta-item {
   display: inline-block;
-}
-.popular-post-meta-item:not(:last-child) {
-  margin-right: .5rem;
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
 }
 
-/** Link **/
+//= Link
 
 .popular-post-meta-link {
   color: #6c757d;
-}
-.popular-post-meta-link:hover {
-  color: #343a40;
-  text-decoration: none;
+
+  &:hover {
+    color: #343a40;
+    text-decoration: none;
+  }
 }
 
-/**
- * Snippet
- */
+//
+// Snippet
+//
 
 .popular-post-snippet {
   font-size: 1rem;

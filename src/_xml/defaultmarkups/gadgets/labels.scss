@@ -1,13 +1,13 @@
-/**
- * List
- */
+//
+// List
+//
 
 .label-list {
   display: flex;
   flex-direction: column;
 }
 
-/** Link **/
+//= Link
 
 .label-list-link {
   position: relative;
@@ -24,36 +24,35 @@
   text-align: left;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .125);
+
+  &:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+  }
+  &:hover,
+  &:focus {
+    z-index: 1;
+    color: #495057;
+    text-decoration: none;
+    background-color: #f8f9fa;
+  }
+  &:active {
+    z-index: 3;
+    background-color: darken(#f8f9fa, 2.5%);
+  }
+  &.active {
+    z-index: 2;
+    color: #495057;
+    background-color: #f8f9fa;
+  }
 }
 
-.label-list-link:first-child {
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-}
-.label-list-link:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: .25rem;
-  border-bottom-left-radius: .25rem;
-}
-
-.label-list-link:hover,
-.label-list-link:focus {
-  z-index: 1;
-  color: #495057;
-  text-decoration: none;
-  background-color: #f8f9fa;
-}
-.label-list-link:active {
-  z-index: 3;
-  background-color: #f1f3f5;
-}
-.label-list-link.active {
-  z-index: 2;
-  color: #495057;
-  background-color: #f8f9fa;
-}
-
-/** Count **/
+//= Count
 
 .label-list-count {
   display: inline-block;
@@ -73,21 +72,21 @@
   background-color: #6c757d;
 }
 
-/**
- * Cloud
- */
+//
+// Cloud
+//
 
 .label-cloud {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-top: 0;
-  /* stylelint-disable-next-line declaration-no-important */
+  // stylelint-disable-next-line declaration-no-important
   margin-bottom: -.5rem !important;
   list-style: none;
 }
 
-/** Item **/
+//= Item
 
 .label-cloud-item {
   margin-bottom: .5rem;
@@ -96,7 +95,7 @@
   margin-right: .5rem;
 }
 
-/** Link **/
+//= Link
 
 .label-cloud-link {
   display: block;
@@ -109,22 +108,23 @@
   white-space: nowrap;
   background-color: #6c757d;
   border-radius: .25rem;
-}
-.label-cloud-link:hover,
-.label-cloud-link:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #5a6268;
-}
-.label-cloud-link:active {
-  background-color: #4e555b;
-}
-.label-cloud-link.active {
-  color: #fff;
-  background-color: #494f54;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: darken(#6c757d, 7.5%);
+  }
+  &:active {
+    background-color: darken(#6c757d, 12.5%);
+  }
+  &.active {
+    color: #fff;
+    background-color: darken(#6c757d, 15%);
+  }
 }
 
-/** Count **/
+//= Count
 
 .label-cloud-count {
   position: relative;

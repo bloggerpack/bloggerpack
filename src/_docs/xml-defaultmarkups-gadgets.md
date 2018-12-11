@@ -31,7 +31,7 @@ Make it easy for visitors to navigate your blog with links to older posts.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-archive.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-archive.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -321,7 +321,7 @@ Let visitors search your blog.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-search.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/blog-search.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -367,7 +367,7 @@ Add a Contact Form to your Blog.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/contact-form.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/contact-form.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -424,7 +424,7 @@ Highlight a special post on your blog.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/featured-post.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/featured-post.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -480,7 +480,7 @@ Make it easy for visitors to subscribe to email delivery when you publish a post
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/follow-by-email.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/follow-by-email.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -524,7 +524,7 @@ Add an image from your computer, or from somewhere else on the web.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/image.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/image.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -576,7 +576,7 @@ Show all the labels of posts in your blog.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/labels.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/labels.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -662,7 +662,7 @@ Display your blog's title and description.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/page-header.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/page-header.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
@@ -764,7 +764,7 @@ Display a list of the most popular posts from your blog.
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">CSS</span>
-      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/popular-posts.css</span>
+      <span class="doc-badge-item doc-badge-item-info">src/_xml/defaultmarkups/gadgets/popular-posts.scss</span>
     </div>
     <div class="doc-badge" style="width: 100%;">
       <span class="doc-badge-item">Type</span>
