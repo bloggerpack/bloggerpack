@@ -53,8 +53,9 @@ CSS
 <b:if cond='!data:view.isLayoutMode'>
 <style>
 <!--(bake tmp/css/bundle.css)-->
-</style>
-<style>
+/*! _xml (Sass) */
+<!--(bake tmp/css/xml-sass.css)-->
+/*! _xml (CSS) */
 <!--(bake tmp/css/xml-css.css)-->
 </style>
 </b:if>
