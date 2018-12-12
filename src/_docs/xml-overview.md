@@ -42,6 +42,143 @@ We uses gadget version `2`:
 ```
 
 
+## Scoped CSS
+
+You can create Sass/CSS files in `src/_xml`, the Sass/CSS files will be automatically concatenated, compiled, and minified into `src/tmp/css/xml-sass.css` (Sass files) and `src/tmp/css/xml-css.css` (CSS files).
+
+When using this feature, its CSS will apply to elements of the current file/component only. This means the element and its CSS must be set specifically.
+
+Example:
+
+Component 1
+
+```html
+# component-1.xml
+
+<div class='component-1-element'>
+  ...
+</div>
+```
+
+```scss
+# component-1.scss
+
+.component-1-element {
+  ...
+}
+```
+
+Component 2
+
+```html
+# component-2.xml
+
+<div class='component-2-element'>
+  ...
+</div>
+```
+
+```scss
+# component-2.scss
+
+.component-2-element {
+  ...
+}
+```
+
+### Sass example
+
+```plaintext
+[root project directory]
+└── src/
+    └── _xml/
+        ├── folder-1/
+        │   ├── component-1.scss
+        │   ├── component-1.xml
+        │   ├── component-2.scss
+        │   └── component-2.xml
+        └── folder-2/
+            ├── component-3.scss
+            ├── component-3.xml
+            ├── component-4.scss
+            └── component-4.xml
+```
+
+The styles in `folder-1/*.scss` and `folder-2/*.scss` will be available in the `src/tmp/css/xml-sass.css`.
+
+#### Variables, functions, and mixins
+
+You can add local and/or global variables, functions, and mixins. The name of the variables, functions, and mixins must be unique to avoid override by another Sass files in the `src/_xml`.
+
+##### Local example
+
+Example local variables:
+
+```scss
+# src/_xml/folder-1/component-1.scss
+
+$component-1-color: #fff !default;
+$component-1-bg:    #000 !default;
+
+.component-1-element {
+  color: $component-1-color;
+  background-color: $component-1-bg;
+}
+```
+
+##### Global example
+
+Create a new file `_global.scss` in `src/_xml`. In this new file add variables, functions, and mixins. Functions must come first, then variables, and then mixins.
+
+Example global variables:
+
+```scss
+# src/_xml/_global.scss
+
+$color: #fff !default;
+$bg:    #000 !default;
+```
+
+```scss
+# src/_xml/folder-1/component-2.scss
+
+.component-2-element {
+  color: $color;
+  background-color: $bg;
+}
+```
+
+#### Import
+
+You can also import variables, functions, and mixins from `src/_scss`, or import Sass files from Node.js module.
+
+```scss
+# src/_xml/_global.scss
+
+@import "./src/_scss/file-name";
+```
+
+### CSS example
+
+```plaintext
+[root project directory]
+└── src/
+    └── _xml/
+        ├── folder-1/
+        │   ├── component-1.css
+        │   ├── component-1.xml
+        │   ├── component-2.css
+        │   └── component-2.xml
+        └── folder-2/
+            ├── component-3.css
+            ├── component-3.xml
+            ├── component-4.css
+            └── component-4.xml
+```
+
+The styles in `folder-1/*.css` and `folder-2/*.css` will be available in the `src/tmp/css/xml-css.css`.
+
+
 ## Code guide
 
 ### Comments and organization
