@@ -34,11 +34,11 @@
 
     <b:comment>### Breadcrumb ###</b:comment>
 
-    <!--(bake b-section-main_Blog1.part/breadcrumb.xml)-->
+    <!--(bake Blog1.part/breadcrumb.xml)-->
 
     <b:comment>### Status message ###</b:comment>
 
-    <!--(bake b-section-main_Blog1.part/status-message.xml)-->
+    <!--(bake Blog1.part/status-message.xml)-->
 
     <b:comment>### Posts ###</b:comment>
 
@@ -46,42 +46,42 @@
       <div class='posts'>
         <b:comment>=== Homepage ===</b:comment>
         <b:if cond='data:view.isHomepage'>
-          <!--(bake b-section-main_Blog1.part/posts/post-homepage.xml)-->
+          <!--(bake Blog1.part/posts/post-homepage.xml)-->
         </b:if>
         <b:comment>=== Item page ===</b:comment>
         <b:if cond='data:view.isPost'>
-          <!--(bake b-section-main_Blog1.part/posts/post-item.xml)-->
+          <!--(bake Blog1.part/posts/post-item.xml)-->
         </b:if>
         <b:comment>=== Static page ===</b:comment>
         <b:if cond='data:view.isPage'>
-          <!--(bake b-section-main_Blog1.part/posts/post-static.xml)-->
+          <!--(bake Blog1.part/posts/post-static.xml)-->
         </b:if>
         <b:comment>=== Search (label) page ===</b:comment>
         <b:if cond='data:view.search.label'>
-          <!--(bake b-section-main_Blog1.part/posts/post-search-label.xml)-->
+          <!--(bake Blog1.part/posts/post-search-label.xml)-->
         </b:if>
         <b:comment>=== Search (query) page ===</b:comment>
         <b:if cond='data:view.search.query'>
-          <!--(bake b-section-main_Blog1.part/posts/post-search-query.xml)-->
+          <!--(bake Blog1.part/posts/post-search-query.xml)-->
         </b:if>
         <b:comment>=== Search (default) page ===</b:comment>
         <b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
-          <!--(bake b-section-main_Blog1.part/posts/post-search-default.xml)-->
+          <!--(bake Blog1.part/posts/post-search-default.xml)-->
         </b:if>
         <b:comment>=== Archive page ===</b:comment>
         <b:if cond='data:view.isArchive'>
-          <!--(bake b-section-main_Blog1.part/posts/post-archive.xml)-->
+          <!--(bake Blog1.part/posts/post-archive.xml)-->
         </b:if>
       </div>
     </b:if>
 
     <b:comment>### Comments ###</b:comment>
 
-    <!--(bake b-section-main_Blog1.part/comments.xml)-->
+    <!--(bake Blog1.part/comments.xml)-->
 
     <b:comment>### Pager ###</b:comment>
 
-    <!--(bake b-section-main_Blog1.part/pager.xml)-->
+    <!--(bake Blog1.part/pager.xml)-->
 
   </b:includable>
   <b:includable id='aboutPostAuthor'/>
