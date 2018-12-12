@@ -743,9 +743,7 @@ body#layout .layout-mode-col-12 {
   border-radius: .25rem;
 }
 
-/**
- * Item
- */
+/** Item **/
 
 .breadcrumb-item {
   color: #212529;
@@ -765,9 +763,7 @@ body#layout .layout-mode-col-12 {
   content: ":";
 }
 
-/**
- * Link
- */
+/** Link **/
 
 /* .breadcrumb-link {} */
 
@@ -785,11 +781,6 @@ body#layout .layout-mode-col-12 {
   border-radius: .25rem;
 }
 
-.status-message .search-label,
-.status-message .search-query {
-  font-weight: 700;
-}
-
 .status-message-success {
   color: #155724;
   background-color: #d4edda;
@@ -799,6 +790,11 @@ body#layout .layout-mode-col-12 {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.status-message .search-label,
+.status-message .search-query {
+  font-weight: 700;
 }
 
 /* Posts
@@ -1015,13 +1011,13 @@ body#layout .layout-mode-col-12 {
   display: block;
 }
 
-/** Menu item **/
+/** Item **/
 
 .post-share-menu-item {
   display: block;
 }
 
-/** Menu link **/
+/** Link **/
 
 .post-share-menu-link {
   display: block;
@@ -1120,10 +1116,6 @@ body#layout .layout-mode-col-12 {
   margin-right: .25rem;
   margin-left: .25rem;
 }
-
-/**
- * Link
- */
 
 .pager-link {
   position: relative;
