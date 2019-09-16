@@ -1,0 +1,129 @@
+//
+// Base class
+//
+
+// .contact-form {}
+
+//
+// Group
+//
+
+.contact-form-group {
+  margin-bottom: 1rem;
+
+  label {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+}
+
+//
+// Input
+//
+
+.contact-form-name,
+.contact-form-email,
+.contact-form-email-message {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  color: #555;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:focus {
+    color: #555;
+    background-color: #fff;
+    border-color: lighten(#28a745, 25%);
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(#28a745, .25);
+  }
+}
+
+.contact-form-email-message {
+  overflow: auto;
+  resize: vertical;
+}
+
+//
+// Submit
+//
+
+.contact-form-button-submit {
+  display: inline-block;
+  padding: .375rem .75rem;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #28a745;
+  border: 1px solid darken(#28a745, 2.5%);
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  user-select: none;
+
+  &:hover {
+    color: #fff;
+    background-color: darken(#28a745, 7.5%);
+    border-color: darken(#28a745, 10%);
+  }
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(#28a745, .5);
+  }
+  &:active {
+    color: #fff;
+    background-color: darken(#28a745, 15%);
+    border-color: darken(#28a745, 17.5%);
+  }
+}
+
+//
+// Alert
+//
+
+.contact-form-success-message,
+.contact-form-error-message {
+  display: none;
+}
+
+.contact-form-success-message-with-border,
+.contact-form-error-message-with-border {
+  position: relative;
+  display: block;
+  margin-top: 1rem;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.contact-form-success-message-with-border {
+  color: darken(#dff0d8, 45%);
+  background-color: #dff0d8;
+  border-color: darken(#dff0d8, 2.5%);
+}
+.contact-form-error-message-with-border {
+  padding-right: 4rem;
+  color: darken(#f2dede, 45%);
+  background-color: #f2dede;
+  border-color: darken(#f2dede, 2.5%);
+
+  .contact-form-cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.125rem 1.25rem;
+  }
+}

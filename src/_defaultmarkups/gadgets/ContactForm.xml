@@ -1,0 +1,29 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <form class='contact-form' expr:id='data:widget.instanceId + "_contact-form"' name='contact-form'>
+      <div class='contact-form-group'>
+        <label expr:for='data:widget.instanceId + "_contact-form-name"'><data:contactFormNameMsg/></label>
+        <input class='contact-form-name' expr:id='data:widget.instanceId + "_contact-form-name"' expr:placeholder='data:contactFormNameMsg' name='name' size='30' type='text'/>
+      </div>
+      <div class='contact-form-group'>
+        <label expr:for='data:widget.instanceId + "_contact-form-email"'><data:contactFormEmailMsg/> *</label>
+        <input class='contact-form-email' expr:id='data:widget.instanceId + "_contact-form-email"' expr:placeholder='data:contactFormEmailMsg' name='email' required='required' size='30' type='email'/>
+      </div>
+      <div class='contact-form-group'>
+        <label expr:for='data:widget.instanceId + "_contact-form-email-message"'><data:contactFormMessageMsg/> *</label>
+        <textarea class='contact-form-email-message' cols='25' expr:id='data:widget.instanceId + "_contact-form-email-message"' expr:placeholder='data:contactFormMessageMsg' name='email-message' required='required' rows='5'/>
+      </div>
+      <div>
+        <button class='contact-form-button-submit' expr:id='data:widget.instanceId + "_contact-form-submit"' type='submit'>
+          <data:contactFormSendMsg/>
+        </button>
+        <div class='contact-form-error-message' expr:id='data:widget.instanceId + "_contact-form-error-message"'/>
+        <div class='contact-form-success-message' expr:id='data:widget.instanceId + "_contact-form-success-message"'/>
+      </div>
+    </form>
+  </div>
+</b:includable>

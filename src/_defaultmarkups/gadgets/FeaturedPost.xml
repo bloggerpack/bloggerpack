@@ -1,0 +1,75 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <b:loop values='data:posts' var='post'>
+      <div class='featured-post'>
+        <b:comment>=== Featured image ===</b:comment>
+        <b:if cond='data:postDisplay.showFeaturedImage'>
+          <b:if cond='data:post.featuredImage'>
+            <b:if cond='data:post.featuredImage.isYoutube'>
+              <a expr:href='data:post.link ?: data:post.url'>
+                <b:attr name='b:whitespace' value='remove'/>
+                <img>
+                  <!-- class --><b:class name='featured-post-image'/>
+                  <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 800, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                  <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                  <b:attr name='b:whitespace' value='remove'/>
+                </img>
+              </a>
+            <b:else/>
+              <a expr:href='data:post.link ?: data:post.url'>
+                <b:attr name='b:whitespace' value='remove'/>
+                <img>
+                  <!-- class --><b:class name='featured-post-image'/>
+                  <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 800, "16:9") : data:post.featuredImage' name='src'/>
+                  <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                  <b:attr name='b:whitespace' value='remove'/>
+                </img>
+              </a>
+            </b:if>
+          <b:else/><!-- fallback -->
+            <a expr:href='data:post.link ?: data:post.url'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <img>
+                <!-- class --><b:class name='featured-post-image'/>
+                <!-- src --><b:attr expr:value='resizeImage("https://lh3.googleusercontent.com/kBzrgG0CUVwpWe8oT8iPxL8HhKQdNVj1AX5BR2Y0Q_zoSpxHGPRtcysgTJsb8ZEsYmbWoNm-nEOyjBc03w=w1920-h1080-rw-no", 800, "16:9")' name='src'/>
+                <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
+                <b:attr name='b:whitespace' value='remove'/>
+              </img>
+            </a>
+          </b:if>
+        </b:if>
+        <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'>
+          <div class='featured-post-spacer'/>
+        </b:if>
+        <b:comment>=== Title ===</b:comment>
+        <b:if cond='data:postDisplay.showTitle'>
+          <h3 class='featured-post-title'>
+            <a class='featured-post-title-link' expr:href='data:post.link ?: data:post.url'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+            </a>
+          </h3>
+        </b:if>
+        <b:if cond='(data:postDisplay.showSnippet and data:postDisplay.showTitle) or (data:postDisplay.showSnippet and data:postDisplay.showFeaturedImage)'>
+          <div class='featured-post-spacer'/>
+        </b:if>
+        <b:comment>=== Snippet ===</b:comment>
+        <b:if cond='data:postDisplay.showSnippet'>
+          <div class='featured-post-snippet'>
+            <b:if cond='data:postDisplay.showFeaturedImage or data:postDisplay.showTitle'>
+              <data:post.snippets.short/>
+            <b:else/>
+              <data:post.snippets.short/><br/>
+              <a class='featured-post-snippet-link' expr:href='data:post.url' role='button'>
+                <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
+                <b:attr name='b:whitespace' value='remove'/>
+                <data:messages.keepReading/>
+              </a>
+            </b:if>
+          </div>
+        </b:if>
+      </div>
+    </b:loop>
+  </div>
+</b:includable>

@@ -1,0 +1,25 @@
+<b:widget id='LinkList1' locked='true' title='Footer nav' type='LinkList' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='shownum'/>
+    <b:widget-setting name='sorting'>NONE</b:widget-setting>
+    <b:widget-setting name='text-0'>Facebook</b:widget-setting>
+    <b:widget-setting name='link-0'>https://facebook.com/username</b:widget-setting>
+    <b:widget-setting name='text-1'>Twitter</b:widget-setting>
+    <b:widget-setting name='link-1'>https://twitter.com/username</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <ul class='footer-nav'>
+      <b:loop values='data:links' var='link'>
+        <li class='footer-nav-item'>
+          <a class='footer-nav-link' expr:href='data:link.target'>
+            <b:attr name='b:whitespace' value='remove'/>
+            <data:link.name/>
+          </a>
+        </li>
+      </b:loop>
+    </ul>
+  </b:includable>
+</b:widget>

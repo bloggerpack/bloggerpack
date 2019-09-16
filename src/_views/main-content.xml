@@ -1,0 +1,28 @@
+<div class='main-content' id='main-content'>
+  <div class='container'>
+    <div class='main-content-inner'>
+
+      <div class='row'>
+        <b:comment>=== Main ===</b:comment>
+        <main class='main col-lg-8 layout-mode-col-8' id='main' role='main'>
+          <div class='main-inner'>
+            <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main section' showaddelement='no'>
+              <!--(bake main-content.part/main/widget_Blog1.xml)-->
+            </b:section>
+          </div>
+        </main>
+        <b:comment>=== Sidebar ===</b:comment>
+        <aside class='sidebar col-lg-4 mt-5 mt-lg-0 layout-mode-col-4' id='sidebar'>
+          <div class='sidebar-inner'>
+            <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar section'>
+              <!--(bake main-content.part/sidebar/widget_BlogSearch1.xml)-->
+              <!--(bake main-content.part/sidebar/widget_Label1.xml)-->
+              <!--(bake main-content.part/sidebar/widget_BlogArchive1.xml)-->
+            </b:section>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </div>
+</div>

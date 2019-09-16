@@ -1,0 +1,21 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <figure class='g-image'>
+      <b:tag cond='data:link' expr:href='data:link' name='a'>
+        <b:attr cond='data:link' name='b:whitespace' value='remove'/>
+        <b:if cond='data:sourceUrl'>
+          <img class='g-image-img' expr:alt='data:messages.image' expr:src='data:sourceUrl'/>
+        </b:if>
+      </b:tag>
+      <b:if cond='data:caption'>
+        <figcaption class='g-image-caption'>
+          <data:caption/>
+        </figcaption>
+      </b:if>
+    </figure>
+  </div>
+</b:includable>

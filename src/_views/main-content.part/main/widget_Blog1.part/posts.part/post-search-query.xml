@@ -1,0 +1,111 @@
+<b:loop values='data:posts' var='post'>
+  <article class='post post-search-query' expr:id='"post-" + data:post.id'>
+    <b:comment>=== Title ===</b:comment>
+    <h2 class='post-search-query-title'>
+      <b:if cond='data:post.title'>
+        <a class='post-search-query-title-link' expr:href='data:post.link ?: data:post.url'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:post.title/>
+        </a>
+      <b:else/><!-- fallback -->
+        <a class='post-search-query-title-link' expr:href='data:post.link ?: data:post.url'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:messages.noTitle/>
+        </a>
+      </b:if>
+    </h2>
+    <b:comment>=== Meta ===</b:comment>
+    <ul class='post-meta'>
+      <b:comment>=== Author name ===</b:comment>
+      <li class='post-meta-item'>
+        <div class='post-meta-prefix'>
+          <data:messages.postedBy/>
+        </div>
+        <b:if cond='data:post.author'>
+          <b:if cond='data:post.author.profileUrl'>
+            <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:post.author.name/>
+            </a>
+          <b:else/><!-- no profileUrl -->
+            <span class='post-meta-text'><data:post.author.name/></span>
+          </b:if>
+        <b:else/><!-- fallback -->
+          <span class='post-meta-text'>Anonymous</span>
+        </b:if>
+      </li>
+      <b:comment>=== Date (published) ===</b:comment>
+      <li class='post-meta-item'>
+        <div class='post-meta-prefix'>
+          Published
+        </div>
+        <time class='post-meta-text' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+          <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+        </time>
+      </li>
+      <b:comment>=== Date (updated) ===</b:comment>
+      <li class='post-meta-item'>
+        <div class='post-meta-prefix'>
+          Updated
+        </div>
+        <time class='post-meta-text' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+          <b:eval expr='format(data:post.lastUpdated, "MMM dd, YYYY")'/>
+        </time>
+      </li>
+      <b:comment>=== Comments link ===</b:comment>
+      <b:if cond='data:post.allowComments'>
+        <li class='post-meta-item'>
+          <div class='post-meta-prefix'>
+            <span class='disqus-comment-count' expr:data-disqus-identifier='data:post.id'>
+              <data:messages.comments/>
+            </span>
+          </div>
+          <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.joinTheConversation'>
+            <data:messages.joinTheConversation/>
+          </a>
+        </li>
+      </b:if>
+    </ul>
+    <b:comment>=== Snippet ===</b:comment>
+    <div class='post-search-query-snippet'>
+      <data:post.snippets.short/>
+    </div>
+    <b:comment>=== Labels and sharing ===</b:comment>
+    <div class='post-label-scroll'>
+      <ul class='post-label'>
+        <b:comment>=== Sharing ===</b:comment>
+        <li class='post-label-item post-label-item-divider'>
+          <div class='post-sharing'>
+            <svg class='post-sharing-icon' viewBox='0 0 20 20'>
+              <path d='M14.68,12.621c-0.9,0-1.702,0.43-2.216,1.09l-4.549-2.637c0.284-0.691,0.284-1.457,0-2.146l4.549-2.638c0.514,0.661,1.315,1.09,2.216,1.09c1.549,0,2.809-1.26,2.809-2.808c0-1.548-1.26-2.809-2.809-2.809c-1.548,0-2.808,1.26-2.808,2.809c0,0.38,0.076,0.741,0.214,1.073l-4.55,2.638c-0.515-0.661-1.316-1.09-2.217-1.09c-1.548,0-2.808,1.26-2.808,2.809s1.26,2.808,2.808,2.808c0.9,0,1.702-0.43,2.217-1.09l4.55,2.637c-0.138,0.332-0.214,0.693-0.214,1.074c0,1.549,1.26,2.809,2.808,2.809c1.549,0,2.809-1.26,2.809-2.809S16.229,12.621,14.68,12.621M14.68,2.512c1.136,0,2.06,0.923,2.06,2.06S15.815,6.63,14.68,6.63s-2.059-0.923-2.059-2.059S13.544,2.512,14.68,2.512M5.319,12.061c-1.136,0-2.06-0.924-2.06-2.06s0.923-2.059,2.06-2.059c1.135,0,2.06,0.923,2.06,2.059S6.454,12.061,5.319,12.061M14.68,17.488c-1.136,0-2.059-0.922-2.059-2.059s0.923-2.061,2.059-2.061s2.06,0.924,2.06,2.061S15.815,17.488,14.68,17.488'></path>
+            </svg>
+            <span><data:messages.share/></span>
+            <select class='post-sharing-select' onchange='if (this.value) window.open(this.value, &apos;_blank&apos;, &apos;width=500, height=500&apos;)'>
+              <option selected='' value=''>--<data:messages.share/>--</option>
+              <option expr:value='params(data:post.shareUrl, { target: "facebook" })'>Facebook</option>
+              <option expr:value='params(data:post.shareUrl, { target: "twitter" })'>Twitter</option>
+              <option expr:value='params(data:post.shareUrl, { target: "pinterest" })'>Pinterest</option>
+              <option expr:value='params(data:post.shareUrl, { target: "email" })'>Email</option>
+              <option expr:value='params(data:post.shareUrl, { target: "blog" })'>BlogThis!</option>
+            </select>
+          </div>
+        </li>
+        <b:comment>=== Labels ===</b:comment>
+        <b:if cond='data:post.labels'>
+          <b:loop index='i' values='data:post.labels' var='label'>
+            <li class='post-label-item'>
+              <a class='post-label-link' expr:href='params(data:label.url, { max-results: "12" })' expr:title='data:label.name'>
+                <b:attr name='b:whitespace' value='remove'/>
+                <data:label.name/>
+              </a>
+            </li>
+          </b:loop>
+        <b:else/><!-- fallback -->
+          <li class='post-label-item'>
+            <span class='post-label-nolabel'>Unlabelled</span>
+          </li>
+        </b:if>
+      </ul>
+    </div>
+  </article>
+</b:loop>

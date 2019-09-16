@@ -1,0 +1,66 @@
+/**
+ * Clearfix
+ */
+
+body#layout .container::after,
+body#layout .section::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/**
+ * Grid
+ */
+
+body#layout .layout-mode-col-1,
+body#layout .layout-mode-col-2,
+body#layout .layout-mode-col-3,
+body#layout .layout-mode-col-4,
+body#layout .layout-mode-col-5,
+body#layout .layout-mode-col-6,
+body#layout .layout-mode-col-7,
+body#layout .layout-mode-col-8,
+body#layout .layout-mode-col-9,
+body#layout .layout-mode-col-10,
+body#layout .layout-mode-col-11,
+body#layout .layout-mode-col-12 {
+  position: relative;
+  float: left;
+}
+body#layout .layout-mode-col-1 {
+  width: 8.33333333%;
+}
+body#layout .layout-mode-col-2 {
+  width: 16.66666667%;
+}
+body#layout .layout-mode-col-3 {
+  width: 25%;
+}
+body#layout .layout-mode-col-4 {
+  width: 33.33333333%;
+}
+body#layout .layout-mode-col-5 {
+  width: 41.66666667%;
+}
+body#layout .layout-mode-col-6 {
+  width: 50%;
+}
+body#layout .layout-mode-col-7 {
+  width: 58.33333333%;
+}
+body#layout .layout-mode-col-8 {
+  width: 66.66666667%;
+}
+body#layout .layout-mode-col-9 {
+  width: 75%;
+}
+body#layout .layout-mode-col-10 {
+  width: 83.33333333%;
+}
+body#layout .layout-mode-col-11 {
+  width: 91.66666667%;
+}
+body#layout .layout-mode-col-12 {
+  width: 100%;
+}

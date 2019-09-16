@@ -1,0 +1,24 @@
+//
+// Footer nav
+//
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+//= Item
+
+.footer-nav-item:not(:last-child) {
+  margin-right: .5rem;
+}
+
+//= Link
+
+.footer-nav-link {
+  font-weight: 500;
+}

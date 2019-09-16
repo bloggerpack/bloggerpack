@@ -1,0 +1,82 @@
+//
+// Base class
+//
+
+.header {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+}
+
+//
+// Title
+//
+
+.header-title {
+  max-width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+}
+
+//= Link
+
+.header-title-link {
+  color: #777;
+
+  &:hover,
+  &:focus {
+    color: #007bff;
+    text-decoration: none;
+  }
+}
+
+//
+// Nav scroll
+//
+
+.nav-scroll {
+  max-width: 100%;
+  height: 4rem;
+  margin-top: 1.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  overflow: hidden;
+}
+
+//
+// Responsive
+//
+
+@media (min-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+  .header-title {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 300px;
+    margin-top: 0;
+    margin-right: 1rem;
+  }
+  .nav-scroll {
+    margin-top: 0;
+  }
+}

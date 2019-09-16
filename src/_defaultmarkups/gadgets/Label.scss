@@ -1,0 +1,157 @@
+//
+// List
+//
+
+.label-list {
+  display: flex;
+  flex-direction: column;
+}
+
+//= Link
+
+.label-list-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: -1px;
+  padding: .5rem 1rem;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+
+  &:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+  }
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+  }
+  &:hover,
+  &:focus {
+    z-index: 1;
+    color: #555;
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+  &:active {
+    z-index: 3;
+    background-color: darken(#f8f9fa, 2.5%);
+    border-color: rgba(0, 0, 0, .125);
+  }
+  &.active {
+    z-index: 2;
+    color: #555;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+}
+
+//= Count
+
+.label-list-count {
+  display: inline-block;
+  margin-left: .5rem;
+  padding: .25em .6em;
+  color: #fff;
+  font-weight: 700;
+  font-size: 75%;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10rem;
+
+  .active > & {
+    color: #fff;
+    background-color: #777;
+  }
+}
+
+//
+// Cloud
+//
+
+.label-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  // stylelint-disable-next-line declaration-no-important
+  margin-top: -.5rem !important;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+//= Item
+
+.label-cloud-item {
+  margin-top: .5rem;
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+//= Link
+
+.label-cloud-link {
+  display: block;
+  padding: .25rem .5rem;
+  color: #555;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+
+  &:hover,
+  &:focus {
+    color: #555;
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+  &:active {
+    background-color: darken(#f8f9fa, 2.5%);
+    border-color: rgba(0, 0, 0, .125);
+  }
+  &.active {
+    color: #555;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+}
+
+//= Count
+
+.label-cloud-count {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  margin-left: .4em;
+  padding: .25em .4em;
+  color: #fff;
+  font-weight: 700;
+  font-size: 75%;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: .25rem;
+
+  .active > & {
+    color: #fff;
+    background-color: #777;
+  }
+}

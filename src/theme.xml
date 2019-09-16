@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<b:comment>
+#############################################################################
+Head
+############################################################################# </b:comment>
+
+<head>
+
+<b:comment>=== Custom all-head-content ===</b:comment>
+
+<b:include data='{
+  socialImage: "https://example.com/1200x630.png",
+  titleSeparator: "|",
+  facebook: {
+    pageId: "replace_with_facebook_page_id",
+    adminId: "replace_with_facebook_user_id"
+  },
+  twitter: {
+    usernameSite: "replace_with_@username_of_website",
+    usernameCreator: "replace_with_@username_of_content_creator"
+  }
+}' name='customAllHeadContent'/>
+
+<b:comment>=== Disqus config ===</b:comment>
+
+<b:include data='{ shortname: "replace_with_disqus_shortname" }' name='disqusConfig'/>
+
+<b:comment>=== Main CSS ===</b:comment>
+
+<b:include name='mainCss'/>
+
+<b:comment>=== Template skin ===</b:comment>
+
+<b:if cond='data:view.isLayoutMode'>
+<b:template-skin>
+<![CDATA[
+<!--(bake template-skin.css)-->
+]]>
+</b:template-skin>
+</b:if>
+
+<b:comment>=== Skin ===</b:comment>
+
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+<!--(bake skin.css)-->
+]]>
+</b:skin>
+</b:if>
+
+<b:comment>=== Skin override ===</b:comment>
+
+<b:if cond='data:skin.override and !data:view.isLayoutMode'>
+<style>
+<data:skin.override/>
+</style>
+</b:if>
+
+<b:comment>=== Google analytics ===</b:comment>
+
+<b:include data='blog' name='google-analytics'/>
+
+</head>
+<body>
+
+<b:comment>=== Body classes ===</b:comment>
+<b:class cond='data:view.isHomepage' name='is-homepage'/>
+<b:class cond='data:view.isPost' name='is-post'/>
+<b:class cond='data:view.isPage' name='is-page'/>
+<b:class cond='data:view.search.label' name='is-search-label'/>
+<b:class cond='data:view.search.query' name='is-search-query'/>
+<b:class cond='data:view.search and !data:view.search.label and !data:view.search.query' name='is-search-default'/>
+<b:class cond='data:view.isArchive' name='is-archive'/>
+<b:class cond='data:view.isError' name='is-error'/>
+<b:class cond='data:view.isPreview' name='is-preview'/>
+
+<b:comment>
+#############################################################################
+Skip navigation
+############################################################################# </b:comment>
+
+<!--(bake _views/skip-navigation.xml)-->
+
+<b:comment>
+#############################################################################
+Header
+############################################################################# </b:comment>
+
+<!--(bake _views/header.xml)-->
+
+<b:comment>
+#############################################################################
+Main content (main and sidebar)
+############################################################################# </b:comment>
+
+<!--(bake _views/main-content.xml)-->
+
+<b:comment>
+#############################################################################
+Footer
+############################################################################# </b:comment>
+
+<!--(bake _views/footer.xml)-->
+
+<b:comment>
+#############################################################################
+JavaScript
+############################################################################# </b:comment>
+
+<b:comment>=== Main JavaScript ===</b:comment>
+
+<b:include name='mainJs'/>
+
+<b:comment>=== Disqus count.js ===</b:comment>
+
+<b:include name='disqusCountJs'/>
+
+<b:comment>
+#############################################################################
+Default markups
+############################################################################# </b:comment>
+
+<!--(bake defaultmarkups.xml)-->
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!-- Applied to the `<body>` -->
+<b:attr name='style' value='overflow: hidden;'/>
+
+<div class='preview-gadgets'>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_BlogArchive' maxwidgets='1' showaddelement='no'>
+      <b:widget id='BlogArchive10' locked='true' title='Blog Archive' type='BlogArchive' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+          <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+          <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+          <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+          <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+          <b:widget-setting name='weekPattern'>MMMM d</b:widget-setting>
+          <b:widget-setting name='chronological'>true</b:widget-setting>
+          <b:widget-setting name='showPosts'>false</b:widget-setting>
+          <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_BlogSearch' maxwidgets='1' showaddelement='no'>
+      <b:widget id='BlogSearch10' locked='true' title='Blog Search' type='BlogSearch' visible='true'/>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_ContactForm' maxwidgets='1' showaddelement='no'>
+      <b:widget id='ContactForm10' locked='true' title='Contact Form' type='ContactForm' visible='true'/>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_FeaturedPost' maxwidgets='1' showaddelement='no'>
+      <b:widget id='FeaturedPost10' locked='true' title='Featured Post' type='FeaturedPost' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showSnippet'>true</b:widget-setting>
+          <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+          <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+          <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_FollowByEmail' maxwidgets='1' showaddelement='no'>
+      <b:widget id='FollowByEmail10' locked='true' title='Follow by Email' type='FollowByEmail' visible='true'/>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget preview-gadget-full-width'>
+    <h3>Page Header</h3>
+    <b:section id='PREVIEW_Header' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Header10' locked='true' title='(Header)' type='Header' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630/868e96/dee2e6</b:widget-setting>
+          <b:widget-setting name='displayHeight'>768</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>258</b:widget-setting>
+          <b:widget-setting name='useImage'>true</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+          <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+          <b:widget-setting name='displayWidth'>1366</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_HTML' maxwidgets='1' showaddelement='no'>
+      <b:widget id='HTML10' locked='true' title='HTML/JavaScript' type='HTML' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='content'>
+            <![CDATA[
+              <p>Hello, world!</p>
+            ]]>
+          </b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_Image' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Image10' locked='true' title='Image' type='Image' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512/868e96/dee2e6</b:widget-setting>
+          <b:widget-setting name='displayHeight'>172</b:widget-setting>
+          <b:widget-setting name='sectionWidth'>258</b:widget-setting>
+          <b:widget-setting name='shrinkToFit'>true</b:widget-setting>
+          <b:widget-setting name='displayWidth'>258</b:widget-setting>
+          <b:widget-setting name='link'>https://blogger.com</b:widget-setting>
+          <b:widget-setting name='caption'>A caption for the above image.</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_Label' maxwidgets='2' showaddelement='no'>
+      <b:widget id='Label10' locked='true' title='Labels (LIST)' type='Label' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          <b:widget-setting name='display'>LIST</b:widget-setting>
+          <b:widget-setting name='selectedLabelsList'/>
+          <b:widget-setting name='showType'>ALL</b:widget-setting>
+          <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+      <b:widget id='Label11' locked='true' title='Labels (CLOUD)' type='Label' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          <b:widget-setting name='display'>CLOUD</b:widget-setting>
+          <b:widget-setting name='selectedLabelsList'/>
+          <b:widget-setting name='showType'>ALL</b:widget-setting>
+          <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_LinkList' maxwidgets='1' showaddelement='no'>
+      <b:widget id='LinkList10' locked='true' title='Link List' type='LinkList' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='shownum'/>
+          <b:widget-setting name='sorting'>NONE</b:widget-setting>
+          <b:widget-setting name='text-0'>Google</b:widget-setting>
+          <b:widget-setting name='link-0'>https://google.com/</b:widget-setting>
+          <b:widget-setting name='text-1'>Blogger</b:widget-setting>
+          <b:widget-setting name='link-1'>https://blogger.com/</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_PageList' maxwidgets='1' showaddelement='no'>
+      <b:widget id='PageList10' locked='true' title='Pages' type='PageList' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='pageListJson'>
+            <![CDATA[
+              {
+                'home': {'href': '/', 'title': 'Home', 'position': 0},
+                'link0': {'href': 'https://google.com/', 'title': 'Google', 'position': 1},
+                'link1': {'href': 'https://blogger.com/', 'title': 'Blogger', 'position': 2}
+              }
+            ]]>
+          </b:widget-setting>
+          <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_PopularPosts' maxwidgets='1' showaddelement='no'>
+      <b:widget id='PopularPosts10' locked='true' title='Popular Posts' type='PopularPosts' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
+          <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+          <b:widget-setting name='showSnippets'>true</b:widget-setting>
+          <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_Profile' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Profile10' locked='true' title='Profile' type='Profile' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='showaboutme'>true</b:widget-setting>
+          <b:widget-setting name='showlocation'>true</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_Text' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Text10' locked='true' title='Text' type='Text' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='content'>
+            <![CDATA[
+              Hello, world!
+            ]]>
+          </b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_TextList' maxwidgets='1' showaddelement='no'>
+      <b:widget id='TextList10' locked='true' title='Text List' type='TextList' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='shownum'/>
+          <b:widget-setting name='sorting'>NONE</b:widget-setting>
+          <b:widget-setting name='item-0'>Item 1</b:widget-setting>
+          <b:widget-setting name='item-1'>Item 2</b:widget-setting>
+          <b:widget-setting name='item-2'>Item 3</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+  <div class='preview-gadget'>
+    <b:section id='PREVIEW_Translate' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Translate10' locked='true' title='Translate' type='Translate' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='displayMode'>SIMPLE</b:widget-setting>
+        </b:widget-settings>
+      </b:widget>
+    </b:section>
+  </div>
+
+</div>

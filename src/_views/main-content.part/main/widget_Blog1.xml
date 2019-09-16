@@ -1,0 +1,92 @@
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+    <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+    <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+    <b:widget-setting name='style.urlcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showAuthor'>true</b:widget-setting>
+    <b:widget-setting name='disableGooglePlusShare'>false</b:widget-setting>
+    <b:widget-setting name='style.linkcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+    <b:widget-setting name='style.bgcolor'>#000000</b:widget-setting>
+    <b:widget-setting name='timestampLabel'/>
+    <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
+    <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+    <b:widget-setting name='showLabels'>true</b:widget-setting>
+    <b:widget-setting name='showLocation'>true</b:widget-setting>
+    <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+    <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+    <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+    <b:widget-setting name='style.bordercolor'>#000000</b:widget-setting>
+    <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+    <b:widget-setting name='showReactions'>true</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+
+    <b:comment>=== JSON metadata ===</b:comment>
+
+    <b:if cond='data:posts.notEmpty'>
+      <div id='postMetadataJSON'>
+        <b:loop values='data:posts' var='post'>
+          <b:include name='postMetadataJSON'/>
+        </b:loop>
+      </div>
+    </b:if>
+
+    <b:comment>=== Breadcrumb ===</b:comment>
+
+    <!--(bake widget_Blog1.part/breadcrumb.xml)-->
+
+    <b:comment>=== Status message ===</b:comment>
+
+    <!--(bake widget_Blog1.part/status-message.xml)-->
+
+    <b:comment>=== Posts ===</b:comment>
+
+    <!--(bake widget_Blog1.part/posts.xml)-->
+
+    <b:comment>=== Comments ===</b:comment>
+
+    <!--(bake widget_Blog1.part/comments.xml)-->
+
+    <b:comment>=== Pager ===</b:comment>
+
+    <!--(bake widget_Blog1.part/pager.xml)-->
+
+  </b:includable>
+  <b:includable id='aboutPostAuthor'/>
+  <b:includable id='addComments'/>
+  <b:includable id='commentAuthorAvatar'/>
+  <b:includable id='commentDeleteIcon'/>
+  <b:includable id='commentForm'/>
+  <b:includable id='commentFormIframeSrc'/>
+  <b:includable id='commentItem'/>
+  <b:includable id='commentList'/>
+  <b:includable id='commentPicker'/>
+  <b:includable id='comments'/>
+  <b:includable id='commentsTitle'/>
+  <b:includable id='feedLinks'/>
+  <b:includable id='feedLinksBody'/>
+  <b:includable id='homePageLink'/>
+  <b:includable id='iframeComments'/>
+  <b:includable id='inlineAd'/>
+  <b:includable id='nextPageLink'/>
+  <b:includable id='post'/>
+  <b:includable id='postBody'/>
+  <b:includable id='postBodySnippet'/>
+  <b:includable id='postCommentsAndAd'/>
+  <b:includable id='postCommentsLink'/>
+  <b:includable id='postFooter'/>
+  <b:includable id='postFooterAuthorProfile'/>
+  <b:includable id='postHeader'/>
+  <b:includable id='postJumpLink'/>
+  <b:includable id='postMeta'/>
+  <b:includable id='postPagination'/>
+  <b:includable id='postTitle'/>
+  <b:includable id='previousPageLink'/>
+  <b:includable id='status-message'/>
+  <b:includable id='threadedCommentForm'/>
+  <b:includable id='threadedCommentJs'/>
+  <b:includable id='threadedComments'/>
+</b:widget>

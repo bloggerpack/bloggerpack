@@ -1,0 +1,47 @@
+//
+// Base class
+//
+
+.post-single {
+  margin-bottom: 2rem;
+}
+
+//
+// Header
+//
+
+.post-single-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+//
+// Title
+//
+
+.post-single-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//
+// Body
+//
+
+.post-single-body {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}

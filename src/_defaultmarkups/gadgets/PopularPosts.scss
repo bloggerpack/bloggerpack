@@ -1,0 +1,99 @@
+//
+// Base class
+//
+
+.popular-posts {
+  text-align: left;
+}
+
+.popular-post {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: .5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > a {
+    margin-right: 1rem;
+  }
+}
+
+//
+// Image
+//
+
+.popular-post-image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: .25rem;
+}
+
+//
+// Content
+//
+
+.popular-post-content {
+  flex: 1;
+
+  &.has-image {
+    min-width: 100px;
+  }
+  &.has-image.has-snippet {
+    min-width: 160px;
+  }
+}
+
+//
+// Title
+//
+
+.popular-post-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+//= Link
+
+// .popular-post-title-link {}
+
+//
+// Meta
+//
+
+.popular-post-meta {
+  margin-top: 0;
+  margin-bottom: .25rem;
+  padding-left: 0;
+  color: #777;
+  font-size: .875rem;
+  list-style: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//= Item
+
+.popular-post-meta-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+//= Link
+
+// .popular-post-meta-link {}
+
+//
+// Snippet
+//
+
+// .popular-post-snippet {}

@@ -1,0 +1,18 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <ul class='linklist'>
+      <b:loop values='data:links' var='link'>
+        <li class='linklist-item'>
+          <a class='linklist-link' expr:href='data:link.target'>
+            <b:attr name='b:whitespace' value='remove'/>
+            <data:link.name/>
+          </a>
+        </li>
+      </b:loop>
+    </ul>
+  </div>
+</b:includable>

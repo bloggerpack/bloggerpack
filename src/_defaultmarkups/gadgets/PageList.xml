@@ -1,0 +1,23 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <ul class='pagelist'>
+      <b:loop values='data:links' var='link'>
+        <li class='pagelist-item'>
+          <a class='pagelist-link' expr:href='data:link.href'>
+            <b:class cond='data:link.isCurrentPage' name='active'/>
+            <b:attr name='b:whitespace' value='remove'/>
+            <data:link.title/>
+          </a>
+        </li>
+      </b:loop>
+    </ul>
+  </div>
+</b:includable>
+<b:includable id='overflowButton'/>
+<b:includable id='overflowablePageList'/>
+<b:includable id='pageLink'/>
+<b:includable id='pageList'/>

@@ -1,0 +1,35 @@
+//
+// Breadcrumb
+//
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: .75rem 1rem;
+  list-style: none;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+}
+
+//= Item
+
+.breadcrumb-item {
+  color: #333;
+
+  &.active {
+    color: #777;
+  }
+
+  & + &::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #777;
+    content: "/";
+  }
+  &.active + &.active::before {
+    content: ":";
+  }
+}

@@ -1,0 +1,19 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <div id='google_translate_element'/>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: '<b:eval expr='data:blog.locale.language ?: "auto"'/>',
+          autoDisplay: 'true',
+          layout: google.translate.TranslateElement.InlineLayout.<data:layout/>
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'/>
+  </div>
+</b:includable>

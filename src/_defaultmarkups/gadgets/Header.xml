@@ -1,0 +1,57 @@
+<b:includable id='main' var='this'>
+  <b:comment>=== REPLACE ===</b:comment>
+  <b:if cond='data:imagePlacement == "REPLACE"'>
+    <div class='page-header image-placement-replace'>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:image'>
+          <a expr:href='data:blog.homepageUrl'>
+            <b:attr name='b:whitespace' value='remove'/>
+            <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+          </a>
+        </b:if>
+      </div>
+    </div>
+  </b:if>
+  <b:comment>=== BEFORE_DESCRIPTION ===</b:comment>
+  <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+    <div class='page-header image-placement-before-description'>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:image'>
+          <a expr:href='data:blog.homepageUrl'>
+            <b:attr name='b:whitespace' value='remove'/>
+            <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+          </a>
+        </b:if>
+        <b:if cond='data:description'>
+          <p class='page-header-description'><data:description/></p>
+        </b:if>
+      </div>
+    </div>
+  </b:if>
+  <b:comment>=== BEHIND ===</b:comment>
+  <b:if cond='data:imagePlacement == "BEHIND"'>
+    <div class='page-header image-placement-behind'>
+      <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:title'>
+          <h1 class='page-header-title'>
+            <a class='page-header-title-link' expr:href='data:blog.homepageUrl'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:title/>
+            </a>
+          </h1>
+        </b:if>
+        <b:if cond='data:description'>
+          <p class='page-header-description'><data:description/></p>
+        </b:if>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+<b:includable id='behindImageStyle'/>
+<b:includable id='description'/>
+<b:includable id='image'/>
+<b:includable id='title'/>

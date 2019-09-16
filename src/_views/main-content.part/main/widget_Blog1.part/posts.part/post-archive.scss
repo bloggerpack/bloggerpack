@@ -1,0 +1,45 @@
+//
+// Base class
+//
+
+.post-archive {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+//
+// Title
+//
+
+.post-archive-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//= Link
+
+// .post-archive-title-link {}
+
+//
+// Snippet
+//
+
+.post-archive-snippet {
+  margin-bottom: 1rem;
+  color: #777;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}

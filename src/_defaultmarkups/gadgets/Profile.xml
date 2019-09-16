@@ -1,0 +1,81 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <b:if cond='data:team'>
+    <div class='widget-content team'>
+      <b:loop values='data:authors' var='author'>
+        <div class='profile'>
+          <div class='profile-header'/>
+          <div class='profile-avatar'>
+            <b:if cond='data:author.authorPhoto.image'>
+              <a expr:href='data:author.userUrl'>
+                <img class='profile-image' expr:alt='data:messages.myPhoto' expr:height='data:author.authorPhoto.height' expr:src='data:author.authorPhoto.image' expr:width='data:author.authorPhoto.width'/>
+              </a>
+            <b:else/>
+              <div class='profile-image profile-default-avatar'>B</div>
+            </b:if>
+          </div>
+          <div class='profile-body'>
+            <div class='profile-block'>
+              <a class='profile-name' expr:href='data:author.userUrl'><data:author.display-name/></a>
+            </div>
+          </div>
+        </div>
+      </b:loop>
+    </div>
+  <b:else/>
+    <div class='widget-content individual'>
+      <div class='profile'>
+        <div class='profile-header'/>
+        <div class='profile-avatar'>
+          <b:if cond='data:authorPhoto.image'>
+            <a expr:href='data:userUrl'>
+              <img class='profile-image' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
+            </a>
+          <b:else/>
+            <div class='profile-image profile-default-avatar'>B</div>
+          </b:if>
+        </div>
+        <div class='profile-body'>
+          <b:class cond='data:showlocation and data:location != &quot;&quot;' name='has-location'/>
+          <div class='profile-block'>
+            <a class='profile-name' expr:href='data:userUrl'>
+              <data:displayname/>
+            </a>
+          </div>
+          <b:if cond='data:aboutme != ""'>
+            <div class='profile-block'>
+              <div class='profile-text'><data:aboutme/></div>
+            </div>
+          </b:if>
+          <b:if cond='data:hasgoogleprofile'>
+            <div class='profile-block'>
+              <div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
+            </div>
+          </b:if>
+          <b:if cond='data:showlocation and data:location != ""'>
+            <div class='profile-block'>
+              <div class='profile-text'><data:location/></div>
+            </div>
+          </b:if>
+        </div>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+<b:includable id='authorProfileImage'/>
+<b:includable id='defaultProfileImage'/>
+<b:includable id='profileImage'/>
+<b:includable id='teamProfile'/>
+<b:includable id='teamProfileLink'/>
+<b:includable id='userGoogleProfile'/>
+<b:includable id='userLocation'/>
+<b:includable id='userProfile'/>
+<b:includable id='userProfileData'/>
+<b:includable id='userProfileImage'/>
+<b:includable id='userProfileInfo'/>
+<b:includable id='userProfileLink'/>
+<b:includable id='userProfileText'/>
+<b:includable id='viewProfileLink'/>

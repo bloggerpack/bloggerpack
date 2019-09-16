@@ -1,0 +1,44 @@
+//
+// Pager
+//
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+//= Link
+
+.pager-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 2rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+  &.disabled {
+    color: #777;
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, .125);
+    pointer-events: none;
+  }
+
+  // &.pager-newer {}
+  &.pager-home {
+    margin-right: .5rem;
+    margin-left: .5rem;
+  }
+  // &.pager-older {}
+}

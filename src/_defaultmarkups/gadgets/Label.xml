@@ -1,0 +1,40 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <b:include cond='data:this.display == "list"' name='list'/>
+    <b:include cond='data:this.display == "cloud"' name='cloud'/>
+  </div>
+</b:includable>
+<b:includable id='list'>
+  <div class='label-list'>
+    <b:loop values='data:labels' var='label'>
+      <a class='label-list-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+        <b:class cond='data:view.search.label == data:label.name' name='active'/>
+        <b:attr name='b:whitespace' value='remove'/>
+        <data:label.name/>
+        <b:if cond='data:this.showFreqNumbers'>
+          <span class='label-list-count'><data:label.count/></span>
+        </b:if>
+      </a>
+    </b:loop>
+  </div>
+</b:includable>
+<b:includable id='cloud'>
+  <ul class='label-cloud'>
+    <b:loop values='data:labels' var='label'>
+      <li class='label-cloud-item'>
+        <a class='label-cloud-link' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+          <b:class cond='data:view.search.label == data:label.name' name='active'/>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:label.name/>
+          <b:if cond='data:this.showFreqNumbers'>
+            <span class='label-cloud-count'><data:label.count/></span>
+          </b:if>
+        </a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>

@@ -1,0 +1,45 @@
+//
+// Header nav
+//
+
+.header-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+  padding-left: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+}
+
+//= Item
+
+.header-nav-item {
+  margin-right: .25rem;
+}
+
+//= Link
+
+.header-nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #777;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border-radius: .25rem;
+
+  &:hover,
+  &:focus {
+    color: #007bff;
+    text-decoration: none;
+    background-color: rgba(#007bff, .1);
+  }
+  &.active {
+    color: #007bff;
+  }
+}

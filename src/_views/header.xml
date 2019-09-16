@@ -1,0 +1,17 @@
+<header class='header' id='header'>
+  <div class='container'>
+    <div class='header-inner'>
+      <h1 class='header-title'>
+        <a class='header-title-link' expr:href='data:blog.homepageUrl'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:blog.title/>
+        </a>
+      </h1>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
+        <b:section class='b-section-header nav-scroll' id='b-section-header' maxwidgets='1' name='Header section' showaddelement='no'>
+          <!--(bake header.part/widget_PageList1.xml)-->
+        </b:section>
+      </b:if>
+    </div>
+  </div>
+</header>

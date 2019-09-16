@@ -1,0 +1,17 @@
+<b:if cond='data:view.isPost or data:view.isPage'>
+  <b:loop values='data:posts' var='post'>
+
+    <b:if cond='data:post.allowComments'>
+      <div class='comments' id='comments'>
+
+        <b:with value='data:post.url' var='pageUrl'>
+        <b:with value='data:post.id' var='pageIdentifier'>
+          <b:include name='disqusThread'/>
+        </b:with>
+        </b:with>
+
+      </div>
+    </b:if>
+
+  </b:loop>
+</b:if>

@@ -1,0 +1,54 @@
+<b:includable id='disqusConfig'>
+  <script>
+    var disqus_shortname = '<data:shortname/>';
+  </script>
+</b:includable>
+<b:includable id='disqusThread'>
+  <div id='disqus_thread'/>
+  <script>
+    var disqus_config = function () {
+      this.page.url = '<data:pageUrl/>';
+      this.page.identifier = '<data:pageIdentifier/>';
+    };
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      dsq.setAttribute('data-timestamp', +new Date());
+      (document.head || document.body).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
+</b:includable>
+<b:includable id='disqusCountJs'>
+  <b:comment>
+  <!--
+  // Usage
+  //
+  // Example:
+  //
+  // <b:if cond='data:post.allowComments'>
+  //   <a expr:data-disqus-identifier='data:post.id' expr:href='data:post.commentsUrl'>
+  //     <data:messages.comments/>
+  //   </a>
+  // <b:if>
+  //
+  // Example for non-link elements:
+  //
+  // <b:if cond='data:post.allowComments'>
+  //   <span class='disqus-comment-count' expr:data-disqus-identifier='data:post.id'>
+  //     <data:messages.comments/>
+  //   </span>
+  // <b:if>
+  -->
+  </b:comment>
+
+  <script>
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+      dsq.id = 'dsq-count-scr';
+      dsq.async = true;
+      (document.head || document.body).appendChild(dsq);
+    })();
+  </script>
+</b:includable>

@@ -1,0 +1,26 @@
+//
+// Base class
+//
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #777;
+  font-size: .875rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.footer-inner {
+  padding: 0;
+  background-color: transparent;
+}
+
+//
+// Text
+//
+
+.footer-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}

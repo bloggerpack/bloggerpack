@@ -1,0 +1,28 @@
+//
+// Status message
+//
+
+.status-message {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+  .search-label,
+  .search-query {
+    font-weight: 700;
+  }
+}
+
+.status-message-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.status-message-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}

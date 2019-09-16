@@ -1,0 +1,26 @@
+//
+// Skip navigation
+//
+
+.skip-navigation {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    white-space: normal;
+    clip: auto;
+  }
+}

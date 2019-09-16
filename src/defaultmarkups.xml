@@ -1,0 +1,63 @@
+<b:comment>=== Common ===</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='Common'>
+    <!--(bake _defaultmarkups/custom-all-head-content.xml)-->
+    <!--(bake _defaultmarkups/main-css.xml)-->
+    <!--(bake _defaultmarkups/main-js.xml)-->
+    <!--(bake _defaultmarkups/disqus.xml)-->
+  </b:defaultmarkup>
+</b:defaultmarkups>
+
+<b:comment>=== Gadgets ===</b:comment>
+
+<b:defaultmarkups>
+  <b:defaultmarkup type='BlogArchive'>
+    <!--(bake _defaultmarkups/gadgets/BlogArchive.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='BlogSearch'>
+    <!--(bake _defaultmarkups/gadgets/BlogSearch.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='ContactForm'>
+    <!--(bake _defaultmarkups/gadgets/ContactForm.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='FeaturedPost'>
+    <!--(bake _defaultmarkups/gadgets/FeaturedPost.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='FollowByEmail'>
+    <!--(bake _defaultmarkups/gadgets/FollowByEmail.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Header'>
+    <!--(bake _defaultmarkups/gadgets/Header.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='HTML'>
+    <!--(bake _defaultmarkups/gadgets/HTML.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Image'>
+    <!--(bake _defaultmarkups/gadgets/Image.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Label'>
+    <!--(bake _defaultmarkups/gadgets/Label.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='LinkList'>
+    <!--(bake _defaultmarkups/gadgets/LinkList.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='PageList'>
+    <!--(bake _defaultmarkups/gadgets/PageList.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='PopularPosts'>
+    <!--(bake _defaultmarkups/gadgets/PopularPosts.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Profile'>
+    <!--(bake _defaultmarkups/gadgets/Profile.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Text'>
+    <!--(bake _defaultmarkups/gadgets/Text.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='TextList'>
+    <!--(bake _defaultmarkups/gadgets/TextList.xml)-->
+  </b:defaultmarkup>
+  <b:defaultmarkup type='Translate'>
+    <!--(bake _defaultmarkups/gadgets/Translate.xml)-->
+  </b:defaultmarkup>
+</b:defaultmarkups>

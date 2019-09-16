@@ -1,0 +1,12 @@
+<footer class='footer' id='footer'>
+  <div class='container'>
+    <div class='footer-inner'>
+      <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer")'>
+        <b:section class='b-section-footer' id='b-section-footer' maxwidgets='1' name='Footer section' showaddelement='no'>
+          <!--(bake footer.part/widget_LinkList1.xml)-->
+        </b:section>
+      </b:if>
+      <p class='footer-text'>&#169; <data:blog.title/>. <a expr:href='data:blog.bloggerUrl'><b:message name='messages.poweredByBlogger'/></a>.</p>
+    </div>
+  </div>
+</footer>

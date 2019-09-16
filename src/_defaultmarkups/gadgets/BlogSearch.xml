@@ -1,0 +1,25 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <b:include name='searchForm'/>
+  </div>
+</b:includable>
+<b:includable id='searchForm'>
+  <form class='search-form' expr:action='data:blog.searchUrl'>
+    <div class='search-form-row' role='search'>
+      <div class='search-form-col'>
+        <b:include name='urlParamsAsFormInput'/>
+        <input autocomplete='off' class='search-form-input' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' name='q' type='search'/>
+      </div>
+      <div class='search-form-col-auto'>
+        <b:include name='searchSubmit'/>
+      </div>
+    </div>
+  </form>
+</b:includable>
+<b:includable id='searchSubmit'>
+  <button class='search-form-submit' type='submit'><data:messages.search/></button>
+</b:includable>

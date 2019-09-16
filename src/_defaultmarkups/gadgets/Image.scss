@@ -1,0 +1,29 @@
+//
+// Base class
+//
+
+.g-image {
+  margin: 0;
+}
+
+//
+// Image
+//
+
+.g-image-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: .25rem;
+}
+
+//
+// Caption
+//
+
+.g-image-caption {
+  margin-top: .5rem;
+  margin-bottom: 0;
+  color: #777;
+}

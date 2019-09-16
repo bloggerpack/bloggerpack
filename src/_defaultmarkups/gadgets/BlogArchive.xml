@@ -1,0 +1,79 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <b:include cond='data:this.style == "MENU"' name='menu'/>
+    <b:include cond='data:this.style == "FLAT"' name='flat'/>
+    <b:include cond='data:this.style == "HIERARCHY"' name='hierarchy'/>
+  </div>
+</b:includable>
+<b:includable id='menu'>
+  <select class='archive-menu' onchange='if (this.value) window.location.href = this.value'>
+    <option selected='' value=''><data:messages.archive/>...</option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+    </b:loop>
+  </select>
+</b:includable>
+<b:includable id='flat'>
+  <ol class='archive-flat'>
+    <b:loop values='data:data' var='i'>
+      <li class='archive-flat-item'>
+        <a class='archive-flat-link' expr:href='data:i.url'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:i.name/>
+        </a>
+        <span class='archive-flat-count'>(<data:i.post-count/>)</span>
+      </li>
+    </b:loop>
+  </ol>
+</b:includable>
+<b:includable id='hierarchy'>
+  <ol class='archive-hierarchy-first'>
+    <b:loop values='data:data' var='i'>
+      <li class='archive-hierarchy-first-item'>
+        <details class='archive-hierarchy-details'>
+          <summary class='archive-hierarchy-summary'>
+            <a class='archive-hierarchy-link' expr:href='data:i.url'>
+              <b:attr name='b:whitespace' value='remove'/>
+              <data:i.name/>
+            </a>
+            <span class='archive-hierarchy-count'>(<data:i.post-count/>)</span>
+          </summary>
+          <ul class='archive-hierarchy-second'>
+            <b:loop values='data:i.data' var='j'>
+              <li class='archive-hierarchy-second-item'>
+                <b:tag class='archive-hierarchy-details' cond='data:j.data' name='details'>
+                  <b:tag class='archive-hierarchy-summary' cond='data:j.data' name='summary'>
+                    <a class='archive-hierarchy-link' expr:href='data:j.url'>
+                      <b:attr name='b:whitespace' value='remove'/>
+                      <data:j.name/>
+                    </a>
+                    <span class='archive-hierarchy-count'>(<data:j.post-count/>)</span>
+                  </b:tag>
+                  <b:if cond='data:j.data'>
+                    <ul class='archive-hierarchy-third'>
+                      <b:loop values='data:j.data' var='k'>
+                        <li class='archive-hierarchy-third-item'>
+                          <a class='archive-hierarchy-link' expr:href='data:k.url'>
+                            <b:attr name='b:whitespace' value='remove'/>
+                            <data:k.name/>
+                          </a>
+                          <span class='archive-hierarchy-count'>(<data:k.post-count/>)</span>
+                        </li>
+                      </b:loop>
+                    </ul>
+                  </b:if>
+                </b:tag>
+              </li>
+            </b:loop>
+          </ul>
+        </details>
+      </li>
+    </b:loop>
+  </ol>
+</b:includable>
+<b:includable id='interval' var='intervals'/>
+<b:includable id='posts' var='posts'/>

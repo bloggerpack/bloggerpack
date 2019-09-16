@@ -1,0 +1,33 @@
+<b:widget id='PageList1' locked='true' title='Header nav' type='PageList' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='pageListJson'>
+      <![CDATA[
+        {
+          'home': {'href': '/', 'title': 'Home', 'position': 0},
+          'link0': {'href': 'https://github.com/wrapblogger/bloggerpack', 'title': 'GitHub', 'position': 1}
+        }
+      ]]>
+    </b:widget-setting>
+    <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <ul class='header-nav'>
+      <b:loop values='data:links' var='link'>
+        <li class='header-nav-item'>
+          <a class='header-nav-link' expr:href='data:link.href'>
+            <b:class cond='data:link.isCurrentPage' name='active'/>
+            <b:attr name='b:whitespace' value='remove'/>
+            <data:link.title/>
+          </a>
+        </li>
+      </b:loop>
+    </ul>
+  </b:includable>
+  <b:includable id='overflowButton'/>
+  <b:includable id='overflowablePageList'/>
+  <b:includable id='pageLink'/>
+  <b:includable id='pageList'/>
+</b:widget>

@@ -1,0 +1,112 @@
+//
+// Menu
+//
+
+.archive-menu {
+  display: block;
+  width: 100%;
+  padding: .375rem 1.75rem .375rem .75rem;
+  color: #555;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  appearance: none;
+
+  &:focus {
+    color: #555;
+    background-color: #fff;
+    border-color: lighten(#007bff, 25%);
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(#007bff, .25);
+  }
+}
+
+//
+// Flat
+//
+
+.archive-flat {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+//= Item
+
+// .archive-flat-item {}
+
+//= Link
+
+// .archive-flat-link {}
+
+//= Count
+
+.archive-flat-count {
+  color: #777;
+  font-size: 90%;
+}
+
+//
+// Hierarchy
+//
+
+.archive-hierarchy-first,
+.archive-hierarchy-second,
+.archive-hierarchy-third {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.archive-hierarchy-first {
+  padding-left: 0;
+}
+
+.archive-hierarchy-second {
+  padding-left: 2rem;
+}
+
+.archive-hierarchy-third {
+  padding-left: 2rem;
+}
+
+//= Item
+
+// .archive-hierarchy-first-item {}
+
+// .archive-hierarchy-second-item {}
+
+// .archive-hierarchy-third-item {}
+
+//= Details
+
+.archive-hierarchy-details {
+  display: block;
+}
+
+.archive-hierarchy-summary {
+  display: list-item;
+  outline: 0;
+  cursor: default;
+}
+
+//= Link
+
+// .archive-hierarchy-link {}
+
+//= Count
+
+.archive-hierarchy-count {
+  color: #777;
+  font-size: 90%;
+}

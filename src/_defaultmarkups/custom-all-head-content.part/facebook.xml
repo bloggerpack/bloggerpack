@@ -1,0 +1,87 @@
+<b:if cond='data:view.type == "item"'>
+  <meta content='article' property='og:type'/>
+<b:else/>
+  <meta content='website' property='og:type'/>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<meta expr:content='data:facebook.pageId' property='fb:pages'/>
+<meta expr:content='data:facebook.adminId' property='fb:admins'/>
+<meta expr:content='data:view.url.canonical' property='og:url'/>
+<meta content='1200' property='og:image:width'/>
+<meta content='630' property='og:image:height'/>
+<b:comment>=== Homepage ===</b:comment>
+<b:if cond='data:view.isHomepage'>
+  <meta expr:content='data:blog.title' property='og:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' property='og:description'/>
+  </b:if>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>
+<b:comment>=== Single page ===</b:comment>
+<b:if cond='data:view.isPost'>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " " + data:titleSeparator + " " + data:blog.title' property='og:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' property='og:description'/>
+  </b:if>
+  <b:if cond='data:view.featuredImage'>
+    <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+  <b:elseif cond='data:blog.postImageUrl'/>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+  <b:else/>
+    <meta expr:content='data:socialImage' property='og:image'/>
+  </b:if>
+</b:if>
+<b:comment>=== Static page ===</b:comment>
+<b:if cond='data:view.isPage'>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " " + data:titleSeparator + " " + data:blog.title' property='og:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' property='og:description'/>
+  </b:if>
+  <b:if cond='data:view.featuredImage'>
+    <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+  <b:elseif cond='data:blog.postImageUrl'/>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='og:image'/>
+  <b:else/>
+    <meta expr:content='data:socialImage' property='og:image'/>
+  </b:if>
+</b:if>
+<b:comment>=== Search (label) page ===</b:comment>
+<b:if cond='data:view.search.label'>
+  <meta expr:content='data:blog.pageName + " " + data:titleSeparator + " " + data:blog.title' property='og:title'/>
+  <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>
+<b:comment>=== Search (query) page ===</b:comment>
+<b:if cond='data:view.search.query'>
+  <meta expr:content='data:view.search.resultsMessage + " " + data:titleSeparator + " " + data:blog.title' property='og:title'/>
+  <meta expr:content='data:view.search.resultsMessage' property='og:description'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>
+<b:comment>=== Search (default) page ===</b:comment>
+<b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+  <meta expr:content='data:blog.title' property='og:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' property='og:description'/>
+  </b:if>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>
+<b:comment>=== Archive page ===</b:comment>
+<b:if cond='data:view.isArchive'>
+  <meta expr:content='data:view.archive.rangeMessage + " " + data:titleSeparator + " " + data:blog.title' property='og:title'/>
+  <meta expr:content='data:view.archive.rangeMessage' property='og:description'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>
+<b:comment>=== Error page ===</b:comment>
+<b:if cond='data:view.isError'>
+  <meta content='404' property='og:title'/>
+  <meta content='404' property='og:description'/>
+  <meta expr:content='data:socialImage' property='og:image'/>
+</b:if>

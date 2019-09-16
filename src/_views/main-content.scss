@@ -1,0 +1,67 @@
+//
+// Base class
+//
+
+.main-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: transparent;
+}
+
+.main-content-inner {
+  padding: 0;
+  background-color: transparent;
+}
+
+//
+// Main
+//
+
+.main-inner {
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+}
+
+//
+// Sidebar
+//
+
+.sidebar-inner {
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+}
+
+//= b:section and b:widget
+
+.b-section-sidebar .widget {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Title
+  > .title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  // Content
+  > .widget-content {
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

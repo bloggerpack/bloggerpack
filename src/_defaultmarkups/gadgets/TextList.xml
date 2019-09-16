@@ -1,0 +1,13 @@
+<b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+  <div class='widget-content'>
+    <ul class='textlist'>
+      <b:loop values='data:items' var='item'>
+        <li class='textlist-item'><data:item/></li>
+      </b:loop>
+    </ul>
+  </div>
+</b:includable>

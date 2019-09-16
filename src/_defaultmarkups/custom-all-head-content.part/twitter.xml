@@ -1,0 +1,84 @@
+<b:if cond='data:view.isHomepage'>
+  <meta content='summary_large_image' name='twitter:card'/>
+<b:else/>
+  <meta content='summary' name='twitter:card'/>
+</b:if>
+<meta expr:content='data:twitter.usernameSite' name='twitter:site'/>
+<meta expr:content='data:twitter.usernameCreator' name='twitter:creator'/>
+<meta expr:content='data:view.url.canonical' name='twitter:url'/>
+<b:comment>=== Homepage ===</b:comment>
+<b:if cond='data:view.isHomepage'>
+  <meta expr:content='data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
+  </b:if>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>
+<b:comment>=== Single page ===</b:comment>
+<b:if cond='data:view.isPost'>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " " + data:titleSeparator + " " + data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' name='twitter:description'/>
+  </b:if>
+  <b:if cond='data:view.featuredImage'>
+    <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
+  <b:elseif cond='data:blog.postImageUrl'/>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
+  <b:else/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
+  </b:if>
+</b:if>
+<b:comment>=== Static page ===</b:comment>
+<b:if cond='data:view.isPage'>
+  <meta expr:content='(data:blog.pageName ? data:blog.pageName : data:messages.noTitle) + " " + data:titleSeparator + " " + data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.pageName ? data:blog.pageName : data:blog.title' name='twitter:description'/>
+  </b:if>
+  <b:if cond='data:view.featuredImage'>
+    <meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
+  <b:elseif cond='data:blog.postImageUrl'/>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, "1200:630")' property='twitter:image'/>
+  <b:else/>
+    <meta expr:content='data:socialImage' property='twitter:image'/>
+  </b:if>
+</b:if>
+<b:comment>=== Search (label) page ===</b:comment>
+<b:if cond='data:view.search.label'>
+  <meta expr:content='data:blog.pageName + " " + data:titleSeparator + " " + data:blog.title' name='twitter:title'/>
+  <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>
+<b:comment>=== Search (query) page ===</b:comment>
+<b:if cond='data:view.search.query'>
+  <meta expr:content='data:view.search.resultsMessage + " " + data:titleSeparator + " " + data:blog.title' name='twitter:title'/>
+  <meta expr:content='data:view.search.resultsMessage' name='twitter:description'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>
+<b:comment>=== Search (default) page ===</b:comment>
+<b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+  <meta expr:content='data:blog.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta expr:content='data:blog.title' name='twitter:description'/>
+  </b:if>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>
+<b:comment>=== Archive page ===</b:comment>
+<b:if cond='data:view.isArchive'>
+  <meta expr:content='data:view.archive.rangeMessage + " " + data:titleSeparator + " " + data:blog.title' name='twitter:title'/>
+  <meta expr:content='data:view.archive.rangeMessage' name='twitter:description'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>
+<b:comment>=== Error page ===</b:comment>
+<b:if cond='data:view.isError'>
+  <meta content='404' name='twitter:title'/>
+  <meta content='404' name='twitter:description'/>
+  <meta expr:content='data:socialImage' property='twitter:image'/>
+</b:if>

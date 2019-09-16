@@ -1,0 +1,19 @@
+<b:loop values='data:posts' var='post'>
+  <article class='post post-static' expr:id='"post-" + data:post.id'>
+    <b:comment>=== Header ===</b:comment>
+    <header class='post-static-header'>
+      <b:comment>=== Title ===</b:comment>
+      <h1 class='post-static-title'>
+        <b:if cond='data:post.title'>
+          <data:post.title/>
+        <b:else/><!-- fallback -->
+          <data:messages.noTitle/>
+        </b:if>
+      </h1>
+    </header>
+    <b:comment>=== Body ===</b:comment>
+    <div class='post-static-body post-body-typography'>
+      <data:post.body/>
+    </div>
+  </article>
+</b:loop>

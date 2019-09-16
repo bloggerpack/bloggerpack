@@ -1,0 +1,32 @@
+<b:comment>=== Homepage ===</b:comment>
+<b:if cond='data:view.isHomepage'>
+  <title><data:blog.title/></title>
+</b:if>
+<b:comment>=== Single page ===</b:comment>
+<b:if cond='data:view.isPost'>
+  <title><b:eval expr='data:blog.pageName ? data:blog.pageName : data:messages.noTitle'/> <data:titleSeparator/> <data:blog.title/></title>
+</b:if>
+<b:comment>=== Static page ===</b:comment>
+<b:if cond='data:view.isPage'>
+  <title><b:eval expr='data:blog.pageName ? data:blog.pageName : data:messages.noTitle'/> <data:titleSeparator/> <data:blog.title/></title>
+</b:if>
+<b:comment>=== Search (label) page ===</b:comment>
+<b:if cond='data:view.search.label'>
+  <title><data:blog.pageName/> <data:titleSeparator/> <data:blog.title/></title>
+</b:if>
+<b:comment>=== Search (query) page ===</b:comment>
+<b:if cond='data:view.search.query'>
+  <title><data:view.search.resultsMessage/> <data:titleSeparator/> <data:blog.title/></title>
+</b:if>
+<b:comment>=== Search (default) page ===</b:comment>
+<b:if cond='data:view.search and !data:view.search.label and !data:view.search.query'>
+  <title><data:blog.title/></title>
+</b:if>
+<b:comment>=== Archive page ===</b:comment>
+<b:if cond='data:view.isArchive'>
+  <title><data:view.archive.rangeMessage/> <data:titleSeparator/> <data:blog.title/></title>
+</b:if>
+<b:comment>=== Error page ===</b:comment>
+<b:if cond='data:view.isError'>
+  <title>404</title>
+</b:if>

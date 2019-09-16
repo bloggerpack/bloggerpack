@@ -1,0 +1,51 @@
+//
+// Base class
+//
+
+// .featured-post {}
+
+//
+// Image
+//
+
+.featured-post-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: .25rem;
+}
+
+//
+// Title
+//
+
+.featured-post-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+//= Link
+
+// .featured-post-title-link {}
+
+//
+// Snippet
+//
+
+// .featured-post-snippet {}
+
+//= Link
+
+// .featured-post-snippet-link {}
+
+//
+// Spacer
+//
+
+.featured-post-spacer {
+  height: 0;
+  margin-top: .75rem;
+}

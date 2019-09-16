@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Theme details
+   ========================================================================== */
+
+/*!
+ * Name            : {{ config.theme.name }}
+ * Version         : {{ config.theme.version }}
+ * Date            : {{ config.theme.date }}
+ * Homepage        : {{ config.theme.homepage }}
+ * Author          : {{ config.theme.author.name }}
+ * Author URL      : {{ config.theme.author.url }}
+ * Repository Type : {{ config.theme.repository.type }}
+ * Repository URL  : {{ config.theme.repository.url }}
+ * License Type    : {{ config.theme.license.type }}
+ * License URL     : {{ config.theme.license.url }}
+ *
+ * Based on Bloggerpack (https://github.com/wrapblogger/bloggerpack)
+ */
+
+/* ==========================================================================
+   Variables
+   ==========================================================================
+
+> Use this file to re-create existing styles using skin variables
+> to be able to override through the Blogger's theme designer.
+> See example below (write variables within CSS comment):
+
+<Variable name="link.color"
+          description="Link Color"
+          type="color"
+          default="#000"
+          value="#000"/>
+*/
+
+/* ==========================================================================
+   Example
+   ========================================================================== */
+
+/* a { color: $(link.color); } */

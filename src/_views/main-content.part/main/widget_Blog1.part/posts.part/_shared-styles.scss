@@ -1,0 +1,336 @@
+//
+// Sharing
+//
+
+.post-sharing {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: .25rem .75rem;
+  overflow: hidden;
+  color: #555;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.25;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+
+  &:hover,
+  &:focus {
+    color: #333;
+    background-color: darken(#f8f9fa, 2.5%);
+  }
+}
+
+//= Icon
+
+.post-sharing-icon {
+  width: 16px;
+  height: 16px;
+
+  &:first-child {
+    margin-right: .25rem;
+  }
+  &:last-child {
+    margin-left: .25rem;
+  }
+
+  path {
+    fill: #555;
+  }
+
+  .post-sharing:hover & path,
+  .post-sharing:focus & path {
+    fill: #333;
+  }
+}
+
+//= Select
+
+.post-sharing-select {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0 .75rem;
+  color: #555;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  border: 0;
+  border-radius: .25rem;
+  cursor: pointer;
+  opacity: 0;
+  appearance: none;
+}
+
+//
+// Labels
+//
+
+.post-label-scroll {
+  max-width: 100%;
+  height: 1.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.post-label {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+}
+
+//= Item
+
+.post-label-item {
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+
+  &.post-label-item-divider {
+    padding-right: .5rem;
+    border-right: 2px dashed rgba(0, 0, 0, .125);
+  }
+}
+
+//= Link
+
+.post-label-link {
+  display: block;
+  padding: .25rem .75rem;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, .125);
+  border-radius: 2rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+}
+
+//= No label
+
+.post-label-nolabel {
+  display: block;
+  padding: .25rem .75rem;
+  color: #777;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, .125);
+  border-radius: 2rem;
+  cursor: default;
+}
+
+//
+// Meta
+//
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  font-size: .875rem;
+  list-style: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//= Item
+
+.post-meta-item {
+  margin-top: 1rem;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+//= Prefix
+
+.post-meta-prefix {
+  color: #777;
+}
+
+//= Link
+
+// .post-meta-link {}
+
+//= Text
+
+.post-meta-text {
+  color: #333;
+}
+
+//
+// Typography
+//
+// Usage:
+//
+// <div class='post-body-typography'>
+//   <data:post.body/>
+// </div>
+
+// stylelint-disable declaration-no-important, no-duplicate-selectors, selector-max-type, selector-no-qualifying-type
+
+//= Reset margins
+
+.post-body-typography h2,
+.post-body-typography h3,
+.post-body-typography h4,
+.post-body-typography h5,
+.post-body-typography h6,
+.post-body-typography p,
+.post-body-typography pre,
+.post-body-typography ol,
+.post-body-typography ul,
+.post-body-typography dl,
+.post-body-typography table:not(.tr-caption-container),
+.post-body-typography blockquote,
+.post-body-typography address,
+.post-body-typography figure {
+  margin: 1rem 0 !important;
+}
+
+//= Images
+
+.post-body-typography img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-body-typography .tr-caption-container .tr-caption {
+  padding-top: .25rem;
+  color: #777;
+  font-size: 90%;
+}
+
+//= Tables
+
+.post-body-typography table:not([class]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.post-body-typography table:not([class]) caption {
+  padding: .75rem 0 0;
+  color: #777;
+  text-align: inherit;
+  caption-side: bottom;
+}
+
+.post-body-typography table:not([class]) th,
+.post-body-typography table:not([class]) td {
+  padding: .75rem;
+  vertical-align: top;
+  border: 1px solid rgba(0, 0, 0, .125);
+}
+.post-body-typography table:not([class]) th {
+  text-align: inherit;
+}
+
+.post-body-typography table:not([class]) thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid rgba(0, 0, 0, .125);
+}
+
+.post-body-typography table:not([class]) tbody + tbody {
+  border-top: 2px solid rgba(0, 0, 0, .125);
+}
+
+//= Blockquotes
+
+.post-body-typography blockquote:not([class]) {
+  padding: .75rem 1rem;
+  color: #333;
+  background-color: #f8f9fa;
+  border-left: 8px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
+
+.post-body-typography blockquote:not([class]) > :first-child {
+  margin-top: 0 !important;
+}
+.post-body-typography blockquote:not([class]) > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.post-body-typography blockquote:not([class]) footer {
+  display: block;
+  color: #777;
+  font-size: 90%;
+}
+.post-body-typography blockquote:not([class]) footer::before {
+  content: "\2014 \00A0";
+}
+
+//= Code
+
+.post-body-typography code {
+  padding: .2em .4em;
+  color: #ff3860;
+  font-size: 90%;
+  word-break: break-word;
+  background-color: #f8f9fa;
+  border: 0;
+  border-radius: .25rem;
+}
+
+.post-body-typography pre code {
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  word-break: inherit;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.post-body-typography pre:not([class]) {
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  color: #333;
+  font-size: 90%;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+}

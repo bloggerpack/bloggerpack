@@ -1,0 +1,80 @@
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <div class='popular-posts'>
+      <b:loop values='data:posts' var='post'>
+        <div class='popular-post'>
+          <b:comment>=== Featured image ===</b:comment>
+          <b:if cond='data:postDisplay.showFeaturedImage'>
+            <b:if cond='data:post.featuredImage'>
+              <b:if cond='data:post.featuredImage.isYoutube'>
+                <a expr:href='data:post.link ?: data:post.url'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <img>
+                    <!-- class --><b:class name='popular-post-image'/>
+                    <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 160, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                    <!-- width --><b:attr name='width' value='160'/>
+                    <!-- height --><b:attr name='height' value='90'/>
+                    <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                    <b:attr name='b:whitespace' value='remove'/>
+                  </img>
+                </a>
+              <b:else/>
+                <a expr:href='data:post.link ?: data:post.url'>
+                  <b:attr name='b:whitespace' value='remove'/>
+                  <img>
+                    <!-- class --><b:class name='popular-post-image'/>
+                    <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 160, "16:9") : data:post.featuredImage' name='src'/>
+                    <!-- width --><b:attr name='width' value='160'/>
+                    <!-- height --><b:attr name='height' value='90'/>
+                    <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                    <b:attr name='b:whitespace' value='remove'/>
+                  </img>
+                </a>
+              </b:if>
+            <b:else/><!-- fallback -->
+              <a expr:href='data:post.link ?: data:post.url'>
+                <b:attr name='b:whitespace' value='remove'/>
+                <img>
+                  <!-- class --><b:class name='popular-post-image'/>
+                  <!-- src --><b:attr expr:value='resizeImage("https://lh3.googleusercontent.com/kBzrgG0CUVwpWe8oT8iPxL8HhKQdNVj1AX5BR2Y0Q_zoSpxHGPRtcysgTJsb8ZEsYmbWoNm-nEOyjBc03w=w1920-h1080-rw-no", 160, "16:9")' name='src'/>
+                  <!-- width --><b:attr name='width' value='160'/>
+                  <!-- height --><b:attr name='height' value='90'/>
+                  <!-- alt --><b:attr expr:value='data:messages.image' name='alt'/>
+                  <b:attr name='b:whitespace' value='remove'/>
+                </img>
+              </a>
+            </b:if>
+          </b:if>
+          <b:comment>=== Content ===</b:comment>
+          <div class='popular-post-content'>
+            <b:class cond='data:postDisplay.showFeaturedImage' name='has-image'/>
+            <b:class cond='data:postDisplay.showSnippet' name='has-snippet'/>
+            <b:comment>=== Title ===</b:comment>
+            <h3 class='popular-post-title'>
+              <a class='popular-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                <b:attr name='b:whitespace' value='remove'/>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h3>
+            <b:comment>=== Meta ===</b:comment>
+            <ul class='popular-post-meta'>
+              <b:comment>=== Date (published) ===</b:comment>
+              <li class='popular-post-meta-item'>
+                <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                  <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+                </time>
+              </li>
+            </ul>
+            <b:comment>=== Snippet ===</b:comment>
+            <b:if cond='data:postDisplay.showSnippet'>
+              <div class='popular-post-snippet'>
+                <b:eval expr='snippet(data:post.snippets.long, { length: 100, links: false, linebreaks: false, ellipsis: true })'/>
+              </div>
+            </b:if>
+          </div>
+        </div>
+      </b:loop>
+    </div>
+  </div>
+</b:includable>

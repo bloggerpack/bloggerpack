@@ -1,0 +1,34 @@
+//
+// Base CSS
+//
+
+//= Body
+
+// stylelint-disable-next-line value-keyword-case
+$body-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$body-font-size:    1rem !default;
+$body-font-weight:  400 !default;
+$body-line-height:  1.5 !default;
+$body-color:        #333 !default;
+$body-bg:           #fff !default;
+
+//= Links
+
+$link-color:             #007bff !default;
+$link-hover-color:       darken($link-color, 15%) !default;
+$link-decoration:        none !default;
+$link-hover-decoration:  underline !default;
+
+//= Headings
+
+$headings-font-family:  null !default;
+$headings-font-weight:  500 !default;
+$headings-line-height:  1.2 !default;
+$headings-color:        null !default;
+
+$h1-font-size:          1rem * 2.5 !default;
+$h2-font-size:          1rem * 2 !default;
+$h3-font-size:          1rem * 1.75 !default;
+$h4-font-size:          1rem * 1.5 !default;
+$h5-font-size:          1rem * 1.25 !default;
+$h6-font-size:          1rem !default;

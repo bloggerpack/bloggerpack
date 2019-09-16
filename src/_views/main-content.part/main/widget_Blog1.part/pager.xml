@@ -1,0 +1,20 @@
+<b:if cond='data:posts.notEmpty and !data:view.isPage'>
+  <nav class='pager' id='pager'>
+    <a class='pager-newer pager-link' role='button'>
+      <b:class cond='!data:newerPageUrl' name='disabled'/>
+      <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0)"' name='href'/>
+      <b:attr name='b:whitespace' value='remove'/>
+      <data:messages.newer/>
+    </a>
+    <a class='pager-home pager-link' expr:href='data:blog.homepageUrl' role='button'>
+      <b:attr name='b:whitespace' value='remove'/>
+      <data:messages.home/>
+    </a>
+    <a class='pager-older pager-link' role='button'>
+      <b:class cond='!data:olderPageUrl' name='disabled'/>
+      <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0)"' name='href'/>
+      <b:attr name='b:whitespace' value='remove'/>
+      <data:messages.older/>
+    </a>
+  </nav>
+</b:if>
