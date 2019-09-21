@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
@@ -21,4 +21,5 @@
 
 .footer-nav-link {
   font-weight: 500;
+  font-size: .875rem;
 }
