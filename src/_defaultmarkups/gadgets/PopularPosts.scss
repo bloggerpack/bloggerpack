@@ -69,7 +69,6 @@
   margin-top: 0;
   margin-bottom: .25rem;
   padding-left: 0;
-  color: #777;
   font-size: .875rem;
   list-style: none;
 
@@ -88,9 +87,11 @@
   }
 }
 
-//= Link
+//= Text
 
-// .popular-post-meta-link {}
+.popular-post-meta-text {
+  color: #777;
+}
 
 //
 // Snippet
