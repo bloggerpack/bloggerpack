@@ -1,0 +1,51 @@
+<ul class='post-meta'>
+  <b:comment>=== Author name ===</b:comment>
+  <li class='post-meta-item'>
+    <div class='post-meta-prefix'>
+      <data:messages.postedBy/>
+    </div>
+    <b:if cond='data:post.author'>
+      <b:if cond='data:post.author.profileUrl'>
+        <a class='post-meta-link' expr:href='data:post.author.profileUrl' expr:title='data:messages.visitProfile'>
+          <b:attr name='b:whitespace' value='remove'/>
+          <data:post.author.name/>
+        </a>
+      <b:else/><!-- no profileUrl -->
+        <span class='post-meta-text'><data:post.author.name/></span>
+      </b:if>
+    <b:else/><!-- fallback -->
+      <span class='post-meta-text'>Anonymous</span>
+    </b:if>
+  </li>
+  <b:comment>=== Date (published) ===</b:comment>
+  <li class='post-meta-item'>
+    <div class='post-meta-prefix'>
+      Published
+    </div>
+    <time class='post-meta-text' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+      <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+    </time>
+  </li>
+  <b:comment>=== Date (updated) ===</b:comment>
+  <li class='post-meta-item'>
+    <div class='post-meta-prefix'>
+      Updated
+    </div>
+    <time class='post-meta-text' expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+      <b:eval expr='format(data:post.lastUpdated, "MMM dd, YYYY")'/>
+    </time>
+  </li>
+  <b:comment>=== Comments link ===</b:comment>
+  <b:if cond='data:post.allowComments'>
+    <li class='post-meta-item'>
+      <div class='post-meta-prefix'>
+        <span class='disqus-comment-count' expr:data-disqus-identifier='data:post.id'>
+          <data:messages.comments/>
+        </span>
+      </div>
+      <a class='post-meta-link' expr:href='data:post.commentsUrl' expr:title='data:messages.joinTheConversation'>
+        <data:messages.joinTheConversation/>
+      </a>
+    </li>
+  </b:if>
+</ul>

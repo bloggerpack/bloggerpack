@@ -1,0 +1,45 @@
+//
+// Meta
+//
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  font-size: .875rem;
+  list-style: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//= Item
+
+.post-meta-item {
+  margin-top: 1rem;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+//= Prefix
+
+.post-meta-prefix {
+  color: #777;
+}
+
+//= Link
+
+// .post-meta-link {}
+
+//= Text
+
+.post-meta-text {
+  color: #333;
+}
