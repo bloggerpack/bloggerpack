@@ -1,0 +1,178 @@
+//
+// Base class
+//
+
+.sharing-and-labels {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-right: -5px;
+  margin-bottom: 1rem;
+  margin-left: -5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.post-sharing-col {
+  position: relative;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.post-label-col {
+  position: relative;
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+
+//
+// Sharing
+//
+
+.post-sharing {
+  position: relative;
+  top: -1px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: .25rem .75rem;
+  overflow: hidden;
+  color: #555;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 1.25;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+
+  &:hover,
+  &:focus {
+    color: #333;
+    background-color: darken(#f8f9fa, 2.5%);
+  }
+}
+
+//= Icon
+
+.post-sharing-icon {
+  width: 16px;
+  height: 16px;
+
+  &:first-child {
+    margin-right: .25rem;
+  }
+  &:last-child {
+    margin-left: .25rem;
+  }
+
+  path {
+    fill: #555;
+  }
+
+  .post-sharing:hover & path,
+  .post-sharing:focus & path {
+    fill: #333;
+  }
+}
+
+//= Select
+
+.post-sharing-select {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0 .75rem;
+  color: #555;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fff;
+  border: 0;
+  border-radius: .25rem;
+  cursor: pointer;
+  opacity: 0;
+  appearance: none;
+}
+
+//
+// Labels
+//
+
+.post-label-scroll {
+  max-width: 100%;
+  height: 1.75rem;
+  overflow: hidden;
+}
+
+.post-label {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+  padding-left: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+}
+
+//= Item
+
+.post-label-item {
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+//= Link
+
+.post-label-link {
+  display: block;
+  padding: .25rem .75rem;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, .125);
+  border-radius: 2rem;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-color: rgba(0, 0, 0, .125);
+  }
+}
+
+//= No label
+
+.post-label-nolabel {
+  display: block;
+  padding: .25rem .75rem;
+  color: #777;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, .125);
+  border-radius: 2rem;
+  cursor: default;
+}
