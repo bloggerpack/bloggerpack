@@ -1,0 +1,14 @@
+<b:widget id='HTML1' locked='true' title='Footer text' type='HTML' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      <![CDATA[
+        <p>© &lt;YEAR&gt; &lt;COPYRIGHT HOLDER&gt;. <a href="https://blogger.com/">Powered by Blogger</a>.</p>
+      ]]>
+    </b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <div class='footer-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>

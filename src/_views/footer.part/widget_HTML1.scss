@@ -1,0 +1,17 @@
+//
+// Footer content
+//
+
+.footer-content {
+  color: #777;
+  font-size: .875rem;
+
+  p {
+    margin-top: 0;
+    margin-bottom: .5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
