@@ -1,4 +1,4 @@
-<b:includable id='customAllHeadContent'>
+<b:includable id='custom-all-head-content'>
   <b:comment>=== Required meta tags ===</b:comment>
 
   <!--(bake custom-all-head-content.part/required.xml)-->

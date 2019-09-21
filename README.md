@@ -65,8 +65,8 @@
 
 ### User configuration
 
-- src/theme.xml => find `name='customAllHeadContent'` to configure metadata.
-- src/theme.xml => find `name='disqusConfig'` to configure Disqus shortname.
+- src/theme.xml => find `name='custom-all-head-content'` to configure metadata.
+- src/theme.xml => find `name='disqus-config'` to configure Disqus shortname.
 
 ### Using npm to install packages
 

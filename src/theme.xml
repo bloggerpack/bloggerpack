@@ -22,15 +22,15 @@ Head
     usernameSite: "replace_with_@username_of_website",
     usernameCreator: "replace_with_@username_of_content_creator"
   }
-}' name='customAllHeadContent'/>
+}' name='custom-all-head-content'/>
 
 <b:comment>=== Disqus config ===</b:comment>
 
-<b:include data='{ shortname: "replace_with_disqus_shortname" }' name='disqusConfig'/>
+<b:include data='{ shortname: "replace_with_disqus_shortname" }' name='disqus-config'/>
 
 <b:comment>=== Main CSS ===</b:comment>
 
-<b:include name='mainCss'/>
+<b:include name='main-css'/>
 
 <b:comment>=== Template skin ===</b:comment>
 
@@ -113,11 +113,11 @@ JavaScript
 
 <b:comment>=== Main JavaScript ===</b:comment>
 
-<b:include name='mainJs'/>
+<b:include name='main-js'/>
 
 <b:comment>=== Disqus count.js ===</b:comment>
 
-<b:include name='disqusCountJs'/>
+<b:include name='disqus-count-js'/>
 
 <b:comment>
 #############################################################################

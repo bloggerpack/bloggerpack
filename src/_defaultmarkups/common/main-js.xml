@@ -1,4 +1,4 @@
-<b:includable id='mainJs'>
+<b:includable id='main-js'>
   <script>
     //<![CDATA[
       <!--(bake /../dist/js/main.min.js)-->

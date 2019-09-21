@@ -1,4 +1,4 @@
-<b:includable id='mainCss'>
+<b:includable id='main-css'>
   <b:if cond='!data:view.isLayoutMode'>
     <style>
       <!--(bake /../dist/css/main.min.css)-->

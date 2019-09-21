@@ -2,10 +2,10 @@
 
 <b:defaultmarkups>
   <b:defaultmarkup type='Common'>
-    <!--(bake _defaultmarkups/custom-all-head-content.xml)-->
-    <!--(bake _defaultmarkups/main-css.xml)-->
-    <!--(bake _defaultmarkups/main-js.xml)-->
-    <!--(bake _defaultmarkups/disqus.xml)-->
+    <!--(bake _defaultmarkups/common/custom-all-head-content.xml)-->
+    <!--(bake _defaultmarkups/common/main-css.xml)-->
+    <!--(bake _defaultmarkups/common/main-js.xml)-->
+    <!--(bake _defaultmarkups/common/disqus.xml)-->
   </b:defaultmarkup>
 </b:defaultmarkups>
 

@@ -1,9 +1,9 @@
-<b:includable id='disqusConfig'>
+<b:includable id='disqus-config'>
   <script>
     var disqus_shortname = '<data:shortname/>';
   </script>
 </b:includable>
-<b:includable id='disqusThread'>
+<b:includable id='disqus-thread'>
   <div id='disqus_thread'/>
   <script>
     var disqus_config = function () {
@@ -19,7 +19,7 @@
   </script>
   <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
 </b:includable>
-<b:includable id='disqusCountJs'>
+<b:includable id='disqus-count-js'>
   <b:comment>
   <!--
   // Usage
