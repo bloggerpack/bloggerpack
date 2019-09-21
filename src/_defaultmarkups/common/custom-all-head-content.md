@@ -18,7 +18,7 @@ Included by default in `src/theme.xml`.
     usernameSite: "replace_with_@username_of_website",
     usernameCreator: "replace_with_@username_of_content_creator"
   }
-}' name='customAllHeadContent'/>
+}' name='custom-all-head-content'/>
 ```
 
 | File | Description |

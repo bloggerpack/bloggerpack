@@ -6,7 +6,7 @@
 
         <b:with value='data:post.url' var='pageUrl'>
         <b:with value='data:post.id' var='pageIdentifier'>
-          <b:include name='disqusThread'/>
+          <b:include name='disqus-thread'/>
         </b:with>
         </b:with>
 

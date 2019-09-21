@@ -7,7 +7,7 @@
 Included by default in `src/theme.xml`.
 
 ```xml
-<b:include data='{ shortname: "replace_with_disqus_shortname" }' name='disqusConfig'/>
+<b:include data='{ shortname: "replace_with_disqus_shortname" }' name='disqus-config'/>
 ```
 
 ### Disqus thread
@@ -21,7 +21,7 @@ You can replace `data:post.url` with `data:view.url.canonical`.
 ```xml
 <b:with value='data:post.url' var='pageUrl'>
 <b:with value='data:post.id' var='pageIdentifier'>
-  <b:include name='disqusThread'/>
+  <b:include name='disqus-thread'/>
 </b:with>
 </b:with>
 ```
@@ -31,7 +31,7 @@ You can replace `data:post.url` with `data:view.url.canonical`.
 ```xml
 <b:with value='"https://example.com"' var='pageUrl'>
 <b:with value='"12345"' var='pageIdentifier'>
-  <b:include name='disqusThread'/>
+  <b:include name='disqus-thread'/>
 </b:with>
 </b:with>
 ```
@@ -41,5 +41,5 @@ You can replace `data:post.url` with `data:view.url.canonical`.
 Included by default in `src/theme.xml`.
 
 ```xml
-<b:include name='disqusCountJs'/>
+<b:include name='disqus-count-js'/>
 ```
