@@ -61,7 +61,7 @@
             <ul class='popular-post-meta'>
               <b:comment>=== Date (published) ===</b:comment>
               <li class='popular-post-meta-item'>
-                <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                <time class='popular-post-meta-text' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
                   <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
                 </time>
               </li>
