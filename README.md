@@ -115,8 +115,8 @@ export {
 
 Notes:
 
-- You need to remove `src/_plugins/bootstrap-grid`
-- Configure `.browserslistrc` to match with [Bootstrap's .browserslistrc](https://github.com/twbs/bootstrap/blob/master/.browserslistrc)
+- You need to remove `src/_plugins/bootstrap-grid`.
+- Configure `.browserslistrc` to match with [Bootstrap's .browserslistrc](https://github.com/twbs/bootstrap/blob/master/.browserslistrc).
 
 ## Directory structure
 
@@ -158,10 +158,10 @@ The theme source code that will be compiled into `dist/`.
 
 Default markups are most useful if you have a section of code that you want to re-use in several different places, or only include in certain circumstances.
 
-- Create a new file in `src/_defaultmarkups` to add default markups
-- Write the content inside a `b:includable` to define a section of code
-- [Include](#include) the file to `src/defaultmarkups.xml` within the `Common` type or gadget type `b:defaultmarkup` tag
-- Use `b:include` wherever you want it to appear
+- Create a new file in `src/_defaultmarkups` to add default markups.
+- Write the content inside a `b:includable` to define a section of code.
+- [Include](#include) the file to `src/defaultmarkups.xml` within the `Common` type or gadget type `b:defaultmarkup` tag.
+- Use `b:include` wherever you want it to appear.
 
 You can also create default markups in [`src/_plugins`](#src_plugins) for external resources. You need to add it to `src/defaultmarkups.xml`, too.
 
