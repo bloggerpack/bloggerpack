@@ -23,7 +23,6 @@
     <b:widget-setting name='showReactions'>true</b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
-
     <b:comment>=== JSON metadata ===</b:comment>
 
     <b:if cond='data:posts.notEmpty'>
@@ -53,7 +52,6 @@
     <b:comment>=== Pager ===</b:comment>
 
     <!--(bake widget_Blog1.part/pager.xml)-->
-
   </b:includable>
   <b:includable id='aboutPostAuthor'/>
   <b:includable id='addComments'/>

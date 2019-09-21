@@ -1,5 +1,4 @@
 <b:includable id='customAllHeadContent'>
-
   <b:comment>=== Required meta tags ===</b:comment>
 
   <!--(bake custom-all-head-content.part/required.xml)-->
@@ -19,5 +18,4 @@
   <b:comment>=== Twitter Cards ===</b:comment>
 
   <!--(bake custom-all-head-content.part/twitter.xml)-->
-
 </b:includable>
