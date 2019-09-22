@@ -3,8 +3,8 @@
 //
 
 .header {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   background-color: #f8f9fa;
   border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
@@ -23,7 +23,7 @@
 
 .header-title {
   max-width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-bottom: 0;
   overflow: hidden;
   font-weight: 500;
@@ -52,10 +52,8 @@
 
 .nav-scroll {
   max-width: 100%;
-  height: 4rem;
+  height: 40px;
   margin-top: 1.5rem;
-  padding-top: .75rem;
-  padding-bottom: .75rem;
   overflow: hidden;
 }
 
@@ -73,7 +71,6 @@
     flex: 0 0 auto;
     width: auto;
     max-width: 300px;
-    margin-top: 0;
     margin-right: 1rem;
   }
   .nav-scroll {
