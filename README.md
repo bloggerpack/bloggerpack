@@ -4,7 +4,7 @@
 
 [Preview](https://bloggerpack-v1-y8f7d5.blogspot.com/)
 ·
-[Wrapblogger](https://wrapblogger.github.io/)
+[Resources](https://wrapblogger.github.io/)
 
 ## Table of contents
 
