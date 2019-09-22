@@ -11,6 +11,10 @@
   list-style: none;
   background-color: #f8f9fa;
   border-radius: .25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 //= Item

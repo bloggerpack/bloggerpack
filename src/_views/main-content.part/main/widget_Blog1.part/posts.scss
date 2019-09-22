@@ -3,6 +3,9 @@
 //
 
 .posts {
-  padding: 0;
-  background-color: transparent;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

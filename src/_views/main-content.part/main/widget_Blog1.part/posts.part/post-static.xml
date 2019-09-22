@@ -1,5 +1,5 @@
 <b:loop values='data:posts' var='post'>
-  <article class='post post-static' expr:id='"post-" + data:post.id'>
+  <article class='post-static' expr:id='"post-" + data:post.id'>
     <b:comment>=== Header ===</b:comment>
     <header class='post-static-header'>
       <b:comment>=== Title ===</b:comment>

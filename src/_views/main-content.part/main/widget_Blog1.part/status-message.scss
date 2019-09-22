@@ -9,6 +9,10 @@
   border: 1px solid transparent;
   border-radius: .25rem;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .search-label,
   .search-query {
     font-weight: 700;
