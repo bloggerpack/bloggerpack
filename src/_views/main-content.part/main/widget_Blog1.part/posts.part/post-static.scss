@@ -3,7 +3,7 @@
 //
 
 .post-static {
-  margin-bottom: 2rem;
+  position: relative;
 }
 
 //
@@ -22,9 +22,18 @@
 .post-static-title {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.2;
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .post-static-title {
+    font-size: 2rem;
   }
 }
 
@@ -33,7 +42,7 @@
 //
 
 .post-static-body {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
