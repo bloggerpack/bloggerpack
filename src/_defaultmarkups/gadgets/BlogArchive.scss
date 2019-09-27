@@ -16,7 +16,8 @@
   background-repeat: no-repeat;
   background-position: right .75rem center;
   background-size: 8px 10px;
-  border: 1px solid rgba(0, 0, 0, .125);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   appearance: none;
