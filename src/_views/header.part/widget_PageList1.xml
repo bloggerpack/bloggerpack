@@ -4,7 +4,19 @@
       <![CDATA[
         {
           'home': {'href': '/', 'title': 'Home', 'position': 0},
-          'link0': {'href': 'https://github.com/wrapblogger/bloggerpack', 'title': 'GitHub', 'position': 1}
+          'link0': {'href': '#', 'title': 'Foo', 'position': 1},
+          'link1': {'href': '#', 'title': 'Bar', 'position': 2},
+          'link2': {'href': '#', 'title': 'Baz', 'position': 3},
+          'link3': {'href': '#', 'title': 'Qux', 'position': 4},
+          'link4': {'href': '#', 'title': 'Quux', 'position': 5},
+          'link5': {'href': '#', 'title': 'Corge', 'position': 6},
+          'link6': {'href': '#', 'title': 'Grault', 'position': 7},
+          'link7': {'href': '#', 'title': 'Garply', 'position': 8},
+          'link8': {'href': '#', 'title': 'Waldo', 'position': 9},
+          'link9': {'href': '#', 'title': 'Fred', 'position': 10},
+          'link10': {'href': '#', 'title': 'Plugh', 'position': 11},
+          'link11': {'href': '#', 'title': 'Xyzzy', 'position': 12},
+          'link12': {'href': '#', 'title': 'Thud', 'position': 13}
         }
       ]]>
     </b:widget-setting>

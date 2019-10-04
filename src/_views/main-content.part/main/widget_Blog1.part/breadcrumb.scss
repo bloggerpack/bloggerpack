@@ -20,17 +20,17 @@
 //= Item
 
 .breadcrumb-item {
-  color: #333;
+  color: #212529;
 
   &.active {
-    color: #777;
+    color: #6c757d;
   }
 
   & + &::before {
     display: inline-block;
     padding-right: .5rem;
     padding-left: .5rem;
-    color: #777;
+    color: #6c757d;
     content: "/";
   }
   &.active + &.active::before {

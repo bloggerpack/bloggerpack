@@ -11,9 +11,8 @@
   min-height: 350px;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  color: #fff;
   text-align: center;
-  background-color: #222;
+  background-color: #343a40;
 
   // Image placement: REPLACE
   &.image-placement-replace {
@@ -50,7 +49,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      background-image: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25));
+      background-image: linear-gradient(rgba(#000, .25), rgba(#000, .25));
       content: "";
     }
   }
@@ -91,6 +90,7 @@
 .page-header-description {
   max-width: 700px;
   margin: 0 auto;
+  color: #fff;
   font-weight: 300;
   font-size: 1.25rem;
   line-height: 1.3;

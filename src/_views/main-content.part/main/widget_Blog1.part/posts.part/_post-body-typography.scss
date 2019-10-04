@@ -38,7 +38,7 @@
 
 .post-body-typography .tr-caption-container .tr-caption {
   padding-top: .25rem;
-  color: #777;
+  color: #6c757d;
   font-size: 90%;
 }
 
@@ -55,7 +55,7 @@
 
 .post-body-typography table:not([class]) caption {
   padding: .75rem 0 0;
-  color: #777;
+  color: #6c757d;
   text-align: inherit;
   caption-side: bottom;
 }
@@ -64,7 +64,7 @@
 .post-body-typography table:not([class]) td {
   padding: .75rem;
   vertical-align: top;
-  border: 1px solid rgba(0, 0, 0, .125);
+  border: 1px solid rgba(#000, .125);
 }
 .post-body-typography table:not([class]) th {
   text-align: inherit;
@@ -72,20 +72,20 @@
 
 .post-body-typography table:not([class]) thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid rgba(0, 0, 0, .125);
+  border-bottom: 2px solid rgba(#000, .125);
 }
 
 .post-body-typography table:not([class]) tbody + tbody {
-  border-top: 2px solid rgba(0, 0, 0, .125);
+  border-top: 2px solid rgba(#000, .125);
 }
 
 //= Blockquotes
 
 .post-body-typography blockquote:not([class]) {
   padding: .75rem 1rem;
-  color: #333;
+  color: #212529;
   background-color: #f8f9fa;
-  border-left: 8px solid rgba(0, 0, 0, .125);
+  border-left: 8px solid rgba(#000, .125);
   border-radius: .25rem;
 }
 
@@ -98,7 +98,7 @@
 
 .post-body-typography blockquote:not([class]) footer {
   display: block;
-  color: #777;
+  color: #6c757d;
   font-size: 90%;
 }
 .post-body-typography blockquote:not([class]) footer::before {
@@ -131,7 +131,7 @@
   display: block;
   padding: 1rem;
   overflow: auto;
-  color: #333;
+  color: #212529;
   font-size: 90%;
   background-color: #f8f9fa;
   border-radius: .25rem;

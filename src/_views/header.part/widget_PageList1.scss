@@ -25,21 +25,23 @@
 .header-nav-link {
   display: block;
   padding: .5rem 1rem;
-  color: #777;
+  color: #6c757d;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5;
   text-align: center;
   background-color: transparent;
   border-radius: .25rem;
+  transition: all .25s;
 
   &:hover,
   &:focus {
-    color: #007bff;
+    color: #212529;
     text-decoration: none;
-    background-color: rgba(#007bff, .1);
+    background-color: rgba(#000, .025);
   }
   &.active {
-    color: #007bff;
+    color: #212529;
+    background-color: rgba(#000, .025);
   }
 }

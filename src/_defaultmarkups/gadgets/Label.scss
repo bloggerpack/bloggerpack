@@ -17,9 +17,10 @@
   width: 100%;
   margin-bottom: -1px;
   padding: .5rem 1rem;
-  color: #555;
+  color: #495057;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, .125);
+  border: 1px solid rgba(#000, .125);
+  transition: all .25s;
 
   &:first-child {
     border-top-left-radius: .25rem;
@@ -33,22 +34,22 @@
   &:hover,
   &:focus {
     z-index: 1;
-    color: #555;
+    color: #495057;
     text-decoration: none;
     background-color: #f8f9fa;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
   &:active {
     z-index: 3;
     background-color: darken(#f8f9fa, 2.5%);
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
   &.active {
     z-index: 2;
-    color: #555;
+    color: #212529;
     font-weight: 500;
     background-color: #f8f9fa;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
 }
 
@@ -65,12 +66,12 @@
   white-space: nowrap;
   text-align: center;
   vertical-align: baseline;
-  background-color: #777;
+  background-color: #6c757d;
   border-radius: 10rem;
 
   .active > & {
     color: #fff;
-    background-color: #777;
+    background-color: #495057;
   }
 }
 
@@ -103,32 +104,33 @@
 .label-cloud-link {
   display: block;
   padding: .25rem .5rem;
-  color: #555;
+  color: #495057;
   font-weight: 400;
   font-size: .875rem;
   line-height: 1.25;
   white-space: nowrap;
   text-align: center;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, .125);
+  border: 1px solid rgba(#000, .125);
   border-radius: .25rem;
+  transition: all .25s;
 
   &:hover,
   &:focus {
-    color: #555;
+    color: #495057;
     text-decoration: none;
     background-color: #f8f9fa;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
   &:active {
     background-color: darken(#f8f9fa, 2.5%);
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
   &.active {
-    color: #555;
+    color: #212529;
     font-weight: 500;
     background-color: #f8f9fa;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
 }
 
@@ -147,11 +149,11 @@
   white-space: nowrap;
   text-align: center;
   vertical-align: baseline;
-  background-color: #777;
+  background-color: #6c757d;
   border-radius: .25rem;
 
   .active > & {
     color: #fff;
-    background-color: #777;
+    background-color: #495057;
   }
 }
