@@ -24,19 +24,20 @@
   line-height: 1.25;
   text-align: center;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, .125);
+  border: 1px solid rgba(#000, .125);
   border-radius: 2rem;
+  transition: all .25s;
 
   &:hover,
   &:focus {
     text-decoration: none;
     background-color: #f8f9fa;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
   }
   &.disabled {
-    color: #777;
+    color: #6c757d;
     background-color: #fff;
-    border-color: rgba(0, 0, 0, .125);
+    border-color: rgba(#000, .125);
     pointer-events: none;
   }
 

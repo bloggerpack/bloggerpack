@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: 1px solid rgba(#000, .125);
 
   &:last-child {
     margin-bottom: 0;
@@ -45,7 +45,7 @@
 
 .post-snippet {
   margin-bottom: 1rem;
-  color: #777;
+  color: #6c757d;
 
   &:last-child {
     margin-bottom: 0;

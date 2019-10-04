@@ -6,7 +6,7 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   background-color: #f8f9fa;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: 1px solid rgba(#000, .125);
 }
 
 .header-inner {
@@ -37,11 +37,11 @@
 //= Link
 
 .header-title-link {
-  color: #777;
+  color: #6c757d;
 
   &:hover,
   &:focus {
-    color: #007bff;
+    color: #212529;
     text-decoration: none;
   }
 }

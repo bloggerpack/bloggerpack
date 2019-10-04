@@ -27,7 +27,7 @@
   display: block;
   width: 100%;
   padding: .375rem .75rem;
-  color: #555;
+  color: #495057;
   font-weight: 400;
   font-size: 1rem;
   font-family: inherit;
@@ -38,12 +38,22 @@
   border-radius: .25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
+  &::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
   &:focus {
-    color: #555;
+    color: #495057;
     background-color: #fff;
     border-color: lighten(#28a745, 25%);
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(#28a745, .25);
+
+    &::placeholder {
+      color: #6c757d;
+      opacity: 1;
+    }
   }
 }
 

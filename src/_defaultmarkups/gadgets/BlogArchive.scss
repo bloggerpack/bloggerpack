@@ -6,7 +6,7 @@
   display: block;
   width: 100%;
   padding: .375rem 1.75rem .375rem .75rem;
-  color: #555;
+  color: #495057;
   font-weight: 400;
   font-size: 1rem;
   font-family: inherit;
@@ -23,7 +23,7 @@
   appearance: none;
 
   &:focus {
-    color: #555;
+    color: #495057;
     background-color: #fff;
     border-color: lighten(#007bff, 25%);
     outline: 0;
@@ -53,7 +53,7 @@
 //= Count
 
 .archive-flat-count {
-  color: #777;
+  color: #6c757d;
   font-size: 90%;
 }
 
@@ -108,6 +108,6 @@
 //= Count
 
 .archive-hierarchy-count {
-  color: #777;
+  color: #6c757d;
   font-size: 90%;
 }
