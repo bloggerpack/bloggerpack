@@ -32,7 +32,7 @@
 
 - Default layouts version: `<html b:layoutsVersion='3'>`
 - Default gadgets version: `<html b:defaultwidgetversion='2'>`
-- Default comments system: [Discus](https://discus.com/)
+- Default comments system: [Disqus](https://disqus.com/)
 
 ### Step by Step Tutorial
 
