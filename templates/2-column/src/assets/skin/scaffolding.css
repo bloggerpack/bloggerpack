@@ -1,0 +1,80 @@
+/*
+=================================================
+Scaffolding
+=================================================
+*/
+
+/*
+<Group description="(Scaffolding)">
+  <Variable name="body.font"
+      description="Body font"
+      type="font"
+      size="16px"
+      family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="body.color"
+      description="Body color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="body.background.color"
+      description="Body background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+
+  <Variable name="link.color"
+      description="Link color"
+      type="color"
+      default="#007bff"
+      value="#007bff"/>
+  <Variable name="link.hover.color"
+      description="Link hover color"
+      type="color"
+      default="#0056b3"
+      value="#0056b3"/>
+</Group>
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body
+================================================= */
+
+body {
+  margin: 0;
+  color: $(body.color);
+  font: $(body.font);
+  line-height: 1.5;
+  background-color: $(body.background.color);
+}
+
+/* Headings
+================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Links
+================================================= */
+
+a {
+  color: $(link.color);
+  text-decoration: none;
+}
+a:hover {
+  color: $(link.hover.color);
+  text-decoration: underline;
+}

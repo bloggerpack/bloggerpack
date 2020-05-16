@@ -1,0 +1,12 @@
+/*!
+ * Name            : <%= data.theme.name %>
+ * Version         : <%= data.theme.version %>
+ * Date            : <%= data.theme.date %>
+ * Homepage        : <%= data.theme.homepage %>
+ * Author          : <%= data.theme.author.name %>
+ * Author URL      : <%= data.theme.author.url %>
+ * Repository Type : <%= data.theme.repository.type %>
+ * Repository URL  : <%= data.theme.repository.url %>
+ * License Type    : <%= data.theme.license.type %>
+ * License URL     : <%= data.theme.license.url %>
+ */

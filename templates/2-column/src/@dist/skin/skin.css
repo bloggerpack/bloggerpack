@@ -1,0 +1,1774 @@
+/*!
+ * Name            : Theme name
+ * Version         : 1.0
+ * Date            : August 17, 1945
+ * Homepage        : https://example.blogspot.com/
+ * Author          : Your name
+ * Author URL      : https://example.com/
+ * Repository Type : git
+ * Repository URL  : https://github.com/example/theme-name.git
+ * License Type    : MIT
+ * License URL     : https://opensource.org/licenses/MIT
+ */
+
+/*
+=================================================
+Scaffolding
+=================================================
+*/
+
+/*
+<Group description="(Scaffolding)">
+  <Variable name="body.font"
+      description="Body font"
+      type="font"
+      size="16px"
+      family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="body.color"
+      description="Body color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="body.background.color"
+      description="Body background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+
+  <Variable name="link.color"
+      description="Link color"
+      type="color"
+      default="#007bff"
+      value="#007bff"/>
+  <Variable name="link.hover.color"
+      description="Link hover color"
+      type="color"
+      default="#0056b3"
+      value="#0056b3"/>
+</Group>
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body
+================================================= */
+
+body {
+  margin: 0;
+  color: $(body.color);
+  font: $(body.font);
+  line-height: 1.5;
+  background-color: $(body.background.color);
+}
+
+/* Headings
+================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Links
+================================================= */
+
+a {
+  color: $(link.color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: $(link.hover.color);
+  text-decoration: underline;
+}
+
+/*
+=================================================
+Layout
+=================================================
+*/
+
+/*
+<Group description="(Layout)">
+  <Variable name="layout.spacer"
+      description="Spacer"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
+
+  <Variable name="container.max.width"
+      description="Container max-width"
+      type="length"
+      min="0"
+      max="1500px"
+      default="960px"
+      value="960px"/>
+
+  <Variable name="header.padding.y"
+      description="Header padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="30px"
+      value="30px"/>
+  <Variable name="header.background.color"
+      description="Header background color"
+      type="color"
+      default="#222222"
+      value="#222222"/>
+
+  <Variable name="content.padding.y"
+      description="Content padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="40px"
+      value="40px"/>
+  <Variable name="content.background.color"
+      description="Content background color"
+      type="color"
+      default="transparent"
+      value="transparent"/>
+
+  <Variable name="footer.padding.y"
+      description="Footer padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="30px"
+      value="30px"/>
+  <Variable name="footer.background.color"
+      description="Footer background color"
+      type="color"
+      default="#222222"
+      value="#222222"/>
+</Group>
+*/
+
+/* Skip navigation
+================================================= */
+
+.skip-navigation {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.skip-navigation:active,
+.skip-navigation:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  clip: auto;
+}
+
+/* Container
+================================================= */
+
+.container {
+  width: 100%;
+  max-width: $(container.max.width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Grid (main and sidebar)
+================================================= */
+
+.main-and-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$(layout.spacer / 2);
+  margin-left: -$(layout.spacer / 2);
+}
+
+.main,
+.sidebar {
+  position: relative;
+  width: 100%;
+  padding-right: $(layout.spacer / 2);
+  padding-left: $(layout.spacer / 2);
+}
+
+.sidebar {
+  margin-top: $(layout.spacer);
+}
+
+@media (min-width: 768px) {
+  .main {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .sidebar {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 0;
+  }
+}
+
+/* Header
+================================================= */
+
+.header {
+  padding-top: $(header.padding.y);
+  padding-bottom: $(header.padding.y);
+  background-color: $(header.background.color);
+}
+
+/* Content
+================================================= */
+
+.content {
+  padding-top: $(content.padding.y);
+  padding-bottom: $(content.padding.y);
+  background-color: $(content.background.color);
+}
+
+/* Footer
+================================================= */
+
+.footer {
+  padding-top: $(footer.padding.y);
+  padding-bottom: $(footer.padding.y);
+  background-color: $(footer.background.color);
+}
+
+/* Sticky footer
+================================================= */
+
+.sticky-footer {
+  height: 100%;
+}
+
+.sticky-footer body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sticky-footer .footer {
+  margin-top: auto;
+}
+
+/*
+=================================================
+Footer
+=================================================
+*/
+
+/* Footer section
+================================================= */
+
+.b-section-footer > .widget {
+  margin-bottom: 10px;
+}
+
+.b-section-footer > .widget:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer nav
+================================================= */
+
+/*
+<Group description="(Footer) Nav">
+  <Variable name="footer.nav.link.font"
+      description="Footer nav link font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="footer.nav.link.color"
+      description="Footer nav link color"
+      type="color"
+      default="#cccccc"
+      value="#cccccc"/>
+  <Variable name="footer.nav.link.hover.color"
+      description="Footer nav link hover color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+</Group>
+*/
+
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-nav-link {
+  display: block;
+  color: $(footer.nav.link.color);
+  font: $(footer.nav.link.font);
+  line-height: 1.5;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  color: $(footer.nav.link.hover.color);
+  text-decoration: none;
+}
+
+/* Footer description
+================================================= */
+
+/*
+<Group description="(Footer) Description">
+  <Variable name="footer.desc.font"
+      description="Footer description font"
+      type="font"
+      size="14px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="footer.desc.color"
+      description="Footer description color"
+      type="color"
+      default="#777777"
+      value="#777777"/>
+  <Variable name="footer.desc.link.color"
+      description="Footer description link color"
+      type="color"
+      default="#cccccc"
+      value="#cccccc"/>
+  <Variable name="footer.desc.link.hover.color"
+      description="Footer description link hover color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+</Group>
+*/
+
+.footer-description {
+  color: $(footer.desc.color);
+  font: $(footer.desc.font);
+  line-height: 1.5;
+}
+
+.footer-description p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.footer-description p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-description a {
+  color: $(footer.desc.link.color);
+}
+
+.footer-description a:hover,
+.footer-description a:focus {
+  color: $(footer.desc.link.hover.color);
+}
+
+/*
+=================================================
+Header
+=================================================
+*/
+
+/* Header title
+================================================= */
+
+/*
+<Group description="(Header) Title">
+  <Variable name="header.title.link.font"
+      description="Header title link font"
+      type="font"
+      size="30px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="header.title.link.color"
+      description="Header title link color"
+      type="color"
+      default="#cccccc"
+      value="#cccccc"/>
+  <Variable name="header.title.link.hover.color"
+      description="Header title link hover color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+</Group>
+*/
+
+.header-title {
+  margin-bottom: 10px;
+}
+
+.header-title:last-child {
+  margin-bottom: 0;
+}
+
+.header-title-link {
+  display: inline-block;
+  color: $(header.title.link.color);
+  font: $(header.title.link.font);
+  line-height: 1.2;
+}
+
+.header-title-link:hover,
+.header-title-link:focus {
+  color: $(header.title.link.hover.color);
+  text-decoration: none;
+}
+
+/* Header nav
+================================================= */
+
+/*
+<Group description="(Header) Nav">
+  <Variable name="header.nav.link.font"
+      description="Header nav link font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="header.nav.height"
+      description="Header nav height (adjust based on the font)"
+      type="length"
+      min="0"
+      max="100px"
+      default="24px"
+      value="24px"/>
+  <Variable name="header.nav.link.color"
+      description="Header nav link color"
+      type="color"
+      default="#cccccc"
+      value="#cccccc"/>
+  <Variable name="header.nav.link.hover.color"
+      description="Header nav link hover color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="header.nav.link.active.color"
+      description="Header nav link active color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+</Group>
+*/
+
+.header-nav {
+  max-width: 100%;
+  height: $(header.nav.height);
+  overflow: hidden;
+}
+
+.header-nav-list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.header-nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header-nav-link {
+  display: block;
+  color: $(header.nav.link.color);
+  font: $(header.nav.link.font);
+  line-height: 1.5;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus {
+  color: $(header.nav.link.hover.color);
+  text-decoration: none;
+}
+
+.header-nav-link.active {
+  color: $(header.nav.link.active.color);
+}
+
+/*
+=================================================
+Main
+=================================================
+*/
+
+/* Main section
+================================================= */
+
+.b-section-main > .widget {
+  margin-bottom: $(layout.spacer);
+}
+
+.b-section-main > .widget:last-child {
+  margin-bottom: 0;
+}
+
+/* Blog posts widget
+================================================= */
+
+/* Breadcrumb
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Breadcrumb">
+  <Variable name="breadcrumb.padding.y"
+      description="Breadcrumb padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="8px"
+      value="8px"/>
+  <Variable name="breadcrumb.padding.x"
+      description="Breadcrumb padding X"
+      type="length"
+      min="0"
+      max="100px"
+      default="15px"
+      value="15px"/>
+  <Variable name="breadcrumb.font"
+      description="Breadcrumb font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="breadcrumb.background.color"
+      description="Breadcrumb background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="breadcrumb.border.width"
+      description="Breadcrumb border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="breadcrumb.border.color"
+      description="Breadcrumb border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="breadcrumb.border.radius"
+      description="Breadcrumb border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="breadcrumb.link.color"
+      description="Breadcrumb link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="breadcrumb.link.hover.color"
+      description="Breadcrumb link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  <Variable name="breadcrumb.active.color"
+      description="Breadcrumb active color"
+      type="color"
+      default="#757575"
+      value="#757575"/>
+  <Variable name="breadcrumb.separator.color"
+      description="Breadcrumb separator color"
+      type="color"
+      default="#757575"
+      value="#757575"/>
+</Group>
+*/
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: $(layout.spacer);
+  padding: $(breadcrumb.padding.y) $(breadcrumb.padding.x);
+  font: $(breadcrumb.font);
+  line-height: 1.5;
+  list-style: none;
+  background-color: $(breadcrumb.background.color);
+  border: $(breadcrumb.border.width) solid $(breadcrumb.border.color);
+  border-radius: $(breadcrumb.border.radius);
+}
+
+.breadcrumb:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Item
+ */
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 8px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 8px;
+  color: $(breadcrumb.separator.color);
+  content: "/";
+}
+
+.breadcrumb-item.active {
+  color: $(breadcrumb.active.color);
+}
+
+/**
+ * Link
+ */
+
+.breadcrumb-link {
+  color: $(breadcrumb.link.color);
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+  color: $(breadcrumb.link.hover.color);
+}
+
+/* Not found message
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Not found message">
+  <Variable name="nfm.padding.y"
+      description="Not found message padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="8px"
+      value="8px"/>
+  <Variable name="nfm.padding.x"
+      description="Not found message padding X"
+      type="length"
+      min="0"
+      max="100px"
+      default="15px"
+      value="15px"/>
+  <Variable name="nfm.font"
+      description="Not found message font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="nfm.color"
+      description="Not found message color"
+      type="color"
+      default="#856404"
+      value="#856404"/>
+  <Variable name="nfm.background.color"
+      description="Not found message background color"
+      type="color"
+      default="#fff3cd"
+      value="#fff3cd"/>
+  <Variable name="nfm.border.width"
+      description="Not found message border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="nfm.border.color"
+      description="Not found message border color"
+      type="color"
+      default="#ffeeba"
+      value="#ffeeba"/>
+  <Variable name="nfm.border.radius"
+      description="Not found message border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+</Group>
+*/
+
+.not-found-message {
+  margin-bottom: $(layout.spacer);
+  padding: $(nfm.padding.y) $(nfm.padding.x);
+  color: $(nfm.color);
+  font: $(nfm.font);
+  line-height: 1.5;
+  background-color: $(nfm.background.color);
+  border: $(nfm.border.width) solid $(nfm.border.color);
+  border-radius: $(nfm.border.radius);
+}
+
+.not-found-message:last-child {
+  margin-bottom: 0;
+}
+
+/* Posts
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Posts">
+  <Variable name="post.padding"
+      description="Post padding"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
+  <Variable name="post.background.color"
+      description="Post background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="post.border.width"
+      description="Post border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="post.border.color"
+      description="Post border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="post.border.radius"
+      description="Post border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="post.title.font"
+      description="Post title font"
+      type="font"
+      size="24px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="post.title.link.color"
+      description="Post title link color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="post.title.link.hover.color"
+      description="Post title link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  <Variable name="post.title.single.font"
+      description="Post title single font"
+      type="font"
+      size="36px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="post.title.single.color"
+      description="Post title single color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+
+  <Variable name="post.meta.font"
+      description="Post meta font"
+      type="font"
+      size="14px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="post.meta.color"
+      description="Post meta color"
+      type="color"
+      default="#757575"
+      value="#757575"/>
+  <Variable name="post.meta.link.color"
+      description="Post meta link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="post.meta.link.hover.color"
+      description="Post meta link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  <Variable name="post.snippet.font"
+      description="Post snippet font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="post.snippet.color"
+      description="Post snippet color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+
+  <Variable name="post.featured.image.border.radius"
+      description="Post featured image border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="post.body.color"
+      description="Post body color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+</Group>
+*/
+
+.post {
+  margin-bottom: $(layout.spacer);
+  padding: $(post.padding);
+  background-color: $(post.background.color);
+  border: $(post.border.width) solid $(post.border.color);
+  border-radius: $(post.border.radius);
+}
+
+.post:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Post title
+ */
+
+.post-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font: $(post.title.font);
+  line-height: 1.2;
+}
+
+.post-title:last-child {
+  margin-bottom: 0;
+}
+
+.post-title a {
+  color: $(post.title.link.color);
+}
+
+.post-title a:hover,
+.post-title a:focus {
+  color: $(post.title.link.hover.color);
+  text-decoration: none;
+}
+
+/**
+ * Post title single
+ */
+
+.post-title-single {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: $(post.title.single.color);
+  font: $(post.title.single.font);
+  line-height: 1.2;
+}
+
+.post-title-single:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Post meta
+ */
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-left: 0;
+  color: $(post.meta.color);
+  font: $(post.meta.font);
+  line-height: 1.5;
+  list-style: none;
+}
+
+.post-meta:last-child {
+  margin-bottom: 0;
+}
+
+.post-meta li:not(:last-child) {
+  margin-right: 5px;
+}
+
+.post-meta li:not(:last-child)::after {
+  margin-left: 5px;
+  content: "\00B7";
+}
+
+.post-meta a {
+  color: $(post.meta.link.color);
+}
+
+.post-meta a:hover,
+.post-meta a:focus {
+  color: $(post.meta.link.hover.color);
+}
+
+/**
+ * Post snippet
+ */
+
+.post-snippet {
+  margin-bottom: 10px;
+  color: $(post.snippet.color);
+  font: $(post.snippet.font);
+  line-height: 1.5;
+}
+
+.post-snippet:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Post featured image
+ */
+
+.post-featured-image {
+  position: relative;
+  margin-bottom: 10px;
+  padding-top: 56.25%;
+}
+
+.post-featured-image:last-child {
+  margin-bottom: 0;
+}
+
+.post-featured-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: $(post.featured.image.border.radius);
+}
+
+/**
+ * Post body
+ */
+
+.post-body {
+  margin-bottom: 10px;
+  color: $(post.body.color);
+}
+
+.post-body:last-child {
+  margin-bottom: 0;
+}
+
+/* Comments
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Comments">
+  <Variable name="comments.padding"
+      description="Comments padding"
+      type="length"
+      min="0"
+      max="100px"
+      default="15px"
+      value="15px"/>
+  <Variable name="comments.background.color"
+      description="Comments background color"
+      type="color"
+      default="#fafafa"
+      value="#fafafa"/>
+  <Variable name="comments.border.width"
+      description="Comments border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="comments.border.color"
+      description="Comments border color"
+      type="color"
+      default="#eeeeee"
+      value="#eeeeee"/>
+  <Variable name="comments.border.radius"
+      description="Comments border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="comments.title.color"
+      description="Comments title color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+
+  <Variable name="comment.block.margin"
+      description="Comment block margin"
+      type="length"
+      min="0"
+      max="100px"
+      default="15px"
+      value="15px"/>
+  <Variable name="comment.block.padding"
+      description="Comment block padding"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
+  <Variable name="comment.block.color"
+      description="Comment block color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="comment.block.background.color"
+      description="Comment block background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="comment.block.border.width"
+      description="Comment block border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="comment.block.border.color"
+      description="Comment block border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="comment.block.border.radius"
+      description="Comment block border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+  <Variable name="comment.block.link.color"
+      description="Comment block link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="comment.block.link.hover.color"
+      description="Comment block link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+</Group>
+*/
+
+.comments {
+  margin-bottom: $(layout.spacer);
+  padding: $(comments.padding);
+  background-color: $(comments.background.color);
+  border: $(comments.border.width) solid $(comments.border.color);
+  border-radius: $(comments.border.radius);
+}
+
+.comments:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Comments title
+ */
+
+.comments-title {
+  margin-top: 0;
+  margin-bottom: $(comment.block.margin);
+  color: $(comments.title.color);
+}
+
+.comments-title small {
+  font-size: 80%;
+}
+
+.comments-title small::before {
+  content: "\0028";
+}
+
+.comments-title small::after {
+  content: "\0029";
+}
+
+/**
+ * Comment block
+ */
+
+.comment-block {
+  margin-top: $(comment.block.margin);
+  padding: $(comment.block.padding);
+  color: $(comment.block.color);
+  background-color: $(comment.block.background.color);
+  border: $(comment.block.border.width) solid $(comment.block.border.color);
+  border-radius: $(comment.block.border.radius);
+}
+
+.comment-block a {
+  color: $(comment.block.link.color);
+}
+
+.comment-block a:hover,
+.comment-block a:focus {
+  color: $(comment.block.link.hover.color);
+}
+
+/**
+ * Comment alert
+ */
+
+.comment-warning {
+  margin-top: $(comment.block.margin);
+  padding: 10px 15px;
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 4px;
+}
+
+.comment-body .comment-warning {
+  margin-top: 0;
+}
+
+/**
+ * Comment list
+ */
+
+.comment-list,
+.comment-list-children {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.comment-list-children > li {
+  margin-left: 30px;
+}
+
+/**
+ * Comment content
+ */
+
+/* === Comment header === */
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.comment-header-col-1 {
+  width: auto;
+  margin-right: 10px;
+}
+
+.comment-header-col-2 {
+  width: 100%;
+}
+
+.comment-avatar {
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.comment-default-avatar {
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 42px;
+  text-align: center;
+  background-color: #ff5722;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.comment-author {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.comment-meta {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* === Comment body === */
+
+.comment-body {
+  margin-bottom: 15px;
+}
+
+/* === Comment actions === */
+
+.comment-actions {
+  font-size: 14px;
+}
+
+/**
+ * Comment form
+ */
+
+.comment-form-title,
+.comment-form-message {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.comment-editor {
+  width: 100%;
+  border: 0;
+}
+
+.comment-cancel-reply {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.original-form-container .comment-cancel-reply {
+  display: none;
+}
+
+/* Pager
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Pager">
+  <Variable name="pager.link.padding.y"
+      description="Pager link padding Y"
+      type="length"
+      min="0"
+      max="100px"
+      default="2px"
+      value="2px"/>
+  <Variable name="pager.link.padding.x"
+      description="Pager link padding X"
+      type="length"
+      min="0"
+      max="100px"
+      default="8px"
+      value="8px"/>
+  <Variable name="pager.link.font"
+      description="Pager link font"
+      type="font"
+      size="$(body.font.size)"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="pager.link.color"
+      description="Pager link color"
+      type="color"
+      default="#555555"
+      value="#555555"/>
+  <Variable name="pager.link.hover.color"
+      description="Pager link hover color"
+      type="color"
+      default="#555555"
+      value="#555555"/>
+  <Variable name="pager.link.background.color"
+      description="Pager link background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="pager.link.hover.background.color"
+      description="Pager link hover background color"
+      type="color"
+      default="#f7f7f7"
+      value="#f7f7f7"/>
+  <Variable name="pager.link.border.width"
+      description="Pager link border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="pager.link.border.color"
+      description="Pager link border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="pager.link.hover.border.color"
+      description="Pager link hover border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="pager.link.border.radius"
+      description="Pager link border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+</Group>
+*/
+
+.pager {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: $(layout.spacer);
+}
+
+.pager:last-child {
+  margin-bottom: 0;
+}
+
+.pager-link {
+  display: block;
+  padding: $(pager.link.padding.y) $(pager.link.padding.x);
+  color: $(pager.link.color);
+  font: $(pager.link.font);
+  line-height: 1.5;
+  background-color: $(pager.link.background.color);
+  border: $(pager.link.border.width) solid $(pager.link.border.color);
+  border-radius: $(pager.link.border.radius);
+}
+
+.pager-link:hover,
+.pager-link:focus {
+  color: $(pager.link.hover.color);
+  text-decoration: none;
+  background-color: $(pager.link.hover.background.color);
+  border-color: $(pager.link.hover.border.color);
+}
+
+.pager-link.disabled {
+  opacity: .65;
+  pointer-events: none;
+}
+
+.pager-home {
+  margin: 0 10px;
+}
+
+/* Post body typography
+------------------------------------------------- */
+
+/*
+<Group description="(Main) Blog posts: Post body typography">
+  <Variable name="post.body.spacer"
+      description="Post body spacer"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
+
+  <Variable name="post.body.table.border.width"
+      description="Post body table border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="post.body.table.border.color"
+      description="Post body table border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+
+  <Variable name="post.body.blockquote.border.width"
+      description="Post body blockquote border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="5px"
+      value="5px"/>
+  <Variable name="post.body.blockquote.border.color"
+      description="Post body blockquote border color"
+      type="color"
+      default="#eeeeee"
+      value="#eeeeee"/>
+
+  <Variable name="post.body.code.color"
+      description="Post body code color"
+      type="color"
+      default="#ff3860"
+      value="#ff3860"/>
+  <Variable name="post.body.code.background.color"
+      description="Post body code background color"
+      type="color"
+      default="#fafafa"
+      value="#fafafa"/>
+  <Variable name="post.body.code.border.radius"
+      description="Post body code border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="post.body.pre.color"
+      description="Post body pre color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="post.body.pre.background.color"
+      description="Post body pre background color"
+      type="color"
+      default="#fafafa"
+      value="#fafafa"/>
+  <Variable name="post.body.pre.border.width"
+      description="Post body pre border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="post.body.pre.border.color"
+      description="Post body pre border color"
+      type="color"
+      default="#eeeeee"
+      value="#eeeeee"/>
+  <Variable name="post.body.pre.border.radius"
+      description="Post body pre border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+</Group>
+*/
+
+/* stylelint-disable declaration-no-important, selector-max-type */
+
+/**
+ * Reset margins
+ */
+
+.post-body-typography h1,
+.post-body-typography h2,
+.post-body-typography h3,
+.post-body-typography h4,
+.post-body-typography h5,
+.post-body-typography h6,
+.post-body-typography p,
+.post-body-typography ul,
+.post-body-typography ol,
+.post-body-typography dl,
+.post-body-typography blockquote,
+.post-body-typography pre,
+.post-body-typography figure {
+  margin-top: $(post.body.spacer) !important;
+  margin-bottom: $(post.body.spacer) !important;
+}
+
+.post-body-typography ul ul,
+.post-body-typography ul ol,
+.post-body-typography ol ol,
+.post-body-typography ol ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.post-body-typography blockquote,
+.post-body-typography figure {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body-typography table:not(.tr-caption-container),
+.post-body-typography address {
+  margin: 0 !important;
+}
+
+.post-body-typography > :first-child {
+  margin-top: 0 !important;
+}
+
+.post-body-typography > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/**
+ * Images
+ */
+
+.post-body-typography img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-body-typography .separator a:not([style*="clear: left"]):not([style*="clear:left"]):not([style*="clear: right"]):not([style*="clear:right"]) {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body-typography .tr-caption-container .tr-caption {
+  padding-top: 10px;
+  font-size: 90%;
+}
+
+.post-body-typography figure {
+  text-align: center;
+}
+
+.post-body-typography figure figcaption {
+  margin-top: 10px;
+  font-size: 90%;
+}
+
+/**
+ * Lists
+ */
+
+.post-body-typography dl:not([class]) dt {
+  font-weight: 700;
+}
+
+.post-body-typography dl:not([class]) dd {
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+
+/**
+ * Tables
+ */
+
+.post-body-typography table:not([class]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.post-body-typography table:not([class]) caption {
+  margin-top: 10px;
+  font-size: 90%;
+  text-align: inherit;
+  caption-side: bottom;
+}
+
+.post-body-typography table:not([class]) th,
+.post-body-typography table:not([class]) td {
+  padding: 8px;
+  vertical-align: top;
+  border: $(post.body.table.border.width) solid $(post.body.table.border.color);
+}
+
+.post-body-typography table:not([class]) th {
+  text-align: inherit;
+}
+
+.post-body-typography table:not([class]) thead th {
+  vertical-align: bottom;
+  border-bottom: $(post.body.table.border.width * 2) solid $(post.body.table.border.color);
+}
+
+.post-body-typography table:not([class]) tbody + tbody {
+  border-top: $(post.body.table.border.width * 2) solid $(post.body.table.border.color);
+}
+
+/**
+ * Blockquotes
+ */
+
+.post-body-typography blockquote:not([class]) {
+  padding: 10px 20px;
+  border-left: $(post.body.blockquote.border.width) solid $(post.body.blockquote.border.color);
+}
+
+.post-body-typography blockquote:not([class]) > :first-child {
+  margin-top: 0 !important;
+}
+
+.post-body-typography blockquote:not([class]) > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/**
+ * Code
+ */
+
+.post-body-typography code {
+  padding: 2px 4px;
+  color: $(post.body.code.color);
+  font-size: 90%;
+  word-break: break-word;
+  background-color: $(post.body.code.background.color);
+  border: 0;
+  border-radius: $(post.body.code.border.radius);
+}
+
+.post-body-typography pre code {
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  word-break: inherit;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.post-body-typography pre:not([class]) {
+  display: block;
+  padding: 15px;
+  overflow: auto;
+  color: $(post.body.pre.color);
+  font-size: 90%;
+  background-color: $(post.body.pre.background.color);
+  border: $(post.body.pre.border.width) solid $(post.body.pre.border.color);
+  border-radius: $(post.body.pre.border.radius);
+}
+
+/**
+ * Summary
+ */
+
+.post-body-typography summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+/* stylelint-enable */
+
+/*
+=================================================
+Sidebar
+=================================================
+*/
+
+/* Sidebar section
+================================================= */
+
+/*
+<Group description="(Sidebar) Section">
+  <Variable name="sidebar.widget.padding"
+      description="Sidebar widget padding"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
+  <Variable name="sidebar.widget.color"
+      description="Sidebar widget color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+  <Variable name="sidebar.widget.background.color"
+      description="Sidebar widget background color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+  <Variable name="sidebar.widget.border.width"
+      description="Sidebar widget border width"
+      type="length"
+      min="0"
+      max="100px"
+      default="1px"
+      value="1px"/>
+  <Variable name="sidebar.widget.border.color"
+      description="Sidebar widget border color"
+      type="color"
+      default="#dddddd"
+      value="#dddddd"/>
+  <Variable name="sidebar.widget.border.radius"
+      description="Sidebar widget border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
+
+  <Variable name="sidebar.widget.title.font"
+      description="Sidebar widget title font"
+      type="font"
+      size="20px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+  <Variable name="sidebar.widget.title.color"
+      description="Sidebar widget title color"
+      type="color"
+      default="#212121"
+      value="#212121"/>
+</Group>
+*/
+
+.b-section-sidebar > .widget {
+  margin-bottom: $(layout.spacer);
+  padding: $(sidebar.widget.padding);
+  color: $(sidebar.widget.color);
+  background-color: $(sidebar.widget.background.color);
+  border: $(sidebar.widget.border.width) solid $(sidebar.widget.border.color);
+  border-radius: $(sidebar.widget.border.radius);
+}
+
+.b-section-sidebar > .widget:last-child {
+  margin-bottom: 0;
+}
+
+.b-section-sidebar > .widget > .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: $(sidebar.widget.title.color);
+  font: $(sidebar.widget.title.font);
+  line-height: 1.2;
+}
+
+.b-section-sidebar > .widget > .widget-content > :first-child {
+  margin-top: 0;
+}
+
+.b-section-sidebar > .widget > .widget-content > :last-child {
+  margin-bottom: 0;
+}

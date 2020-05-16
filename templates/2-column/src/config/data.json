@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "name": "Theme name",
+    "version": "1.0",
+    "date": "August 17, 1945",
+    "homepage": "https://example.blogspot.com/",
+    "author": {
+      "name": "Your name",
+      "url": "https://example.com/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/example/theme-name.git"
+    },
+    "license": {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  }
+}

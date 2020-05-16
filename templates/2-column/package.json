@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "bloggerpack build",
+    "watch": "bloggerpack watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bloggerpack": "^1.0.0-beta"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
+}
