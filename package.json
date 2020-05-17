@@ -72,6 +72,9 @@
   },
   "devDependencies": {},
   "files": [
-    "templates/**/*"
+    "templates",
+    "bin.js",
+    "bloggerpack.js",
+    "gulpfile.js"
   ]
 }
