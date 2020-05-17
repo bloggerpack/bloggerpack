@@ -208,7 +208,7 @@ Footer
   <Variable name="footer.nav.link.font"
       description="Footer nav link font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -241,8 +241,8 @@ Footer
 .footer-nav-link {
   display: block;
   color: $(footer.nav.link.color);
-  font: $(footer.nav.link.font);
-  line-height: 1.5;
+  font-size: $(footer.nav.link.font.size);
+  font-family: $(footer.nav.link.font.family);
 }
 .footer-nav-link:hover,
 .footer-nav-link:focus {
@@ -282,8 +282,8 @@ Footer
 
 .footer-description {
   color: $(footer.desc.color);
-  font: $(footer.desc.font);
-  line-height: 1.5;
+  font-size: $(footer.desc.font.size);
+  font-family: $(footer.desc.font.family);
 }
 
 .footer-description p {
@@ -317,8 +317,8 @@ Header
 
 /*
 <Group description="(Header) Title">
-  <Variable name="header.title.link.font"
-      description="Header title link font"
+  <Variable name="header.title.font"
+      description="Header title font"
       type="font"
       size="30px"
       family="$(body.font.family)"
@@ -338,7 +338,10 @@ Header
 */
 
 .header-title {
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: $(header.title.font.size);
+  font-family: $(header.title.font.family);
 }
 .header-title:last-child {
   margin-bottom: 0;
@@ -347,8 +350,6 @@ Header
 .header-title-link {
   display: inline-block;
   color: $(header.title.link.color);
-  font: $(header.title.link.font);
-  line-height: 1.2;
 }
 .header-title-link:hover,
 .header-title-link:focus {
@@ -364,7 +365,7 @@ Header
   <Variable name="header.nav.link.font"
       description="Header nav link font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -417,8 +418,9 @@ Header
 .header-nav-link {
   display: block;
   color: $(header.nav.link.color);
-  font: $(header.nav.link.font);
-  line-height: 1.5;
+  font-size: $(header.nav.link.font.size);
+  font-family: $(header.nav.link.font.family);
+  line-height: $(header.nav.height);
 }
 .header-nav-link:hover,
 .header-nav-link:focus {
@@ -474,7 +476,7 @@ Main
   <Variable name="breadcrumb.font"
       description="Breadcrumb font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -533,8 +535,8 @@ Main
   margin-top: 0;
   margin-bottom: $(layout.spacer);
   padding: $(breadcrumb.padding.y) $(breadcrumb.padding.x);
-  font: $(breadcrumb.font);
-  line-height: 1.5;
+  font-size: $(breadcrumb.font.size);
+  font-family: $(breadcrumb.font.family);
   list-style: none;
   background-color: $(breadcrumb.background.color);
   border: $(breadcrumb.border.width) solid $(breadcrumb.border.color);
@@ -595,7 +597,7 @@ Main
   <Variable name="nfm.font"
       description="Not found message font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -635,8 +637,8 @@ Main
   margin-bottom: $(layout.spacer);
   padding: $(nfm.padding.y) $(nfm.padding.x);
   color: $(nfm.color);
-  font: $(nfm.font);
-  line-height: 1.5;
+  font-size: $(nfm.font.size);
+  font-family: $(nfm.font.family);
   background-color: $(nfm.background.color);
   border: $(nfm.border.width) solid $(nfm.border.color);
   border-radius: $(nfm.border.radius);
@@ -739,7 +741,7 @@ Main
   <Variable name="post.snippet.font"
       description="Post snippet font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -783,8 +785,8 @@ Main
 .post-title {
   margin-top: 0;
   margin-bottom: 10px;
-  font: $(post.title.font);
-  line-height: 1.2;
+  font-size: $(post.title.font.size);
+  font-family: $(post.title.font.family);
 }
 .post-title:last-child {
   margin-bottom: 0;
@@ -807,8 +809,8 @@ Main
   margin-top: 0;
   margin-bottom: 10px;
   color: $(post.title.single.color);
-  font: $(post.title.single.font);
-  line-height: 1.2;
+  font-size: $(post.title.single.font.size);
+  font-family: $(post.title.single.font.family);
 }
 .post-title-single:last-child {
   margin-bottom: 0;
@@ -825,8 +827,8 @@ Main
   margin-bottom: 10px;
   padding-left: 0;
   color: $(post.meta.color);
-  font: $(post.meta.font);
-  line-height: 1.5;
+  font-size: $(post.meta.font.size);
+  font-family: $(post.meta.font.family);
   list-style: none;
 }
 .post-meta:last-child {
@@ -856,8 +858,8 @@ Main
 .post-snippet {
   margin-bottom: 10px;
   color: $(post.snippet.color);
-  font: $(post.snippet.font);
-  line-height: 1.5;
+  font-size: $(post.snippet.font.size);
+  font-family: $(post.snippet.font.family);
 }
 .post-snippet:last-child {
   margin-bottom: 0;
@@ -1123,12 +1125,10 @@ Main
 .comment-author {
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
 }
 
 .comment-meta {
   font-size: 14px;
-  line-height: 24px;
 }
 
 /* === Comment body === */
@@ -1176,8 +1176,8 @@ Main
       type="length"
       min="0"
       max="100px"
-      default="2px"
-      value="2px"/>
+      default="4px"
+      value="4px"/>
   <Variable name="pager.link.padding.x"
       description="Pager link padding X"
       type="length"
@@ -1188,7 +1188,7 @@ Main
   <Variable name="pager.link.font"
       description="Pager link font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -1250,11 +1250,13 @@ Main
 }
 
 .pager-link {
+  position: relative;
   display: block;
   padding: $(pager.link.padding.y) $(pager.link.padding.x);
   color: $(pager.link.color);
-  font: $(pager.link.font);
-  line-height: 1.5;
+  font-size: $(pager.link.font.size);
+  font-family: $(pager.link.font.family);
+  line-height: 1.25;
   background-color: $(pager.link.background.color);
   border: $(pager.link.border.width) solid $(pager.link.border.color);
   border-radius: $(pager.link.border.radius);
@@ -1380,9 +1382,11 @@ Main
 .post-body-typography ul,
 .post-body-typography ol,
 .post-body-typography dl,
+.post-body-typography table:not(.tr-caption-container),
 .post-body-typography blockquote,
 .post-body-typography pre,
-.post-body-typography figure {
+.post-body-typography figure,
+.post-body-typography address {
   margin-top: $(post.body.spacer) !important;
   margin-bottom: $(post.body.spacer) !important;
 }
@@ -1399,11 +1403,6 @@ Main
 .post-body-typography figure {
   margin-right: 0 !important;
   margin-left: 0 !important;
-}
-
-.post-body-typography table:not(.tr-caption-container),
-.post-body-typography address {
-  margin: 0 !important;
 }
 
 .post-body-typography > :first-child {
@@ -1553,6 +1552,15 @@ Main
   cursor: pointer;
 }
 
+/**
+ * Address
+ */
+
+.post-body-typography address:not([class]) {
+  font-style: normal;
+  line-height: inherit;
+}
+
 /* stylelint-enable */
 
 /*# ==========================================================================
@@ -1638,8 +1646,8 @@ Sidebar
   margin-top: 0;
   margin-bottom: 10px;
   color: $(sidebar.widget.title.color);
-  font: $(sidebar.widget.title.font);
-  line-height: 1.2;
+  font-size: $(sidebar.widget.title.font.size);
+  font-family: $(sidebar.widget.title.font.family);
 }
 
 .b-section-sidebar > .widget > .widget-content > :first-child {

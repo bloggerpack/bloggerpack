@@ -1,9 +1,9 @@
 ::template::
-<div class='header-title'>
+<h1 class='header-title'>
   <a class='header-title-link' expr:href='data:blog.homepageUrl'>
     <data:blog.title/>
   </a>
-</div>
+</h1>
 
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
   <b:section class='b-section-header' id='b-section-header' maxwidgets='1' name='Header section' showaddelement='no'>
@@ -70,8 +70,8 @@ Header
 
 /*
 <Group description="(Header) Title">
-  <Variable name="header.title.link.font"
-      description="Header title link font"
+  <Variable name="header.title.font"
+      description="Header title font"
       type="font"
       size="30px"
       family="$(body.font.family)"
@@ -91,7 +91,10 @@ Header
 */
 
 .header-title {
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: $(header.title.font.size);
+  font-family: $(header.title.font.family);
 }
 .header-title:last-child {
   margin-bottom: 0;
@@ -100,8 +103,6 @@ Header
 .header-title-link {
   display: inline-block;
   color: $(header.title.link.color);
-  font: $(header.title.link.font);
-  line-height: 1.2;
 }
 .header-title-link:hover,
 .header-title-link:focus {
@@ -117,7 +118,7 @@ Header
   <Variable name="header.nav.link.font"
       description="Header nav link font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -170,8 +171,9 @@ Header
 .header-nav-link {
   display: block;
   color: $(header.nav.link.color);
-  font: $(header.nav.link.font);
-  line-height: 1.5;
+  font-size: $(header.nav.link.font.size);
+  font-family: $(header.nav.link.font.family);
+  line-height: $(header.nav.height);
 }
 .header-nav-link:hover,
 .header-nav-link:focus {

@@ -10,7 +10,7 @@ Scaffolding
       description="Body font"
       type="font"
       size="16px"
-      family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+      family='system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
   <Variable name="body.color"
@@ -49,7 +49,9 @@ Scaffolding
 body {
   margin: 0;
   color: $(body.color);
-  font: $(body.font);
+  font-weight: 400;
+  font-size: $(body.font.size);
+  font-family: $(body.font.family);
   line-height: 1.5;
   background-color: $(body.background.color);
 }

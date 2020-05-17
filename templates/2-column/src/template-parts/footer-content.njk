@@ -72,7 +72,7 @@ Footer
   <Variable name="footer.nav.link.font"
       description="Footer nav link font"
       type="font"
-      size="$(body.font.size)"
+      size="16px"
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
@@ -105,8 +105,8 @@ Footer
 .footer-nav-link {
   display: block;
   color: $(footer.nav.link.color);
-  font: $(footer.nav.link.font);
-  line-height: 1.5;
+  font-size: $(footer.nav.link.font.size);
+  font-family: $(footer.nav.link.font.family);
 }
 .footer-nav-link:hover,
 .footer-nav-link:focus {
@@ -146,8 +146,8 @@ Footer
 
 .footer-description {
   color: $(footer.desc.color);
-  font: $(footer.desc.font);
-  line-height: 1.5;
+  font-size: $(footer.desc.font.size);
+  font-family: $(footer.desc.font.family);
 }
 
 .footer-description p {
