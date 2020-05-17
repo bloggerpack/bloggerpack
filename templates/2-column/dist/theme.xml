@@ -1291,6 +1291,16 @@ Main
 }
 
 /**
+ * Comment pagination
+ */
+
+.comment-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/**
  * Comment form
  */
 
@@ -2215,7 +2225,7 @@ body#layout .sidebar {
                               <b:loop values="data:post.comments where (c => not c.inReplyTo)" var="comment">
                                 <li expr:id="data:comment.anchorName">
                                   <div class="comment-block">
-                                    <b:class cond="data:comment.authorClass" name="is-author" />
+                                    <b:class cond="data:comment.adminClass == data:post.adminClass" name="is-author" />
                                     <b:comment>=== Comment header ===</b:comment>
                                     <div class="comment-header">
                                       <b:comment>=== Col 1 ===</b:comment>
@@ -2280,72 +2290,89 @@ body#layout .sidebar {
                                   </b:if>
 
                                   <b:comment>=== Children ===</b:comment>
-                                  <ul class="comment-list-children">
-                                    <b:loop values="data:post.comments where (c => c.inReplyTo == data:comment.id)" var="reply">
-                                      <li expr:id="data:reply.anchorName">
-                                        <div class="comment-block">
-                                          <b:class cond="data:reply.authorClass" name="is-author" />
-                                          <b:comment>=== Comment header ===</b:comment>
-                                          <div class="comment-header">
-                                            <b:comment>=== Col 1 ===</b:comment>
-                                            <div class="comment-header-col-1">
-                                              <b:comment>=== Comment avatar ===</b:comment>
-                                              <b:if cond="data:reply.authorPhoto">
-                                                <img class="comment-avatar" expr:src="resizeImage(data:reply.authorAvatarSrc, 42)" expr:alt="data:comment.author" />
-                                                <b:else />
-                                                <div class="comment-avatar comment-default-avatar">#</div>
-                                              </b:if>
-                                            </div>
-                                            <!-- /.comment-header-col-1 -->
-                                            <b:comment>=== Col 2 ===</b:comment>
-                                            <div class="comment-header-col-2">
-                                              <b:comment>=== Comment author ===</b:comment>
-                                              <div class="comment-author">
-                                                <b:if cond="data:reply.authorUrl">
-                                                  <a expr:href="data:reply.authorUrl"><data:reply.author /></a>
+                                  <b:if cond="data:post.comments any (c => c.inReplyTo == data:comment.id)">
+                                    <ul class="comment-list-children">
+                                      <b:loop values="data:post.comments where (c => c.inReplyTo == data:comment.id)" var="reply">
+                                        <li expr:id="data:reply.anchorName">
+                                          <div class="comment-block">
+                                            <b:class cond="data:reply.adminClass == data:post.adminClass" name="is-author" />
+                                            <b:comment>=== Comment header ===</b:comment>
+                                            <div class="comment-header">
+                                              <b:comment>=== Col 1 ===</b:comment>
+                                              <div class="comment-header-col-1">
+                                                <b:comment>=== Comment avatar ===</b:comment>
+                                                <b:if cond="data:reply.authorPhoto">
+                                                  <img class="comment-avatar" expr:src="resizeImage(data:reply.authorAvatarSrc, 42)" expr:alt="data:comment.author" />
                                                   <b:else />
-                                                  <data:reply.author />
+                                                  <div class="comment-avatar comment-default-avatar">#</div>
                                                 </b:if>
                                               </div>
-                                              <!-- /.comment-author -->
-                                              <b:comment>=== Comment meta ===</b:comment>
-                                              <div class="comment-meta">
-                                                <a expr:href="data:reply.url">#</a>
-                                                <span><data:reply.timestamp /></span>
+                                              <!-- /.comment-header-col-1 -->
+                                              <b:comment>=== Col 2 ===</b:comment>
+                                              <div class="comment-header-col-2">
+                                                <b:comment>=== Comment author ===</b:comment>
+                                                <div class="comment-author">
+                                                  <b:if cond="data:reply.authorUrl">
+                                                    <a expr:href="data:reply.authorUrl"><data:reply.author /></a>
+                                                    <b:else />
+                                                    <data:reply.author />
+                                                  </b:if>
+                                                </div>
+                                                <!-- /.comment-author -->
+                                                <b:comment>=== Comment meta ===</b:comment>
+                                                <div class="comment-meta">
+                                                  <a expr:href="data:reply.url">#</a>
+                                                  <span><data:reply.timestamp /></span>
+                                                </div>
+                                                <!-- /.comment-meta -->
                                               </div>
-                                              <!-- /.comment-meta -->
+                                              <!-- /.comment-header-col-2 -->
                                             </div>
-                                            <!-- /.comment-header-col-2 -->
+                                            <!-- /.comment-header -->
+                                            <b:comment>=== Comment body ===</b:comment>
+                                            <div class="comment-body">
+                                              <b:if cond="data:reply.isDeleted">
+                                                <div class="comment-warning" role="alert">
+                                                  <data:reply.body />
+                                                </div>
+                                                <b:else />
+                                                <div class="comment-text">
+                                                  <data:reply.body />
+                                                </div>
+                                              </b:if>
+                                            </div>
+                                            <!-- /.comment-body -->
+                                            <b:comment>=== Comment actions ===</b:comment>
+                                            <div class="comment-actions">
+                                              <a expr:href="data:reply.deleteUrl">Delete</a>
+                                            </div>
+                                            <!-- /.comment-actions -->
                                           </div>
-                                          <!-- /.comment-header -->
-                                          <b:comment>=== Comment body ===</b:comment>
-                                          <div class="comment-body">
-                                            <b:if cond="data:reply.isDeleted">
-                                              <div class="comment-warning" role="alert">
-                                                <data:reply.body />
-                                              </div>
-                                              <b:else />
-                                              <div class="comment-text">
-                                                <data:reply.body />
-                                              </div>
-                                            </b:if>
-                                          </div>
-                                          <!-- /.comment-body -->
-                                          <b:comment>=== Comment actions ===</b:comment>
-                                          <div class="comment-actions">
-                                            <a expr:href="data:reply.deleteUrl">Delete</a>
-                                          </div>
-                                          <!-- /.comment-actions -->
-                                        </div>
-                                        <!-- /.comment-block -->
-                                      </li>
-                                    </b:loop>
-                                  </ul>
-                                  <!-- /.comment-list-children -->
+                                          <!-- /.comment-block -->
+                                        </li>
+                                      </b:loop>
+                                    </ul>
+                                    <!-- /.comment-list-children -->
+                                  </b:if>
                                 </li>
                               </b:loop>
                             </ol>
                             <!-- /.comment-list -->
+                          </b:if>
+
+                          <b:comment>=== Comment pagination ===</b:comment>
+                          <b:if cond="data:post.commentPagingRequired">
+                            <nav class="comment-pagination comment-block">
+                              <div>
+                                <a expr:href="data:post.olderLinkUrl"><data:post.olderLinkText /></a>
+                                <a expr:href="data:post.oldestLinkUrl"><data:post.oldestLinkText /></a>
+                              </div>
+                              <span><data:post.commentRangeText /></span>
+                              <div>
+                                <a expr:href="data:post.newestLinkUrl"><data:post.newestLinkText /></a>
+                                <a expr:href="data:post.newerLinkUrl"><data:post.newerLinkText /></a>
+                              </div>
+                            </nav>
                           </b:if>
 
                           <b:comment>=== Comment form ===</b:comment>

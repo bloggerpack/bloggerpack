@@ -1263,6 +1263,16 @@ Main
 }
 
 /**
+ * Comment pagination
+ */
+
+.comment-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/**
  * Comment form
  */
 
