@@ -6,7 +6,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "bloggerpack": "^1.0.0-beta.1"
+    "bloggerpack": "^1.0.0-beta.2"
   },
   "browserslist": [
     "defaults"
