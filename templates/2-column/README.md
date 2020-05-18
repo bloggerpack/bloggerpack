@@ -22,4 +22,4 @@ Don't forget to configure:
 - `src/config/banner.txt`
 - `src/config/data.json`
 
-You can configure `bloggerpack.config.js` to change the folder structure. Before you start, you need to remove `dist` and `src/@dist` folder manually. You may see `Template render error` message for the first time, just ignore it. But, if you see the message for the second time, that means there is an error in your theme. Make sure to edit path to file, too.
+You can configure `bloggerpack.config.js` to change the folder structure. Before you start, you need to remove `dist` and `src/@dist` folder manually. You may see `Template render error` message for the first time, just ignore it. But, if you see the message for the second time, that means there is an error in your files. Make sure to edit `path/to/file`, too.
