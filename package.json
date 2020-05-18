@@ -1,6 +1,7 @@
 {
   "name": "bloggerpack",
   "version": "1.0.0-beta.1",
+  "version_current": "1.0.0-beta.1",
   "description": "A tool for develop Blogger theme.",
   "keywords": [
     "blogger",
@@ -24,8 +25,12 @@
     "bloggerpack": "bin.js"
   },
   "scripts": {
-    "build-2-column": "cd templates/2-column && gulp build --gulpfile ../../gulpfile.js --cwd .",
-    "watch-2-column": "cd templates/2-column && gulp watch --gulpfile ../../gulpfile.js --cwd ."
+    "build-all-templates": "npm-run-all --serial build-2-column",
+    "build-2-column": "cd templates/2-column && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "watch-2-column": "cd templates/2-column && gulp watch --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "release": "npm-run-all --serial release-change-version release-zip-templates",
+    "release-change-version": "gulp change_version",
+    "release-zip-templates": "gulp zip_templates"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
@@ -42,6 +47,7 @@
     "gulp-better-rollup": "^4.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-header": "^2.0.9",
     "gulp-postcss": "^8.0.0",
@@ -70,11 +76,13 @@
     "through2": "^3.0.1",
     "trim-newlines": "^3.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-zip": "^5.0.1",
+    "npm-run-all": "^4.1.5"
+  },
   "files": [
-    "templates",
     "bin.js",
     "bloggerpack.js",
-    "gulpfile.js"
+    "gulpfile.bloggerpack.js"
   ]
 }

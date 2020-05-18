@@ -11,6 +11,7 @@ const del = require('del');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const sourcemaps = require('gulp-sourcemaps');
+const debug = require('gulp-debug');
 const header = require('gulp-header');
 const concat = require('gulp-concat');
 const stylelint = require('gulp-stylelint');

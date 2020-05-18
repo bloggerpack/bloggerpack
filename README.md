@@ -32,7 +32,7 @@
 <p align="center">
   <a href="#features">Features</a>
   ·
-  <a href="#installation">Installation</a>
+  <a href="#usage">Usage</a>
   ·
   <a href="#folder-structure">Folder structure</a>
 </p>
@@ -47,29 +47,51 @@
 - CSS and JS minification
 - and more
 
-## Installation
+## Usage
 
-Replace `my-awesome-theme` below with the name of your theme. You can also replace `2-column` with available [templates](templates).
-
-```bash
-$ npx bloggerpack new my-awesome-theme template templates/2-column
-$ cd my-awesome-theme
-$ npm install
-```
-
-### Scripts
-
-Inside the newly created project, you can run some built-in commands:
-
-- `npm run build` - Build the theme.
-- `npm run watch` - Watches the source files and automatically building them whenever you save.
+| [Download starter template](templates) |
+| -------------------------------------- |
 
 ## Folder structure
 
-After creation, you'll see the default folder structure based on `bloggerpack.config.js`:
+You can configure the folder structure in `bloggerpack.config.js`.
+
+### Example
+
+The `bloggerpack.config.js`:
+
+```js
+module.exports = {
+  template: {
+    src:  './src/index.njk',
+    dist: './dist/theme.xml'
+  },
+  skin: {
+    src:  './src/assets/skin/index.css',
+    dist: './src/@dist/skin/skin.css'
+  },
+  css: {
+    src:  './src/assets/css/index.scss',
+    dist: './src/@dist/css/style.css'
+  },
+  js: {
+    src:  './src/assets/js/index.js',
+    dist: './src/@dist/js/script.js'
+  },
+  configFile: {
+    data:      './src/config/data.json',
+    banner:    './src/config/banner.txt',
+    stylelint: './src/config/.stylelintrc',
+    eslint:    './src/config/.eslintrc.json',
+    babel:     './src/config/.babelrc.js'
+  }
+};
+````
+
+The folder structure:
 
 ```text
-your-theme-name
+.
 ├── dist/
 |   └── theme.xml <----------------------|
 ├── src/                                 |
