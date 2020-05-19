@@ -104,8 +104,8 @@ Layout
 
 /*
 <Group description="(Layout)">
-  <Variable name="layout.spacer"
-      description="Spacer"
+  <Variable name="layout.gutter"
+      description="Gutter"
       type="length"
       min="0"
       max="100px"
@@ -204,20 +204,20 @@ Layout
 .main-and-sidebar {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -$(layout.spacer / 2);
-  margin-left: -$(layout.spacer / 2);
+  margin-right: -$(layout.gutter / 2);
+  margin-left: -$(layout.gutter / 2);
 }
 
 .main,
 .sidebar {
   position: relative;
   width: 100%;
-  padding-right: $(layout.spacer / 2);
-  padding-left: $(layout.spacer / 2);
+  padding-right: $(layout.gutter / 2);
+  padding-left: $(layout.gutter / 2);
 }
 
 .sidebar {
-  margin-top: $(layout.spacer);
+  margin-top: $(layout.gutter);
 }
 
 @media (min-width: 768px) {
