@@ -3,7 +3,8 @@
 ::template::
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' class='sticky-footer' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <b:class name='sticky-footer'/>
   <head>
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
     <title><data:view.title.escaped/></title>
@@ -71,7 +72,7 @@
 
     <div class='content' id='content'>
       <div class='container'>
-        <div class='main-and-sidebar'>
+        <div class='content-row'>
           <main class='main' id='main'>
             {% block main %}{% endblock %}
           </main>
@@ -198,10 +199,29 @@ Layout
   padding-left: 15px;
 }
 
-/* Grid (main and sidebar)
+/* Header
 ================================================= */
 
-.main-and-sidebar {
+.header {
+  padding-top: $(header.padding.y);
+  padding-bottom: $(header.padding.y);
+  background-color: $(header.background.color);
+}
+
+/* Content
+================================================= */
+
+.content {
+  padding-top: $(content.padding.y);
+  padding-bottom: $(content.padding.y);
+  background-color: $(content.background.color);
+}
+
+/**
+ * Grid
+ */
+
+.content-row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -$(layout.gutter / 2);
@@ -230,24 +250,6 @@ Layout
     max-width: 33.333333%;
     margin-top: 0;
   }
-}
-
-/* Header
-================================================= */
-
-.header {
-  padding-top: $(header.padding.y);
-  padding-bottom: $(header.padding.y);
-  background-color: $(header.background.color);
-}
-
-/* Content
-================================================= */
-
-.content {
-  padding-top: $(content.padding.y);
-  padding-bottom: $(content.padding.y);
-  background-color: $(content.background.color);
 }
 
 /* Footer
