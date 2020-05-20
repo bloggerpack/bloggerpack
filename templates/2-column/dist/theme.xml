@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html b:css="false" b:defaultwidgetversion="2" b:layoutsVersion="3" class="sticky-footer" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
+<html b:css="false" b:defaultwidgetversion="2" b:layoutsVersion="3" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr">
+  <b:class name="sticky-footer" />
   <head>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
     <title><data:view.title.escaped/></title>
@@ -131,8 +132,8 @@ Layout
 
 /*
 <Group description="(Layout)">
-  <Variable name="layout.spacer"
-      description="Spacer"
+  <Variable name="layout.gutter"
+      description="Gutter"
       type="length"
       min="0"
       max="100px"
@@ -226,40 +227,6 @@ Layout
   padding-left: 15px;
 }
 
-/* Grid (main and sidebar)
-================================================= */
-
-.main-and-sidebar {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -$(layout.spacer / 2);
-  margin-left: -$(layout.spacer / 2);
-}
-
-.main,
-.sidebar {
-  position: relative;
-  width: 100%;
-  padding-right: $(layout.spacer / 2);
-  padding-left: $(layout.spacer / 2);
-}
-
-.sidebar {
-  margin-top: $(layout.spacer);
-}
-
-@media (min-width: 768px) {
-  .main {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-  }
-  .sidebar {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    margin-top: 0;
-  }
-}
-
 /* Header
 ================================================= */
 
@@ -276,6 +243,41 @@ Layout
   padding-top: $(content.padding.y);
   padding-bottom: $(content.padding.y);
   background-color: $(content.background.color);
+}
+
+/**
+ * Grid
+ */
+
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$(layout.gutter / 2);
+  margin-left: -$(layout.gutter / 2);
+}
+
+.main,
+.sidebar {
+  position: relative;
+  width: 100%;
+  padding-right: $(layout.gutter / 2);
+  padding-left: $(layout.gutter / 2);
+}
+
+.sidebar {
+  margin-top: $(layout.gutter);
+}
+
+@media (min-width: 768px) {
+  .main {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  .sidebar {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 0;
+  }
 }
 
 /* Footer
@@ -565,7 +567,7 @@ Main
 ================================================= */
 
 .b-section-main > .widget {
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
 }
 
 .b-section-main > .widget:last-child {
@@ -654,7 +656,7 @@ Main
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
   padding: $(breadcrumb.padding.y) $(breadcrumb.padding.x);
   font-size: $(breadcrumb.font.size);
   font-family: $(breadcrumb.font.family);
@@ -759,7 +761,7 @@ Main
 */
 
 .not-found-message {
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
   padding: $(nfm.padding.y) $(nfm.padding.x);
   color: $(nfm.color);
   font-size: $(nfm.font.size);
@@ -894,7 +896,7 @@ Main
 */
 
 .post {
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
   padding: $(post.padding);
   background-color: $(post.background.color);
   border: $(post.border.width) solid $(post.border.color);
@@ -1139,7 +1141,7 @@ Main
 */
 
 .comments {
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
   padding: $(comments.padding);
   background-color: $(comments.background.color);
   border: $(comments.border.width) solid $(comments.border.color);
@@ -1401,7 +1403,7 @@ Main
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
 }
 
 .pager:last-child {
@@ -1793,7 +1795,7 @@ Sidebar
 */
 
 .b-section-sidebar > .widget {
-  margin-bottom: $(layout.spacer);
+  margin-bottom: $(layout.gutter);
   padding: $(sidebar.widget.padding);
   color: $(sidebar.widget.color);
   background-color: $(sidebar.widget.background.color);
@@ -1924,7 +1926,7 @@ body#layout .sidebar {
 
     <div class="content" id="content">
       <div class="container">
-        <div class="main-and-sidebar">
+        <div class="content-row">
           <main class="main" id="main">
             <b:section class="b-section-main" id="b-section-main" maxwidgets="1" name="Main section" showaddelement="no">
               <b:widget id="Blog1" locked="true" title="Blog Posts" type="Blog" visible="true">
