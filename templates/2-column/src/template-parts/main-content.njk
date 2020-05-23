@@ -807,6 +807,19 @@ Main
 
   ----------------------
 
+  <Variable name="post.link.color"
+      description="Post link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="post.link.hover.color"
+      description="Post link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  ----------------------
+
   <Variable name="post.title.font"
       description="Post title font"
       type="font"
@@ -911,6 +924,18 @@ Main
 }
 .post:last-child {
   margin-bottom: 0;
+}
+
+/**
+ * Links
+ */
+
+.post a {
+  color: $(post.link.color);
+}
+.post a:hover,
+.post a:focus {
+  color: $(post.link.hover.color);
 }
 
 /**
