@@ -31,11 +31,14 @@ Scaffolding
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="body.background.color"
       description="Body background color"
       type="color"
       default="#ffffff"
       value="#ffffff"/>
+
+  ----------------------
 
   <Variable name="link.color"
       description="Link color"
@@ -111,6 +114,8 @@ Layout
       default="20px"
       value="20px"/>
 
+  ----------------------
+
   <Variable name="container.max.width"
       description="Container max-width"
       type="length"
@@ -119,6 +124,8 @@ Layout
       default="960px"
       value="960px"/>
 
+  ----------------------
+
   <Variable name="header.padding.y"
       description="Header padding Y"
       type="length"
@@ -126,11 +133,14 @@ Layout
       max="100px"
       default="30px"
       value="30px"/>
+
   <Variable name="header.background.color"
       description="Header background color"
       type="color"
       default="#222222"
       value="#222222"/>
+
+  ----------------------
 
   <Variable name="content.padding.y"
       description="Content padding Y"
@@ -139,11 +149,14 @@ Layout
       max="100px"
       default="40px"
       value="40px"/>
+
   <Variable name="content.background.color"
       description="Content background color"
       type="color"
       default="transparent"
       value="transparent"/>
+
+  ----------------------
 
   <Variable name="footer.padding.y"
       description="Footer padding Y"
@@ -152,6 +165,7 @@ Layout
       max="100px"
       default="30px"
       value="30px"/>
+
   <Variable name="footer.background.color"
       description="Footer background color"
       type="color"
@@ -362,6 +376,7 @@ Footer
       type="color"
       default="#777777"
       value="#777777"/>
+
   <Variable name="footer.desc.link.color"
       description="Footer description link color"
       type="color"
@@ -417,6 +432,7 @@ Header
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="header.title.link.color"
       description="Header title link color"
       type="color"
@@ -457,13 +473,6 @@ Header
 
 /*
 <Group description="(Header) Nav">
-  <Variable name="header.nav.link.font"
-      description="Header nav link font"
-      type="font"
-      size="16px"
-      family="$(body.font.family)"
-      default="normal normal $(size) $(family)"
-      value="normal normal $(size) $(family)"/>
   <Variable name="header.nav.height"
       description="Header nav height (adjust based on the font)"
       type="length"
@@ -471,6 +480,14 @@ Header
       max="100px"
       default="24px"
       value="24px"/>
+
+  <Variable name="header.nav.link.font"
+      description="Header nav link font"
+      type="font"
+      size="16px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
   <Variable name="header.nav.link.color"
       description="Header nav link color"
       type="color"
@@ -534,18 +551,7 @@ Main
 =================================================
 */
 
-/* Main section
-================================================= */
-
-.b-section-main > .widget {
-  margin-bottom: $(layout.gutter);
-}
-
-.b-section-main > .widget:last-child {
-  margin-bottom: 0;
-}
-
-/* Blog posts widget
+/* Blog widget
 ================================================= */
 
 /* Breadcrumb
@@ -567,6 +573,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="breadcrumb.font"
       description="Breadcrumb font"
       type="font"
@@ -574,6 +581,7 @@ Main
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="breadcrumb.background.color"
       description="Breadcrumb background color"
       type="color"
@@ -599,17 +607,6 @@ Main
       default="4px"
       value="4px"/>
 
-  <Variable name="breadcrumb.link.color"
-      description="Breadcrumb link color"
-      type="color"
-      default="$(link.color)"
-      value="$(link.color)"/>
-  <Variable name="breadcrumb.link.hover.color"
-      description="Breadcrumb link hover color"
-      type="color"
-      default="$(link.hover.color)"
-      value="$(link.hover.color)"/>
-
   <Variable name="breadcrumb.active.color"
       description="Breadcrumb active color"
       type="color"
@@ -620,6 +617,17 @@ Main
       type="color"
       default="#757575"
       value="#757575"/>
+
+  <Variable name="breadcrumb.link.color"
+      description="Breadcrumb link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="breadcrumb.link.hover.color"
+      description="Breadcrumb link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
 </Group>
 */
 
@@ -692,6 +700,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="nfm.font"
       description="Not found message font"
       type="font"
@@ -704,6 +713,7 @@ Main
       type="color"
       default="#856404"
       value="#856404"/>
+
   <Variable name="nfm.background.color"
       description="Not found message background color"
       type="color"
@@ -758,6 +768,7 @@ Main
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="post.background.color"
       description="Post background color"
       type="color"
@@ -783,6 +794,8 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="post.title.font"
       description="Post title font"
       type="font"
@@ -790,6 +803,7 @@ Main
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="post.title.link.color"
       description="Post title link color"
       type="color"
@@ -800,6 +814,8 @@ Main
       type="color"
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
+
+  ----------------------
 
   <Variable name="post.title.single.font"
       description="Post title single font"
@@ -814,6 +830,8 @@ Main
       default="#212121"
       value="#212121"/>
 
+  ----------------------
+
   <Variable name="post.meta.font"
       description="Post meta font"
       type="font"
@@ -826,6 +844,7 @@ Main
       type="color"
       default="#757575"
       value="#757575"/>
+
   <Variable name="post.meta.link.color"
       description="Post meta link color"
       type="color"
@@ -836,6 +855,8 @@ Main
       type="color"
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
+
+  ----------------------
 
   <Variable name="post.snippet.font"
       description="Post snippet font"
@@ -850,6 +871,8 @@ Main
       default="#212121"
       value="#212121"/>
 
+  ----------------------
+
   <Variable name="post.featured.image.border.radius"
       description="Post featured image border radius"
       type="length"
@@ -857,6 +880,8 @@ Main
       max="100px"
       default="4px"
       value="4px"/>
+
+  ----------------------
 
   <Variable name="post.body.color"
       description="Post body color"
@@ -1024,6 +1049,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="comments.background.color"
       description="Comments background color"
       type="color"
@@ -1049,11 +1075,15 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="comments.title.color"
       description="Comments title color"
       type="color"
       default="#212121"
       value="#212121"/>
+
+  ----------------------
 
   <Variable name="comment.block.margin"
       description="Comment block margin"
@@ -1069,11 +1099,13 @@ Main
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="comment.block.color"
       description="Comment block color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="comment.block.background.color"
       description="Comment block background color"
       type="color"
@@ -1098,6 +1130,7 @@ Main
       max="100px"
       default="4px"
       value="4px"/>
+
   <Variable name="comment.block.link.color"
       description="Comment block link color"
       type="color"
@@ -1316,6 +1349,7 @@ Main
       max="100px"
       default="8px"
       value="8px"/>
+
   <Variable name="pager.link.font"
       description="Pager link font"
       type="font"
@@ -1333,6 +1367,7 @@ Main
       type="color"
       default="#555555"
       value="#555555"/>
+
   <Variable name="pager.link.background.color"
       description="Pager link background color"
       type="color"
@@ -1424,6 +1459,8 @@ Main
       default="20px"
       value="20px"/>
 
+  ----------------------
+
   <Variable name="post.body.table.border.width"
       description="Post body table border width"
       type="length"
@@ -1436,6 +1473,8 @@ Main
       type="color"
       default="#dddddd"
       value="#dddddd"/>
+
+  ----------------------
 
   <Variable name="post.body.blockquote.border.width"
       description="Post body blockquote border width"
@@ -1450,11 +1489,14 @@ Main
       default="#eeeeee"
       value="#eeeeee"/>
 
+  ----------------------
+
   <Variable name="post.body.code.color"
       description="Post body code color"
       type="color"
       default="#ff3860"
       value="#ff3860"/>
+
   <Variable name="post.body.code.background.color"
       description="Post body code background color"
       type="color"
@@ -1468,11 +1510,14 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="post.body.pre.color"
       description="Post body pre color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="post.body.pre.background.color"
       description="Post body pre background color"
       type="color"
@@ -1720,11 +1765,13 @@ Sidebar
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="sidebar.widget.color"
       description="Sidebar widget color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="sidebar.widget.background.color"
       description="Sidebar widget background color"
       type="color"
