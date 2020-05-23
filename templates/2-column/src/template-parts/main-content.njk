@@ -1,13 +1,13 @@
 ::template::
 <b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main section' showaddelement='no'>
-  {#==========================================================================
-  Blog posts widget
+  {#==================================================
+  Blog widget
   - Breadcrumb
   - Status message
   - Posts
   - Comments
   - Pager
-  ==========================================================================#}
+  ==================================================#}
   <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
     <b:includable id='main' var='this'>
       <b:comment>
@@ -25,6 +25,7 @@
           </li>
 
           <b:comment>### Post page ###</b:comment>
+
           <b:if cond='data:view.isPost'>
             <b:loop values='data:posts' var='post'>
               <li class='breadcrumb-item active'>
@@ -34,6 +35,7 @@
           </b:if>
 
           <b:comment>### Static page ###</b:comment>
+
           <b:if cond='data:view.isPage'>
             <b:loop values='data:posts' var='post'>
               <li class='breadcrumb-item active'>
@@ -43,6 +45,7 @@
           </b:if>
 
           <b:comment>### Search (label) page ###</b:comment>
+
           <b:if cond='data:view.isLabelSearch'>
             <li class='breadcrumb-item'>
               <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
@@ -51,6 +54,7 @@
           </b:if>
 
           <b:comment>### Search (query) page ###</b:comment>
+
           <b:if cond='data:view.search.query'>
             <li class='breadcrumb-item'>
               <a class='breadcrumb-link' expr:href='path(data:blog.homepageUrl, "/search")'>
@@ -61,11 +65,13 @@
           </b:if>
 
           <b:comment>### Search (default) page ###</b:comment>
+
           <b:if cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query'>
             <li class='breadcrumb-item active'>Search</li>
           </b:if>
 
           <b:comment>### Archive page ###</b:comment>
+
           <b:if cond='data:view.isArchive'>
             <b:if cond='data:view.archive.month'>
               <li class='breadcrumb-item'>
@@ -80,6 +86,7 @@
           </b:if>
 
           <b:comment>### Error page ###</b:comment>
+
           <b:if cond='data:view.isError'>
             <li class='breadcrumb-item active'>404</li>
           </b:if>
@@ -93,6 +100,7 @@
       ##################################################</b:comment>
 
       <b:comment>### Homepage ###</b:comment>
+
       <b:if cond='data:view.isHomepage'>
         <b:if cond='data:posts.empty'>
           <div class='not-found-message' id='not-found-message' role='alert'>
@@ -102,6 +110,7 @@
       </b:if>
 
       <b:comment>### Search (label|query|default) page | Archive page ###</b:comment>
+
       <b:if cond='data:view.isSearch or data:view.isArchive'>
         <b:if cond='data:posts.empty'>
           <div class='not-found-message' id='not-found-message' role='alert'>
@@ -111,6 +120,7 @@
       </b:if>
 
       <b:comment>### Error page ###</b:comment>
+
       <b:if cond='data:view.isError'>
         <div class='not-found-message' id='not-found-message' role='alert'>
           <data:navMessage/>
@@ -123,10 +133,12 @@
       ##################################################</b:comment>
 
       <b:comment>### Homepage | Search (label|query|default) page | Archive page ###</b:comment>
+
       <b:if cond='data:posts.notEmpty'>
         <b:if cond='data:view.isMultipleItems'>
           <b:loop values='data:posts' var='post'>
             <article class='post post-index' expr:id='"post-" + data:post.id'>
+
               <b:comment>=== Title ===</b:comment>
               <h2 class='post-title'>
                 <a expr:href='data:post.link ?: data:post.url'>
@@ -196,16 +208,19 @@
                 </b:if>
               </b:with>
               </b:with>
+
             </article>
           </b:loop>
         </b:if>
       </b:if>
 
       <b:comment>### Post page ###</b:comment>
+
       <b:if cond='data:posts.notEmpty'>
         <b:if cond='data:view.isPost'>
           <b:loop values='data:posts' var='post'>
             <article class='post post-single' expr:id='"post-" + data:post.id'>
+
               <b:comment>=== Title ===</b:comment>
               <h1 class='post-title-single'>
                 <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
@@ -246,16 +261,19 @@
               <div class='post-body post-body-typography'>
                 <data:post.body/>
               </div>
+
             </article>
           </b:loop>
         </b:if>
       </b:if>
 
       <b:comment>### Static page ###</b:comment>
+
       <b:if cond='data:posts.notEmpty'>
         <b:if cond='data:view.isPage'>
           <b:loop values='data:posts' var='post'>
             <article class='post post-single' expr:id='"post-" + data:post.id'>
+
               <b:comment>=== Title ===</b:comment>
               <h1 class='post-title-single'>
                 <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
@@ -265,6 +283,7 @@
               <div class='post-body post-body-typography'>
                 <data:post.body/>
               </div>
+
             </article>
           </b:loop>
         </b:if>
@@ -277,7 +296,6 @@
 
       <b:if cond='data:view.isPost or data:view.isPage'>
         <b:loop values='data:posts' var='post'>
-
           <b:if cond='data:post.allowComments'>
             <div class='comments' id='comments'>
 
@@ -471,13 +489,11 @@
                   //]]>
                   </script>
                   {% endasset %}
-
                 </div><!-- /.original-form-container -->
               </b:if>
 
             </div><!-- /.comments -->
           </b:if><!-- /data:post.allowComments -->
-
         </b:loop>
       </b:if>
 
@@ -551,17 +567,7 @@ Main
 =================================================
 */
 
-/* Main section
-================================================= */
-
-.b-section-main > .widget {
-  margin-bottom: $(layout.gutter);
-}
-.b-section-main > .widget:last-child {
-  margin-bottom: 0;
-}
-
-/* Blog posts widget
+/* Blog widget
 ================================================= */
 
 /* Breadcrumb
@@ -583,6 +589,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="breadcrumb.font"
       description="Breadcrumb font"
       type="font"
@@ -590,6 +597,7 @@ Main
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="breadcrumb.background.color"
       description="Breadcrumb background color"
       type="color"
@@ -615,17 +623,6 @@ Main
       default="4px"
       value="4px"/>
 
-  <Variable name="breadcrumb.link.color"
-      description="Breadcrumb link color"
-      type="color"
-      default="$(link.color)"
-      value="$(link.color)"/>
-  <Variable name="breadcrumb.link.hover.color"
-      description="Breadcrumb link hover color"
-      type="color"
-      default="$(link.hover.color)"
-      value="$(link.hover.color)"/>
-
   <Variable name="breadcrumb.active.color"
       description="Breadcrumb active color"
       type="color"
@@ -636,6 +633,17 @@ Main
       type="color"
       default="#757575"
       value="#757575"/>
+
+  <Variable name="breadcrumb.link.color"
+      description="Breadcrumb link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="breadcrumb.link.hover.color"
+      description="Breadcrumb link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
 </Group>
 */
 
@@ -704,6 +712,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="nfm.font"
       description="Not found message font"
       type="font"
@@ -716,6 +725,7 @@ Main
       type="color"
       default="#856404"
       value="#856404"/>
+
   <Variable name="nfm.background.color"
       description="Not found message background color"
       type="color"
@@ -769,6 +779,7 @@ Main
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="post.background.color"
       description="Post background color"
       type="color"
@@ -794,6 +805,8 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="post.title.font"
       description="Post title font"
       type="font"
@@ -801,6 +814,7 @@ Main
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="post.title.link.color"
       description="Post title link color"
       type="color"
@@ -811,6 +825,8 @@ Main
       type="color"
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
+
+  ----------------------
 
   <Variable name="post.title.single.font"
       description="Post title single font"
@@ -825,6 +841,8 @@ Main
       default="#212121"
       value="#212121"/>
 
+  ----------------------
+
   <Variable name="post.meta.font"
       description="Post meta font"
       type="font"
@@ -837,6 +855,7 @@ Main
       type="color"
       default="#757575"
       value="#757575"/>
+
   <Variable name="post.meta.link.color"
       description="Post meta link color"
       type="color"
@@ -847,6 +866,8 @@ Main
       type="color"
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
+
+  ----------------------
 
   <Variable name="post.snippet.font"
       description="Post snippet font"
@@ -861,6 +882,8 @@ Main
       default="#212121"
       value="#212121"/>
 
+  ----------------------
+
   <Variable name="post.featured.image.border.radius"
       description="Post featured image border radius"
       type="length"
@@ -868,6 +891,8 @@ Main
       max="100px"
       default="4px"
       value="4px"/>
+
+  ----------------------
 
   <Variable name="post.body.color"
       description="Post body color"
@@ -1024,6 +1049,7 @@ Main
       max="100px"
       default="15px"
       value="15px"/>
+
   <Variable name="comments.background.color"
       description="Comments background color"
       type="color"
@@ -1049,11 +1075,15 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="comments.title.color"
       description="Comments title color"
       type="color"
       default="#212121"
       value="#212121"/>
+
+  ----------------------
 
   <Variable name="comment.block.margin"
       description="Comment block margin"
@@ -1069,11 +1099,13 @@ Main
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="comment.block.color"
       description="Comment block color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="comment.block.background.color"
       description="Comment block background color"
       type="color"
@@ -1098,6 +1130,7 @@ Main
       max="100px"
       default="4px"
       value="4px"/>
+
   <Variable name="comment.block.link.color"
       description="Comment block link color"
       type="color"
@@ -1305,6 +1338,7 @@ Main
       max="100px"
       default="8px"
       value="8px"/>
+
   <Variable name="pager.link.font"
       description="Pager link font"
       type="font"
@@ -1322,6 +1356,7 @@ Main
       type="color"
       default="#555555"
       value="#555555"/>
+
   <Variable name="pager.link.background.color"
       description="Pager link background color"
       type="color"
@@ -1410,6 +1445,8 @@ Main
       default="20px"
       value="20px"/>
 
+  ----------------------
+
   <Variable name="post.body.table.border.width"
       description="Post body table border width"
       type="length"
@@ -1422,6 +1459,8 @@ Main
       type="color"
       default="#dddddd"
       value="#dddddd"/>
+
+  ----------------------
 
   <Variable name="post.body.blockquote.border.width"
       description="Post body blockquote border width"
@@ -1436,11 +1475,14 @@ Main
       default="#eeeeee"
       value="#eeeeee"/>
 
+  ----------------------
+
   <Variable name="post.body.code.color"
       description="Post body code color"
       type="color"
       default="#ff3860"
       value="#ff3860"/>
+
   <Variable name="post.body.code.background.color"
       description="Post body code background color"
       type="color"
@@ -1454,11 +1496,14 @@ Main
       default="4px"
       value="4px"/>
 
+  ----------------------
+
   <Variable name="post.body.pre.color"
       description="Post body pre color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="post.body.pre.background.color"
       description="Post body pre background color"
       type="color"

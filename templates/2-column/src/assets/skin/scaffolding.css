@@ -18,11 +18,14 @@ Scaffolding
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="body.background.color"
       description="Body background color"
       type="color"
       default="#ffffff"
       value="#ffffff"/>
+
+  ----------------------
 
   <Variable name="link.color"
       description="Link color"

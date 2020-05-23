@@ -1,8 +1,8 @@
 ::template::
 <b:section class='b-section-sidebar' id='b-section-sidebar' name='Sidebar section'>
-  {#==========================================================================
-  Custom BlogSearch widget
-  ==========================================================================#}
+  {#==================================================
+  BlogSearch widget
+  ==================================================#}
   <b:widget id='BlogSearch1' locked='true' title='Search This Blog' type='BlogSearch' visible='true'>
     <b:includable id='main'>
       <b:include name='widget-title'/>
@@ -30,9 +30,9 @@
       <button class='search-form-submit' type='submit'><data:messages.search/></button>
     </b:includable>
   </b:widget>
-  {#==========================================================================
+  {#==================================================
   HTML widget
-  ==========================================================================#}
+  ==================================================#}
   <b:widget id='HTML2' locked='false' title='HTML gadget' type='HTML' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='content'>
@@ -70,11 +70,13 @@ Sidebar
       max="100px"
       default="20px"
       value="20px"/>
+
   <Variable name="sidebar.widget.color"
       description="Sidebar widget color"
       type="color"
       default="#212121"
       value="#212121"/>
+
   <Variable name="sidebar.widget.background.color"
       description="Sidebar widget background color"
       type="color"
@@ -148,7 +150,7 @@ Sidebar
 // Sidebar content
 // =================================================
 
-// Custom BlogSearch widget
+// BlogSearch widget
 // =================================================
 
 //

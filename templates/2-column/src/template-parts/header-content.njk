@@ -7,9 +7,9 @@
 
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
   <b:section class='b-section-header' id='b-section-header' maxwidgets='1' name='Header section' showaddelement='no'>
-    {#==========================================================================
+    {#==================================================
     Header nav (using PageList widget)
-    ==========================================================================#}
+    ==================================================#}
     <b:widget id='PageList1' locked='true' title='Header nav' type='PageList' visible='true'>
       <b:widget-settings>
         <b:widget-setting name='pageListJson'>
@@ -77,6 +77,7 @@ Header
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
   <Variable name="header.title.link.color"
       description="Header title link color"
       type="color"
@@ -115,13 +116,6 @@ Header
 
 /*
 <Group description="(Header) Nav">
-  <Variable name="header.nav.link.font"
-      description="Header nav link font"
-      type="font"
-      size="16px"
-      family="$(body.font.family)"
-      default="normal normal $(size) $(family)"
-      value="normal normal $(size) $(family)"/>
   <Variable name="header.nav.height"
       description="Header nav height (adjust based on the font)"
       type="length"
@@ -129,6 +123,14 @@ Header
       max="100px"
       default="24px"
       value="24px"/>
+
+  <Variable name="header.nav.link.font"
+      description="Header nav link font"
+      type="font"
+      size="16px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
   <Variable name="header.nav.link.color"
       description="Header nav link color"
       type="color"

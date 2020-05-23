@@ -12,6 +12,7 @@
     <b:include data='blog' name='google-analytics'/>
 
     {% asset type="style", "@dist/css/style.css" %}
+
     {% asset type="skin", "@dist/skin/skin.css" %}
 
     {% asset %}
@@ -19,7 +20,7 @@
     <b:template-skin>
     <![CDATA[
     body#layout .container::after,
-    body#layout .section::after {
+    body#layout .section::after { /* `<b:section>` */
       display: block;
       clear: both;
       content: "";
@@ -113,6 +114,8 @@ Layout
       default="20px"
       value="20px"/>
 
+  ----------------------
+
   <Variable name="container.max.width"
       description="Container max-width"
       type="length"
@@ -121,6 +124,8 @@ Layout
       default="960px"
       value="960px"/>
 
+  ----------------------
+
   <Variable name="header.padding.y"
       description="Header padding Y"
       type="length"
@@ -128,11 +133,14 @@ Layout
       max="100px"
       default="30px"
       value="30px"/>
+
   <Variable name="header.background.color"
       description="Header background color"
       type="color"
       default="#222222"
       value="#222222"/>
+
+  ----------------------
 
   <Variable name="content.padding.y"
       description="Content padding Y"
@@ -141,11 +149,14 @@ Layout
       max="100px"
       default="40px"
       value="40px"/>
+
   <Variable name="content.background.color"
       description="Content background color"
       type="color"
       default="transparent"
       value="transparent"/>
+
+  ----------------------
 
   <Variable name="footer.padding.y"
       description="Footer padding Y"
@@ -154,6 +165,7 @@ Layout
       max="100px"
       default="30px"
       value="30px"/>
+
   <Variable name="footer.background.color"
       description="Footer background color"
       type="color"
