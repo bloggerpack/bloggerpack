@@ -796,6 +796,19 @@ Main
 
   ----------------------
 
+  <Variable name="post.link.color"
+      description="Post link color"
+      type="color"
+      default="$(link.color)"
+      value="$(link.color)"/>
+  <Variable name="post.link.hover.color"
+      description="Post link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  ----------------------
+
   <Variable name="post.title.font"
       description="Post title font"
       type="font"
@@ -901,6 +914,19 @@ Main
 
 .post:last-child {
   margin-bottom: 0;
+}
+
+/**
+ * Links
+ */
+
+.post a {
+  color: $(post.link.color);
+}
+
+.post a:hover,
+.post a:focus {
+  color: $(post.link.hover.color);
 }
 
 /**
@@ -1077,6 +1103,13 @@ Main
 
   ----------------------
 
+  <Variable name="comments.title.font"
+      description="Comments title font"
+      type="font"
+      size="36px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
   <Variable name="comments.title.color"
       description="Comments title color"
       type="color"
@@ -1141,6 +1174,27 @@ Main
       type="color"
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
+
+  ----------------------
+
+  <Variable name="comment.author.badge.color"
+      description="Comment author badge color"
+      type="color"
+      default="#ffffff"
+      value="#ffffff"/>
+
+  <Variable name="comment.author.badge.background.color"
+      description="Comment author badge background color"
+      type="color"
+      default="#222222"
+      value="#222222"/>
+  <Variable name="comment.author.badge.border.radius"
+      description="Comment author badge border radius"
+      type="length"
+      min="0"
+      max="100px"
+      default="4px"
+      value="4px"/>
 </Group>
 */
 
@@ -1164,6 +1218,8 @@ Main
   margin-top: 0;
   margin-bottom: $(comment.block.margin);
   color: $(comments.title.color);
+  font-size: $(comments.title.font.size);
+  font-family: $(comments.title.font.family);
 }
 
 .comments-title small {
@@ -1278,6 +1334,19 @@ Main
 .comment-author {
   font-weight: 500;
   font-size: 16px;
+}
+
+.comment-author .comment-author-badge {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  padding: 2px 4px;
+  color: $(comment.author.badge.color);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.2;
+  background-color: $(comment.author.badge.background.color);
+  border-radius: $(comment.author.badge.border.radius);
 }
 
 .comment-meta {
