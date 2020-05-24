@@ -1108,6 +1108,13 @@ Main
 
   ----------------------
 
+  <Variable name="comments.title.font"
+      description="Comments title font"
+      type="font"
+      size="36px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
   <Variable name="comments.title.color"
       description="Comments title color"
       type="color"
@@ -1215,6 +1222,8 @@ Main
   margin-top: 0;
   margin-bottom: $(comment.block.margin);
   color: $(comments.title.color);
+  font-size: $(comments.title.font.size);
+  font-family: $(comments.title.font.family);
 }
 
 .comments-title small {
