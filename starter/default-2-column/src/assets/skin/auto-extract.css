@@ -1152,6 +1152,7 @@ Main
   margin-top: $(comment.block.margin);
   padding: 10px 15px;
   color: #856404;
+  font-size: 16px;
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
   border-radius: 4px;
@@ -1196,6 +1197,8 @@ Main
   width: 100%;
 }
 
+/* Avatar */
+
 .comment-avatar {
   width: 42px;
   height: 42px;
@@ -1212,6 +1215,8 @@ Main
   background-color: #ff5722;
   user-select: none;
 }
+
+/* Author */
 
 .comment-author {
   font-weight: 500;
@@ -1230,6 +1235,8 @@ Main
   border-radius: $(comment.author.badge.border.radius);
 }
 
+/* Meta */
+
 .comment-meta {
   font-size: 14px;
 }
@@ -1238,6 +1245,7 @@ Main
 
 .comment-body {
   margin-bottom: 15px;
+  font-size: 16px;
 }
 
 /* === Comment actions === */
@@ -1264,6 +1272,12 @@ Main
 .comment-form-message {
   margin-top: 0;
   margin-bottom: 10px;
+}
+.comment-form-title {
+  font-size: 20px;
+}
+.comment-form-message {
+  font-size: 16px;
 }
 
 .comment-editor {
