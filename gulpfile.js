@@ -10,14 +10,14 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
 const Changes = {
   templateBloggerpackVersion: function () {
-    return src('templates/**/package.json')
+    return src('starter/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('templates', {overwrite: true}))
+      .pipe(dest('starter', {overwrite: true}))
   },
   templateDownloadVersion: function () {
-    return src('templates/**/README.md')
+    return src('starter/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('templates', {overwrite: true}))
+      .pipe(dest('starter', {overwrite: true}))
   },
   packageCurrentVersion: function () {
     return src('package.json')
@@ -32,22 +32,22 @@ exports.change_version = series(
   Changes.packageCurrentVersion
 );
 
-const t1 = '2-column';
+const st1 = 'default-2-column';
 
 const Zip = {
-  cleanTemplatesZip: function (cb) {
-    del.sync('templates-zip');
+  cleanStarterZip: function (cb) {
+    del.sync('starter-zip');
     cb();
   },
-  t1: function () {
-    return src(path.join('templates', t1, '**/{*,.*}'))
+  st1: function () {
+    return src(path.join('starter', st1, '**/{*,.*}'))
       .pipe(zip('archive.zip'))
-      .pipe(rename(pkg.name + '-' + pkg.version + '___' + t1 + '.zip'))
-      .pipe(dest('templates-zip'))
+      .pipe(rename(pkg.name + '-' + pkg.version + '_' + st1 + '.zip'))
+      .pipe(dest('starter-zip'))
   }
 };
 
-exports.zip_templates = series(
-  Zip.cleanTemplatesZip,
-  Zip.t1
+exports.zip_starter = series(
+  Zip.cleanStarterZip,
+  Zip.st1
 );

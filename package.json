@@ -25,12 +25,12 @@
     "bloggerpack": "bin.js"
   },
   "scripts": {
-    "build-all-templates": "npm-run-all --serial build-2-column",
-    "build-2-column": "cd templates/2-column && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
-    "watch-2-column": "cd templates/2-column && gulp watch --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
-    "release": "npm-run-all --serial release-change-version release-zip-templates",
+    "build-all-starter": "npm-run-all --serial build-default-2-column",
+    "build-default-2-column": "cd starter/default-2-column && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "watch-default-2-column": "cd starter/default-2-column && gulp watch --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "release": "npm-run-all --serial release-change-version release-zip-starter",
     "release-change-version": "gulp change_version",
-    "release-zip-templates": "gulp zip_templates"
+    "release-zip-starter": "gulp zip_starter"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",

@@ -1,4 +1,4 @@
-| [Download](https://github.com/bloggerpack/bloggerpack/releases/download/v1.0.0-beta.2/bloggerpack-1.0.0-beta.2___2-column.zip) | [Preview](https://bloggerpack-template-2-column.blogspot.com/) |
+| [Download](https://github.com/bloggerpack/bloggerpack/releases/download/v1.0.0-beta.2/bloggerpack-1.0.0-beta.2_default-2-column.zip) | [Preview](https://bp-default-2-column.blogspot.com/) |
 | --- | --- |
 
 Once downloaded, unzip the compressed folder and than rename the folder (e.g., `my-awesome-theme`).
