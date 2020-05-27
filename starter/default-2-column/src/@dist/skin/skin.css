@@ -1055,8 +1055,13 @@ Main
  */
 
 .post-body {
-  margin-bottom: 10px;
+  margin-top: $(post.body.spacer);
+  margin-bottom: $(post.body.spacer);
   color: $(post.body.color);
+}
+
+.post-body:first-child {
+  margin-top: 0;
 }
 
 .post-body:last-child {
