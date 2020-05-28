@@ -809,6 +809,27 @@ Main
 
   ----------------------
 
+  <Variable name="post.labels.font"
+      description="Post labels font"
+      type="font"
+      size="14px"
+      family="$(body.font.family)"
+      default="normal normal $(size) $(family)"
+      value="normal normal $(size) $(family)"/>
+
+  <Variable name="post.labels.link.color"
+      description="Post labels link color"
+      type="color"
+      default="#757575"
+      value="#757575"/>
+  <Variable name="post.labels.link.hover.color"
+      description="Post labels link hover color"
+      type="color"
+      default="$(link.hover.color)"
+      value="$(link.hover.color)"/>
+
+  ----------------------
+
   <Variable name="post.title.font"
       description="Post title font"
       type="font"
@@ -930,12 +951,50 @@ Main
 }
 
 /**
+ * Post labels
+ */
+
+.post-labels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-left: 0;
+  font-size: $(post.labels.font.size);
+  font-family: $(post.labels.font.family);
+  list-style: none;
+}
+
+.post-labels:last-child {
+  margin-bottom: 0;
+}
+
+.post-labels li:not(:last-child) {
+  margin-right: 5px;
+}
+
+.post-labels li:not(:last-child)::after {
+  margin-left: 5px;
+  color: $(post.labels.link.color);
+  content: "\00B7";
+}
+
+.post-labels a {
+  color: $(post.labels.link.color);
+}
+
+.post-labels a:hover,
+.post-labels a:focus {
+  color: $(post.labels.link.hover.color);
+}
+
+/**
  * Post title
  */
 
 .post-title {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: $(post.title.font.size);
   font-family: $(post.title.font.family);
 }
@@ -960,7 +1019,7 @@ Main
 
 .post-title-single {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: $(post.title.single.color);
   font-size: $(post.title.single.font.size);
   font-family: $(post.title.single.font.family);
@@ -976,28 +1035,18 @@ Main
 
 .post-meta {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding-left: 0;
+  align-items: center;
+  margin-bottom: 15px;
   color: $(post.meta.color);
   font-size: $(post.meta.font.size);
   font-family: $(post.meta.font.family);
-  list-style: none;
 }
 
 .post-meta:last-child {
   margin-bottom: 0;
 }
 
-.post-meta li:not(:last-child) {
-  margin-right: 5px;
-}
-
-.post-meta li:not(:last-child)::after {
-  margin-left: 5px;
-  content: "\00B7";
-}
+/* === Links === */
 
 .post-meta a {
   color: $(post.meta.link.color);
@@ -1008,12 +1057,52 @@ Main
   color: $(post.meta.link.hover.color);
 }
 
+/* === Columns === */
+
+.post-meta-col-1 {
+  width: auto;
+  margin-right: 10px;
+}
+
+.post-meta-col-2 {
+  width: 100%;
+}
+
+/* === Avatar === */
+
+.post-meta-avatar {
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+/* === List === */
+
+.post-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.post-meta-list li:not(:last-child) {
+  margin-right: 5px;
+}
+
+.post-meta-list li:not(:last-child)::after {
+  margin-left: 5px;
+  content: "\00B7";
+}
+
 /**
  * Post snippet
  */
 
 .post-snippet {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: $(post.snippet.color);
   font-size: $(post.snippet.font.size);
   font-family: $(post.snippet.font.family);
@@ -1029,7 +1118,7 @@ Main
 
 .post-featured-image {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding-top: 56.25%;
 }
 
@@ -1055,8 +1144,8 @@ Main
  */
 
 .post-body {
-  margin-top: $(post.body.spacer);
-  margin-bottom: $(post.body.spacer);
+  margin-top: 30px;
+  margin-bottom: 30px;
   color: $(post.body.color);
 }
 
