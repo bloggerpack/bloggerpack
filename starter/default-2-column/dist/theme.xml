@@ -2165,9 +2165,7 @@ body#layout .sidebar {
                   <b:if cond="!data:view.isHomepage">
                     <ol class="breadcrumb" id="breadcrumb">
                       <li class="breadcrumb-item">
-                        <a class="breadcrumb-link" expr:href="data:blog.homepageUrl">
-                          <data:messages.home />
-                        </a>
+                        <a class="breadcrumb-link" expr:href="data:blog.homepageUrl"><data:messages.home /></a>
                       </li>
 
                       <b:comment>### Post page ###</b:comment>
@@ -2208,9 +2206,7 @@ body#layout .sidebar {
 
                       <b:if cond="data:view.search.query">
                         <li class="breadcrumb-item">
-                          <a class="breadcrumb-link" expr:href='path(data:blog.homepageUrl, "/search")'>
-                            Search
-                          </a>
+                          <a class="breadcrumb-link" expr:href='path(data:blog.homepageUrl, "/search")'>Search</a>
                         </li>
                         <li class="breadcrumb-item active">
                           Query:
@@ -2229,9 +2225,7 @@ body#layout .sidebar {
                       <b:if cond="data:view.isArchive">
                         <b:if cond="data:view.archive.month">
                           <li class="breadcrumb-item">
-                            <a class="breadcrumb-link" expr:href="data:blog.homepageUrl + data:view.archive.year">
-                              <data:view.archive.year />
-                            </a>
+                            <a class="breadcrumb-link" expr:href="data:blog.homepageUrl + data:view.archive.year"><data:view.archive.year /></a>
                           </li>
                           <li class="breadcrumb-item active"><data:view.archive.month /></li>
                           <b:else />
@@ -2294,9 +2288,7 @@ body#layout .sidebar {
                             <ul class="post-labels">
                               <b:loop index="i" values="data:post.labels" var="label">
                                 <li>
-                                  <a expr:href='params(data:label.url, { max-results: "12" })'>
-                                    <data:label.name />
-                                  </a>
+                                  <a expr:href='params(data:label.url, { max-results: "12" })'><data:label.name /></a>
                                 </li>
                               </b:loop>
                             </ul>
@@ -2436,9 +2428,7 @@ body#layout .sidebar {
                             <ul class="post-labels">
                               <b:loop index="i" values="data:post.labels" var="label">
                                 <li>
-                                  <a expr:href='params(data:label.url, { max-results: "12" })'>
-                                    <data:label.name />
-                                  </a>
+                                  <a expr:href='params(data:label.url, { max-results: "12" })'><data:label.name /></a>
                                 </li>
                               </b:loop>
                             </ul>
