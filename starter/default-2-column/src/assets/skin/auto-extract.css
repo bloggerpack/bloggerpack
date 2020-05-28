@@ -1201,12 +1201,6 @@ Main
 .comments-title small {
   font-size: 80%;
 }
-.comments-title small::before {
-  content: "\0028";
-}
-.comments-title small::after {
-  content: "\0029";
-}
 
 /**
  * Comment block

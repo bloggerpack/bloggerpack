@@ -640,7 +640,7 @@ const Tasks = {
         tabWidth: 2,
         useTabs: false,
         singleQuote: true,
-        htmlWhitespaceSensitivity: 'ignore'
+        htmlWhitespaceSensitivity: 'css'
       }))
       .pipe(replace(/(.*?)(<!-- prettier-ignore -->)\n/g, ''))
       .pipe(replace(/(.*?)(<asset>)\n/g, ''))

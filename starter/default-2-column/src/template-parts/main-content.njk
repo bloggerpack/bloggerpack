@@ -387,8 +387,7 @@
 
               <b:comment>=== Title ===</b:comment>
               <h1 class='comments-title'>
-                <data:messages.comments/>
-                <small><data:post.numberOfComments/></small>
+                <data:messages.comments/> <small>(<data:post.numberOfComments/>)</small>
               </h1>
 
               <b:comment>=== New comments are not allowed ===</b:comment>
@@ -1411,12 +1410,6 @@ Main
 
 .comments-title small {
   font-size: 80%;
-}
-.comments-title small::before {
-  content: "\0028";
-}
-.comments-title small::after {
-  content: "\0029";
 }
 
 /**
