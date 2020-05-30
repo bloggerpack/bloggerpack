@@ -177,21 +177,6 @@ Layout
   background-color: $(footer.background.color);
 }
 
-/* Sticky footer
-================================================= */
-
-.sticky-footer {
-  height: 100%;
-}
-.sticky-footer body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.sticky-footer .footer {
-  margin-top: auto;
-}
-
 /*# ==========================================================================
   # Extracted from: src/template-parts/footer-content.njk
   # ========================================================================== */
