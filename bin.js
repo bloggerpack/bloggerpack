@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-const fs = require('fs-extra');
-const spawn = require('child_process').spawn;
+const spawn = require('cross-spawn');
 const argv = process.argv.slice(2);
 const cwd = process.cwd();
 const gulpfile = 'node_modules/bloggerpack/gulpfile.bloggerpack.js';
