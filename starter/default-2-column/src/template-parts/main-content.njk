@@ -376,7 +376,7 @@
               </div>
 
               <b:comment>=== Body ===</b:comment>
-              <div class='post-body post-body-typography'>
+              <div class='post-body'>
                 <data:post.body/>
               </div>
 
@@ -398,7 +398,7 @@
               </h1>
 
               <b:comment>=== Body ===</b:comment>
-              <div class='post-body post-body-typography'>
+              <div class='post-body'>
                 <data:post.body/>
               </div>
 
@@ -1074,6 +1074,14 @@ Main
       type="color"
       default="#212121"
       value="#212121"/>
+
+  <Variable name="post.body.content.spacer"
+      description="Post body content spacer"
+      type="length"
+      min="0"
+      max="100px"
+      default="20px"
+      value="20px"/>
 </Group>
 */
 
@@ -1305,6 +1313,79 @@ Main
 .post-body:last-child {
   margin-bottom: 0;
 }
+
+/* stylelint-disable declaration-no-important, selector-max-type */
+
+/* === Reset margins === */
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6,
+.post-body p,
+.post-body ul,
+.post-body ol,
+.post-body dl,
+.post-body table:not(.tr-caption-container),
+.post-body blockquote,
+.post-body figure,
+.post-body pre,
+.post-body address,
+.post-body hr {
+  margin-top: $(post.body.content.spacer) !important;
+  margin-bottom: $(post.body.content.spacer) !important;
+}
+
+.post-body ul ul,
+.post-body ul ol,
+.post-body ol ol,
+.post-body ol ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.post-body blockquote,
+.post-body figure {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body > :first-child {
+  margin-top: 0 !important;
+}
+.post-body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* === Images === */
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-body .separator a:not([style*="clear: left"]):not([style*="clear:left"]):not([style*="clear: right"]):not([style*="clear:right"]) {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body .tr-caption-container .tr-caption {
+  padding-top: 10px;
+  font-size: 90%;
+}
+
+.post-body figure {
+  text-align: center;
+}
+.post-body figure figcaption {
+  margin-top: 10px;
+  font-size: 90%;
+}
+
+/* stylelint-enable */
 
 /* Comments
 ------------------------------------------------- */
@@ -1750,300 +1831,4 @@ Main
 .pager-link.pager-home {
   margin: 0 10px;
 }
-
-/* Post body typography
-------------------------------------------------- */
-
-/*
-<Group description="(Main) Blog posts: Post body typography">
-  <Variable name="post.body.spacer"
-      description="Post body spacer"
-      type="length"
-      min="0"
-      max="100px"
-      default="20px"
-      value="20px"/>
-
-  ----------------------
-
-  <Variable name="post.body.table.border.width"
-      description="Post body table border width"
-      type="length"
-      min="0"
-      max="100px"
-      default="1px"
-      value="1px"/>
-  <Variable name="post.body.table.border.color"
-      description="Post body table border color"
-      type="color"
-      default="#dddddd"
-      value="#dddddd"/>
-
-  ----------------------
-
-  <Variable name="post.body.blockquote.border.width"
-      description="Post body blockquote border width"
-      type="length"
-      min="0"
-      max="100px"
-      default="5px"
-      value="5px"/>
-  <Variable name="post.body.blockquote.border.color"
-      description="Post body blockquote border color"
-      type="color"
-      default="#eeeeee"
-      value="#eeeeee"/>
-
-  ----------------------
-
-  <Variable name="post.body.code.color"
-      description="Post body code color"
-      type="color"
-      default="#ff3860"
-      value="#ff3860"/>
-
-  <Variable name="post.body.code.background.color"
-      description="Post body code background color"
-      type="color"
-      default="#fafafa"
-      value="#fafafa"/>
-  <Variable name="post.body.code.border.radius"
-      description="Post body code border radius"
-      type="length"
-      min="0"
-      max="100px"
-      default="4px"
-      value="4px"/>
-
-  ----------------------
-
-  <Variable name="post.body.pre.color"
-      description="Post body pre color"
-      type="color"
-      default="#212121"
-      value="#212121"/>
-
-  <Variable name="post.body.pre.background.color"
-      description="Post body pre background color"
-      type="color"
-      default="#fafafa"
-      value="#fafafa"/>
-  <Variable name="post.body.pre.border.width"
-      description="Post body pre border width"
-      type="length"
-      min="0"
-      max="100px"
-      default="1px"
-      value="1px"/>
-  <Variable name="post.body.pre.border.color"
-      description="Post body pre border color"
-      type="color"
-      default="#eeeeee"
-      value="#eeeeee"/>
-  <Variable name="post.body.pre.border.radius"
-      description="Post body pre border radius"
-      type="length"
-      min="0"
-      max="100px"
-      default="4px"
-      value="4px"/>
-</Group>
-*/
-
-/* stylelint-disable declaration-no-important, selector-max-type */
-
-/**
- * Reset margins
- */
-
-.post-body-typography h1,
-.post-body-typography h2,
-.post-body-typography h3,
-.post-body-typography h4,
-.post-body-typography h5,
-.post-body-typography h6,
-.post-body-typography p,
-.post-body-typography ul,
-.post-body-typography ol,
-.post-body-typography dl,
-.post-body-typography table:not(.tr-caption-container),
-.post-body-typography blockquote,
-.post-body-typography pre,
-.post-body-typography figure,
-.post-body-typography address {
-  margin-top: $(post.body.spacer) !important;
-  margin-bottom: $(post.body.spacer) !important;
-}
-
-.post-body-typography ul ul,
-.post-body-typography ul ol,
-.post-body-typography ol ol,
-.post-body-typography ol ul {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.post-body-typography blockquote,
-.post-body-typography figure {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-.post-body-typography > :first-child {
-  margin-top: 0 !important;
-}
-.post-body-typography > :last-child {
-  margin-bottom: 0 !important;
-}
-
-/**
- * Images
- */
-
-.post-body-typography img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
-.post-body-typography .separator a:not([style*="clear: left"]):not([style*="clear:left"]):not([style*="clear: right"]):not([style*="clear:right"]) {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-.post-body-typography .tr-caption-container .tr-caption {
-  padding-top: 10px;
-  font-size: 90%;
-}
-
-.post-body-typography figure {
-  text-align: center;
-}
-.post-body-typography figure figcaption {
-  margin-top: 10px;
-  font-size: 90%;
-}
-
-/**
- * Lists
- */
-
-.post-body-typography dl:not([class]) dt {
-  font-weight: 700;
-}
-.post-body-typography dl:not([class]) dd {
-  margin-bottom: 10px;
-  margin-left: 0;
-}
-
-/**
- * Tables
- */
-
-.post-body-typography table:not([class]) {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  background-color: transparent;
-  border-collapse: collapse;
-}
-
-.post-body-typography table:not([class]) caption {
-  margin-top: 10px;
-  font-size: 90%;
-  text-align: inherit;
-  caption-side: bottom;
-}
-
-.post-body-typography table:not([class]) th,
-.post-body-typography table:not([class]) td {
-  padding: 8px;
-  vertical-align: top;
-  border: $(post.body.table.border.width) solid $(post.body.table.border.color);
-}
-.post-body-typography table:not([class]) th {
-  text-align: inherit;
-}
-
-.post-body-typography table:not([class]) thead th {
-  vertical-align: bottom;
-  border-bottom: $(post.body.table.border.width * 2) solid $(post.body.table.border.color);
-}
-
-.post-body-typography table:not([class]) tbody + tbody {
-  border-top: $(post.body.table.border.width * 2) solid $(post.body.table.border.color);
-}
-
-/**
- * Blockquotes
- */
-
-.post-body-typography blockquote:not([class]) {
-  padding: 10px 20px;
-  border-left: $(post.body.blockquote.border.width) solid $(post.body.blockquote.border.color);
-}
-
-.post-body-typography blockquote:not([class]) > :first-child {
-  margin-top: 0 !important;
-}
-.post-body-typography blockquote:not([class]) > :last-child {
-  margin-bottom: 0 !important;
-}
-
-/**
- * Code
- */
-
-.post-body-typography code {
-  padding: 2px 4px;
-  color: $(post.body.code.color);
-  font-size: 90%;
-  word-break: break-word;
-  background-color: $(post.body.code.background.color);
-  border: 0;
-  border-radius: $(post.body.code.border.radius);
-}
-
-.post-body-typography pre code {
-  padding: 0;
-  color: inherit;
-  font-size: inherit;
-  word-break: inherit;
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
-}
-
-.post-body-typography pre:not([class]) {
-  display: block;
-  padding: 15px;
-  overflow: auto;
-  color: $(post.body.pre.color);
-  font-size: 90%;
-  background-color: $(post.body.pre.background.color);
-  border: $(post.body.pre.border.width) solid $(post.body.pre.border.color);
-  border-radius: $(post.body.pre.border.radius);
-}
-
-/**
- * Summary
- */
-
-.post-body-typography summary {
-  display: list-item;
-  cursor: pointer;
-}
-
-/**
- * Address
- */
-
-.post-body-typography address:not([class]) {
-  font-style: normal;
-  line-height: inherit;
-}
-
-/* stylelint-enable */
 ::endskin::
