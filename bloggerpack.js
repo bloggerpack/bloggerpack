@@ -293,16 +293,18 @@ function templateCompile(opts) {
         content = trimNewlines.start(content);
         content = trimNewlines.end(content);
         content = stripIndent(content);
-        if (kwargs.tag_start && kwargs.tag_end) {
-          return `<!-- prettier-ignore -->
+
+        if (kwargs) {
+          if (kwargs.tag_start && kwargs.tag_end) {
+            return `<!-- prettier-ignore -->
 <asset>
 ${kwargs.tag_start}
 ${content}
 ${kwargs.tag_end}
 </asset>\n`;
-        }
-        if (kwargs.type === 'skin') {
-          return `<!-- prettier-ignore -->
+          }
+          if (kwargs.type === 'skin') {
+            return `<!-- prettier-ignore -->
 <asset>
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
@@ -312,9 +314,9 @@ ${content}
 </b:skin>
 </b:if>
 </asset>\n`;
-        }
-        if (kwargs.type === 'style') {
-          return `<!-- prettier-ignore -->
+          }
+          if (kwargs.type === 'style') {
+            return `<!-- prettier-ignore -->
 <asset>
 <b:if cond='!data:view.isLayoutMode'>
 <style>
@@ -322,9 +324,9 @@ ${content}
 </style>
 </b:if>
 </asset>\n`;
-        }
-        if (kwargs.type === 'script') {
-          return `<!-- prettier-ignore -->
+          }
+          if (kwargs.type === 'script') {
+            return `<!-- prettier-ignore -->
 <asset>
 <script>
 //<![CDATA[
@@ -332,8 +334,14 @@ ${content}
 //]]>
 </script>
 </asset>\n`;
+          }
+        } else {
+          return `<!-- prettier-ignore -->
+<asset>
+${content}
+</asset>\n`;
         }
-      }
+      } // fileTag
 
       this.blockTag = function (environment, body) {
         var body = body();

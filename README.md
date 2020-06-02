@@ -260,7 +260,7 @@ JS for the template here
 
 ### Including assets
 
-Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Skin](#skin), [CSS](#css), and [JS](#js).
+Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Skin](#skin), [CSS](#css), [JS](#js), and other CSS and JS assets.
 
 ```njk
 ::template::
@@ -282,7 +282,19 @@ Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including com
 Manual tag:
 
 ```njk
-{% asset tag_start="<b:if cond='!data:view.isLayoutMode'><style>", tag_end="</style></b:if>", "path/to/file.css" %}
+{%
+  asset
+    tag_start="<b:if cond='!data:view.isLayoutMode'><style>",
+    "path/to/file.css",
+    tag_end="</style></b:if>"
+%}
+
+{%
+  asset
+    tag_start="<script>//<![CDATA[",
+    "path/to/file.js",
+    tag_end="//]]></script>"
+%}
 ```
 
 Block tag:
@@ -296,6 +308,36 @@ Block tag:
 }
 </style>
 </b:if>
+{% endasset %}
+
+{% asset %}
+<script>
+//<![CDATA[
+console.log('Hello');
+//]]>
+</script>
+{% endasset %}
+```
+
+Block tag with multiple files:
+
+```njk
+{% asset %}
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+{% asset "path/to/file1.css" %}
+{% asset "path/to/file2.css" %}
+</style>
+</b:if>
+{% endasset %}
+
+{% asset %}
+<script>
+//<![CDATA[
+{% asset "path/to/file1.js" %}
+{% asset "path/to/file2.js" %}
+//]]>
+</script>
 {% endasset %}
 ```
 
