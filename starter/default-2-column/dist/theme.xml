@@ -48,6 +48,9 @@ Scaffolding
 
 /*
 <Group description="(Scaffolding)">
+  Body
+  ----------------------
+
   <Variable name="body.font"
       description="Body font"
       type="font"
@@ -67,6 +70,7 @@ Scaffolding
       default="#ffffff"
       value="#ffffff"/>
 
+  Inline text elements
   ----------------------
 
   <Variable name="link.color"
@@ -94,6 +98,7 @@ Scaffolding
       default="#ffeb3b"
       value="#ffeb3b"/>
 
+  Tables
   ----------------------
 
   <Variable name="table.border.width"
@@ -109,6 +114,7 @@ Scaffolding
       default="#dddddd"
       value="#dddddd"/>
 
+  Blockquotes
   ----------------------
 
   <Variable name="blockquote.border.width"
@@ -124,6 +130,7 @@ Scaffolding
       default="#eeeeee"
       value="#eeeeee"/>
 
+  Code
   ----------------------
 
   <Variable name="code.font"
@@ -206,6 +213,7 @@ Scaffolding
       default="4px"
       value="4px"/>
 
+  Horizontal rule
   ----------------------
 
   <Variable name="hr.margin.y"
@@ -545,7 +553,7 @@ address {
   line-height: inherit;
 }
 
-/* Content grouping
+/* Horizontal rule
 ================================================= */
 
 hr {
@@ -584,6 +592,7 @@ Layout
       default="20px"
       value="20px"/>
 
+  Container
   ----------------------
 
   <Variable name="container.max.width"
@@ -594,6 +603,7 @@ Layout
       default="960px"
       value="960px"/>
 
+  Header
   ----------------------
 
   <Variable name="header.padding.y"
@@ -610,6 +620,7 @@ Layout
       default="#222222"
       value="#222222"/>
 
+  Content
   ----------------------
 
   <Variable name="content.padding.y"
@@ -626,6 +637,7 @@ Layout
       default="transparent"
       value="transparent"/>
 
+  Footer
   ----------------------
 
   <Variable name="footer.padding.y"
@@ -766,6 +778,9 @@ Footer
 
 /*
 <Group description="(Footer) Nav">
+  Footer nav link
+  -----------------------
+
   <Variable name="footer.nav.link.font"
       description="Footer nav link font"
       type="font"
@@ -786,6 +801,10 @@ Footer
 </Group>
 */
 
+/**
+ * Footer nav list
+ */
+
 .footer-nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -795,9 +814,17 @@ Footer
   list-style: none;
 }
 
+/**
+ * Footer nav item
+ */
+
 .footer-nav-item:not(:last-child) {
   margin-right: 10px;
 }
+
+/**
+ * Footer nav link
+ */
 
 .footer-nav-link {
   display: block;
@@ -817,6 +844,9 @@ Footer
 
 /*
 <Group description="(Footer) Description">
+  Footer description base class
+  ----------------------
+
   <Variable name="footer.desc.font"
       description="Footer description font"
       type="font"
@@ -829,6 +859,9 @@ Footer
       type="color"
       default="#777777"
       value="#777777"/>
+
+  Footer description links
+  ----------------------
 
   <Variable name="footer.desc.link.color"
       description="Footer description link color"
@@ -843,11 +876,19 @@ Footer
 </Group>
 */
 
+/**
+ * Footer description base class
+ */
+
 .footer-description {
   color: $(footer.desc.color);
   font-size: $(footer.desc.font.size);
   font-family: $(footer.desc.font.family);
 }
+
+/**
+ * Footer description paragraphs
+ */
 
 .footer-description p {
   margin-top: 0;
@@ -857,6 +898,10 @@ Footer
 .footer-description p:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Footer description links
+ */
 
 .footer-description a {
   color: $(footer.desc.link.color);
@@ -878,6 +923,9 @@ Header
 
 /*
 <Group description="(Header) Title">
+  Header title base class
+  ----------------------
+
   <Variable name="header.title.font"
       description="Header title font"
       type="font"
@@ -885,6 +933,9 @@ Header
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
+  Header title link
+  ----------------------
 
   <Variable name="header.title.link.color"
       description="Header title link color"
@@ -899,6 +950,10 @@ Header
 </Group>
 */
 
+/**
+ * Header title base class
+ */
+
 .header-title {
   margin-top: 0;
   margin-bottom: 15px;
@@ -909,6 +964,10 @@ Header
 .header-title:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Header title link
+ */
 
 .header-title-link {
   display: inline-block;
@@ -926,6 +985,9 @@ Header
 
 /*
 <Group description="(Header) Nav">
+  Header nav base class
+  -----------------------
+
   <Variable name="header.nav.height"
       description="Header nav height (adjust based on the font)"
       type="length"
@@ -933,6 +995,9 @@ Header
       max="100px"
       default="24px"
       value="24px"/>
+
+  Header nav link
+  ----------------------
 
   <Variable name="header.nav.link.font"
       description="Header nav link font"
@@ -959,11 +1024,19 @@ Header
 </Group>
 */
 
+/**
+ * Header nav base class
+ */
+
 .header-nav {
   max-width: 100%;
   height: $(header.nav.height);
   overflow: hidden;
 }
+
+/**
+ * Header nav list
+ */
 
 .header-nav-list {
   display: flex;
@@ -976,9 +1049,17 @@ Header
   list-style: none;
 }
 
+/**
+ * Header nav item
+ */
+
 .header-nav-item:not(:last-child) {
   margin-right: 10px;
 }
+
+/**
+ * Header nav link
+ */
 
 .header-nav-link {
   display: block;
@@ -1012,6 +1093,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Breadcrumb">
+  Breadcrumb base class
+  ----------------------
+
   <Variable name="breadcrumb.padding.y"
       description="Breadcrumb padding Y"
       type="length"
@@ -1060,16 +1144,22 @@ Main
       default="4px"
       value="4px"/>
 
-  <Variable name="breadcrumb.active.color"
-      description="Breadcrumb active color"
+  Breadcrumb item
+  ----------------------
+
+  <Variable name="breadcrumb.item.active.color"
+      description="Breadcrumb item active color"
       type="color"
       default="#757575"
       value="#757575"/>
-  <Variable name="breadcrumb.separator.color"
-      description="Breadcrumb separator color"
+  <Variable name="breadcrumb.item.separator.color"
+      description="Breadcrumb item separator color"
       type="color"
       default="#757575"
       value="#757575"/>
+
+  Breadcrumb link
+  ----------------------
 
   <Variable name="breadcrumb.link.color"
       description="Breadcrumb link color"
@@ -1083,6 +1173,10 @@ Main
       value="$(link.hover.color)"/>
 </Group>
 */
+
+/**
+ * Breadcrumb base class
+ */
 
 .breadcrumb {
   display: flex;
@@ -1103,7 +1197,7 @@ Main
 }
 
 /**
- * Item
+ * Breadcrumb item
  */
 
 .breadcrumb-item {
@@ -1121,16 +1215,16 @@ Main
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 8px;
-  color: $(breadcrumb.separator.color);
+  color: $(breadcrumb.item.separator.color);
   content: "/";
 }
 
 .breadcrumb-item.active {
-  color: $(breadcrumb.active.color);
+  color: $(breadcrumb.item.active.color);
 }
 
 /**
- * Link
+ * Breadcrumb link
  */
 
 .breadcrumb-link {
@@ -1147,6 +1241,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Not found message">
+  Not found message base class
+  ----------------------
+
   <Variable name="nfm.padding.y"
       description="Not found message padding Y"
       type="length"
@@ -1202,6 +1299,10 @@ Main
 </Group>
 */
 
+/**
+ * Not found message base class
+ */
+
 .not-found-message {
   margin-bottom: $(layout.gutter);
   padding: $(nfm.padding.y) $(nfm.padding.x);
@@ -1222,6 +1323,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Posts">
+  Post base class
+  ----------------------
+
   <Variable name="post.padding"
       description="Post padding"
       type="length"
@@ -1255,6 +1359,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Post links
   ----------------------
 
   <Variable name="post.link.color"
@@ -1268,6 +1373,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post labels
   ----------------------
 
   <Variable name="post.labels.font"
@@ -1289,6 +1395,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post title
   ----------------------
 
   <Variable name="post.title.font"
@@ -1310,6 +1417,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post title single
   ----------------------
 
   <Variable name="post.title.single.font"
@@ -1325,6 +1433,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Post meta
   ----------------------
 
   <Variable name="post.meta.font"
@@ -1351,6 +1460,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post snippet
   ----------------------
 
   <Variable name="post.snippet.font"
@@ -1366,6 +1476,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Post featured image
   ----------------------
 
   <Variable name="post.featured.image.border.radius"
@@ -1376,6 +1487,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Post body
   ----------------------
 
   <Variable name="post.body.color"
@@ -1394,6 +1506,10 @@ Main
 </Group>
 */
 
+/**
+ * Post base class
+ */
+
 .post {
   margin-bottom: $(layout.gutter);
   padding: $(post.padding);
@@ -1407,7 +1523,7 @@ Main
 }
 
 /**
- * Links
+ * Post links
  */
 
 .post a {
@@ -1722,6 +1838,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Comments">
+  Comments base class
+  ----------------------
+
   <Variable name="comments.padding"
       description="Comments padding"
       type="length"
@@ -1755,6 +1874,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Comments title
   ----------------------
 
   <Variable name="comments.title.font"
@@ -1770,6 +1890,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Comment block
   ----------------------
 
   <Variable name="comment.block.margin"
@@ -1829,6 +1950,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Comment content
   ----------------------
 
   <Variable name="comment.author.badge.color"
@@ -1851,6 +1973,10 @@ Main
       value="4px"/>
 </Group>
 */
+
+/**
+ * Comments base class
+ */
 
 .comments {
   margin-bottom: $(layout.gutter);
@@ -1878,6 +2004,22 @@ Main
 
 .comments-title small {
   font-size: 80%;
+}
+
+/**
+ * Comment list
+ */
+
+.comment-list,
+.comment-list-children {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.comment-list-children > li {
+  margin-left: 30px;
 }
 
 /**
@@ -1914,26 +2056,6 @@ Main
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
   border-radius: 4px;
-}
-
-.comment-body .comment-warning {
-  margin-top: 0;
-}
-
-/**
- * Comment list
- */
-
-.comment-list,
-.comment-list-children {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.comment-list-children > li {
-  margin-left: 30px;
 }
 
 /**
@@ -2013,6 +2135,10 @@ Main
   font-size: 16px;
 }
 
+.comment-body .comment-warning {
+  margin-top: 0;
+}
+
 /* === Comment actions === */
 
 .comment-actions {
@@ -2066,6 +2192,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Pager">
+  Pager link
+  ----------------------
+
   <Variable name="pager.link.padding.y"
       description="Pager link padding Y"
       type="length"
@@ -2136,6 +2265,10 @@ Main
 </Group>
 */
 
+/**
+ * Pager base class
+ */
+
 .pager {
   display: flex;
   flex-wrap: nowrap;
@@ -2146,6 +2279,10 @@ Main
 .pager:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Pager link
+ */
 
 .pager-link {
   position: relative;
@@ -2188,6 +2325,9 @@ Sidebar
 
 /*
 <Group description="(Sidebar) Section">
+  Sidebar widget
+  ----------------------
+
   <Variable name="sidebar.widget.padding"
       description="Sidebar widget padding"
       type="length"
@@ -2241,6 +2381,10 @@ Sidebar
       value="#212121"/>
 </Group>
 */
+
+/**
+ * Sidebar widget
+ */
 
 .b-section-sidebar > .widget {
   margin-bottom: $(layout.gutter);
@@ -2327,8 +2471,9 @@ body#layout .sidebar {
           </a>
         </h1>
 
+        <b:comment>Show the section only if it has any widgets inside of it or has any visible widgets.</b:comment>
         <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
-          <b:section class="b-section-header" id="b-section-header" maxwidgets="1" name="Header section" showaddelement="no">
+          <b:section class="b-section-header" id="b-section-header" maxwidgets="1" name="Header" showaddelement="no">
             <b:widget id="PageList1" locked="true" title="Header nav" type="PageList" visible="true">
               <b:widget-settings>
                 <b:widget-setting name="pageListJson">
@@ -2376,7 +2521,7 @@ body#layout .sidebar {
       <div class="container">
         <div class="content-row">
           <main class="main" id="main">
-            <b:section class="b-section-main" id="b-section-main" maxwidgets="1" name="Main section" showaddelement="no">
+            <b:section class="b-section-main" id="b-section-main" maxwidgets="1" name="Main" showaddelement="no">
               <b:widget id="Blog1" locked="true" title="Blog Posts" type="Blog" visible="true">
                 <b:includable id="main" var="this">
                   <b:comment> ################################################## Breadcrumb ##################################################</b:comment>
@@ -3009,7 +3154,7 @@ function replyTo(id) {
                   <b:if cond="data:posts.notEmpty and !data:view.isPage">
                     <nav class="pager" id="pager">
                       <a class="pager-link pager-newer" role="button">
-                        <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0);"' name="href" />
+                        <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name="href" />
                         <b:class cond="!data:newerPageUrl" name="disabled" />
                         <data:messages.newer />
                       </a>
@@ -3020,7 +3165,7 @@ function replyTo(id) {
                       </a>
 
                       <a class="pager-link pager-older" role="button">
-                        <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0);"' name="href" />
+                        <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name="href" />
                         <b:class cond="!data:olderPageUrl" name="disabled" />
                         <data:messages.older />
                       </a>
@@ -3064,7 +3209,7 @@ function replyTo(id) {
             </b:section>
           </main>
           <aside class="sidebar" id="sidebar">
-            <b:section class="b-section-sidebar" id="b-section-sidebar" name="Sidebar section">
+            <b:section class="b-section-sidebar" id="b-section-sidebar" name="Sidebar">
               <b:widget id="BlogSearch1" locked="true" title="Search This Blog" type="BlogSearch" visible="true">
                 <b:includable id="main">
                   <b:include name="widget-title" />
@@ -3112,10 +3257,11 @@ function replyTo(id) {
       </div>
     </div>
 
+    <b:comment>Show footer only if the `b-section-footer` has any widgets inside of it or has any visible widgets.</b:comment>
     <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer")'>
       <footer class="footer" id="footer">
         <div class="container">
-          <b:section class="b-section-footer" id="b-section-footer" maxwidgets="2" name="Footer section" showaddelement="no">
+          <b:section class="b-section-footer" id="b-section-footer" maxwidgets="2" name="Footer" showaddelement="no">
             <b:widget id="LinkList1" locked="true" title="Footer nav" type="LinkList" visible="true">
               <b:widget-settings>
                 <b:widget-setting name="shownum" />

@@ -5,15 +5,21 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
+
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
     <title><data:view.title.escaped/></title>
     <b:include data='blog' name='all-head-content'/>
+
+    {# Go to blog settings to add Google Analytics. #}
     <b:include data='blog' name='google-analytics'/>
 
+    {# Main CSS (Sass) #}
     {% asset type="style", "@dist/css/style.css" %}
 
+    {# Main CSS (Skin) #}
     {% asset type="skin", "@dist/skin/skin.css" %}
 
+    {# This CSS adjusts the theme layout on the Blogger `Layout` page. #}
     {% asset %}
     <b:if cond='data:view.isLayoutMode'>
     <b:template-skin>
@@ -39,6 +45,7 @@
     </b:if>
     {% endasset %}
 
+    {# Go to `Blogger Theme Designer > Advanced > Add CSS` to add custom CSS. #}
     {% asset %}
     <b:if cond='data:skin.override and !data:view.isLayoutMode'>
     <style>
@@ -46,6 +53,7 @@
     </style>
     </b:if>
     {% endasset %}
+
   </head>
   <body>
 
@@ -83,6 +91,7 @@
       </div>
     </div>
 
+    <b:comment>Show footer only if the `b-section-footer` has any widgets inside of it or has any visible widgets.</b:comment>
     <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-footer")'>
       <footer class='footer' id='footer'>
         <div class='container'>
@@ -91,7 +100,9 @@
       </footer>
     </b:if>
 
+    {# Main JS #}
     {% asset type="script", "@dist/js/script.js" %}
+
   </body>
 </html>
 ::endtemplate::
@@ -113,6 +124,7 @@ Layout
       default="20px"
       value="20px"/>
 
+  Container
   ----------------------
 
   <Variable name="container.max.width"
@@ -123,6 +135,7 @@ Layout
       default="960px"
       value="960px"/>
 
+  Header
   ----------------------
 
   <Variable name="header.padding.y"
@@ -139,6 +152,7 @@ Layout
       default="#222222"
       value="#222222"/>
 
+  Content
   ----------------------
 
   <Variable name="content.padding.y"
@@ -155,6 +169,7 @@ Layout
       default="transparent"
       value="transparent"/>
 
+  Footer
   ----------------------
 
   <Variable name="footer.padding.y"

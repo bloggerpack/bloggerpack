@@ -5,8 +5,9 @@
   </a>
 </h1>
 
+<b:comment>Show the `b-section-header` only if it has any widgets inside of it or has any visible widgets.</b:comment>
 <b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-header")'>
-  <b:section class='b-section-header' id='b-section-header' maxwidgets='1' name='Header section' showaddelement='no'>
+  <b:section class='b-section-header' id='b-section-header' maxwidgets='1' name='Header' showaddelement='no'>
     {#==================================================
     Header nav (using PageList widget)
     ==================================================#}
@@ -70,6 +71,9 @@ Header
 
 /*
 <Group description="(Header) Title">
+  Header title base class
+  ----------------------
+
   <Variable name="header.title.font"
       description="Header title font"
       type="font"
@@ -77,6 +81,9 @@ Header
       family="$(body.font.family)"
       default="normal normal $(size) $(family)"
       value="normal normal $(size) $(family)"/>
+
+  Header title link
+  ----------------------
 
   <Variable name="header.title.link.color"
       description="Header title link color"
@@ -91,6 +98,10 @@ Header
 </Group>
 */
 
+/**
+ * Header title base class
+ */
+
 .header-title {
   margin-top: 0;
   margin-bottom: 15px;
@@ -100,6 +111,10 @@ Header
 .header-title:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Header title link
+ */
 
 .header-title-link {
   display: inline-block;
@@ -116,6 +131,9 @@ Header
 
 /*
 <Group description="(Header) Nav">
+  Header nav base class
+  -----------------------
+
   <Variable name="header.nav.height"
       description="Header nav height (adjust based on the font)"
       type="length"
@@ -123,6 +141,9 @@ Header
       max="100px"
       default="24px"
       value="24px"/>
+
+  Header nav link
+  ----------------------
 
   <Variable name="header.nav.link.font"
       description="Header nav link font"
@@ -149,11 +170,19 @@ Header
 </Group>
 */
 
+/**
+ * Header nav base class
+ */
+
 .header-nav {
   max-width: 100%;
   height: $(header.nav.height);
   overflow: hidden;
 }
+
+/**
+ * Header nav list
+ */
 
 .header-nav-list {
   display: flex;
@@ -166,9 +195,17 @@ Header
   list-style: none;
 }
 
+/**
+ * Header nav item
+ */
+
 .header-nav-item:not(:last-child) {
   margin-right: 10px;
 }
+
+/**
+ * Header nav link
+ */
 
 .header-nav-link {
   display: block;

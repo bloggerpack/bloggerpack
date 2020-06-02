@@ -6,6 +6,9 @@ Scaffolding
 
 /*
 <Group description="(Scaffolding)">
+  Body
+  ----------------------
+
   <Variable name="body.font"
       description="Body font"
       type="font"
@@ -25,6 +28,7 @@ Scaffolding
       default="#ffffff"
       value="#ffffff"/>
 
+  Inline text elements
   ----------------------
 
   <Variable name="link.color"
@@ -52,6 +56,7 @@ Scaffolding
       default="#ffeb3b"
       value="#ffeb3b"/>
 
+  Tables
   ----------------------
 
   <Variable name="table.border.width"
@@ -67,6 +72,7 @@ Scaffolding
       default="#dddddd"
       value="#dddddd"/>
 
+  Blockquotes
   ----------------------
 
   <Variable name="blockquote.border.width"
@@ -82,6 +88,7 @@ Scaffolding
       default="#eeeeee"
       value="#eeeeee"/>
 
+  Code
   ----------------------
 
   <Variable name="code.font"
@@ -164,6 +171,7 @@ Scaffolding
       default="4px"
       value="4px"/>
 
+  Horizontal rule
   ----------------------
 
   <Variable name="hr.margin.y"
@@ -494,7 +502,7 @@ address {
   line-height: inherit;
 }
 
-/* Content grouping
+/* Horizontal rule
 ================================================= */
 
 hr {

@@ -1,5 +1,5 @@
 ::template::
-<b:section class='b-section-footer' id='b-section-footer' maxwidgets='2' name='Footer section' showaddelement='no'>
+<b:section class='b-section-footer' id='b-section-footer' maxwidgets='2' name='Footer' showaddelement='no'>
   {#==================================================
   Footer nav (using LinkList widget)
   ==================================================#}
@@ -69,6 +69,9 @@ Footer
 
 /*
 <Group description="(Footer) Nav">
+  Footer nav link
+  -----------------------
+
   <Variable name="footer.nav.link.font"
       description="Footer nav link font"
       type="font"
@@ -89,6 +92,10 @@ Footer
 </Group>
 */
 
+/**
+ * Footer nav list
+ */
+
 .footer-nav-list {
   display: flex;
   flex-wrap: wrap;
@@ -98,9 +105,17 @@ Footer
   list-style: none;
 }
 
+/**
+ * Footer nav item
+ */
+
 .footer-nav-item:not(:last-child) {
   margin-right: 10px;
 }
+
+/**
+ * Footer nav link
+ */
 
 .footer-nav-link {
   display: block;
@@ -119,6 +134,9 @@ Footer
 
 /*
 <Group description="(Footer) Description">
+  Footer description base class
+  ----------------------
+
   <Variable name="footer.desc.font"
       description="Footer description font"
       type="font"
@@ -131,6 +149,9 @@ Footer
       type="color"
       default="#777777"
       value="#777777"/>
+
+  Footer description links
+  ----------------------
 
   <Variable name="footer.desc.link.color"
       description="Footer description link color"
@@ -145,11 +166,19 @@ Footer
 </Group>
 */
 
+/**
+ * Footer description base class
+ */
+
 .footer-description {
   color: $(footer.desc.color);
   font-size: $(footer.desc.font.size);
   font-family: $(footer.desc.font.family);
 }
+
+/**
+ * Footer description paragraphs
+ */
 
 .footer-description p {
   margin-top: 0;
@@ -158,6 +187,10 @@ Footer
 .footer-description p:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Footer description links
+ */
 
 .footer-description a {
   color: $(footer.desc.link.color);

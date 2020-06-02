@@ -1,5 +1,5 @@
 ::template::
-<b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main section' showaddelement='no'>
+<b:section class='b-section-main' id='b-section-main' maxwidgets='1' name='Main' showaddelement='no'>
   {#==================================================
   Blog widget
   - Breadcrumb
@@ -412,6 +412,8 @@
       Comments
       ##################################################</b:comment>
 
+      <b:comment>### Post page | Static page ###</b:comment>
+
       <b:if cond='data:view.isPost or data:view.isPage'>
         <b:loop values='data:posts' var='post'>
           <b:if cond='data:post.allowComments'>
@@ -638,7 +640,7 @@
       <b:if cond='data:posts.notEmpty and !data:view.isPage'>
         <nav class='pager' id='pager'>
           <a class='pager-link pager-newer' role='button'>
-            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "javascript:void(0);"' name='href'/>
+            <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href'/>
             <b:class cond='!data:newerPageUrl' name='disabled'/>
             <data:messages.newer/>
           </a>
@@ -649,7 +651,7 @@
           </a>
 
           <a class='pager-link pager-older' role='button'>
-            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "javascript:void(0);"' name='href'/>
+            <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href'/>
             <b:class cond='!data:olderPageUrl' name='disabled'/>
             <data:messages.older/>
           </a>
@@ -708,6 +710,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Breadcrumb">
+  Breadcrumb base class
+  ----------------------
+
   <Variable name="breadcrumb.padding.y"
       description="Breadcrumb padding Y"
       type="length"
@@ -756,16 +761,22 @@ Main
       default="4px"
       value="4px"/>
 
-  <Variable name="breadcrumb.active.color"
-      description="Breadcrumb active color"
+  Breadcrumb item
+  ----------------------
+
+  <Variable name="breadcrumb.item.active.color"
+      description="Breadcrumb item active color"
       type="color"
       default="#757575"
       value="#757575"/>
-  <Variable name="breadcrumb.separator.color"
-      description="Breadcrumb separator color"
+  <Variable name="breadcrumb.item.separator.color"
+      description="Breadcrumb item separator color"
       type="color"
       default="#757575"
       value="#757575"/>
+
+  Breadcrumb link
+  ----------------------
 
   <Variable name="breadcrumb.link.color"
       description="Breadcrumb link color"
@@ -779,6 +790,10 @@ Main
       value="$(link.hover.color)"/>
 </Group>
 */
+
+/**
+ * Breadcrumb base class
+ */
 
 .breadcrumb {
   display: flex;
@@ -798,7 +813,7 @@ Main
 }
 
 /**
- * Item
+ * Breadcrumb item
  */
 
 .breadcrumb-item {
@@ -814,16 +829,16 @@ Main
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 8px;
-  color: $(breadcrumb.separator.color);
+  color: $(breadcrumb.item.separator.color);
   content: "/";
 }
 
 .breadcrumb-item.active {
-  color: $(breadcrumb.active.color);
+  color: $(breadcrumb.item.active.color);
 }
 
 /**
- * Link
+ * Breadcrumb link
  */
 
 .breadcrumb-link {
@@ -839,6 +854,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Not found message">
+  Not found message base class
+  ----------------------
+
   <Variable name="nfm.padding.y"
       description="Not found message padding Y"
       type="length"
@@ -894,6 +912,10 @@ Main
 </Group>
 */
 
+/**
+ * Not found message base class
+ */
+
 .not-found-message {
   margin-bottom: $(layout.gutter);
   padding: $(nfm.padding.y) $(nfm.padding.x);
@@ -913,6 +935,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Posts">
+  Post base class
+  ----------------------
+
   <Variable name="post.padding"
       description="Post padding"
       type="length"
@@ -946,6 +971,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Post links
   ----------------------
 
   <Variable name="post.link.color"
@@ -959,6 +985,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post labels
   ----------------------
 
   <Variable name="post.labels.font"
@@ -980,6 +1007,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post title
   ----------------------
 
   <Variable name="post.title.font"
@@ -1001,6 +1029,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post title single
   ----------------------
 
   <Variable name="post.title.single.font"
@@ -1016,6 +1045,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Post meta
   ----------------------
 
   <Variable name="post.meta.font"
@@ -1042,6 +1072,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Post snippet
   ----------------------
 
   <Variable name="post.snippet.font"
@@ -1057,6 +1088,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Post featured image
   ----------------------
 
   <Variable name="post.featured.image.border.radius"
@@ -1067,6 +1099,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Post body
   ----------------------
 
   <Variable name="post.body.color"
@@ -1085,6 +1118,10 @@ Main
 </Group>
 */
 
+/**
+ * Post base class
+ */
+
 .post {
   margin-bottom: $(layout.gutter);
   padding: $(post.padding);
@@ -1097,7 +1134,7 @@ Main
 }
 
 /**
- * Links
+ * Post links
  */
 
 .post a {
@@ -1392,6 +1429,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Comments">
+  Comments base class
+  ----------------------
+
   <Variable name="comments.padding"
       description="Comments padding"
       type="length"
@@ -1425,6 +1465,7 @@ Main
       default="4px"
       value="4px"/>
 
+  Comments title
   ----------------------
 
   <Variable name="comments.title.font"
@@ -1440,6 +1481,7 @@ Main
       default="#212121"
       value="#212121"/>
 
+  Comment block
   ----------------------
 
   <Variable name="comment.block.margin"
@@ -1499,6 +1541,7 @@ Main
       default="$(link.hover.color)"
       value="$(link.hover.color)"/>
 
+  Comment content
   ----------------------
 
   <Variable name="comment.author.badge.color"
@@ -1521,6 +1564,10 @@ Main
       value="4px"/>
 </Group>
 */
+
+/**
+ * Comments base class
+ */
 
 .comments {
   margin-bottom: $(layout.gutter);
@@ -1547,6 +1594,22 @@ Main
 
 .comments-title small {
   font-size: 80%;
+}
+
+/**
+ * Comment list
+ */
+
+.comment-list,
+.comment-list-children {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.comment-list-children > li {
+  margin-left: 30px;
 }
 
 /**
@@ -1582,26 +1645,6 @@ Main
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
   border-radius: 4px;
-}
-
-.comment-body .comment-warning {
-  margin-top: 0;
-}
-
-/**
- * Comment list
- */
-
-.comment-list,
-.comment-list-children {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.comment-list-children > li {
-  margin-left: 30px;
 }
 
 /**
@@ -1674,6 +1717,10 @@ Main
   font-size: 16px;
 }
 
+.comment-body .comment-warning {
+  margin-top: 0;
+}
+
 /* === Comment actions === */
 
 .comment-actions {
@@ -1724,6 +1771,9 @@ Main
 
 /*
 <Group description="(Main) Blog posts: Pager">
+  Pager link
+  ----------------------
+
   <Variable name="pager.link.padding.y"
       description="Pager link padding Y"
       type="length"
@@ -1794,6 +1844,10 @@ Main
 </Group>
 */
 
+/**
+ * Pager base class
+ */
+
 .pager {
   display: flex;
   flex-wrap: nowrap;
@@ -1803,6 +1857,10 @@ Main
 .pager:last-child {
   margin-bottom: 0;
 }
+
+/**
+ * Pager link
+ */
 
 .pager-link {
   position: relative;
