@@ -204,7 +204,7 @@ function jsExtract(content) {
 
 function templateCompile(opts) {
   var defaults = {
-    extract: true
+    extractAssetModule: false
   };
   opts = mergeOptions(defaults, opts);
 	return through.obj(function (file, enc, cb) {
@@ -256,7 +256,7 @@ function templateCompile(opts) {
         moduleCss = moduleCss !== '' ? '\n' + header + moduleCss + '\n' : '';
         moduleJs = moduleJs !== '' ? '\n' + header + moduleJs + '\n' : '';
 
-        if (opts.extract === true) {
+        if (opts.extractAssetModule === true) {
           if (kwargs) {
             if (kwargs.type === 'module') {
               fs.appendFileSync(path.join(ExtractSkin.DEST, ExtractSkin.OUTPUT), moduleSkin);
@@ -385,7 +385,7 @@ ${body}
     try {
       compile.renderString(contents, njkContext, function (err, res) {
         if (err) {
-          console.log(err);
+          if (opts.extractAssetModule === false) console.log(err);
           return cb();
         }
         file.contents = new Buffer.from(res);
@@ -629,15 +629,15 @@ const Tasks = {
     }
     cb();
   },
-  templateCompile: function () {
+  templateCompileExtractAssetModule: function () {
     return src(Template.SRC)
-      .pipe(templateCompile({extract: true}))
+      .pipe(templateCompile({extractAssetModule: true}))
       .pipe(rename(Template.OUTPUT))
       .pipe(dest(Template.DEST, {overwrite: true}));
   },
-  templateCompile2: function () {
+  templateCompile: function () {
     return src(Template.SRC)
-      .pipe(templateCompile({extract: false}))
+      .pipe(templateCompile({extractAssetModule: false}))
       .pipe(replace(/\<img\>/g, '\<b:tag name=\'img\'\>'))
       .pipe(replace(/\<\/img\>/g, '\<\/b:tag\>'))
       .pipe(replace(/\<input\>/g, '\<b:tag name=\'input\'\>'))
@@ -678,7 +678,7 @@ const build = series(
   Tasks.jsExtractEmpty,
 
   Tasks.cleanTemplateCompile,
-  Tasks.templateCompile,
+  Tasks.templateCompileExtractAssetModule,
 
   Tasks.skinLint,
   Tasks.cleanSkinCompile,
@@ -693,7 +693,7 @@ const build = series(
   Tasks.jsCompile,
 
   Tasks.cleanTemplateCompile,
-  Tasks.templateCompile2
+  Tasks.templateCompile
 );
 
 /**
