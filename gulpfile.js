@@ -36,9 +36,12 @@ const blk = 'blank';
 const bs4 = 'bootstrap4';
 
 function zipTheme(name) {
-  return src(path.join('starter', name, '**/{*,.*}'))
+  return src([
+      path.join('starter', name, '**/{*,.*}'),
+      '!starter/**/node_modules/**'
+    ])
     .pipe(zip('archive.zip'))
-    .pipe(rename(name + '-(' + pkg.name + '-' + pkg.version + ').zip'))
+    .pipe(rename(name + '___' + pkg.name + '-' + pkg.version + '.zip'))
     .pipe(dest('starter-zip'))
 }
 
