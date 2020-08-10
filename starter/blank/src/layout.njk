@@ -1,0 +1,65 @@
+{% parent %}
+
+::template::
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+
+  <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+
+  <title><data:view.title.escaped/></title>
+
+  <b:include data='blog' name='all-head-content'/>
+
+  {# Main CSS (Sass) #}
+  {% asset type="style", "@dist/sass/style.css" %}
+
+  {# Main CSS (Skin) #}
+  {% asset type="skin", "@dist/skin/skin.css" %}
+
+  {# Layout Mode CSS #}
+  {% asset %}
+    <b:if cond='data:view.isLayoutMode'>
+    <b:template-skin>
+    <![CDATA[
+    /* CSS here */
+    ]]>
+    </b:template-skin>
+    </b:if>
+  {% endasset %}
+
+  {# Go to blog settings to add Google Analytics. #}
+  <b:include data='blog' name='google-analytics'/>
+
+</head>
+<body>
+
+  {% block header %}{% endblock %}
+
+  {% block content %}{% endblock %}
+
+  {% block footer %}{% endblock %}
+
+  {# Main JS #}
+  {% asset type="script", "@dist/js/script.js" %}
+
+  <b:comment>
+    <!--
+      FAKE SECTION
+
+      Blogger theme requires at least one `<b:section>` with `showaddelement='yes'`.
+
+      Note: the default value of `showaddelement` is `yes`.
+    -->
+  </b:comment>
+
+  <b:if cond='!data:view.isLayoutMode and (data:blog.view == "NeverAccessThisView")'>
+    <b:section id='fake-section' showaddelement='yes'/>
+  </b:if>
+
+</body>
+</html>
+::endtemplate::
+
+{% endparent %}

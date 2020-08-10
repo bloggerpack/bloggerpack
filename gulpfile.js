@@ -8,7 +8,7 @@ const replace = require('gulp-replace');
 const debug = require('gulp-debug');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-const Changes = {
+const CHANGES = {
   templateBloggerpackVersion: function () {
     return src('starter/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
@@ -27,27 +27,36 @@ const Changes = {
 };
 
 exports.change_version = series(
-  Changes.templateBloggerpackVersion,
-  Changes.templateDownloadVersion,
-  Changes.packageCurrentVersion
+  CHANGES.templateBloggerpackVersion,
+  CHANGES.templateDownloadVersion,
+  CHANGES.packageCurrentVersion
 );
 
-const st1 = 'default-2-column';
+const blk = 'blank';
+const bs4 = 'bootstrap4';
 
-const Zip = {
-  cleanStarterZip: function (cb) {
+function zipTheme(name) {
+  return src(path.join('starter', name, '**/{*,.*}'))
+    .pipe(zip('archive.zip'))
+    .pipe(rename(name + '-(' + pkg.name + '-' + pkg.version + ').zip'))
+    .pipe(dest('starter-zip'))
+}
+
+const ZIP = {
+  cleanStarter: function (cb) {
     del.sync('starter-zip');
     cb();
   },
-  st1: function () {
-    return src(path.join('starter', st1, '**/{*,.*}'))
-      .pipe(zip('archive.zip'))
-      .pipe(rename(pkg.name + '-' + pkg.version + '_' + st1 + '.zip'))
-      .pipe(dest('starter-zip'))
+  blk: function () {
+    return zipTheme(blk);
+  },
+  bs4: function () {
+    return zipTheme(bs4);
   }
 };
 
 exports.zip_starter = series(
-  Zip.cleanStarterZip,
-  Zip.st1
+  ZIP.cleanStarter,
+  ZIP.blk,
+  ZIP.bs4
 );

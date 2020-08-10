@@ -1,0 +1,18 @@
+::template::
+{# Sidebar widget example (using `HTML` widget) #}
+<b:widget id='HTML2' locked='false' title='HTML gadget' type='HTML' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      <![CDATA[
+        <p>Hello, world!</p>
+      ]]>
+    </b:widget-setting>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>
+::endtemplate::

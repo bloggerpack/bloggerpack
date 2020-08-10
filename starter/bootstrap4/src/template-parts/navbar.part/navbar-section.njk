@@ -1,0 +1,20 @@
+::template::
+<b:comment>Show the `b-section-navbar-left` if it has any widgets or has any visible widgets.</b:comment>
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-left")'>
+  <b:section class='d-lg-flex align-items-lg-center' id='b-section-navbar-left' name='Navbar left section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then uncheck the (Visible) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar right section).' showaddelement='no'>
+    {% template "template-parts/navbar.part/navbar-section.part/labels.njk" %}
+    {% template "template-parts/navbar.part/navbar-section.part/page-list.njk" %}
+    {% template "template-parts/navbar.part/navbar-section.part/link-list.njk" %}
+  </b:section>
+</b:if>
+
+<b:comment>Show the `b-section-navbar-right` if it has any widgets or has any visible widgets.</b:comment>
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "b-section-navbar-right")'>
+  <b:section class='ml-auto d-lg-flex align-items-lg-center' id='b-section-navbar-right' name='Navbar right section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then uncheck the (Visible) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar left section).' showaddelement='no'>
+    {% template "template-parts/navbar.part/navbar-section.part/search-form.njk" %}
+    {% template "template-parts/navbar.part/navbar-section.part/profile.njk" %}
+    {% template "template-parts/navbar.part/navbar-section.part/contact-form.njk" %}
+    {% template "template-parts/navbar.part/navbar-section.part/follow-by-email.njk" %}
+  </b:section>
+</b:if>
+::endtemplate::

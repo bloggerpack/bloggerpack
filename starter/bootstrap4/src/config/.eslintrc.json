@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "rules": {
+    "capitalized-comments": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "MemberExpression": "off",
+        "SwitchCase": 1
+      }
+    ],
+    "max-params": [
+      "warn",
+      5
+    ],
+    "multiline-ternary": [
+      "error",
+      "always-multiline"
+    ],
+    "new-cap": "off",
+    "no-console": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "prefer-named-capture-group": "off"
+  }
+}

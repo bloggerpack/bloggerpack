@@ -1,0 +1,14 @@
+::template::
+<div class='py-3 py-lg-5' id='content'>
+  <div class='container'>
+    <div class='row'>
+      <main class='col-12 col-lg-8 mb-3 mb-lg-0' id='main'>
+        {% template "template-parts/content.part/main-section.njk" %}
+      </main>
+      <aside class='col-12 col-lg-4' id='sidebar'>
+        {% template "template-parts/content.part/sidebar-section.njk" %}
+      </aside>
+    </div>
+  </div>
+</div>
+::endtemplate::

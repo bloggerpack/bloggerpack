@@ -50,7 +50,7 @@
 ## Usage
 
 | [Download starter themes](starter) |
-| -------------------------------------- |
+| ---------------------------------- |
 
 ## Folder structure
 
@@ -66,13 +66,13 @@ module.exports = {
     src:  './src/index.njk',
     dist: './dist/theme.xml'
   },
+  sass: {
+    src:  './src/assets/sass/index.scss',
+    dist: './src/@dist/sass/style.css'
+  },
   skin: {
     src:  './src/assets/skin/index.css',
     dist: './src/@dist/skin/skin.css'
-  },
-  css: {
-    src:  './src/assets/css/index.scss',
-    dist: './src/@dist/css/style.css'
   },
   js: {
     src:  './src/assets/js/index.js',
@@ -82,8 +82,7 @@ module.exports = {
     data:      './src/config/data.json',
     banner:    './src/config/banner.txt',
     stylelint: './src/config/.stylelintrc',
-    eslint:    './src/config/.eslintrc.json',
-    babel:     './src/config/.babelrc.js'
+    eslint:    './src/config/.eslintrc.json'
   }
 };
 ````
@@ -96,21 +95,20 @@ The folder structure:
 |   └── theme.xml <----------------------|
 ├── src/                                 |
 |   ├── @dist/                           |
-|   |   ├── css/                         |
+|   |   ├── sass/                        |
 |   |   |   └── style.css <----------|   |
 |   |   ├── js/                      |   |
 |   |   |   └── script.js <------|   |   |
 |   |   └── skin/                |   |   |
 |   |       └── skin.css <---│   |   |   |
 |   ├── assets/              │   |   |   |
-|   |   ├── css/             │   |   |   |
+|   |   ├── sass/            │   |   |   |
 |   |   |   └── index.scss --|---|-->|   |
 |   |   ├── js/              |   |       |
 |   |   |   └── index.js ----|-->|       |
 |   |   └── skin/            |           |
 |   |       └── index.css -->|           |
 |   ├── config/                          |
-|   |   ├── .babelrc.js                  |
 |   |   ├── .eslintrc.json               |
 |   |   ├── .stylelintrc                 |
 |   |   ├── banner.txt                   |
@@ -147,10 +145,6 @@ The default config is recommended, but if you want to change the config you can 
 
 The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
 
-#### src/config/.babelrc.js
-
-The default config is recommended, but if you want to change the config you can read the [Babel docs](https://babeljs.io/docs/en/).
-
 ---
 
 <h3 align="center">Concepts</h3>
@@ -158,9 +152,9 @@ The default config is recommended, but if you want to change the config you can 
 <p align="center">
   <a href="#template">Template</a>
   ·
-  <a href="#skin">Skin</a>
+  <a href="#sass">Sass</a>
   ·
-  <a href="#css">CSS</a>
+  <a href="#skin">Skin</a>
   ·
   <a href="#js">JS</a>
 </p>
@@ -243,30 +237,30 @@ If you want to create package for Bloggerpack, below is example of `package-name
 Template here
 ::endtemplate::
 
+::sass::
+CSS for the template here
+::endsass::
+
 ::skin::
 Skin for the template here
 ::endskin::
-
-::css::
-CSS for the template here
-::endcss::
 
 ::js::
 JS for the template here
 ::endjs::
 ```
 
-[Skin](#skin-in-template), [CSS](#css-in-template), and [JS](#js-in-template) are optional.
+[Sass](#sass-in-template), [Skin](#skin-in-template), and [JS](#js-in-template) are optional.
 
 ### Including assets
 
-Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Skin](#skin), [CSS](#css), [JS](#js), and other CSS and JS assets.
+Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets.
 
 ```njk
 ::template::
 <head>
-  {# CSS first #}
-  {% asset type="style", "@dist/css/style.css" %}
+  {# CSS/Sass first #}
+  {% asset type="style", "@dist/sass/style.css" %}
   {# Skin #}
   {% asset type="skin", "@dist/skin/skin.css" %}
 </head>
@@ -387,6 +381,39 @@ This is footer content.
 ::endtemplate::
 ```
 
+## Sass
+
+Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
+
+### Default config [#](#folder-structure)
+
+- Index file: `src/assets/sass/index.scss`
+- Compiled to: `src/@dist/sass/style.css`
+
+### Partialize
+
+Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/assets/sass/` and than import the file to `index.scss` using `@import "my-component";`.
+
+### Sass-in-Template
+
+You can write CSS for specific template in the template file directly using `::sass::`-`::endsass::` tag.
+
+```njk
+::template::
+<h1 class='example'>Example</h1>
+::endtemplate::
+
+::sass::
+$heading-color: #fff !default;
+
+.example {
+  color: $heading-color;
+}
+::endsass::
+```
+
+The styles within the tag would be automatically extracted to `src/assets/sass/_auto-extract.scss`.
+
 ## Skin
 
 Skin is CSS that support Blogger's skin variables to allow your theme to be able to customize through the Blogger theme designer.
@@ -425,39 +452,6 @@ You can write skin CSS for specific template in the template file directly using
 ```
 
 The styles within the tag would be automatically extracted to `src/assets/skin/auto-extract.css`.
-
-## CSS
-
-Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
-
-### Default config [#](#folder-structure)
-
-- Index file: `src/assets/css/index.scss`
-- Compiled to: `src/@dist/css/style.css`
-
-### Partialize
-
-Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/assets/css/` and than import the file to `index.scss` using `@import "my-component";`.
-
-### CSS-in-Template
-
-You can write CSS for specific template in the template file directly using `::css::`-`::endcss::` tag.
-
-```njk
-::template::
-<h1 class='example'>Example</h1>
-::endtemplate::
-
-::css::
-$heading-color: #fff !default;
-
-.example {
-  color: $heading-color;
-}
-::endcss::
-```
-
-The styles within the tag would be automatically extracted to `src/assets/css/_auto-extract.scss`.
 
 ## JS
 

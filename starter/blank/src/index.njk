@@ -1,0 +1,15 @@
+::template::
+{% extends "layout.njk" %}
+
+{% block header %}
+{% template "template-parts/header.njk" %}
+{% endblock %}
+
+{% block content %}
+{% template "template-parts/content.njk" %}
+{% endblock %}
+
+{% block footer %}
+{% template "template-parts/footer.njk" %}
+{% endblock %}
+::endtemplate::

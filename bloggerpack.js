@@ -8,28 +8,29 @@ const stripIndent = require('strip-indent');
 const stripCssComments = require('strip-css-comments');
 const del = require('del');
 
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const sourcemaps = require('gulp-sourcemaps');
+const log = require('gulplog');
 const debug = require('gulp-debug');
 const header = require('gulp-header');
 const concat = require('gulp-concat');
+
 const stylelint = require('gulp-stylelint');
 const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const cleancss = require('gulp-clean-css');
-const eslint = require('gulp-eslint');
-const rollup = require('gulp-better-rollup');
-const terser = require('gulp-terser');
-const prettier = require('gulp-prettier');
 
+const eslint = require('gulp-eslint');
+const browserify = require('browserify');
+const terser = require('gulp-terser');
+
+const nunjucks = require('nunjucks');
 sass.compiler = require('node-sass');
 const atImport = require('postcss-import');
 const autoprefixer = require('autoprefixer');
-const nunjucks = require('nunjucks');
-const babel = require('rollup-plugin-babel');
-const resolve = require('@rollup/plugin-node-resolve');
-const commonjs = require('@rollup/plugin-commonjs');
 
 /**
  * ------------------------------------------------------------------------
@@ -44,8 +45,8 @@ const Path = {
   TEMPLATE_DIST: path.parse(CONFIG.template.dist),
   SKIN_SRC: path.parse(CONFIG.skin.src),
   SKIN_DIST: path.parse(CONFIG.skin.dist),
-  CSS_SRC: path.parse(CONFIG.css.src),
-  CSS_DIST: path.parse(CONFIG.css.dist),
+  SASS_SRC: path.parse(CONFIG.sass.src),
+  SASS_DIST: path.parse(CONFIG.sass.dist),
   JS_SRC: path.parse(CONFIG.js.src),
   JS_DIST: path.parse(CONFIG.js.dist)
 };
@@ -66,12 +67,12 @@ const Skin = {
   TAG_END: '::endskin::'
 };
 
-const Css = {
-  SRC: CONFIG.css.src,
-  OUTPUT: Path.CSS_DIST.base,
-  DEST: Path.CSS_DIST.dir,
-  TAG_START: '::css::',
-  TAG_END: '::endcss::'
+const Sass = {
+  SRC: CONFIG.sass.src,
+  OUTPUT: Path.SASS_DIST.base,
+  DEST: Path.SASS_DIST.dir,
+  TAG_START: '::sass::',
+  TAG_END: '::endsass::'
 };
 
 const Js = {
@@ -96,10 +97,10 @@ const ExtractSkin = {
   FOOTER: '\n'
 };
 
-const ExtractCss = {
+const ExtractSass = {
   SRC: ['**/*.njk', '!**/node_modules/**/*.njk'],
   OUTPUT: '_auto-extract.scss',
-  DEST: Path.CSS_SRC.dir,
+  DEST: Path.SASS_SRC.dir,
   HEADER: ExtractHeader,
   FOOTER: '\n'
 };
@@ -180,8 +181,8 @@ function skinExtract(content) {
   return content;
 }
 
-function cssExtract(content) {
-  var pattern = new RegExp(`${Css.TAG_START}((.|\\n)*?)${Css.TAG_END}`);
+function sassExtract(content) {
+  var pattern = new RegExp(`${Sass.TAG_START}((.|\\n)*?)${Sass.TAG_END}`);
   content = pattern.exec(content);
   content = content ? content[1] : '';
   content = trimNewlines.start(content);
@@ -249,18 +250,18 @@ function templateCompile(opts) {
 
         var header = ExtractHeader.replace(/<filepath>/g, file);
         var moduleSkin = skinExtract(content);
-        var moduleCss = cssExtract(content);
+        var moduleSass = sassExtract(content);
         var moduleJs = jsExtract(content);
 
         moduleSkin = moduleSkin !== '' ? '\n' + header + moduleSkin + '\n' : '';
-        moduleCss = moduleCss !== '' ? '\n' + header + moduleCss + '\n' : '';
+        moduleSass = moduleSass !== '' ? '\n' + header + moduleSass + '\n' : '';
         moduleJs = moduleJs !== '' ? '\n' + header + moduleJs + '\n' : '';
 
         if (opts.extractAssetModule === true) {
           if (kwargs) {
             if (kwargs.type === 'module') {
               fs.appendFileSync(path.join(ExtractSkin.DEST, ExtractSkin.OUTPUT), moduleSkin);
-              fs.appendFileSync(path.join(ExtractCss.DEST, ExtractCss.OUTPUT), moduleCss);
+              fs.appendFileSync(path.join(ExtractSass.DEST, ExtractSass.OUTPUT), moduleSass);
               fs.appendFileSync(path.join(ExtractJs.DEST, ExtractJs.OUTPUT), moduleJs);
             }
           }
@@ -296,50 +297,35 @@ function templateCompile(opts) {
 
         if (kwargs) {
           if (kwargs.tag_start && kwargs.tag_end) {
-            return `<!-- prettier-ignore -->
-<asset>
-${kwargs.tag_start}
+            return `${kwargs.tag_start}
 ${content}
-${kwargs.tag_end}
-</asset>\n`;
+${kwargs.tag_end}\n`;
           }
           if (kwargs.type === 'skin') {
-            return `<!-- prettier-ignore -->
-<asset>
-<b:if cond='!data:view.isLayoutMode'>
+            return `<b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
 ${content}
 ]]>
 </b:skin>
-</b:if>
-</asset>\n`;
+</b:if>\n`;
           }
           if (kwargs.type === 'style') {
-            return `<!-- prettier-ignore -->
-<asset>
-<b:if cond='!data:view.isLayoutMode'>
+            return `<b:if cond='!data:view.isLayoutMode'>
 <style>
 ${content}
 </style>
-</b:if>
-</asset>\n`;
+</b:if>\n`;
           }
           if (kwargs.type === 'script') {
-            return `<!-- prettier-ignore -->
-<asset>
-<script>
+            return `<script>
 //<![CDATA[
 ${content}
 //]]>
-</script>
-</asset>\n`;
+</script>\n`;
           }
         } else {
-          return `<!-- prettier-ignore -->
-<asset>
-${content}
-</asset>\n`;
+          return `${content}\n`;
         }
       } // fileTag
 
@@ -349,10 +335,7 @@ ${content}
         body = trimNewlines.end(body);
         body = stripIndent(body);
 
-        body = `<!-- prettier-ignore -->
-<asset>
-${body}
-</asset>\n`;
+        body = `${body}\n`;
 
         return new nunjucks.runtime.SafeString(body);
       }
@@ -439,12 +422,12 @@ const Tasks = {
     del.sync([path.join(Skin.DEST, Skin.OUTPUT)]);
     cb();
   },
-  cleanCssExtract: function (cb) {
-    del.sync([path.join(ExtractCss.DEST, ExtractCss.OUTPUT)]);
+  cleanSassExtract: function (cb) {
+    del.sync([path.join(ExtractSass.DEST, ExtractSass.OUTPUT)]);
     cb();
   },
-  cleanCssCompile: function (cb) {
-    del.sync([path.join(Css.DEST, Css.OUTPUT)]);
+  cleanSassCompile: function (cb) {
+    del.sync([path.join(Sass.DEST, Sass.OUTPUT)]);
     cb();
   },
   cleanJsExtract: function (cb) {
@@ -456,7 +439,7 @@ const Tasks = {
     cb();
   },
   skinExtract: function () {
-    let extractOpts = {
+    var extractOpts = {
       start: Skin.TAG_START,
       end: Skin.TAG_END,
       header: ExtractSkin.HEADER,
@@ -468,7 +451,10 @@ const Tasks = {
       .pipe(dest(ExtractSkin.DEST, {overwrite: true}));
   },
   skinLint: function () {
-    return src(path.join(Path.SKIN_SRC.dir, '/**/*.css'), {allowEmpty: true})
+    return src([
+        path.join(Path.SKIN_SRC.dir, '/**/*.css'),
+        '!' + Skin.SRC
+      ], {allowEmpty: true})
       .pipe(stylelint({
         configFile: CONFIG.configFile.stylelint,
         ignoreDisables: false,
@@ -513,20 +499,20 @@ const Tasks = {
     }
     cb();
   },
-  cssExtract: function () {
-    let extractOpts = {
-      start: Css.TAG_START,
-      end: Css.TAG_END,
-      header: ExtractCss.HEADER,
-      footer: ExtractCss.FOOTER
+  sassExtract: function () {
+    var extractOpts = {
+      start: Sass.TAG_START,
+      end: Sass.TAG_END,
+      header: ExtractSass.HEADER,
+      footer: ExtractSass.FOOTER
     };
-    return src([...ExtractCss.SRC], {allowEmpty: true})
+    return src([...ExtractSass.SRC], {allowEmpty: true})
       .pipe(extract(extractOpts))
-      .pipe(concat(ExtractCss.OUTPUT))
-      .pipe(dest(ExtractCss.DEST, {overwrite: true}));
+      .pipe(concat(ExtractSass.OUTPUT))
+      .pipe(dest(ExtractSass.DEST, {overwrite: true}));
   },
-  cssLint: function () {
-    return src(path.join(Path.CSS_SRC.dir, '/**/*.scss'), {allowEmpty: true})
+  sassLint: function () {
+    return src(path.join(Path.SASS_SRC.dir, '/**/*.scss'), {allowEmpty: true})
       .pipe(stylelint({
         configFile: CONFIG.configFile.stylelint,
         ignoreDisables: false,
@@ -542,8 +528,8 @@ const Tasks = {
         failAfterError: true
       }));
   },
-  cssCompile: function () {
-    return src(Css.SRC)
+  sassCompile: function () {
+    return src(Sass.SRC)
       //map .pipe(sourcemaps.init())
       .pipe(sass({
         outputStyle: 'expanded',
@@ -561,20 +547,20 @@ const Tasks = {
         level: 1,
         format: {breakWith: 'lf'}
       }))
-      .pipe(rename(Css.OUTPUT))
+      .pipe(rename(Sass.OUTPUT))
       //map .pipe(sourcemaps.write('.', {includeContent: true}))
       .pipe(trimFinalNewlines())
-      .pipe(dest(Css.DEST, {overwrite: true}));
+      .pipe(dest(Sass.DEST, {overwrite: true}));
   },
-  cssExtractEmpty: function (cb) {
-    var file = path.join(ExtractCss.DEST, ExtractCss.OUTPUT);
+  sassExtractEmpty: function (cb) {
+    var file = path.join(ExtractSass.DEST, ExtractSass.OUTPUT);
     if (fs.existsSync(file) !== true) {
-      fs.writeFileSync(file, '// CSS-in-Template is empty\n');
+      fs.writeFileSync(file, '// Sass-in-Template is empty\n');
     }
     cb();
   },
   jsExtract: function () {
-    let extractOpts = {
+    var extractOpts = {
       start: Js.TAG_START,
       end: Js.TAG_END,
       header: ExtractJs.HEADER,
@@ -595,18 +581,22 @@ const Tasks = {
       .pipe(eslint.failAfterError());
   },
   jsCompile: function () {
-    return src(Js.SRC)
+    var b = browserify({
+      entries: Js.SRC,
+      debug: true,
+      transform: [
+        ['babelify', {
+          'presets': ['@babel/preset-env'],
+          'plugins': ['babel-plugin-root-import']
+        }]
+      ]
+    });
+
+    return b.bundle()
+      .pipe(source(Js.OUTPUT))
+      .pipe(buffer())
       //map .pipe(sourcemaps.init())
-      .pipe(rollup({
-        plugins: [
-          babel({
-            configFile: CONFIG.configFile.babel,
-            exclude: '**/node_modules/**'
-          }),
-          resolve(),
-          commonjs()
-        ]
-      }, 'cjs'))
+      .on('error', log.error)
       .pipe(header(Banner.TEXT, Banner.DATA))
       .pipe(terser({
         mangle: true,
@@ -617,7 +607,6 @@ const Tasks = {
           comments: /^!/i
         }
       }))
-      .pipe(rename(Js.OUTPUT))
       //map .pipe(sourcemaps.write({includeContent: true}))
       .pipe(trimFinalNewlines())
       .pipe(dest(Js.DEST, {overwrite: true}));
@@ -638,21 +627,6 @@ const Tasks = {
   templateCompile: function () {
     return src(Template.SRC)
       .pipe(templateCompile({extractAssetModule: false}))
-      .pipe(replace(/\<img\>/g, '\<b:tag name=\'img\'\>'))
-      .pipe(replace(/\<\/img\>/g, '\<\/b:tag\>'))
-      .pipe(replace(/\<input\>/g, '\<b:tag name=\'input\'\>'))
-      .pipe(replace(/\<\/input\>/g, '\<\/b:tag\>'))
-      .pipe(prettier({
-        parser: 'html',
-        printWidth: 500,
-        tabWidth: 2,
-        useTabs: false,
-        singleQuote: true,
-        htmlWhitespaceSensitivity: 'css'
-      }))
-      .pipe(replace(/(.*?)(<!-- prettier-ignore -->)\n/g, ''))
-      .pipe(replace(/(.*?)(<asset>)\n/g, ''))
-      .pipe(replace(/(.*?)(<\/asset>)\n/g, ''))
       .pipe(rename(Template.OUTPUT))
       .pipe(dest(Template.DEST, {overwrite: true}));
   }
@@ -669,9 +643,9 @@ const build = series(
   Tasks.skinExtract,
   Tasks.skinExtractEmpty,
 
-  Tasks.cleanCssExtract,
-  Tasks.cssExtract,
-  Tasks.cssExtractEmpty,
+  Tasks.cleanSassExtract,
+  Tasks.sassExtract,
+  Tasks.sassExtractEmpty,
 
   Tasks.cleanJsExtract,
   Tasks.jsExtract,
@@ -684,9 +658,9 @@ const build = series(
   Tasks.cleanSkinCompile,
   Tasks.skinCompile,
 
-  Tasks.cssLint,
-  Tasks.cleanCssCompile,
-  Tasks.cssCompile,
+  Tasks.sassLint,
+  Tasks.cleanSassCompile,
+  Tasks.sassCompile,
 
   Tasks.jsLint,
   Tasks.cleanJsCompile,
@@ -719,10 +693,10 @@ class Bloggerpack {
       '**/*',
       '!' + path.join(Template.DEST, Template.OUTPUT),
       '!' + path.join(Skin.DEST, Skin.OUTPUT),
-      '!' + path.join(Css.DEST, Css.OUTPUT),
+      '!' + path.join(Sass.DEST, Sass.OUTPUT),
       '!' + path.join(Js.DEST, Js.OUTPUT),
       '!' + path.join(ExtractSkin.DEST, ExtractSkin.OUTPUT),
-      '!' + path.join(ExtractCss.DEST, ExtractCss.OUTPUT),
+      '!' + path.join(ExtractSass.DEST, ExtractSass.OUTPUT),
       '!' + path.join(ExtractJs.DEST, ExtractJs.OUTPUT),
       '!**/node_modules'
     ], build);
