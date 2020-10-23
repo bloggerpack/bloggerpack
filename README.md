@@ -184,7 +184,7 @@ You can also include template from node modules:
 
 ```njk
 ::template::
-{% template "package-name/path/to/file.njk" %}
+{% template "bloggerpack-plugin-package-name/path/to/file.njk" %}
 ::endtemplate::
 ```
 
@@ -286,12 +286,12 @@ Use `{? asset ?}` tag.
 {% endasset %}
 
 {% asset %}
-<script>
-//<![CDATA[
-{% asset "path/to/file1.js" %}
-{% asset "path/to/file2.js" %}
-//]]>
-</script>
+  <script>
+  //<![CDATA[
+  {? asset "path/to/file1.js" ?}
+  {? asset "path/to/file2.js" ?}
+  //]]>
+  </script>
 {% endasset %}
 ```
 
