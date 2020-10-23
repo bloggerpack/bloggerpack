@@ -49,73 +49,36 @@
 
 ## Usage
 
-| [Download starter themes](starter) |
-| ---------------------------------- |
+[Download starter themes](starter)
 
 ## Folder structure
 
-You can configure the folder structure in `bloggerpack.config.js`.
-
-### Example
-
-The `bloggerpack.config.js`:
-
-```js
-module.exports = {
-  template: {
-    src:  './src/index.njk',
-    dist: './dist/theme.xml'
-  },
-  sass: {
-    src:  './src/assets/sass/index.scss',
-    dist: './src/@dist/sass/style.css'
-  },
-  skin: {
-    src:  './src/assets/skin/index.css',
-    dist: './src/@dist/skin/skin.css'
-  },
-  js: {
-    src:  './src/assets/js/index.js',
-    dist: './src/@dist/js/script.js'
-  },
-  configFile: {
-    data:      './src/config/data.json',
-    banner:    './src/config/banner.txt',
-    stylelint: './src/config/.stylelintrc',
-    eslint:    './src/config/.eslintrc.json'
-  }
-};
-````
-
-The folder structure:
+Required folder structure.
 
 ```text
 .
-├── dist/
-|   └── theme.xml <----------------------|
-├── src/                                 |
-|   ├── @dist/                           |
-|   |   ├── sass/                        |
-|   |   |   └── style.css <----------|   |
-|   |   ├── js/                      |   |
-|   |   |   └── script.js <------|   |   |
-|   |   └── skin/                |   |   |
-|   |       └── skin.css <---│   |   |   |
-|   ├── assets/              │   |   |   |
-|   |   ├── sass/            │   |   |   |
-|   |   |   └── index.scss --|---|-->|   |
-|   |   ├── js/              |   |       |
-|   |   |   └── index.js ----|-->|       |
-|   |   └── skin/            |           |
-|   |       └── index.css -->|           |
-|   ├── config/                          |
-|   |   ├── .eslintrc.json               |
-|   |   ├── .stylelintrc                 |
-|   |   ├── banner.txt                   |
-|   |   └── data.json                    |
-|   ├── index.njk ---------------------->|
-|   └── layout.njk
-├── bloggerpack.config.js
+├── dist/ (!)
+|   └── theme.xml <---------------------------+
+├── src/                                      |
+|   ├── config/                               |
+|   |   ├── .eslintrc.json                    |
+|   |   ├── .stylelintrc                      |
+|   |   ├── banner.txt                        |
+|   |   └── data.json                         |
+|   ├── dist/ (!)                             |
+|   |   ├── js.js <---------------+           |
+|   |   ├── sass.css <------------|---+       |   # compiled <---+
+|   |   └── skin.css <------------|---|---+   |   # source ----->|
+|   ├── js/                       │   |   |   |
+|   |   ├── auto-extract.js (!)   |   |   |   |
+|   |   └── index.js ------------>|   |   |   |
+|   ├── sass/                         |   |   |
+|   |   ├── _auto-extract.scss (!)    |   |   |
+|   |   └── index.scss -------------->|   |   |
+|   ├── skin/                             |   |
+|   |   ├── auto-extract.css (!)          |   |
+|   |   └── index.css ------------------->|   |
+|   └── index.njk --------------------------->|   # (!) = auto-generated
 └── package.json
 ```
 
@@ -127,7 +90,7 @@ Store your theme config in this file. This is Nunjucks template context, which m
 
 #### src/config/banner.txt
 
-The header for compiled CSS and JS. You can access data from `data.json` using `<%= data.keyName %>`.
+The header for compiled Sass, Skin and JS. You can access data from `data.json` using `<%= data.keyName %>`.
 
 Example:
 
@@ -164,11 +127,6 @@ The default config is recommended, but if you want to change the config you can 
 ## Template
 
 We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.njk`.
-
-### Default config [#](#folder-structure)
-
-- Index file: `src/index.njk`
-- Compiled to: `dist/theme.xml`
 
 ### Template tag
 
@@ -226,11 +184,11 @@ You can also include template from node modules:
 
 ```njk
 ::template::
-{% template type="module", "package-name/path/to/file.njk" %}
+{% template "package-name/path/to/file.njk" %}
 ::endtemplate::
 ```
 
-If you want to create package for Bloggerpack, below is example of `package-name/path/to/file.njk`:
+If you want to create package for Bloggerpack, below is example of `bloggerpack-plugin-package-name/path/to/file.njk`:
 
 ```njk
 ::template::
@@ -259,35 +217,35 @@ Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including com
 ```njk
 ::template::
 <head>
-  {# CSS/Sass first #}
-  {% asset type="style", "@dist/sass/style.css" %}
+  {# Sass first #}
+  {% asset type="style", "dist/sass.css" %}
   {# Skin #}
-  {% asset type="skin", "@dist/skin/skin.css" %}
+  {% asset type="skin", "dist/skin.css" %}
 </head>
 <body>
   ...
 
   {# JS #}
-  {% asset type="script", "@dist/js/script.js" %}
+  {% asset type="script", "dist/js.js" %}
 </body>
 ::endtemplate::
 ```
 
-Manual tag:
+Manual `tag_start` and `tag_end`:
 
 ```njk
 {%
   asset
-    tag_start="<b:if cond='!data:view.isLayoutMode'><style>",
+    tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
     "path/to/file.css",
-    tag_end="</style></b:if>"
+    tag_end="</style>\n</b:if>"
 %}
 
 {%
   asset
-    tag_start="<script>//<![CDATA[",
+    tag_start="<script>\n//<![CDATA[",
     "path/to/file.js",
-    tag_end="//]]></script>"
+    tag_end="//]]>\n</script>"
 %}
 ```
 
@@ -295,34 +253,36 @@ Block tag:
 
 ```njk
 {% asset %}
-<b:if cond='!data:view.isLayoutMode'>
-<style>
-.element {
-  display: block;
-}
-</style>
-</b:if>
+  <b:if cond='!data:view.isLayoutMode'>
+  <style>
+  .element {
+    display: block;
+  }
+  </style>
+  </b:if>
 {% endasset %}
 
 {% asset %}
-<script>
-//<![CDATA[
-console.log('Hello');
-//]]>
-</script>
+  <script>
+  //<![CDATA[
+  console.log('Hello');
+  //]]>
+  </script>
 {% endasset %}
 ```
 
-Block tag with multiple files:
+Block tag with files:
+
+Use `{? asset ?}` tag.
 
 ```njk
 {% asset %}
-<b:if cond='!data:view.isLayoutMode'>
-<style>
-{% asset "path/to/file1.css" %}
-{% asset "path/to/file2.css" %}
-</style>
-</b:if>
+  <b:if cond='!data:view.isLayoutMode'>
+  <style>
+  {? asset "path/to/file1.css" ?}
+  {? asset "path/to/file2.css" ?}
+  </style>
+  </b:if>
 {% endasset %}
 
 {% asset %}
@@ -337,13 +297,11 @@ Block tag with multiple files:
 
 ### Extending template
 
-Wrap everything with `{% parent %}`-`{% endparent %}` tag, and then use Nunjucks `{% extends "" %}` tag. See [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance).
+Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance).
 
 src/layout.njk:
 
 ```njk
-{% parent %}
-
 ::template::
 <header>
   {% block header %}{% endblock %}
@@ -357,8 +315,6 @@ src/layout.njk:
   {% block footer %}{% endblock %}
 </footer>
 ::endtemplate::
-
-{% endparent %}
 ```
 
 src/index.njk:
@@ -385,14 +341,9 @@ This is footer content.
 
 Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
 
-### Default config [#](#folder-structure)
-
-- Index file: `src/assets/sass/index.scss`
-- Compiled to: `src/@dist/sass/style.css`
-
 ### Partialize
 
-Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/assets/sass/` and than import the file to `index.scss` using `@import "my-component";`.
+Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/sass/` and than import the file to `index.scss` using `@import "my-component";`.
 
 ### Sass-in-Template
 
@@ -412,20 +363,15 @@ $heading-color: #fff !default;
 ::endsass::
 ```
 
-The styles within the tag would be automatically extracted to `src/assets/sass/_auto-extract.scss`.
+The styles within the tag would be automatically extracted to `src/sass/_auto-extract.scss`.
 
 ## Skin
 
 Skin is CSS that support Blogger's skin variables to allow your theme to be able to customize through the Blogger theme designer.
 
-### Default config [#](#folder-structure)
-
-- Index file: `src/assets/skin/index.css`
-- Compiled to: `src/@dist/skin/skin.css`
-
 ### Partialize
 
-Do not write styles in `index.css` directly. Add a new file (e.g., `my-component.css`) within `src/assets/skin/` and than import the file to `index.css` using `@import "my-component.css";`.
+Do not write styles in `index.css` directly. Add a new file (e.g., `my-component.css`) within `src/skin/` and than import the file to `index.css` using `@import "my-component.css";`.
 
 ### Skin-in-Template
 
@@ -451,20 +397,15 @@ You can write skin CSS for specific template in the template file directly using
 ::endskin::
 ```
 
-The styles within the tag would be automatically extracted to `src/assets/skin/auto-extract.css`.
+The styles within the tag would be automatically extracted to `src/skin/auto-extract.css`.
 
 ## JS
 
 The JavaScript. You can write your script with ES6+ and you can also import package from node modules.
 
-### Default config [#](#folder-structure)
-
-- Index file: `src/assets/js/index.js`
-- Compiled to: `src/@dist/js/script.js`
-
 ### Partialize
 
-Do not write scripts in `index.js` directly. Add a new file (e.g., `util.js`) within `src/assets/js/` and than import the file to `index.js` using `import './util';`.
+Do not write scripts in `index.js` directly. Add a new file (e.g., `util.js`) within `src/js/` and than import the file to `index.js` using `import './util';`.
 
 ### JS-in-Template
 
@@ -480,7 +421,7 @@ var example = document.getElementById('example');
 ::endjs::
 ```
 
-The JavaScript within the tag would be automatically extracted to `src/assets/js/auto-extract.js`.
+The JavaScript within the tag would be automatically extracted to `src/js/auto-extract.js`.
 
 ---
 

@@ -1,0 +1,13 @@
+@import "foo.css";
+
+@import "bar.css";
+
+@import "test";
+
+@import "foobar";
+
+@import "baz.css";
+
+@import "qux.css";
+
+@import "bazqux";

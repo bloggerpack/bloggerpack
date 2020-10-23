@@ -1,0 +1,27 @@
+/*!
+ * Name         : Theme name
+ * Version      : 1.0
+ * Package name : test
+ */
+
+/*
+<Variable name="color"
+    description="Color example"
+    type="color"
+    default="#000"
+    value="#000"/>
+*/
+
+.example {
+  color: $(color);
+}
+
+.skin-in-template1 {
+  display: block;
+  color: $(color);
+}
+
+.skin-in-template2 {
+  display: block;
+  color: $(color);
+}

@@ -1,0 +1,10 @@
+::template::
+<b:comment>Show footer if the `footer-section` has any widgets or has any visible widgets.</b:comment>
+<b:if cond='data:widgets any (w =&gt; w.sectionId == "footer-section")'>
+  <footer class='py-3 py-lg-5 bg-light' id='footer'>
+    <div class='container'>
+      {% template "template/footer.part/footer-section.njk" %}
+    </div>
+  </footer>
+</b:if>
+::endtemplate::

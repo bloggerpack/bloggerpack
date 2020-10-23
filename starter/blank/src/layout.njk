@@ -1,5 +1,3 @@
-{% parent %}
-
 ::template::
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
@@ -7,16 +5,15 @@
 <head>
 
   <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
-
   <title><data:view.title.escaped/></title>
-
   <b:include data='blog' name='all-head-content'/>
+  <b:include data='blog' name='google-analytics'/>
 
   {# Main CSS (Sass) #}
-  {% asset type="style", "@dist/sass/style.css" %}
+  {% asset type="style", "dist/sass.css" %}
 
   {# Main CSS (Skin) #}
-  {% asset type="skin", "@dist/skin/skin.css" %}
+  {% asset type="skin", "dist/skin.css" %}
 
   {# Layout Mode CSS #}
   {% asset %}
@@ -29,11 +26,19 @@
     </b:if>
   {% endasset %}
 
-  {# Go to blog settings to add Google Analytics. #}
-  <b:include data='blog' name='google-analytics'/>
-
 </head>
 <body>
+
+  <b:comment>=== Body classes ===</b:comment>
+  <b:class cond='data:view.isHomepage' name='is-homepage'/>
+  <b:class cond='data:view.isPost' name='is-post'/>
+  <b:class cond='data:view.isPage' name='is-page'/>
+  <b:class cond='data:view.isLabelSearch' name='is-search-label'/>
+  <b:class cond='data:view.search.query' name='is-search-query'/>
+  <b:class cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query' name='is-search-default'/>
+  <b:class cond='data:view.isArchive' name='is-archive'/>
+  <b:class cond='data:view.isError' name='is-error'/>
+  <b:class cond='data:view.isPreview' name='is-preview'/>
 
   {% block header %}{% endblock %}
 
@@ -42,17 +47,11 @@
   {% block footer %}{% endblock %}
 
   {# Main JS #}
-  {% asset type="script", "@dist/js/script.js" %}
+  {% asset type="script", "dist/js.js" %}
 
-  <b:comment>
-    <!--
-      FAKE SECTION
-
-      Blogger theme requires at least one `<b:section>` with `showaddelement='yes'`.
-
-      Note: the default value of `showaddelement` is `yes`.
-    -->
-  </b:comment>
+  <b:comment>FAKE SECTION</b:comment>
+  <b:comment>- Blogger theme requires at least one `b:section` with `showaddelement='yes'`.</b:comment>
+  <b:comment>- Note: the default value of `showaddelement` is `yes`.</b:comment>
 
   <b:if cond='!data:view.isLayoutMode and (data:blog.view == "NeverAccessThisView")'>
     <b:section id='fake-section' showaddelement='yes'/>
@@ -61,5 +60,3 @@
 </body>
 </html>
 ::endtemplate::
-
-{% endparent %}

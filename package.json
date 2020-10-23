@@ -20,19 +20,16 @@
   "bugs": {
     "url": "https://github.com/bloggerpack/bloggerpack/issues"
   },
-  "main": "bloggerpack.js",
   "bin": {
     "bloggerpack": "bin.js"
   },
   "scripts": {
-    "build-all-starter": "npm-run-all --serial build-blank build-bootstrap4",
+    "build": "npm-run-all --serial build-blank build-bootstrap4",
     "build-blank": "cd starter/blank && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
-    "watch-blank": "cd starter/blank && gulp watch --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "build-bootstrap4": "cd starter/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
-    "watch-bootstrap4": "cd starter/bootstrap4 && gulp watch --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "release": "npm-run-all --serial release-change-version release-zip-starter",
-    "release-change-version": "gulp change_version",
-    "release-zip-starter": "gulp zip_starter"
+    "release-change-version": "gulp change_version --gulpfile gulpfile.release.js",
+    "release-zip-starter": "gulp zip_starter --gulpfile gulpfile.release.js"
   },
   "dependencies": {
     "@babel/core": "^7.11.1",
@@ -52,6 +49,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-header": "^2.0.9",
+    "gulp-if": "^3.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
@@ -65,6 +63,7 @@
     "node-sass-package-importer": "^5.3.2",
     "nunjucks": "^3.2.2",
     "postcss-import": "^12.0.1",
+    "prettier": "^2.1.2",
     "strip-css-comments": "^4.1.0",
     "strip-indent": "^3.0.0",
     "stylelint": "^13.6.1",
@@ -74,7 +73,8 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "through2": "^4.0.2",
-    "trim-newlines": "^3.0.0",
+    "undertaker-registry": "^1.0.1",
+    "util": "^0.12.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
@@ -83,8 +83,9 @@
     "npm-run-all": "^4.1.5"
   },
   "files": [
+    "lib",
+    "tasks",
     "bin.js",
-    "bloggerpack.js",
     "gulpfile.bloggerpack.js"
   ]
 }

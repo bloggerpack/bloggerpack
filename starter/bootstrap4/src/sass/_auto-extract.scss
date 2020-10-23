@@ -1,0 +1,777 @@
+/*
+# ==========================================================================
+# Template path: src/index.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/layout.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/footer.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/sidebar-section.njk
+# ==========================================================================
+*/
+
+//
+// Widget
+//
+
+// stylelint-disable no-duplicate-selectors
+.sidebar-section > .widget {
+  @extend .card;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > .title {
+    @extend .card-header;
+    @include font-size($h5-font-size);
+  }
+
+  > .widget-content {
+    @extend .card-body;
+
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+// stylelint-enable
+
+/*
+# ==========================================================================
+# Template path: src/template/footer.part/footer-section.njk
+# ==========================================================================
+*/
+
+//
+// Widget
+//
+
+.footer-section > .widget {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-left.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-right.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.njk
+# ==========================================================================
+*/
+
+//
+// Blog post spacer
+//
+
+.blog-post-spacer {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/sidebar-section.part/HTML2.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/footer.part/footer-section.part/HTML1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/footer.part/footer-section.part/LinkList2.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-left.part/Label1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-left.part/LinkList1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-left.part/PageList1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-right.part/BlogSearch1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-right.part/ContactForm1.njk
+# ==========================================================================
+*/
+
+//
+// Alert
+//
+
+.navbar-contact-form {
+  .contact-form-success-message,
+  .contact-form-error-message {
+    display: none;
+  }
+
+  .contact-form-success-message-with-border,
+  .contact-form-error-message-with-border {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    @include border-radius($border-radius);
+  }
+
+  .contact-form-success-message-with-border {
+    color: darken(#dff0d8, 45%);
+    background-color: #dff0d8;
+    border-color: darken(#dff0d8, 2.5%);
+  }
+  .contact-form-error-message-with-border {
+    padding-right: 4rem;
+    color: darken(#f2dede, 45%);
+    background-color: #f2dede;
+    border-color: darken(#f2dede, 2.5%);
+
+    .contact-form-cross {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1.125rem 1.25rem;
+    }
+  }
+}
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-right.part/FollowByEmail1.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/navbar.part/navbar-section-right.part/Profile1.njk
+# ==========================================================================
+*/
+
+//
+// Base class
+//
+
+.navbar-profile {
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: $gray-100;
+  @include border-radius($border-radius);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+//
+// Header
+//
+
+.navbar-profile-header {
+  height: 100px;
+  background-color: $gray-500;
+  @include border-top-left-radius($border-radius);
+  @include border-top-right-radius($border-radius);
+}
+
+
+//
+// Avatar
+//
+
+.navbar-profile-avatar {
+  position: relative;
+  top: -50px;
+  margin-bottom: -50px;
+}
+
+.navbar-profile-image {
+  width: 100px;
+  max-width: 100px;
+  height: 100px;
+  max-height: 100px;
+  vertical-align: middle;
+  border: 5px solid rgba(#fff, .5);
+  @include border-radius(50%);
+}
+
+
+//
+// Body
+//
+
+.navbar-profile-body {
+  padding: .5rem 1rem 1rem;
+}
+
+.navbar-profile-block {
+  margin-bottom: .5rem;
+  line-height: 1;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.navbar-profile-name {
+  display: inline-block;
+  color: $gray-900;
+  font-weight: 700;
+  @include font-size(1rem);
+  line-height: 1.2;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $gray-900;
+    text-decoration: none;
+  }
+}
+
+.navbar-profile-text {
+  color: $gray-700;
+  font-weight: 400;
+  @include font-size(.875rem);
+  line-height: 1.3;
+}
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.part/breadcrumb.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.part/comments.njk
+# ==========================================================================
+*/
+
+//
+// Variables
+//
+
+$comments-font-size-base: $font-size-base !default;
+
+$comments-padding:       .75rem !default;
+$comments-bg-color:      $gray-100 !default;
+$comments-border-width:  1px !default;
+$comments-border-color:  $gray-300 !default;
+$comments-border-radius: $border-radius !default;
+
+$comments-title-color: $gray-900 !default;
+
+$comment-block-spacer:           1rem !default;
+$comment-block-padding:          1rem !default;
+$comment-block-color:            $gray-900 !default;
+$comment-block-bg-color:         #fff !default;
+$comment-block-border-width:     1px !default;
+$comment-block-border-color:     $gray-300 !default;
+$comment-block-border-radius:    $border-radius !default;
+$comment-block-link-color:       $link-color !default;
+$comment-block-link-hover-color: $link-hover-color !default;
+
+$comment-author-badge-color:         #fff !default;
+$comment-author-badge-bg-color:      $gray-800 !default;
+$comment-author-badge-border-radius: $border-radius !default;
+
+$comment-meta-color: $text-muted !default;
+
+$comment-alert-warning-padding:       .5rem .75rem !default;
+$comment-alert-warning-color:         #856404 !default;
+$comment-alert-warning-bg-color:      #fff3cd !default;
+$comment-alert-warning-border-width:  1px !default;
+$comment-alert-warning-border-color:  #ffeeba !default;
+$comment-alert-warning-border-radius: $border-radius !default;
+
+
+//
+// Base class
+//
+
+.comments {
+  padding: $comments-padding;
+  background-color: $comments-bg-color;
+  border: $comments-border-width solid $comments-border-color;
+  @include border-radius($comments-border-radius);
+}
+
+
+//
+// Comments title
+//
+
+.comments-title {
+  margin-top: 0;
+  margin-bottom: $comment-block-spacer;
+  color: $comments-title-color;
+  @include font-size($comments-font-size-base * 2.5);
+}
+
+.comments-title small {
+  display: inline-flex; // remove whitespace
+  font-size: 80%;
+}
+.comments-title small::before {
+  content: "\0028";
+}
+.comments-title small::after {
+  content: "\0029";
+}
+
+
+//
+// Comment list
+//
+
+.comment-list,
+.comment-list-children {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.comment-list-children > li,
+.reply-form-container {
+  margin-left: 2rem;
+}
+
+
+//
+// Comment block
+//
+
+.comment-block {
+  margin-top: $comment-block-spacer;
+  padding: $comment-block-padding;
+  color: $comment-block-color;
+  background-color: $comment-block-bg-color;
+  border: $comment-block-border-width solid $comment-block-border-color;
+  @include border-radius($comment-block-border-radius);
+}
+
+.comment-block a {
+  display: inline-block;
+  color: $comment-block-link-color;
+}
+.comment-block a:hover,
+.comment-block a:focus {
+  color: $comment-block-link-hover-color;
+}
+
+
+//
+// Comment alert
+//
+
+.comment-warning {
+  margin-top: $comment-block-spacer;
+  padding: $comment-alert-warning-padding;
+  color: $comment-alert-warning-color;
+  @include font-size($comments-font-size-base);
+  background-color: $comment-alert-warning-bg-color;
+  border: $comment-alert-warning-border-width solid $comment-alert-warning-border-color;
+  @include border-radius($comment-alert-warning-border-radius);
+}
+
+
+//
+// Comment content
+//
+
+// Comment header
+//
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: .75rem;
+  line-height: 1.35;
+}
+.comment-header-col-1 {
+  width: auto;
+  margin-right: .5rem;
+}
+.comment-header-col-2 {
+  width: 100%;
+}
+
+// Avatar
+
+.comment-avatar {
+  width: 42px;
+  height: 42px;
+  vertical-align: middle;
+  @include border-radius(50%);
+}
+
+// Author
+
+.comment-author {
+  font-weight: 500;
+  @include font-size($comments-font-size-base);
+}
+.comment-author .comment-author-badge {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  padding: .2em .4em;
+  color: $comment-author-badge-color;
+  font-weight: 500;
+  @include font-size($comments-font-size-base * .75);
+  line-height: 1;
+  background-color: $comment-author-badge-bg-color;
+  @include border-radius($comment-author-badge-border-radius);
+}
+
+// Meta
+
+.comment-meta {
+  color: $comment-meta-color;
+  @include font-size($comments-font-size-base * .875);
+}
+
+// Comment body
+//
+
+.comment-body {
+  margin-bottom: .75rem;
+  @include font-size($comments-font-size-base);
+}
+
+.comment-body .comment-warning {
+  margin-top: 0;
+}
+
+// Comment actions
+//
+
+.comment-actions {
+  @include font-size($comments-font-size-base * .875);
+}
+
+
+//
+// Comment pagination
+//
+
+.comment-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+//
+// Comment form
+//
+
+.comment-form-title,
+.comment-form-message {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+.comment-form-title {
+  @include font-size($comments-font-size-base * 1.75);
+}
+.comment-form-message {
+  @include font-size($comments-font-size-base);
+}
+
+.comment-editor {
+  width: 100%;
+  border: 0;
+}
+// stylelint-disable-next-line
+a#comment-editor-src {
+  display: none;
+}
+
+.comment-cancel-reply {
+  display: inline-block;
+  margin-top: .25rem;
+}
+.init-form-container .comment-cancel-reply {
+  display: none;
+}
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.part/not-found-message.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.part/pager.njk
+# ==========================================================================
+*/
+
+/* Sass-in-Template is empty */
+
+/*
+# ==========================================================================
+# Template path: src/template/content.part/main-section.part/Blog1.part/posts.njk
+# ==========================================================================
+*/
+
+//
+// Post spacer
+//
+
+.post-spacer {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+//
+// Post featured image
+//
+
+.post-featured-image {
+  position: relative;
+  padding-top: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include border-radius(.25rem);
+  }
+}
+
+
+//
+// Post body
+//
+
+// stylelint-disable declaration-no-important, selector-max-type, no-duplicate-selectors
+
+// Reset margins
+//
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6,
+.post-body p,
+.post-body ul,
+.post-body ol,
+.post-body dl,
+.post-body table:not(.tr-caption-container),
+.post-body blockquote,
+.post-body figure,
+.post-body pre,
+.post-body address,
+.post-body hr {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.post-body ul ul,
+.post-body ul ol,
+.post-body ol ol,
+.post-body ol ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.post-body blockquote,
+.post-body figure {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body figure > :first-child {
+  margin-top: 0 !important;
+}
+.post-body figure > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.post-body > :first-child {
+  margin-top: 0 !important;
+}
+.post-body > :last-child {
+  margin-bottom: 0 !important;
+}
+
+// Images
+//
+
+.post-body img {
+  @include img-fluid();
+}
+
+.post-body .separator a:not([style*="clear: left"]):not([style*="clear:left"]):not([style*="clear: right"]):not([style*="clear:right"]) {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body .tr-caption-container .tr-caption {
+  padding-top: .5rem;
+  @include font-size(90%);
+}
+
+// Figures
+//
+
+.post-body figure img,
+.post-body figure svg {
+  @include img-fluid();
+  @extend .figure-img;
+}
+
+.post-body figure figcaption {
+  @extend .figure-caption;
+}
+
+// Tables
+//
+
+.post-body table:not([class]) {
+  @extend .table;
+  @extend .table-bordered;
+}
+
+.post-body table:not([class]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 0; // remove border from `@extend .table-bordered`
+}
+
+// Blockquotes
+//
+
+.post-body blockquote:not([class]) {
+  @extend .blockquote;
+}
+.post-body blockquote:not([class]) footer {
+  @extend .blockquote-footer;
+}
+
+// stylelint-enable

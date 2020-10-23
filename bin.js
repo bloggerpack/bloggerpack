@@ -7,14 +7,14 @@ const gulpfile = 'node_modules/bloggerpack/gulpfile.bloggerpack.js';
 
 // build
 if (argv[0] === 'build' && argv.length === 1) {
-  spawn('gulp', ['build', '--cwd', cwd, '--gulpfile', gulpfile], {
+  spawn('gulp', ['build', '--gulpfile', gulpfile, '--cwd', cwd], {
     stdio: 'inherit',
     cwd: cwd
   });
 }
 // watch
 else if (argv[0] === 'watch' && argv.length === 1) {
-  spawn('gulp', ['watch', '--cwd', cwd, '--gulpfile', gulpfile], {
+  spawn('gulp', ['watch', '--gulpfile', gulpfile, '--cwd', cwd], {
     stdio: 'inherit',
     cwd: cwd
   });

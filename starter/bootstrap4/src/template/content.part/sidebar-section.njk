@@ -1,0 +1,38 @@
+::template::
+<b:section class='sidebar-section' id='sidebar-section' name='Sidebar section'>
+  {% template "template/content.part/sidebar-section.part/HTML2.njk" %}
+</b:section>
+::endtemplate::
+
+::sass::
+//
+// Widget
+//
+
+// stylelint-disable no-duplicate-selectors
+.sidebar-section > .widget {
+  @extend .card;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > .title {
+    @extend .card-header;
+    @include font-size($h5-font-size);
+  }
+
+  > .widget-content {
+    @extend .card-body;
+
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+// stylelint-enable
+::endsass::
