@@ -5,8 +5,8 @@
     "watch": "bloggerpack watch"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "bootstrap": "^4.5.1",
+    "@fortawesome/fontawesome-free": "^5.15.0",
+    "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
   },
