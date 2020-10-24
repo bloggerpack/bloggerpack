@@ -19,6 +19,6 @@ Once the installation is done, you can run some built-in commands:
 
 Don't forget to configure:
 
-- [Browserslist](https://github.com/browserslist/browserslist) in `package.json`
+- [`.browserslistrc`](https://github.com/browserslist/browserslist)
 - `src/config/banner.txt`
 - `src/config/data.json`
