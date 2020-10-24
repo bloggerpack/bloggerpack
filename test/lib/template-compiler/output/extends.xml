@@ -1,0 +1,13 @@
+<div>
+  <div class="main">
+    <div>
+      <div>Main content</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div>
+      <div>Sidebar content</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/* Header (src/example1.njk) */
+
+.skin-foo {
+  display: block;
+}
+
+/* Footer */
+
+/* Header (src/example2.njk) */
+
+.skin-bar {
+  display: block;
+}
+
+/* Footer */

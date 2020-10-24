@@ -1,0 +1,82 @@
+<html>
+  <head>
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
+}
+</style>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+.skin {
+  display: block;
+}
+]]>
+</b:skin>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
+}
+</style>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.element {
+  display: block;
+}
+</style>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
+}
+.style {
+  display: block;
+}
+</style>
+</b:if>
+  </head>
+  <body>
+<script>
+//<![CDATA[
+function foo() {
+  return 'JS foo';
+}
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+function foo() {
+  return 'JS foo';
+}
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+console.log('Hello, world!');
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+function foo() {
+  return 'JS foo';
+}
+function foo() {
+  return 'JS foo';
+}
+//]]>
+</script>
+  </body>
+</html>

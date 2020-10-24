@@ -1,0 +1,15 @@
+<div>
+  <div class="main">
+    <div>
+      <div>Main content</div>
+      <div>x = 10</div>
+      <div>Package name = test</div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div>
+      <div>Sidebar content</div>
+    </div>
+  </div>
+</div>
