@@ -61,8 +61,8 @@ skinRegistry.prototype.init = function(gulpInst) {
       filename: 'auto-extract.css',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '::skin::',
-        end: '::endskin::',
+        start: '>>>skin',
+        end: '>>>endskin',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>

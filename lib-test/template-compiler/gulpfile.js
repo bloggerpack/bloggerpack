@@ -8,8 +8,8 @@ const templateCompile = require('../../lib/template-compiler');
 function test1() {
   var options = {
     context: '',
-    start: '::template::',
-    end: '::endtemplate::'
+    start: '>>>template',
+    end: '>>>endtemplate'
   };
 
   return src('src/asset-tag/index.njk', {allowEmpty: true})
@@ -22,8 +22,8 @@ function test1() {
 function test2() {
   var options = {
     context: '',
-    start: '::template::',
-    end: '::endtemplate::'
+    start: '>>>template',
+    end: '>>>endtemplate'
   };
 
   return src('src/extends/index.njk', {allowEmpty: true})
@@ -43,8 +43,8 @@ function test3() {
         var3b: 'val3b'
       }
     },
-    start: '::template::',
-    end: '::endtemplate::'
+    start: '>>>template',
+    end: '>>>endtemplate'
   };
 
   return src('src/template-context/index.njk', {allowEmpty: true})
@@ -57,8 +57,8 @@ function test3() {
 function test4() {
   var options = {
     context: '',
-    start: '::template::',
-    end: '::endtemplate::'
+    start: '>>>template',
+    end: '>>>endtemplate'
   };
 
   return src('src/template-tag/index.njk', {allowEmpty: true})

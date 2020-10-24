@@ -7,8 +7,8 @@ const extract = require('../../lib/extract');
 
 function test_sass() {
   var options = {
-    start: '::sass::',
-    end: '::endsass::',
+    start: '>>>sass',
+    end: '>>>endsass',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* Sass-in-Template is empty */'
@@ -26,8 +26,8 @@ function test_sass() {
 
 function test_empty_sass() {
   var options = {
-    start: '::sass::',
-    end: '::endsass::',
+    start: '>>>sass',
+    end: '>>>endsass',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* Sass-in-Template is empty */'
@@ -45,8 +45,8 @@ function test_empty_sass() {
 
 function test_skin() {
   var options = {
-    start: '::skin::',
-    end: '::endskin::',
+    start: '>>>skin',
+    end: '>>>endskin',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* Skin-in-Template is empty */'
@@ -64,8 +64,8 @@ function test_skin() {
 
 function test_empty_skin() {
   var options = {
-    start: '::skin::',
-    end: '::endskin::',
+    start: '>>>skin',
+    end: '>>>endskin',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* Skin-in-Template is empty */'
@@ -83,8 +83,8 @@ function test_empty_skin() {
 
 function test_js() {
   var options = {
-    start: '::js::',
-    end: '::endjs::',
+    start: '>>>js',
+    end: '>>>endjs',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* JS-in-Template is empty */'
@@ -102,8 +102,8 @@ function test_js() {
 
 function test_empty_js() {
   var options = {
-    start: '::js::',
-    end: '::endjs::',
+    start: '>>>js',
+    end: '>>>endjs',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: '/* JS-in-Template is empty */'

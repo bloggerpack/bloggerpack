@@ -1,0 +1,69 @@
+=== Auto style tag ===
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+bar {}
+</style>
+</b:if>
+
+=== Auto skin tag ===
+
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+foo {}
+]]>
+</b:skin>
+</b:if>
+
+=== Auto script tag ===
+
+<script>
+//<![CDATA[
+console.log('bar');
+//]]>
+</script>
+
+=== Custom tag-start and tag-end ===
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+bar {}
+</style>
+</b:if>
+
+<script>
+//<![CDATA[
+console.log('bar');
+//]]>
+</script>
+
+=== Block tag ===
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.element {
+  display: block;
+}
+</style>
+</b:if>
+
+<script>
+//<![CDATA[
+console.log('Hello');
+//]]>
+</script>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+bar {}
+bar {}
+</style>
+</b:if>
+
+<script>
+//<![CDATA[
+console.log('bar');
+console.log('bar');
+//]]>
+</script>

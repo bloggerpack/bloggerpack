@@ -60,8 +60,8 @@ jsRegistry.prototype.init = function(gulpInst) {
       filename: 'auto-extract.js',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '::js::',
-        end: '::endjs::',
+        start: '>>>js',
+        end: '>>>endjs',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>

@@ -1,4 +1,6 @@
-[Download](https://github.com/bloggerpack/bloggerpack/releases/download/v1.0.0-beta.5/bootstrap4-1.0.0-beta.5.zip) · [Preview](https://bp-bootstrap4.blogspot.com/)
+# Bootstrap 4
+
+> [Download](https://github.com/bloggerpack/bloggerpack/releases/download/v1.0.0-beta.5/bootstrap4-1.0.0-beta.5.zip) · [Preview](https://bp-bootstrap4.blogspot.com/)
 
 Once downloaded, unzip the compressed folder and than rename the folder (e.g., `my-awesome-theme`).
 

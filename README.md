@@ -20,9 +20,9 @@
   ·
   <a href="#concepts">Concepts</a>
   ·
-  <a href="#license">License</a>
-  ·
   <a href="#changelog">Changelog</a>
+  ·
+  <a href="#license">License</a>
 </p>
 
 ---
@@ -130,12 +130,12 @@ We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its t
 
 ### Template tag
 
-Wrap the markup with `::template::`-`::endtemplate::` tag in `.njk` files.
+Wrap the markup with `>>>template`-`>>>endtemplate` tag in `.njk` files.
 
 ```njk
-::template::
+>>>template
 <p>example</p>
-::endtemplate::
+>>>endtemplate
 ```
 
 ### Including template
@@ -147,27 +147,27 @@ Note: the path is relative to the `index.njk` root directory.
 src/example-dir/file1.njk:
 
 ```njk
-::template::
+>>>template
 <p>example</p>
-::endtemplate::
+>>>endtemplate
 ```
 
 src/example-dir/file2.njk:
 
 ```njk
-::template::
+>>>template
 <div>
   {% template "example-dir/file1.njk" %}
 </div>
-::endtemplate::
+>>>endtemplate
 ```
 
 src/index.njk:
 
 ```njk
-::template::
+>>>template
 {% template "example-dir/file2.njk" %}
-::endtemplate::
+>>>endtemplate
 ```
 
 Output (`dist/theme.xml`):
@@ -183,29 +183,29 @@ Output (`dist/theme.xml`):
 You can also include template from node modules:
 
 ```njk
-::template::
+>>>template
 {% template "bloggerpack-plugin-package-name/path/to/file.njk" %}
-::endtemplate::
+>>>endtemplate
 ```
 
 If you want to create package for Bloggerpack, below is example of `bloggerpack-plugin-package-name/path/to/file.njk`:
 
 ```njk
-::template::
+>>>template
 Template here
-::endtemplate::
+>>>endtemplate
 
-::sass::
+>>>sass
 CSS for the template here
-::endsass::
+>>>endsass
 
-::skin::
+>>>skin
 Skin for the template here
-::endskin::
+>>>endskin
 
-::js::
+>>>js
 JS for the template here
-::endjs::
+>>>endjs
 ```
 
 [Sass](#sass-in-template), [Skin](#skin-in-template), and [JS](#js-in-template) are optional.
@@ -215,7 +215,7 @@ JS for the template here
 Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets.
 
 ```njk
-::template::
+>>>template
 <head>
   {# Sass first #}
   {% asset type="style", "dist/sass.css" %}
@@ -228,7 +228,7 @@ Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including com
   {# JS #}
   {% asset type="script", "dist/js.js" %}
 </body>
-::endtemplate::
+>>>endtemplate
 ```
 
 Manual `tag_start` and `tag_end`:
@@ -273,14 +273,14 @@ Block tag:
 
 Block tag with files:
 
-Use `{? asset ?}` tag.
+Use `{(% asset %)}` tag.
 
 ```njk
 {% asset %}
   <b:if cond='!data:view.isLayoutMode'>
   <style>
-  {? asset "path/to/file1.css" ?}
-  {? asset "path/to/file2.css" ?}
+  {(% asset "path/to/file1.css" %)}
+  {(% asset "path/to/file2.css" %)}
   </style>
   </b:if>
 {% endasset %}
@@ -288,8 +288,8 @@ Use `{? asset ?}` tag.
 {% asset %}
   <script>
   //<![CDATA[
-  {? asset "path/to/file1.js" ?}
-  {? asset "path/to/file2.js" ?}
+  {(% asset "path/to/file1.js" %)}
+  {(% asset "path/to/file2.js" %)}
   //]]>
   </script>
 {% endasset %}
@@ -302,7 +302,7 @@ Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mo
 src/layout.njk:
 
 ```njk
-::template::
+>>>template
 <header>
   {% block header %}{% endblock %}
 </header>
@@ -314,13 +314,13 @@ src/layout.njk:
 <footer>
   {% block footer %}{% endblock %}
 </footer>
-::endtemplate::
+>>>endtemplate
 ```
 
 src/index.njk:
 
 ```njk
-::template::
+>>>template
 {% extends "layout.njk" %}
 
 {% block header %}
@@ -334,7 +334,7 @@ This is main content.
 {% block footer %}
 This is footer content.
 {% endblock %}
-::endtemplate::
+>>>endtemplate
 ```
 
 ## Sass
@@ -347,20 +347,20 @@ Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-compone
 
 ### Sass-in-Template
 
-You can write CSS for specific template in the template file directly using `::sass::`-`::endsass::` tag.
+You can write CSS for specific template in the template file directly using `>>>sass`-`>>>endsass` tag.
 
 ```njk
-::template::
+>>>template
 <h1 class='example'>Example</h1>
-::endtemplate::
+>>>endtemplate
 
-::sass::
+>>>sass
 $heading-color: #fff !default;
 
 .example {
   color: $heading-color;
 }
-::endsass::
+>>>endsass
 ```
 
 The styles within the tag would be automatically extracted to `src/sass/_auto-extract.scss`.
@@ -375,14 +375,14 @@ Do not write styles in `index.css` directly. Add a new file (e.g., `my-component
 
 ### Skin-in-Template
 
-You can write skin CSS for specific template in the template file directly using `::skin::`-`::endskin::` tag.
+You can write skin CSS for specific template in the template file directly using `>>>skin`-`>>>endskin` tag.
 
 ```njk
-::template::
+>>>template
 <h1 class='example'>Example</h1>
-::endtemplate::
+>>>endtemplate
 
-::skin::
+>>>skin
 /*
 <Variable name="heading.color"
     description="Heading color"
@@ -394,7 +394,7 @@ You can write skin CSS for specific template in the template file directly using
 .example {
   color: $(heading.color);
 }
-::endskin::
+>>>endskin
 ```
 
 The styles within the tag would be automatically extracted to `src/skin/auto-extract.css`.
@@ -409,16 +409,16 @@ Do not write scripts in `index.js` directly. Add a new file (e.g., `util.js`) wi
 
 ### JS-in-Template
 
-You can write JavaScript for specific template in the template file directly using `::js::`-`::endjs::` tag.
+You can write JavaScript for specific template in the template file directly using `>>>js`-`>>>endjs` tag.
 
 ```njk
-::template::
+>>>template
 <h1 class='example' id='example'>Example</h1>
-::endtemplate::
+>>>endtemplate
 
-::js::
+>>>js
 var example = document.getElementById('example');
-::endjs::
+>>>endjs
 ```
 
 The JavaScript within the tag would be automatically extracted to `src/js/auto-extract.js`.

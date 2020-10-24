@@ -61,8 +61,8 @@ sassRegistry.prototype.init = function(gulpInst) {
       filename: '_auto-extract.scss',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '::sass::',
-        end: '::endsass::',
+        start: '>>>sass',
+        end: '>>>endsass',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>
