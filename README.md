@@ -53,8 +53,6 @@
 
 ## Folder structure
 
-Required folder structure.
-
 ```text
 .
 ├── dist/ (!)
@@ -78,17 +76,45 @@ Required folder structure.
 |   ├── skin/                             |   |
 |   |   ├── auto-extract.css (!)          |   |
 |   |   └── index.css ------------------->|   |
+|   ├── template/
 |   └── index.njk --------------------------->|   # (!) = auto-generated
+├── .browserslistrc
 └── package.json
 ```
 
-### Config files
+---
 
-#### src/config/data.json
+<h3 align="center">Concepts</h3>
+
+<p align="center">
+  <a href="#config-files">Config files</a>
+  ·
+  <a href="#template">Template</a>
+  ·
+  <a href="#sass">Sass</a>
+  ·
+  <a href="#skin">Skin</a>
+  ·
+  <a href="#js">JS</a>
+</p>
+
+---
+
+## Config files
+
+### .browserslistrc
+
+The config to share target browsers. Learn more about [Browserslist](https://github.com/browserslist/browserslist).
+
+### package.json
+
+Use this file to manage and install Bloggerpack and other packages. You also will need to add Bloggerpack commands and tasks.
+
+### src/config/data.json
 
 Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in [template files](#template) using `{{ data.keyName }}`. You can also access data from `package.json` using `{{ pkg.keyName }}`. See [Nunjucks variables](https://mozilla.github.io/nunjucks/templating.html#variables).
 
-#### src/config/banner.txt
+### src/config/banner.txt
 
 The header for compiled Sass, Skin and JS. You can access data from `data.json` using `<%= data.keyName %>`.
 
@@ -100,29 +126,13 @@ Example:
  */
 ```
 
-#### src/config/.stylelintrc
+### src/config/.stylelintrc
 
 The default config is recommended, but if you want to change the config you can read the [Stylelint docs](https://stylelint.io/user-guide/configure).
 
-#### src/config/.eslintrc.json
+### src/config/.eslintrc.json
 
 The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
-
----
-
-<h3 align="center">Concepts</h3>
-
-<p align="center">
-  <a href="#template">Template</a>
-  ·
-  <a href="#sass">Sass</a>
-  ·
-  <a href="#skin">Skin</a>
-  ·
-  <a href="#js">JS</a>
-</p>
-
----
 
 ## Template
 
@@ -140,7 +150,7 @@ Wrap the markup with `>>>template`-`>>>endtemplate` tag in `.njk` files.
 
 ### Including template
 
-Do not use the default Nunjucks `{% include %}` tag, use `{% template "path/to/file.njk" %}` tag instead.
+Do not use the default Nunjucks `{% include %}` tag, use `{% template %}` tag instead.
 
 Note: the path is relative to the `index.njk` root directory.
 
@@ -184,11 +194,11 @@ You can also include template from node modules:
 
 ```njk
 >>>template
-{% template "bloggerpack-plugin-package-name/path/to/file.njk" %}
+{% template "package-name/path/to/file.njk" %}
 >>>endtemplate
 ```
 
-If you want to create package for Bloggerpack, below is example of `bloggerpack-plugin-package-name/path/to/file.njk`:
+Below is example of `package-name/path/to/file.njk`:
 
 ```njk
 >>>template
@@ -210,9 +220,19 @@ JS for the template here
 
 [Sass](#sass-in-template), [Skin](#skin-in-template), and [JS](#js-in-template) are optional.
 
+**Plugin package name:**
+
+Plugin package names must start with `bloggerpack-plugin-*` to automatically extract the Sass, Skin, and JS in template.
+
 ### Including assets
 
-Use `{% asset type="skin|style|script", "path/to/file" %}` tag for including compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets.
+Use this tag to include compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets:
+
+```njk
+{% asset type="skin|style|script", "path/to/file" %}
+```
+
+Example:
 
 ```njk
 >>>template
@@ -343,7 +363,11 @@ Write your styles with [Sass](https://sass-lang.com/). You can also import Sass 
 
 ### Partialize
 
-Do not write styles in `index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/sass/` and than import the file to `index.scss` using `@import "my-component";`.
+Do not write styles in `src/sass/index.scss` directly. Add a new file (e.g., `_my-component.scss`) within `src/sass/` and than import the file to `src/sass/index.scss`.
+
+```scss
+@import "my-component";
+```
 
 ### Sass-in-Template
 
@@ -371,7 +395,11 @@ Skin is CSS that support Blogger's skin variables to allow your theme to be able
 
 ### Partialize
 
-Do not write styles in `index.css` directly. Add a new file (e.g., `my-component.css`) within `src/skin/` and than import the file to `index.css` using `@import "my-component.css";`.
+Do not write styles in `src/skin/index.css` directly. Add a new file (e.g., `my-component.css`) within `src/skin/` and than import the file to `src/skin/index.css`.
+
+```css
+@import "my-component";
+```
 
 ### Skin-in-Template
 
@@ -405,7 +433,11 @@ The JavaScript. You can write your script with ES6+ and you can also import pack
 
 ### Partialize
 
-Do not write scripts in `index.js` directly. Add a new file (e.g., `util.js`) within `src/js/` and than import the file to `index.js` using `import './util';`.
+Do not write scripts in `src/js/index.js` directly. Add a new file (e.g., `util.js`) within `src/js/` and than import the file to `src/js/index.js`.
+
+```js
+import './util';
+```
 
 ### JS-in-Template
 
