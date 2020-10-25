@@ -273,14 +273,14 @@ Block tag:
 
 Block tag with files:
 
-Use `{(% asset %)}` tag.
+Use `{? asset ?}` tag.
 
 ```njk
 {% asset %}
   <b:if cond='!data:view.isLayoutMode'>
   <style>
-  {(% asset "path/to/file1.css" %)}
-  {(% asset "path/to/file2.css" %)}
+  {? asset "path/to/file1.css" ?}
+  {? asset "path/to/file2.css" ?}
   </style>
   </b:if>
 {% endasset %}
@@ -288,8 +288,8 @@ Use `{(% asset %)}` tag.
 {% asset %}
   <script>
   //<![CDATA[
-  {(% asset "path/to/file1.js" %)}
-  {(% asset "path/to/file2.js" %)}
+  {? asset "path/to/file1.js" ?}
+  {? asset "path/to/file2.js" ?}
   //]]>
   </script>
 {% endasset %}

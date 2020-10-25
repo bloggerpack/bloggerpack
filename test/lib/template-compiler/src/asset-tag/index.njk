@@ -31,8 +31,8 @@
     {% asset %}
       <b:if cond='!data:view.isLayoutMode'>
       <style>
-      {(% asset "style.css" %)}
-      {(% asset "style.css" %)}
+      {? asset "style.css" ?}
+      {? asset "style.css" ?}
       </style>
       </b:if>
     {% endasset %}
@@ -64,8 +64,8 @@
     {% asset %}
       <script>
       //<![CDATA[
-      {(% asset "script.js" %)}
-      {(% asset "script.js" %)}
+      {? asset "script.js" ?}
+      {? asset "script.js" ?}
       //]]>
       </script>
     {% endasset %}
