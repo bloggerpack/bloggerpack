@@ -76,7 +76,7 @@
 |   ├── skin/                             |   |
 |   |   ├── auto-extract.css (!)          |   |
 |   |   └── index.css ------------------->|   |
-|   ├── template/
+|   ├── template/                             |
 |   └── index.njk --------------------------->|   # (!) = auto-generated
 ├── .browserslistrc
 └── package.json
