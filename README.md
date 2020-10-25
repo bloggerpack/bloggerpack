@@ -357,6 +357,10 @@ This is footer content.
 >>>endtemplate
 ```
 
+### Template example
+
+[See template example](test/tasks/template).
+
 ## Sass
 
 Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
@@ -388,6 +392,10 @@ $heading-color: #fff !default;
 ```
 
 The styles within the tag would be automatically extracted to `src/sass/_auto-extract.scss`.
+
+### Sass example
+
+[See sass example](test/tasks/sass).
 
 ## Skin
 
@@ -427,6 +435,10 @@ You can write skin CSS for specific template in the template file directly using
 
 The styles within the tag would be automatically extracted to `src/skin/auto-extract.css`.
 
+### Skin example
+
+[See skin example](test/tasks/skin).
+
 ## JS
 
 The JavaScript. You can write your script with ES6+ and you can also import package from node modules.
@@ -454,6 +466,10 @@ var example = document.getElementById('example');
 ```
 
 The JavaScript within the tag would be automatically extracted to `src/js/auto-extract.js`.
+
+### JS example
+
+[See js example](test/tasks/js).
 
 ---
 
