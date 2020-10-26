@@ -19,8 +19,8 @@ function test_sass() {
       'src/example2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('sass.scss'))
     .pipe(debug())
+    .pipe(concat('sass.scss'))
     .pipe(dest('output', {overwrite: true}));
 }
 
@@ -38,8 +38,8 @@ function test_sassEmpty() {
       'src/example-empty2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('sass.scss'))
     .pipe(debug())
+    .pipe(concat('sass.scss'))
     .pipe(dest('output/empty', {overwrite: true}));
 }
 
@@ -57,8 +57,8 @@ function test_skin() {
       'src/example2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('skin.css'))
     .pipe(debug())
+    .pipe(concat('skin.css'))
     .pipe(dest('output', {overwrite: true}));
 }
 
@@ -76,8 +76,8 @@ function test_skinEmpty() {
       'src/example-empty2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('skin.css'))
     .pipe(debug())
+    .pipe(concat('skin.css'))
     .pipe(dest('output/empty', {overwrite: true}));
 }
 
@@ -95,8 +95,8 @@ function test_js() {
       'src/example2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('js.js'))
     .pipe(debug())
+    .pipe(concat('js.js'))
     .pipe(dest('output', {overwrite: true}));
 }
 
@@ -114,8 +114,8 @@ function test_jsEmpty() {
       'src/example-empty2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
-    .pipe(concat('js.js'))
     .pipe(debug())
+    .pipe(concat('js.js'))
     .pipe(dest('output/empty', {overwrite: true}));
 }
 
