@@ -99,18 +99,18 @@ skinRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('extract-clean', function (cb) {
+  gulpInst.task('skin-extract-clean', function (cb) {
     del.sync(path.join(process.cwd(), skinOpts.extract.dest, skinOpts.extract.filename));
     cb();
   });
-  gulpInst.task('extract', function () {
+  gulpInst.task('skin-extract', function () {
     return src([...skinOpts.extract.src], {allowEmpty: true})
       .pipe(extract(skinOpts.extract.opts))
       .pipe(concat(skinOpts.extract.filename))
       .pipe(dest(skinOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('lint', function () {
+  gulpInst.task('skin-lint', function () {
     return src([...skinOpts.lint.src], {allowEmpty: true})
       .pipe(stylelint({
         configFile: skinOpts.lint.configFile,
@@ -128,7 +128,7 @@ skinRegistry.prototype.init = function(gulpInst) {
       }));
   });
 
-  gulpInst.task('compile', function () {
+  gulpInst.task('skin-compile', function () {
     return src(skinOpts.compile.src)
       .pipe(skinImportBeautifier())
       .pipe(postcss([
@@ -150,10 +150,10 @@ skinRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('skin-tasks', series(
-    'extract-clean',
-    'extract',
-    'lint',
-    'compile'
+    'skin-extract-clean',
+    'skin-extract',
+    'skin-lint',
+    'skin-compile'
   ));
 }
 

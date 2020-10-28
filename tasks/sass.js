@@ -99,18 +99,18 @@ sassRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('extract-clean', function (cb) {
+  gulpInst.task('sass-extract-clean', function (cb) {
     del.sync(path.join(process.cwd(), sassOpts.extract.dest, sassOpts.extract.filename));
     cb();
   });
-  gulpInst.task('extract', function () {
+  gulpInst.task('sass-extract', function () {
     return src([...sassOpts.extract.src], {allowEmpty: true})
       .pipe(extract(sassOpts.extract.opts))
       .pipe(concat(sassOpts.extract.filename))
       .pipe(dest(sassOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('lint', function () {
+  gulpInst.task('sass-lint', function () {
     return src([...sassOpts.lint.src], {allowEmpty: true})
       .pipe(stylelint({
         configFile: sassOpts.lint.configFile,
@@ -128,7 +128,7 @@ sassRegistry.prototype.init = function(gulpInst) {
       }));
   });
 
-  gulpInst.task('compile', function () {
+  gulpInst.task('sass-compile', function () {
     return src(sassOpts.compile.src)
       .pipe(sass({
         outputStyle: 'expanded',
@@ -152,10 +152,10 @@ sassRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('sass-tasks', series(
-    'extract-clean',
-    'extract',
-    'lint',
-    'compile'
+    'sass-extract-clean',
+    'sass-extract',
+    'sass-lint',
+    'sass-compile'
   ));
 }
 

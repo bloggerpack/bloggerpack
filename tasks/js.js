@@ -98,18 +98,18 @@ jsRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('extract-clean', function (cb) {
+  gulpInst.task('js-extract-clean', function (cb) {
     del.sync(path.join(process.cwd(), jsOpts.extract.dest, jsOpts.extract.filename));
     cb();
   });
-  gulpInst.task('extract', function () {
+  gulpInst.task('js-extract', function () {
     return src([...jsOpts.extract.src], {allowEmpty: true})
       .pipe(extract(jsOpts.extract.opts))
       .pipe(concat(jsOpts.extract.filename))
       .pipe(dest(jsOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('lint', function () {
+  gulpInst.task('js-lint', function () {
     return src([...jsOpts.lint.src], {allowEmpty: true})
       .pipe(eslint({
         configFile: jsOpts.lint.configFile,
@@ -119,7 +119,7 @@ jsRegistry.prototype.init = function(gulpInst) {
       .pipe(eslint.failAfterError());
   });
 
-  gulpInst.task('compile', function () {
+  gulpInst.task('js-compile', function () {
     var b = browserify({
       entries: jsOpts.compile.src,
       debug: true,
@@ -150,10 +150,10 @@ jsRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('js-tasks', series(
-    'extract-clean',
-    'extract',
-    'lint',
-    'compile'
+    'js-extract-clean',
+    'js-extract',
+    'js-lint',
+    'js-compile'
   ));
 }
 

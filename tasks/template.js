@@ -46,14 +46,14 @@ templateRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('compile', function() {
+  gulpInst.task('template-compile', function() {
     return src(templateOpts.compile.src, {allowEmpty: true})
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(templateOpts.compile.filename))
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
-  gulpInst.task('template-tasks', series('compile'));
+  gulpInst.task('template-tasks', series('template-compile'));
 }
 
 module.exports = templateRegistry;
