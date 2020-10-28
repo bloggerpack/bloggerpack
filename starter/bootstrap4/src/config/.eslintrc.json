@@ -1,10 +1,5 @@
 {
   "root": true,
-  "env": {
-    "browser": true,
-    "jquery": true
-  },
-  "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
     "plugin:import/errors",

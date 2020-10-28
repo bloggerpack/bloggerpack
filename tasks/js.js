@@ -113,6 +113,11 @@ jsRegistry.prototype.init = function(gulpInst) {
     return src([...jsOpts.lint.src], {allowEmpty: true})
       .pipe(eslint({
         configFile: jsOpts.lint.configFile,
+        envs: ['browser', 'jquery'],
+        parser: '@babel/eslint-parser',
+        parserOptions: {
+          requireConfigFile: false
+        },
         reportUnusedDisableDirectives: true
       }))
       .pipe(eslint.format())
