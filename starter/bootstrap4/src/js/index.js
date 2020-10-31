@@ -6,4 +6,4 @@ import './enable-bootstrap-popovers';
 import './enable-bootstrap-tooltips';
 
 // Required
-import './auto-extract';
+import './js-in-template';

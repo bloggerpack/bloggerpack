@@ -1,11 +1,11 @@
->>>template
-<b:section class='footer-section' id='footer-section' maxwidgets='2' name='Footer section' showaddelement='no'>
-  {% template "template/footer.part/footer-section.part/LinkList2.njk" %}
-  {% template "template/footer.part/footer-section.part/HTML1.njk" %}
-</b:section>
->>>endtemplate
+<template to='bp-template'>
+  <b:section class='footer-section' id='footer-section' maxwidgets='2' name='Footer section' showaddelement='no'>
+    {% template "template/footer.part/footer-section.part/LinkList2.njk" %}
+    {% template "template/footer.part/footer-section.part/HTML1.njk" %}
+  </b:section>
+</template>
 
->>>sass
+<style to='bp-sass'>
 //
 // Widget
 //
@@ -17,4 +17,4 @@
     margin-bottom: 0;
   }
 }
->>>endsass
+</style>
