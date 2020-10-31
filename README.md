@@ -360,7 +360,7 @@ src/index.njk:
 
 ### Template example
 
-[See template example](test/tasks/template).
+[See example](test/tasks/template).
 
 ## Sass
 
@@ -396,7 +396,11 @@ The styles within the tag would be automatically extracted to `src/sass/_sass-in
 
 ### Sass example
 
-[See sass example](test/tasks/sass).
+[See example](test/tasks/sass).
+
+### Remove Sass
+
+If you don't need to use the Sass feature, you can remove the `src/sass` folder.
 
 ## Skin
 
@@ -438,7 +442,11 @@ The styles within the tag would be automatically extracted to `src/skin/skin-in-
 
 ### Skin example
 
-[See skin example](test/tasks/skin).
+[See example](test/tasks/skin).
+
+### Remove Skin
+
+If you don't need to use the Skin feature, you can remove the `src/skin` folder.
 
 ## JS
 
@@ -470,7 +478,11 @@ The JavaScript within the tag would be automatically extracted to `src/js/js-in-
 
 ### JS example
 
-[See js example](test/tasks/js).
+[See example](test/tasks/js).
+
+### Remove JS
+
+If you don't need to use the JS feature, you can remove the `src/js` folder.
 
 ---
 

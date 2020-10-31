@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const {series, registry} = require('gulp');
 const gulpWatch = require('gulp').watch;
@@ -6,6 +7,14 @@ const skinRegistry = require('./tasks/skin');
 const jsRegistry = require('./tasks/js');
 const templateRegistry = require('./tasks/template');
 const cleanRegistry = require('./tasks/clean');
+
+var tasks = [];
+
+/**
+ * ------------------------------------------------------------------------
+ * Sass tasks
+ * ------------------------------------------------------------------------
+ */
 
 const sassOptions = {
   src: {
@@ -26,6 +35,16 @@ const sassOptions = {
 }
 registry(new sassRegistry(sassOptions));
 
+if (fs.existsSync(path.join(sassOptions.src.dir, sassOptions.src.filename))) {
+  tasks.push('sass-tasks');
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * Skin tasks
+ * ------------------------------------------------------------------------
+ */
+
 const skinOptions = {
   src: {
     dir: 'src/skin',
@@ -44,6 +63,16 @@ const skinOptions = {
   }
 }
 registry(new skinRegistry(skinOptions));
+
+if (fs.existsSync(path.join(skinOptions.src.dir, skinOptions.src.filename))) {
+  tasks.push('skin-tasks');
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * JS tasks
+ * ------------------------------------------------------------------------
+ */
 
 const jsOptions = {
   src: {
@@ -64,6 +93,16 @@ const jsOptions = {
 }
 registry(new jsRegistry(jsOptions));
 
+if (fs.existsSync(path.join(jsOptions.src.dir, jsOptions.src.filename))) {
+  tasks.push('js-tasks');
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * Template tasks
+ * ------------------------------------------------------------------------
+ */
+
 const templateOptions = {
   src: {
     dir: 'src',
@@ -77,6 +116,16 @@ const templateOptions = {
 }
 registry(new templateRegistry(templateOptions));
 
+if (fs.existsSync(path.join(templateOptions.src.dir, templateOptions.src.filename))) {
+  tasks.push('template-tasks');
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * Clean tasks
+ * ------------------------------------------------------------------------
+ */
+
 const cleanOptions = {
   src: [
     'src/dist',
@@ -85,13 +134,20 @@ const cleanOptions = {
 }
 registry(new cleanRegistry(cleanOptions));
 
-const build = series(
-  'clean',
-  'sass-tasks',
-  'skin-tasks',
-  'js-tasks',
-  'template-tasks'
-);
+/**
+ * ------------------------------------------------------------------------
+ * Task Definitions
+ * ------------------------------------------------------------------------
+ */
+
+if (tasks.length === 0 || tasks.includes('template-tasks') === false) {
+  tasks = function(cb) {
+    console.log('Require ' + path.join(templateOptions.src.dir, templateOptions.src.filename));
+    cb();
+  }
+}
+
+const build = series('clean', tasks);
 
 function watch() {
   return gulpWatch([
