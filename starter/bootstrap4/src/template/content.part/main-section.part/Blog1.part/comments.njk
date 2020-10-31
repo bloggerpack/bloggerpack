@@ -1,249 +1,249 @@
->>>template
-<b:comment>### Post page | Static page ###</b:comment>
+<template to='bp-template'>
+  <b:comment>### Post page | Static page ###</b:comment>
 
-<b:if cond='data:view.isPost or data:view.isPage'>
-  <b:loop values='data:posts' var='post'>
-    <b:if cond='data:post.allowComments'>
-      <div class='comments blog-post-spacer' id='comments'>
+  <b:if cond='data:view.isPost or data:view.isPage'>
+    <b:loop values='data:posts' var='post'>
+      <b:if cond='data:post.allowComments'>
+        <div class='comments blog-post-spacer' id='comments'>
 
-        <b:comment>=== Title ===</b:comment>
-        <h1 class='comments-title'>
-          <data:messages.comments/>
-          <small>
-            <data:post.numberOfComments/>
-          </small>
-        </h1>
+          <b:comment>=== Title ===</b:comment>
+          <h1 class='comments-title'>
+            <data:messages.comments/>
+            <small>
+              <data:post.numberOfComments/>
+            </small>
+          </h1>
 
-        <b:comment>=== New comments are not allowed ===</b:comment>
-        <b:if cond='!data:post.allowNewComments'>
-          <div class='comment-warning' role='alert'>
-            <data:post.noNewCommentsText/>
-          </div>
-        </b:if>
+          <b:comment>=== New comments are not allowed ===</b:comment>
+          <b:if cond='!data:post.allowNewComments'>
+            <div class='comment-warning' role='alert'>
+              <data:post.noNewCommentsText/>
+            </div>
+          </b:if>
 
-        <b:comment>=== Comment list ===</b:comment>
-        <b:if cond='data:post.comments.notEmpty'>
-          <ol class='comment-list'>
-            <b:loop values='data:post.comments where (c => not c.inReplyTo)' var='comment'>
-              <li expr:id='data:comment.anchorName'>
+          <b:comment>=== Comment list ===</b:comment>
+          <b:if cond='data:post.comments.notEmpty'>
+            <ol class='comment-list'>
+              <b:loop values='data:post.comments where (c => not c.inReplyTo)' var='comment'>
+                <li expr:id='data:comment.anchorName'>
 
-                <div class='comment-block'>
-                  <b:class cond='data:comment.adminClass == data:post.adminClass' name='is-author'/>
-                  <b:comment>=== Comment header ===</b:comment>
-                  <div class='comment-header'>
-                    <b:comment>=== Col 1 ===</b:comment>
-                    <div class='comment-header-col-1'>
-                      <b:comment>=== Comment avatar ===</b:comment>
-                      <b:if cond='data:comment.authorPhoto'>
-                        <img class='comment-avatar' expr:src='resizeImage(data:comment.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
-                      <b:else/>
-                        <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
-                          <title>icon</title>
-                          <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
-                          <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
-                        </svg>
-                      </b:if>
-                    </div><!-- /.comment-header-col-1 -->
-                    <b:comment>=== Col 2 ===</b:comment>
-                    <div class='comment-header-col-2'>
-                      <b:comment>=== Comment author ===</b:comment>
-                      <div class='comment-author'>
-                        <b:if cond='data:comment.authorUrl'>
-                          <a expr:href='data:comment.authorUrl'>
-                            <data:comment.author/>
-                          </a>
+                  <div class='comment-block'>
+                    <b:class cond='data:comment.adminClass == data:post.adminClass' name='is-author'/>
+                    <b:comment>=== Comment header ===</b:comment>
+                    <div class='comment-header'>
+                      <b:comment>=== Col 1 ===</b:comment>
+                      <div class='comment-header-col-1'>
+                        <b:comment>=== Comment avatar ===</b:comment>
+                        <b:if cond='data:comment.authorPhoto'>
+                          <img class='comment-avatar' expr:src='resizeImage(data:comment.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
                         <b:else/>
-                          <data:comment.author/>
+                          <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+                            <title>icon</title>
+                            <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+                            <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+                          </svg>
                         </b:if>
-                        <b:comment>=== Comment author badge ===</b:comment>
-                        <b:if cond='data:comment.adminClass == data:post.adminClass'>
-                          <span class='comment-author-badge'>Author</span>
-                        </b:if>
-                      </div><!-- /.comment-author -->
-                      <b:comment>=== Comment meta ===</b:comment>
-                      <div class='comment-meta'>
-                        <a expr:href='data:comment.url'>#</a>
-                        <span><data:comment.timestamp/></span>
-                      </div><!-- /.comment-meta -->
-                    </div><!-- /.comment-header-col-2 -->
-                  </div><!-- /.comment-header -->
-                  <b:comment>=== Comment body ===</b:comment>
-                  <div class='comment-body'>
-                    <b:if cond='data:comment.isDeleted'>
-                      <div class='comment-warning' role='alert'>
-                        <data:comment.body/>
-                      </div>
-                    <b:else/>
-                      <div class='comment-text'>
-                        <data:comment.body/>
-                      </div>
-                    </b:if>
-                  </div><!-- /.comment-body -->
-                  <b:comment>=== Comment actions ===</b:comment>
-                  <div class='comment-actions'>
-                    <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-                      <a expr:href='"javascript:replyTo(&amp;quot;" + data:comment.id + "&amp;quot;);"'>
-                        Reply
-                      </a>
-                      <span>&#183;</span>
-                    </b:if>
-                    <a expr:href='data:comment.deleteUrl'>
-                      Delete
-                    </a>
-                  </div><!-- /.comment-actions -->
-                </div><!-- /.comment-block -->
-
-                <b:comment>=== Reply form container ===</b:comment>
-                <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-                  <div class='reply-form-container' expr:id='"r" + data:comment.id'/>
-                </b:if>
-
-                <b:comment>=== Children ===</b:comment>
-                <b:if cond='data:post.comments any (c => c.inReplyTo == data:comment.id)'>
-                  <ul class='comment-list-children'>
-                    <b:loop values='data:post.comments where (c => c.inReplyTo == data:comment.id)' var='reply'>
-                      <li expr:id='data:reply.anchorName'>
-
-                        <div class='comment-block'>
-                          <b:class cond='data:reply.adminClass == data:post.adminClass' name='is-author'/>
-                          <b:comment>=== Comment header ===</b:comment>
-                          <div class='comment-header'>
-                            <b:comment>=== Col 1 ===</b:comment>
-                            <div class='comment-header-col-1'>
-                              <b:comment>=== Comment avatar ===</b:comment>
-                              <b:if cond='data:reply.authorPhoto'>
-                                <img class='comment-avatar' expr:src='resizeImage(data:reply.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
-                              <b:else/>
-                                <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
-                                  <title>icon</title>
-                                  <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
-                                  <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
-                                </svg>
-                              </b:if>
-                            </div><!-- /.comment-header-col-1 -->
-                            <b:comment>=== Col 2 ===</b:comment>
-                            <div class='comment-header-col-2'>
-                              <b:comment>=== Comment author ===</b:comment>
-                              <div class='comment-author'>
-                                <b:if cond='data:reply.authorUrl'>
-                                  <a expr:href='data:reply.authorUrl'>
-                                    <data:reply.author/>
-                                  </a>
-                                <b:else/>
-                                  <data:reply.author/>
-                                </b:if>
-                                <b:comment>=== Comment author badge ===</b:comment>
-                                <b:if cond='data:reply.adminClass == data:post.adminClass'>
-                                  <span class='comment-author-badge'>Author</span>
-                                </b:if>
-                              </div><!-- /.comment-author -->
-                              <b:comment>=== Comment meta ===</b:comment>
-                              <div class='comment-meta'>
-                                <a expr:href='data:reply.url'>#</a>
-                                <span><data:reply.timestamp/></span>
-                              </div><!-- /.comment-meta -->
-                            </div><!-- /.comment-header-col-2 -->
-                          </div><!-- /.comment-header -->
-                          <b:comment>=== Comment body ===</b:comment>
-                          <div class='comment-body'>
-                            <b:if cond='data:reply.isDeleted'>
-                              <div class='comment-warning' role='alert'>
-                                <data:reply.body/>
-                              </div>
-                            <b:else/>
-                              <div class='comment-text'>
-                                <data:reply.body/>
-                              </div>
-                            </b:if>
-                          </div><!-- /.comment-body -->
-                          <b:comment>=== Comment actions ===</b:comment>
-                          <div class='comment-actions'>
-                            <a expr:href='data:reply.deleteUrl'>
-                              Delete
+                      </div><!-- /.comment-header-col-1 -->
+                      <b:comment>=== Col 2 ===</b:comment>
+                      <div class='comment-header-col-2'>
+                        <b:comment>=== Comment author ===</b:comment>
+                        <div class='comment-author'>
+                          <b:if cond='data:comment.authorUrl'>
+                            <a expr:href='data:comment.authorUrl'>
+                              <data:comment.author/>
                             </a>
-                          </div><!-- /.comment-actions -->
-                        </div><!-- /.comment-block -->
+                          <b:else/>
+                            <data:comment.author/>
+                          </b:if>
+                          <b:comment>=== Comment author badge ===</b:comment>
+                          <b:if cond='data:comment.adminClass == data:post.adminClass'>
+                            <span class='comment-author-badge'>Author</span>
+                          </b:if>
+                        </div><!-- /.comment-author -->
+                        <b:comment>=== Comment meta ===</b:comment>
+                        <div class='comment-meta'>
+                          <a expr:href='data:comment.url'>#</a>
+                          <span><data:comment.timestamp/></span>
+                        </div><!-- /.comment-meta -->
+                      </div><!-- /.comment-header-col-2 -->
+                    </div><!-- /.comment-header -->
+                    <b:comment>=== Comment body ===</b:comment>
+                    <div class='comment-body'>
+                      <b:if cond='data:comment.isDeleted'>
+                        <div class='comment-warning' role='alert'>
+                          <data:comment.body/>
+                        </div>
+                      <b:else/>
+                        <div class='comment-text'>
+                          <data:comment.body/>
+                        </div>
+                      </b:if>
+                    </div><!-- /.comment-body -->
+                    <b:comment>=== Comment actions ===</b:comment>
+                    <div class='comment-actions'>
+                      <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+                        <a expr:href='"javascript:replyTo(&amp;quot;" + data:comment.id + "&amp;quot;);"'>
+                          Reply
+                        </a>
+                        <span>&#183;</span>
+                      </b:if>
+                      <a expr:href='data:comment.deleteUrl'>
+                        Delete
+                      </a>
+                    </div><!-- /.comment-actions -->
+                  </div><!-- /.comment-block -->
 
-                      </li>
-                    </b:loop>
-                  </ul><!-- /.comment-list-children -->
+                  <b:comment>=== Reply form container ===</b:comment>
+                  <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+                    <div class='reply-form-container' expr:id='"r" + data:comment.id'/>
+                  </b:if>
+
+                  <b:comment>=== Children ===</b:comment>
+                  <b:if cond='data:post.comments any (c => c.inReplyTo == data:comment.id)'>
+                    <ul class='comment-list-children'>
+                      <b:loop values='data:post.comments where (c => c.inReplyTo == data:comment.id)' var='reply'>
+                        <li expr:id='data:reply.anchorName'>
+
+                          <div class='comment-block'>
+                            <b:class cond='data:reply.adminClass == data:post.adminClass' name='is-author'/>
+                            <b:comment>=== Comment header ===</b:comment>
+                            <div class='comment-header'>
+                              <b:comment>=== Col 1 ===</b:comment>
+                              <div class='comment-header-col-1'>
+                                <b:comment>=== Comment avatar ===</b:comment>
+                                <b:if cond='data:reply.authorPhoto'>
+                                  <img class='comment-avatar' expr:src='resizeImage(data:reply.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
+                                <b:else/>
+                                  <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+                                    <title>icon</title>
+                                    <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+                                    <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+                                  </svg>
+                                </b:if>
+                              </div><!-- /.comment-header-col-1 -->
+                              <b:comment>=== Col 2 ===</b:comment>
+                              <div class='comment-header-col-2'>
+                                <b:comment>=== Comment author ===</b:comment>
+                                <div class='comment-author'>
+                                  <b:if cond='data:reply.authorUrl'>
+                                    <a expr:href='data:reply.authorUrl'>
+                                      <data:reply.author/>
+                                    </a>
+                                  <b:else/>
+                                    <data:reply.author/>
+                                  </b:if>
+                                  <b:comment>=== Comment author badge ===</b:comment>
+                                  <b:if cond='data:reply.adminClass == data:post.adminClass'>
+                                    <span class='comment-author-badge'>Author</span>
+                                  </b:if>
+                                </div><!-- /.comment-author -->
+                                <b:comment>=== Comment meta ===</b:comment>
+                                <div class='comment-meta'>
+                                  <a expr:href='data:reply.url'>#</a>
+                                  <span><data:reply.timestamp/></span>
+                                </div><!-- /.comment-meta -->
+                              </div><!-- /.comment-header-col-2 -->
+                            </div><!-- /.comment-header -->
+                            <b:comment>=== Comment body ===</b:comment>
+                            <div class='comment-body'>
+                              <b:if cond='data:reply.isDeleted'>
+                                <div class='comment-warning' role='alert'>
+                                  <data:reply.body/>
+                                </div>
+                              <b:else/>
+                                <div class='comment-text'>
+                                  <data:reply.body/>
+                                </div>
+                              </b:if>
+                            </div><!-- /.comment-body -->
+                            <b:comment>=== Comment actions ===</b:comment>
+                            <div class='comment-actions'>
+                              <a expr:href='data:reply.deleteUrl'>
+                                Delete
+                              </a>
+                            </div><!-- /.comment-actions -->
+                          </div><!-- /.comment-block -->
+
+                        </li>
+                      </b:loop>
+                    </ul><!-- /.comment-list-children -->
+                  </b:if>
+
+                </li>
+              </b:loop>
+            </ol><!-- /.comment-list -->
+          </b:if>
+
+          <b:comment>=== Comment pagination ===</b:comment>
+          <b:if cond='data:post.commentPagingRequired'>
+            <nav class='comment-pagination comment-block'>
+              <div>
+                <a expr:href='data:post.olderLinkUrl'>
+                  <data:post.olderLinkText/>
+                </a>
+                <a expr:href='data:post.oldestLinkUrl'>
+                  <data:post.oldestLinkText/>
+                </a>
+              </div>
+
+              <div>
+                <data:post.commentRangeText/>
+              </div>
+
+              <div>
+                <a expr:href='data:post.newestLinkUrl'>
+                  <data:post.newestLinkText/>
+                </a>
+                <a expr:href='data:post.newerLinkUrl'>
+                  <data:post.newerLinkText/>
+                </a>
+              </div>
+            </nav>
+          </b:if>
+
+          <b:comment>=== Comment form ===</b:comment>
+          <b:if cond='data:post.allowNewComments'>
+            <div class='init-form-container' id='init-form-container'>
+              <div class='comment-form comment-block' id='comment-form'>
+                <h4 class='comment-form-title'><data:messages.postAComment/></h4>
+                <b:if cond='data:this.messages.blogComment != ""'>
+                  <p class='comment-form-message'><data:this.messages.blogComment/></p>
                 </b:if>
+                <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' expr:height='data:cmtIframeInitialHeight ?: "90px"' id='comment-editor' name='comment-editor' src=''/>
+                <data:post.cmtfpIframe/>
+                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
+                <a class='comment-cancel-reply' href='javascript:replyTo(0);'>Cancel</a>
+              </div><!-- /.comment-form -->
 
-              </li>
-            </b:loop>
-          </ol><!-- /.comment-list -->
-        </b:if>
+              {% asset %}
+                <script>
+                //<![CDATA[
+                var commentEditorSrc = document.getElementById('comment-editor').src.split('#');
+                function replyTo(id) {
+                  var form = document.getElementById('comment-form');
+                  var iframe = document.getElementById('comment-editor');
+                  var replyFormContainer = document.getElementById('r' + id);
+                  var initFormContainer = document.getElementById('init-form-container');
+                  var container = id ? replyFormContainer : initFormContainer;
+                  var part = commentEditorSrc;
 
-        <b:comment>=== Comment pagination ===</b:comment>
-        <b:if cond='data:post.commentPagingRequired'>
-          <nav class='comment-pagination comment-block'>
-            <div>
-              <a expr:href='data:post.olderLinkUrl'>
-                <data:post.olderLinkText/>
-              </a>
-              <a expr:href='data:post.oldestLinkUrl'>
-                <data:post.oldestLinkText/>
-              </a>
-            </div>
+                  container.insertBefore(form, null);
+                  iframe.src = id ? part[0] + '&parentID=' + id + '#' + part[1] : part[0] + '#' + part[1];
+                }
+                //]]>
+                </script>
+              {% endasset %}
+            </div><!-- /.init-form-container -->
+          </b:if>
 
-            <div>
-              <data:post.commentRangeText/>
-            </div>
+        </div><!-- /.comments -->
+      </b:if><!-- /data:post.allowComments -->
+    </b:loop>
+  </b:if>
+</template>
 
-            <div>
-              <a expr:href='data:post.newestLinkUrl'>
-                <data:post.newestLinkText/>
-              </a>
-              <a expr:href='data:post.newerLinkUrl'>
-                <data:post.newerLinkText/>
-              </a>
-            </div>
-          </nav>
-        </b:if>
-
-        <b:comment>=== Comment form ===</b:comment>
-        <b:if cond='data:post.allowNewComments'>
-          <div class='init-form-container' id='init-form-container'>
-            <div class='comment-form comment-block' id='comment-form'>
-              <h4 class='comment-form-title'><data:messages.postAComment/></h4>
-              <b:if cond='data:this.messages.blogComment != ""'>
-                <p class='comment-form-message'><data:this.messages.blogComment/></p>
-              </b:if>
-              <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-              <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' expr:height='data:cmtIframeInitialHeight ?: "90px"' id='comment-editor' name='comment-editor' src=''/>
-              <data:post.cmtfpIframe/>
-              <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
-              <a class='comment-cancel-reply' href='javascript:replyTo(0);'>Cancel</a>
-            </div><!-- /.comment-form -->
-
-            {% asset %}
-              <script>
-              //<![CDATA[
-              var commentEditorSrc = document.getElementById('comment-editor').src.split('#');
-              function replyTo(id) {
-                var form = document.getElementById('comment-form');
-                var iframe = document.getElementById('comment-editor');
-                var replyFormContainer = document.getElementById('r' + id);
-                var initFormContainer = document.getElementById('init-form-container');
-                var container = id ? replyFormContainer : initFormContainer;
-                var part = commentEditorSrc;
-
-                container.insertBefore(form, null);
-                iframe.src = id ? part[0] + '&parentID=' + id + '#' + part[1] : part[0] + '#' + part[1];
-              }
-              //]]>
-              </script>
-            {% endasset %}
-          </div><!-- /.init-form-container -->
-        </b:if>
-
-      </div><!-- /.comments -->
-    </b:if><!-- /data:post.allowComments -->
-  </b:loop>
-</b:if>
->>>endtemplate
-
->>>sass
+<style to='bp-sass'>
 //
 // Variables
 //
@@ -492,4 +492,4 @@ a#comment-editor-src {
 .init-form-container .comment-cancel-reply {
   display: none;
 }
->>>endsass
+</style>

@@ -9,10 +9,10 @@ describe('tasks', function () {
       String(file).should.equal(String(expected));
     });
   });
-  describe('js auto-extract', function () {
+  describe('js-in-template', function () {
     it('should equal', function() {
-      var file = fs.readFileSync('test/tasks/js/src/js/auto-extract.js');
-      var expected = fs.readFileSync('test/tasks/js/expected/auto-extract.js');
+      var file = fs.readFileSync('test/tasks/js/src/js/js-in-template.js');
+      var expected = fs.readFileSync('test/tasks/js/expected/js-in-template.js');
       String(file).should.equal(String(expected));
     });
   });
@@ -24,10 +24,10 @@ describe('tasks', function () {
       String(file).should.equal(String(expected));
     });
   });
-  describe('sass auto-extract', function () {
+  describe('sass-in-template', function () {
     it('should equal', function() {
-      var file = fs.readFileSync('test/tasks/sass/src/sass/_auto-extract.scss');
-      var expected = fs.readFileSync('test/tasks/sass/expected/_auto-extract.scss');
+      var file = fs.readFileSync('test/tasks/sass/src/sass/_sass-in-template.scss');
+      var expected = fs.readFileSync('test/tasks/sass/expected/_sass-in-template.scss');
       String(file).should.equal(String(expected));
     });
   });
@@ -39,10 +39,10 @@ describe('tasks', function () {
       String(file).should.equal(String(expected));
     });
   });
-  describe('skin auto-extract', function () {
+  describe('skin-in-template', function () {
     it('should equal', function() {
-      var file = fs.readFileSync('test/tasks/skin/src/skin/auto-extract.css');
-      var expected = fs.readFileSync('test/tasks/skin/expected/auto-extract.css');
+      var file = fs.readFileSync('test/tasks/skin/src/skin/skin-in-template.css');
+      var expected = fs.readFileSync('test/tasks/skin/expected/skin-in-template.css');
       String(file).should.equal(String(expected));
     });
   });

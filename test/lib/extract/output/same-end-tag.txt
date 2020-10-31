@@ -1,0 +1,5 @@
+/* Header (src/example-same-end-tag.njk) */
+
+Foo
+
+/* Footer */

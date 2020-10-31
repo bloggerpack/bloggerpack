@@ -57,11 +57,11 @@ jsRegistry.prototype.init = function(gulpInst) {
         path.join(process.cwd(), 'node_modules/bloggerpack-plugin-*/**/*.njk'),
         '!' + path.join(process.cwd(), 'node_modules/**/*.njk')
       ],
-      filename: 'auto-extract.js',
+      filename: 'js-in-template.js',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '>>>js',
-        end: '>>>endjs',
+        start: "<script to='bp-js'>",
+        end: '</script>',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>

@@ -3,6 +3,20 @@ var should = require('should');
 
 describe('lib', function() {
   describe('extract', function () {
+    describe('diff-end-tag', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/diff-end-tag.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/diff-end-tag.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
+    describe('empty', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/empty.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/empty.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
     describe('js', function () {
       it('should equal', function() {
         var file = fs.readFileSync('test/lib/extract/output/js.js');
@@ -10,10 +24,38 @@ describe('lib', function() {
         String(file).should.equal(String(expected));
       });
     });
-    describe('js empty', function () {
+    describe('no-options', function () {
       it('should equal', function() {
-        var file = fs.readFileSync('test/lib/extract/output/empty/js.js');
-        var expected = fs.readFileSync('test/lib/extract/expected/empty/js.js');
+        var file = fs.readFileSync('test/lib/extract/output/no-options.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/no-options.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
+    describe('option-footer-only', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/option-footer-only.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/option-footer-only.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
+    describe('option-header-only', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/option-header-only.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/option-header-only.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
+    describe('option-no-empty-message', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/option-no-empty-message.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/option-no-empty-message.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
+    describe('same-end-tag', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/same-end-tag.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/same-end-tag.txt');
         String(file).should.equal(String(expected));
       });
     });
@@ -24,24 +66,10 @@ describe('lib', function() {
         String(file).should.equal(String(expected));
       });
     });
-    describe('sass empty', function () {
-      it('should equal', function() {
-        var file = fs.readFileSync('test/lib/extract/output/empty/sass.scss');
-        var expected = fs.readFileSync('test/lib/extract/expected/empty/sass.scss');
-        String(file).should.equal(String(expected));
-      });
-    });
     describe('skin', function () {
       it('should equal', function() {
         var file = fs.readFileSync('test/lib/extract/output/skin.css');
         var expected = fs.readFileSync('test/lib/extract/expected/skin.css');
-        String(file).should.equal(String(expected));
-      });
-    });
-    describe('skin empty', function () {
-      it('should equal', function() {
-        var file = fs.readFileSync('test/lib/extract/output/empty/skin.css');
-        var expected = fs.readFileSync('test/lib/extract/expected/empty/skin.css');
         String(file).should.equal(String(expected));
       });
     });

@@ -1,75 +1,75 @@
->>>template
-<html>
-  <head>
+<template test='template'>
+  <html>
+    <head>
 
-    {# Auto style tag #}
-    {% asset type="style", "style.css" %}
+      {# Auto style tag #}
+      {% asset type="style", "style.css" %}
 
-    {# Auto skin tag #}
-    {% asset type="skin", "skin.css" %}
+      {# Auto skin tag #}
+      {% asset type="skin", "skin.css" %}
 
-    {# Custom tag-start and tag-end #}
-    {%
-      asset
-        tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
-        "style.css",
-        tag_end="</style>\n</b:if>"
-    %}
+      {# Custom tag-start and tag-end #}
+      {%
+        asset
+          tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
+          "style.css",
+          tag_end="</style>\n</b:if>"
+      %}
 
-    {# Block tag #}
-    {% asset %}
-      <b:if cond='!data:view.isLayoutMode'>
-      <style>
-      .element {
-        display: block;
-      }
-      </style>
-      </b:if>
-    {% endasset %}
+      {# Block tag #}
+      {% asset %}
+        <b:if cond='!data:view.isLayoutMode'>
+        <style>
+        .element {
+          display: block;
+        }
+        </style>
+        </b:if>
+      {% endasset %}
 
-    {# Block tag with files #}
-    {% asset %}
-      <b:if cond='!data:view.isLayoutMode'>
-      <style>
-      {? asset "style.css" ?}
-      {? asset "style.css" ?}
-      </style>
-      </b:if>
-    {% endasset %}
+      {# Block tag with files #}
+      {% asset %}
+        <b:if cond='!data:view.isLayoutMode'>
+        <style>
+        {? asset "style.css" ?}
+        {? asset "style.css" ?}
+        </style>
+        </b:if>
+      {% endasset %}
 
-  </head>
-  <body>
+    </head>
+    <body>
 
-    {# Auto script tag #}
-    {% asset type="script", "script.js" %}
+      {# Auto script tag #}
+      {% asset type="script", "script.js" %}
 
-    {# Custom tag-start and tag-end #}
-    {%
-      asset
-        tag_start="<script>\n//<![CDATA[",
-        "script.js",
-        tag_end="//]]>\n</script>"
-    %}
+      {# Custom tag-start and tag-end #}
+      {%
+        asset
+          tag_start="<script>\n//<![CDATA[",
+          "script.js",
+          tag_end="//]]>\n</script>"
+      %}
 
-    {# Block tag #}
-    {% asset %}
-      <script>
-      //<![CDATA[
-      console.log('Hello, world!');
-      //]]>
-      </script>
-    {% endasset %}
+      {# Block tag #}
+      {% asset %}
+        <script>
+        //<![CDATA[
+        console.log('Hello, world!');
+        //]]>
+        </script>
+      {% endasset %}
 
-    {# Block tag with files #}
-    {% asset %}
-      <script>
-      //<![CDATA[
-      {? asset "script.js" ?}
-      {? asset "script.js" ?}
-      //]]>
-      </script>
-    {% endasset %}
+      {# Block tag with files #}
+      {% asset %}
+        <script>
+        //<![CDATA[
+        {? asset "script.js" ?}
+        {? asset "script.js" ?}
+        //]]>
+        </script>
+      {% endasset %}
 
-  </body>
-</html>
->>>endtemplate
+    </body>
+  </html>
+</template>

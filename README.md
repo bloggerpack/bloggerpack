@@ -68,13 +68,13 @@
 |   |   ├── sass.css <------------|---+       |   # compiled <---+
 |   |   └── skin.css <------------|---|---+   |   # source ----->|
 |   ├── js/                       │   |   |   |
-|   |   ├── auto-extract.js (!)   |   |   |   |
+|   |   ├── js-in-template.js (!) |   |   |   |
 |   |   └── index.js ------------>|   |   |   |
 |   ├── sass/                         |   |   |
-|   |   ├── _auto-extract.scss (!)    |   |   |
+|   |   ├── _sass-in-template.scss (!)|   |   |
 |   |   └── index.scss -------------->|   |   |
 |   ├── skin/                             |   |
-|   |   ├── auto-extract.css (!)          |   |
+|   |   ├── skin-in-template.css (!)      |   |
 |   |   └── index.css ------------------->|   |
 |   ├── template/                             |
 |   └── index.njk --------------------------->|   # (!) = auto-generated
@@ -140,12 +140,12 @@ We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its t
 
 ### Template tag
 
-Wrap the markup with `>>>template`-`>>>endtemplate` tag in `.njk` files.
+Wrap the markup with `<template to='bp-template'>`-`</template>` tag in `.njk` files.
 
 ```njk
->>>template
-<p>example</p>
->>>endtemplate
+<template to='bp-template'>
+  <p>example</p>
+</template>
 ```
 
 ### Including template
@@ -157,27 +157,27 @@ Note: the path is relative to the `index.njk` root directory.
 src/example-dir/file1.njk:
 
 ```njk
->>>template
-<p>example</p>
->>>endtemplate
+<template to='bp-template'>
+  <p>example</p>
+</template>
 ```
 
 src/example-dir/file2.njk:
 
 ```njk
->>>template
-<div>
-  {% template "example-dir/file1.njk" %}
-</div>
->>>endtemplate
+<template to='bp-template'>
+  <div>
+    {% template "example-dir/file1.njk" %}
+  </div>
+</template>
 ```
 
 src/index.njk:
 
 ```njk
->>>template
-{% template "example-dir/file2.njk" %}
->>>endtemplate
+<template to='bp-template'>
+  {% template "example-dir/file2.njk" %}
+</template>
 ```
 
 Output (`dist/theme.xml`):
@@ -193,29 +193,29 @@ Output (`dist/theme.xml`):
 You can also include template from node modules:
 
 ```njk
->>>template
-{% template "package-name/path/to/file.njk" %}
->>>endtemplate
+<template to='bp-template'>
+  {% template "package-name/path/to/file.njk" %}
+</template>
 ```
 
 Below is example of `package-name/path/to/file.njk`:
 
 ```njk
->>>template
-Template here
->>>endtemplate
+<template to='bp-template'>
+  Template here
+</template>
 
->>>sass
+<style to='bp-sass'>
 CSS for the template here
->>>endsass
+</style>
 
->>>skin
+<style to='bp-skin'>
 Skin for the template here
->>>endskin
+</style>
 
->>>js
+<script to='bp-js'>
 JS for the template here
->>>endjs
+</script>
 ```
 
 [Sass](#sass-in-template), [Skin](#skin-in-template), and [JS](#js-in-template) are optional.
@@ -235,23 +235,24 @@ Use this tag to include compiled [Sass](#sass), [Skin](#skin), [JS](#js), and ot
 Example:
 
 ```njk
->>>template
-<head>
-  {# Sass first #}
-  {% asset type="style", "dist/sass.css" %}
-  {# Skin #}
-  {% asset type="skin", "dist/skin.css" %}
-</head>
-<body>
-  ...
+<template to='bp-template'>
+  <head>
+    {# Auto style tag #}
+    {% asset type="style", "dist/sass.css" %}
 
-  {# JS #}
-  {% asset type="script", "dist/js.js" %}
-</body>
->>>endtemplate
+    {# Auto skin tag #}
+    {% asset type="skin", "dist/skin.css" %}
+  </head>
+  <body>
+    ...
+
+    {# Auto script tag #}
+    {% asset type="script", "dist/js.js" %}
+  </body>
+</template>
 ```
 
-Manual `tag_start` and `tag_end`:
+Custom `tag_start` and `tag_end`:
 
 ```njk
 {%
@@ -322,39 +323,39 @@ Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mo
 src/layout.njk:
 
 ```njk
->>>template
-<header>
-  {% block header %}{% endblock %}
-</header>
+<template to='bp-template'>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
 
-<main>
-  {% block main %}{% endblock %}
-</main>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
 
-<footer>
-  {% block footer %}{% endblock %}
-</footer>
->>>endtemplate
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
+</template>
 ```
 
 src/index.njk:
 
 ```njk
->>>template
-{% extends "layout.njk" %}
+<template to='bp-template'>
+  {% extends "layout.njk" %}
 
-{% block header %}
-This is header content.
-{% endblock %}
+  {% block header %}
+  This is header content.
+  {% endblock %}
 
-{% block main %}
-This is main content.
-{% endblock %}
+  {% block main %}
+  This is main content.
+  {% endblock %}
 
-{% block footer %}
-This is footer content.
-{% endblock %}
->>>endtemplate
+  {% block footer %}
+  This is footer content.
+  {% endblock %}
+</template>
 ```
 
 ### Template example
@@ -375,23 +376,23 @@ Do not write styles in `src/sass/index.scss` directly. Add a new file (e.g., `_m
 
 ### Sass-in-Template
 
-You can write CSS for specific template in the template file directly using `>>>sass`-`>>>endsass` tag.
+You can write CSS for specific template in the template file directly using `<style to='bp-sass'>` tag.
 
 ```njk
->>>template
-<h1 class='example'>Example</h1>
->>>endtemplate
+<template to='bp-template'>
+  <h1 class='example'>Example</h1>
+</template>
 
->>>sass
+<style to='bp-sass'>
 $heading-color: #fff !default;
 
 .example {
   color: $heading-color;
 }
->>>endsass
+</style>
 ```
 
-The styles within the tag would be automatically extracted to `src/sass/_auto-extract.scss`.
+The styles within the tag would be automatically extracted to `src/sass/_sass-in-template.scss`.
 
 ### Sass example
 
@@ -411,14 +412,14 @@ Do not write styles in `src/skin/index.css` directly. Add a new file (e.g., `my-
 
 ### Skin-in-Template
 
-You can write skin CSS for specific template in the template file directly using `>>>skin`-`>>>endskin` tag.
+You can write skin CSS for specific template in the template file directly using `<style to='bp-skin'>` tag.
 
 ```njk
->>>template
-<h1 class='example'>Example</h1>
->>>endtemplate
+<template to='bp-template'>
+  <h1 class='example'>Example</h1>
+</template>
 
->>>skin
+<style to='bp-skin'>
 /*
 <Variable name="heading.color"
     description="Heading color"
@@ -430,10 +431,10 @@ You can write skin CSS for specific template in the template file directly using
 .example {
   color: $(heading.color);
 }
->>>endskin
+</style>
 ```
 
-The styles within the tag would be automatically extracted to `src/skin/auto-extract.css`.
+The styles within the tag would be automatically extracted to `src/skin/skin-in-template.css`.
 
 ### Skin example
 
@@ -453,19 +454,19 @@ import './util';
 
 ### JS-in-Template
 
-You can write JavaScript for specific template in the template file directly using `>>>js`-`>>>endjs` tag.
+You can write JavaScript for specific template in the template file directly using `<script to='bp-js'>` tag.
 
 ```njk
->>>template
-<h1 class='example' id='example'>Example</h1>
->>>endtemplate
+<template to='bp-template'>
+  <h1 class='example' id='example'>Example</h1>
+</template>
 
->>>js
+<script to='bp-js'>
 var example = document.getElementById('example');
->>>endjs
+</script>
 ```
 
-The JavaScript within the tag would be automatically extracted to `src/js/auto-extract.js`.
+The JavaScript within the tag would be automatically extracted to `src/js/js-in-template.js`.
 
 ### JS example
 

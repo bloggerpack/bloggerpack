@@ -1,10 +1,10 @@
->>>template
-<b:section class='sidebar-section' id='sidebar-section' name='Sidebar section'>
-  {% template "template/content.part/sidebar-section.part/HTML2.njk" %}
-</b:section>
->>>endtemplate
+<template to='bp-template'>
+  <b:section class='sidebar-section' id='sidebar-section' name='Sidebar section'>
+    {% template "template/content.part/sidebar-section.part/HTML2.njk" %}
+  </b:section>
+</template>
 
->>>sass
+<style to='bp-sass'>
 //
 // Widget
 //
@@ -35,4 +35,4 @@
   }
 }
 // stylelint-enable
->>>endsass
+</style>
