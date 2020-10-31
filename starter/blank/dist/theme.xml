@@ -208,7 +208,7 @@
  * License Type    : MIT
  * License URL     : https://opensource.org/licenses/MIT
  */
-!function r(t,e,n){function o(i,f){if(!e[i]){if(!t[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=e[i]={exports:{}};t[i][0].call(p.exports,(function(r){return o(t[i][1][r]||r)}),p,p.exports,r,t,e,n)}return e[i].exports}for(var u="function"==typeof require&&require,i=0;i<n.length;i++)o(n[i]);return o}({1:[function(r,t,e){},{}],2:[function(r,t,e){"use strict";r("./auto-extract")},{"./auto-extract":1}]},{},[2]);
+!function r(e,t,n){function i(u,f){if(!t[u]){if(!e[u]){var c="function"==typeof require&&require;if(!f&&c)return c(u,!0);if(o)return o(u,!0);var a=new Error("Cannot find module '"+u+"'");throw a.code="MODULE_NOT_FOUND",a}var p=t[u]={exports:{}};e[u][0].call(p.exports,(function(r){return i(e[u][1][r]||r)}),p,p.exports,r,e,t,n)}return t[u].exports}for(var o="function"==typeof require&&require,u=0;u<n.length;u++)i(n[u]);return i}({1:[function(r,e,t){"use strict";r("./js-in-template")},{"./js-in-template":2}],2:[function(r,e,t){},{}]},{},[1]);
 //]]>
 </script>
 
