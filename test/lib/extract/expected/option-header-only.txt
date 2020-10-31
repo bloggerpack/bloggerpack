@@ -1,0 +1,7 @@
+/* Header (src/example-empty1.njk) */
+
+/* Extract is empty */
+
+/* Header (src/example-empty2.njk) */
+
+/* Extract is empty */

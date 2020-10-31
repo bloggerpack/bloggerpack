@@ -8,8 +8,8 @@ const templateCompile = require('../../../lib/template-compiler');
 function test_assetTag() {
   var options = {
     context: '',
-    start: '>>>template',
-    end: '>>>endtemplate'
+    start: "<template test='template'>",
+    end: '</template>'
   };
 
   return src('src/asset-tag/index.njk', {allowEmpty: true})
@@ -22,8 +22,8 @@ function test_assetTag() {
 function test_extends() {
   var options = {
     context: '',
-    start: '>>>template',
-    end: '>>>endtemplate'
+    start: "<template test='template'>",
+    end: '</template>'
   };
 
   return src('src/extends/index.njk', {allowEmpty: true})
@@ -43,8 +43,8 @@ function test_templateContext() {
         var3b: 'val3b'
       }
     },
-    start: '>>>template',
-    end: '>>>endtemplate'
+    start: "<template test='template'>",
+    end: '</template>'
   };
 
   return src('src/template-context/index.njk', {allowEmpty: true})
@@ -57,8 +57,8 @@ function test_templateContext() {
 function test_templateTag() {
   var options = {
     context: '',
-    start: '>>>template',
-    end: '>>>endtemplate'
+    start: "<template test='template'>",
+    end: '</template>'
   };
 
   return src('src/template-tag/index.njk', {allowEmpty: true})

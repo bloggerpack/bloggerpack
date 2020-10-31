@@ -1,9 +1,9 @@
->>>template
-<div>
-  {% template "template-foo.njk" %}
-
+<template test='template'>
   <div>
-    {% template "template-bar.njk" %}
+    {% template "template-foo.njk" %}
+
+    <div>
+      {% template "template-bar.njk" %}
+    </div>
   </div>
-</div>
->>>endtemplate
+</template>
