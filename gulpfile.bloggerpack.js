@@ -96,9 +96,9 @@ const build = series(
 function watch() {
   return gulpWatch([
     '**/*',
-    '!' + path.join(sassOptions.src.dir, '_auto-extract.scss'),
-    '!' + path.join(skinOptions.src.dir, 'auto-extract.css'),
-    '!' + path.join(jsOptions.src.dir, 'auto-extract.js'),
+    '!' + path.join(sassOptions.src.dir, '_sass-in-template.scss'),
+    '!' + path.join(skinOptions.src.dir, 'skin-in-template.css'),
+    '!' + path.join(jsOptions.src.dir, 'js-in-template.js'),
     '!dist',
     '!src/dist',
     '!node_modules'
