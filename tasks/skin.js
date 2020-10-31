@@ -58,11 +58,11 @@ skinRegistry.prototype.init = function(gulpInst) {
         path.join(process.cwd(), 'node_modules/bloggerpack-plugin-*/**/*.njk'),
         '!' + path.join(process.cwd(), 'node_modules/**/*.njk')
       ],
-      filename: 'auto-extract.css',
+      filename: 'skin-in-template.css',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '>>>skin',
-        end: '>>>endskin',
+        start: "<style to='bp-skin'>",
+        end: '</style>',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>

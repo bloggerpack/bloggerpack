@@ -58,11 +58,11 @@ sassRegistry.prototype.init = function(gulpInst) {
         path.join(process.cwd(), 'node_modules/bloggerpack-plugin-*/**/*.njk'),
         '!' + path.join(process.cwd(), 'node_modules/**/*.njk')
       ],
-      filename: '_auto-extract.scss',
+      filename: '_sass-in-template.scss',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: '>>>sass',
-        end: '>>>endsass',
+        start: "<style to='bp-sass'>",
+        end: '</style>',
         header: `/*
 # ==========================================================================
 # Template path: <filepath>

@@ -1,4 +1,4 @@
 import './example';
 
 // Required
-import './auto-extract';
+import './js-in-template';

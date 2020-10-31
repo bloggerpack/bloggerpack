@@ -40,8 +40,8 @@ templateRegistry.prototype.init = function(gulpInst) {
           data: JSON.parse(fs.readFileSync(path.join(process.cwd(), opts.dataFile), 'utf8')),
           pkg: JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
         },
-        start: '>>>template',
-        end: '>>>endtemplate'
+        start: "<template to='bp-template'>",
+        end: '</template>'
       }
     }
   };
