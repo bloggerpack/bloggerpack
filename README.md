@@ -55,7 +55,7 @@
 
 ```text
 .
-├── dist/ (!)
+├── dist/ (g)
 |   └── theme.xml <---------------------------+
 ├── src/                                      |
 |   ├── config/                               |
@@ -63,21 +63,22 @@
 |   |   ├── .stylelintrc                      |
 |   |   ├── banner.txt                        |
 |   |   └── data.json                         |
-|   ├── dist/ (!)                             |
+|   ├── dist/ (i)(g)                          |
 |   |   ├── js.js <---------------+           |
 |   |   ├── sass.css <------------|---+       |   # compiled <---+
-|   |   └── skin.css <------------|---|---+   |   # source ----->|
-|   ├── js/                       │   |   |   |
-|   |   ├── js-in-template.js (!) |   |   |   |
+|   |   └── skin.css <------------|---|---+   |                  |
+|   ├── js/                       │   |   |   |   # source ----->|
+|   |   ├── js-in-template.js (g) |   |   |   |
 |   |   └── index.js ------------>|   |   |   |
 |   ├── sass/                         |   |   |
-|   |   ├── _sass-in-template.scss (!)|   |   |
+|   |   ├── _sass-in-template.scss (g)|   |   |
 |   |   └── index.scss -------------->|   |   |
 |   ├── skin/                             |   |
-|   |   ├── skin-in-template.css (!)      |   |
-|   |   └── index.css ------------------->|   |
-|   ├── template/                             |
-|   └── index.njk --------------------------->|   # (!) = auto-generated
+|   |   ├── skin-in-template.css (g)      |   |
+|   |   └── index.css ------------------->|   |   # (i) = Must be included in template (see `{% asset %}` tag)
+|   ├── template/ (n)                         |   # (n) = Not specify or can be renamed or moved
+|   ├── index.njk --------------------------->|   # (g) = Auto-generated
+|   └── layout.njk (n)
 ├── .browserslistrc
 └── package.json
 ```
