@@ -1,17 +1,17 @@
 module.exports = {
   configFile: {
-    data: 'src/config/data.json',
-    stylelint: 'src/config/.stylelintrc',
-    eslint: 'src/config/.eslintrc.json',
-    banner: 'src/config/banner.txt'
+    data: './data.json',
+    stylelint: './.stylelintrc',
+    eslint: './.eslintrc.json',
+    banner: './banner.txt'
   },
   template: {
     src: {
-      dir: 'src',
+      dir: './src',
       filename: 'index.njk'
     },
     build: {
-      dir: 'dist',
+      dir: './dist',
       filename: 'theme.xml'
     },
     tag: {
@@ -21,11 +21,11 @@ module.exports = {
   },
   sass: {
     src: {
-      dir: 'src/sass',
+      dir: './src/sass',
       filename: 'index.scss'
     },
     build: {
-      dir: 'src/dist',
+      dir: './src/dist',
       filename: 'sass.css'
     },
     tag: {
@@ -35,11 +35,11 @@ module.exports = {
   },
   skin: {
     src: {
-      dir: 'src/skin',
+      dir: './src/skin',
       filename: 'index.css'
     },
     build: {
-      dir: 'src/dist',
+      dir: './src/dist',
       filename: 'skin.css'
     },
     tag: {
@@ -49,11 +49,11 @@ module.exports = {
   },
   js: {
     src: {
-      dir: 'src/js',
+      dir: './src/js',
       filename: 'index.js'
     },
     build: {
-      dir: 'src/dist',
+      dir: './src/dist',
       filename: 'js.js'
     },
     tag: {
