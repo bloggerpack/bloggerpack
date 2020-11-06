@@ -33,13 +33,6 @@ const defaults = {
   build: {
     dir: config.skin.build.dir,
     filename: config.skin.build.filename
-  },
-  configFile: {
-    stylelint: config.configFile.stylelint,
-    banner: {
-      text: config.configFile.banner,
-      data: config.configFile.data
-    }
   }
 }
 
@@ -78,15 +71,15 @@ skinRegistry.prototype.init = function(gulpInst) {
       src: [
         path.join(process.cwd(), opts.src.dir, '**/*.css')
       ],
-      configFile: path.join(process.cwd(), opts.configFile.stylelint)
+      configFile: path.join(process.cwd(), config.configFile.stylelint)
     },
     compile: {
       src: path.join(opts.src.dir, opts.src.filename),
       filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
-        text: path.join(process.cwd(), opts.configFile.banner.text),
-        data: path.join(process.cwd(), opts.configFile.banner.data)
+        text: path.join(process.cwd(), config.configFile.banner),
+        data: path.join(process.cwd(), config.configFile.data)
       }
     }
   };
@@ -113,7 +106,7 @@ skinRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('skin-lint', function (cb) {
-    if (fs.existsSync(path.join(process.cwd(), opts.configFile.stylelint))) {
+    if (fs.existsSync(path.join(process.cwd(), config.configFile.stylelint))) {
       return src([...skinOpts.lint.src], {allowEmpty: true})
         .pipe(stylelint({
           configFile: skinOpts.lint.configFile,
@@ -130,7 +123,7 @@ skinRegistry.prototype.init = function(gulpInst) {
           failAfterError: true
         }));
     } else {
-      console.log('Skin not linted (No "' + opts.configFile.stylelint + '" found)');
+      console.log('Skin not linted (No "' + path.join(config.configFile.stylelint) + '" found)');
       cb();
     }
   });

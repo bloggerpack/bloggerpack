@@ -33,13 +33,6 @@ const defaults = {
   build: {
     dir: config.sass.build.dir,
     filename: config.sass.build.filename
-  },
-  configFile: {
-    stylelint: config.configFile.stylelint,
-    banner: {
-      text: config.configFile.banner,
-      data: config.configFile.data
-    }
   }
 }
 
@@ -78,15 +71,15 @@ sassRegistry.prototype.init = function(gulpInst) {
       src: [
         path.join(process.cwd(), opts.src.dir, '**/*.scss')
       ],
-      configFile: path.join(process.cwd(), opts.configFile.stylelint)
+      configFile: path.join(process.cwd(), config.configFile.stylelint)
     },
     compile: {
       src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
       filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
-        text: path.join(process.cwd(), opts.configFile.banner.text),
-        data: path.join(process.cwd(), opts.configFile.banner.data)
+        text: path.join(process.cwd(), config.configFile.banner),
+        data: path.join(process.cwd(), config.configFile.data)
       }
     }
   };
@@ -113,7 +106,7 @@ sassRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('sass-lint', function (cb) {
-    if (fs.existsSync(path.join(process.cwd(), opts.configFile.stylelint))) {
+    if (fs.existsSync(path.join(process.cwd(), config.configFile.stylelint))) {
       return src([...sassOpts.lint.src], {allowEmpty: true})
         .pipe(stylelint({
           configFile: sassOpts.lint.configFile,
@@ -130,7 +123,7 @@ sassRegistry.prototype.init = function(gulpInst) {
           failAfterError: true
         }));
     } else {
-      console.log('Sass not linted (No "' + opts.configFile.stylelint + '" found)');
+      console.log('Sass not linted (No "' + path.join(config.configFile.stylelint) + '" found)');
       cb();
     }
   });
