@@ -23,20 +23,22 @@ const atImport = require('postcss-import');
 const autoprefixer = require('autoprefixer');
 const trim =  require('../lib/trim');
 
+const config = require('../config');
+
 const defaults = {
   src: {
-    dir: 'src/skin',
-    filename: 'index.css'
+    dir: config.skin.src.dir,
+    filename: config.skin.src.filename
   },
   build: {
-    dir: 'src/dist',
-    filename: 'skin.css'
+    dir: config.skin.build.dir,
+    filename: config.skin.build.filename
   },
   configFile: {
-    stylelint: 'src/config/.stylelintrc',
+    stylelint: config.configFile.stylelint,
     banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
+      text: config.configFile.banner,
+      data: config.configFile.data
     }
   }
 }
@@ -61,8 +63,8 @@ skinRegistry.prototype.init = function(gulpInst) {
       filename: 'skin-in-template.css',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: "<style to='bp-skin'>",
-        end: '</style>',
+        start: config.skin.tag.start,
+        end: config.skin.tag.end,
         header: `/*
 # ==========================================================================
 # Template path: <filepath>
@@ -110,22 +112,27 @@ skinRegistry.prototype.init = function(gulpInst) {
       .pipe(dest(skinOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('skin-lint', function () {
-    return src([...skinOpts.lint.src], {allowEmpty: true})
-      .pipe(stylelint({
-        configFile: skinOpts.lint.configFile,
-        ignoreDisables: false,
-        reportNeedlessDisables: false,
-        reporters: [
-          {
-            formatter: 'string',
-            console: true
-          }
-        ],
-        reportOutputDir: '',
-        debug: false,
-        failAfterError: true
-      }));
+  gulpInst.task('skin-lint', function (cb) {
+    if (fs.existsSync(path.join(process.cwd(), opts.configFile.stylelint))) {
+      return src([...skinOpts.lint.src], {allowEmpty: true})
+        .pipe(stylelint({
+          configFile: skinOpts.lint.configFile,
+          ignoreDisables: false,
+          reportNeedlessDisables: false,
+          reporters: [
+            {
+              formatter: 'string',
+              console: true
+            }
+          ],
+          reportOutputDir: '',
+          debug: false,
+          failAfterError: true
+        }));
+    } else {
+      console.log('Skin not linted (No "' + opts.configFile.stylelint + '" found)');
+      cb();
+    }
   });
 
   gulpInst.task('skin-compile', function () {

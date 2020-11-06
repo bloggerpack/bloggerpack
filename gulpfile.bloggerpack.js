@@ -2,13 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const {series, registry} = require('gulp');
 const gulpWatch = require('gulp').watch;
-const sassRegistry = require('./tasks/sass');
-const skinRegistry = require('./tasks/skin');
-const jsRegistry = require('./tasks/js');
-const templateRegistry = require('./tasks/template');
-const cleanRegistry = require('./tasks/clean');
+const config = require('./config');
 
-var tasks = [];
+const tasks = [];
 
 /**
  * ------------------------------------------------------------------------
@@ -16,27 +12,18 @@ var tasks = [];
  * ------------------------------------------------------------------------
  */
 
-const sassOptions = {
-  src: {
-    dir: 'src/sass',
-    filename: 'index.scss'
-  },
-  build: {
-    dir: 'src/dist',
-    filename: 'sass.css'
-  },
-  configFile: {
-    stylelint: 'src/config/.stylelintrc',
-    banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
-    }
-  }
-}
-registry(new sassRegistry(sassOptions));
+const sassRegistry = require('./tasks/sass');
+registry(new sassRegistry());
 
-if (fs.existsSync(path.join(sassOptions.src.dir, sassOptions.src.filename))) {
-  tasks.push('sass-tasks');
+const sassTasks = series(
+  'sass-extract-clean',
+  'sass-extract',
+  'sass-lint',
+  'sass-compile'
+);
+
+if (fs.existsSync(path.join(config.sass.src.dir, config.sass.src.filename))) {
+  tasks.push(sassTasks);
 }
 
 /**
@@ -45,27 +32,18 @@ if (fs.existsSync(path.join(sassOptions.src.dir, sassOptions.src.filename))) {
  * ------------------------------------------------------------------------
  */
 
-const skinOptions = {
-  src: {
-    dir: 'src/skin',
-    filename: 'index.css'
-  },
-  build: {
-    dir: 'src/dist',
-    filename: 'skin.css'
-  },
-  configFile: {
-    stylelint: 'src/config/.stylelintrc',
-    banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
-    }
-  }
-}
-registry(new skinRegistry(skinOptions));
+const skinRegistry = require('./tasks/skin');
+registry(new skinRegistry());
 
-if (fs.existsSync(path.join(skinOptions.src.dir, skinOptions.src.filename))) {
-  tasks.push('skin-tasks');
+const skinTasks = series(
+  'skin-extract-clean',
+  'skin-extract',
+  'skin-lint',
+  'skin-compile'
+);
+
+if (fs.existsSync(path.join(config.skin.src.dir, config.skin.src.filename))) {
+  tasks.push(skinTasks);
 }
 
 /**
@@ -74,27 +52,18 @@ if (fs.existsSync(path.join(skinOptions.src.dir, skinOptions.src.filename))) {
  * ------------------------------------------------------------------------
  */
 
-const jsOptions = {
-  src: {
-    dir: 'src/js',
-    filename: 'index.js'
-  },
-  build: {
-    dir: 'src/dist',
-    filename: 'js.js'
-  },
-  configFile: {
-    eslint: 'src/config/.eslintrc.json',
-    banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
-    }
-  }
-}
-registry(new jsRegistry(jsOptions));
+const jsRegistry = require('./tasks/js');
+registry(new jsRegistry());
 
-if (fs.existsSync(path.join(jsOptions.src.dir, jsOptions.src.filename))) {
-  tasks.push('js-tasks');
+const jsTasks = series(
+  'js-extract-clean',
+  'js-extract',
+  'js-lint',
+  'js-compile'
+);
+
+if (fs.existsSync(path.join(config.js.src.dir, config.js.src.filename))) {
+  tasks.push(jsTasks);
 }
 
 /**
@@ -103,21 +72,15 @@ if (fs.existsSync(path.join(jsOptions.src.dir, jsOptions.src.filename))) {
  * ------------------------------------------------------------------------
  */
 
-const templateOptions = {
-  src: {
-    dir: 'src',
-    filename: 'index.njk'
-  },
-  build: {
-    dir: 'dist',
-    filename: 'theme.xml'
-  },
-  dataFile: 'src/config/data.json'
-}
-registry(new templateRegistry(templateOptions));
+const templateRegistry = require('./tasks/template');
+registry(new templateRegistry());
 
-if (fs.existsSync(path.join(templateOptions.src.dir, templateOptions.src.filename))) {
-  tasks.push('template-tasks');
+const templateTasks = series(
+  'template-compile'
+);
+
+if (fs.existsSync(path.join(config.template.src.dir, config.template.src.filename))) {
+  tasks.push(templateTasks);
 }
 
 /**
@@ -126,13 +89,8 @@ if (fs.existsSync(path.join(templateOptions.src.dir, templateOptions.src.filenam
  * ------------------------------------------------------------------------
  */
 
-const cleanOptions = {
-  src: [
-    'src/dist',
-    'dist'
-  ]
-}
-registry(new cleanRegistry(cleanOptions));
+const cleanRegistry = require('./tasks/clean');
+registry(new cleanRegistry());
 
 /**
  * ------------------------------------------------------------------------
@@ -140,11 +98,14 @@ registry(new cleanRegistry(cleanOptions));
  * ------------------------------------------------------------------------
  */
 
-if (tasks.length === 0 || tasks.includes('template-tasks') === false) {
-  tasks = function(cb) {
-    console.log('Require ' + path.join(templateOptions.src.dir, templateOptions.src.filename));
+if (tasks.length === 0 || tasks.includes(templateTasks) === false) {
+  const noTasks = function(cb) {
+    console.log('Require ' + path.join(config.template.src.dir, config.template.src.filename));
     cb();
   }
+  noTasks.displayName = 'no:tasks';
+  tasks.splice(0, tasks.length);
+  tasks.push(noTasks);
 }
 
 const build = series('clean', tasks);
@@ -152,12 +113,12 @@ const build = series('clean', tasks);
 function watch() {
   return gulpWatch([
     '**/*',
-    '!' + path.join(sassOptions.src.dir, '_sass-in-template.scss'),
-    '!' + path.join(skinOptions.src.dir, 'skin-in-template.css'),
-    '!' + path.join(jsOptions.src.dir, 'js-in-template.js'),
+    '!' + path.join(config.sass.src.dir, '_sass-in-template.scss'),
+    '!' + path.join(config.skin.src.dir, 'skin-in-template.css'),
+    '!' + path.join(config.js.src.dir, 'js-in-template.js'),
     '!dist',
+    '!node_modules',
     '!src/dist',
-    '!node_modules'
   ], build);
 }
 

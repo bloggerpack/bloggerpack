@@ -23,20 +23,22 @@ sass.compiler = require('node-sass');
 const cleancss = require('gulp-clean-css');
 const trim =  require('../lib/trim');
 
+const config = require('../config');
+
 const defaults = {
   src: {
-    dir: 'src/sass',
-    filename: 'index.scss'
+    dir: config.sass.src.dir,
+    filename: config.sass.src.filename
   },
   build: {
-    dir: 'src/dist',
-    filename: 'sass.css'
+    dir: config.sass.build.dir,
+    filename: config.sass.build.filename
   },
   configFile: {
-    stylelint: 'src/config/.stylelintrc',
+    stylelint: config.configFile.stylelint,
     banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
+      text: config.configFile.banner,
+      data: config.configFile.data
     }
   }
 }
@@ -61,8 +63,8 @@ sassRegistry.prototype.init = function(gulpInst) {
       filename: '_sass-in-template.scss',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: "<style to='bp-sass'>",
-        end: '</style>',
+        start: config.sass.tag.start,
+        end: config.sass.tag.end,
         header: `/*
 # ==========================================================================
 # Template path: <filepath>
@@ -110,22 +112,27 @@ sassRegistry.prototype.init = function(gulpInst) {
       .pipe(dest(sassOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('sass-lint', function () {
-    return src([...sassOpts.lint.src], {allowEmpty: true})
-      .pipe(stylelint({
-        configFile: sassOpts.lint.configFile,
-        ignoreDisables: false,
-        reportNeedlessDisables: false,
-        reporters: [
-          {
-            formatter: 'string',
-            console: true
-          }
-        ],
-        reportOutputDir: '',
-        debug: false,
-        failAfterError: true
-      }));
+  gulpInst.task('sass-lint', function (cb) {
+    if (fs.existsSync(path.join(process.cwd(), opts.configFile.stylelint))) {
+      return src([...sassOpts.lint.src], {allowEmpty: true})
+        .pipe(stylelint({
+          configFile: sassOpts.lint.configFile,
+          ignoreDisables: false,
+          reportNeedlessDisables: false,
+          reporters: [
+            {
+              formatter: 'string',
+              console: true
+            }
+          ],
+          reportOutputDir: '',
+          debug: false,
+          failAfterError: true
+        }));
+    } else {
+      console.log('Sass not linted (No "' + opts.configFile.stylelint + '" found)');
+      cb();
+    }
   });
 
   gulpInst.task('sass-compile', function () {
