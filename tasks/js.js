@@ -22,20 +22,22 @@ const browserify = require('browserify');
 const terser = require('gulp-terser');
 const trim =  require('../lib/trim');
 
+const config = require('../config');
+
 const defaults = {
   src: {
-    dir: 'src/js',
-    filename: 'index.js'
+    dir: config.js.src.dir,
+    filename: config.js.src.filename
   },
   build: {
-    dir: 'src/dist',
-    filename: 'js.js'
+    dir: config.js.build.dir,
+    filename: config.js.build.filename
   },
   configFile: {
-    eslint: 'src/config/.eslintrc.json',
+    eslint: config.configFile.eslint,
     banner: {
-      text: 'src/config/banner.txt',
-      data: 'src/config/data.json'
+      text: config.configFile.banner,
+      data: config.configFile.data
     }
   }
 }
@@ -60,8 +62,8 @@ jsRegistry.prototype.init = function(gulpInst) {
       filename: 'js-in-template.js',
       dest: path.join(process.cwd(), opts.src.dir),
       opts: {
-        start: "<script to='bp-js'>",
-        end: '</script>',
+        start: config.js.tag.start,
+        end: config.js.tag.end,
         header: `/*
 # ==========================================================================
 # Template path: <filepath>
@@ -109,19 +111,24 @@ jsRegistry.prototype.init = function(gulpInst) {
       .pipe(dest(jsOpts.extract.dest, {overwrite: true}));
   });
 
-  gulpInst.task('js-lint', function () {
-    return src([...jsOpts.lint.src], {allowEmpty: true})
-      .pipe(eslint({
-        configFile: jsOpts.lint.configFile,
-        envs: ['browser', 'jquery'],
-        parser: '@babel/eslint-parser',
-        parserOptions: {
-          requireConfigFile: false
-        },
-        reportUnusedDisableDirectives: true
-      }))
-      .pipe(eslint.format())
-      .pipe(eslint.failAfterError());
+  gulpInst.task('js-lint', function (cb) {
+    if (fs.existsSync(path.join(process.cwd(), opts.configFile.eslint))) {
+      return src([...jsOpts.lint.src], {allowEmpty: true})
+        .pipe(eslint({
+          configFile: jsOpts.lint.configFile,
+          envs: ['browser', 'jquery'],
+          parser: '@babel/eslint-parser',
+          parserOptions: {
+            requireConfigFile: false
+          },
+          reportUnusedDisableDirectives: true
+        }))
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+    } else {
+      console.log('JS not linted (No "' + opts.configFile.eslint + '" found)');
+      cb();
+    }
   });
 
   gulpInst.task('js-compile', function () {

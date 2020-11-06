@@ -8,16 +8,20 @@ const rename = require('gulp-rename');
 // compile
 const templateCompile = require('../lib/template-compiler');
 
+const config = require('../config');
+
 const defaults = {
   src: {
-    dir: 'src/template',
-    filename: 'index.njk'
+    dir: config.template.src.dir,
+    filename: config.template.src.filename
   },
   build: {
-    dir: 'dist',
-    filename: 'theme.xml'
+    dir: config.template.build.dir,
+    filename: config.template.build.filename
   },
-  dataFile: 'src/config/data.json'
+  configFile: {
+    data: config.configFile.data
+  }
 }
 
 function templateRegistry(opts) {
@@ -37,11 +41,11 @@ templateRegistry.prototype.init = function(gulpInst) {
       dest: path.join(process.cwd(), opts.build.dir),
       opts: {
         context: {
-          data: JSON.parse(fs.readFileSync(path.join(process.cwd(), opts.dataFile), 'utf8')),
+          data: JSON.parse(fs.readFileSync(path.join(process.cwd(), opts.configFile.data), 'utf8')),
           pkg: JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
         },
-        start: "<template to='bp-template'>",
-        end: '</template>'
+        start: config.template.tag.start,
+        end: config.template.tag.end
       }
     }
   };

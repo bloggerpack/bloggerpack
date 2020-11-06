@@ -3,7 +3,10 @@ const defaultRegistry = require('undertaker-registry');
 const del = require('del');
 
 const defaults = {
-  src: []
+  src: [
+    'dist',
+    'src/dist'
+  ]
 };
 
 function cleanRegistry(opts) {
