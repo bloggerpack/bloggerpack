@@ -13,14 +13,14 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
 const change = {
   starterBloggerpackVersion: function () {
-    return src('starter/**/package.json')
+    return src('starters/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('starter', {overwrite: true}))
+      .pipe(dest('starters', {overwrite: true}))
   },
   starterDownloadVersion: function () {
-    return src('starter/**/README.md')
+    return src('starters/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('starter', {overwrite: true}))
+      .pipe(dest('starters', {overwrite: true}))
   },
   packageCurrentVersion: function () {
     return src('package.json')
