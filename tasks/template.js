@@ -18,9 +18,6 @@ const defaults = {
   build: {
     dir: config.template.build.dir,
     filename: config.template.build.filename
-  },
-  configFile: {
-    data: config.configFile.data
   }
 }
 
@@ -41,7 +38,7 @@ templateRegistry.prototype.init = function(gulpInst) {
       dest: path.join(process.cwd(), opts.build.dir),
       opts: {
         context: {
-          data: JSON.parse(fs.readFileSync(path.join(process.cwd(), opts.configFile.data), 'utf8')),
+          data: JSON.parse(fs.readFileSync(path.join(process.cwd(), config.configFile.data), 'utf8')),
           pkg: JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'))
         },
         start: config.template.tag.start,

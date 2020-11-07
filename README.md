@@ -56,18 +56,13 @@
 ```text
 .
 ├── dist/ (g)
-|   └── theme.xml <---------------------------+
-├── src/                                      |
-|   ├── config/                               |
-|   |   ├── .eslintrc.json                    |
-|   |   ├── .stylelintrc                      |
-|   |   ├── banner.txt                        |
-|   |   └── data.json                         |
-|   ├── dist/ (i)(g)                          |
+|   └── theme.xml <---------------------------+  # compiled <---+
+├── src/                                      |                 |
+|   ├── dist/ (i)(g)                          |  # source ----->|
 |   |   ├── js.js <---------------+           |
-|   |   ├── sass.css <------------|---+       |   # compiled <---+
-|   |   └── skin.css <------------|---|---+   |                  |
-|   ├── js/                       │   |   |   |   # source ----->|
+|   |   ├── sass.css <------------|---+       |
+|   |   └── skin.css <------------|---|---+   |
+|   ├── js/                       │   |   |   |
 |   |   ├── js-in-template.js (g) |   |   |   |
 |   |   └── index.js ------------>|   |   |   |
 |   ├── sass/                         |   |   |
@@ -75,11 +70,15 @@
 |   |   └── index.scss -------------->|   |   |
 |   ├── skin/                             |   |
 |   |   ├── skin-in-template.css (g)      |   |
-|   |   └── index.css ------------------->|   |   # (i) = Must be included in template (see `{% asset %}` tag)
-|   ├── template/ (n)                         |   # (n) = Not specify or can be renamed or moved
-|   ├── index.njk --------------------------->|   # (g) = Auto-generated
+|   |   └── index.css ------------------->|   |  # (i) = Must be included in template (see `{% asset %}` tag)
+|   ├── template/ (n)                         |  # (n) = Not specify or can be renamed or moved
+|   ├── index.njk --------------------------->|  # (g) = Auto-generated
 |   └── layout.njk (n)
 ├── .browserslistrc
+├── .eslintrc.json
+├── .stylelintrc
+├── banner.txt
+├── data.json
 └── package.json
 ```
 
@@ -103,21 +102,25 @@
 
 ## Config files
 
-### .browserslistrc
+### `.browserslistrc`
 
 The config to share target browsers. Learn more about [Browserslist](https://github.com/browserslist/browserslist).
 
-### package.json
+### `.eslintrc.json`
 
-Use this file to manage and install Bloggerpack and other packages. You also will need to add Bloggerpack commands and tasks.
+The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
 
-### src/config/data.json
+### `.stylelintrc`
 
-Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in [template files](#template) using `{{ data.keyName }}`. You can also access data from `package.json` using `{{ pkg.keyName }}`. See [Nunjucks variables](https://mozilla.github.io/nunjucks/templating.html#variables).
+The default config is recommended, but if you want to change the config you can read the [Stylelint docs](https://stylelint.io/user-guide/configure).
 
-### src/config/banner.txt
+### `banner.txt`
 
 The header for compiled Sass, Skin and JS. You can access data from `data.json` using `<%= data.keyName %>`.
+
+### `data.json`
+
+Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in [template files](#template) using `{{ data.keyName }}`. You can also access data from `package.json` using `{{ pkg.keyName }}`. See [Nunjucks variables](https://mozilla.github.io/nunjucks/templating.html#variables).
 
 Example:
 
@@ -127,13 +130,9 @@ Example:
  */
 ```
 
-### src/config/.stylelintrc
+### `package.json`
 
-The default config is recommended, but if you want to change the config you can read the [Stylelint docs](https://stylelint.io/user-guide/configure).
-
-### src/config/.eslintrc.json
-
-The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
+Use this file to manage and install Bloggerpack and other packages. You also will need to add Bloggerpack commands and tasks.
 
 ## Template
 

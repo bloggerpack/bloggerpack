@@ -32,13 +32,6 @@ const defaults = {
   build: {
     dir: config.js.build.dir,
     filename: config.js.build.filename
-  },
-  configFile: {
-    eslint: config.configFile.eslint,
-    banner: {
-      text: config.configFile.banner,
-      data: config.configFile.data
-    }
   }
 }
 
@@ -77,15 +70,15 @@ jsRegistry.prototype.init = function(gulpInst) {
       src: [
         path.join(process.cwd(), opts.src.dir, '**/*.js')
       ],
-      configFile: path.join(process.cwd(), opts.configFile.eslint)
+      configFile: path.join(process.cwd(), config.configFile.eslint)
     },
     compile: {
       src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
       filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
-        text: path.join(process.cwd(), opts.configFile.banner.text),
-        data: path.join(process.cwd(), opts.configFile.banner.data)
+        text: path.join(process.cwd(), config.configFile.banner),
+        data: path.join(process.cwd(), config.configFile.data)
       }
     }
   };
@@ -112,7 +105,7 @@ jsRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('js-lint', function (cb) {
-    if (fs.existsSync(path.join(process.cwd(), opts.configFile.eslint))) {
+    if (fs.existsSync(path.join(process.cwd(), config.configFile.eslint))) {
       return src([...jsOpts.lint.src], {allowEmpty: true})
         .pipe(eslint({
           configFile: jsOpts.lint.configFile,
@@ -126,7 +119,7 @@ jsRegistry.prototype.init = function(gulpInst) {
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
     } else {
-      console.log('JS not linted (No "' + opts.configFile.eslint + '" found)');
+      console.log('JS not linted (No "' + path.join(config.configFile.eslint) + '" found)');
       cb();
     }
   });
