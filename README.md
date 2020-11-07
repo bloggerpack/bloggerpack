@@ -49,7 +49,7 @@
 
 ## Usage
 
-[Download starter themes](starter)
+[Download starter themes](starters)
 
 ## Folder structure
 
