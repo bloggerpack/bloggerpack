@@ -40,7 +40,7 @@
     "build-bootstrap4": "cd starter/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "release": "npm-run-all --serial release-*",
     "release-change-version": "gulp change_version --gulpfile gulpfile.release.js",
-    "release-zip-starter": "gulp zip_starter --gulpfile gulpfile.release.js"
+    "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.release.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",

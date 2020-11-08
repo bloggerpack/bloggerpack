@@ -1,20 +1,26 @@
 const fs = require('fs');
 const {task, src, dest, series} = require('gulp');
-const del = require('del');
 const zip = require('gulp-zip');
 const replace = require('gulp-replace');
+const del = require('del');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-const CHANGE = {
-  starterBloggerpackVersion: function () {
-    return src('starter/**/package.json')
+/**
+ * ------------------------------------------------------------------------
+ * Changes
+ * ------------------------------------------------------------------------
+ */
+
+const change = {
+  startersBloggerpackVersion: function () {
+    return src('starters/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('starter', {overwrite: true}))
+      .pipe(dest('starters', {overwrite: true}))
   },
-  starterDownloadVersion: function () {
-    return src('starter/**/README.md')
+  startersDownloadVersion: function () {
+    return src('starters/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('starter', {overwrite: true}))
+      .pipe(dest('starters', {overwrite: true}))
   },
   packageCurrentVersion: function () {
     return src('package.json')
@@ -24,43 +30,47 @@ const CHANGE = {
 };
 
 exports.change_version = series(
-  CHANGE.starterBloggerpackVersion,
-  CHANGE.starterDownloadVersion,
-  CHANGE.packageCurrentVersion
+  change.startersBloggerpackVersion,
+  change.startersDownloadVersion,
+  change.packageCurrentVersion
 );
 
-// ==============================================
+/**
+ * ------------------------------------------------------------------------
+ * Zip
+ * ------------------------------------------------------------------------
+ */
 
-const zipStarter = {
+const starters = {
   blk: {
     name: 'blank',
-    files: ['starter/blank/**/{*,.*}']
+    files: ['starters/blank/**/{*,.*}']
   },
   bs4: {
     name: 'bootstrap4',
-    files: ['starter/bootstrap4/**/{*,.*}']
+    files: ['starters/bootstrap4/**/{*,.*}']
   }
 };
 
-const zipStarterTasks = Object.keys(zipStarter);
+const zipStarters = Object.keys(starters);
 
-zipStarterTasks.forEach(function (taskName) {
+zipStarters.forEach(function (taskName) {
   task(taskName, function () {
-    zipStarter[taskName].files.push('!starter/**/node_modules/**');
-    zipStarter[taskName].files.push('!starter/**/package-lock.json');
+    starters[taskName].files.push('!starters/**/node_modules/**');
+    starters[taskName].files.push('!starters/**/package-lock.json');
 
-    return src(zipStarter[taskName].files)
-      .pipe(zip(zipStarter[taskName].name + '-' + pkg.version + '.zip'))
-      .pipe(dest('starter-zip'));
+    return src(starters[taskName].files)
+      .pipe(zip(starters[taskName].name + '-' + pkg.version + '.zip'))
+      .pipe(dest('starters-zip'));
   });
 });
 
-function cleanZipStarter(cb) {
-  del.sync('starter-zip');
+function cleanStartersZip(cb) {
+  del.sync('starters-zip');
   cb();
 }
 
-exports.zip_starter = series(
-  cleanZipStarter,
-  zipStarterTasks.map(function (name) {return name;})
+exports.zip_starters = series(
+  cleanStartersZip,
+  zipStarters.map(function (name) {return name;})
 );
