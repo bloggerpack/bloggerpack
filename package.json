@@ -36,8 +36,8 @@
     "test-tasks-skin": "gulp build --gulpfile test/tasks/skin/gulpfile.js",
     "test-tasks-template": "cd test/tasks/template && gulp build --gulpfile gulpfile.js --cwd .",
     "build": "npm-run-all --serial build-*",
-    "build-blank": "cd starter/blank && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
-    "build-bootstrap4": "cd starter/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "build-blank": "cd starters/blank && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "build-bootstrap4": "cd starters/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "release": "npm-run-all --serial release-*",
     "release-change-version": "gulp change_version --gulpfile gulpfile.release.js",
     "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.release.js"
