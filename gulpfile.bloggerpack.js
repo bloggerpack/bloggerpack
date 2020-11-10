@@ -76,7 +76,8 @@ const templateRegistry = require('./tasks/template');
 registry(new templateRegistry());
 
 const templateTasks = series(
-  'template-compile'
+  'template-compile-main',
+  'template-compile-variant'
 );
 
 if (fs.existsSync(path.join(config.template.src.dir, config.template.src.filename))) {

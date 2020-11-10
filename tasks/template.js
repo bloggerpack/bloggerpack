@@ -47,14 +47,27 @@ templateRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('template-compile', function() {
+  gulpInst.task('template-compile-main', function() {
     return src(templateOpts.compile.src, {allowEmpty: true})
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(templateOpts.compile.filename))
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
-  gulpInst.task('template-tasks', series('template-compile'));
+  gulpInst.task('template-compile-variant', function() {
+    return src(path.join(process.cwd(), opts.src.dir, 'index-*.njk'), {allowEmpty: true})
+      .pipe(templateCompile(templateOpts.compile.opts))
+      .pipe(rename(function (path) {
+        path.basename = path.basename.replace('index-', 'theme-');
+        path.extname = '.xml';
+      }))
+      .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
+  });
+
+  gulpInst.task('template-tasks', series(
+    'template-compile-main',
+    'template-compile-variant'
+  ));
 }
 
 module.exports = templateRegistry;
