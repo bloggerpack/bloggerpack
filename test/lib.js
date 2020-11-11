@@ -98,6 +98,13 @@ describe('lib', function() {
         String(file).should.equal(String(expected));
       });
     });
+    describe('path', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/template-compiler/output/path.xml');
+        var expected = fs.readFileSync('test/lib/template-compiler/expected/path.xml');
+        String(file).should.equal(String(expected));
+      });
+    });
     describe('template-context', function () {
       it('should equal', function() {
         var file = fs.readFileSync('test/lib/template-compiler/output/template-context.xml');

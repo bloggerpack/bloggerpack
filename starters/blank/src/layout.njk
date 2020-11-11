@@ -10,10 +10,10 @@
     <b:include data='blog' name='google-analytics'/>
 
     {# Main CSS (Sass) #}
-    {% asset type="style", "dist/sass.css" %}
+    {% asset type="style", "./dist/sass.css" %}
 
     {# Main CSS (Skin) #}
-    {% asset type="skin", "dist/skin.css" %}
+    {% asset type="skin", "./dist/skin.css" %}
 
     {# Layout Mode CSS #}
     {% asset %}
@@ -47,7 +47,7 @@
     {% block footer %}{% endblock %}
 
     {# Main JS #}
-    {% asset type="script", "dist/js.js" %}
+    {% asset type="script", "./dist/js.js" %}
 
     <b:comment>FAKE SECTION</b:comment>
     <b:comment>- Blogger theme requires at least one `b:section` with `showaddelement='yes'`.</b:comment>

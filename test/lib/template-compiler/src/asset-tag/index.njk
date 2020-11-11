@@ -3,16 +3,16 @@
     <head>
 
       {# Auto style tag #}
-      {% asset type="style", "style.css" %}
+      {% asset type="style", "./style.css" %}
 
       {# Auto skin tag #}
-      {% asset type="skin", "skin.css" %}
+      {% asset type="skin", "./skin.css" %}
 
       {# Custom tag-start and tag-end #}
       {%
         asset
           tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
-          "style.css",
+          "./style.css",
           tag_end="</style>\n</b:if>"
       %}
 
@@ -31,8 +31,8 @@
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
         <style>
-        {? asset "style.css" ?}
-        {? asset "style.css" ?}
+        {? asset "./style.css" ?}
+        {? asset "./style.css" ?}
         </style>
         </b:if>
       {% endasset %}
@@ -41,13 +41,13 @@
     <body>
 
       {# Auto script tag #}
-      {% asset type="script", "script.js" %}
+      {% asset type="script", "./script.js" %}
 
       {# Custom tag-start and tag-end #}
       {%
         asset
           tag_start="<script>\n//<![CDATA[",
-          "script.js",
+          "./script.js",
           tag_end="//]]>\n</script>"
       %}
 
@@ -64,8 +64,8 @@
       {% asset %}
         <script>
         //<![CDATA[
-        {? asset "script.js" ?}
-        {? asset "script.js" ?}
+        {? asset "./script.js" ?}
+        {? asset "./script.js" ?}
         //]]>
         </script>
       {% endasset %}
