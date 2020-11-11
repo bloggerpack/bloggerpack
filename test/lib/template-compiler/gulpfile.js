@@ -33,6 +33,20 @@ function test_extends() {
     .pipe(dest('output', {overwrite: true}))
 }
 
+function test_path() {
+  var options = {
+    context: '',
+    start: "<template test='template'>",
+    end: '</template>'
+  };
+
+  return src('src/path/index.njk', {allowEmpty: true})
+    .pipe(templateCompile(options))
+    .pipe(rename('path.xml'))
+    .pipe(debug())
+    .pipe(dest('output', {overwrite: true}))
+}
+
 function test_templateContext() {
   var options = {
     context: {
@@ -78,6 +92,7 @@ exports.build = series(
   clean,
   test_assetTag,
   test_extends,
+  test_path,
   test_templateContext,
   test_templateTag
 );
