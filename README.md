@@ -138,6 +138,12 @@ Use this file to manage and install Bloggerpack and other packages. You also wil
 
 We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.njk`.
 
+### Path
+
+- `./example.njk` - Relative to file's directory.
+- `../example.njk` - Relative to file's parent directory.
+- `example.njk` - Relative to the `index.njk` directory.
+
 ### Template tag
 
 Wrap the markup with `<template to='bp-template'>`-`</template>` tag in `.njk` files.
@@ -152,22 +158,12 @@ Wrap the markup with `<template to='bp-template'>`-`</template>` tag in `.njk` f
 
 Do not use the default Nunjucks `{% include %}` tag, use `{% template %}` tag instead.
 
-Note: the path is relative to the `index.njk` root directory.
-
-src/example-dir/file1.njk:
-
-```njk
-<template to='bp-template'>
-  <p>example</p>
-</template>
-```
-
-src/example-dir/file2.njk:
+src/example-dir/example.njk:
 
 ```njk
 <template to='bp-template'>
   <div>
-    {% template "example-dir/file1.njk" %}
+    <p>example</p>
   </div>
 </template>
 ```
@@ -176,11 +172,11 @@ src/index.njk:
 
 ```njk
 <template to='bp-template'>
-  {% template "example-dir/file2.njk" %}
+  {% template "./example-dir/example.njk" %}
 </template>
 ```
 
-Output (`dist/theme.xml`):
+Output:
 
 ```html
 <div>
@@ -229,7 +225,7 @@ Plugin package names must start with `bloggerpack-plugin-*` to automatically ext
 Use this tag to include compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets:
 
 ```njk
-{% asset type="skin|style|script", "path/to/file" %}
+{% asset type="skin|style|script", "./path/to/file" %}
 ```
 
 Example:
@@ -238,16 +234,16 @@ Example:
 <template to='bp-template'>
   <head>
     {# Auto style tag #}
-    {% asset type="style", "dist/sass.css" %}
+    {% asset type="style", "./dist/sass.css" %}
 
     {# Auto skin tag #}
-    {% asset type="skin", "dist/skin.css" %}
+    {% asset type="skin", "./dist/skin.css" %}
   </head>
   <body>
     ...
 
     {# Auto script tag #}
-    {% asset type="script", "dist/js.js" %}
+    {% asset type="script", "./dist/js.js" %}
   </body>
 </template>
 ```
@@ -258,14 +254,14 @@ Custom `tag_start` and `tag_end`:
 {%
   asset
     tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
-    "path/to/file.css",
+    "./path/to/file.css",
     tag_end="</style>\n</b:if>"
 %}
 
 {%
   asset
     tag_start="<script>\n//<![CDATA[",
-    "path/to/file.js",
+    "./path/to/file.js",
     tag_end="//]]>\n</script>"
 %}
 ```
@@ -300,8 +296,8 @@ Use `{? asset ?}` tag.
 {% asset %}
   <b:if cond='!data:view.isLayoutMode'>
   <style>
-  {? asset "path/to/file1.css" ?}
-  {? asset "path/to/file2.css" ?}
+  {? asset "./path/to/file1.css" ?}
+  {? asset "./path/to/file2.css" ?}
   </style>
   </b:if>
 {% endasset %}
@@ -309,8 +305,8 @@ Use `{? asset ?}` tag.
 {% asset %}
   <script>
   //<![CDATA[
-  {? asset "path/to/file1.js" ?}
-  {? asset "path/to/file2.js" ?}
+  {? asset "./path/to/file1.js" ?}
+  {? asset "./path/to/file2.js" ?}
   //]]>
   </script>
 {% endasset %}
@@ -342,7 +338,7 @@ src/index.njk:
 
 ```njk
 <template to='bp-template'>
-  {% extends "layout.njk" %}
+  {% extends "./layout.njk" %}
 
   {% block header %}
   This is header content.
@@ -356,6 +352,22 @@ src/index.njk:
   This is footer content.
   {% endblock %}
 </template>
+```
+
+Output:
+
+```html
+<header>
+  This is header content.
+</header>
+
+<main>
+  This is main content.
+</main>
+
+<footer>
+  This is footer content.
+</footer>
 ```
 
 ### Template example
