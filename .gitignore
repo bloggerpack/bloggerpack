@@ -26,6 +26,6 @@ Thumbs.db
 
 # Folders and files to ignore
 /node_modules
-/starter/**/node_modules
-/starter/**/package-lock.json
-/starter-zip
+/starters/**/node_modules
+/starters/**/package-lock.json
+/starters-zip
