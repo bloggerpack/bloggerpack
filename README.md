@@ -20,6 +20,12 @@
   ·
   <a href="#concepts">Concepts</a>
   ·
+  <a href="#creating-theme-variants">Creating theme variants</a>
+  ·
+  <a href="#feature-removal">Feature removal</a>
+  ·
+  <a href="#creating-plugins">Creating plugins</a>
+  ·
   <a href="#changelog">Changelog</a>
   ·
   <a href="#license">License</a>
@@ -138,7 +144,7 @@ Use this file to manage and install Bloggerpack and other packages. You also wil
 
 We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.njk`.
 
-### Path
+### Paths
 
 - `./example.njk` - Relative to file's directory.
 - `../example.njk` - Relative to file's parent directory.
@@ -184,7 +190,7 @@ Output:
 </div>
 ```
 
-### Including template from node modules
+#### Including template from node modules
 
 You can also include template from node modules:
 
@@ -194,31 +200,7 @@ You can also include template from node modules:
 </template>
 ```
 
-Below is example of `package-name/path/to/file.njk`:
-
-```njk
-<template to='bp-template'>
-  Template here
-</template>
-
-<style to='bp-sass'>
-CSS for the template here
-</style>
-
-<style to='bp-skin'>
-Skin for the template here
-</style>
-
-<script to='bp-js'>
-JS for the template here
-</script>
-```
-
-[Sass](#sass-in-template), [Skin](#skin-in-template), and [JS](#js-in-template) are optional.
-
-**Plugin package name:**
-
-Plugin package names must start with `bloggerpack-plugin-*` to automatically extract the Sass, Skin, and JS in template.
+Learn how to create plugin for Bloggerpack by reading [this section](#creating-plugins) below.
 
 ### Including assets
 
@@ -312,6 +294,14 @@ Use `{? asset ?}` tag.
 {% endasset %}
 ```
 
+#### Including assets from node modules
+
+You can also include assets from node modules:
+
+```njk
+{% asset type="style", "package-name/path/to/file.css" %}
+```
+
 ### Extending template
 
 Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance).
@@ -370,9 +360,9 @@ Output:
 </footer>
 ```
 
-### Template example
+### More Template example
 
-[See example](test/tasks/template).
+[See more example](test/tasks/template).
 
 ## Sass
 
@@ -406,13 +396,9 @@ $heading-color: #fff !default;
 
 The styles within the tag would be automatically extracted to `src/sass/_sass-in-template.scss`.
 
-### Sass example
+### More Sass example
 
-[See example](test/tasks/sass).
-
-### Remove Sass
-
-If you don't need to use the Sass feature, you can remove the `src/sass` folder.
+[See more example](test/tasks/sass).
 
 ## Skin
 
@@ -452,13 +438,9 @@ You can write skin CSS for specific template in the template file directly using
 
 The styles within the tag would be automatically extracted to `src/skin/skin-in-template.css`.
 
-### Skin example
+### More Skin example
 
-[See example](test/tasks/skin).
-
-### Remove Skin
-
-If you don't need to use the Skin feature, you can remove the `src/skin` folder.
+[See more example](test/tasks/skin).
 
 ## JS
 
@@ -488,13 +470,98 @@ var example = document.getElementById('example');
 
 The JavaScript within the tag would be automatically extracted to `src/js/js-in-template.js`.
 
-### JS example
+### More JS example
 
-[See example](test/tasks/js).
+[See more example](test/tasks/js).
 
-### Remove JS
+---
 
-If you don't need to use the JS feature, you can remove the `src/js` folder.
+## Creating theme variants
+
+You may want to create a variants of theme with shared components and styles, and it can even be completely different.
+
+To create a theme variant, just create a file named `index-*.njk` in `src` folder (e.g., `src/index-variant-name.njk`).
+
+The `src/index-*.njk` would be compiled to `dist/theme-*.xml`.
+
+Example:
+
+```text
+.
+├── dist/
+|   ├── theme.xml <------------+
+|   ├── theme-one-column.xml <-|---+
+|   └── theme-offcanvas.xml <--|---|---+
+└── src/                       |   |   |
+    ├── index.njk ------------>|   |   |
+    ├── index-one-column.njk ----->|   |
+    └── index-offcanvas.njk ---------->|
+```
+
+---
+
+## Feature removal
+
+### Remove Sass feature
+
+If you don't need to use the [Sass](#sass) feature, just remove the `src/sass` folder.
+
+Note: you need to remove `{% asset type="style", "./dist/sass.css" %}` (or similar) in your template.
+
+### Remove Skin feature
+
+If you don't need to use the [Skin](#skin) feature, just remove the `src/skin` folder.
+
+Note: you need to remove `{% asset type="skin", "./dist/skin.css" %}` (or similar) in your template.
+
+### Remove JS feature
+
+If you don't need to use the [JS](#js) feature, just remove the `src/js` folder.
+
+Note: you need to remove `{% asset type="script", "./dist/js.js" %}` (or similar) in your template.
+
+### Remove linter
+
+- CSS: To disable CSS linter, just remove the `.stylelintrc` file.
+- JS: To disable JS linter, just remove the `.eslintrc.json` file.
+
+---
+
+## Creating plugins
+
+You just need to write Bloggerpack's [Template](#template), [Sass](#sass), [Skin](#skin), and [JS](#js) in a file with `.njk` extension.
+
+Example (`my-plugin.njk`):
+
+```njk
+<template to='bp-template'>
+  Template here
+</template>
+
+<style to='bp-sass'>
+CSS for the template here
+</style>
+
+<style to='bp-skin'>
+Skin for the template here
+</style>
+
+<script to='bp-js'>
+JS for the template here
+</script>
+```
+
+The Sass, Skin, and JS are optional.
+
+You can also create a standard `.css` and `.js` files.
+
+### Plugin package name
+
+Plugin package names must start with `bloggerpack-plugin-*` to automatically extract the Sass, Skin, and JS in template.
+
+Learn how to **include template from node modules** by reading [this section](#including-template-from-node-modules) above. Read [this section](#including-assets-from-node-modules) to **include CSS and JS** files.
+
+Learn how to create **npm package** by reading its [documentation](https://docs.npmjs.com/getting-started/).
 
 ---
 
