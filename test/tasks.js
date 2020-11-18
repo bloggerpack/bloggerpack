@@ -46,4 +46,26 @@ describe('tasks', function () {
       String(file).should.equal(String(expected));
     });
   });
+
+  describe('template', function () {
+    it('should equal', function() {
+      var file = fs.readFileSync('test/tasks/template/dist/theme.xml');
+      var expected = fs.readFileSync('test/tasks/template/expected/theme.xml');
+      String(file).should.equal(String(expected));
+    });
+  });
+  describe('template-variant-foo', function () {
+    it('should equal', function() {
+      var file = fs.readFileSync('test/tasks/template/dist/theme-foo.xml');
+      var expected = fs.readFileSync('test/tasks/template/expected/theme-foo.xml');
+      String(file).should.equal(String(expected));
+    });
+  });
+  describe('template-variant-bar-baz', function () {
+    it('should equal', function() {
+      var file = fs.readFileSync('test/tasks/template/dist/theme-bar-baz.xml');
+      var expected = fs.readFileSync('test/tasks/template/expected/theme-bar-baz.xml');
+      String(file).should.equal(String(expected));
+    });
+  });
 });
