@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 
 // compile
 const templateCompile = require('../lib/template-compiler');
+const trim =  require('../lib/trim');
 
 const config = require('../config');
 
@@ -51,6 +52,7 @@ templateRegistry.prototype.init = function(gulpInst) {
     return src(templateOpts.compile.src, {allowEmpty: true})
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(templateOpts.compile.filename))
+      .pipe(trim())
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
@@ -61,6 +63,7 @@ templateRegistry.prototype.init = function(gulpInst) {
         path.basename = path.basename.replace('index-', 'theme-');
         path.extname = '.xml';
       }))
+      .pipe(trim())
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
   });
 
