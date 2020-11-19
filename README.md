@@ -124,10 +124,6 @@ The default config is recommended, but if you want to change the config you can 
 
 The header for compiled Sass, Skin and JS. You can access data from `data.json` using `<%= data.keyName %>`.
 
-### `data.json`
-
-Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in [template files](#template) using `{{ data.keyName }}`. You can also access data from `package.json` using `{{ pkg.keyName }}`. See [Nunjucks variables](https://mozilla.github.io/nunjucks/templating.html#variables).
-
 Example:
 
 ```text
@@ -135,6 +131,10 @@ Example:
  * <%= data.theme.name %> v<%= data.theme.version %>
  */
 ```
+
+### `data.json`
+
+Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in [template files](#template) using `{{ data.keyName }}`. You can also access data from `package.json` using `{{ pkg.keyName }}`. See [Nunjucks variables](https://mozilla.github.io/nunjucks/templating.html#variables).
 
 ### `package.json`
 
