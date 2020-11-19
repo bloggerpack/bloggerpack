@@ -39,8 +39,8 @@
     "build-blank": "cd starters/blank && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "build-bootstrap4": "cd starters/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "release": "npm-run-all --serial release-*",
-    "release-change-version": "gulp change_version --gulpfile gulpfile.release.js",
-    "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.release.js"
+    "release-change-version": "gulp change_version --gulpfile gulpfile.dev.js",
+    "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.dev.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
