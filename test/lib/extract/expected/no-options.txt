@@ -1,7 +1,7 @@
-/* src/example-empty1.njk */
+/* src/default.njk */
 
-/* Empty */
+default
 
-/* src/example-empty2.njk */
+/* src/empty1.njk */
 
 /* Empty */

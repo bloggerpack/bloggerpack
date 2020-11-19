@@ -1,5 +1,5 @@
 <div>
-  <div class="main">
+  <main>
     <div>foo</div>
-  </div>
+  </main>
 </div>

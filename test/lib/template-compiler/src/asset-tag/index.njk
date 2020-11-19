@@ -1,22 +1,54 @@
 <template test='template'>
-  <html>
-    <head>
+  {# Auto style tag #}
+  {% asset type="style", "./style.css" %}
 
-      {# Auto style tag #}
+  <div>
+    <div>
       {% asset type="style", "./style.css" %}
+    </div>
+  </div>
 
-      {# Auto skin tag #}
+  {# Auto skin tag #}
+  {% asset type="skin", "./skin.css" %}
+
+  <div>
+    <div>
       {% asset type="skin", "./skin.css" %}
+    </div>
+  </div>
 
-      {# Custom tag-start and tag-end #}
+  {# Custom tag-start and tag-end (CSS) #}
+  {%
+    asset
+      tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
+      "./style.css",
+      tag_end="</style>\n</b:if>"
+  %}
+
+  <div>
+    <div>
       {%
         asset
           tag_start="<b:if cond='!data:view.isLayoutMode'>\n<style>",
           "./style.css",
           tag_end="</style>\n</b:if>"
       %}
+    </div>
+  </div>
 
-      {# Block tag #}
+  {# Block tag (CSS) #}
+  {% asset %}
+    <b:if cond='!data:view.isLayoutMode'>
+    <style>
+    .element {
+      display: block;
+    }
+    </style>
+    </b:if>
+  {% endasset %}
+
+  <div>
+    <div>
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
         <style>
@@ -26,8 +58,21 @@
         </style>
         </b:if>
       {% endasset %}
+    </div>
+  </div>
 
-      {# Block tag with files #}
+  {# Block tag with files (CSS) #}
+  {% asset %}
+    <b:if cond='!data:view.isLayoutMode'>
+    <style>
+    {? asset "./style.css" ?}
+    {? asset "./style.css" ?}
+    </style>
+    </b:if>
+  {% endasset %}
+
+  <div>
+    <div>
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
         <style>
@@ -36,22 +81,48 @@
         </style>
         </b:if>
       {% endasset %}
+    </div>
+  </div>
 
-    </head>
-    <body>
+  {# Auto script tag #}
+  {% asset type="script", "./script.js" %}
 
-      {# Auto script tag #}
+  <div>
+    <div>
       {% asset type="script", "./script.js" %}
+    </div>
+  </div>
 
-      {# Custom tag-start and tag-end #}
+  {# Custom tag-start and tag-end (JS) #}
+  {%
+    asset
+      tag_start="<script>\n//<![CDATA[",
+      "./script.js",
+      tag_end="//]]>\n</script>"
+  %}
+
+  <div>
+    <div>
       {%
         asset
           tag_start="<script>\n//<![CDATA[",
           "./script.js",
           tag_end="//]]>\n</script>"
       %}
+    </div>
+  </div>
 
-      {# Block tag #}
+  {# Block tag (JS) #}
+  {% asset %}
+    <script>
+    //<![CDATA[
+    console.log('Hello, world!');
+    //]]>
+    </script>
+  {% endasset %}
+
+  <div>
+    <div>
       {% asset %}
         <script>
         //<![CDATA[
@@ -59,8 +130,21 @@
         //]]>
         </script>
       {% endasset %}
+    </div>
+  </div>
 
-      {# Block tag with files #}
+  {# Block tag with files (JS) #}
+  {% asset %}
+    <script>
+    //<![CDATA[
+    {? asset "./script.js" ?}
+    {? asset "./script.js" ?}
+    //]]>
+    </script>
+  {% endasset %}
+
+  <div>
+    <div>
       {% asset %}
         <script>
         //<![CDATA[
@@ -69,7 +153,23 @@
         //]]>
         </script>
       {% endasset %}
+    </div>
+  </div>
 
-    </body>
-  </html>
+  {# Newline #}
+  {% asset type="style", "./newline.css" %}
+
+  {% asset %}
+
+
+    <b:if cond='!data:view.isLayoutMode'>
+    <style>
+    .newline2 {
+      display: block;
+    }
+    </style>
+    </b:if>
+
+
+  {% endasset %}
 </template>

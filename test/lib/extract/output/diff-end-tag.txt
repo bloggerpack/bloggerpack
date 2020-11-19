@@ -1,4 +1,4 @@
-/* Header (src/example-diff-end-tag.njk) */
+/* Header (src/diff-end-tag.njk) */
 
 Foo
 

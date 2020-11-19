@@ -1,13 +1,13 @@
 <div>
-  <div class="main">
+  <main>
     <div>
       <div>Main content</div>
     </div>
-  </div>
+  </main>
 
-  <div class="sidebar">
+  <aside>
     <div>
       <div>Sidebar content</div>
     </div>
-  </div>
+  </aside>
 </div>

@@ -1,4 +1,4 @@
-/* Extract is empty */
+example1
 
 /* Footer */
 

@@ -24,6 +24,13 @@ describe('lib', function() {
         String(file).should.equal(String(expected));
       });
     });
+    describe('newline', function () {
+      it('should equal', function() {
+        var file = fs.readFileSync('test/lib/extract/output/newline.txt');
+        var expected = fs.readFileSync('test/lib/extract/expected/newline.txt');
+        String(file).should.equal(String(expected));
+      });
+    });
     describe('no-options', function () {
       it('should equal', function() {
         var file = fs.readFileSync('test/lib/extract/output/no-options.txt');

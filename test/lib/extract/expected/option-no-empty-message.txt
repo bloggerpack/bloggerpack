@@ -1,10 +1,10 @@
-/* Header (src/example-empty1.njk) */
+/* Header (src/example1.njk) */
 
-/* Empty */
+example1
 
 /* Footer */
 
-/* Header (src/example-empty2.njk) */
+/* Header (src/empty1.njk) */
 
 /* Empty */
 

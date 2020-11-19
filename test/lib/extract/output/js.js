@@ -1,15 +1,21 @@
-/* Header (src/example1.njk) */
+/* Header (src/asset1.njk) */
 
-function foo() {
-  return 'JS foo';
+function js1() {
+  console.log('JS1');
 }
 
 /* Footer */
 
-/* Header (src/example2.njk) */
+/* Header (src/empty1.njk) */
 
-function bar() {
-  return 'JS bar';
+/* JS-in-Template is empty */
+
+/* Footer */
+
+/* Header (src/asset2.njk) */
+
+function js2() {
+  console.log('JS2');
 }
 
 /* Footer */

@@ -7,16 +7,16 @@ const extract = require('../../../lib/extract');
 
 function test_optionHeaderOnly() {
   var options = {
-    start: '',
-    end: '',
+    start: '<example>',
+    end: '</example>',
     header: '/* Header (<filepath>) */',
     footer: '',
     emptyMessage: '/* Extract is empty */'
   };
 
   return src([
-      'src/example-empty1.njk',
-      'src/example-empty2.njk'
+      'src/example1.njk',
+      'src/empty1.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -26,16 +26,16 @@ function test_optionHeaderOnly() {
 
 function test_optionFooterOnly() {
   var options = {
-    start: '',
-    end: '',
+    start: '<example>',
+    end: '</example>',
     header: '',
     footer: '/* Footer */',
     emptyMessage: '/* Extract is empty */'
   };
 
   return src([
-      'src/example-empty1.njk',
-      'src/example-empty2.njk'
+      'src/example1.njk',
+      'src/empty1.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -45,16 +45,16 @@ function test_optionFooterOnly() {
 
 function test_optionNoEmptyMessage() {
   var options = {
-    start: '',
-    end: '',
+    start: '<example>',
+    end: '</example>',
     header: '/* Header (<filepath>) */',
     footer: '/* Footer */',
     emptyMessage: ''
   };
 
   return src([
-      'src/example-empty1.njk',
-      'src/example-empty2.njk'
+      'src/example1.njk',
+      'src/empty1.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -64,8 +64,8 @@ function test_optionNoEmptyMessage() {
 
 function test_noOptions() {
   return src([
-      'src/example-empty1.njk',
-      'src/example-empty2.njk'
+      'src/default.njk',
+      'src/empty1.njk'
     ], {allowEmpty: true})
     .pipe(extract())
     .pipe(debug())
@@ -83,7 +83,7 @@ function test_sameEndTag() {
   };
 
   return src([
-      'src/example-same-end-tag.njk'
+      'src/same-end-tag.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -101,7 +101,7 @@ function test_diffEndTag() {
   };
 
   return src([
-      'src/example-diff-end-tag.njk'
+      'src/diff-end-tag.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -119,8 +119,8 @@ function test_empty() {
   };
 
   return src([
-      'src/example-empty1.njk',
-      'src/example-empty2.njk'
+      'src/empty1.njk',
+      'src/empty2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -138,8 +138,9 @@ function test_sass() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/example2.njk'
+      'src/asset1.njk',
+      'src/empty1.njk',
+      'src/asset2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -157,8 +158,9 @@ function test_skin() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/example2.njk'
+      'src/asset1.njk',
+      'src/empty1.njk',
+      'src/asset2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
@@ -176,12 +178,33 @@ function test_js() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/example2.njk'
+      'src/asset1.njk',
+      'src/empty1.njk',
+      'src/asset2.njk'
     ], {allowEmpty: true})
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('js.js'))
+    .pipe(dest('output', {overwrite: true}));
+}
+
+function test_newline() {
+  var options = {
+    start: '<newline>',
+    end: '</newline>',
+    header: '/* Header (<filepath>) */',
+    footer: '/* Footer */',
+    emptyMessage: '/* Extract is empty */'
+  };
+
+  return src([
+      'src/newline1.njk',
+      'src/empty1.njk',
+      'src/newline2.njk'
+    ], {allowEmpty: true})
+    .pipe(extract(options))
+    .pipe(debug())
+    .pipe(concat('newline.txt'))
     .pipe(dest('output', {overwrite: true}));
 }
 
@@ -202,5 +225,6 @@ exports.build = series(
   test_empty,
   test_sass,
   test_skin,
-  test_js
+  test_js,
+  test_newline
 );

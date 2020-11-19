@@ -1,4 +1,4 @@
-/* Header (src/example-same-end-tag.njk) */
+/* Header (src/same-end-tag.njk) */
 
 Foo
 

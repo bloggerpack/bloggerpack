@@ -1,0 +1,17 @@
+/* Header (src/newline1.njk) */
+
+newline1
+
+/* Footer */
+
+/* Header (src/empty1.njk) */
+
+/* Extract is empty */
+
+/* Footer */
+
+/* Header (src/newline2.njk) */
+
+newline2
+
+/* Footer */

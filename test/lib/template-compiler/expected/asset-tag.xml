@@ -1,5 +1,3 @@
-<html>
-  <head>
 <b:if cond='!data:view.isLayoutMode'>
 <style>
 .style {
@@ -7,6 +5,18 @@
 }
 </style>
 </b:if>
+
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
+}
+</style>
+</b:if>
+  </div>
+</div>
 
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
@@ -18,6 +28,20 @@
 </b:skin>
 </b:if>
 
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+.skin {
+  display: block;
+}
+]]>
+</b:skin>
+</b:if>
+  </div>
+</div>
+
 <b:if cond='!data:view.isLayoutMode'>
 <style>
 .style {
@@ -25,6 +49,18 @@
 }
 </style>
 </b:if>
+
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
+}
+</style>
+</b:if>
+  </div>
+</div>
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
@@ -34,6 +70,18 @@
 </style>
 </b:if>
 
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.element {
+  display: block;
+}
+</style>
+</b:if>
+  </div>
+</div>
+
 <b:if cond='!data:view.isLayoutMode'>
 <style>
 .style {
@@ -44,23 +92,61 @@
 }
 </style>
 </b:if>
-  </head>
-  <body>
-<script>
-//<![CDATA[
-function foo() {
-  return 'JS foo';
+
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.style {
+  display: block;
 }
-//]]>
-</script>
+.style {
+  display: block;
+}
+</style>
+</b:if>
+  </div>
+</div>
 
 <script>
 //<![CDATA[
 function foo() {
-  return 'JS foo';
+  console.log('foo');
 }
 //]]>
 </script>
+
+<div>
+  <div>
+<script>
+//<![CDATA[
+function foo() {
+  console.log('foo');
+}
+//]]>
+</script>
+  </div>
+</div>
+
+<script>
+//<![CDATA[
+function foo() {
+  console.log('foo');
+}
+//]]>
+</script>
+
+<div>
+  <div>
+<script>
+//<![CDATA[
+function foo() {
+  console.log('foo');
+}
+//]]>
+</script>
+  </div>
+</div>
 
 <script>
 //<![CDATA[
@@ -68,15 +154,54 @@ console.log('Hello, world!');
 //]]>
 </script>
 
+<div>
+  <div>
+<script>
+//<![CDATA[
+console.log('Hello, world!');
+//]]>
+</script>
+  </div>
+</div>
+
 <script>
 //<![CDATA[
 function foo() {
-  return 'JS foo';
+  console.log('foo');
 }
 function foo() {
-  return 'JS foo';
+  console.log('foo');
 }
 //]]>
 </script>
-  </body>
-</html>
+
+<div>
+  <div>
+<script>
+//<![CDATA[
+function foo() {
+  console.log('foo');
+}
+function foo() {
+  console.log('foo');
+}
+//]]>
+</script>
+  </div>
+</div>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.newline {
+  display: none;
+}
+</style>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.newline2 {
+  display: block;
+}
+</style>
+</b:if>
