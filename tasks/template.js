@@ -59,9 +59,9 @@ templateRegistry.prototype.init = function(gulpInst) {
   gulpInst.task('template-compile-variant', function() {
     return src(path.join(process.cwd(), opts.src.dir, 'index-*.njk'), {allowEmpty: true})
       .pipe(templateCompile(templateOpts.compile.opts))
-      .pipe(rename(function (path) {
-        path.basename = path.basename.replace('index-', 'theme-');
-        path.extname = '.xml';
+      .pipe(rename(function (p) {
+        p.basename = p.basename.replace('index-', path.basename(opts.build.filename, '.xml') + '-');
+        p.extname = '.xml';
       }))
       .pipe(trim())
       .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
