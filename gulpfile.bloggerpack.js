@@ -100,16 +100,17 @@ registry(new cleanRegistry());
  */
 
 if (tasks.length === 0 || tasks.includes(templateTasks) === false) {
-  const noTasks = function(cb) {
-    console.log('Require ' + path.join(config.template.src.dir, config.template.src.filename));
-    cb();
+  const errorTasks = function(cb) {
+    cb(new Error('Require ' + path.join(config.template.src.dir, config.template.src.filename)));
   }
-  noTasks.displayName = 'no:tasks';
+  errorTasks.displayName = 'error';
   tasks.splice(0, tasks.length);
-  tasks.push(noTasks);
+  tasks.push(errorTasks);
+} else {
+  tasks.unshift('clean');
 }
 
-const build = series('clean', tasks);
+const build = series(tasks);
 
 function watch() {
   return gulpWatch([
