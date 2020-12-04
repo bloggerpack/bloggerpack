@@ -360,10 +360,6 @@ Output:
 </footer>
 ```
 
-### More Template example
-
-[See more example](test/tasks/template).
-
 ## Sass
 
 Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
@@ -395,10 +391,6 @@ $heading-color: #fff !default;
 ```
 
 The styles within the tag would be automatically extracted to `src/sass/_sass-in-template.scss`.
-
-### More Sass example
-
-[See more example](test/tasks/sass).
 
 ## Skin
 
@@ -438,10 +430,6 @@ You can write skin CSS for specific template in the template file directly using
 
 The styles within the tag would be automatically extracted to `src/skin/skin-in-template.css`.
 
-### More Skin example
-
-[See more example](test/tasks/skin).
-
 ## JS
 
 The JavaScript. You can write your script with ES6+ and you can also import package from node modules.
@@ -469,10 +457,6 @@ var example = document.getElementById('example');
 ```
 
 The JavaScript within the tag would be automatically extracted to `src/js/js-in-template.js`.
-
-### More JS example
-
-[See more example](test/tasks/js).
 
 ---
 
@@ -524,6 +508,11 @@ Note: you need to remove `{% asset type="script", "./dist/js.js" %}` (or similar
 
 - CSS: To disable CSS linter, just remove the `.stylelintrc` file.
 - JS: To disable JS linter, just remove the `.eslintrc.json` file.
+
+Note:
+
+- If you remove the Sass and Skin feature, you need to remove the unused `.stylelintrc` file.
+- If you remove the JS feature, you need to remove the unused `.eslintrc.json` file.
 
 ---
 
