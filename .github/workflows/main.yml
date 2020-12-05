@@ -1,4 +1,4 @@
-name: Starters
+name: Main
 
 on:
   push:
@@ -36,12 +36,6 @@ jobs:
 
       - name: Install npm dependencies
         run: npm ci
-      - name: Install npm dependencies (blank)
-        run: npm ci
-        working-directory: "starters/blank"
-      - name: Install npm dependencies (bootstrap4)
-        run: npm ci
-        working-directory: "starters/bootstrap4"
 
-      - name: Build starters
-        run: npm run build-starters
+      - name: Tests
+        run: npm run test
