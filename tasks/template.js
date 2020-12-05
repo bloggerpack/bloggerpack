@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const rename = require('gulp-rename');
@@ -20,7 +20,7 @@ const defaults = {
     dir: config.template.build.dir,
     filename: config.template.build.filename
   }
-}
+};
 
 function templateRegistry(opts) {
   defaultRegistry.call(this);
@@ -49,28 +49,28 @@ templateRegistry.prototype.init = function(gulpInst) {
   };
 
   gulpInst.task('template-compile-main', function() {
-    return src(templateOpts.compile.src, {allowEmpty: true})
+    return src(templateOpts.compile.src, { allowEmpty: true })
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(templateOpts.compile.filename))
       .pipe(trim())
-      .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(templateOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('template-compile-variant', function() {
-    return src(path.join(process.cwd(), opts.src.dir, 'index-*.njk'), {allowEmpty: true})
+    return src(path.join(process.cwd(), opts.src.dir, 'index-*.njk'), { allowEmpty: true })
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(function (p) {
         p.basename = p.basename.replace('index-', path.basename(opts.build.filename, '.xml') + '-');
         p.extname = '.xml';
       }))
       .pipe(trim())
-      .pipe(dest(templateOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(templateOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('template-tasks', series(
     'template-compile-main',
     'template-compile-variant'
   ));
-}
+};
 
 module.exports = templateRegistry;

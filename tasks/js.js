@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const stripIndent = require('strip-indent');
@@ -15,9 +15,9 @@ const eslint = require('gulp-eslint');
 
 // compile
 const header = require('gulp-header');
-const rollupStream = require('@rollup/stream')
-const {babel} = require('@rollup/plugin-babel');
-const {nodeResolve} = require('@rollup/plugin-node-resolve');
+const rollupStream = require('@rollup/stream');
+const { babel } = require('@rollup/plugin-babel');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -35,7 +35,7 @@ const defaults = {
     dir: config.js.build.dir,
     filename: config.js.build.filename
   }
-}
+};
 
 function jsRegistry(opts) {
   defaultRegistry.call(this);
@@ -100,15 +100,15 @@ jsRegistry.prototype.init = function(gulpInst) {
     cb();
   });
   gulpInst.task('js-extract', function () {
-    return src([...jsOpts.extract.src], {allowEmpty: true})
+    return src([...jsOpts.extract.src], { allowEmpty: true })
       .pipe(extract(jsOpts.extract.opts))
       .pipe(concat(jsOpts.extract.filename))
-      .pipe(dest(jsOpts.extract.dest, {overwrite: true}));
+      .pipe(dest(jsOpts.extract.dest, { overwrite: true }));
   });
 
   gulpInst.task('js-lint', function (cb) {
     if (fs.existsSync(path.join(process.cwd(), config.configFile.eslint))) {
-      return src([...jsOpts.lint.src], {allowEmpty: true})
+      return src([...jsOpts.lint.src], { allowEmpty: true })
         .pipe(eslint({
           configFile: jsOpts.lint.configFile,
           envs: ['browser', 'jquery'],
@@ -167,7 +167,7 @@ jsRegistry.prototype.init = function(gulpInst) {
         sourceMap: false
       }))
       .pipe(trim())
-      .pipe(dest(jsOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(jsOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('js-tasks', series(
@@ -176,6 +176,6 @@ jsRegistry.prototype.init = function(gulpInst) {
     'js-lint',
     'js-compile'
   ));
-}
+};
 
 module.exports = jsRegistry;

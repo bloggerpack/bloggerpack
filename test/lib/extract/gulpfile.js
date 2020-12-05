@@ -1,4 +1,4 @@
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const concat = require('gulp-concat');
 const debug = require('gulp-debug');
 const del = require('del');
@@ -15,13 +15,13 @@ function test_optionHeaderOnly() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/empty1.njk'
-    ], {allowEmpty: true})
+    'src/example1.njk',
+    'src/empty1.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('option-header-only.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_optionFooterOnly() {
@@ -34,13 +34,13 @@ function test_optionFooterOnly() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/empty1.njk'
-    ], {allowEmpty: true})
+    'src/example1.njk',
+    'src/empty1.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('option-footer-only.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_optionNoEmptyMessage() {
@@ -53,24 +53,24 @@ function test_optionNoEmptyMessage() {
   };
 
   return src([
-      'src/example1.njk',
-      'src/empty1.njk'
-    ], {allowEmpty: true})
+    'src/example1.njk',
+    'src/empty1.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('option-no-empty-message.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_noOptions() {
   return src([
-      'src/default.njk',
-      'src/empty1.njk'
-    ], {allowEmpty: true})
+    'src/default.njk',
+    'src/empty1.njk'
+  ], { allowEmpty: true })
     .pipe(extract())
     .pipe(debug())
     .pipe(concat('no-options.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_sameEndTag() {
@@ -83,12 +83,12 @@ function test_sameEndTag() {
   };
 
   return src([
-      'src/same-end-tag.njk'
-    ], {allowEmpty: true})
+    'src/same-end-tag.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('same-end-tag.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_diffEndTag() {
@@ -101,12 +101,12 @@ function test_diffEndTag() {
   };
 
   return src([
-      'src/diff-end-tag.njk'
-    ], {allowEmpty: true})
+    'src/diff-end-tag.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('diff-end-tag.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_empty() {
@@ -119,13 +119,13 @@ function test_empty() {
   };
 
   return src([
-      'src/empty1.njk',
-      'src/empty2.njk'
-    ], {allowEmpty: true})
+    'src/empty1.njk',
+    'src/empty2.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('empty.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_sass() {
@@ -138,14 +138,14 @@ function test_sass() {
   };
 
   return src([
-      'src/asset1.njk',
-      'src/empty1.njk',
-      'src/asset2.njk'
-    ], {allowEmpty: true})
+    'src/asset1.njk',
+    'src/empty1.njk',
+    'src/asset2.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('sass.scss'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_skin() {
@@ -158,14 +158,14 @@ function test_skin() {
   };
 
   return src([
-      'src/asset1.njk',
-      'src/empty1.njk',
-      'src/asset2.njk'
-    ], {allowEmpty: true})
+    'src/asset1.njk',
+    'src/empty1.njk',
+    'src/asset2.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('skin.css'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_js() {
@@ -178,14 +178,14 @@ function test_js() {
   };
 
   return src([
-      'src/asset1.njk',
-      'src/empty1.njk',
-      'src/asset2.njk'
-    ], {allowEmpty: true})
+    'src/asset1.njk',
+    'src/empty1.njk',
+    'src/asset2.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('js.js'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_newline() {
@@ -198,14 +198,14 @@ function test_newline() {
   };
 
   return src([
-      'src/newline1.njk',
-      'src/empty1.njk',
-      'src/newline2.njk'
-    ], {allowEmpty: true})
+    'src/newline1.njk',
+    'src/empty1.njk',
+    'src/newline2.njk'
+  ], { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
     .pipe(concat('newline.txt'))
-    .pipe(dest('output', {overwrite: true}));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function clean(cb) {

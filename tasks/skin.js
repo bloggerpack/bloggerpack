@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const stripIndent = require('strip-indent');
@@ -34,7 +34,7 @@ const defaults = {
     dir: config.skin.build.dir,
     filename: config.skin.build.filename
   }
-}
+};
 
 function skinRegistry(opts) {
   defaultRegistry.call(this);
@@ -99,15 +99,15 @@ skinRegistry.prototype.init = function(gulpInst) {
     cb();
   });
   gulpInst.task('skin-extract', function () {
-    return src([...skinOpts.extract.src], {allowEmpty: true})
+    return src([...skinOpts.extract.src], { allowEmpty: true })
       .pipe(extract(skinOpts.extract.opts))
       .pipe(concat(skinOpts.extract.filename))
-      .pipe(dest(skinOpts.extract.dest, {overwrite: true}));
+      .pipe(dest(skinOpts.extract.dest, { overwrite: true }));
   });
 
   gulpInst.task('skin-lint', function (cb) {
     if (fs.existsSync(path.join(process.cwd(), config.configFile.stylelint))) {
-      return src([...skinOpts.lint.src], {allowEmpty: true})
+      return src([...skinOpts.lint.src], { allowEmpty: true })
         .pipe(stylelint({
           configFile: skinOpts.lint.configFile,
           ignoreDisables: false,
@@ -146,7 +146,7 @@ skinRegistry.prototype.init = function(gulpInst) {
       .pipe(header(banner.text, banner.data))
       .pipe(rename(skinOpts.compile.filename))
       .pipe(trim())
-      .pipe(dest(skinOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(skinOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('skin-tasks', series(
@@ -155,6 +155,6 @@ skinRegistry.prototype.init = function(gulpInst) {
     'skin-lint',
     'skin-compile'
   ));
-}
+};
 
 module.exports = skinRegistry;

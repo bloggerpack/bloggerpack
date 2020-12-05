@@ -1,4 +1,4 @@
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const debug = require('gulp-debug');
 const del = require('del');
 
@@ -6,11 +6,11 @@ const skinImportBeautifier =  require('../../../lib/skin-import-beautifier');
 
 function test() {
   return src([
-      'src/example.css'
-    ], {allowEmpty: true})
+    'src/example.css'
+  ], { allowEmpty: true })
     .pipe(skinImportBeautifier())
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function clean(cb) {

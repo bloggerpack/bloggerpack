@@ -23,6 +23,6 @@ cleanRegistry.prototype.init = function(gulpInst) {
     del.sync([...opts.src]);
     cb();
   });
-}
+};
 
 module.exports = cleanRegistry;

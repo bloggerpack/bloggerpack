@@ -1,5 +1,5 @@
 const fs = require('fs');
-const {task, src, dest, series} = require('gulp');
+const { task, src, dest, series } = require('gulp');
 const zip = require('gulp-zip');
 const replace = require('gulp-replace');
 const del = require('del');
@@ -15,17 +15,17 @@ const change = {
   startersBloggerpackVersion: function () {
     return src('starters/**/package.json')
       .pipe(replace('"bloggerpack": "^' + pkg.version_current + '"', '"bloggerpack": "^' + pkg.version + '"'))
-      .pipe(dest('starters', {overwrite: true}))
+      .pipe(dest('starters', { overwrite: true }));
   },
   startersDownloadVersion: function () {
     return src('starters/**/README.md')
       .pipe(replace(pkg.version_current, pkg.version))
-      .pipe(dest('starters', {overwrite: true}))
+      .pipe(dest('starters', { overwrite: true }));
   },
   packageCurrentVersion: function () {
     return src('package.json')
       .pipe(replace('"version_current": "' + pkg.version_current + '"', '"version_current": "' + pkg.version + '"'))
-      .pipe(dest('.', {overwrite: true}))
+      .pipe(dest('.', { overwrite: true }));
   }
 };
 
@@ -72,5 +72,5 @@ function cleanStartersZip(cb) {
 
 exports.zip_starters = series(
   cleanStartersZip,
-  zipStarters.map(function (name) {return name;})
+  zipStarters.map(function (name) { return name; })
 );

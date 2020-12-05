@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const stripIndent = require('strip-indent');
@@ -34,7 +34,7 @@ const defaults = {
     dir: config.sass.build.dir,
     filename: config.sass.build.filename
   }
-}
+};
 
 function sassRegistry(opts) {
   defaultRegistry.call(this);
@@ -99,15 +99,15 @@ sassRegistry.prototype.init = function(gulpInst) {
     cb();
   });
   gulpInst.task('sass-extract', function () {
-    return src([...sassOpts.extract.src], {allowEmpty: true})
+    return src([...sassOpts.extract.src], { allowEmpty: true })
       .pipe(extract(sassOpts.extract.opts))
       .pipe(concat(sassOpts.extract.filename))
-      .pipe(dest(sassOpts.extract.dest, {overwrite: true}));
+      .pipe(dest(sassOpts.extract.dest, { overwrite: true }));
   });
 
   gulpInst.task('sass-lint', function (cb) {
     if (fs.existsSync(path.join(process.cwd(), config.configFile.stylelint))) {
-      return src([...sassOpts.lint.src], {allowEmpty: true})
+      return src([...sassOpts.lint.src], { allowEmpty: true })
         .pipe(stylelint({
           configFile: sassOpts.lint.configFile,
           ignoreDisables: false,
@@ -144,11 +144,11 @@ sassRegistry.prototype.init = function(gulpInst) {
       .pipe(header(banner.text, banner.data))
       .pipe(cleancss({
         level: 1,
-        format: {breakWith: 'lf'}
+        format: { breakWith: 'lf' }
       }))
       .pipe(rename(sassOpts.compile.filename))
       .pipe(trim())
-      .pipe(dest(sassOpts.compile.dest, {overwrite: true}));
+      .pipe(dest(sassOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('sass-tasks', series(
@@ -157,6 +157,6 @@ sassRegistry.prototype.init = function(gulpInst) {
     'sass-lint',
     'sass-compile'
   ));
-}
+};
 
 module.exports = sassRegistry;

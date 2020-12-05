@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {series, registry} = require('gulp');
+const { series, registry } = require('gulp');
 const gulpWatch = require('gulp').watch;
 const config = require('./config');
 
@@ -102,7 +102,7 @@ registry(new cleanRegistry());
 if (tasks.length === 0 || tasks.includes(templateTasks) === false) {
   const errorTasks = function(cb) {
     cb(new Error('Require ' + path.join(config.template.src.dir, config.template.src.filename)));
-  }
+  };
   errorTasks.displayName = 'error';
   tasks.splice(0, tasks.length);
   tasks.push(errorTasks);

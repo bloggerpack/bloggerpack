@@ -1,4 +1,4 @@
-const {series, registry} = require('gulp');
+const { series, registry } = require('gulp');
 
 const templateRegistry = require('../../../tasks/template');
 registry(new templateRegistry());

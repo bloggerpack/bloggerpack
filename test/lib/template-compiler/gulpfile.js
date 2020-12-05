@@ -1,4 +1,4 @@
-const {src, dest, series} = require('gulp');
+const { src, dest, series } = require('gulp');
 const rename = require('gulp-rename');
 const debug = require('gulp-debug');
 const del = require('del');
@@ -12,11 +12,11 @@ function test_assetTag() {
     end: '</template>'
   };
 
-  return src('src/asset-tag/index.njk', {allowEmpty: true})
+  return src('src/asset-tag/index.njk', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('asset-tag.xml'))
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_extends() {
@@ -26,11 +26,11 @@ function test_extends() {
     end: '</template>'
   };
 
-  return src('src/extends/index.njk', {allowEmpty: true})
+  return src('src/extends/index.njk', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('extends.xml'))
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_path() {
@@ -40,11 +40,11 @@ function test_path() {
     end: '</template>'
   };
 
-  return src('src/path/index.njk', {allowEmpty: true})
+  return src('src/path/index.njk', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('path.xml'))
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_templateContext() {
@@ -61,11 +61,11 @@ function test_templateContext() {
     end: '</template>'
   };
 
-  return src('src/template-context/index.njk', {allowEmpty: true})
+  return src('src/template-context/index.njk', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('template-context.xml'))
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function test_templateTag() {
@@ -75,11 +75,11 @@ function test_templateTag() {
     end: '</template>'
   };
 
-  return src('src/template-tag/index.njk', {allowEmpty: true})
+  return src('src/template-tag/index.njk', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('template-tag.xml'))
     .pipe(debug())
-    .pipe(dest('output', {overwrite: true}))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 function clean(cb) {
