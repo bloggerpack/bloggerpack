@@ -3,7 +3,6 @@ const path = require('path');
 const {src, dest, series} = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
-const log = require('gulplog');
 const stripIndent = require('strip-indent');
 const del = require('del');
 const concat = require('gulp-concat');
@@ -16,9 +15,12 @@ const eslint = require('gulp-eslint');
 
 // compile
 const header = require('gulp-header');
+const rollupStream = require('@rollup/stream')
+const {babel} = require('@rollup/plugin-babel');
+const {nodeResolve} = require('@rollup/plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const browserify = require('browserify');
 const terser = require('gulp-terser');
 const trim =  require('../lib/trim');
 
@@ -125,30 +127,44 @@ jsRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('js-compile', function () {
-    var b = browserify({
-      entries: jsOpts.compile.src,
-      debug: true,
-      transform: [
-        ['babelify', {
-          'presets': ['@babel/preset-env'],
-          'plugins': ['babel-plugin-root-import']
-        }]
+    const options = {
+      input: jsOpts.compile.src,
+      output: {
+        format: 'umd'
+      },
+      plugins: [
+        babel({
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                loose: true,
+                bugfixes: true,
+                modules: false
+              }
+            ]
+          ],
+          exclude: 'node_modules/**',
+          babelHelpers: 'bundled'
+        }),
+        nodeResolve(),
+        commonjs()
       ]
-    });
+    };
 
-    return b.bundle()
+    return rollupStream(options)
       .pipe(source(jsOpts.compile.filename))
       .pipe(buffer())
-      .on('error', log.error)
       .pipe(header(banner.text, banner.data))
       .pipe(terser({
         mangle: true,
         compress: {
           typeofs: false
         },
-        output: {
+        format: {
           comments: /^!/i
-        }
+        },
+        sourceMap: false
       }))
       .pipe(trim())
       .pipe(dest(jsOpts.compile.dest, {overwrite: true}));
