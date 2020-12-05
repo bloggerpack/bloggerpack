@@ -38,12 +38,12 @@
     "build-starters": "npm-run-all --serial build-starters-*",
     "build-starters-blank": "cd starters/blank && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
     "build-starters-bootstrap4": "cd starters/bootstrap4 && gulp build --gulpfile ../../gulpfile.bloggerpack.js --cwd .",
+    "release": "npm-run-all --serial release-change-version deps-install release-zip-starters",
+    "release-change-version": "gulp change_version --gulpfile gulpfile.dev.js",
+    "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.dev.js",
     "deps-install": "npm-run-all --serial deps-install-*",
     "deps-install-blank": "cd starters/blank && npm install",
-    "deps-install-bootstrap4": "cd starters/bootstrap4 && npm install",
-    "release": "npm-run-all --serial release-*",
-    "release-change-version": "gulp change_version --gulpfile gulpfile.dev.js",
-    "release-zip-starters": "gulp zip_starters --gulpfile gulpfile.dev.js"
+    "deps-install-bootstrap4": "cd starters/bootstrap4 && npm install"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
