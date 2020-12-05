@@ -11,6 +11,12 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "bloggerpack": "^1.0.0-beta.6"
+    "bloggerpack": "^1.0.0-beta.6",
+    "eslint-plugin-import": "^2.22.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   }
 }

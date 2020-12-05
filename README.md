@@ -506,8 +506,8 @@ Note: you need to remove `{% asset type="script", "./dist/js.js" %}` (or similar
 
 ### Remove linter
 
-- CSS: To disable CSS linter, just remove the `.stylelintrc` file.
-- JS: To disable JS linter, just remove the `.eslintrc.json` file.
+- CSS: To disable CSS linter, just remove the `.stylelintrc` file (you also need to remove Stylelint dependencies in `package.json`).
+- JS: To disable JS linter, just remove the `.eslintrc.json` file (you also need to remove ESLint dependencies in `package.json`).
 
 Note:
 
