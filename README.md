@@ -16,12 +16,8 @@
   A tool for develop Blogger theme.
   <br>
   <br>
-  <a href="https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3AMain+branch%3Amain">
-    <img src="https://github.com/bloggerpack/bloggerpack/workflows/Main/badge.svg" alt="Main Status">
-  </a>
-  <a href="https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3AStarters+branch%3Amain">
-    <img src="https://github.com/bloggerpack/bloggerpack/workflows/Starters/badge.svg" alt="Starters Status">
-  </a>
+  <a href="https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3AMain+branch%3Amain"><img src="https://github.com/bloggerpack/bloggerpack/workflows/Main/badge.svg" alt="Main Status"></a>
+  <a href="https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3AStarters+branch%3Amain"><img src="https://github.com/bloggerpack/bloggerpack/workflows/Starters/badge.svg" alt="Starters Status"></a>
   <br>
   <br>
   <a href="#getting-started">Getting started</a>
