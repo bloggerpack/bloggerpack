@@ -9,6 +9,7 @@ env:
 
 jobs:
   run:
+    name: Node ${{ matrix.node }}
     runs-on: ubuntu-latest
 
     strategy:
