@@ -12,12 +12,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        starters-dir:
-          - "starters/blank"
-          - "starters/bootstrap4"
 
     steps:
       - name: Clone repository
@@ -36,8 +30,13 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
             ${{ runner.OS }}-node-v${{ env.NODE }}-
+
       - name: Install npm dependencies
-        run: cd ${{ matrix.starters-dir }} && npm ci
+        run: npm ci
+        working-directory: "starters/blank"
+      - name: Install npm dependencies
+        run: npm ci
+        working-directory: "starters/bootstrap4"
 
       - name: Build starters
         run: npm run build-starters
