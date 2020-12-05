@@ -12,7 +12,7 @@ env:
   NODE: 14.x
 
 jobs:
-  css:
+  test:
     runs-on: ubuntu-latest
 
     steps:
