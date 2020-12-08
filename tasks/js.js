@@ -130,7 +130,8 @@ jsRegistry.prototype.init = function(gulpInst) {
     const options = {
       input: jsOpts.compile.src,
       output: {
-        format: 'umd'
+        format: 'umd',
+        name: 'bloggerpack'
       },
       plugins: [
         babel({
