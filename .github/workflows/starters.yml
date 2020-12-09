@@ -35,14 +35,10 @@ jobs:
             ${{ runner.OS }}-node-v${{ matrix.node }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
             ${{ runner.OS }}-node-v${{ matrix.node }}-
 
-      - name: Install npm dependencies
+      - name: Install npm dependencies (bloggerpack)
         run: npm ci
-      - name: Install npm dependencies (blank)
-        run: npm ci
-        working-directory: "starters/blank"
-      - name: Install npm dependencies (bootstrap4)
-        run: npm ci
-        working-directory: "starters/bootstrap4"
+      - name: Install npm dependencies (starters)
+        run: npm run deps-install
 
       - name: Build starters
         run: npm run build-starters
