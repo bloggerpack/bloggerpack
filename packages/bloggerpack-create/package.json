@@ -1,0 +1,50 @@
+{
+  "name": "bloggerpack-create",
+  "version": "0.0.0",
+  "description": "Create Bloggerpack based theme using command line and starter theme as a head start.",
+  "license": "MIT",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerpack/bloggerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerpack/bloggerpack/issues"
+  },
+  "author": {
+    "name": "Igoy Nawamreh",
+    "email": "igoynawamreh@gmail.com",
+    "url": "https://github.com/igoynawamreh"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "bloggerpack",
+    "bloggerpack-create",
+    "blogger",
+    "blogspot",
+    "starter",
+    "theme",
+    "template"
+  ],
+  "files": [
+    "cli.js",
+    "download.js",
+    "package.js"
+  ],
+  "bin": {
+    "bloggerpack-create": "cli.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "decompress": "^4.2.1",
+    "get-stream": "^6.0.0",
+    "got": "^11.8.1",
+    "latest-version": "^5.1.0",
+    "p-event": "^4.2.0",
+    "validate-npm-package-name": "^3.0.0",
+    "yargs": "^16.2.0"
+  }
+}

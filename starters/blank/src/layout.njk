@@ -1,4 +1,4 @@
-<template to='bp-template'>
+<template to='bp:template'>
   <?xml version='1.0' encoding='UTF-8' ?>
   <!DOCTYPE html>
   <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
@@ -49,10 +49,15 @@
       {# Main JS #}
       {% asset type="script", "./dist/js.js" %}
 
-      <b:comment>FAKE SECTION</b:comment>
-      <b:comment>- Blogger theme requires at least one `b:section` with `showaddelement='yes'`.</b:comment>
-      <b:comment>- Note: the default value of `showaddelement` is `yes`.</b:comment>
-
+      {#
+       # FAKE SECTION
+       #
+       # - Blogger theme requires at least one `<b:section>` with `showaddelement='yes'`.
+       # - In this theme, we do not have a `<b:section>` with `showaddelement='yes'`,
+       #   so we need to create a fake section with `showaddelement='yes'`.
+       # - You can remove this section if your theme has a `<b:section>` with `showaddelement='yes'`.
+       # - Note: The default value of `showaddelement` is `yes`, which means you can omit that attribute.
+       #}
       <b:if cond='!data:view.isLayoutMode and (data:blog.view == "NeverAccessThisView")'>
         <b:section id='fake-section' showaddelement='yes'/>
       </b:if>

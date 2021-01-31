@@ -1,0 +1,26 @@
+<template to='bp:template'>
+  <b:comment>Show footer if the `footer-section` has any widgets or has any visible widgets.</b:comment>
+  <b:if cond='data:widgets any (w =&gt; w.sectionId == "footer-section")'>
+    <footer class='footer py-3 py-lg-5' id='footer'>
+      <div class='container'>
+        {% template "./footer.part/footer-section.njk" %}
+      </div>
+    </footer>
+  </b:if>
+</template>
+
+<style to='bp:sass'>
+.footer {
+  color: $gray-500;
+  background-color: $dark;
+}
+
+.footer a {
+  color: $gray-200;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+</style>

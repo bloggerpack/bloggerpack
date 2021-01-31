@@ -1,6 +1,6 @@
 **/*.min.js
 **/dist/
-**/vendor/
 **/output/
 **/expected/
-starters/**
+**/plugins/
+**/starters/

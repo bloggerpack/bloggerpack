@@ -1,0 +1,11 @@
+/* src/first-match-to-end/foo.txt */
+
+foo
+</continue>
+
+<example>
+foo2
+</continue>
+
+<example>
+foo3

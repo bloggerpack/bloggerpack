@@ -1,8 +1,36 @@
 {
-  "private": true,
+  "name": "@bloggerpack/starter-blank",
+  "version": "0.0.0",
+  "description": "Blank starter theme for Bloggerpack.",
+  "license": "MIT",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/starters/blank#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerpack/bloggerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerpack/bloggerpack/issues"
+  },
+  "author": {
+    "name": "Igoy Nawamreh",
+    "email": "igoynawamreh@gmail.com",
+    "url": "https://github.com/igoynawamreh"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "bloggerpack",
+    "bloggerpack-create",
+    "blogger",
+    "blogspot",
+    "starter",
+    "theme",
+    "template"
+  ],
   "scripts": {
-    "build": "bloggerpack build",
-    "watch": "bloggerpack watch"
+    "build": "bloggerpack --mode production",
+    "watch": "bloggerpack --mode development --watch"
   },
   "dependencies": {},
   "devDependencies": {

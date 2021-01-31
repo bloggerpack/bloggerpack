@@ -1,0 +1,5 @@
+/* src/space/foo.txt */
+
+<foo>foo</foo>
+
+          <foo>foo</foo>

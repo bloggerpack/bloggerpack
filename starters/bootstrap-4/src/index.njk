@@ -1,0 +1,15 @@
+<template to='bp:template'>
+  {% extends "./layout.njk" %}
+
+  {% block navbar %}
+  {% template "./template/navbar.njk" %}
+  {% endblock %}
+
+  {% block content %}
+  {% template "./template/content.njk" %}
+  {% endblock %}
+
+  {% block footer %}
+  {% template "./template/footer.njk" %}
+  {% endblock %}
+</template>

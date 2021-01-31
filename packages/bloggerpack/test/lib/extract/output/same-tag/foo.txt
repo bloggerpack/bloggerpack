@@ -1,0 +1,3 @@
+/* src/same-tag/foo.txt */
+
+foo

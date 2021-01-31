@@ -1,0 +1,4 @@
+bloggerpack-create welcome message.
+
+This text will be displayed in terminal when your starter
+successfully created using `bloggerpack-create` command.

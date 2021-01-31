@@ -1,0 +1,11 @@
+/* src/first-match-to-end/dir/bar.txt */
+
+bar
+</continue>
+
+<example>
+bar2
+</continue>
+
+<example>
+bar3

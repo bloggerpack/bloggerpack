@@ -1,0 +1,40 @@
+name: Plugins
+
+on:
+  push:
+  pull_request:
+
+env:
+  CI: true
+  NODE: 14.x
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ env.NODE }}"
+
+      - name: Set up npm cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}
+            ${{ runner.OS }}-node-v${{ env.NODE }}-
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Lerna bootstrap
+        run: npm run bootstrap
+
+      - name: Tests and build plugins
+        run: npm run plugins
