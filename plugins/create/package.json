@@ -1,0 +1,39 @@
+{
+  "name": "@bloggerpack/plugin-create",
+  "version": "0.0.0",
+  "description": "Plugin for creating new Bloggerpack plugin.",
+  "license": "MIT",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/plugins/create#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerpack/bloggerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerpack/bloggerpack/issues"
+  },
+  "author": {
+    "name": "Igoy Nawamreh",
+    "email": "igoynawamreh@gmail.com",
+    "url": "https://github.com/igoynawamreh"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "bloggerpack",
+    "bloggerpack-plugin",
+    "plugin",
+    "blogger",
+    "blogspot"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-unicorn": "^23.0.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
+  }
+}

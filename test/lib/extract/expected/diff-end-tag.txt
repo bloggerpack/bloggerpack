@@ -1,5 +1,0 @@
-/* Header (src/diff-end-tag.njk) */
-
-Foo
-
-/* Footer */

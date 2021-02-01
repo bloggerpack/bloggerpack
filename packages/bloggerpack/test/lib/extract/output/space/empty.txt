@@ -1,0 +1,3 @@
+/* src/space/empty.txt */
+
+/* Empty */

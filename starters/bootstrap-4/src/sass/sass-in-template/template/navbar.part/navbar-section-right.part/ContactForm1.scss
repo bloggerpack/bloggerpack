@@ -1,0 +1,45 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template/navbar.part/navbar-section-right.part/ContactForm1.njk
+// ------------------------------------------------------------------------
+*/
+
+//
+// Alert
+//
+
+.navbar-contact-form {
+  .contact-form-success-message,
+  .contact-form-error-message {
+    display: none;
+  }
+
+  .contact-form-success-message-with-border,
+  .contact-form-error-message-with-border {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    @include border-radius($border-radius);
+  }
+
+  .contact-form-success-message-with-border {
+    color: darken(#dff0d8, 45%);
+    background-color: #dff0d8;
+    border-color: darken(#dff0d8, 2.5%);
+  }
+  .contact-form-error-message-with-border {
+    padding-right: 4rem;
+    color: darken(#f2dede, 45%);
+    background-color: #f2dede;
+    border-color: darken(#f2dede, 2.5%);
+
+    .contact-form-cross {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1.125rem 1.25rem;
+    }
+  }
+}

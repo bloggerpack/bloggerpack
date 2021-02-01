@@ -1,0 +1,5 @@
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+// Sass-in-Template (always last)
+@import "sass-in-template/**/*.scss";

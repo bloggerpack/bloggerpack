@@ -1,7 +1,0 @@
-example1
-
-/* Footer */
-
-/* Extract is empty */
-
-/* Footer */

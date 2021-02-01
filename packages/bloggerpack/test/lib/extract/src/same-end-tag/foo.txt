@@ -1,0 +1,11 @@
+<example>
+foo
+</end>
+
+<example2>
+foo2
+</end>
+
+<example3>
+foo3
+</end>

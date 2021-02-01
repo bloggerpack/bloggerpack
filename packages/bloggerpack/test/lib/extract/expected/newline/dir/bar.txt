@@ -1,0 +1,3 @@
+/* src/newline/dir/bar.txt */
+
+bar

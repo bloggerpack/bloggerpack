@@ -1,0 +1,3 @@
+/* Header: src/header/dir/empty.txt */
+
+/* Empty */

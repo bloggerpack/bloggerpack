@@ -1,0 +1,5 @@
+/* src/space/dir/bar.txt */
+
+<bar>bar</bar>
+
+          <bar>bar</bar>
