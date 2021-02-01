@@ -1,0 +1,92 @@
+{
+  "name": "bloggerpack",
+  "version": "1.0.0",
+  "description": "A tool for develop Blogger theme.",
+  "license": "MIT",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerpack/bloggerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerpack/bloggerpack/issues"
+  },
+  "author": {
+    "name": "Igoy Nawamreh",
+    "email": "igoynawamreh@gmail.com",
+    "url": "https://github.com/igoynawamreh"
+  },
+  "keywords": [
+    "bloggerpack",
+    "blogger",
+    "blogspot",
+    "theme",
+    "template"
+  ],
+  "files": [
+    "lib",
+    "tasks",
+    "bin.js",
+    "config.js",
+    "gulpfile.js",
+    "plugin.config.js",
+    "theme.config.js"
+  ],
+  "bin": {
+    "bloggerpack": "bin.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/stream": "^1.1.0",
+    "@taufik-nurrohman/quote": "0.0.7",
+    "autoprefixer": "^10.0.1",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.1",
+    "cross-spawn": "^7.0.3",
+    "dedent": "^0.7.0",
+    "del": "^6.0.0",
+    "fibers": "^5.0.0",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-if": "^3.0.0",
+    "gulp-ignore": "^3.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-terser": "^1.4.0",
+    "merge-options": "^3.0.3",
+    "minimist": "^1.2.5",
+    "node-sass": "^5.0.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "node-sass-package-importer": "^5.3.2",
+    "nunjucks": "^3.2.2",
+    "postcss": "^8.1.4",
+    "postcss-import": "^13.0.0",
+    "prettier": "^2.1.2",
+    "rollup": "^2.34.1",
+    "rollup-plugin-glob-import": "^0.4.5",
+    "strip-css-comments": "^4.1.0",
+    "strip-indent": "^3.0.0",
+    "stylelint": "^13.7.2",
+    "through2": "^4.0.2",
+    "undertaker-registry": "^1.0.1",
+    "util": "^0.12.3",
+    "vinyl": "^2.2.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-fs": "^3.0.3",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

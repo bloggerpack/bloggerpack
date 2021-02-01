@@ -1,0 +1,3 @@
+/* src/defaults/dir/empty.txt */
+
+/* Empty */

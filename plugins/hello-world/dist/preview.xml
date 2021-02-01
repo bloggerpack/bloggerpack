@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport' />
+    <title><data:view.title.escaped/></title>
+    <b:include data='blog' name='all-head-content' />
+    <b:include data='blog' name='google-analytics' />
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.github-box{padding:1rem;color:#000;font-size:1rem;text-align:center;background-color:#f5f5f5;border:1px solid #ccc;border-radius:.25rem}.github-box h5{margin-top:0;margin-bottom:1rem;font-weight:500;font-size:1.25rem;line-height:1.2}.hello-box{padding:1rem;color:#fff;font-weight:500;font-size:2rem;line-height:1.2;text-align:center;background-color:#ff5722;border:1px solid #c74921;border-radius:.25rem}body{margin:1rem}.hello-box{margin-bottom:1rem}.github-box,.hello-box{max-width:500px;margin-right:auto;margin-left:auto}
+</style>
+</b:if>
+
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+
+]]>
+</b:skin>
+</b:if>
+  </head>
+  <body>
+    <div class='hello-box'>Hello, my name is Bloggerpack</div>
+
+    <div class='github-box'>
+      <h5>Bloggerpack on GitHub</h5>
+      <a class='github-button' href='https://github.com/bloggerpack/bloggerpack' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star bloggerpack/bloggerpack on GitHub'>Star</a>
+      <a class='github-button' href='https://github.com/bloggerpack/bloggerpack/subscription' data-icon='octicon-eye' data-size='large' data-show-count='true' aria-label='Watch bloggerpack/bloggerpack on GitHub'>Watch</a>
+      <a class='github-button' href='https://github.com/bloggerpack/bloggerpack/fork' data-icon='octicon-repo-forked' data-size='large' data-show-count='true' aria-label='Fork bloggerpack/bloggerpack on GitHub'>Fork</a>
+      <script async defer src='https://buttons.github.io/buttons.js'></script>
+    </div>
+
+    <b:if cond='data:view.isLayoutMode'>
+      <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='yes'>
+        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true' />
+      </b:section>
+    </b:if>
+
+<script>
+//<![CDATA[
+!function(n){"function"==typeof define&&define.amd?define(n):n()}((function(){}));
+//]]>
+</script>
+  </body>
+</html>

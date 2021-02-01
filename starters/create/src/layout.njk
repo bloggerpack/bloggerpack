@@ -1,0 +1,39 @@
+<template to='bp:template'>
+  <?xml version='1.0' encoding='UTF-8' ?>
+  <!DOCTYPE html>
+  <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+    <head>
+
+      <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+      <title><data:view.title.escaped/></title>
+      <b:include data='blog' name='all-head-content'/>
+      <b:include data='blog' name='google-analytics'/>
+
+      {# Main CSS (Sass) #}
+      {% asset type="style", "./dist/sass.css" %}
+
+      {# Main CSS (Skin) #}
+      {% asset type="skin", "./dist/skin.css" %}
+
+      {# Layout Mode CSS #}
+      {% asset %}
+        <b:if cond='data:view.isLayoutMode'>
+        <b:template-skin>
+        <![CDATA[
+        /* CSS here */
+        ]]>
+        </b:template-skin>
+        </b:if>
+      {% endasset %}
+
+    </head>
+    <body>
+
+      {% block example %}{% endblock %}
+
+      {# Main JS #}
+      {% asset type="script", "./dist/js.js" %}
+
+    </body>
+  </html>
+</template>

@@ -1,7 +1,0 @@
-/* Header (src/example1.njk) */
-
-example1
-
-/* Header (src/empty1.njk) */
-
-/* Extract is empty */

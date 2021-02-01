@@ -1,0 +1,8 @@
+You can now start to create your awesome Bloggerpack plugin!
+
+You can start by edit `package.json` and `README.md`;
+Run `npm install` to install dependencies;
+Read the Bloggerpack documentation.
+
+Bloggerpack documentation:
+`https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack`

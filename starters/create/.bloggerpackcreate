@@ -1,0 +1,11 @@
+You can now start to create your awesome Bloggerpack starter theme!
+
+You can start by edit `package.json`, `README.md`, and `.bloggerpackcreate`;
+Run `npm install` to install dependencies;
+Read the Bloggerpack and `bloggerpack-create` documentation.
+
+Bloggerpack documentation:
+`https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack`
+
+`bloggerpack-create` documentation:
+`https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create`

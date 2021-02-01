@@ -1,0 +1,24 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: template/preview.njk
+// ------------------------------------------------------------------------
+*/
+
+//
+// Demo
+//
+
+body {
+  margin: 1rem;
+}
+
+.hello-box {
+  margin-bottom: 1rem;
+}
+
+.hello-box,
+.github-box {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}

@@ -1,0 +1,27 @@
+<template to='bp:template'>
+  {# Footer nav (using `LinkList` widget) #}
+  <b:widget id='LinkList2' locked='true' title='Nav' type='LinkList' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='shownum'/>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='text-0'>Blogger</b:widget-setting>
+      <b:widget-setting name='link-0'>https://blogger.com/</b:widget-setting>
+      <b:widget-setting name='text-1'>GitHub</b:widget-setting>
+      <b:widget-setting name='link-1'>https://github.com/bloggerpack/bloggerpack</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='list-inline mb-0'>
+        <b:loop values='data:links' var='link'>
+          <li class='list-inline-item'>
+            <a expr:href='data:link.target'>
+              <data:link.name/>
+            </a>
+          </li>
+        </b:loop>
+      </ul>
+    </b:includable>
+  </b:widget>
+</template>

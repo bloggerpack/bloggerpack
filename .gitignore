@@ -25,7 +25,8 @@ nbproject
 Thumbs.db
 
 # Folders and files to ignore
-/node_modules
-/starters/**/node_modules
+/.changelog
+/lerna-debug.log
+/packages/**/package-lock.json
 /starters/**/package-lock.json
-/starters-zip
+**/node_modules

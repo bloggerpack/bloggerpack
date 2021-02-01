@@ -1,0 +1,11 @@
+<template to='bp:template'>
+  <b:comment>Show the `navbar-section-right` if it has any widgets or has any visible widgets.</b:comment>
+  <b:if cond='data:widgets any (w =&gt; w.sectionId == "navbar-section-right")'>
+    <b:section class='navbar-section-right ml-auto d-lg-flex align-items-lg-center' id='navbar-section-right' name='Navbar right section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then uncheck the (Visible) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar left section).' showaddelement='no'>
+      {% template "./navbar-section-right.part/Profile1.njk" %}
+      {% template "./navbar-section-right.part/ContactForm1.njk" %}
+      {% template "./navbar-section-right.part/FollowByEmail1.njk" %}
+      {% template "./navbar-section-right.part/BlogSearch1.njk" %}
+    </b:section>
+  </b:if>
+</template>

@@ -1,0 +1,5 @@
+<extract-start>
+  <foo>foo</foo>
+
+          <foo>foo</foo>
+</extract-end>

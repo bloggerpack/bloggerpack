@@ -1,0 +1,5 @@
+/* src/footer/dir/bar.txt */
+
+bar
+
+/* Footer: src/footer/dir/bar.txt */

@@ -1,0 +1,63 @@
+<template to='bp:template'>
+  <?xml version='1.0' encoding='UTF-8' ?>
+  <!DOCTYPE html>
+  <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+    <head>
+
+      <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+      <title><data:view.title.escaped/></title>
+      <b:include data='blog' name='all-head-content'/>
+      <b:include data='blog' name='google-analytics'/>
+
+      {# Main CSS (Sass) #}
+      {% asset type="style", "../dist/sass.css" %}
+
+      {# Main CSS (Skin) #}
+      {% asset type="skin", "../dist/skin.css" %}
+
+    </head>
+    <body>
+
+      {% import "./hello.njk" as hello %}
+
+      {{ hello.myNameIs('Bloggerpack') }}
+
+      {% template "./bloggerpack-github.njk" %}
+
+      {#
+       # We don't need the blog posts widget, but the widget is required,
+       # so we need to show the widget only in the Blogger layout editor.
+       #}
+      <b:if cond='data:view.isLayoutMode'>
+        <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='yes'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'/>
+        </b:section>
+      </b:if>
+
+      {# Main JS #}
+      {% asset type="script", "../dist/js.js" %}
+
+    </body>
+  </html>
+</template>
+
+<style to='bp:sass'>
+//
+// Demo
+//
+
+body {
+  margin: 1rem;
+}
+
+.hello-box {
+  margin-bottom: 1rem;
+}
+
+.hello-box,
+.github-box {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
