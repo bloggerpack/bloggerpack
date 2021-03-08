@@ -1,5 +1,5 @@
 {
-  "name": "bloggerpack-starter-awesome",
+  "name": "my-awesome-starter",
   "version": "0.1.0",
   "description": "My awesome starter theme for Bloggerpack.",
   "scripts": {
@@ -8,7 +8,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "bloggerpack": "^1.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-unicorn": "^23.0.0",
     "stylelint-config-rational-order": "^0.1.2",
