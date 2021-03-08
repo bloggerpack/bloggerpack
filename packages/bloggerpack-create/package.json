@@ -29,7 +29,8 @@
   "files": [
     "cli.js",
     "download.js",
-    "package.js"
+    "package.js",
+    "package.template.js"
   ],
   "bin": {
     "bloggerpack-create": "cli.js"
