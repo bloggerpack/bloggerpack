@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.0.1...@bloggerpack/starter-create@1.0.2) (2021-03-08)
+
+
+### Bug Fixes
+
+* update to support latest bloggerpack-create ([6416391](https://github.com/bloggerpack/bloggerpack/commit/64163918ef08a8c6392ca5f9b33d159f01ec4d45))
+
+
+
+
+
 ## [1.0.1](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.0.0...@bloggerpack/starter-create@1.0.1) (2021-02-01)
 
 
