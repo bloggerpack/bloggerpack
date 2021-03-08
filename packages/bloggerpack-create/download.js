@@ -6,6 +6,7 @@ const getStream = require('get-stream');
 const decompress = require('decompress');
 const chalk = require('chalk');
 const packageDotJson = require('./package');
+const packageTemplate = require('./package.template');
 
 const download = (uri, output, args) => {
   const gotOpts = {
@@ -28,6 +29,11 @@ const download = (uri, output, args) => {
 
           if (f === 'package.json') {
             let newData = packageDotJson(d.toString('utf8'), args);
+            file.data = new Buffer.from(newData);
+          }
+
+          if (f === 'package.json.template') {
+            let newData = packageTemplate(d.toString('utf8'), args);
             file.data = new Buffer.from(newData);
           }
 
