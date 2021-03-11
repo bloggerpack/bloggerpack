@@ -1,6 +1,6 @@
 {
   "name": "@bloggerpack/plugin-create",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Plugin for creating new Bloggerpack plugin.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/plugins/create#readme",
