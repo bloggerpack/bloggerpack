@@ -28,7 +28,12 @@
     "theme",
     "template"
   ],
+  "scripts": {
+    "build": "bloggerpack --mode production",
+    "watch": "bloggerpack --mode development --watch"
+  },
   "devDependencies": {
+    "bloggerpack": "^1.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-unicorn": "^23.0.0",
     "stylelint-config-rational-order": "^0.1.2",
