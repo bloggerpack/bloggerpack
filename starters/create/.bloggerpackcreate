@@ -1,19 +1,34 @@
-You can now start to create your awesome Bloggerpack starter theme!
+#
+# Get started
+#
 
-* Run `npm install` to install dependencies
-* You can start by edit:
-  * `.bloggerpackcreate`
-  * `.browserslistrc`
-  * `.eslintrc.json`
-  * `.stylelintrc`
-  * `banner.txt`
-  * `data.json`
-  * `package.json`
-  * `README.md`
-* Read the Bloggerpack and `bloggerpack-create` documentation
+Navigate to the root theme directory and run `npm install` to install dependencies.
+
+Once the installation is done, you can run some built-in commands:
+
+* `npm run build` - Build the theme.
+* `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
+
+You can now start to create your awesome Bloggerpack starter theme.
+You can start by edit:
+
+* `.bloggerpackcreate`
+* `.browserslistrc`
+* `.eslintrc.json`
+* `.stylelintrc`
+* `banner.txt`
+* `data.json`
+* `package.json`
+* `README.md`
+
+Don't forget to write installation and usage guide in `README.md`.
+
+#
+# Documentation
+#
 
 Bloggerpack documentation:
 `https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack`
 
-`bloggerpack-create` documentation:
+bloggerpack-create documentation:
 `https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create`

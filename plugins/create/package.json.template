@@ -1,5 +1,5 @@
 {
-  "name": "bloggerpack-plugin-awesome",
+  "name": "*",
   "version": "0.1.0",
   "description": "My awesome plugin for Bloggerpack.",
   "scripts": {

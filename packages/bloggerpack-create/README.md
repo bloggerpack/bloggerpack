@@ -78,6 +78,10 @@ $ npx bloggerpack-create --help
 
 You can run this command to see all options and examples.
 
----
+## Starters and plugins
 
 See our [starters](https://github.com/bloggerpack/bloggerpack/tree/main/starters) and [plugins](https://github.com/bloggerpack/bloggerpack/tree/main/plugins), or you can find a list of available starters and plugins by searching for `bloggerpack` on [GitHub](https://github.com/topics/bloggerpack) or [npm](https://www.npmjs.com/search?q=keywords%3Abloggerpack).
+
+## Changelog
+
+See [CHANGELOG](https://github.com/bloggerpack/bloggerpack/blob/main/packages/bloggerpack-create/CHANGELOG.md).

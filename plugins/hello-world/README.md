@@ -1,6 +1,6 @@
-# @bloggerpack/plugin-hello-world ([Preview](https://bp-plugin-hello-world.blogspot.com))
+# @bloggerpack/plugin-hello-world
 
-> Hello world plugin for [Bloggerpack](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack).
+> Hello world plugin for Bloggerpack. [Demo](https://bp-plugin-hello-world.blogspot.com/).
 
 ## Installation
 
