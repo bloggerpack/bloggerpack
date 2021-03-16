@@ -58,33 +58,57 @@ yargs
     process.exit(1);
   })
   .options({
-    'x': {
+    's': {
       alias: 'source',
       type: 'string',
       choices: ['npm', 'git', 'archive'],
       describe: `Set source`,
       demandOption: true
     },
-    's': {
-      alias: 'starter',
+    't': {
+      alias: 'template',
       type: 'string',
-      describe: `Set starter theme`,
+      describe: `Set starter template`,
       demandOption: true
     }
   })
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"package-name"')}`, '[npm; normal; latest version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"@scope/package-name"')}`, '[npm; scoped; latest version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"package-name@1"')}`, '[npm; normal; latest 1.x.x version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"@scope/package-name@1"')}`, '[npm; scoped; latest 1.x.x version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"package-name@1.1"')}`, '[npm; normal; latest 1.1.x version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"@scope/package-name@1.1"')}`, '[npm; scoped; latest 1.1.x version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"package-name@1.1.5"')}`, '[npm; normal; specific version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('npm')} -s=${chalk.cyan('"@scope/package-name@1.1.5"')}`, '[npm; scoped; specific version]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('git')} -s=${chalk.cyan('"github:user/repo#main"')}`, '[git; github; main branch]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('git')} -s=${chalk.cyan('"github:user/repo#v1.0.0"')}`, '[git; github; v1.0.0 tag]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('git')} -s=${chalk.cyan('"gitlab:user/repo#master"')}`, '[git; gitlab; master branch]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('git')} -s=${chalk.cyan('"gitlab:user/repo#v1.0.0"')}`, '[git; gitlab; v1.0.0 tag]')
-  .example(`$ $0 ${chalk.cyan('my-theme')} -x=${chalk.cyan('archive')} -s=${chalk.cyan('"https://example.com/awesome-starter.zip"')}`, '[archive]')
+  .example('')
+  .example(`${chalk.yellow('npm\n----------')}`)
+  .example('')
+  .example(`$ $0 ${chalk.cyan('<project-directory>')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('<package>')}`)
+  .example('')
+  .example(`${chalk.yellow('# Latest version')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('package-name')}`)
+  .example(`${chalk.yellow('# Latest version with scoped package')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('@org-name/package-name')}`)
+  .example('')
+  .example(`${chalk.yellow('# Latest 1.x.x')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('package-name@1')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('@org-name/package-name@1')}`)
+  .example('')
+  .example(`${chalk.yellow('# Latest 1.2.x')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('package-name@1.2')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('@org-name/package-name@1.2')}`)
+  .example('')
+  .example(`${chalk.yellow('# Specific version')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('package-name@1.2.3')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('npm')} -t ${chalk.cyan('@org-name/package-name@1.2.3')}`)
+  .example('')
+  .example(`${chalk.yellow('git\n----------')}`)
+  .example('')
+  .example(`$ $0 ${chalk.cyan('<project-directory>')} -s ${chalk.cyan('git')} -t ${chalk.cyan('<git-host>:<user>/<repo>#<branch|tag>')}`)
+  .example('')
+  .example(`${chalk.yellow('# Branch')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('git')} -t ${chalk.cyan('github:username/repo-name#main')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('git')} -t ${chalk.cyan('gitlab:username/repo-name#master')}`)
+  .example('')
+  .example(`${chalk.yellow('# Tag')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('git')} -t ${chalk.cyan('github:username/repo-name#v1.0.0')}`)
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('git')} -t ${chalk.cyan('gitlab:username/repo-name#v1.0.0')}`)
+  .example('')
+  .example(`${chalk.yellow('archive\n----------')}`)
+  .example('')
+  .example(`$ $0 ${chalk.cyan('project-name')} -s ${chalk.cyan('archive')} -t ${chalk.cyan('https://example.com/awesome-starter.zip')}`)
   .wrap(null)
   .help('help')
   .alias('h', 'help')
@@ -106,19 +130,19 @@ const argv = yargs.argv;
 
   if (argv.source === 'npm') {
     // `<@scope>/<name>` or `<@scope>/<name>@<version>`
-    let isScope = argv.starter.includes('/');
-    let isScopeHasVersion = isScope ? argv.starter.split('/')[1].includes('@') : false;
-    let scopeOrg = isScope ? argv.starter.split('/')[0] : '';
-    let scopePkgName = isScope ? argv.starter.split('/')[1].split('@')[0] : '';
-    let scopePkgVersion = isScope && isScopeHasVersion ? argv.starter.split('/')[1].split('@')[1] : '';
+    let isScope = argv.template.includes('/');
+    let isScopeHasVersion = isScope ? argv.template.split('/')[1].includes('@') : false;
+    let scopeOrg = isScope ? argv.template.split('/')[0] : '';
+    let scopePkgName = isScope ? argv.template.split('/')[1].split('@')[0] : '';
+    let scopePkgVersion = isScope && isScopeHasVersion ? argv.template.split('/')[1].split('@')[1] : '';
     let scopePkgVersionLatest = isScope ? await npmLatestVersion(scopeOrg + '/' +scopePkgName) : '';
     let scopePkgVersionLatestX = isScope ? await npmLatestVersion(scopeOrg + '/' +scopePkgName, { version: scopePkgVersion }) : '';
     scopePkgVersion = scopePkgVersion === '' ? scopePkgVersionLatest : scopePkgVersionLatestX;
 
     // `<name>` or `<name>@<version>`
-    let hasVersion = !isScope ? argv.starter.includes('@') : false;
-    let pkgName = !isScope ? argv.starter.split('@')[0] : '';
-    let pkgVersion = !isScope && hasVersion ? argv.starter.split('@')[1] : '';
+    let hasVersion = !isScope ? argv.template.includes('@') : false;
+    let pkgName = !isScope ? argv.template.split('@')[0] : '';
+    let pkgVersion = !isScope && hasVersion ? argv.template.split('@')[1] : '';
     let pkgVersionLatest = !isScope ? await npmLatestVersion(pkgName) : '';
     let pkgVersionLatestX = !isScope ? await npmLatestVersion(pkgName, { version: pkgVersion }) : '';
     pkgVersion = pkgVersion === '' ? pkgVersionLatest : pkgVersionLatestX;
@@ -132,10 +156,10 @@ const argv = yargs.argv;
   }
 
   if (argv.source === 'git') {
-    let gitHost = argv.starter.split(':')[0];
-    let gitUserRepo = argv.starter.split('#')[0].split(':')[1];
-    let gitBranchTag = argv.starter.split('#')[1];
-    let gitRepo = argv.starter.split('/').pop().split('#')[0];
+    let gitHost = argv.template.split(':')[0];
+    let gitUserRepo = argv.template.split('#')[0].split(':')[1];
+    let gitBranchTag = argv.template.split('#')[1];
+    let gitRepo = argv.template.split('/').pop().split('#')[0];
 
     if (gitBranchTag === undefined || gitHost === undefined || gitUserRepo.includes('/') === false) {
       console.log();
@@ -157,7 +181,7 @@ const argv = yargs.argv;
   }
 
   if (argv.source === 'archive') {
-    uri = argv.starter;
+    uri = argv.template;
   }
 
   download(uri, argv._[0], args);

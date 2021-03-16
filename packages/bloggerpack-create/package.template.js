@@ -1,20 +1,12 @@
-const sortAlphabetically = (object) => {
-  let sorted = {};
-  Object.keys(object).sort().forEach(key => {
-    sorted[key] = object[key];
-  });
-  return sorted;
-};
-
 const packageTemplate = (content, args) => {
   let key = JSON.parse(content);
-  let bloggerpackVersion = args.bpLatestVersion;
 
-  // devDependencies
-  if (key.devDependencies['bloggerpack'] === undefined && key.dependencies['bloggerpack'] === undefined) {
-    key.devDependencies['bloggerpack'] = '^' + bloggerpackVersion;
+  delete key.name;
+  let key2 = {
+    name: args.projectName,
+    ...key
   }
-  key.devDependencies = sortAlphabetically(key.devDependencies);
+  key = key2;
 
   let newKey = JSON.stringify(key, null, 2).trim() + '\n';
   return newKey;

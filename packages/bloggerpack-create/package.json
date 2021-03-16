@@ -1,7 +1,7 @@
 {
   "name": "bloggerpack-create",
   "version": "1.1.1",
-  "description": "Create Bloggerpack based theme using command line and starter theme as a head start.",
+  "description": "Create Bloggerpack based theme using command line and starter template as a head start.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create#readme",
   "repository": {

@@ -14,11 +14,10 @@ const packageDotJson = (content, args) => {
   let devDependencies = key.devDependencies ? key.devDependencies : {};
   let peerDependencies = key.peerDependencies ? key.peerDependencies : {};
 
-  let bloggerpackCreate = key.bloggerpackCreate ? key.bloggerpackCreate : {};
-  let bloggerpackVersion = bloggerpackCreate['bloggerpack'] ? bloggerpackCreate['bloggerpack'] : args.bpLatestVersion;
-
   key = {};
-  key.private = true;
+
+  // name
+  key.name = args.projectName;
 
   // scripts
   key.scripts = scripts;
@@ -30,11 +29,7 @@ const packageDotJson = (content, args) => {
   // devDependencies
   key.devDependencies = devDependencies;
   if (key.devDependencies['bloggerpack'] === undefined && key.dependencies['bloggerpack'] === undefined) {
-    if (bloggerpackCreate['bloggerpack'] === undefined) {
-      key.devDependencies['bloggerpack'] = '^' + bloggerpackVersion;
-    } else {
-      key.devDependencies['bloggerpack'] = bloggerpackVersion;
-    }
+    key.devDependencies['bloggerpack'] = '^' + args.bpLatestVersion;
   }
   key.devDependencies = sortAlphabetically(key.devDependencies);
 

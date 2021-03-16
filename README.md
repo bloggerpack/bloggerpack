@@ -3,18 +3,18 @@
 [![Plugins Status](https://github.com/bloggerpack/bloggerpack/workflows/Plugins/badge.svg?branch=main)](https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3APlugins+branch%3Amain)
 [![JS Lint Status](https://github.com/bloggerpack/bloggerpack/workflows/JS%20Lint/badge.svg?branch=main)](https://github.com/bloggerpack/bloggerpack/actions?query=workflow%3AJS+Lint+branch%3Amain)
 
-# Bloggerpack packages
+# Bloggerpack
 
-The bloggerpack repo is managed as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), which contains bloggerpack packages, plugins and starter themes.
+The bloggerpack repo is managed as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), which contains bloggerpack [packages](https://github.com/bloggerpack/bloggerpack/tree/main/packages), [plugins](https://github.com/bloggerpack/bloggerpack/tree/main/plugins) and [starters](https://github.com/bloggerpack/bloggerpack/tree/main/starters).
 
 ## Core
 
 | Name | Description |
 | ---- | ----------- |
 | [bloggerpack](packages/bloggerpack) | A tool for develop Blogger theme. |
-| [bloggerpack-create](packages/bloggerpack-create) | Create Bloggerpack based theme using command line and starter theme as a head start. |
+| [bloggerpack-create](packages/bloggerpack-create) | Create Bloggerpack based theme using command line and starter template as a head start. |
 
-## Starter themes
+## Starters
 
 | Name | Description |
 | ---- | ----------- |
@@ -27,7 +27,7 @@ The bloggerpack repo is managed as a [monorepo](https://en.wikipedia.org/wiki/Mo
 | Name | Description |
 | ---- | ----------- |
 | [@bloggerpack/plugin-create](plugins/create) | Plugin for creating new Bloggerpack plugin. |
-| [@bloggerpack/plugin-hello-world](plugins/hello-world) | Hello world plugin for Bloggerpack. |
+| [@bloggerpack/plugin-hello-world](plugins/hello-world) | Hello world plugin. |
 
 ## Contributing
 
