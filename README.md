@@ -11,23 +11,23 @@ The bloggerpack repo is managed as a [monorepo](https://en.wikipedia.org/wiki/Mo
 
 | Name | Description |
 | ---- | ----------- |
-| [bloggerpack](packages/bloggerpack) | A tool for develop Blogger theme. |
-| [bloggerpack-create](packages/bloggerpack-create) | Create Bloggerpack based theme using command line and starter template as a head start. |
+| [bloggerpack](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack) | A tool for develop Blogger theme. |
+| [bloggerpack-create](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create) | Create Bloggerpack based theme using command line and starter template as a head start. |
 
 ## Starters
 
 | Name | Description |
 | ---- | ----------- |
-| [@bloggerpack/starter-blank](starters/blank) | Blank starter theme. |
-| [@bloggerpack/starter-bootstrap-4](starters/bootstrap-4) | Bootstrap 4 starter theme. |
-| [@bloggerpack/starter-create](starters/create) | Starter theme for creating new Bloggerpack starter theme. |
+| [@bloggerpack/starter-blank](https://github.com/bloggerpack/bloggerpack/tree/main/starters/blank) | Blank starter theme. |
+| [@bloggerpack/starter-bootstrap-4](https://github.com/bloggerpack/bloggerpack/tree/main/starters/bootstrap-4) | Bootstrap 4 starter theme. |
+| [@bloggerpack/starter-create](https://github.com/bloggerpack/bloggerpack/tree/main/starters/create) | Starter theme for creating new Bloggerpack starter theme. |
 
 ## Plugins
 
 | Name | Description |
 | ---- | ----------- |
-| [@bloggerpack/plugin-create](plugins/create) | Plugin for creating new Bloggerpack plugin. |
-| [@bloggerpack/plugin-hello-world](plugins/hello-world) | Hello world plugin. |
+| [@bloggerpack/plugin-create](https://github.com/bloggerpack/bloggerpack/tree/main/plugins/create) | Plugin for creating new Bloggerpack plugin. |
+| [@bloggerpack/plugin-hello-world](https://github.com/bloggerpack/bloggerpack/tree/main/plugins/hello-world) | Hello world plugin. |
 
 ## Contributing
 
