@@ -1,1 +1,4 @@
-@import "sass-in-template/**/*.scss";
+@import "plugin-sass";
+@import "plugin-sass/part/index";
+@import "./example";
+@import "./sass-in-template/**/*.scss";

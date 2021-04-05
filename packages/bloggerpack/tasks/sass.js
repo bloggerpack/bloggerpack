@@ -146,7 +146,9 @@ sassRegistry.prototype.init = function(gulpInst) {
         outputStyle: 'expanded',
         charset: false,
         importer: [
-          require('node-sass-package-importer')(),
+          require('node-sass-package-importer')({
+            packagePrefix: ''
+          }),
           require('node-sass-glob-importer')()
         ],
         fiber: require('fibers')
