@@ -1,7 +1,79 @@
-const path = require('path');
-const themePkg = require(path.join(process.cwd(), 'package.json'));
-themePkg.name = themePkg.name ? themePkg.name : '';
-const isPlugin = themePkg.name.includes('@bloggerpack/plugin-') || themePkg.name.includes('bloggerpack-plugin-') ? true : false;
-const config = !isPlugin ? require('./theme.config') : require('./plugin.config');
-
-module.exports = config;
+module.exports = {
+  configFile: {
+    eslint: './.eslintrc.json',
+    stylelint: './.stylelintrc',
+    banner: './banner.txt',
+    data: './data.json'
+  },
+  template: {
+    src: {
+      dir: './src',
+      filename: 'index.njk'
+    },
+    build: {
+      dir: './dist',
+      filename: 'theme.xml'
+    },
+    tag: {
+      start: "<template to='bp:template'>",
+      end: '</template>'
+    }
+  },
+  sass: {
+    src: {
+      dir: './src/sass',
+      filename: 'index.scss'
+    },
+    build: {
+      dir: './src/sass/dist',
+      filename: 'style.css'
+    },
+    extract: {
+      root: './src',
+      dir: './src/sass/sass-in-template',
+      extname: '.scss'
+    },
+    tag: {
+      start: "<style to='bp:sass'>",
+      end: '</style>'
+    }
+  },
+  skin: {
+    src: {
+      dir: './src/skin',
+      filename: 'index.css'
+    },
+    build: {
+      dir: './src/skin/dist',
+      filename: 'style.css'
+    },
+    extract: {
+      root: './src',
+      dir: './src/skin/skin-in-template',
+      extname: '.css'
+    },
+    tag: {
+      start: "<style to='bp:skin'>",
+      end: '</style>'
+    }
+  },
+  js: {
+    src: {
+      dir: './src/js',
+      filename: 'index.js'
+    },
+    build: {
+      dir: './src/js/dist',
+      filename: 'script.js'
+    },
+    extract: {
+      root: './src',
+      dir: './src/js/js-in-template',
+      extname: '.js'
+    },
+    tag: {
+      start: "<script to='bp:js'>",
+      end: '</script>'
+    }
+  }
+};

@@ -1,0 +1,17 @@
+/*!
+ * Name         : Theme name
+ * Version      : 1.0
+ * Package name : test
+ */
+
+.org-plugin-test-template1 {
+  display: block;
+}
+
+.plugin-test-template1 {
+  display: block;
+}
+
+.plugin-test-template2 {
+  display: block;
+}

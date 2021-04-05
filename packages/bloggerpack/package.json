@@ -19,18 +19,14 @@
   "keywords": [
     "bloggerpack",
     "blogger",
-    "blogspot",
-    "theme",
-    "template"
+    "blogspot"
   ],
   "files": [
     "lib",
     "tasks",
     "bin.js",
     "config.js",
-    "gulpfile.js",
-    "plugin.config.js",
-    "theme.config.js"
+    "gulpfile.js"
   ],
   "bin": {
     "bloggerpack": "bin.js"
