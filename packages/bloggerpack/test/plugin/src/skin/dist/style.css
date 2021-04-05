@@ -4,6 +4,54 @@
  * Package name : test
  */
 
+.plugin-skin-index {
+  display: block;
+}
+
+.plugin-skin-part-foo {
+  display: block;
+}
+
+.plugin-skin-part-bar {
+  display: block;
+}
+
+.plugin-skin-part-dir-foo {
+  display: block;
+}
+
+.plugin-skin-part-dir-bar {
+  display: block;
+}
+
+.plugin-skin-glob-bar {
+  display: block;
+}
+
+.plugin-skin-glob-dir1-bar {
+  display: block;
+}
+
+.plugin-skin-glob-dir1-foo {
+  display: block;
+}
+
+.plugin-skin-glob-dir2-bar {
+  display: block;
+}
+
+.plugin-skin-glob-dir2-foo {
+  display: block;
+}
+
+.plugin-skin-glob-foo {
+  display: block;
+}
+
+.example {
+  display: block;
+}
+
 .org-plugin-test-template1 {
   display: block;
 }

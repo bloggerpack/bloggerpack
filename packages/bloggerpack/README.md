@@ -497,16 +497,26 @@ Note: The compiled skin is not minified, so it can be customizable in the Blogge
 
 ### Partialize
 
-**Do not write styles in `src/skin/index.css` directly.** Add a new file (e.g., `my-component.css`) within `src/skin/` and than import the file to `src/skin/index.css`.
+**Do not write styles in `src/skin/index.css` directly.** Add a new file (e.g., `_my-component.css`) within `src/skin/` and than import the file to `src/skin/index.css`:
+
+Note: You can omit the `_` prefix and the `.css` extension.
 
 ```css
-@import "my-component.css";
+@import "./my-component";
 ```
 
 It also support glob imports:
 
 ```css
-@import "dir/**/*.css";
+@import "./dir/**/*.css";
+```
+
+Import from node modules:
+
+```css
+@import "package-name"; /* node_modules/package-name/index.css */
+@import "package-name/dir/file"; /* node_modules/package-name/dir/file.css */
+@import "package-name/dir/**/*.css"; /* glob inside node_modules/package-name/dir */
 ```
 
 ### Skin-in-Template

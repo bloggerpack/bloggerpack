@@ -1,1 +1,5 @@
-@import "skin-in-template/**/*.css";
+@import "plugin-skin";
+@import "plugin-skin/part/index";
+@import "plugin-skin/glob/**/*.css";
+@import "./example";
+@import "./skin-in-template/**/*.css";

@@ -18,7 +18,7 @@ const stylelint = require('gulp-stylelint');
 const header = require('gulp-header');
 const skinImportBeautifier =  require('../lib/skin-import-beautifier');
 const postcss = require('gulp-postcss');
-const atImport = require('postcss-import');
+const easyImport = require('postcss-easy-import');
 const autoprefixer = require('autoprefixer');
 const trim =  require('../lib/trim');
 
@@ -144,11 +144,9 @@ skinRegistry.prototype.init = function(gulpInst) {
     return src(skinOpts.compile.src)
       .pipe(skinImportBeautifier())
       .pipe(postcss([
-        atImport({
-          skipDuplicates: false,
-          resolve: function(id, base) {
-            return glob.sync(path.join(base, id));
-          }
+        easyImport({
+          prefix: '_',
+          extensions: '.css'
         }),
         autoprefixer({
           cascade: false
