@@ -463,11 +463,11 @@ It also support glob imports:
 Import from node modules:
 
 ```scss
-@import "package-name"; // node_modules/package-name/index.scss
+@import "package-name"; // node_modules/package-name/<index.scss>
 @import "package-name/dir/file"; // node_modules/package-name/dir/file.scss
 
 // @import "package-name/dir/**/*.scss";
-// Glob import is not supported. This is Sass, you don't need glob import inside node_modules
+// Glob import is not supported. You don't need glob import inside node_modules.
 ```
 
 ### Sass-in-Template
@@ -520,7 +520,7 @@ It also support glob imports:
 Import from node modules:
 
 ```css
-@import "package-name"; /* node_modules/package-name/index.css */
+@import "package-name"; /* node_modules/package-name/<index.css> */
 @import "package-name/dir/file"; /* node_modules/package-name/dir/file.css */
 @import "package-name/dir/**/*.css"; /* glob inside node_modules/package-name/dir */
 ```
@@ -562,23 +562,35 @@ The JavaScript. You can write your script with ES6+ and you can also import pack
 
 ### Partialize
 
-**Do not write scripts in `src/js/index.js` directly.** Add a new file (e.g., `util.js`) within `src/js/` and than import the file to `src/js/index.js`.
+**Do not write scripts in `src/js/index.js` directly.** Add a new file (e.g., `my-script.js`) within `src/js/` and than import the file to `src/js/index.js`:
+
+Note: You can omit the `.js` extension.
 
 ```js
-import './util';
+import './my-script';
 ```
 
 It also support glob imports:
 
 ```js
-import 'dir/**/*.js';
+import './dir/**/*.js';
 ```
 
 Import from node modules:
 
 ```js
-import 'package-name';
-import x from 'package-name';
+import 'package-name'; // node_modules/package-name/<index.js>
+```
+
+```js
+import square from 'package-name/lib/math'; // node_modules/package-name/lib/math.js
+
+console.log(square(5));
+```
+
+```js
+// import 'package-name/dir/**/*.js';
+// Glob import is not supported. You don't need glob import inside node_modules.
 ```
 
 ### JS-in-Template
