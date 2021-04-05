@@ -50,23 +50,22 @@ Use [starter themes](https://github.com/bloggerpack/bloggerpack/tree/main/starte
 ├── dist/ (g)
 |   └── theme.xml <---------------------------+
 ├── src/                                      |
-|   ├── dist/ (g)                             |
-|   |   ├── js.js <---------------+           |
-|   |   ├── sass.css <------------|---+       |
-|   |   └── skin.css <------------|---|---+   |
-|   ├── js/                       │   |   |   |
-|   |   ├── js-in-template/ (g)   |   |   |   |
-|   |   └── index.js ------------>|   |   |   |
-|   ├── sass/                         |   |   |
-|   |   ├── sass-in-template/ (g)     |   |   |
-|   |   └── index.scss -------------->|   |   |
-|   ├── skin/                             |   |
-|   |   ├── skin-in-template/ (g)         |   |
-|   |   └── index.css ------------------->|   |
-|   ├── template/                             |  # (<-) = Compiled
-|   |   ├── my-template.njk                   |  # (->) = Source
-|   |   └── another-template.njk              |  # (c)  = Config file
-|   ├── index.njk --------------------------->|  # (g)  = Auto-generated
+|   ├── js/                                   |
+|   |   ├── dist/ (g)                         |
+|   |   |   └── script.js <-------+           |
+|   |   ├── js-in-template/ (g)   |           |
+|   |   └── index.js >------------^           |
+|   ├── sass/                                 |
+|   |   ├── dist/ (g)                         |
+|   |   |   └── style.css <-----------+       |
+|   |   ├── sass-in-template/ (g)     |       |
+|   |   └── index.scss >--------------^       |
+|   ├── skin/                                 |
+|   |   ├── dist/ (g)                         |
+|   |   |   └── style.css <---------------+   |  # (<-) = Compiled
+|   |   ├── skin-in-template/ (g)         |   |  # (>-) = Source
+|   |   └── index.css >-------------------^   |  # (c)  = Config file
+|   ├── index.njk >---------------------------^  # (g)  = Auto-generated
 |   └── layout.njk
 ├── .browserslistrc (c)
 ├── .eslintrc.json  (c)
@@ -101,15 +100,6 @@ Store your theme config in this file. This is Nunjucks template context, which m
 #### `package.json`
 
 Use this file to manage and install Bloggerpack and other packages. You also will need to add [Bloggerpack commands and tasks](#bloggerpack-commands).
-
-### Folder structure for plugin
-
-The folder structure for plugin is a little different:
-
-- Move `sass`, `skin`, `js` and `template` folder to root project directory.
-- Rename `index.njk` to `preview.njk` and move it to `template` folder.
-
-See [hello-world](https://github.com/bloggerpack/bloggerpack/tree/main/plugins/hello-world) plugin for example.
 
 ## Bloggerpack commands
 
@@ -452,7 +442,7 @@ Write your styles with [Sass](https://sass-lang.com/). You can also import Sass 
 ### Source
 
 - Index file: `src/sass/index.scss`
-- Compiled to: `src/dist/sass.css`
+- Compiled to: `src/sass/dist/style.css`
 
 ### Partialize
 
@@ -501,7 +491,7 @@ Skin is CSS that support Blogger's skin variables to allow your theme to be able
 ### Source
 
 - Index file: `src/skin/index.css`
-- Compiled to: `src/dist/skin.css`
+- Compiled to: `src/skin/dist/style.css`
 
 Note: The compiled skin is not minified, so it can be customizable in the Blogger code editor.
 
@@ -510,7 +500,7 @@ Note: The compiled skin is not minified, so it can be customizable in the Blogge
 **Do not write styles in `src/skin/index.css` directly.** Add a new file (e.g., `my-component.css`) within `src/skin/` and than import the file to `src/skin/index.css`.
 
 ```css
-@import "my-component";
+@import "my-component.css";
 ```
 
 It also support glob imports:
@@ -552,7 +542,7 @@ The JavaScript. You can write your script with ES6+ and you can also import pack
 ### Source
 
 - Index file: `src/js/index.js`
-- Compiled to: `src/dist/js.js`
+- Compiled to: `src/js/dist/script.js`
 
 ### Partialize
 
@@ -610,18 +600,30 @@ Example:
 |   ├── theme-one-column.xml <-|---+
 |   └── theme-offcanvas.xml <--|---|---+
 └── src/                       |   |   |
-    ├── index.njk ------------>|   |   |
-    ├── index-one-column.njk ----->|   |
-    └── index-offcanvas.njk ---------->|
+    ├── index.njk >------------^   |   |
+    ├── index-one-column.njk >-----^   |
+    └── index-offcanvas.njk >----------^
 ```
 
 ---
 
 ## Creating plugins
 
-You just need to write Bloggerpack's [Template](#template), [Sass](#sass), [Skin](#skin), and [JS](#js) in a file with `.njk` extension.
+You just need to write Bloggerpack [template](#template) in a file.
 
 Example `my-plugin.njk`:
+
+```njk
+<template to='bp:template'>
+  <div class='my-component' id='myComponent'>
+    ...
+  </div>
+</template>
+```
+
+Use `.bloggerpack.njk` extension to support [Sass-in-Template](#sass-in-template), [Skin-in-Template](#skin-in-template), and [JS-in-Template](#js-in-template).
+
+`my-plugin.bloggerpack.njk`:
 
 ```njk
 <template to='bp:template'>
@@ -647,17 +649,11 @@ const myComponent = document.getElementById('myComponent');
 </script>
 ```
 
-The Sass, Skin, and JS are optional.
-
-You can also create a standard `.scss`, `.css` and `.js` files and tell your user to import the files.
-
-### Plugin package name
-
-Plugin package names must start with `bloggerpack-plugin-*` or `@org-name/bloggerpack-plugin-*` to automatically extract the Sass, Skin, and JS in template; and to make Bloggerpack works as it should.
+**Note**: You can still use Sass-in-Template, Skin-in-Template, and JS-in-Template without `.bloggerpack.njk` extension, but the assets will not be extracted to the user's theme.
 
 ### Learn more
 
-Learn how to **include template from node modules** by reading [this section](#including-template-from-node-modules) above. Read [this section](#including-assets-from-node-modules) to **include CSS and JS from node modules**.
+Learn how to **include template from node modules** by reading [this section](#including-template-from-node-modules) above.
 
 Learn how to create **npm package** by reading its [documentation](https://docs.npmjs.com/getting-started/).
 
