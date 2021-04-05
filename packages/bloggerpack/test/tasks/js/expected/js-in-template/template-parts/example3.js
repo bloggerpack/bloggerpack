@@ -1,10 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/example1.njk
+// Template path: src/template-parts/example3.njk
 // ------------------------------------------------------------------------
 */
 
-.skin-in-template1 {
-  display: block;
-  color: $(color);
-}
+/* JS-in-Template is empty */

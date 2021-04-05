@@ -4,6 +4,10 @@
  * Package name : test
  */
 
+.example {
+  color: $(color);
+}
+
 .skin-in-template1 {
   display: block;
   color: $(color);

@@ -1,7 +1,10 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/example3.njk
+// Template path: src/template-parts/example2.njk
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+.sass-in-template2 {
+  display: block;
+  color: $color;
+}

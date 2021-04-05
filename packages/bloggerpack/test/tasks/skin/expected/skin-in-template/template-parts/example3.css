@@ -1,10 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/example1.njk
+// Template path: src/template-parts/example3.njk
 // ------------------------------------------------------------------------
 */
 
-.sass-in-template1 {
-  display: block;
-  color: $color;
-}
+/* Skin-in-Template is empty */

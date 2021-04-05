@@ -4,7 +4,6 @@ const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const stripIndent = require('strip-indent');
-const del = require('del');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 
@@ -61,24 +60,22 @@ sassRegistry.prototype.init = function(gulpInst) {
     extract: {
       src: [
         path.join(process.cwd(), opts.extract.root, '**/*.njk'),
-        '!' + path.join(process.cwd(), 'node_modules/**/*.njk'),
-        path.join(process.cwd(), 'node_modules/@bloggerpack*/plugin-*/**/*.njk'),
-        path.join(process.cwd(), 'node_modules/bloggerpack-plugin-*/**/*.njk'),
-        path.join(process.cwd(), 'node_modules/@*/bloggerpack-plugin-*/**/*.njk'),
-        '!' + path.join(process.cwd(), 'node_modules/@bloggerpack*/plugin-*/**/preview.njk'),
-        '!' + path.join(process.cwd(), 'node_modules/bloggerpack-plugin-*/**/preview.njk'),
-        '!' + path.join(process.cwd(), 'node_modules/@*/bloggerpack-plugin-*/**/preview.njk')
+        '!' + path.join(process.cwd(), 'node_modules/**/*.njk')
       ],
       dest: path.join(process.cwd(), opts.extract.dir),
+      srcPlugins: [
+        path.join(process.cwd(), 'node_modules/**/*.bloggerpack.njk')
+      ],
+      destPlugins: path.join(process.cwd(), opts.extract.dir, 'plugins'),
       opts: {
         start: opts.tag.start,
         end: opts.tag.end,
         header: `
-        /*
-        // ------------------------------------------------------------------------
-        // Template path: <filepath>
-        // ------------------------------------------------------------------------
-        */
+          /*
+          // ------------------------------------------------------------------------
+          // Template path: <filepath>
+          // ------------------------------------------------------------------------
+          */
         `,
         footer: '',
         extname: opts.extract.extname,
@@ -88,8 +85,8 @@ sassRegistry.prototype.init = function(gulpInst) {
     lint: {
       src: [
         path.join(process.cwd(), opts.src.dir, '**/*.scss'),
-        '!' + path.join(process.cwd(), opts.src.dir, '**/@bloggerpack/**/*.scss'),
-        '!' + path.join(process.cwd(), opts.src.dir, '**/bloggerpack-plugin-*/**/*.scss')
+        '!' + path.join(process.cwd(), opts.src.dir, opts.extract.dir, '**/*.scss'),
+        '!' + path.join(process.cwd(), opts.src.dir, opts.build.dir, '**/*.scss')
       ],
       configFile: path.join(process.cwd(), config.configFile.stylelint)
     },
@@ -118,6 +115,11 @@ sassRegistry.prototype.init = function(gulpInst) {
     return src([...sassOpts.extract.src], { allowEmpty: true })
       .pipe(extract(sassOpts.extract.opts))
       .pipe(dest(sassOpts.extract.dest, { overwrite: true }));
+  });
+  gulpInst.task('sass-extract-plugins', () => {
+    return src([...sassOpts.extract.srcPlugins], { allowEmpty: true })
+      .pipe(extract(sassOpts.extract.opts))
+      .pipe(dest(sassOpts.extract.destPlugins, { overwrite: true }));
   });
 
   gulpInst.task('sass-lint', () => {
@@ -177,6 +179,7 @@ sassRegistry.prototype.init = function(gulpInst) {
 
   gulpInst.task('sass-tasks', series(
     'sass-extract',
+    'sass-extract-plugins',
     'sass-lint',
     'sass-compile',
     'sass-minify'

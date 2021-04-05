@@ -1,7 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/example2.njk
+// Template path: src/template-parts/example1.njk
 // ------------------------------------------------------------------------
 */
 
-console.log('JS in template 2');
+console.log('JS in template 1');

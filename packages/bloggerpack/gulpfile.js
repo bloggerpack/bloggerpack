@@ -33,6 +33,7 @@ registry(new sass.registry());
 
 const sassTasks = [
   'sass-extract',
+  'sass-extract-plugins',
   'sass-lint',
   'sass-compile',
   'sass-minify'
@@ -53,6 +54,7 @@ registry(new skin.registry());
 
 const skinTasks = [
   'skin-extract',
+  'skin-extract-plugins',
   'skin-lint',
   'skin-compile'
 ];
@@ -71,6 +73,7 @@ registry(new js.registry());
 
 const jsTasks = [
   'js-extract',
+  'js-extract-plugins',
   'js-lint',
   'js-compile',
   'js-minify'
@@ -117,17 +120,17 @@ const cleanOpts = {
 if (flags.sass)
   cleanOpts.src.push(
     path.join(process.cwd(), sass.opts.extract.dir),
-    path.join(process.cwd(), sass.opts.build.dir, sass.opts.build.filename)
+    path.join(process.cwd(), sass.opts.build.dir)
   );
 if (flags.skin)
   cleanOpts.src.push(
     path.join(process.cwd(), skin.opts.extract.dir),
-    path.join(process.cwd(), skin.opts.build.dir, skin.opts.build.filename)
+    path.join(process.cwd(), skin.opts.build.dir)
   );
 if (flags.js)
   cleanOpts.src.push(
     path.join(process.cwd(), js.opts.extract.dir),
-    path.join(process.cwd(), js.opts.build.dir, js.opts.build.filename)
+    path.join(process.cwd(), js.opts.build.dir)
   );
 
 registry(new clean.registry(cleanOpts));

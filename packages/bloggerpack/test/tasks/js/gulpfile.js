@@ -8,7 +8,7 @@ const clean = require('../../../tasks/clean');
 const cleanOpts = {
   src: [
     path.join(process.cwd(), js.opts.extract.dir),
-    path.join(process.cwd(), js.opts.build.dir, js.opts.build.filename),
+    path.join(process.cwd(), js.opts.build.dir)
   ]
 };
 registry(new clean.registry(cleanOpts));
