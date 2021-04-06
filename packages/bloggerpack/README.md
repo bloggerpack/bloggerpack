@@ -273,108 +273,95 @@ Use `{% asset %}` tag to include compiled [Sass](#sass), [Skin](#skin), [JS](#js
 
 Note: You must use the `{% asset %}` tag to prevent assets from being prettied.
 
-##### Auto style tag
-
-```njk
-{% asset type="style", "./path/to/file.css" %}
-```
-
-Output:
-
-```html
-<b:if cond='!data:view.isLayoutMode'>
-<style>
-...
-</style>
-</b:if>
-```
-
-##### Auto skin tag
-
-```njk
-{% asset type="skin", "./path/to/file.css" %}
-```
-
-Output:
-
-```html
-<b:if cond='!data:view.isLayoutMode'>
-<b:skin>
-<![CDATA[
-...
-]]>
-</b:skin>
-</b:if>
-```
-
-##### Auto script tag
-
-```njk
-{% asset type="script", "./path/to/file.js" %}
-```
-
-Output:
-
-```html
-<script>
-//<![CDATA[
-...
-//]]>
-</script>
-```
-
-##### Block tag
+#### Usage example
 
 ```njk
 {% asset %}
-  <b:if cond='!data:view.isLayoutMode'>
   <style>
   .element {
     display: block;
   }
   </style>
-  </b:if>
-{% endasset %}
-
-{% asset %}
-  <script>
-  //<![CDATA[
-  console.log('Hello');
-  //]]>
-  </script>
 {% endasset %}
 ```
 
-##### Block tag with files
+With files:
 
-Use `<% asset %>` tag.
+```njk
+{% asset %}
+  <style>
+  {% asset "./path/to/file1.css" %}
+  {% asset "./path/to/file2.css" %}
+  </style>
+{% endasset %}
+```
+
+#### Examples
+
+Normal CSS:
 
 ```njk
 {% asset %}
   <b:if cond='!data:view.isLayoutMode'>
   <style>
-  <% asset "./path/to/file1.css" %>
-  <% asset "./path/to/file2.css" %>
+  {% asset "./sass/dist/style.css" %}
   </style>
   </b:if>
 {% endasset %}
+```
 
+Skin CSS:
+
+```njk
+{% asset %}
+  <b:if cond='!data:view.isLayoutMode'>
+  <b:skin>
+  <![CDATA[
+  {% asset "./skin/dist/style.css" %}
+  ]]>
+  </b:skin>
+  </b:if>
+{% endasset %}
+```
+
+Layout Mode CSS:
+
+```njk
+{% asset %}
+  <b:if cond='data:view.isLayoutMode'>
+  <b:template-skin>
+  <![CDATA[
+  body#layout {}
+  ]]>
+  </b:template-skin>
+  </b:if>
+{% endasset %}
+```
+
+JS:
+
+```njk
 {% asset %}
   <script>
   //<![CDATA[
-  <% asset "./path/to/file1.js" %>
-  <% asset "./path/to/file2.js" %>
+  {% asset "./js/dist/script.js" %}
   //]]>
   </script>
 {% endasset %}
 ```
 
-##### Including assets from node modules
+#### Including assets from node modules
 
 You can also include assets from node modules:
 
 ```njk
-{% asset type="style", "package-name/path/to/file.css" %}
+{% asset %}
+  <b:if cond='!data:view.isLayoutMode'>
+  <style>
+  {% asset "package-name/path/to/file.css" %}
+  </style>
+  </b:if>
+{% endasset %}
 ```
 
 ### Extending template

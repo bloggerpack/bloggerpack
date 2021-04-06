@@ -90,48 +90,7 @@ module.exports = (opts) => {
         content = '\n\n\n\n' + content + '\n\n\n\n';
         content = stripIndent(content).trim();
 
-        if (kwargs) {
-          if (kwargs.type === 'style') {
-            let tpl = '';
-            tpl += '<!-- prettier-ignore -->\n<prettier-ignore>\n';
-            tpl += "<b:if cond='!data:view.isLayoutMode'>\n";
-            tpl += "<style>\n";
-            tpl += content + '\n';
-            tpl += "</style>\n";
-            tpl += "</b:if>\n";
-            tpl += '</prettier-ignore>\n';
-
-            return tpl;
-          }
-          if (kwargs.type === 'skin') {
-            let tpl = '';
-            tpl += '<!-- prettier-ignore -->\n<prettier-ignore>\n';
-            tpl += "<b:if cond='!data:view.isLayoutMode'>\n";
-            tpl += "<b:skin>\n";
-            tpl += "<![CDATA[\n";
-            tpl += content + '\n';
-            tpl += "]]>\n";
-            tpl += "</b:skin>\n";
-            tpl += "</b:if>\n";
-            tpl += '</prettier-ignore>\n';
-
-            return tpl;
-          }
-          if (kwargs.type === 'script') {
-            let tpl = '';
-            tpl += '<!-- prettier-ignore -->\n<prettier-ignore>\n';
-            tpl += "<script>\n";
-            tpl += "//<![CDATA[\n";
-            tpl += content + '\n';
-            tpl += "//]]>\n";
-            tpl += "</script>\n";
-            tpl += '</prettier-ignore>\n';
-
-            return tpl;
-          }
-        } else {
-          return content + '\n';
-        }
+        return content + '\n';
       };
 
       this.blockTag = (environment, body) => {
@@ -140,7 +99,8 @@ module.exports = (opts) => {
         content = stripIndent(content).trim();
 
         let tpl = '';
-        tpl += '<!-- prettier-ignore -->\n<prettier-ignore>\n';
+        tpl += '<!-- prettier-ignore -->\n';
+        tpl += '<prettier-ignore>\n';
         tpl += content + '\n';
         tpl += '</prettier-ignore>\n';
 
@@ -150,6 +110,11 @@ module.exports = (opts) => {
     env.addExtension('AssetExtension', new AssetExtension());
 
     let content = templateExtract(file.contents.toString('utf8'));
+
+    const re  = /({%\s*asset\s*")(.*?)("\s*%})/g;
+    const re2 = /({%\s*asset\s*')(.*?)('\s*%})/g;
+    content = content.replace(re, '<% asset "$2" %>');
+    content = content.replace(re2, '<% asset "$2" %>');
 
     try {
       env.renderString(content, njkContext, function (err, res) {

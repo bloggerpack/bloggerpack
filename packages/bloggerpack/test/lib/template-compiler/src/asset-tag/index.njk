@@ -1,23 +1,8 @@
 <template test='template'>
-  {# Auto style tag #}
-  {% asset type="style", "./style.css" %}
+  {#
+   # CSS
+   #}
 
-  <div>
-    <div>
-      {% asset type="style", "./style.css" %}
-    </div>
-  </div>
-
-  {# Auto skin tag #}
-  {% asset type="skin", "./skin.css" %}
-
-  <div>
-    <div>
-      {% asset type="skin", "./skin.css" %}
-    </div>
-  </div>
-
-  {# Block tag (CSS) #}
   {% asset %}
     <b:if cond='!data:view.isLayoutMode'>
     <style>
@@ -42,12 +27,11 @@
     </div>
   </div>
 
-  {# Block tag with files (CSS) #}
   {% asset %}
     <b:if cond='!data:view.isLayoutMode'>
     <style>
-    <% asset "./style.css" %>
-    <% asset "./style.css" %>
+    {% asset "./style.css" %}
+    {% asset "./style.css" %}
     </style>
     </b:if>
   {% endasset %}
@@ -57,24 +41,18 @@
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
         <style>
-        <% asset "./style.css" %>
-        <% asset "./style.css" %>
+        {% asset "./style.css" %}
+        {% asset "./style.css" %}
         </style>
         </b:if>
       {% endasset %}
     </div>
   </div>
 
-  {# Auto script tag #}
-  {% asset type="script", "./script.js" %}
+  {#
+   # JS
+   #}
 
-  <div>
-    <div>
-      {% asset type="script", "./script.js" %}
-    </div>
-  </div>
-
-  {# Block tag (JS) #}
   {% asset %}
     <script>
     //<![CDATA[
@@ -95,12 +73,11 @@
     </div>
   </div>
 
-  {# Block tag with files (JS) #}
   {% asset %}
     <script>
     //<![CDATA[
-    <% asset "./script.js" %>
-    <% asset "./script.js" %>
+    {% asset "./script.js" %}
+    {% asset "./script.js" %}
     //]]>
     </script>
   {% endasset %}
@@ -110,25 +87,42 @@
       {% asset %}
         <script>
         //<![CDATA[
-        <% asset "./script.js" %>
-        <% asset "./script.js" %>
+        {% asset "./script.js" %}
+        {% asset "./script.js" %}
         //]]>
         </script>
       {% endasset %}
     </div>
   </div>
 
-  {# Newline #}
-  {% asset type="style", "./newline.css" %}
+  {#
+   # Newline
+   #}
 
   {% asset %}
 
 
     <b:if cond='!data:view.isLayoutMode'>
     <style>
-    .newline2 {
+
+
+    .newline {
       display: block;
     }
+
+
+    </style>
+    </b:if>
+
+
+  {% endasset %}
+
+  {% asset %}
+
+
+    <b:if cond='!data:view.isLayoutMode'>
+    <style>
+    {% asset "./newline.css" %}
     </style>
     </b:if>
 
