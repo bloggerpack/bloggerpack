@@ -173,12 +173,12 @@ We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its t
 
 ### Template tag
 
-Wrap the markup with `<template to='bp:template'>` tag in `.njk` files.
+Wrap the markup with `<bp:template>` tag in `.njk` files.
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <p>example</p>
-</template>
+</bp:template>
 ```
 
 Note: The template tag is always required.
@@ -208,10 +208,10 @@ package.json:
 file.njk:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <p>{{ data.myVar }}</p>
   <p>{{ pkg.name }}</p>
-</template>
+</bp:template>
 ```
 
 Output:
@@ -228,21 +228,21 @@ Output:
 src/example-dir/example.njk:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <div>
     <p>example</p>
   </div>
-</template>
+</bp:template>
 ```
 
 src/index.njk:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <div>
     {% template "./example-dir/example.njk" %}
   </div>
-</template>
+</bp:template>
 ```
 
 Output:
@@ -260,9 +260,9 @@ Output:
 You can also include template from node modules:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   {% template "package-name/path/to/file.njk" %}
-</template>
+</bp:template>
 ```
 
 Learn how to create plugin for Bloggerpack by reading [this section](#creating-plugins) below.
@@ -371,7 +371,7 @@ Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mo
 src/layout.njk:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <header>
     {% block header %}{% endblock %}
   </header>
@@ -383,13 +383,13 @@ src/layout.njk:
   <footer>
     {% block footer %}{% endblock %}
   </footer>
-</template>
+</bp:template>
 ```
 
 src/index.njk:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   {% extends "./layout.njk" %}
 
   {% block header %}
@@ -403,7 +403,7 @@ src/index.njk:
   {% block footer %}
   This is footer content.
   {% endblock %}
-</template>
+</bp:template>
 ```
 
 Output:
@@ -459,20 +459,20 @@ Import from node modules:
 
 ### Sass-in-Template
 
-You can write Sass for specific template in the template file directly using `<style to='bp:sass'>` tag.
+You can write Sass for specific template in the template file directly using `<bp:sass>` tag.
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <h1 class='example'>Example</h1>
-</template>
+</bp:template>
 
-<style to='bp:sass'>
+<bp:sass>
 $heading-color: #fff !default;
 
 .example {
   color: $heading-color;
 }
-</style>
+</bp:sass>
 ```
 
 The styles within the tag would be automatically extracted to `src/sass/sass-in-template` folder.
@@ -514,14 +514,14 @@ Import from node modules:
 
 ### Skin-in-Template
 
-You can write skin CSS for specific template in the template file directly using `<style to='bp:skin'>` tag.
+You can write skin CSS for specific template in the template file directly using `<bp:skin>` tag.
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <h1 class='example'>Example</h1>
-</template>
+</bp:template>
 
-<style to='bp:skin'>
+<bp:skin>
 /*
 <Variable name="heading.color"
     description="Heading color"
@@ -533,7 +533,7 @@ You can write skin CSS for specific template in the template file directly using
 .example {
   color: $(heading.color);
 }
-</style>
+</bp:skin>
 ```
 
 The styles within the tag would be automatically extracted to `src/skin/skin-in-template` folder.
@@ -582,16 +582,16 @@ console.log(square(5));
 
 ### JS-in-Template
 
-You can write JavaScript for specific template in the template file directly using `<script to='bp:js'>` tag.
+You can write JavaScript for specific template in the template file directly using `<bp:js>` tag.
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <h1 class='example' id='example'>Example</h1>
-</template>
+</bp:template>
 
-<script to='bp:js'>
+<bp:js>
 const example = document.getElementById('example');
-</script>
+</bp:js>
 ```
 
 The JavaScript within the tag would be automatically extracted to `src/js/js-in-template` folder.
@@ -629,11 +629,11 @@ You just need to write Bloggerpack [template](#template) in a file.
 Example `my-plugin.njk`:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <div class='my-component' id='myComponent'>
     ...
   </div>
-</template>
+</bp:template>
 ```
 
 Use `.bloggerpack.njk` extension to support [Sass-in-Template](#sass-in-template), [Skin-in-Template](#skin-in-template), and [JS-in-Template](#js-in-template).
@@ -641,27 +641,27 @@ Use `.bloggerpack.njk` extension to support [Sass-in-Template](#sass-in-template
 `my-plugin.bloggerpack.njk`:
 
 ```njk
-<template to='bp:template'>
+<bp:template>
   <div class='my-component' id='myComponent'>
     ...
   </div>
-</template>
+</bp:template>
 
-<style to='bp:sass'>
+<bp:sass>
 .my-component {
   ...
 }
-</style>
+</bp:sass>
 
-<style to='bp:skin'>
+<bp:skin>
 .my-component {
   ...
 }
-</style>
+</bp:skin>
 
-<script to='bp:js'>
+<bp:js>
 const myComponent = document.getElementById('myComponent');
-</script>
+</bp:js>
 ```
 
 **Note**: You can still use Sass-in-Template, Skin-in-Template, and JS-in-Template without `.bloggerpack.njk` extension, but the assets will not be extracted to the user's theme.

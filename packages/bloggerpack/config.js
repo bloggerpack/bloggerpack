@@ -15,8 +15,8 @@ module.exports = {
       filename: 'theme.xml'
     },
     tag: {
-      start: "<template to='bp:template'>",
-      end: '</template>'
+      start: '<bp:template>',
+      end: '</bp:template>'
     }
   },
   sass: {
@@ -34,8 +34,8 @@ module.exports = {
       extname: '.scss'
     },
     tag: {
-      start: "<style to='bp:sass'>",
-      end: '</style>'
+      start: '<bp:sass>',
+      end: '</bp:sass>'
     }
   },
   skin: {
@@ -53,8 +53,8 @@ module.exports = {
       extname: '.css'
     },
     tag: {
-      start: "<style to='bp:skin'>",
-      end: '</style>'
+      start: '<bp:skin>',
+      end: '</bp:skin>'
     }
   },
   js: {
@@ -72,8 +72,8 @@ module.exports = {
       extname: '.js'
     },
     tag: {
-      start: "<script to='bp:js'>",
-      end: '</script>'
+      start: '<bp:js>',
+      end: '</bp:js>'
     }
   }
 };
