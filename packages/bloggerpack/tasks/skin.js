@@ -59,12 +59,12 @@ skinRegistry.prototype.init = function(gulpInst) {
   const skinOpts = {
     extract: {
       src: [
-        path.join(process.cwd(), opts.extract.root, '**/*.njk'),
-        '!' + path.join(process.cwd(), 'node_modules/**/*.njk')
+        path.join(process.cwd(), opts.extract.root, '**/*.xml'),
+        '!' + path.join(process.cwd(), 'node_modules/**/*.xml')
       ],
       dest: path.join(process.cwd(), opts.extract.dir),
       srcPlugins: [
-        path.join(process.cwd(), 'node_modules/**/*.bloggerpack.njk')
+        path.join(process.cwd(), 'node_modules/**/*.bloggerpack.xml')
       ],
       destPlugins: path.join(process.cwd(), opts.extract.dir, 'plugins'),
       opts: {

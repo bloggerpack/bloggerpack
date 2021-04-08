@@ -12,7 +12,7 @@ function test_assetTag() {
     end: '</template>'
   };
 
-  return src('src/asset-tag/index.njk', { allowEmpty: true })
+  return src('src/asset-tag/index.xml', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('asset-tag.xml'))
     .pipe(debug())
@@ -26,7 +26,7 @@ function test_extends() {
     end: '</template>'
   };
 
-  return src('src/extends/index.njk', { allowEmpty: true })
+  return src('src/extends/index.xml', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('extends.xml'))
     .pipe(debug())
@@ -40,7 +40,7 @@ function test_path() {
     end: '</template>'
   };
 
-  return src('src/path/index.njk', { allowEmpty: true })
+  return src('src/path/index.xml', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('path.xml'))
     .pipe(debug())
@@ -61,7 +61,7 @@ function test_templateContext() {
     end: '</template>'
   };
 
-  return src('src/template-context/index.njk', { allowEmpty: true })
+  return src('src/template-context/index.xml', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('template-context.xml'))
     .pipe(debug())
@@ -75,7 +75,7 @@ function test_templateTag() {
     end: '</template>'
   };
 
-  return src('src/template-tag/index.njk', { allowEmpty: true })
+  return src('src/template-tag/index.xml', { allowEmpty: true })
     .pipe(templateCompile(options))
     .pipe(rename('template-tag.xml'))
     .pipe(debug())

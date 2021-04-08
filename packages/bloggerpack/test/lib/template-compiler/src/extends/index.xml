@@ -1,11 +1,11 @@
 <template test='template'>
-  {% extends "./layout.njk" %}
+  {% extends "./layout.xml" %}
 
   {% block main %}
-    {% template "./template-main.njk" %}
+    {% template "./template-main.xml" %}
   {% endblock %}
 
   {% block sidebar %}
-    {% template "./template-sidebar.njk" %}
+    {% template "./template-sidebar.xml" %}
   {% endblock %}
 </template>

@@ -65,8 +65,7 @@ Use [starter themes](https://github.com/bloggerpack/bloggerpack/tree/main/starte
 |   |   |   └── style.css <---------------+   |  # (<-) = Compiled
 |   |   ├── skin-in-template/ (g)         |   |  # (>-) = Source
 |   |   └── index.css >-------------------^   |  # (c)  = Config file
-|   ├── index.njk >---------------------------^  # (g)  = Auto-generated
-|   └── layout.njk
+|   └── index.xml >---------------------------^  # (g)  = Auto-generated
 ├── .browserslistrc (c)
 ├── .eslintrc.json  (c)
 ├── .stylelintrc    (c)
@@ -158,22 +157,22 @@ You’ll be able to run:
 
 ## Template
 
-We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.njk`.
+We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.xml`.
 
 ### Source
 
-- Index file: `src/index.njk`
+- Index file: `src/index.xml`
 - Compiled to: `dist/theme.xml`
 
 ### Paths
 
-- `./example.njk` - Relative to file's directory.
-- `../example.njk` - Relative to file's parent directory.
-- `example.njk` - Relative to the `index.njk` directory.
+- `./example.xml` - Relative to file's directory.
+- `../example.xml` - Relative to file's parent directory.
+- `example.xml` - Relative to the `index.xml` directory.
 
 ### Template tag
 
-Wrap the markup with `<bp:template>` tag in `.njk` files.
+Wrap the markup with `<bp:template>` tag in `.xml` files.
 
 ```njk
 <bp:template>
@@ -205,7 +204,7 @@ package.json:
 }
 ```
 
-file.njk:
+file.xml:
 
 ```njk
 <bp:template>
@@ -225,7 +224,7 @@ Output:
 
 **Do not use** the default Nunjucks `{% include %}` tag, use `{% template %}` tag instead.
 
-src/example-dir/example.njk:
+src/example-dir/example.xml:
 
 ```njk
 <bp:template>
@@ -235,12 +234,12 @@ src/example-dir/example.njk:
 </bp:template>
 ```
 
-src/index.njk:
+src/index.xml:
 
 ```njk
 <bp:template>
   <div>
-    {% template "./example-dir/example.njk" %}
+    {% template "./example-dir/example.xml" %}
   </div>
 </bp:template>
 ```
@@ -261,7 +260,7 @@ You can also include template from node modules:
 
 ```njk
 <bp:template>
-  {% template "package-name/path/to/file.njk" %}
+  {% template "package-name/path/to/file.xml" %}
 </bp:template>
 ```
 
@@ -368,7 +367,7 @@ You can also include assets from node modules:
 
 Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance).
 
-src/layout.njk:
+src/layout.xml:
 
 ```njk
 <bp:template>
@@ -386,11 +385,11 @@ src/layout.njk:
 </bp:template>
 ```
 
-src/index.njk:
+src/index.xml:
 
 ```njk
 <bp:template>
-  {% extends "./layout.njk" %}
+  {% extends "./layout.xml" %}
 
   {% block header %}
   This is header content.
@@ -602,9 +601,9 @@ The JavaScript within the tag would be automatically extracted to `src/js/js-in-
 
 You may want to create a variants of theme with shared components and styles, and it can even be completely different.
 
-To create a theme variant, just create a file named `index-*.njk` in `src` folder (e.g., `src/index-variant-name.njk`).
+To create a theme variant, just create a file named `index-*.xml` in `src` folder (e.g., `src/index-variant-name.xml`).
 
-The `src/index-*.njk` would be compiled to `dist/theme-*.xml`.
+The `src/index-*.xml` would be compiled to `dist/theme-*.xml`.
 
 Example:
 
@@ -615,9 +614,9 @@ Example:
 |   ├── theme-one-column.xml <-|---+
 |   └── theme-offcanvas.xml <--|---|---+
 └── src/                       |   |   |
-    ├── index.njk >------------^   |   |
-    ├── index-one-column.njk >-----^   |
-    └── index-offcanvas.njk >----------^
+    ├── index.xml >------------^   |   |
+    ├── index-one-column.xml >-----^   |
+    └── index-offcanvas.xml >----------^
 ```
 
 ---
@@ -626,7 +625,7 @@ Example:
 
 You just need to write Bloggerpack [template](#template) in a file.
 
-Example `my-plugin.njk`:
+Example `my-plugin.xml`:
 
 ```njk
 <bp:template>
@@ -636,9 +635,9 @@ Example `my-plugin.njk`:
 </bp:template>
 ```
 
-Use `.bloggerpack.njk` extension to support [Sass-in-Template](#sass-in-template), [Skin-in-Template](#skin-in-template), and [JS-in-Template](#js-in-template).
+Use `.bloggerpack.xml` extension to support [Sass-in-Template](#sass-in-template), [Skin-in-Template](#skin-in-template), and [JS-in-Template](#js-in-template).
 
-`my-plugin.bloggerpack.njk`:
+`my-plugin.bloggerpack.xml`:
 
 ```njk
 <bp:template>
@@ -664,7 +663,7 @@ const myComponent = document.getElementById('myComponent');
 </bp:js>
 ```
 
-**Note**: You can still use Sass-in-Template, Skin-in-Template, and JS-in-Template without `.bloggerpack.njk` extension, but the assets will not be extracted to the user's theme.
+**Note**: You can still use Sass-in-Template, Skin-in-Template, and JS-in-Template without `.bloggerpack.xml` extension, but the assets will not be extracted to the user's theme.
 
 ### Learn more
 

@@ -8,7 +8,7 @@ module.exports = {
   template: {
     src: {
       dir: './src',
-      filename: 'index.njk'
+      filename: 'index.xml'
     },
     build: {
       dir: './dist',

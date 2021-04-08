@@ -1,0 +1,11 @@
+<template test='template'>
+  <div>
+    {% template "./template-foo.xml" %}
+
+    <div>
+      {% template "./template-bar.xml" %}
+    </div>
+
+    {% template "./template-baz.xml" %}
+  </div>
+</template>

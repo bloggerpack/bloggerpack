@@ -1,7 +1,7 @@
 <bp:template>
-  {% extends "./layout-bar-baz.njk" %}
+  {% extends "./layout-foo.xml" %}
 
   {% block main %}
-    <div>bar-baz</div>
+    <div>foo</div>
   {% endblock %}
 </bp:template>

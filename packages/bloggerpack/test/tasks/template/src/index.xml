@@ -1,0 +1,11 @@
+<bp:template>
+  {% extends "./layout.xml" %}
+
+  {% block main %}
+    {% template "./template-parts/template-main.xml" %}
+  {% endblock %}
+
+  {% block sidebar %}
+    {% template "./template-parts/template-sidebar.xml" %}
+  {% endblock %}
+</bp:template>

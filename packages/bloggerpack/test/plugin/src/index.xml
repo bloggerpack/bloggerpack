@@ -1,0 +1,4 @@
+<bp:template>
+  {% template "@org/plugin-test/src/template1.bloggerpack.xml" %}
+  {% template "plugin-test/src/template1.bloggerpack.xml" %}
+</bp:template>
