@@ -599,24 +599,51 @@ The JavaScript within the tag would be automatically extracted to `src/js/js-in-
 
 ## Creating theme variants
 
-You may want to create a variants of theme with shared components and styles, and it can even be completely different.
+You may want to create a variants of theme with shared components, CSS and JS.
 
-To create a theme variant, just create a file named `index-*.xml` in `src` folder (e.g., `src/index-variant-name.xml`).
+To create a variant of theme, just create a file named `src/index-<name>.xml`, `src/sass/index-<name>.scss`, `src/skin/index-<name>.css` and `src/js/index-<name>.js`.
 
-The `src/index-*.xml` would be compiled to `dist/theme-*.xml`.
+- The `src/index-<name>.xml` would be compiled to `dist/theme-<name>.xml`.
+- The `src/sass/index-<name>.scss` would be compiled to `src/sass/dist/style-<name>.css`.
+- The `src/skin/index-<name>.css` would be compiled to `src/skin/dist/style-<name>.css`.
+- The `src/js/index-<name>.js` would be compiled to `src/js/dist/script-<name>.js`.
 
 Example:
 
 ```text
 .
 ├── dist/
-|   ├── theme.xml <------------+
-|   ├── theme-one-column.xml <-|---+
-|   └── theme-offcanvas.xml <--|---|---+
-└── src/                       |   |   |
-    ├── index.xml >------------^   |   |
-    ├── index-one-column.xml >-----^   |
-    └── index-offcanvas.xml >----------^
+|   ├── theme.xml <-------------------------------+
+|   ├── theme-one-column.xml <--------------------|--+
+|   └── theme-offcanvas.xml <---------------------|--|--+
+└── src/                                          |  |  |
+    ├── js/                                       |  |  |
+    |   ├── dist/                                 |  |  |
+    |   |   ├── script.js <--------------+        |  |  |
+    |   |   ├── script-one-column.js <---|--+     |  |  |
+    |   |   └── script-offcanvas.js <----|--|--+  |  |  |
+    |   ├── index.js >-------------------^  |  |  |  |  |
+    |   ├── index-one-column.js >-----------^  |  |  |  |
+    |   └── index-offcanvas.js >---------------^  |  |  |
+    ├── sass/                                     |  |  |
+    |   ├── dist/                                 |  |  |
+    |   |   ├── style.css <--------------+        |  |  |
+    |   |   ├── style-one-column.css <---|--+     |  |  |
+    |   |   └── style-offcanvas.css <----|--|--+  |  |  |
+    |   ├── index.scss >-----------------^  |  |  |  |  |
+    |   ├── index-one-column.scss >---------^  |  |  |  |
+    |   └── index-offcanvas.scss >-------------^  |  |  |
+    ├── skin/                                     |  |  |
+    |   ├── dist/                                 |  |  |
+    |   |   ├── style.css <--------------+        |  |  |
+    |   |   ├── style-one-column.css <---|--+     |  |  |
+    |   |   └── style-offcanvas.css <----|--|--+  |  |  |
+    |   ├── index.css >------------------^  |  |  |  |  |
+    |   ├── index-one-column.css >----------^  |  |  |  |
+    |   └── index-offcanvas.css >--------------^  |  |  |
+    ├── index.xml >-------------------------------^  |  |
+    ├── index-one-column.xml >-----------------------^  |
+    └── index-offcanvas.xml >---------------------------^
 ```
 
 ---

@@ -4,6 +4,9 @@ const { src, dest, series } = require('gulp');
 const util = require('util');
 const defaultRegistry = require('undertaker-registry');
 const stripIndent = require('strip-indent');
+const glob = require('glob');
+const merge = require('merge-stream');
+const rename = require('gulp-rename');
 
 // extract
 const extract =  require('../lib/extract');
@@ -93,7 +96,6 @@ jsRegistry.prototype.init = function (gulpInst) {
     },
     compile: {
       src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
-      filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
         text: path.join(process.cwd(), config.configFile.banner),
@@ -139,44 +141,65 @@ jsRegistry.prototype.init = function (gulpInst) {
   });
 
   gulpInst.task('js-compile', () => {
-    const options = {
-      input: jsOpts.compile.src,
-      output: {
-        format: 'umd',
-        name: 'bloggerpack'
-      },
-      plugins: [
-        babel({
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                loose: true,
-                bugfixes: true,
-                modules: false
-              }
-            ]
-          ],
-          babelHelpers: 'bundled',
-          compact: true,
-          exclude: 'node_modules/**'
-        }),
-        nodeResolve(),
-        commonjs(),
-        globImport()
-      ]
-    };
+    // index.ext
+    let srcExt = path.extname(opts.src.filename); // .ext
+    let srcName = path.basename(opts.src.filename, srcExt); // index
+    // script.ext
+    let buildExt = path.extname(opts.build.filename); // .ext
+    let buildName = path.basename(opts.build.filename, buildExt); // script
 
-    return rollupStream(options)
-      .pipe(source(jsOpts.compile.filename))
-      .pipe(buffer())
-      .pipe(header(banner.text, banner.data))
-      .pipe(trim())
-      .pipe(dest(jsOpts.compile.dest, { overwrite: true }));
+    const variant = path.join(process.cwd(), opts.src.dir, srcName + '-*' + srcExt);
+
+    const files = [
+      jsOpts.compile.src,
+      ...glob.sync(variant)
+    ];
+
+    const bundles = files.map(entry => {
+      return rollupStream({
+        input: entry,
+        output: {
+          format: 'umd',
+          name: 'bloggerpack'
+        },
+        plugins: [
+          babel({
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  loose: true,
+                  bugfixes: true,
+                  modules: false
+                }
+              ]
+            ],
+            babelHelpers: 'bundled',
+            compact: true,
+            exclude: 'node_modules/**'
+          }),
+          nodeResolve(),
+          commonjs(),
+          globImport()
+        ]
+      })
+        .pipe(source(path.basename(entry)))
+        .pipe(buffer())
+        .pipe(header(banner.text, banner.data))
+        .pipe(rename(function (p) {
+          p.basename = p.basename.replace(srcName + '-', buildName + '-');
+          p.basename = p.basename.replace(srcName, buildName);
+          p.extname = buildExt;
+        }))
+        .pipe(trim())
+        .pipe(dest(jsOpts.compile.dest, { overwrite: true }));
+    });
+
+    return merge(bundles);
   });
 
   gulpInst.task('js-minify', () => {
-    return src(path.join(jsOpts.compile.dest, jsOpts.compile.filename), { allowEmpty: true })
+    return src(path.join(jsOpts.compile.dest, '**/*'), { allowEmpty: true })
       .pipe(terser({
         mangle: true,
         compress: {

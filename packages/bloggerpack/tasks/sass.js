@@ -92,7 +92,6 @@ sassRegistry.prototype.init = function(gulpInst) {
     },
     compile: {
       src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
-      filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
         text: path.join(process.cwd(), config.configFile.banner),
@@ -141,7 +140,16 @@ sassRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('sass-compile', () => {
-    return src(sassOpts.compile.src)
+    // index.ext
+    let srcExt = path.extname(opts.src.filename); // .ext
+    let srcName = path.basename(opts.src.filename, srcExt); // index
+    // style.ext
+    let buildExt = path.extname(opts.build.filename); // .ext
+    let buildName = path.basename(opts.build.filename, buildExt); // style
+
+    const variant = path.join(process.cwd(), opts.src.dir, srcName + '-*' + srcExt);
+
+    return src([sassOpts.compile.src, variant])
       .pipe(sass({
         outputStyle: 'expanded',
         charset: false,
@@ -165,13 +173,17 @@ sassRegistry.prototype.init = function(gulpInst) {
       .pipe(replace(/\/\* Sass-in-Template is empty \*\/\n/g, ''))
       .pipe(replace(/\/\* Sass-in-Template is empty \*\//g, ''))
       .pipe(header(banner.text, banner.data))
-      .pipe(rename(sassOpts.compile.filename))
+      .pipe(rename(function (p) {
+        p.basename = p.basename.replace(srcName + '-', buildName + '-');
+        p.basename = p.basename.replace(srcName, buildName);
+        p.extname = buildExt;
+      }))
       .pipe(trim())
       .pipe(dest(sassOpts.compile.dest, { overwrite: true }));
   });
 
   gulpInst.task('sass-minify', () => {
-    return src(path.join(sassOpts.compile.dest, sassOpts.compile.filename), { allowEmpty: true })
+    return src(path.join(sassOpts.compile.dest, '**/*'), { allowEmpty: true })
       .pipe(cleancss({
         level: 1,
         format: { breakWith: 'lf' }

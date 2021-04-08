@@ -41,7 +41,6 @@ templateRegistry.prototype.init = function(gulpInst) {
   const templateOpts = {
     compile: {
       src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
-      filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       opts: {
         context: {
@@ -54,15 +53,7 @@ templateRegistry.prototype.init = function(gulpInst) {
     }
   };
 
-  gulpInst.task('template-compile-main', () => {
-    return src(templateOpts.compile.src, { allowEmpty: true })
-      .pipe(templateCompile(templateOpts.compile.opts))
-      .pipe(rename(templateOpts.compile.filename))
-      .pipe(trim())
-      .pipe(dest(templateOpts.compile.dest, { overwrite: true }));
-  });
-
-  gulpInst.task('template-compile-variant', () => {
+  gulpInst.task('template-compile', () => {
     // index.ext
     let srcExt = path.extname(opts.src.filename); // .ext
     let srcName = path.basename(opts.src.filename, srcExt); // index
@@ -70,10 +61,13 @@ templateRegistry.prototype.init = function(gulpInst) {
     let buildExt = path.extname(opts.build.filename); // .ext
     let buildName = path.basename(opts.build.filename, buildExt); // theme
 
-    return src(path.join(process.cwd(), opts.src.dir, srcName + '-*' + srcExt), { allowEmpty: true })
+    const variant = path.join(process.cwd(), opts.src.dir, srcName + '-*' + srcExt);
+
+    return src([templateOpts.compile.src, variant], { allowEmpty: true })
       .pipe(templateCompile(templateOpts.compile.opts))
       .pipe(rename(function (p) {
         p.basename = p.basename.replace(srcName + '-', buildName + '-');
+        p.basename = p.basename.replace(srcName, buildName);
         p.extname = buildExt;
       }))
       .pipe(trim())
@@ -81,8 +75,7 @@ templateRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('template-tasks', series(
-    'template-compile-main',
-    'template-compile-variant'
+    'template-compile'
   ));
 };
 

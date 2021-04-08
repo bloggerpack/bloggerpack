@@ -93,8 +93,7 @@ const template = require('./tasks/template');
 registry(new template.registry());
 
 const templateTasks = [
-  'template-compile-main',
-  'template-compile-variant'
+  'template-compile'
 ];
 let hasTemplateTasks = false;
 

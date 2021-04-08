@@ -92,7 +92,6 @@ skinRegistry.prototype.init = function(gulpInst) {
     },
     compile: {
       src: path.join(opts.src.dir, opts.src.filename),
-      filename: opts.build.filename,
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
         text: path.join(process.cwd(), config.configFile.banner),
@@ -141,7 +140,16 @@ skinRegistry.prototype.init = function(gulpInst) {
   });
 
   gulpInst.task('skin-compile', () => {
-    return src(skinOpts.compile.src)
+    // index.ext
+    let srcExt = path.extname(opts.src.filename); // .ext
+    let srcName = path.basename(opts.src.filename, srcExt); // index
+    // style.ext
+    let buildExt = path.extname(opts.build.filename); // .ext
+    let buildName = path.basename(opts.build.filename, buildExt); // style
+
+    const variant = path.join(process.cwd(), opts.src.dir, srcName + '-*' + srcExt);
+
+    return src([skinOpts.compile.src, variant])
       .pipe(skinImportBeautifier())
       .pipe(postcss([
         easyImport({
@@ -159,7 +167,11 @@ skinRegistry.prototype.init = function(gulpInst) {
       .pipe(replace(/\/\* Skin-in-Template is empty \*\/\n/g, ''))
       .pipe(replace(/\/\* Skin-in-Template is empty \*\//g, ''))
       .pipe(header(banner.text, banner.data))
-      .pipe(rename(skinOpts.compile.filename))
+      .pipe(rename(function (p) {
+        p.basename = p.basename.replace(srcName + '-', buildName + '-');
+        p.basename = p.basename.replace(srcName, buildName);
+        p.extname = buildExt;
+      }))
       .pipe(trim())
       .pipe(dest(skinOpts.compile.dest, { overwrite: true }));
   });

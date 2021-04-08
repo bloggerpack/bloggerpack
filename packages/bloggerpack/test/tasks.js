@@ -17,10 +17,26 @@ describe('tasks', function () {
       });
     });
     describe('dist', function () {
-      it('should equal', function() {
-        const file = fs.readFileSync('test/tasks/js/src/js/dist/script.js');
-        const xFile = fs.readFileSync('test/tasks/js/expected/dist/script.js');
-        String(file).should.equal(String(xFile));
+      describe('script', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/js/src/js/dist/script.js');
+          const xFile = fs.readFileSync('test/tasks/js/expected/dist/script.js');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('script-foo', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/js/src/js/dist/script-foo.js');
+          const xFile = fs.readFileSync('test/tasks/js/expected/dist/script-foo.js');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('script-bar-baz', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/js/src/js/dist/script-bar-baz.js');
+          const xFile = fs.readFileSync('test/tasks/js/expected/dist/script-bar-baz.js');
+          String(file).should.equal(String(xFile));
+        });
       });
     });
   }); // end js
@@ -40,10 +56,26 @@ describe('tasks', function () {
       });
     });
     describe('dist', function () {
-      it('should equal', function() {
-        const file = fs.readFileSync('test/tasks/sass/src/sass/dist/style.css');
-        const xFile = fs.readFileSync('test/tasks/sass/expected/dist/style.css');
-        String(file).should.equal(String(xFile));
+      describe('style', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/sass/src/sass/dist/style.css');
+          const xFile = fs.readFileSync('test/tasks/sass/expected/dist/style.css');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('style-foo', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/sass/src/sass/dist/style-foo.css');
+          const xFile = fs.readFileSync('test/tasks/sass/expected/dist/style-foo.css');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('style-bar-baz', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/sass/src/sass/dist/style-bar-baz.css');
+          const xFile = fs.readFileSync('test/tasks/sass/expected/dist/style-bar-baz.css');
+          String(file).should.equal(String(xFile));
+        });
       });
     });
   }); // end sass
@@ -63,10 +95,26 @@ describe('tasks', function () {
       });
     });
     describe('dist', function () {
-      it('should equal', function() {
-        const file = fs.readFileSync('test/tasks/skin/src/skin/dist/style.css');
-        const xFile = fs.readFileSync('test/tasks/skin/expected/dist/style.css');
-        String(file).should.equal(String(xFile));
+      describe('style', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/skin/src/skin/dist/style.css');
+          const xFile = fs.readFileSync('test/tasks/skin/expected/dist/style.css');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('style-foo', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/skin/src/skin/dist/style-foo.css');
+          const xFile = fs.readFileSync('test/tasks/skin/expected/dist/style-foo.css');
+          String(file).should.equal(String(xFile));
+        });
+      });
+      describe('style-bar-baz', function () {
+        it('should equal', function() {
+          const file = fs.readFileSync('test/tasks/skin/src/skin/dist/style-bar-baz.css');
+          const xFile = fs.readFileSync('test/tasks/skin/expected/dist/style-bar-baz.css');
+          String(file).should.equal(String(xFile));
+        });
       });
     });
   }); // end skin
