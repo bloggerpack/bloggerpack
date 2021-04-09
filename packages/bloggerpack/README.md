@@ -1,37 +1,10 @@
-<h3 align="center">Bloggerpack</h3>
+# Bloggerpack
 
-<p align="center">
-  A tool for develop Blogger theme.
-  <br>
-  <br>
-  <a href="#getting-started">Getting started</a>
-  ·
-  <a href="#concepts">Concepts</a>
-  ·
-  <a href="#creating-theme-variants">Creating theme variants</a>
-  ·
-  <a href="#creating-plugins">Creating plugins</a>
-  ·
-  <a href="#changelog">Changelog</a>
-</p>
+> A tool for develop Blogger theme.
 
----
+## Getting started
 
-<h3 align="center">Getting started</h3>
-
-<p align="center">
-  <a href="#features">Features</a>
-  ·
-  <a href="#usage">Usage</a>
-  ·
-  <a href="#folder-structure">Folder structure</a>
-  ·
-  <a href="#bloggerpack-commands">Bloggerpack commands</a>
-</p>
-
----
-
-## Features
+### Features
 
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - Sass and ES6+
@@ -39,11 +12,11 @@
 - CSS and JS minification
 - and more
 
-## Usage
+### Usage
 
 Use [starter themes](https://github.com/bloggerpack/bloggerpack/tree/main/starters) for quick start.
 
-## Folder structure
+### Folder structure
 
 ```text
 .
@@ -74,39 +47,39 @@ Use [starter themes](https://github.com/bloggerpack/bloggerpack/tree/main/starte
 └── package.json    (c)
 ```
 
-### Config files
+#### Config files
 
-#### `.browserslistrc`
+##### `.browserslistrc`
 
 The config to share target browsers. Learn more about [Browserslist](https://github.com/browserslist/browserslist).
 
-#### `.eslintrc.json`
+##### `.eslintrc.json`
 
 The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
 
-#### `.stylelintrc`
+##### `.stylelintrc`
 
 The default config is recommended, but if you want to change the config you can read the [Stylelint docs](https://stylelint.io/user-guide/configure).
 
-#### `banner.txt`
+##### `banner.txt`
 
 The header for compiled Sass, Skin and JS. You can access data from `data.json` using `<%= data.keyName %>`, you can also access data from `package.json` using `<%= pkg.keyName %>`.
 
-#### `data.json`
+##### `data.json`
 
 Store your theme config in this file. This is Nunjucks template context, which means it can be accessed in template using `{{ data.keyName }}`. [Learn more](#template-variables).
 
-#### `package.json`
+##### `package.json`
 
 Use this file to manage and install Bloggerpack and other packages. You also will need to add [Bloggerpack commands and tasks](#bloggerpack-commands).
 
-## Bloggerpack commands
+### Bloggerpack commands
 
 Define Bloggerpack commands and tasks to build and develop Bloggerpack theme.
 
 The commands and tasks are defined in the `scripts` property of `package.json`.
 
-### Basic example
+#### Basic example
 
 package.json
 
@@ -124,7 +97,7 @@ You’ll be able to run:
 - `npm run build` - Build the theme.
 - `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
-### Available flags
+#### Available flags
 
 | Flag | Description |
 | ---- | ----------- |
@@ -139,38 +112,24 @@ You’ll be able to run:
 | `--gulpfile` | Custom gulpfile. |
 | `--cwd` | Custom CWD. |
 
----
+## Concepts
 
-<h3 align="center">Concepts</h3>
-
-<p align="center">
-  <a href="#template">Template</a>
-  ·
-  <a href="#sass">Sass</a>
-  ·
-  <a href="#skin">Skin</a>
-  ·
-  <a href="#js">JS</a>
-</p>
-
----
-
-## Template
+### Template
 
 We uses [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) for its template engine. File extension for template files is `.xml`.
 
-### Source
+#### Source
 
 - Index file: `src/index.xml`
 - Compiled to: `dist/theme.xml`
 
-### Paths
+#### Paths
 
 - `./example.xml` - Relative to file's directory.
 - `../example.xml` - Relative to file's parent directory.
 - `example.xml` - Relative to the `index.xml` directory.
 
-### Template tag
+#### Template tag
 
 Wrap the markup with `<bp:template>` tag in `.xml` files.
 
@@ -182,11 +141,11 @@ Wrap the markup with `<bp:template>` tag in `.xml` files.
 
 Note: The template tag is always required.
 
-### Template variables
+#### Template variables
 
 You can use variables from [`data.json`](#datajson) using `{{ data.keyName }}` and you can also use variables from [`package.json`](#packagejson) using `{{ pkg.keyName }}`.
 
-##### Example
+###### Example
 
 data.json:
 
@@ -220,7 +179,7 @@ Output:
 <p>my-awesome-theme</p>
 ```
 
-### Including template
+#### Including template
 
 **Do not use** the default Nunjucks `{% include %}` tag, use `{% template %}` tag instead.
 
@@ -254,7 +213,7 @@ Output:
 </div>
 ```
 
-##### Including template from node modules
+###### Including template from node modules
 
 You can also include template from node modules:
 
@@ -266,13 +225,13 @@ You can also include template from node modules:
 
 Learn how to create plugin for Bloggerpack by reading [this section](#creating-plugins) below.
 
-### Including assets
+#### Including assets
 
 Use `{% asset %}` tag to include compiled [Sass](#sass), [Skin](#skin), [JS](#js), and other CSS and JS assets.
 
 Note: You must use the `{% asset %}` tag to prevent assets from being prettied.
 
-#### Usage example
+##### Usage example
 
 ```njk
 {% asset %}
@@ -295,7 +254,7 @@ With files:
 {% endasset %}
 ```
 
-#### Examples
+##### Examples
 
 Normal CSS:
 
@@ -349,7 +308,7 @@ JS:
 {% endasset %}
 ```
 
-#### Including assets from node modules
+##### Including assets from node modules
 
 You can also include assets from node modules:
 
@@ -363,7 +322,7 @@ You can also include assets from node modules:
 {% endasset %}
 ```
 
-### Extending template
+#### Extending template
 
 Use Nunjucks `{% extends %}` tag. See [Nunjucks template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance).
 
@@ -421,16 +380,16 @@ Output:
 </footer>
 ```
 
-## Sass
+### Sass
 
 Write your styles with [Sass](https://sass-lang.com/). You can also import Sass package from node modules.
 
-### Source
+#### Source
 
 - Index file: `src/sass/index.scss`
 - Compiled to: `src/sass/dist/style.css`
 
-### Partialize
+#### Partialize
 
 **Do not write styles in `src/sass/index.scss` directly.** Add a new file (e.g., `_my-component.scss`) within `src/sass/` and than import the file to `src/sass/index.scss`:
 
@@ -456,7 +415,7 @@ Import from node modules:
 // Glob import is not supported. You don't need glob import inside node_modules.
 ```
 
-### Sass-in-Template
+#### Sass-in-Template
 
 You can write Sass for specific template in the template file directly using `<bp:sass>` tag.
 
@@ -476,18 +435,18 @@ $heading-color: #fff !default;
 
 The styles within the tag would be automatically extracted to `src/sass/sass-in-template` folder.
 
-## Skin
+### Skin
 
 Skin is CSS that support Blogger's skin variables to allow your theme to be able to customize through the Blogger theme designer.
 
-### Source
+#### Source
 
 - Index file: `src/skin/index.css`
 - Compiled to: `src/skin/dist/style.css`
 
 Note: The compiled skin is not minified, so it can be customizable in the Blogger code editor.
 
-### Partialize
+#### Partialize
 
 **Do not write styles in `src/skin/index.css` directly.** Add a new file (e.g., `_my-component.css`) within `src/skin/` and than import the file to `src/skin/index.css`:
 
@@ -511,7 +470,7 @@ Import from node modules:
 @import "package-name/dir/**/*.css"; /* glob inside node_modules/package-name/dir */
 ```
 
-### Skin-in-Template
+#### Skin-in-Template
 
 You can write skin CSS for specific template in the template file directly using `<bp:skin>` tag.
 
@@ -537,16 +496,16 @@ You can write skin CSS for specific template in the template file directly using
 
 The styles within the tag would be automatically extracted to `src/skin/skin-in-template` folder.
 
-## JS
+### JS
 
 The JavaScript. You can write your script with ES6+ and you can also import package from node modules.
 
-### Source
+#### Source
 
 - Index file: `src/js/index.js`
 - Compiled to: `src/js/dist/script.js`
 
-### Partialize
+#### Partialize
 
 **Do not write scripts in `src/js/index.js` directly.** Add a new file (e.g., `my-script.js`) within `src/js/` and than import the file to `src/js/index.js`:
 
@@ -579,7 +538,7 @@ console.log(square(5));
 // Glob import is not supported. You don't need glob import inside node_modules.
 ```
 
-### JS-in-Template
+#### JS-in-Template
 
 You can write JavaScript for specific template in the template file directly using `<bp:js>` tag.
 
@@ -594,8 +553,6 @@ const example = document.getElementById('example');
 ```
 
 The JavaScript within the tag would be automatically extracted to `src/js/js-in-template` folder.
-
----
 
 ## Creating theme variants
 
@@ -645,8 +602,6 @@ Example:
     ├── index-one-column.xml >-----------------------^  |
     └── index-offcanvas.xml >---------------------------^
 ```
-
----
 
 ## Creating plugins
 
@@ -701,8 +656,6 @@ Learn how to create **npm package** by reading its [documentation](https://docs.
 ### Official plugins
 
 [Bloggerpack plugins](https://github.com/bloggerpack/bloggerpack/tree/main/plugins)
-
----
 
 ## Changelog
 
