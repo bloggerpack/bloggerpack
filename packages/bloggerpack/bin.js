@@ -7,8 +7,7 @@ const pkg = require('./package.json');
 const program = new commander.Command();
 
 program
-  .storeOptionsAsProperties(true)
-  .passCommandToAction(false);
+  .storeOptionsAsProperties(true);
 
 program
   .name('bloggerpack')
