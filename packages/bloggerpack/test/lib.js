@@ -208,9 +208,12 @@ describe('lib', function() {
   describe('template-compiler', function () {
     describe('asset-tag', function () {
       it('should equal', function() {
-        const file = fs.readFileSync('test/lib/template-compiler/output/asset-tag.xml');
-        const xFile = fs.readFileSync('test/lib/template-compiler/expected/asset-tag.xml');
-        String(file).should.equal(String(xFile));
+        const file1 = fs.readFileSync('test/lib/template-compiler/output/asset-tag.xml');
+        const file2 = fs.readFileSync('test/lib/template-compiler/output/asset-tag-extends.xml');
+        const xFile1 = fs.readFileSync('test/lib/template-compiler/expected/asset-tag.xml');
+        const xFile2 = fs.readFileSync('test/lib/template-compiler/expected/asset-tag-extends.xml');
+        String(file1).should.equal(String(xFile1));
+        String(file2).should.equal(String(xFile2));
       });
     });
     describe('extends', function () {

@@ -1,0 +1,7 @@
+<template test='template'>
+  {% extends "./in-extends.xml" %}
+
+  {% block test %}
+    <div>test</div>
+  {% endblock %}
+</template>

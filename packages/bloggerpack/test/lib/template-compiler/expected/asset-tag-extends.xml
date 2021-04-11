@@ -1,0 +1,27 @@
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.element {
+  display: block;
+}
+</style>
+</b:if>
+
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+.style1 {
+  display: block;
+}
+
+.style2 {
+  display: block;
+}
+]]>
+</b:skin>
+</b:if>
+  </div>
+</div>
+
+<div>test</div>

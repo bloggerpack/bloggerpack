@@ -25,6 +25,9 @@ module.exports = (opts) => {
     return content !== '' ? content + '\n' : '';
   };
 
+  const assetPattern  = /({%\s*asset\s*")(.*?)("\s*%})/g;
+  const assetPattern2 = /({%\s*asset\s*')(.*?)('\s*%})/g;
+
   return through.obj((file, enc, cb) => {
     let njkOpts = {
       autoescape: false,
@@ -109,12 +112,15 @@ module.exports = (opts) => {
     }
     env.addExtension('AssetExtension', new AssetExtension());
 
+    env.on('load', function(name, source, loader) {
+      source.src = source.src.replace(assetPattern, '<bloggerpack% asset "$2" %bloggerpack>');
+      source.src = source.src.replace(assetPattern2, '<bloggerpack% asset "$2" %bloggerpack>');
+    });
+
     let content = templateExtract(file.contents.toString('utf8'));
 
-    const re  = /({%\s*asset\s*")(.*?)("\s*%})/g;
-    const re2 = /({%\s*asset\s*')(.*?)('\s*%})/g;
-    content = content.replace(re, '<% asset "$2" %>');
-    content = content.replace(re2, '<% asset "$2" %>');
+    content = content.replace(assetPattern, '<bloggerpack% asset "$2" %bloggerpack>');
+    content = content.replace(assetPattern2, '<bloggerpack% asset "$2" %bloggerpack>');
 
     try {
       env.renderString(content, njkContext, function (err, res) {
@@ -124,8 +130,8 @@ module.exports = (opts) => {
         }
 
         res = res
-              .replace(/<%/g, '{%')
-              .replace(/%>/g, '%}')
+              .replace(/<bloggerpack%/g, '{%')
+              .replace(/%bloggerpack>/g, '%}')
               .replace(/<img>/g, '\<b:tag name=\'img\'>')
               .replace(/<\/img>/g, '\<\/b:tag>')
               .replace(/<input>/g, '\<b:tag name=\'input\'>')

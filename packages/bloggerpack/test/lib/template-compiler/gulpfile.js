@@ -19,6 +19,20 @@ function test_assetTag() {
     .pipe(dest('output', { overwrite: true }));
 }
 
+function test_assetTag2() {
+  var options = {
+    context: '',
+    start: "<template test='template'>",
+    end: '</template>'
+  };
+
+  return src('src/asset-tag/index-extends.xml', { allowEmpty: true })
+    .pipe(templateCompile(options))
+    .pipe(rename('asset-tag-extends.xml'))
+    .pipe(debug())
+    .pipe(dest('output', { overwrite: true }));
+}
+
 function test_extends() {
   var options = {
     context: '',
@@ -91,6 +105,7 @@ function clean(cb) {
 exports.build = series(
   clean,
   test_assetTag,
+  test_assetTag2,
   test_extends,
   test_path,
   test_templateContext,

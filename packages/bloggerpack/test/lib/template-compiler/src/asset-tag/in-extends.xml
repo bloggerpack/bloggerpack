@@ -1,0 +1,29 @@
+<template test='template'>
+  {% asset %}
+    <b:if cond='!data:view.isLayoutMode'>
+    <style>
+    .element {
+      display: block;
+    }
+    </style>
+    </b:if>
+  {% endasset %}
+
+  <div>
+    <div>
+      {% asset %}
+        <b:if cond='!data:view.isLayoutMode'>
+        <b:skin>
+        <![CDATA[
+        {% asset "./style1.css" %}
+
+        {% asset './style2.css' %}
+        ]]>
+        </b:skin>
+        </b:if>
+      {% endasset %}
+    </div>
+  </div>
+
+  {% block test %}{% endblock %}
+</template>

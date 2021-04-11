@@ -1,7 +1,5 @@
 <template test='template'>
-  {#
-   # CSS
-   #}
+  <!-- CSS: Default -->
 
   {% asset %}
     <b:if cond='!data:view.isLayoutMode'>
@@ -17,21 +15,25 @@
     <div>
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
-        <style>
+        <b:skin>
+        <![CDATA[
         .element {
           display: block;
         }
-        </style>
+        ]]>
+        </b:skin>
         </b:if>
       {% endasset %}
     </div>
   </div>
 
+  <!-- CSS: Files -->
+
   {% asset %}
     <b:if cond='!data:view.isLayoutMode'>
     <style>
-    {% asset "./style.css" %}
-    {% asset "./style.css" %}
+    {% asset "./style1.css" %}
+    {% asset './style2.css' %}
     </style>
     </b:if>
   {% endasset %}
@@ -40,18 +42,19 @@
     <div>
       {% asset %}
         <b:if cond='!data:view.isLayoutMode'>
-        <style>
-        {% asset "./style.css" %}
-        {% asset "./style.css" %}
-        </style>
+        <b:skin>
+        <![CDATA[
+        {% asset "./style1.css" %}
+
+        {% asset './style2.css' %}
+        ]]>
+        </b:skin>
         </b:if>
       {% endasset %}
     </div>
   </div>
 
-  {#
-   # JS
-   #}
+  <!-- JS: Default -->
 
   {% asset %}
     <script>
@@ -73,11 +76,14 @@
     </div>
   </div>
 
+  <!-- JS: Files -->
+
   {% asset %}
     <script>
     //<![CDATA[
-    {% asset "./script.js" %}
-    {% asset "./script.js" %}
+    {% asset "./script1.js" %}
+
+    {% asset './script2.js' %}
     //]]>
     </script>
   {% endasset %}
@@ -87,17 +93,15 @@
       {% asset %}
         <script>
         //<![CDATA[
-        {% asset "./script.js" %}
-        {% asset "./script.js" %}
+        {% asset "./script1.js" %}
+        {% asset './script2.js' %}
         //]]>
         </script>
       {% endasset %}
     </div>
   </div>
 
-  {#
-   # Newline
-   #}
+  <!-- Newline -->
 
   {% asset %}
 
@@ -128,4 +132,8 @@
 
 
   {% endasset %}
+
+  <!-- In-partial -->
+
+  {% template "./in-partial.xml" %}
 </template>

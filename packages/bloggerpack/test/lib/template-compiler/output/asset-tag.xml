@@ -1,3 +1,5 @@
+<!-- CSS: Default -->
+
 <b:if cond='!data:view.isLayoutMode'>
 <style>
 .element {
@@ -9,21 +11,25 @@
 <div>
   <div>
 <b:if cond='!data:view.isLayoutMode'>
-<style>
+<b:skin>
+<![CDATA[
 .element {
   display: block;
 }
-</style>
+]]>
+</b:skin>
 </b:if>
   </div>
 </div>
 
+<!-- CSS: Files -->
+
 <b:if cond='!data:view.isLayoutMode'>
 <style>
-.style {
+.style1 {
   display: block;
 }
-.style {
+.style2 {
   display: block;
 }
 </style>
@@ -32,17 +38,22 @@
 <div>
   <div>
 <b:if cond='!data:view.isLayoutMode'>
-<style>
-.style {
+<b:skin>
+<![CDATA[
+.style1 {
   display: block;
 }
-.style {
+
+.style2 {
   display: block;
 }
-</style>
+]]>
+</b:skin>
 </b:if>
   </div>
 </div>
+
+<!-- JS: Default -->
 
 <script>
 //<![CDATA[
@@ -60,10 +71,13 @@ console.log('Hello, world!');
   </div>
 </div>
 
+<!-- JS: Files -->
+
 <script>
 //<![CDATA[
-console.log('script');
-console.log('script');
+console.log('script 1');
+
+console.log('script 2');
 //]]>
 </script>
 
@@ -71,12 +85,14 @@ console.log('script');
   <div>
 <script>
 //<![CDATA[
-console.log('script');
-console.log('script');
+console.log('script 1');
+console.log('script 2');
 //]]>
 </script>
   </div>
 </div>
+
+<!-- Newline -->
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
@@ -97,3 +113,31 @@ console.log('script');
 }
 </style>
 </b:if>
+
+<!-- In-partial -->
+
+<b:if cond='!data:view.isLayoutMode'>
+<style>
+.element {
+  display: block;
+}
+</style>
+</b:if>
+
+<div>
+  <div>
+<b:if cond='!data:view.isLayoutMode'>
+<b:skin>
+<![CDATA[
+.style1 {
+  display: block;
+}
+
+.style2 {
+  display: block;
+}
+]]>
+</b:skin>
+</b:if>
+  </div>
+</div>
