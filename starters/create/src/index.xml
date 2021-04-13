@@ -1,0 +1,7 @@
+<bp:template>
+  {% extends "./layout.xml" %}
+
+  {% block content %}
+    {% template "./template-parts/content.xml" %}
+  {% endblock %}
+</bp:template>

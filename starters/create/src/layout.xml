@@ -1,4 +1,4 @@
-<template to='bp:template'>
+<bp:template>
   <?xml version='1.0' encoding='UTF-8' ?>
   <!DOCTYPE html>
   <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
@@ -10,10 +10,24 @@
       <b:include data='blog' name='google-analytics'/>
 
       {# Main CSS (Sass) #}
-      {% asset type="style", "./dist/sass.css" %}
+      {% asset %}
+        <b:if cond='!data:view.isLayoutMode'>
+        <style>
+        {% asset "./sass/dist/style.css" %}
+        </style>
+        </b:if>
+      {% endasset %}
 
       {# Main CSS (Skin) #}
-      {% asset type="skin", "./dist/skin.css" %}
+      {% asset %}
+        <b:if cond='!data:view.isLayoutMode'>
+        <b:skin>
+        <![CDATA[
+        {% asset "./skin/dist/style.css" %}
+        ]]>
+        </b:skin>
+        </b:if>
+      {% endasset %}
 
       {# Layout Mode CSS #}
       {% asset %}
@@ -29,11 +43,17 @@
     </head>
     <body>
 
-      {% block example %}{% endblock %}
+      {% block content %}{% endblock %}
 
       {# Main JS #}
-      {% asset type="script", "./dist/js.js" %}
+      {% asset %}
+        <script>
+        //<![CDATA[
+        {% asset "./js/dist/script.js" %}
+        //]]>
+        </script>
+      {% endasset %}
 
     </body>
   </html>
-</template>
+</bp:template>

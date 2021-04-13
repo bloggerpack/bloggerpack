@@ -1,7 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/example.njk
+// Template path: src/template-parts/content.xml
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+/* JS-in-Template is empty */
