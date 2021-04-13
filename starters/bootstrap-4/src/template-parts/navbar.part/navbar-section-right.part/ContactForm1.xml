@@ -1,0 +1,83 @@
+<bp:template>
+  {# Navbar dropdown contact form (using `ContactForm` widget) #}
+  <b:widget id='ContactForm1' locked='false' title='Contact' type='ContactForm' visible='true'>
+    <b:includable id='main'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='navbar-nav'>
+        <li class='nav-item dropdown'>
+          <a aria-expanded='false' aria-haspopup='true' class='nav-link dropdown-toggle' data-toggle='dropdown' expr:id='"DropdownMenu" + data:widget.instanceId' href='#'>
+            <b:eval expr='data:title ? data:title : "Contact"'/>
+          </a>
+          <div class='dropdown-menu p-3' expr:aria-labelledby='"DropdownMenu" + data:widget.instanceId' style='min-width: 300px;'>
+            <b:class cond='data:widget.sectionId == "b-section-navbar-right"' name='dropdown-menu-right'/>
+            <form class='navbar-contact-form' expr:id='data:widget.instanceId + "_contact-form"' name='contact-form'>
+              <div class='form-group'>
+                <label expr:for='data:widget.instanceId + "_contact-form-name"'><data:contactFormNameMsg/></label>
+                <input class='contact-form-name form-control' expr:id='data:widget.instanceId + "_contact-form-name"' expr:placeholder='data:contactFormNameMsg' name='name' size='30' type='text'/>
+              </div>
+              <div class='form-group'>
+                <label expr:for='data:widget.instanceId + "_contact-form-email"'><data:contactFormEmailMsg/> <span class='text-danger'>*</span></label>
+                <input class='contact-form-email form-control' expr:id='data:widget.instanceId + "_contact-form-email"' expr:placeholder='data:contactFormEmailMsg' name='email' required='required' size='30' type='email'/>
+              </div>
+              <div class='form-group'>
+                <label expr:for='data:widget.instanceId + "_contact-form-email-message"'><data:contactFormMessageMsg/> <span class='text-danger'>*</span></label>
+                <textarea class='contact-form-email-message form-control' cols='25' expr:id='data:widget.instanceId + "_contact-form-email-message"' expr:placeholder='data:contactFormMessageMsg' name='email-message' required='required' rows='5'/>
+              </div>
+              <div>
+                <button class='contact-form-button-submit btn btn-success' expr:id='data:widget.instanceId + "_contact-form-submit"' type='submit'>
+                  <data:contactFormSendMsg/>
+                </button>
+                <div class='contact-form-error-message' expr:id='data:widget.instanceId + "_contact-form-error-message"'/>
+                <div class='contact-form-success-message' expr:id='data:widget.instanceId + "_contact-form-success-message"'/>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>
+
+<bp:sass>
+//
+// Alert
+//
+
+.navbar-contact-form {
+  .contact-form-success-message,
+  .contact-form-error-message {
+    display: none;
+  }
+
+  .contact-form-success-message-with-border,
+  .contact-form-error-message-with-border {
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    padding: .75rem 1.25rem;
+    border: 1px solid transparent;
+    @include border-radius($border-radius);
+  }
+
+  .contact-form-success-message-with-border {
+    color: darken(#dff0d8, 45%);
+    background-color: #dff0d8;
+    border-color: darken(#dff0d8, 2.5%);
+  }
+  .contact-form-error-message-with-border {
+    padding-right: 4rem;
+    color: darken(#f2dede, 45%);
+    background-color: #f2dede;
+    border-color: darken(#f2dede, 2.5%);
+
+    .contact-form-cross {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1.125rem 1.25rem;
+    }
+  }
+}
+</bp:sass>

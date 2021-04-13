@@ -1,0 +1,145 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template-parts/content.part/main-section.part/Blog1.part/posts.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Post card
+//
+
+.post-card {
+  @include box-shadow($box-shadow-sm);
+}
+
+//
+// Post spacer
+//
+
+.post-spacer {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+//
+// Post featured image
+//
+
+.post-featured-image {
+  position: relative;
+  padding-top: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include border-radius(.25rem);
+  }
+}
+
+
+//
+// Post body
+//
+
+// stylelint-disable declaration-no-important, selector-max-type, no-duplicate-selectors
+
+// Reset margins
+//
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6,
+.post-body p,
+.post-body ul,
+.post-body ol,
+.post-body dl,
+.post-body figure,
+.post-body blockquote,
+.post-body table:not(.tr-caption-container),
+.post-body pre,
+.post-body address,
+.post-body hr {
+  margin-top: 1rem;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  margin-left: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Images
+//
+
+.post-body img {
+  @include img-fluid();
+}
+
+.post-body .separator a:not([style*="clear: left"]):not([style*="clear:left"]):not([style*="clear: right"]):not([style*="clear:right"]) {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.post-body .tr-caption-container .tr-caption {
+  padding-top: .5rem;
+  @include font-size(90%);
+}
+
+// Figures
+//
+
+.post-body figure img,
+.post-body figure svg {
+  @include img-fluid();
+  @extend .figure-img;
+}
+
+.post-body figure figcaption {
+  @extend .figure-caption;
+}
+
+// Blockquotes
+//
+
+.post-body blockquote:not([class]) {
+  @extend .blockquote;
+}
+.post-body blockquote:not([class]) footer {
+  @extend .blockquote-footer;
+}
+
+// Tables
+//
+
+.post-body table:not([class]) {
+  @extend .table;
+  @extend .table-bordered;
+}
+
+.post-body table:not([class]) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 0; // remove border from `@extend .table-bordered`
+}
+
+// stylelint-enable

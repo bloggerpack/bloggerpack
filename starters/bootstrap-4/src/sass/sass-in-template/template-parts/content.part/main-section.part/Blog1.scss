@@ -1,0 +1,18 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template-parts/content.part/main-section.part/Blog1.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Blog post spacer
+//
+
+.blog-post-spacer {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

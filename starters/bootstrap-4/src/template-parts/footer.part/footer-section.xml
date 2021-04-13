@@ -1,0 +1,20 @@
+<bp:template>
+  <b:section class='footer-section' id='footer-section' maxwidgets='2' name='Footer section' showaddelement='no'>
+    {% template "./footer-section.part/LinkList2.xml" %}
+    {% template "./footer-section.part/HTML1.xml" %}
+  </b:section>
+</bp:template>
+
+<bp:sass>
+//
+// Widget
+//
+
+.footer-section > .widget {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+</bp:sass>

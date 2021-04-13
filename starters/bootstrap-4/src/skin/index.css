@@ -1,4 +1,4 @@
 /* Import another CSS here */
 
 /* Skin-in-Template (always last) */
-@import "skin-in-template/**/*.css";
+@import "./skin-in-template/**/*.css";
