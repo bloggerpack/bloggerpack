@@ -1,6 +1,6 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: template/preview.njk
+// Template path: src/index.xml
 // ------------------------------------------------------------------------
 */
 
@@ -12,12 +12,12 @@ body {
   margin: 1rem;
 }
 
-.hello-box {
+.bloggerpack-hello-box {
   margin-bottom: 1rem;
 }
 
-.hello-box,
-.github-box {
+.bloggerpack-hello-box,
+.bloggerpack-github-box {
   max-width: 500px;
   margin-right: auto;
   margin-left: auto;

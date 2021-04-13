@@ -9,22 +9,26 @@
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
-.github-box{padding:1rem;color:#000;font-size:1rem;text-align:center;background-color:#f5f5f5;border:1px solid #ccc;border-radius:.25rem}.github-box h5{margin-top:0;margin-bottom:1rem;font-weight:500;font-size:1.25rem;line-height:1.2}.hello-box{padding:1rem;color:#fff;font-weight:500;font-size:2rem;line-height:1.2;text-align:center;background-color:#ff5722;border:1px solid #c74921;border-radius:.25rem}body{margin:1rem}.hello-box{margin-bottom:1rem}.github-box,.hello-box{max-width:500px;margin-right:auto;margin-left:auto}
+/*!
+ * Bloggerpack Hello World Plugin
+ */.bloggerpack-github-box{padding:1rem;color:#000;font-size:1rem;text-align:center;background-color:#f5f5f5;border:1px solid #ccc;border-radius:.25rem}.bloggerpack-github-box h5{margin-top:0;margin-bottom:1rem;font-weight:500;font-size:1.25rem;line-height:1.2}.bloggerpack-hello-box{padding:1rem;color:#fff;font-weight:500;font-size:2rem;line-height:1.2;text-align:center;background-color:#ff5722;border:1px solid #c74921;border-radius:.25rem}body{margin:1rem}.bloggerpack-hello-box{margin-bottom:1rem}.bloggerpack-github-box,.bloggerpack-hello-box{max-width:500px;margin-right:auto;margin-left:auto}
 </style>
 </b:if>
 
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
-
+/*!
+ * Bloggerpack Hello World Plugin
+ */
 ]]>
 </b:skin>
 </b:if>
   </head>
   <body>
-    <div class='hello-box'>Hello, my name is Bloggerpack</div>
+    <div class='bloggerpack-hello-box'>Hello, my name is Bloggerpack</div>
 
-    <div class='github-box'>
+    <div class='bloggerpack-github-box'>
       <h5>Bloggerpack on GitHub</h5>
       <a class='github-button' href='https://github.com/bloggerpack/bloggerpack' data-icon='octicon-star' data-size='large' data-show-count='true' aria-label='Star bloggerpack/bloggerpack on GitHub'>Star</a>
       <a class='github-button' href='https://github.com/bloggerpack/bloggerpack/subscription' data-icon='octicon-eye' data-size='large' data-show-count='true' aria-label='Watch bloggerpack/bloggerpack on GitHub'>Watch</a>
@@ -40,6 +44,9 @@
 
 <script>
 //<![CDATA[
+/*!
+ * Bloggerpack Hello World Plugin
+ */
 !function(n){"function"==typeof define&&define.amd?define(n):n()}((function(){}));
 //]]>
 </script>

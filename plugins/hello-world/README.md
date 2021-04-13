@@ -13,13 +13,13 @@ npm install @bloggerpack/plugin-hello-world --save
 Hello components:
 
 ```njk
-{% import "@bloggerpack/plugin-hello-world/template/hello.njk" as hello %}
+{% import "@bloggerpack/plugin-hello-world/src/hello.bloggerpack.xml" as hello %}
 
-{{ hello.myNameIs('Your Name') }}
+{{ hello.greetings('Name') }}
 ```
 
 Bloggerpack GitHub:
 
 ```njk
-{% template "@bloggerpack/plugin-hello-world/template/bloggerpack-github.njk" %}
+{% template "@bloggerpack/plugin-hello-world/src/github.bloggerpack.xml" %}
 ```

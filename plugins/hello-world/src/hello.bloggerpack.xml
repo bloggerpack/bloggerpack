@@ -1,11 +1,11 @@
-<template to='bp:template'>
-  {% macro myNameIs(name) %}
-    <div class='hello-box'>Hello, my name is {{ name }}</div>
+<bp:template>
+  {% macro greetings(name) %}
+    <div class='bloggerpack-hello-box'>Hello, my name is {{ name }}</div>
   {% endmacro %}
-</template>
+</bp:template>
 
-<style to='bp:sass'>
-.hello-box {
+<bp:sass>
+.bloggerpack-hello-box {
   padding: 1rem;
   color: #fff;
   font-weight: 500;
@@ -16,4 +16,4 @@
   border: 1px solid #c74921;
   border-radius: .25rem;
 }
-</style>
+</bp:sass>

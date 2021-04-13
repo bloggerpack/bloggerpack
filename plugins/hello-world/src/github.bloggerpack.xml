@@ -1,15 +1,15 @@
-<template to='bp:template'>
-  <div class='github-box'>
+<bp:template>
+  <div class='bloggerpack-github-box'>
     <h5>Bloggerpack on GitHub</h5>
     <a class="github-button" href="https://github.com/bloggerpack/bloggerpack" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star bloggerpack/bloggerpack on GitHub">Star</a>
     <a class="github-button" href="https://github.com/bloggerpack/bloggerpack/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch bloggerpack/bloggerpack on GitHub">Watch</a>
     <a class="github-button" href="https://github.com/bloggerpack/bloggerpack/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork bloggerpack/bloggerpack on GitHub">Fork</a>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </div>
-</template>
+</bp:template>
 
-<style to='bp:sass'>
-.github-box {
+<bp:sass>
+.bloggerpack-github-box {
   padding: 1rem;
   color: #000;
   font-size: 1rem;
@@ -26,4 +26,4 @@
     line-height: 1.2;
   }
 }
-</style>
+</bp:sass>

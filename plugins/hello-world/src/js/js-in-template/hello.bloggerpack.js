@@ -1,7 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: template/preview.njk
+// Template path: src/hello.bloggerpack.xml
 // ------------------------------------------------------------------------
 */
 
-/* Skin-in-Template is empty */
+/* JS-in-Template is empty */
