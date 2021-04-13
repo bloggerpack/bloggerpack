@@ -605,7 +605,7 @@ Example:
 
 ## Creating plugins
 
-You just need to write Bloggerpack [template](#template) in a file.
+You just need to write Bloggerpack [template](#template) in a file or use [@bloggerpack/plugin-create](https://github.com/bloggerpack/bloggerpack/tree/main/plugins/create).
 
 Example `my-plugin.xml`:
 
@@ -668,6 +668,10 @@ You can use [@bloggerpack/starter-create](https://github.com/bloggerpack/blogger
 ### Sharing starters
 
 Use the `bloggerpack-starter` keyword within your `package.json` and GitHub topics.
+
+### Official starters
+
+[Bloggerpack starters](https://github.com/bloggerpack/bloggerpack/tree/main/starters)
 
 ## Changelog
 
