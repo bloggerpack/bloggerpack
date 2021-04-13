@@ -1,0 +1,38 @@
+{
+  "name": "stylelint-config-bloggerpack",
+  "version": "0.0.0",
+  "description": "Standard stylelint config for Bloggerpack.",
+  "license": "MIT",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/stylelint-config-bloggerpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerpack/bloggerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerpack/bloggerpack/issues"
+  },
+  "author": {
+    "name": "Igoy Nawamreh",
+    "email": "igoynawamreh@gmail.com",
+    "url": "https://github.com/igoynawamreh"
+  },
+  "keywords": [
+    "bloggerpack",
+    "stylelint",
+    "stylelint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
+  }
+}
