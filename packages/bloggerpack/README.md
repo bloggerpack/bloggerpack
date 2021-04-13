@@ -396,22 +396,22 @@ Write your styles with [Sass](https://sass-lang.com/). You can also import Sass 
 Note: You can omit the `_` prefix and the `.scss` extension.
 
 ```scss
-@import "./my-component";
+@import "my-component";
 ```
 
 It also support glob imports:
 
 ```scss
-@import "./dir/**/*.scss";
+@import "dir/**/*.scss";
 ```
 
 Import from node modules:
 
 ```scss
-@import "package-name"; // node_modules/package-name/<index.scss>
-@import "package-name/dir/file"; // node_modules/package-name/dir/file.scss
+@import "~package-name"; // node_modules/package-name/<index.scss>
+@import "~package-name/dir/file"; // node_modules/package-name/dir/file.scss
 
-// @import "package-name/dir/**/*.scss";
+// @import "~package-name/dir/**/*.scss";
 // Glob import is not supported. You don't need glob import inside node_modules.
 ```
 
