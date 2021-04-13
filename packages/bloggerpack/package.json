@@ -74,7 +74,6 @@
     "prettier": "^2.2.1",
     "rollup": "^2.45.0",
     "rollup-plugin-glob-import": "^0.4.5",
-    "rollup-plugin-multi-input": "^1.2.0",
     "strip-css-comments": "^4.1.0",
     "strip-indent": "^3.0.0",
     "stylelint": "^13.12.0",
