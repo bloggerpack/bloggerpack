@@ -9,14 +9,18 @@
 
 <b:if cond='!data:view.isLayoutMode'>
 <style>
-.my-component{display:flex}
+/*!
+ * My Awesome Plugin
+ */.my-component{display:flex}
 </style>
 </b:if>
 
 <b:if cond='!data:view.isLayoutMode'>
 <b:skin>
 <![CDATA[
-
+/*!
+ * My Awesome Plugin
+ */
 ]]>
 </b:skin>
 </b:if>
@@ -32,6 +36,9 @@
 
 <script>
 //<![CDATA[
+/*!
+ * My Awesome Plugin
+ */
 !function(n){"function"==typeof define&&define.amd?define(n):n()}((function(){}));
 //]]>
 </script>

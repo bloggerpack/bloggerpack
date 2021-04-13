@@ -9,18 +9,9 @@ Once the installation is done, you can run some built-in commands:
 * `npm run build` - Build the plugin.
 * `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
-You can now start to create your awesome Bloggerpack plugin.
-You can start by edit `package.json`.
+You can now start to create your awesome Bloggerpack plugin!
 
 Don't forget to write installation and usage guide in `README.md`.
-
-#
-# Plugin package name
-#
-
-* Note that the `name` in `package.json` is required.
-* And the `name` must start with `bloggerpack-plugin-*` or `@org-name/bloggerpack-plugin-*`
-  (e.g. `bloggerpack-plugin-recent-posts` or `@org-name/bloggerpack-plugin-recent-posts`).
 
 #
 # Documentation

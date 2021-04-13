@@ -1,9 +1,9 @@
-<template to='bp:template'>
+<bp:template>
   <div class='my-component'>My component.</div>
-</template>
+</bp:template>
 
-<style to='bp:sass'>
+<bp:sass>
 .my-component {
   display: flex;
 }
-</style>
+</bp:sass>

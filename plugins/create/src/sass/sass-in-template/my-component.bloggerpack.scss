@@ -1,7 +1,9 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: template/preview.njk
+// Template path: src/my-component.bloggerpack.xml
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+.my-component {
+  display: flex;
+}
