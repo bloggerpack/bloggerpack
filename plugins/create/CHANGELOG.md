@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/plugin-create@1.0.6...@bloggerpack/plugin-create@1.1.0) (2021-04-13)
+
+
+### Features
+
+* **plugin-create:** update to bloggerpack v1.1.1 ([d28ba31](https://github.com/bloggerpack/bloggerpack/commit/d28ba31b57167d12ca41a6eb8d1944e56386cf2f))
+
+
+
+
+
 ## [1.0.6](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/plugin-create@1.0.5...@bloggerpack/plugin-create@1.0.6) (2021-04-13)
 
 **Note:** Version bump only for package @bloggerpack/plugin-create
