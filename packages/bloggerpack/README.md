@@ -647,6 +647,10 @@ const myComponent = document.getElementById('myComponent');
 
 **Note**: You can still use Sass-in-Template, Skin-in-Template, and JS-in-Template without `.bloggerpack.xml` extension, but the assets will not be extracted to the user's theme.
 
+### Sharing plugins
+
+Use the `bloggerpack-plugin` keyword within your `package.json` and GitHub topics.
+
 ### Learn more
 
 Learn how to **include template from node modules** by reading [this section](#including-template-from-node-modules) above.
@@ -656,6 +660,14 @@ Learn how to create **npm package** by reading its [documentation](https://docs.
 ### Official plugins
 
 [Bloggerpack plugins](https://github.com/bloggerpack/bloggerpack/tree/main/plugins)
+
+## Creating starters
+
+You can use [@bloggerpack/starter-create](https://github.com/bloggerpack/bloggerpack/tree/main/starters/create) to create a new starter theme for Bloggerpack.
+
+### Sharing starters
+
+Use the `bloggerpack-starter` keyword within your `package.json` and GitHub topics.
 
 ## Changelog
 
