@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.1.0...bloggerpack@1.1.1) (2021-04-13)
+
+
+### Bug Fixes
+
+* **sass:** revert tilde. The `~` is mandatory and marks the import path as module. ([03a5040](https://github.com/bloggerpack/bloggerpack/commit/03a5040284673b746bc5c4f1f2dd975c8c0c598e))
+
+
+
+
+
 # [1.1.0](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.0.0...bloggerpack@1.1.0) (2021-04-13)
 
 
