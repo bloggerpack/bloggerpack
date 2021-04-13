@@ -1,0 +1,15 @@
+<bp:template>
+  {% extends "./layout.xml" %}
+
+  {% block header %}
+    {% template "./template-parts/header.xml" %}
+  {% endblock %}
+
+  {% block content %}
+    {% template "./template-parts/content.xml" %}
+  {% endblock %}
+
+  {% block footer %}
+    {% template "./template-parts/footer.xml" %}
+  {% endblock %}
+</bp:template>

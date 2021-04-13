@@ -1,7 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: src/template/footer.njk
+// Template path: src/template-parts/content.xml
 // ------------------------------------------------------------------------
 */
 
-/* Skin-in-Template is empty */
+/* JS-in-Template is empty */

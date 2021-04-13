@@ -1,4 +1,4 @@
-<template to='bp:template'>
+<bp:template>
   <header>
     <h1>
       <a expr:href='data:blog.homepageUrl'>
@@ -6,4 +6,4 @@
       </a>
     </h1>
   </header>
-</template>
+</bp:template>

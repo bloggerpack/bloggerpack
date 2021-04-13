@@ -1,5 +1,5 @@
-<template to='bp:template'>
+<bp:template>
   <footer>
     <p>Footer.</p>
   </footer>
-</template>
+</bp:template>
