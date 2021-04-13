@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-bloggerpack",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Standard stylelint config for Bloggerpack.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/stylelint-config-bloggerpack#readme",
