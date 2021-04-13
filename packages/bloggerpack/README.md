@@ -39,12 +39,12 @@ Use [starter themes](https://github.com/bloggerpack/bloggerpack/tree/main/starte
 |   |   ├── skin-in-template/ (g)         |   |  # (>-) = Source
 |   |   └── index.css >-------------------^   |  # (c)  = Config file
 |   └── index.xml >---------------------------^  # (g)  = Auto-generated
-├── .browserslistrc (c)
-├── .eslintrc.json  (c)
-├── .stylelintrc    (c)
-├── banner.txt      (c)
-├── data.json       (c)
-└── package.json    (c)
+├── .browserslistrc   (c)
+├── .eslintrc.json    (c)
+├── .stylelintrc.json (c)
+├── banner.txt        (c)
+├── data.json         (c)
+└── package.json      (c)
 ```
 
 #### Config files
@@ -57,7 +57,7 @@ The config to share target browsers. Learn more about [Browserslist](https://git
 
 The default config is recommended, but if you want to change the config you can read the [ESLint docs](https://eslint.org/docs/user-guide/configuring).
 
-##### `.stylelintrc`
+##### `.stylelintrc.json`
 
 The default config is recommended, but if you want to change the config you can read the [Stylelint docs](https://stylelint.io/user-guide/configure).
 

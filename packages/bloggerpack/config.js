@@ -1,7 +1,7 @@
 module.exports = {
   configFile: {
     eslint: './.eslintrc.json',
-    stylelint: './.stylelintrc',
+    stylelint: './.stylelintrc.json',
     banner: './banner.txt',
     data: './data.json'
   },
