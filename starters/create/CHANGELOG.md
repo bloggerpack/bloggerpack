@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.1.0...@bloggerpack/starter-create@1.1.1) (2021-04-16)
+
+
+### Bug Fixes
+
+* **deps:** forgot to update deps in `package.json.template` ([d060246](https://github.com/bloggerpack/bloggerpack/commit/d060246a0e39415ba9556e2ff11675fabda4892b))
+
+
+
+
+
 # [1.1.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.0.6...@bloggerpack/starter-create@1.1.0) (2021-04-13)
 
 
