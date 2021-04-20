@@ -1,9 +1,9 @@
 {
-  "name": "eslint-config-bloggerpack",
-  "version": "1.0.0",
+  "name": "@bloggerpack/eslint-config",
+  "version": "0.0.0",
   "description": "Standard eslint config for Bloggerpack.",
   "license": "MIT",
-  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/packages/eslint-config-bloggerpack#readme",
+  "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/plugins/eslint-config#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/bloggerpack/bloggerpack.git"
@@ -15,6 +15,9 @@
     "name": "Igoy Nawamreh",
     "email": "igoynawamreh@gmail.com",
     "url": "https://github.com/igoynawamreh"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "bloggerpack",
