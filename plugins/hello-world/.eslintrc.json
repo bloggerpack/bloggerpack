@@ -1,4 +1,4 @@
 {
   "root": true,
-  "extends": "eslint-config-bloggerpack"
+  "extends": "@bloggerpack/eslint-config"
 }

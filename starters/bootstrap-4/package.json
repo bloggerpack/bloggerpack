@@ -38,8 +38,8 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "bloggerpack": "^1.1.1",
-    "eslint-config-bloggerpack": "^1.0.0",
-    "stylelint-config-bloggerpack": "^1.0.0"
+    "@bloggerpack/eslint-config": "^1.0.0",
+    "@bloggerpack/stylelint-config": "^1.0.0",
+    "bloggerpack": "^1.1.1"
   }
 }
