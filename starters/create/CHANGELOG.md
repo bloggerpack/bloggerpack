@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.1.1...@bloggerpack/starter-create@1.2.0) (2021-04-21)
+
+
+### Features
+
+* update eslint and stylelint to use `@bloggerpack/eslint-config` and `@bloggerpack/stylelint-config` ([e52c734](https://github.com/bloggerpack/bloggerpack/commit/e52c73445c7cdb99b3ec34eef44ecc9c28d63bcf))
+
+
+
+
+
 ## [1.1.1](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-create@1.1.0...@bloggerpack/starter-create@1.1.1) (2021-04-16)
 
 

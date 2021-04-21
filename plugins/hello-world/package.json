@@ -1,6 +1,6 @@
 {
   "name": "@bloggerpack/plugin-hello-world",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Hello world plugin for Bloggerpack.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/plugins/hello-world#readme",
