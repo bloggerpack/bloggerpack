@@ -32,8 +32,8 @@
     "watch": "bloggerpack --mode development --watch"
   },
   "devDependencies": {
-    "@bloggerpack/eslint-config": "^1.0.1",
-    "@bloggerpack/stylelint-config": "^1.0.1",
-    "bloggerpack": "^1.2.0"
+    "@bloggerpack/eslint-config": "1.0.1",
+    "@bloggerpack/stylelint-config": "1.0.1",
+    "bloggerpack": "1.2.0"
   }
 }
