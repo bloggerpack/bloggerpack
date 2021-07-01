@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.1.1...bloggerpack@1.2.0) (2021-07-01)
+
+
+### Bug Fixes
+
+* fix skin src ([340fe01](https://github.com/bloggerpack/bloggerpack/commit/340fe010f25b915ec2a8180a13c3d5849b1e7a4a))
+
+
+### Features
+
+* **deps:** Bump dependencies ([886391f](https://github.com/bloggerpack/bloggerpack/commit/886391fcad6cde8bffa1e1152b0faf88d9578567))
+* use rollup globals ([59546da](https://github.com/bloggerpack/bloggerpack/commit/59546da33e724e2a156dabe11237caa54a84413f))
+
+
+
+
+
 ## [1.1.1](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.1.0...bloggerpack@1.1.1) (2021-04-13)
 
 

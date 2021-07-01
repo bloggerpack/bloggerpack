@@ -1,6 +1,6 @@
 {
   "name": "@bloggerpack/plugin-create",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Plugin for creating new Bloggerpack plugin.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/plugins/create#readme",
@@ -31,8 +31,8 @@
     "watch": "bloggerpack --mode development --watch"
   },
   "devDependencies": {
-    "@bloggerpack/eslint-config": "1.0.0",
-    "@bloggerpack/stylelint-config": "1.0.0",
-    "bloggerpack": "1.1.1"
+    "@bloggerpack/eslint-config": "^1.0.1",
+    "@bloggerpack/stylelint-config": "^1.0.1",
+    "bloggerpack": "^1.2.0"
   }
 }
