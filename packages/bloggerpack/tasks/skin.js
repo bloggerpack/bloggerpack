@@ -91,7 +91,7 @@ skinRegistry.prototype.init = function(gulpInst) {
       configFile: path.join(process.cwd(), config.configFile.stylelint)
     },
     compile: {
-      src: path.join(opts.src.dir, opts.src.filename),
+      src: path.join(process.cwd(), opts.src.dir, opts.src.filename),
       dest: path.join(process.cwd(), opts.build.dir),
       banner: {
         text: path.join(process.cwd(), config.configFile.banner),
