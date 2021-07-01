@@ -32,14 +32,14 @@
     "watch": "bloggerpack --mode development --watch"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.0",
-    "bootstrap": "^4.6.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "@fortawesome/fontawesome-free": "5.15.0",
+    "bootstrap": "4.6.0",
+    "jquery": "3.5.1",
+    "popper.js": "1.16.1"
   },
   "devDependencies": {
-    "@bloggerpack/eslint-config": "^1.0.0",
-    "@bloggerpack/stylelint-config": "^1.0.0",
-    "bloggerpack": "^1.1.1"
+    "@bloggerpack/eslint-config": "1.0.0",
+    "@bloggerpack/stylelint-config": "1.0.0",
+    "bloggerpack": "1.1.1"
   }
 }

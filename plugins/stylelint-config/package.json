@@ -29,13 +29,13 @@
     "index.js"
   ],
   "dependencies": {
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-recommended-scss": "4.2.0",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.19.0"
   },
   "peerDependencies": {
-    "stylelint": "^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
+    "stylelint": "10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
   }
 }

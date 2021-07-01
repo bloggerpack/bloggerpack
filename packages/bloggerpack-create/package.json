@@ -36,13 +36,13 @@
     "bloggerpack-create": "cli.js"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "decompress": "^4.2.1",
-    "get-stream": "^6.0.0",
-    "got": "^11.8.1",
-    "latest-version": "^5.1.0",
-    "p-event": "^4.2.0",
-    "validate-npm-package-name": "^3.0.0",
-    "yargs": "^16.2.0"
+    "chalk": "4.1.0",
+    "decompress": "4.2.1",
+    "get-stream": "6.0.0",
+    "got": "11.8.1",
+    "latest-version": "5.1.0",
+    "p-event": "4.2.0",
+    "validate-npm-package-name": "3.0.0",
+    "yargs": "16.2.0"
   }
 }
