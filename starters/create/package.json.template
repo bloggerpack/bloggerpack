@@ -9,7 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "@bloggerpack/eslint-config": "1.0.1",
-    "@bloggerpack/stylelint-config": "1.0.1",
+    "@bloggerpack/stylelint-config": "1.0.2",
     "bloggerpack": "1.2.0"
   }
 }
