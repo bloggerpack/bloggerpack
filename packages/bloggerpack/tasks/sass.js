@@ -17,8 +17,7 @@ const stylelint = require('gulp-stylelint');
 const header = require('gulp-header');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const cleancss = require('gulp-clean-css');
 const trim =  require('../lib/trim');
 
