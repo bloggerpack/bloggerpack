@@ -21,6 +21,7 @@ const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const globImport = require('rollup-plugin-glob-import');
+const globals = require('rollup-plugin-node-globals');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const terser = require('gulp-terser');
@@ -180,7 +181,8 @@ jsRegistry.prototype.init = function (gulpInst) {
           }),
           nodeResolve(),
           commonjs(),
-          globImport()
+          globImport(),
+          globals()
         ]
       })
         .pipe(source(path.basename(entry)))
