@@ -1,5 +1,5 @@
-<template test='template'>
-  {% extends "./layout.xml" %}
+<template-start>
+  {% extends "./parent.xml" %}
 
   {% block main %}
     {% template "./template-main.xml" %}
@@ -8,4 +8,40 @@
   {% block sidebar %}
     {% template "./template-sidebar.xml" %}
   {% endblock %}
-</template>
+
+  {% block override %}
+    <div>123</div>
+  {% endblock %}
+
+  {% block super1 %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block super2 -%}
+    <div>before</div>
+    {{ super() }}
+    <div>after</div>
+  {%- endblock %}
+
+  {% block super3 -%}
+    <div>before</div>
+
+    {{ super() }}
+
+    <div>after</div>
+  {%- endblock %}
+
+  {% block super4 %}
+    {% template "./template-before.xml" %}
+    {{ super() }}
+    {% template "./template-after.xml" %}
+  {% endblock %}
+
+  {% block super5 %}
+    {% template "./template-before.xml" %}
+
+    {{ super() }}
+
+    {% template "./template-after.xml" %}
+  {% endblock %}
+</template-end>

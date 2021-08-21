@@ -1,9 +1,21 @@
 /*!
- * Name         : Theme name
+ * Theme Name   : Skin task
+ * Package Name : skin-task
  * Version      : 1.0
- * Package name : test
  */
 
-.example-bar-baz {
+/*
+<Variable name="color"
+    description="Color example"
+    type="color"
+    default="#000"
+    value="#000"/>
+*/
+
+.skin-bar {
+  color: $(color);
+}
+
+.skin-baz {
   color: $(color);
 }

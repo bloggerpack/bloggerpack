@@ -1,5 +1,0 @@
-<extract-start>
-  <bar>bar</bar>
-
-          <bar>bar</bar>
-</extract-end>

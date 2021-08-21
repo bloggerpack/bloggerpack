@@ -1,3 +1,0 @@
-/* src/same-tag/dir/bar.txt */
-
-bar

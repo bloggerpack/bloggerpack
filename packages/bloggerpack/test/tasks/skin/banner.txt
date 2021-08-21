@@ -1,5 +1,5 @@
 /*!
- * Name         : <%= data.theme.name %>
+ * Theme Name   : <%= data.theme.name %>
+ * Package Name : <%= pkg.name %>
  * Version      : <%= data.theme.version %>
- * Package name : <%= pkg.name %>
  */

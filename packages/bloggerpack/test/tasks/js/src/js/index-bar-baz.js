@@ -1,1 +1,2 @@
-import './example-bar-baz';
+import './bar';
+import './baz';

@@ -1,5 +1,5 @@
 /*!
- * Name         : Theme name
+ * Theme Name   : Plugin test
+ * Package Name : plugin-test
  * Version      : 1.0
- * Package name : test
- */.plugin-sass-index{display:block}.plugin-sass-part-foo{display:block}.plugin-sass-part-bar{display:block}.plugin-sass-part-dir-foo{display:block}.plugin-sass-part-dir-bar{display:block}.example{display:block}.org-plugin-test-template1{display:block}.plugin-test-template1{display:block}.plugin-test-template2{display:block}
+ */.plugin-sass-index{display:block}.plugin-sass-partial-foo{display:block}.plugin-sass-partial-bar{display:block}.plugin-sass-partial-dir-foo{display:block}.plugin-sass-partial-dir-bar{display:block}.org-plugin-template-bar{display:block}.org-plugin-template-baz{display:block}.org-plugin-template-foo{display:block}.org-plugin-template-parts-x2{display:block}.plugin-template-bar{display:block}.plugin-template-baz{display:block}.plugin-template-foo{display:block}.plugin-template-parts-x{display:block}

@@ -1,3 +1,4 @@
 import 'plugin-js';
-import './example';
+import 'plugin-js/partial/index';
+import './math';
 import './js-in-template/**/*.js';

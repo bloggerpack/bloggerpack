@@ -1,0 +1,51 @@
+<template-start>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+
+  <aside>
+    {% block sidebar %}{% endblock %}
+  </aside>
+
+  <section>
+    {% block default %}
+      <div>default</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block override %}
+      <div>abc</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block super1 %}
+      <div>foo</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block super2 %}
+      <div>bar</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block super3 %}
+      <div>baz</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block super4 %}
+      <div>qux</div>
+    {% endblock %}
+  </section>
+
+  <section>
+    {% block super5 %}
+      <div>quux</div>
+    {% endblock %}
+  </section>
+</template-end>

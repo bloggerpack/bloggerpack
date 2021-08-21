@@ -30,11 +30,10 @@ Our [package.json](../package.json) includes the following commands for develop 
 
 | Command | Description |
 | ------- | ----------- |
-| `npm run test` | Lint, tests, and build all packages. |
-| `npm run lint` | Lint JS files. |
-| `npm run bloggerpack` | Tests and build Bloggerpack. |
-| `npm run starters` | Tests and build all starter themes. |
-| `npm run plugins` | Tests and build all plugins. |
+| `npm test`  | Lint JS files and tests all packages. |
+| `npm run build` | Build all starters and plugins. |
+| `npm run build:starters` | Build all starters. |
+| `npm run build:plugins`  | Build all plugins. |
 
 You may need to run specific command, please see our [package.json](../package.json) or run `npm run` to see all the npm scripts.
 
@@ -43,22 +42,29 @@ You may need to run specific command, please see our [package.json](../package.j
 Install `<package>` in `dependencies`:
 
 ```bash
-$ npx lerna add <package> --scope=<name> --no-bootstrap
+$ npm run add -- --package="<package>" --to="<name>"
 ```
 
 or install `<package>` in `devDependencies`:
 
 ```bash
-$ npx lerna add <package> --scope=<name> --dev --no-bootstrap
+$ npm run add -- --package="<package>" --to="<name>" --type="dev"
 ```
 
-and then:
+or install `<package>` in `peerDependencies`:
 
 ```bash
-$ npm run bootstrap
+$ npm run add -- --package="<package>" --to="<name>" --type="peer"
 ```
 
-Where `<package>` is the name of the NPM package you wish to add, and `<name>` is the proper name of the Bloggerpack's packages (e.g., `@bloggerpack/starter-create`).
+Where `<package>` is the name of the NPM package you wish to add, and `<name>` is the proper name of the Bloggerpack's packages (e.g., `@bloggerpack/starter-blank`).
+
+Example:
+
+```bash
+$ npm run add -- --package="foo" --to="@bloggerpack/starter-blank"
+$ npm run add -- --package="foo" --to="{@bloggerpack/starter-blank, @bloggerpack/starter-create}"
+```
 
 ## Pull requests
 

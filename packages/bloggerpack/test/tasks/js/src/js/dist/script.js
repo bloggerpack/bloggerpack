@@ -1,6 +1,6 @@
 /*!
- * Name         : Theme name
+ * Theme Name   : JS task
+ * Package Name : js-task
  * Version      : 1.0
- * Package name : test
  */
-!function(e){"function"==typeof define&&define.amd?define(e):e()}((function(){"use strict";console.log("Example"),console.log("JS in template 1"),console.log("JS in template 2")}));
+!function(e){"function"==typeof define&&define.amd?define(e):e()}((function(){"use strict";console.log("Template bar"),console.log("Template foo")}));

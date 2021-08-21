@@ -2,14 +2,14 @@
   <main>
     <div>
       <div>Main content</div>
-      <div>x = 10</div>
-      <div>Package name = test</div>
+      <div>Data x = 10</div>
     </div>
   </main>
 
   <aside>
     <div>
       <div>Sidebar content</div>
+      <div>Package name = template-task</div>
     </div>
   </aside>
 </div>

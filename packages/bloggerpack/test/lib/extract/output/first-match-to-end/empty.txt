@@ -1,3 +1,0 @@
-/* src/first-match-to-end/empty.txt */
-
-/* Empty */

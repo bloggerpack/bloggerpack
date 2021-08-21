@@ -1,9 +1,9 @@
-<template test='template'>
+<template-start>
   <div>
     {% template "./template-a.xml" %}
     {% template "template-b.xml" %}
-    {% template "./example-dir/template-c.xml" %}
-    {% template "example-dir/template-d.xml" %}
-    {% template "./example-dir/template-abcd.xml" %}
+    {% template "./dir/template-c.xml" %}
+    {% template "dir/template-d.xml" %}
+    {% template "./dir/template-abcd.xml" %}
   </div>
-</template>
+</template-end>

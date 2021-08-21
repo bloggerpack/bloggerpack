@@ -1,0 +1,17 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: node_modules/@org/plugin-template/baz.bloggerpack.xml
+// ------------------------------------------------------------------------
+*/
+
+/*
+<Variable name="org.plugin.template.baz.color"
+    description="Org Plugin Template Baz Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.org-plugin-template-baz {
+  color: $(org.plugin.template.baz.color);
+}

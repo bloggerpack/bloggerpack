@@ -1,4 +1,4 @@
-<template test='template'>
+<template-start>
   {% asset %}
     <b:if cond='!data:view.isLayoutMode'>
     <style>
@@ -24,4 +24,4 @@
       {% endasset %}
     </div>
   </div>
-</template>
+</template-end>

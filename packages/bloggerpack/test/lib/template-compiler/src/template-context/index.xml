@@ -1,6 +1,6 @@
-<template test='template'>
+<template-start>
   <p>{{ var1 }}</p>
   <p>{{ var2 }}</p>
-  <p>{{ var3.var3a }}</p>
-  <p>{{ var3.var3b }}</p>
-</template>
+  <p>{{ var3.a }}</p>
+  <p>{{ var3["b"] }}</p>
+</template-end>

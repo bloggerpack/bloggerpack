@@ -1,4 +1,5 @@
 const { src, dest, series } = require('gulp');
+const rename = require('gulp-rename');
 const debug = require('gulp-debug');
 const del = require('del');
 
@@ -6,148 +7,160 @@ const extract = require('../../../lib/extract');
 
 // ===
 
-function test_defaults() {
-  return src('src/defaults/**/*.txt', { allowEmpty: true })
+function test_optionDefaults() {
+  return src('src/foo.txt', { allowEmpty: true })
     .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/defaults', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-defaults'
+    }))
+    .pipe(dest('output', { overwrite: true }));
+}
+
+function test_optionDefaultsEmpty() {
+  return src('src/empty.txt', { allowEmpty: true })
+    .pipe(extract())
+    .pipe(debug())
+    .pipe(rename({
+      basename: 'option-defaults-empty'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
-function test_tag() {
+function test_optionTag() {
   const options = {
-    start: '<example>',
-    end: '</example>'
+    start: '<tag-start>',
+    end: '</tag-end>'
   };
-  return src('src/tag/**/*.txt', { allowEmpty: true })
+  return src('src/custom-tag.txt', { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
-    .pipe(dest('output/tag', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-tag'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
-function test_header() {
+function test_optionHeader() {
   const options = {
     header: `
       /* Header: <filepath> */
     `
   };
-  return src('src/header/**/*.txt', { allowEmpty: true })
+  return src('src/foo.txt', { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
-    .pipe(dest('output/header', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-header'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
-function test_footer() {
+function test_optionFooter() {
   const options = {
     footer: `
       /* Footer: <filepath> */
     `
   };
-  return src('src/footer/**/*.txt', { allowEmpty: true })
+  return src('src/foo.txt', { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
-    .pipe(dest('output/footer', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-footer'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
-function test_extname() {
+function test_optionExtname() {
   const options = {
     extname: '.test'
   };
-  return src('src/extname/**/*.txt', { allowEmpty: true })
+  return src('src/foo.txt', { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
-    .pipe(dest('output/extname', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-extname'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
-function test_emptyMessage() {
+function test_optionEmptyMessage() {
   const options = {
     emptyMessage: `
       /* Extract is empty */
     `
   };
-  return src('src/empty-message/**/*.txt', { allowEmpty: true })
+  return src('src/empty.txt', { allowEmpty: true })
     .pipe(extract(options))
     .pipe(debug())
-    .pipe(dest('output/empty-message', { overwrite: true }));
+    .pipe(rename({
+      basename: 'option-emptymessage'
+    }))
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_sameTag() {
-  const options = {
-    start: '<example>',
-    end: '</end>'
-  };
-  return src('src/same-tag/**/*.txt', { allowEmpty: true })
-    .pipe(extract(options))
+  return src('src/same-tag.txt', { allowEmpty: true })
+    .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/same-tag', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_sameStartTag() {
-  const options = {
-    start: '<example>',
-    end: '</end>'
-  };
-  return src('src/same-start-tag/**/*.txt', { allowEmpty: true })
-    .pipe(extract(options))
+  return src('src/same-start-tag.txt', { allowEmpty: true })
+    .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/same-start-tag', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_sameEndTag() {
-  const options = {
-    start: '<example>',
-    end: '</end>'
-  };
-  return src('src/same-end-tag/**/*.txt', { allowEmpty: true })
-    .pipe(extract(options))
+  return src('src/same-end-tag.txt', { allowEmpty: true })
+    .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/same-end-tag', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_firstMatchToEnd() {
-  const options = {
-    start: '<example>',
-    end: '</end>'
-  };
-  return src('src/first-match-to-end/**/*.txt', { allowEmpty: true })
-    .pipe(extract(options))
+  return src('src/first-match-to-end.txt', { allowEmpty: true })
+    .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/first-match-to-end', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_newline() {
-  return src('src/newline/**/*.txt', { allowEmpty: true })
+  return src('src/newline.txt', { allowEmpty: true })
     .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/newline', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
 
 function test_space() {
-  return src('src/space/**/*.txt', { allowEmpty: true })
+  return src('src/space.txt', { allowEmpty: true })
     .pipe(extract())
     .pipe(debug())
-    .pipe(dest('output/space', { overwrite: true }));
+    .pipe(dest('output', { overwrite: true }));
 }
 
 // ===
@@ -160,12 +173,13 @@ function clean(cb) {
 // gulp build --gulpfile packages/bloggerpack/test/lib/extract/gulpfile.js
 exports.build = series(
   clean,
-  test_defaults,
-  test_tag,
-  test_header,
-  test_footer,
-  test_extname,
-  test_emptyMessage,
+  test_optionDefaults,
+  test_optionDefaultsEmpty,
+  test_optionTag,
+  test_optionHeader,
+  test_optionFooter,
+  test_optionExtname,
+  test_optionEmptyMessage,
   test_sameTag,
   test_sameStartTag,
   test_sameEndTag,

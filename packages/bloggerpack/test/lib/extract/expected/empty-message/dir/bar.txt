@@ -1,3 +1,0 @@
-/* src/empty-message/dir/bar.txt */
-
-bar

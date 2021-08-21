@@ -1,3 +1,0 @@
-/* src/same-tag/empty.txt */
-
-/* Empty */

@@ -1,3 +1,0 @@
-/* src/same-start-tag/foo.txt */
-
-foo

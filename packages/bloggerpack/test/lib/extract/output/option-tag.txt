@@ -1,0 +1,3 @@
+/* src/custom-tag.txt */
+
+foo

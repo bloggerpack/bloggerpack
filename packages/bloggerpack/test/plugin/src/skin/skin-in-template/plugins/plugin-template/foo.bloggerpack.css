@@ -1,0 +1,17 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: node_modules/plugin-template/foo.bloggerpack.xml
+// ------------------------------------------------------------------------
+*/
+
+/*
+<Variable name="plugin.template.foo.color"
+    description="Plugin Template Foo Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-foo {
+  color: $(plugin.template.foo.color);
+}

@@ -24,4 +24,16 @@
   </div>
 </div>
 
+<div>
+  <div>
+<script>
+//<![CDATA[
+console.log('script 1');
+
+console.log('script 2');
+//]]>
+</script>
+  </div>
+</div>
+
 <div>test</div>

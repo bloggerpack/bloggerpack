@@ -1,4 +1,19 @@
 <bp:template>
-  {% template "@org/plugin-test/src/template1.bloggerpack.xml" %}
-  {% template "plugin-test/src/template1.bloggerpack.xml" %}
+  <div>
+    {% template "@org/plugin-template/foo.bloggerpack.xml" %}
+
+    {% import "@org/plugin-template/bar.bloggerpack.xml" as orgBar %}
+    {{ orgBar.hello('Bloggerpack') }}
+
+    {% template "@org/plugin-template/baz.bloggerpack.xml" %}
+  </div>
+
+  <div>
+    {% template "plugin-template/foo.bloggerpack.xml" %}
+
+    {% import "plugin-template/bar.bloggerpack.xml" as bar %}
+    {{ bar.hello('Bloggerpack') }}
+
+    {% template "plugin-template/baz.bloggerpack.xml" %}
+  </div>
 </bp:template>

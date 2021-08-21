@@ -1,0 +1,6 @@
+<bp:sass>
+.template-bar {
+  display: block;
+  color: $color;
+}
+</bp:sass>

@@ -6,7 +6,7 @@ const trim = require('../../../lib/trim');
 
 function test() {
   return src([
-    'src/example.txt'
+    'src/foo.txt'
   ], { allowEmpty: true })
     .pipe(trim())
     .pipe(debug())

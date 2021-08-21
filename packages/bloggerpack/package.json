@@ -31,6 +31,20 @@
   "bin": {
     "bloggerpack": "bin.js"
   },
+  "scripts": {
+    "test": "npm-run-all test:lib test:tasks test:plugin && mocha",
+    "test:lib": "npm-run-all --serial test:lib:*",
+    "test:lib:extract": "gulp build --gulpfile test/lib/extract/gulpfile.js",
+    "test:lib:skin-import-beautifier": "gulp build --gulpfile test/lib/skin-import-beautifier/gulpfile.js",
+    "test:lib:template-compiler": "gulp build --gulpfile test/lib/template-compiler/gulpfile.js",
+    "test:lib:trim": "gulp build --gulpfile test/lib/trim/gulpfile.js",
+    "test:tasks": "npm-run-all --serial test:tasks:*",
+    "test:tasks:js": "gulp build --gulpfile test/tasks/js/gulpfile.js",
+    "test:tasks:sass": "gulp build --gulpfile test/tasks/sass/gulpfile.js",
+    "test:tasks:skin": "gulp build --gulpfile test/tasks/skin/gulpfile.js",
+    "test:tasks:template": "gulp build --gulpfile test/tasks/template/gulpfile.js",
+    "test:plugin": "cd test/plugin && node ../../bin.js --gulpfile ../../gulpfile.js --cwd ."
+  },
   "dependencies": {
     "@babel/core": "7.14.6",
     "@babel/eslint-parser": "7.14.7",
@@ -85,5 +99,9 @@
     "vinyl-buffer": "1.0.1",
     "vinyl-fs": "3.0.3",
     "vinyl-source-stream": "2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "9.0.3",
+    "should": "13.2.3"
   }
 }

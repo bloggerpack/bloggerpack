@@ -1,3 +1,0 @@
-<extract-start>
-bar
-</extract-end>

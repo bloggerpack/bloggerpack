@@ -1,3 +1,0 @@
-/* Header: src/header/dir/bar.txt */
-
-bar

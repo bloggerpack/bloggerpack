@@ -1,6 +1,0 @@
-<bp:skin>
-.skin-in-template1 {
-  display: block;
-  color: $(color);
-}
-</bp:skin>

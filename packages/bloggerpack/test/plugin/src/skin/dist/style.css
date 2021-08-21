@@ -1,26 +1,26 @@
 /*!
- * Name         : Theme name
+ * Theme Name   : Plugin test
+ * Package Name : plugin-test
  * Version      : 1.0
- * Package name : test
  */
 
 .plugin-skin-index {
   display: block;
 }
 
-.plugin-skin-part-foo {
+.plugin-skin-partial-foo {
   display: block;
 }
 
-.plugin-skin-part-bar {
+.plugin-skin-partial-bar {
   display: block;
 }
 
-.plugin-skin-part-dir-foo {
+.plugin-skin-partial-dir-foo {
   display: block;
 }
 
-.plugin-skin-part-dir-bar {
+.plugin-skin-partial-dir-bar {
   display: block;
 }
 
@@ -48,18 +48,98 @@
   display: block;
 }
 
-.example {
-  display: block;
+/*
+<Variable name="org.plugin.template.bar.color"
+    description="Org Plugin Template Bar Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.org-plugin-template-bar {
+  color: $(org.plugin.template.bar.color);
 }
 
-.org-plugin-test-template1 {
-  display: block;
+/*
+<Variable name="org.plugin.template.baz.color"
+    description="Org Plugin Template Baz Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.org-plugin-template-baz {
+  color: $(org.plugin.template.baz.color);
 }
 
-.plugin-test-template1 {
-  display: block;
+/*
+<Variable name="org.plugin.template.foo.color"
+    description="Org Plugin Template Foo Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.org-plugin-template-foo {
+  color: $(org.plugin.template.foo.color);
 }
 
-.plugin-test-template2 {
-  display: block;
+/*
+<Variable name="org.plugin.template.parts.x2.color"
+    description="Org Plugin Template Parts X2 Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.org-plugin-template-parts-x2 {
+  color: $(org.plugin.template.parts.x2.color);
+}
+
+/*
+<Variable name="plugin.template.bar.color"
+    description="Plugin Template Bar Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-bar {
+  color: $(plugin.template.bar.color);
+}
+
+/*
+<Variable name="plugin.template.baz.color"
+    description="Plugin Template Baz Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-baz {
+  color: $(plugin.template.baz.color);
+}
+
+/*
+<Variable name="plugin.template.foo.color"
+    description="Plugin Template Foo Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-foo {
+  color: $(plugin.template.foo.color);
+}
+
+/*
+<Variable name="plugin.template.parts.x.color"
+    description="Plugin Template Parts X Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-parts-x {
+  color: $(plugin.template.parts.x.color);
 }

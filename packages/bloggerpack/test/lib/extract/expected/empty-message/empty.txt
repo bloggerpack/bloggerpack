@@ -1,3 +1,0 @@
-/* src/empty-message/empty.txt */
-
-/* Extract is empty */

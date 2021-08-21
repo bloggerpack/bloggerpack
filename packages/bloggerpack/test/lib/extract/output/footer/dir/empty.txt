@@ -1,5 +1,0 @@
-/* src/footer/dir/empty.txt */
-
-/* Empty */
-
-/* Footer: src/footer/dir/empty.txt */

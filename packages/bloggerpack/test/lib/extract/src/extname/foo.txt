@@ -1,3 +1,0 @@
-<extract-start>
-foo
-</extract-end>

@@ -1,5 +1,5 @@
-<template test='template'>
+<template-start>
   <div>
     <div>Sidebar content</div>
   </div>
-</template>
+</template-end>

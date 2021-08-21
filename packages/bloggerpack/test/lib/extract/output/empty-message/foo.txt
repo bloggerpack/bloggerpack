@@ -1,3 +1,0 @@
-/* src/empty-message/foo.txt */
-
-foo

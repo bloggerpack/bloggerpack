@@ -1,3 +1,0 @@
-/* src/space/dir/empty.txt */
-
-/* Empty */

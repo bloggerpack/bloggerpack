@@ -1,13 +1,53 @@
-<div>
-  <main>
-    <div>
-      <div>Main content</div>
-    </div>
-  </main>
+<main>
+  <div>
+    <div>Main content</div>
+  </div>
+</main>
 
-  <aside>
-    <div>
-      <div>Sidebar content</div>
-    </div>
-  </aside>
-</div>
+<aside>
+  <div>
+    <div>Sidebar content</div>
+  </div>
+</aside>
+
+<section>
+  <div>default</div>
+</section>
+
+<section>
+  <div>123</div>
+</section>
+
+<section>
+  <div>foo</div>
+</section>
+
+<section>
+  <div>before</div>
+  <div>bar</div>
+
+  <div>after</div>
+</section>
+
+<section>
+  <div>before</div>
+
+  <div>baz</div>
+
+  <div>after</div>
+</section>
+
+<section>
+  <div>before</div>
+  <div>qux</div>
+
+  <div>after</div>
+</section>
+
+<section>
+  <div>before</div>
+
+  <div>quux</div>
+
+  <div>after</div>
+</section>

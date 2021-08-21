@@ -36,5 +36,5 @@ jobs:
       - name: Lerna bootstrap
         run: npm run bootstrap
 
-      - name: Tests and build plugins
-        run: npm run plugins
+      - name: Build all plugins
+        run: npm run build:plugins

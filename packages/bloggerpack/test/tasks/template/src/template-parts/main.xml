@@ -1,0 +1,6 @@
+<bp:template>
+  <div>
+    <div>Main content</div>
+    <div>Data x = {{ data.x }}</div>
+  </div>
+</bp:template>

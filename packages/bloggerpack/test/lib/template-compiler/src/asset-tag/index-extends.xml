@@ -1,7 +1,19 @@
-<template test='template'>
+<template-start>
   {% extends "./in-extends.xml" %}
+
+  {% block asset %}
+    {% asset %}
+      <script>
+      //<![CDATA[
+      {% asset "./script1.js" %}
+
+      {% asset './script2.js' %}
+      //]]>
+      </script>
+    {% endasset %}
+  {% endblock %}
 
   {% block test %}
     <div>test</div>
   {% endblock %}
-</template>
+</template-end>

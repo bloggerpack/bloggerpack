@@ -86,16 +86,16 @@ package.json
 ```json
 {
   "scripts": {
-    "build": "bloggerpack --mode production",
-    "watch": "bloggerpack --mode development --watch"
+    "start": "bloggerpack --mode production --watch",
+    "build": "bloggerpack --mode production"
   }
 }
 ```
 
 You’ll be able to run:
 
+- `npm start` - Watches the source files and automatically building them whenever you save.
 - `npm run build` - Build the theme.
-- `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
 #### Available flags
 

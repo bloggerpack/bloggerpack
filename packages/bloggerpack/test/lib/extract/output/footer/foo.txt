@@ -1,5 +1,0 @@
-/* src/footer/foo.txt */
-
-foo
-
-/* Footer: src/footer/foo.txt */

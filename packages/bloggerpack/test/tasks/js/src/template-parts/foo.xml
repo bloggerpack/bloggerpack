@@ -1,0 +1,3 @@
+<bp:js>
+console.log('Template foo');
+</bp:js>

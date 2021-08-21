@@ -1,0 +1,3 @@
+<bp:js>
+console.log('Template bar');
+</bp:js>

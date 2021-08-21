@@ -1,3 +1,0 @@
-/* src/newline/foo.txt */
-
-foo

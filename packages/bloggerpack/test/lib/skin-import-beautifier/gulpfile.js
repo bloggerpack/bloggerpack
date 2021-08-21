@@ -6,7 +6,7 @@ const skinImportBeautifier =  require('../../../lib/skin-import-beautifier');
 
 function test() {
   return src([
-    'src/example.css'
+    'src/foo.css'
   ], { allowEmpty: true })
     .pipe(skinImportBeautifier())
     .pipe(debug())

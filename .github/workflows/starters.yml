@@ -36,5 +36,5 @@ jobs:
       - name: Lerna bootstrap
         run: npm run bootstrap
 
-      - name: Tests and build starters
-        run: npm run starters
+      - name: Build all starters
+        run: npm run build:starters

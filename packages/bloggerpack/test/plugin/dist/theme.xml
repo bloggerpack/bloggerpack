@@ -1,2 +1,19 @@
-<div>@org/plugin-test:template1</div>
-<div>plugin-test:template1</div>
+<div>
+  <div class='org-plugin-template-foo'>org-plugin-template-foo</div>
+
+  <div class='org-plugin-template-bar'>Hello Bloggerpack</div>
+
+  <div class='org-plugin-template-baz'>
+    <div class='org-plugin-template-parts-x2'>org-plugin-template-parts-x2</div>
+  </div>
+</div>
+
+<div>
+  <div class='plugin-template-foo'>plugin-template-foo</div>
+
+  <div class='plugin-template-bar'>Hello Bloggerpack</div>
+
+  <div class='plugin-template-baz'>
+    <div class='plugin-template-parts-x'>plugin-template-parts-x</div>
+  </div>
+</div>

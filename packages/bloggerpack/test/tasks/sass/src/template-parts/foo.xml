@@ -1,0 +1,6 @@
+<bp:sass>
+.template-foo {
+  display: block;
+  color: $color;
+}
+</bp:sass>

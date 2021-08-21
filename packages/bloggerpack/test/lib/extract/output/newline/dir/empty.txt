@@ -1,3 +1,0 @@
-/* src/newline/dir/empty.txt */
-
-/* Empty */

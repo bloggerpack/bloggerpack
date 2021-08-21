@@ -1,0 +1,3 @@
+/* src/empty.txt */
+
+/* Extract is empty */

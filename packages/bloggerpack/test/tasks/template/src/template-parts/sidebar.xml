@@ -1,0 +1,6 @@
+<bp:template>
+  <div>
+    <div>Sidebar content</div>
+    <div>Package name = {{ pkg.name }}</div>
+  </div>
+</bp:template>

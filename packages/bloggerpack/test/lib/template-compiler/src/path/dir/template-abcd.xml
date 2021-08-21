@@ -1,0 +1,6 @@
+<template-start>
+  {% template "template-a.xml" %}
+  {% template "../template-b.xml" %}
+  {% template "./template-c.xml" %}
+  {% template "./template-d.xml" %}
+</template-end>

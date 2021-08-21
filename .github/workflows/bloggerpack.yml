@@ -41,5 +41,5 @@ jobs:
       - name: Lerna bootstrap
         run: npm run bootstrap
 
-      - name: Run tests
-        run: npm run bloggerpack
+      - name: Tests Bloggerpack
+        run: npm run test:packages:bloggerpack

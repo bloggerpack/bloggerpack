@@ -1,0 +1,17 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: node_modules/plugin-template/parts/x.bloggerpack.xml
+// ------------------------------------------------------------------------
+*/
+
+/*
+<Variable name="plugin.template.parts.x.color"
+    description="Plugin Template Parts X Color"
+    type="color"
+    default="#000000"
+    value="#000000"/>
+*/
+
+.plugin-template-parts-x {
+  color: $(plugin.template.parts.x.color);
+}

@@ -1,4 +1,4 @@
-<template test='template'>
+<template-start>
   <!-- CSS: Default -->
 
   {% asset %}
@@ -136,4 +136,4 @@
   <!-- In-partial -->
 
   {% template "./in-partial.xml" %}
-</template>
+</template-end>

@@ -1,0 +1,3 @@
+/* Header: src/foo.txt */
+
+foo

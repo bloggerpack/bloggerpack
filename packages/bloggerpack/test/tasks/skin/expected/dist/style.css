@@ -1,7 +1,7 @@
 /*!
- * Name         : Theme name
+ * Theme Name   : Skin task
+ * Package Name : skin-task
  * Version      : 1.0
- * Package name : test
  */
 
 /*
@@ -12,16 +12,12 @@
     value="#000"/>
 */
 
-.example {
-  color: $(color);
-}
-
-.skin-in-template1 {
+.template-bar {
   display: block;
   color: $(color);
 }
 
-.skin-in-template2 {
+.template-foo {
   display: block;
   color: $(color);
 }

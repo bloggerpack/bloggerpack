@@ -1,0 +1,11 @@
+<extract-start>
+foo
+</extract-end>
+
+<nope>
+bar
+</extract-end>
+
+<nope>
+baz
+</extract-end>
