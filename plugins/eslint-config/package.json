@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-unicorn": "23.0.0"
+    "eslint-plugin-unicorn": "34.0.1"
   },
   "peerDependencies": {
     "eslint": ">=7.5.0"

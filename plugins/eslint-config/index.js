@@ -39,6 +39,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "unicorn/consistent-function-scoping": "off",
     "unicorn/explicit-length-check": "off",
+    "unicorn/filename-case": "off",
     "unicorn/import-index": "off",
     "unicorn/import-style": "off",
     "unicorn/no-fn-reference-in-iterator": "off",
@@ -47,11 +48,11 @@ module.exports = {
     "unicorn/no-unused-properties": "error",
     "unicorn/no-useless-undefined": "off",
     "unicorn/prefer-dataset": "off",
+    "unicorn/prefer-module": "off",
     "unicorn/prefer-node-append": "off",
     "unicorn/prefer-node-remove": "off",
     "unicorn/prefer-optional-catch-binding": "off",
     "unicorn/prefer-query-selector": "off",
-    "unicorn/prevent-abbreviations": "off",
-    "unicorn/filename-case": "off"
+    "unicorn/prevent-abbreviations": "off"
   }
 };
