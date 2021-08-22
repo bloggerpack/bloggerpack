@@ -2,8 +2,11 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
+    <meta charset='utf-8' />
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport' />
+
     <title><data:view.title.escaped/></title>
+
     <b:include data='blog' name='all-head-content' />
     <b:include data='blog' name='google-analytics' />
 
@@ -46,7 +49,7 @@
 </b:if>
   </head>
   <body>
-    <b:comment>=== Body classes ===</b:comment>
+    <b:comment>### Body classes ###</b:comment>
     <b:class cond='data:view.isHomepage' name='is-homepage' />
     <b:class cond='data:view.isPost' name='is-post' />
     <b:class cond='data:view.isPage' name='is-page' />
@@ -77,7 +80,7 @@
               <b:if cond='data:view.isMultipleItems'>
                 <b:loop values='data:posts' var='post'>
                   <article expr:id='"post-" + data:post.id'>
-                    <b:comment>=== Title ===</b:comment>
+                    <b:comment>### Title ###</b:comment>
                     <h2>
                       <a expr:href='data:post.link ?: data:post.url'>
                         <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle' />
@@ -88,18 +91,18 @@
               </b:if>
             </b:if>
 
-            <b:comment>### Post page ###</b:comment>
+            <b:comment>### Single page ###</b:comment>
 
             <b:if cond='data:posts.notEmpty'>
               <b:if cond='data:view.isPost'>
                 <b:loop values='data:posts' var='post'>
                   <article expr:id='"post-" + data:post.id'>
-                    <b:comment>=== Title ===</b:comment>
+                    <b:comment>### Title ###</b:comment>
                     <h1>
                       <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle' />
                     </h1>
 
-                    <b:comment>=== Body ===</b:comment>
+                    <b:comment>### Body ###</b:comment>
                     <data:post.body />
                   </article>
                 </b:loop>
@@ -112,12 +115,12 @@
               <b:if cond='data:view.isPage'>
                 <b:loop values='data:posts' var='post'>
                   <article expr:id='"post-" + data:post.id'>
-                    <b:comment>=== Title ===</b:comment>
+                    <b:comment>### Title ###</b:comment>
                     <h1>
                       <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle' />
                     </h1>
 
-                    <b:comment>=== Body ===</b:comment>
+                    <b:comment>### Body ###</b:comment>
                     <data:post.body />
                   </article>
                 </b:loop>

@@ -1,5 +1,5 @@
 <bp:template>
-  {% macro greetings(name) %}
+  {% macro intro(name) %}
     <div class='bloggerpack-hello-box'>Hello, my name is {{ name }}</div>
   {% endmacro %}
 </bp:template>

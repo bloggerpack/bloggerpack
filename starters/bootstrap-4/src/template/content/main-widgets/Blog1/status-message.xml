@@ -1,0 +1,35 @@
+<bp:template>
+  <b:comment>### Homepage ###</b:comment>
+
+  <b:if cond='data:view.isHomepage'>
+    <b:if cond='data:posts.empty'>
+      <div class='status-message alert alert-warning' id='status-message' role='alert'>
+        <data:messages.theresNothingHere/>
+      </div>
+    </b:if>
+  </b:if>
+
+  <b:comment>### Search (label|query|default) page | Archive page ###</b:comment>
+
+  <b:if cond='data:view.isSearch or data:view.isArchive'>
+    <b:if cond='data:posts.empty'>
+      <div class='status-message alert alert-warning' id='status-message' role='alert'>
+        <data:messages.noResultsFound/>
+      </div>
+    </b:if>
+  </b:if>
+</bp:template>
+
+<bp:sass>
+//
+// Base class
+//
+
+.status-message {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+</bp:sass>

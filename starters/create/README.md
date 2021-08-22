@@ -14,10 +14,18 @@ Once the theme is created, navigate to the root `my-awesome-theme` directory and
 
 Once the installation is done, you can run some built-in commands:
 
+- `npm start` - Watches the source files and automatically building them whenever you save.
 - `npm run build` - Build the theme.
-- `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
 You can now start to create your awesome Bloggerpack starter theme!
+
+## Publishing and sharing
+
+You can publish and share your Bloggerpack starter theme on GitHub and npm.
+
+Use the `bloggerpack-starter` keyword within your `package.json` and GitHub topics.
+
+The published starter can be used using [bloggerpack-create](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create).
 
 Don't forget to write installation and usage guide in `README.md`.
 

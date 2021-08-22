@@ -1,0 +1,17 @@
+<bp:template>
+  {# Footer description (using `HTML` widget) #}
+  <b:widget id='HTML1' locked='true' title='Text' type='HTML' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>
+        <![CDATA[
+          &copy; &lt;YEAR&gt; &lt;COPYRIGHT HOLDER&gt;. <a href="https://blogger.com/">Powered by Blogger</a>.
+        ]]>
+      </b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <div>
+        <data:content/>
+      </div>
+    </b:includable>
+  </b:widget>
+</bp:template>

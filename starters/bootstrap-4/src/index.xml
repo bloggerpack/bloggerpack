@@ -1,15 +1,11 @@
 <bp:template>
-  {% extends "./layout.xml" %}
+  {% extends "./base.xml" %}
 
-  {% block navbar %}
-    {% template "./template-parts/navbar.xml" %}
-  {% endblock %}
+  {% block body %}
+    {% template "./template/navbar/navbar.xml" %}
 
-  {% block content %}
-    {% template "./template-parts/content.xml" %}
-  {% endblock %}
+    {% template "./template/content/content.xml" %}
 
-  {% block footer %}
-    {% template "./template-parts/footer.xml" %}
+    {% template "./template/footer/footer.xml" %}
   {% endblock %}
 </bp:template>

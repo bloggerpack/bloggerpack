@@ -1,0 +1,17 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template/content/main-widgets/Blog1/status-message.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Base class
+//
+
+.status-message {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

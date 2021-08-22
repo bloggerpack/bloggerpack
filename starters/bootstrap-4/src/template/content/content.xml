@@ -1,0 +1,54 @@
+<bp:template>
+  <div class='content py-3 py-lg-5' id='content'>
+    <div class='container'>
+      <div class='row'>
+        <main class='col-12 col-lg-8 mb-3 mb-lg-0' id='main'>
+          <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='no'>
+            {% template "./main-widgets/Blog1.xml" %}
+          </b:section>
+        </main>
+        <aside class='col-12 col-lg-4' id='sidebar'>
+          <b:section class='sidebar-section' id='sidebar-section' name='Sidebar section'>
+            {% template "./sidebar-widgets/HTML2.xml" %}
+          </b:section>
+        </aside>
+      </div>
+    </div>
+  </div>
+</bp:template>
+
+<bp:sass>
+.content {
+  background-color: $gray-200;
+}
+
+//
+// Sidebar widget
+//
+
+.sidebar-section > .widget {
+  @extend .card;
+  margin-bottom: 1rem;
+  @include box-shadow($box-shadow-sm);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > .title {
+    @extend .card-header;
+    @include font-size($h5-font-size);
+  }
+
+  > .widget-content {
+    @extend .card-body;
+
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+</bp:sass>

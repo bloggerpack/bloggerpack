@@ -27,8 +27,8 @@
     "plugin"
   ],
   "scripts": {
-    "build": "bloggerpack --mode production",
-    "watch": "bloggerpack --mode development --watch"
+    "start": "bloggerpack --mode production --watch",
+    "build": "bloggerpack --mode production"
   },
   "devDependencies": {
     "@bloggerpack/eslint-config": "1.0.1",

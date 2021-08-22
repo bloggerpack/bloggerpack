@@ -15,7 +15,7 @@ Hello components:
 ```njk
 {% import "@bloggerpack/plugin-hello-world/src/hello.bloggerpack.xml" as hello %}
 
-{{ hello.greetings('Name') }}
+{{ hello.intro('Your Name') }}
 ```
 
 Bloggerpack GitHub:

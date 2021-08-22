@@ -1,0 +1,99 @@
+<bp:template>
+  <?xml version='1.0' encoding='UTF-8' ?>
+  <!DOCTYPE html>
+  {% block htmlTag %}
+    <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  {% endblock %}
+    <head>
+
+      <meta charset='utf-8'/>
+      <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+
+      {% block title %}
+        <title><data:view.title.escaped/></title>
+      {% endblock %}
+
+      {% block metadata %}
+        <b:include data='blog' name='all-head-content'/>
+        <b:include data='blog' name='google-analytics'/>
+      {% endblock %}
+
+      {% block css %}
+        {# Main CSS (Sass) #}
+        {% asset %}
+          <b:if cond='!data:view.isLayoutMode'>
+          <style>
+          {% asset "./sass/dist/style.css" %}
+          </style>
+          </b:if>
+        {% endasset %}
+
+        {# Main CSS (Skin) #}
+        {% asset %}
+          <b:if cond='!data:view.isLayoutMode'>
+          <b:skin>
+          <![CDATA[
+          {% asset "./skin/dist/style.css" %}
+          ]]>
+          </b:skin>
+          </b:if>
+        {% endasset %}
+
+        {# Layout Mode CSS #}
+        {% asset %}
+          <b:if cond='data:view.isLayoutMode'>
+          <b:template-skin>
+          <![CDATA[
+          /* CSS here */
+          ]]>
+          </b:template-skin>
+          </b:if>
+        {% endasset %}
+      {% endblock %}
+
+      {% block head %}{% endblock %}
+
+    </head>
+    {% block bodyTag %}
+      <body>
+    {% endblock %}
+
+      <b:comment>### Body classes ###</b:comment>
+      <b:class cond='data:view.isHomepage' name='is-homepage'/>
+      <b:class cond='data:view.isPost' name='is-post'/>
+      <b:class cond='data:view.isPage' name='is-page'/>
+      <b:class cond='data:view.isLabelSearch' name='is-search-label'/>
+      <b:class cond='data:view.search.query' name='is-search-query'/>
+      <b:class cond='data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query' name='is-search-default'/>
+      <b:class cond='data:view.isArchive' name='is-archive'/>
+      <b:class cond='data:view.isError' name='is-error'/>
+      <b:class cond='data:view.isPreview' name='is-preview'/>
+
+      {% block body %}{% endblock %}
+
+      {% block js %}
+        {# Main JS #}
+        {% asset %}
+          <script>
+          //<![CDATA[
+          {% asset "./js/dist/script.js" %}
+          //]]>
+          </script>
+        {% endasset %}
+      {% endblock %}
+
+      {# FAKE SECTION
+       #
+       # - Blogger theme requires at least one `<b:section>` with `showaddelement='yes'`.
+       # - In this theme, we do not have a `<b:section>` with `showaddelement='yes'`,
+       #   so we need to create a fake section with `showaddelement='yes'`.
+       # - You can remove this section if your theme has a `<b:section>` with `showaddelement='yes'`.
+       # - Note: The default value of `showaddelement` is `yes`, which means you can omit that attribute.
+       #}
+      <b:if cond='!data:view.isLayoutMode and (data:blog.view == "NeverAccessThisView")'>
+        <b:section id='fake-section' showaddelement='yes'/>
+      </b:if>
+
+    </body>
+  </html>
+</bp:template>

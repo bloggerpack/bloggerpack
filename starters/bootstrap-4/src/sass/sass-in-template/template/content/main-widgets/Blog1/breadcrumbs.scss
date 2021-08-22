@@ -1,0 +1,17 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template/content/main-widgets/Blog1/breadcrumbs.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Base class
+//
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

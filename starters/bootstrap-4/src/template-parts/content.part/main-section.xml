@@ -1,5 +1,0 @@
-<bp:template>
-  <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='no'>
-    {% template "./main-section.part/Blog1.xml" %}
-  </b:section>
-</bp:template>

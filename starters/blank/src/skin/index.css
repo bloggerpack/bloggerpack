@@ -1,4 +1,19 @@
-/* Import another CSS here */
+/* Notes
+ *
+ * You can omit the `_` prefix and the `.css` extension:
+ *
+ *         @import "./filename";
+ *
+ * It also support glob imports:
+ *
+ *         @import "./dir/<**>/<*>.css";
+ *
+ * Import from node modules:
+ *
+ *         @import "package-name";
+ *         @import "package-name/dir/filename";
+ *         @import "package-name/dir/<**>/<*>.css";
+ */
 
 /* Skin-in-Template (always last) */
 @import "./skin-in-template/**/*.css";

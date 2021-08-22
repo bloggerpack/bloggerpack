@@ -14,10 +14,16 @@ Once the theme is created, navigate to the root `my-awesome-theme` directory and
 
 Once the installation is done, you can run some built-in commands:
 
+- `npm start` - Watches the source files and automatically building them whenever you save.
 - `npm run build` - Build the theme.
-- `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
 You can now start to create your awesome Blogger theme!
+
+## Sharing
+
+You can share your Bloggerpack based theme on GitHub.
+
+Use the `bloggerpack-theme` keyword within GitHub topics.
 
 ## Documentation
 

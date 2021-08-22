@@ -6,10 +6,18 @@ Navigate to the root plugin directory and run `npm install` to install dependenc
 
 Once the installation is done, you can run some built-in commands:
 
+* `npm start` - Watches the source files and automatically building them whenever you save.
 * `npm run build` - Build the plugin.
-* `npm run watch` - Watches the source files and automatically building them (in development mode) whenever you save.
 
 You can now start to create your awesome Bloggerpack plugin!
+
+#
+# Publishing and sharing
+#
+
+You can publish and share your Bloggerpack plugin on GitHub and npm.
+
+Use the `bloggerpack-plugin` keyword within your `package.json` and GitHub topics.
 
 Don't forget to write installation and usage guide in `README.md`.
 

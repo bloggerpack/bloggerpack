@@ -1,3 +1,21 @@
+// Notes
+//
+// You can omit the `_` prefix and the `.scss` extension:
+//
+//         @import "filename";
+//
+// It also support glob imports:
+//
+//         @import "dir/**/*.scss";
+//
+// Import from node modules:
+//
+//         @import "~package-name";
+//         @import "~package-name/dir/filename";
+//
+//         !!! Glob import is not supported for node modules.
+//         @import "~package-name/dir/**/*.scss";
+
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 

@@ -1,0 +1,76 @@
+<bp:template>
+  <?xml version='1.0' encoding='UTF-8' ?>
+  <!DOCTYPE html>
+  {% block htmlTag %}
+    <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  {% endblock %}
+    <head>
+
+      <meta charset='utf-8'/>
+      <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+
+      {% block title %}
+        <title><data:view.title.escaped/></title>
+      {% endblock %}
+
+      {% block metadata %}
+        <b:include data='blog' name='all-head-content'/>
+        <b:include data='blog' name='google-analytics'/>
+      {% endblock %}
+
+      {% block css %}
+        {# Main CSS (Sass) #}
+        {% asset %}
+          <b:if cond='!data:view.isLayoutMode'>
+          <style>
+          {% asset "./sass/dist/style.css" %}
+          </style>
+          </b:if>
+        {% endasset %}
+
+        {# Main CSS (Skin) #}
+        {% asset %}
+          <b:if cond='!data:view.isLayoutMode'>
+          <b:skin>
+          <![CDATA[
+          {% asset "./skin/dist/style.css" %}
+          ]]>
+          </b:skin>
+          </b:if>
+        {% endasset %}
+
+        {# Layout Mode CSS #}
+        {% asset %}
+          <b:if cond='data:view.isLayoutMode'>
+          <b:template-skin>
+          <![CDATA[
+          /* CSS here */
+          ]]>
+          </b:template-skin>
+          </b:if>
+        {% endasset %}
+      {% endblock %}
+
+      {% block head %}{% endblock %}
+
+    </head>
+    {% block bodyTag %}
+      <body>
+    {% endblock %}
+
+      {% block body %}{% endblock %}
+
+      {% block js %}
+        {# Main JS #}
+        {% asset %}
+          <script>
+          //<![CDATA[
+          {% asset "./js/dist/script.js" %}
+          //]]>
+          </script>
+        {% endasset %}
+      {% endblock %}
+
+    </body>
+  </html>
+</bp:template>
