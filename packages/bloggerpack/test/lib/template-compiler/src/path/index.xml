@@ -4,6 +4,18 @@
     {% template "template-b.xml" %}
     {% template "./dir/template-c.xml" %}
     {% template "dir/template-d.xml" %}
+
     {% template "./dir/template-abcd.xml" %}
+
+    {% template "./dir/dir/template-abcd.xml" %}
+
+    {% template "./dir/dir2/dir3/dir4/dir5/template-abcd.xml" %}
+
+    {% template "./dir/dir2/dir3/dir4/dir5/dir6/dir7/dir8/dir9/dir10/template-abcd.xml" %}
+
+    {% template "./x.xml" %}
+    {% template "./dir/x.xml" %}
+    {% template "./x1/x.xml" %}
+    {% template "./x2/xx.xml" %}
   </div>
 </template-end>

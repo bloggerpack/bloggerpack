@@ -1,0 +1,3 @@
+<template-start>
+  {% template "./x.xml" %}
+</template-end>

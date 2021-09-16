@@ -7,6 +7,10 @@ const stripIndent = require('strip-indent');
 const prettier = require('prettier');
 const { HTML } = require('@taufik-nurrohman/quote');
 
+const regexEscape = (input) => {
+  return input.replace(/[$()*+./?[\\\]^{|}\-]/g, '\\$&');
+};
+
 module.exports = (opts) => {
   const defaults = {
     context: '',
@@ -24,9 +28,6 @@ module.exports = (opts) => {
 
     return content !== '' ? content + '\n' : '';
   };
-
-  const assetPattern  = /({%\s*asset\s*")(.*?)("\s*%})/g;
-  const assetPattern2 = /({%\s*asset\s*')(.*?)('\s*%})/g;
 
   return through.obj((file, enc, cb) => {
     let njkOpts = {
@@ -112,7 +113,75 @@ module.exports = (opts) => {
     }
     env.addExtension('AssetExtension', new AssetExtension());
 
+    const assetPattern  = /({%\s*asset\s*")(.*?)("\s*%})/g;
+    const assetPattern2 = /({%\s*asset\s*')(.*?)('\s*%})/g;
+
+    const currentDir = (p) => {
+      let dir = path.dirname(p) + '/';
+      dir = dir.replace(file.base + '/', '');
+      return dir;
+    };
+
+    const parentDir = (p, depth) => {
+      let dir = path.resolve(path.dirname(p) + '/', depth) + '/';
+      dir = dir.replace(file.base + '/', '');
+      return dir;
+    };
+
+    // eslint-disable-next-line max-params
+    const relativePath = (src, tag, quote, depth, path, currentdir = false) => {
+      let dir = currentdir ? currentDir(path) : parentDir(path, depth);
+
+      let pattern = new RegExp(`{%\\s*${regexEscape(tag)}\\s*${regexEscape(quote)}${regexEscape(depth)}`, 'g');
+
+      src = src.replace(
+        pattern,
+        `{% ${tag} ${quote}${dir}`
+      );
+
+      return src;
+    };
+
     env.on('load', function(name, source, loader) {
+      let pathDepth = 20;
+      let pathTmp = '';
+      let pathLevel = [];
+
+      for (let i = 0; i < pathDepth; i++) {
+        for (let k = 0; k < pathDepth - i; k++) {
+          pathTmp += '../';
+        }
+        if (i !== pathDepth - 1) {
+          pathTmp += ',';
+        }
+      }
+
+      pathLevel.push(pathTmp.split(','));
+
+      for (let i = 0; i < pathDepth; i++) {
+        source.src = relativePath(source.src, 'asset', `"`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'asset', `'`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'template', `"`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'template', `'`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'extends', `"`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'extends', `'`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'include', `"`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'include', `'`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'import', `"`, pathLevel[0][i], source.path);
+        source.src = relativePath(source.src, 'import', `'`, pathLevel[0][i], source.path);
+      }
+
+      source.src = relativePath(source.src, 'asset', `"`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'asset', `'`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'template', `"`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'template', `'`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'extends', `"`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'extends', `'`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'include', `"`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'include', `'`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'import', `"`, './', source.path, currentdir = true);
+      source.src = relativePath(source.src, 'import', `'`, './', source.path, currentdir = true);
+
       source.src = source.src.replace(assetPattern, '<bloggerpack% asset "$2" %bloggerpack>');
       source.src = source.src.replace(assetPattern2, '<bloggerpack% asset "$2" %bloggerpack>');
     });

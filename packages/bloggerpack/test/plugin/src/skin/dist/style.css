@@ -85,15 +85,15 @@
 }
 
 /*
-<Variable name="org.plugin.template.parts.x2.color"
-    description="Org Plugin Template Parts X2 Color"
+<Variable name="org.plugin.template.parts.x.color"
+    description="Org Plugin Template Parts X Color"
     type="color"
     default="#000000"
     value="#000000"/>
 */
 
-.org-plugin-template-parts-x2 {
-  color: $(org.plugin.template.parts.x2.color);
+.org-plugin-template-parts-x {
+  color: $(org.plugin.template.parts.x.color);
 }
 
 /*

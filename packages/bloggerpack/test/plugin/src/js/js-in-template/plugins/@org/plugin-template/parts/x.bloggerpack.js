@@ -1,7 +1,7 @@
 /*
 // ------------------------------------------------------------------------
-// Template path: node_modules/@org/plugin-template/parts/x2.bloggerpack.xml
+// Template path: node_modules/@org/plugin-template/parts/x.bloggerpack.xml
 // ------------------------------------------------------------------------
 */
 
-console.log('org-plugin-template-parts-x2');
+console.log('org-plugin-template-parts-x');
