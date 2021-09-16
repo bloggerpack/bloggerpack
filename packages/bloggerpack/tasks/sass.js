@@ -17,7 +17,7 @@ const stylelint = require('gulp-stylelint');
 const header = require('gulp-header');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
 const cleancss = require('gulp-clean-css');
 const trim =  require('../lib/trim');
 
@@ -151,7 +151,7 @@ sassRegistry.prototype.init = function(gulpInst) {
     return src([sassOpts.compile.src, variant])
       .pipe(sass({
         outputStyle: 'expanded',
-        charset: false,
+        charset: true,
         importer: [
           require('node-sass-package-importer')(),
           require('node-sass-glob-importer')()
