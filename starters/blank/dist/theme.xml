@@ -77,8 +77,8 @@
 
               <b:comment>### Homepage | Search (label|query|default) page | Archive page ###</b:comment>
 
-              <b:if cond='data:posts.notEmpty'>
-                <b:if cond='data:view.isMultipleItems'>
+              <b:if cond='data:view.isMultipleItems'>
+                <b:if cond='data:posts.notEmpty'>
                   <b:loop values='data:posts' var='post'>
                     <article expr:id='"post-" + data:post.id'>
                       <b:comment>### Title ###</b:comment>
@@ -94,8 +94,8 @@
 
               <b:comment>### Single page ###</b:comment>
 
-              <b:if cond='data:posts.notEmpty'>
-                <b:if cond='data:view.isPost'>
+              <b:if cond='data:view.isPost'>
+                <b:if cond='data:posts.notEmpty'>
                   <b:loop values='data:posts' var='post'>
                     <article expr:id='"post-" + data:post.id'>
                       <b:comment>### Title ###</b:comment>
@@ -112,8 +112,8 @@
 
               <b:comment>### Static page ###</b:comment>
 
-              <b:if cond='data:posts.notEmpty'>
-                <b:if cond='data:view.isPage'>
+              <b:if cond='data:view.isPage'>
+                <b:if cond='data:posts.notEmpty'>
                   <b:loop values='data:posts' var='post'>
                     <article expr:id='"post-" + data:post.id'>
                       <b:comment>### Title ###</b:comment>
@@ -130,7 +130,7 @@
 
               <b:comment>###### Pager ######</b:comment>
 
-              <b:if cond='data:posts.notEmpty and !data:view.isPage'>
+              <b:if cond='!data:view.isPage and data:posts.notEmpty'>
                 <nav>
                   <a>
                     <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href' />
