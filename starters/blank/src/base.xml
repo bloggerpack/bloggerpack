@@ -18,38 +18,7 @@
         <b:include data='blog' name='google-analytics'/>
       {% endblock %}
 
-      {% block css %}
-        {# Main CSS (Sass) #}
-        {% asset %}
-          <b:if cond='!data:view.isLayoutMode'>
-          <style>
-          {% asset "./sass/dist/style.css" %}
-          </style>
-          </b:if>
-        {% endasset %}
-
-        {# Main CSS (Skin) #}
-        {% asset %}
-          <b:if cond='!data:view.isLayoutMode'>
-          <b:skin>
-          <![CDATA[
-          {% asset "./skin/dist/style.css" %}
-          ]]>
-          </b:skin>
-          </b:if>
-        {% endasset %}
-
-        {# Layout Mode CSS #}
-        {% asset %}
-          <b:if cond='data:view.isLayoutMode'>
-          <b:template-skin>
-          <![CDATA[
-          /* CSS here */
-          ]]>
-          </b:template-skin>
-          </b:if>
-        {% endasset %}
-      {% endblock %}
+      {% block css %}{% endblock %}
 
       {% block head %}{% endblock %}
 
@@ -71,16 +40,7 @@
 
       {% block body %}{% endblock %}
 
-      {% block js %}
-        {# Main JS #}
-        {% asset %}
-          <script>
-          //<![CDATA[
-          {% asset "./js/dist/script.js" %}
-          //]]>
-          </script>
-        {% endasset %}
-      {% endblock %}
+      {% block js %}{% endblock %}
 
       {# FAKE SECTION
        #

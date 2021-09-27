@@ -1,0 +1,11 @@
+<bp:template>
+  <h1>404</h1>
+  <p>
+    <data:messages.theresNothingHere/>
+  </p>
+  <p>
+    <a expr:href='data:blog.homepageUrl'>
+      <data:messages.home/>
+    </a>
+  </p>
+</bp:template>
