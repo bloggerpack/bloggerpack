@@ -15,5 +15,5 @@
  *         @import "package-name/dir/<**>/<*>.css";
  */
 
-/* Skin-in-Template (always last) */
+/* Skin-in-Template */
 @import "./skin-in-template/**/*.css";

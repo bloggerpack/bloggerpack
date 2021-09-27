@@ -17,5 +17,5 @@
 //         !!! Glob import is not supported for node modules.
 //         import 'package-name/dir/**/*.js';
 
-// JS-in-Template (always last)
+// JS-in-Template
 import './js-in-template/**/*.js';
