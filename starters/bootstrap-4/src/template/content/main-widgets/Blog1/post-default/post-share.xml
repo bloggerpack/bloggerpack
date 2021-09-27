@@ -1,0 +1,26 @@
+<bp:template>
+  <div class='post-default-share card card-body shadow-sm mb-3 mb-0-last-child'>
+    <div class='d-flex align-items-center flex-wrap mb-n2'>
+      <span class='mr-2 mb-2'>
+        <data:messages.share/>:
+      </span>
+      <b:loop values='data:posts' var='post'>
+        <a class='btn btn-sm btn-light mr-2 mb-2' expr:href='params(data:post.shareUrl, { target: "twitter" })' target='_blank'>
+          Twitter
+        </a>
+        <a class='btn btn-sm btn-light mr-2 mb-2' expr:href='params(data:post.shareUrl, { target: "facebook" })' target='_blank'>
+          Facebook
+        </a>
+        <a class='btn btn-sm btn-light mr-2 mb-2' expr:href='params(data:post.shareUrl, { target: "pinterest" })' target='_blank'>
+          Pinterest
+        </a>
+        <a class='btn btn-sm btn-light mr-2 mb-2' expr:href='params(data:post.shareUrl, { target: "email" })' target='_blank'>
+          Email
+        </a>
+        <a class='btn btn-sm btn-light mr-2 mb-2' expr:href='params(data:post.shareUrl, { target: "blog" })' target='_blank'>
+          BlogThis!
+        </a>
+      </b:loop>
+    </div>
+  </div>
+</bp:template>

@@ -1,0 +1,45 @@
+{#
+Usage:
+
+<b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showStyle'>HIERARCHY|FLAT|MENU</b:widget-setting>
+    <b:widget-setting name='yearPattern'>yyyy|yy</b:widget-setting>
+    <b:widget-setting name='monthPattern'>MMMM|MMM|MM|M|MMMM yyyy|MMM yyyy</b:widget-setting>
+    <b:widget-setting name='dayPattern'>d|dd|MMM dd|MM/dd|dd MMM|dd/MM</b:widget-setting>
+    <b:widget-setting name='showWeekEnd'>true|false</b:widget-setting>
+    <b:widget-setting name='weekPattern'>MMMM d|MMM d|MM/dd|M/d|d MMMM|d MMM|dd/MM|d/M|M/d/yy|MM/dd/yy|d/M/yy|dd/MM/yy</b:widget-setting>
+    <b:widget-setting name='chronological'>true|false</b:widget-setting>
+    <b:widget-setting name='showPosts'>true|false</b:widget-setting>
+    <b:widget-setting name='frequency'>DAILY|WEEKLY|MONTHLY|YEARLY</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Archive"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <b:include cond='data:this.style == "MENU"' name='menu'/>
+      <b:include cond='data:this.style == "FLAT"' name='flat'/>
+      <b:include cond='data:this.style == "HIERARCHY"' name='hierarchy'/>
+    </div>
+  </b:includable>
+  <b:includable id='menu'>
+    {% template "./_menu.xml" %}
+  </b:includable>
+  <b:includable id='flat'>
+    {% template "./_flat.xml" %}
+  </b:includable>
+  <b:includable id='hierarchy'>
+    {% template "./_hierarchy.xml" %}
+  </b:includable>
+  {# Remove default includable #}
+  <b:includable id='interval' var='intervals'/>
+  <b:includable id='posts' var='posts'/>
+</bp:template>

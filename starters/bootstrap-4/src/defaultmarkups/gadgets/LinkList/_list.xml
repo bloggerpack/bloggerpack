@@ -1,0 +1,9 @@
+<bp:template>
+  <div class='wg-link-list list-group'>
+    <b:loop values='data:links' var='link'>
+      <a class='list-group-item list-group-item-action' expr:href='data:link.target'>
+        <data:link.name/>
+      </a>
+    </b:loop>
+  </div>
+</bp:template>

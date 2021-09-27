@@ -1,0 +1,91 @@
+{# Navbar dropdown labels (using `Label` widget) #}
+
+<bp:template>
+  <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <b:include cond='data:this.display == "list"' name='list'/>
+      <b:include cond='data:this.display == "cloud"' name='cloud'/>
+    </b:includable>
+    <b:includable id='list'>
+      <ul class='navbar-nav navbar-nav-label-list'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Labels"'/>
+          </a>
+          <div class='dropdown-menu'>
+            <b:class cond='data:widget.sectionId == "navbar-section-right"' name='dropdown-menu-right'/>
+            <b:attr cond='data:this.showFreqNumbers' name='style' value='min-width: 250px;'/>
+            <b:loop values='data:labels' var='label'>
+              <a class='dropdown-item' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+                <b:class cond='data:this.showFreqNumbers' name='d-flex justify-content-between align-items-center'/>
+                <b:class cond='data:view.url.canonical and (data:view.search.label == data:label.name)' name='active'/>
+                <data:label.name/>
+                <b:if cond='data:this.showFreqNumbers'>
+                  <span class='badge badge-light font-weight-normal ml-5' style='min-width: 30px;'>
+                    <data:label.count/>
+                  </span>
+                </b:if>
+              </a>
+            </b:loop>
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+    <b:includable id='cloud'>
+      <ul class='navbar-nav navbar-nav-label-cloud'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Labels"'/>
+          </a>
+          <div class='dropdown-menu p-3' style='min-width: 300px;'>
+            <b:class cond='data:widget.sectionId == "b-section-navbar-right"' name='dropdown-menu-right'/>
+            <div class='d-flex flex-wrap mb-n1'>
+              <b:loop values='data:labels' var='label'>
+                <a class='btn btn-sm d-flex align-items-center mb-1 mr-1' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+                  <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='btn-light'/>
+                  <b:class cond='data:view.url.canonical and (data:view.search.label == data:label.name)' name='btn-primary'/>
+                  <data:label.name/>
+                  <b:if cond='data:this.showFreqNumbers'>
+                    <small class='ml-1'>
+                      (<data:label.count/>)
+                    </small>
+                  </b:if>
+                </a>
+              </b:loop>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>
+
+<bp:sass>
+//
+// List
+//
+
+.navbar-nav-label-list {
+  .dropdown-item {
+    &.active .badge {
+      color: $component-active-bg;
+      background-color: $component-active-color;
+    }
+    &:not(.active):hover .badge,
+    &:not(.active):focus .badge {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+    }
+  }
+}
+</bp:sass>

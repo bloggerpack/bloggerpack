@@ -1,0 +1,7 @@
+<bp:template>
+  <ul class='wg-text-list list-group'>
+    <b:loop values='data:items' var='item'>
+      <li class='list-group-item'><data:item/></li>
+    </b:loop>
+  </ul>
+</bp:template>

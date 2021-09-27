@@ -1,0 +1,84 @@
+<bp:template>
+  <div class='wg-popular-posts'>
+    <b:loop values='data:posts' var='post'>
+      <div class='wg-popular-post row no-gutters mb-3 mb-0-last-child'>
+        <b:comment>### Featured image ###</b:comment>
+        <b:if cond='data:postDisplay.showFeaturedImage'>
+          <div class='col-auto'>
+            <div class='wg-popular-post-featured-image mr-2'>
+              <b:if cond='data:post.featuredImage'>
+                <b:if cond='data:post.featuredImage.isYoutube'>
+                  <a expr:href='data:post.link ?: data:post.url'>
+                    <img>
+                      <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 140, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                      <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                    </img>
+                  </a>
+                <b:else/>
+                  <a expr:href='data:post.link ?: data:post.url'>
+                    <img>
+                      <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 140, "16:9") : data:post.featuredImage' name='src'/>
+                      <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+                    </img>
+                  </a>
+                </b:if>
+              <b:else/><!-- fallback -->
+                <a expr:href='data:post.link ?: data:post.url'>
+                  <svg class='p-3 bg-light text-primary' fill='currentColor' height='78' viewBox='0 0 16 16' width='140' xmlns='http://www.w3.org/2000/svg'>
+                    <path d='M7 2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zm4.225 4.053a.5.5 0 0 0-.577.093l-3.71 4.71-2.66-2.772a.5.5 0 0 0-.63.062L.002 13v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4.5l-4.777-3.947z'/>
+                  </svg>
+                </a>
+              </b:if>
+            </div><!-- /.wg-popular-post-featured-image -->
+          </div><!-- /col -->
+        </b:if>
+        <b:comment>### Content ###</b:comment>
+        <div class='col'>
+          <div class='wg-popular-post-content'>
+            <b:class cond='data:postDisplay.showFeaturedImage' name='has-image'/>
+            <b:class cond='data:postDisplay.showSnippet' name='has-snippet'/>
+            <b:comment>### Title ###</b:comment>
+            <h6 class='wg-popular-post-title m-0'>
+              <a class='wg-popular-post-title-link' expr:href='data:post.link ?: data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h6><!-- /.wg-popular-post-title -->
+            <b:comment>### Meta ###</b:comment>
+            <ul class='wg-popular-post-meta list-unstyled small text-muted mt-1 mb-0'>
+              <b:comment>### Date (published) ###</b:comment>
+              <li>
+                <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                  <b:eval expr='format(data:post.date, "MMM dd, YYYY")'/>
+                </time>
+              </li>
+            </ul><!-- /.wg-popular-post-meta -->
+            <b:comment>### Snippet ###</b:comment>
+            <b:if cond='data:postDisplay.showSnippet'>
+              <div class='wg-popular-post-snippet mt-1'>
+                <b:eval expr='snippet(data:post.snippets.long, { length: 100, links: false, linebreaks: false, ellipsis: true })'/>
+              </div><!-- /.wg-popular-post-snippet -->
+            </b:if>
+          </div><!-- /.wg-popular-post-content -->
+        </div><!-- /col -->
+      </div><!-- /.wg-popular-post.row -->
+    </b:loop>
+  </div><!-- /.wg-popular-posts -->
+</bp:template>
+
+<bp:sass>
+//
+// Featured image
+//
+
+.wg-popular-post-featured-image {
+  width: 140px;
+  overflow: hidden;
+
+  img,
+  svg {
+    max-width: 100%;
+    height: auto;
+    @include border-radius($border-radius);
+  }
+}
+</bp:sass>

@@ -1,0 +1,8 @@
+<bp:template>
+  <select class='wg-archive-menu custom-select' onchange='if (this.value) window.location.href = this.value'>
+    <option selected='' value=''><data:messages.archive/></option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+    </b:loop>
+  </select>
+</bp:template>

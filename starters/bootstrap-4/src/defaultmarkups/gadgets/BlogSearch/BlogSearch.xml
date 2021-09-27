@@ -1,0 +1,24 @@
+{#
+Usage:
+
+<b:widget id='BlogSearch1' locked='false' title='Search' type='BlogSearch' version='2' visible='true'/>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Search"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <b:include name='searchForm'/>
+    </div>
+  </b:includable>
+  <b:includable id='searchForm'>
+    {% template "./_form.xml" %}
+  </b:includable>
+  {# Remove default includable #}
+  <b:includable id='searchSubmit'/>
+</bp:template>

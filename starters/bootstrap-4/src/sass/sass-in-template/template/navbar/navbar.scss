@@ -4,4 +4,162 @@
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+//
+// Variables
+//
+
+$main-navbar-search-height:             40px !default;
+$main-navbar-search-bg:                 $white !default;
+$main-navbar-search-color:              $gray-900 !default;
+$main-navbar-search-placeholder-color:  $gray-600 !default;
+$main-navbar-search-border-radius:      50rem !default;
+
+//
+// Main navbar
+//
+
+.main-navbar {
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-toggle::after {
+    width: .75em;
+    height: .75em;
+    margin-left: .255em;
+    background-repeat: no-repeat;
+    background-size: .75em;
+    border: 0;
+    transition: transform .2s ease-in-out;
+  }
+  .show > .dropdown-toggle::after {
+    transform: rotate(-180deg);
+  }
+
+  // Search
+
+  .navbar-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out, opacity .3s ease-in-out;
+
+    @include media-breakpoint-up(md) {
+      right: $grid-gutter-width * .5;
+      left: $grid-gutter-width * .5;
+      width: calc(100% - #{$grid-gutter-width});
+    }
+    @include media-breakpoint-up(lg) {
+      left: calc(50% - 250px);
+      width: 500px;
+    }
+
+    &.open {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .navbar-search-form {
+      width: 100%;
+      height: $main-navbar-search-height;
+      background-color: $main-navbar-search-bg;
+      @include border-radius($main-navbar-search-border-radius);
+      @include box-shadow($box-shadow-sm);
+
+      .form-control {
+        width: 100%;
+        height: $main-navbar-search-height;
+        color: $main-navbar-search-color;
+        line-height: $main-navbar-search-height;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: none;
+
+        &::placeholder {
+          color: $main-navbar-search-placeholder-color;
+        }
+      }
+
+      &.row > :first-child > :first-child {
+        @include border-left-radius($main-navbar-search-border-radius);
+      }
+      &.row > :last-child > :last-child {
+        @include border-right-radius($main-navbar-search-border-radius);
+      }
+    }
+  }
+
+  &.navbar-search-open {
+    .navbar-brand,
+    .navbar-search-toggler,
+    .navbar-collapse-toggler,
+    .navbar-collapse {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+    }
+  }
+  &.navbar-search-hidden {
+    .navbar-brand,
+    .navbar-search-toggler,
+    .navbar-collapse-toggler,
+    .navbar-collapse {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+      transition-delay: .3s;
+    }
+  }
+
+  // Themes
+
+  &.navbar-light {
+    .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle:hover::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-hover-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle.active::after,
+    .show > .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .btn-link {
+      color: $navbar-light-color;
+    }
+    .btn-link:hover,
+    .btn-link:focus {
+      color: $navbar-light-hover-color;
+    }
+  }
+  &.navbar-dark {
+    .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle:hover::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-hover-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle.active::after,
+    .show > .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .btn-link {
+      color: $navbar-dark-color;
+    }
+    .btn-link:hover,
+    .btn-link:focus {
+      color: $navbar-dark-hover-color;
+    }
+  }
+}

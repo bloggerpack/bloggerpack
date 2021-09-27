@@ -1,0 +1,18 @@
+<bp:template>
+  <div class='wg-label-cloud'>
+    <div class='d-flex flex-wrap mb-n1'>
+      <b:loop values='data:labels' var='label'>
+        <a class='btn btn-sm d-flex align-items-center mb-1 mr-1' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+          <b:class cond='data:view.url.canonical and (data:view.search.label != data:label.name)' name='btn-light'/>
+          <b:class cond='data:view.url.canonical and (data:view.search.label == data:label.name)' name='btn-primary'/>
+          <data:label.name/>
+          <b:if cond='data:this.showFreqNumbers'>
+            <small class='ml-1'>
+              (<data:label.count/>)
+            </small>
+          </b:if>
+        </a>
+      </b:loop>
+    </div>
+  </div>
+</bp:template>

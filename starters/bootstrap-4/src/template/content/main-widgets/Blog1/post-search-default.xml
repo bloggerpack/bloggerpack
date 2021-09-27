@@ -1,0 +1,21 @@
+{#
+Search (default) page: https://example.blogspot.com/search
+#}
+
+<bp:template>
+  {% set view = "data:view.isSearch and !data:view.isLabelSearch and !data:view.search.query" %}
+  {% set postClass = "post-search-default" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-featured-image.xml" %}
+
+    {% template "./post-default/post-title.xml" %}
+
+    {% template "./post-default/post-meta.xml" %}
+
+    {% template "./post-default/post-snippet.xml" %}
+
+    {% template "./post-default/post-labels.xml" %}
+  {% endblock %}
+</bp:template>

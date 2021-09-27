@@ -1,0 +1,65 @@
+<bp:template>
+  <b:comment>### Year ###</b:comment>
+  <ul class='wg-archive-hierarchy-year list-group'>
+    <b:loop values='data:data' var='i'>
+      <li class='list-group-item'>
+        <div class='d-flex align-items-center'>
+          <b:if cond='data:i.data'>
+            <button class='btn btn-sm btn-link p-0 mr-2 d-flex align-items-center' data-toggle='collapse' expr:data-target='"#" + data:widget.instanceId + "-" + data:i.toggleId' type='button'>
+              <svg fill='currentColor' height='14' viewBox='0 0 16 16' width='14' xmlns='http://www.w3.org/2000/svg'>
+                <path d='M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z' fill-rule='evenodd'/>
+              </svg>
+            </button>
+          </b:if>
+          <a class='mr-1' expr:href='data:i.url'>
+            <data:i.name/>
+          </a>
+          <small class='text-muted'>
+            (<data:i.post-count/>)
+          </small>
+        </div>
+        <b:comment>### Month ###</b:comment>
+        <b:if cond='data:i.data'>
+          <ul class='wg-archive-hierarchy-month list-unstyled mt-0 mb-0 ml-4 collapse' expr:id='data:widget.instanceId + "-" + data:i.toggleId'>
+            <b:loop values='data:i.data' var='j'>
+              <li>
+                <div class='d-flex align-items-center'>
+                  <b:if cond='data:j.data'>
+                    <button class='btn btn-sm btn-link p-0 mr-2 d-flex align-items-center' data-toggle='collapse' expr:data-target='"#" + data:widget.instanceId + "-" + data:j.toggleId' type='button'>
+                      <svg fill='currentColor' height='14' viewBox='0 0 16 16' width='14' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z' fill-rule='evenodd'/>
+                      </svg>
+                    </button>
+                  </b:if>
+                  <a class='mr-1' expr:href='data:j.url'>
+                    <data:j.name/>
+                  </a>
+                  <small class='text-muted'>
+                    (<data:j.post-count/>)
+                  </small>
+                </div>
+                <b:comment>### Day ###</b:comment>
+                <b:if cond='data:j.data'>
+                  <ul class='wg-archive-hierarchy-day list-unstyled mt-0 mb-0 ml-5 collapse' expr:id='data:widget.instanceId + "-" + data:j.toggleId'>
+                    <b:loop values='data:j.data' var='k'>
+                      <li>
+                        <div class='d-flex align-items-center'>
+                          <a class='mr-1' expr:href='data:k.url'>
+                            <data:k.name/>
+                          </a>
+                          <small class='text-muted'>
+                            (<data:k.post-count/>)
+                          </small>
+                        </div>
+                      </li>
+                    </b:loop>
+                  </ul><!-- /.wg-archive-hierarchy-day -->
+                </b:if><!-- /day -->
+              </li>
+            </b:loop>
+          </ul><!-- /.wg-archive-hierarchy-month -->
+        </b:if><!-- /month -->
+      </li>
+    </b:loop>
+  </ul><!-- /.wg-archive-hierarchy-year -->
+</bp:template>

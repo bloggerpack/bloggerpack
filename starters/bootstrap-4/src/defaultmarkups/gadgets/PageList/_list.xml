@@ -1,0 +1,10 @@
+<bp:template>
+  <div class='wg-page-list list-group'>
+    <b:loop values='data:links' var='link'>
+      <a class='list-group-item list-group-item-action' expr:href='data:link.href'>
+        <b:class cond='data:link.isCurrentPage' name='active'/>
+        <data:link.title/>
+      </a>
+    </b:loop>
+  </div>
+</bp:template>

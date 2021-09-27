@@ -2,7 +2,7 @@
   <?xml version='1.0' encoding='UTF-8' ?>
   <!DOCTYPE html>
   {% block htmlTag %}
-    <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+    <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' class='dark' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   {% endblock %}
     <head>
 
@@ -18,53 +18,7 @@
         <b:include data='blog' name='google-analytics'/>
       {% endblock %}
 
-      {% block css %}
-        {# Main CSS (Sass) #}
-        {% asset %}
-          <b:if cond='!data:view.isLayoutMode'>
-          <style>
-          {% asset "./sass/dist/style.css" %}
-          </style>
-          </b:if>
-        {% endasset %}
-
-        {# Main CSS (Skin) #}
-        {% asset %}
-          <b:if cond='!data:view.isLayoutMode'>
-          <b:skin>
-          <![CDATA[
-          {% asset "./skin/dist/style.css" %}
-          ]]>
-          </b:skin>
-          </b:if>
-        {% endasset %}
-
-        {# Layout Mode CSS #}
-        {% asset %}
-          <b:if cond='data:view.isLayoutMode'>
-          <b:template-skin>
-          <![CDATA[
-          body#layout .container::after,
-          body#layout .section::after {
-            display: block;
-            clear: both;
-            content: "";
-          }
-          body#layout #main,
-          body#layout #sidebar {
-            float: left;
-          }
-          body#layout #main {
-            width: 60%;
-          }
-          body#layout #sidebar {
-            width: 40%;
-          }
-          ]]>
-          </b:template-skin>
-          </b:if>
-        {% endasset %}
-      {% endblock %}
+      {% block css %}{% endblock %}
 
       {% block head %}{% endblock %}
 
@@ -84,22 +38,11 @@
       <b:class cond='data:view.isError' name='is-error'/>
       <b:class cond='data:view.isPreview' name='is-preview'/>
 
-      <a class='sr-only sr-only-focusable' href='#main'>
-        <data:messages.skipToMainContent/>
-      </a>
-
       {% block body %}{% endblock %}
 
-      {% block js %}
-        {# Main JS #}
-        {% asset %}
-          <script>
-          //<![CDATA[
-          {% asset "./js/dist/script.js" %}
-          //]]>
-          </script>
-        {% endasset %}
-      {% endblock %}
+      {% block js %}{% endblock %}
+
+      {% block defaultmarkups %}{% endblock %}
 
     </body>
   </html>

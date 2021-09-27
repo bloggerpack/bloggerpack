@@ -1,0 +1,22 @@
+{# Navbar dropdown profile (using `Profile` widget) #}
+
+<bp:template>
+  <b:widget id='Profile1' locked='false' title='Profile' type='Profile' version='2' visible='true'>
+    <b:includable id='main' var='this'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='navbar-nav navbar-nav-profile'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Profile"'/>
+          </a>
+          <div class='dropdown-menu p-1' style='min-width: 300px;'>
+            <b:class cond='data:widget.sectionId == "navbar-section-right"' name='dropdown-menu-right'/>
+            {% template "defaultmarkups/gadgets/Profile/_profile.xml" %}
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>

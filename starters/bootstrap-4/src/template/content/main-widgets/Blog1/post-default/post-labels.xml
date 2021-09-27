@@ -1,0 +1,13 @@
+<bp:template>
+  <b:comment>### Labels ###</b:comment>
+  <b:if cond='data:post.labels'>
+    <div class='post-default-labels mb-3 mb-0-last-child'>
+      <b:loop index='i' values='data:post.labels' var='label'>
+        <a class='d-inline-block small text-muted text-primary-hover' expr:href='params(data:label.url, { max-results: "12" })'>
+          <data:label.name/>
+        </a>
+        <!-- separator --><b:if cond='data:i != (data:post.labels.size - 1)'><span class='text-muted'>·</span></b:if>
+      </b:loop>
+    </div><!-- /.post-labels -->
+  </b:if>
+</bp:template>

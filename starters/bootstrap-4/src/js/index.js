@@ -18,9 +18,9 @@
 //         import 'package-name/dir/**/*.js';
 
 import './jquery-global';
-import '@fortawesome/fontawesome-free/js/all';
 import 'bootstrap';
 import './data-bs';
+import './highlightjs';
 
-// JS-in-Template (always last)
+// JS-in-Template
 import './js-in-template/**/*.js';

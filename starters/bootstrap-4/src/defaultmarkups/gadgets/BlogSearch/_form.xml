@@ -1,0 +1,13 @@
+<bp:template>
+  <form class='wg-search-form' expr:action='data:blog.searchUrl'>
+    <div class='form-row'>
+      <div class='col'>
+        <b:include name='urlParamsAsFormInput'/>
+        <input autocomplete='off' class='form-control' expr:aria-label='data:messages.search' expr:placeholder='data:messages.searchThisBlog' name='q' type='search'/>
+      </div>
+      <div class='col-auto'>
+        <button class='btn btn-secondary' type='submit'><data:messages.search/></button>
+      </div>
+    </div>
+  </form>
+</bp:template>

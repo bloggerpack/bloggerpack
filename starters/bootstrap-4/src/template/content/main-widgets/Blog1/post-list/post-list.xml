@@ -1,0 +1,64 @@
+{#
+Usage:
+
+{% set view = "data:view.<type>" %}
+{% set postClass = "post-<name>" %}
+{% extends "path/to/post-list/post-list.xml" %}
+#}
+
+<bp:template>
+  <b:if cond='{{ view }}'>
+    <b:if cond='data:posts.notEmpty'>
+      <div class='post-list-container card card-body p-md-5 shadow-sm mb-3 mb-0-last-child'>
+        <b:loop values='data:posts' var='post'>
+          <article class='post-list{% if postClass %} {{ postClass }}{% endif %} pb-3 pb-0-last-child border-bottom border-bottom-0-last-child mb-3 mb-0-last-child' expr:id='"post-" + data:post.id'>
+
+            <div class='post-list-meta small text-muted mb-2 mb-0-last-child'>
+              <b:comment>### Author name ###</b:comment>
+              <span><data:messages.by/></span>
+              <b:if cond='data:post.author.profileUrl'>
+                <a expr:href='data:post.author.profileUrl'>
+                  <b:eval expr='data:post.author ? data:post.author.name : "Anonymous"'/>
+                </a>
+              <b:else/><!-- no profileUrl -->
+                <span><b:eval expr='data:post.author ? data:post.author.name : "Anonymous"'/></span>
+              </b:if>
+              <b:comment>### Date (published) ###</b:comment>
+              <!-- separator --><span>·</span>
+              <span>Published:</span>
+              <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                <data:post.date/>
+              </time>
+              <b:comment>### Date (updated) ###</b:comment>
+              <!-- separator --><span>·</span>
+              <span>Last updated:</span>
+              <time expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+                <data:post.lastUpdated/>
+              </time>
+            </div>
+
+            <b:comment>### Title ###</b:comment>
+            <h2 class='post-list-title mt-0 mb-2 mb-0-last-child'>
+              <a class='post-list-title-link text-body text-primary-hover text-decoration-none' expr:href='data:post.link ?: data:post.url'>
+                <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+              </a>
+            </h2>
+
+            <b:comment>### Labels ###</b:comment>
+            <b:if cond='data:post.labels'>
+              <div class='post-list-labels mb-2 mb-0-last-child'>
+                <b:loop index='i' values='data:post.labels' var='label'>
+                  <a class='d-inline-block small text-muted text-primary-hover' expr:href='params(data:label.url, { max-results: "12" })'>
+                    <data:label.name/>
+                  </a>
+                  <!-- separator --><b:if cond='data:i != (data:post.labels.size - 1)'><span class='text-muted'>·</span></b:if>
+                </b:loop>
+              </div><!-- /.post-labels -->
+            </b:if>
+
+          </article>
+        </b:loop>
+      </div>
+    </b:if>
+  </b:if>
+</bp:template>

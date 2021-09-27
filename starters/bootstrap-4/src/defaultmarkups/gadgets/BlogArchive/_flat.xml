@@ -1,0 +1,12 @@
+<bp:template>
+  <div class='wg-archive-flat list-group'>
+    <b:loop values='data:data' var='i'>
+      <a class='list-group-item list-group-item-action d-flex justify-content-between align-items-center' expr:href='data:i.url'>
+        <data:i.name/>
+        <span class='badge badge-secondary ml-2' style='min-width: 30px;'>
+          <data:i.post-count/>
+        </span>
+      </a>
+    </b:loop>
+  </div>
+</bp:template>

@@ -4,26 +4,12 @@
 // ------------------------------------------------------------------------
 */
 
-.footer {
-  color: $gray-500;
-  background-color: $dark;
-}
-
-.footer a {
-  color: $gray-200;
-
-  &:hover,
-  &:focus {
-    color: #fff;
-  }
-}
-
 //
 // Widget
 //
 
 .footer-section > .widget {
-  margin-bottom: 1rem;
+  margin-bottom: $spacer;
 
   &:last-child {
     margin-bottom: 0;

@@ -1,0 +1,12 @@
+{#
+Archive page:
+  - https://example.blogspot.com/<year>
+  - https://example.blogspot.com/<year>/<month>
+  - https://example.blogspot.com/<year>_<month>_<day>_archive.html
+#}
+
+<bp:template>
+  {% set view = "data:view.isArchive" %}
+  {% set postClass = "post-archive" %}
+  {% extends "./post-list/post-list.xml" %}
+</bp:template>

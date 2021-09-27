@@ -1,0 +1,8 @@
+<bp:template>
+  <b:comment>### Title ###</b:comment>
+  <h2 class='post-default-title mt-0 mb-3 mb-0-last-child'>
+    <a class='post-default-title-link text-body text-primary-hover text-decoration-none' expr:href='data:post.link ?: data:post.url'>
+      <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+    </a>
+  </h2>
+</bp:template>

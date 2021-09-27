@@ -1,0 +1,15 @@
+{# Hero (using `Header` widget) #}
+
+<bp:template>
+  <b:widget id='Header1' locked='true' title='(Header)' type='Header' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630/343a40/6c757d?text=IMAGE</b:widget-setting>
+      <b:widget-setting name='displayWidth'>1200</b:widget-setting>
+      <b:widget-setting name='displayHeight'>630</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>1200</b:widget-setting>
+      <b:widget-setting name='useImage'>true</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+</bp:template>

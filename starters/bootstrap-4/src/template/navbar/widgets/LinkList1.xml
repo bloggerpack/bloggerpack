@@ -1,0 +1,35 @@
+{# Navbar dropdown link list (using `LinkList` widget) #}
+
+<bp:template>
+  <b:widget id='LinkList1' locked='false' title='Links' type='LinkList' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='text-0'><![CDATA[Instagram]]></b:widget-setting>
+      <b:widget-setting name='link-0'>https://instagram.com/</b:widget-setting>
+      <b:widget-setting name='text-1'><![CDATA[Twitter]]></b:widget-setting>
+      <b:widget-setting name='link-1'>https://twitter.com/</b:widget-setting>
+      <b:widget-setting name='text-2'><![CDATA[Facebook]]></b:widget-setting>
+      <b:widget-setting name='link-2'>https://facebook.com/</b:widget-setting>
+      <b:widget-setting name='text-3'><![CDATA[YouTube]]></b:widget-setting>
+      <b:widget-setting name='link-3'>https://youtube.com/</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='navbar-nav navbar-nav-link-list'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Links"'/>
+          </a>
+          <div class='dropdown-menu'>
+            <b:class cond='data:widget.sectionId == "navbar-section-right"' name='dropdown-menu-right'/>
+            <b:loop values='data:links' var='link'>
+              <a class='dropdown-item' expr:href='data:link.target'><data:link.name/></a>
+            </b:loop>
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>

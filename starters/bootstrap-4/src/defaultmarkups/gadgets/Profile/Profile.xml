@@ -1,0 +1,39 @@
+{#
+Usage:
+
+<b:widget id='Profile1' locked='false' title='Profile' type='Profile' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showaboutme'>true|false</b:widget-setting>
+    <b:widget-setting name='showlocation'>true|false</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Profile"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      {% template "./_profile.xml" %}
+    </div>
+  </b:includable>
+  {# Remove default includable #}
+  <b:includable id='authorProfileImage'/>
+  <b:includable id='defaultProfileImage'/>
+  <b:includable id='profileImage'/>
+  <b:includable id='teamProfile'/>
+  <b:includable id='teamProfileLink'/>
+  <b:includable id='userGoogleProfile'/>
+  <b:includable id='userLocation'/>
+  <b:includable id='userProfile'/>
+  <b:includable id='userProfileData'/>
+  <b:includable id='userProfileImage'/>
+  <b:includable id='userProfileInfo'/>
+  <b:includable id='userProfileLink'/>
+  <b:includable id='userProfileText'/>
+  <b:includable id='viewProfileLink'/>
+</bp:template>

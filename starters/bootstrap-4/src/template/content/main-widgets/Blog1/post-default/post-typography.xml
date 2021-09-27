@@ -1,0 +1,118 @@
+<bp:sass>
+//
+// Reset margins
+//
+
+.post-typography h1,
+.post-typography h2,
+.post-typography h3,
+.post-typography h4,
+.post-typography h5,
+.post-typography h6,
+.post-typography p,
+.post-typography ul,
+.post-typography ol,
+.post-typography dl,
+.post-typography table:not(.tr-caption-container),
+.post-typography blockquote,
+.post-typography pre,
+.post-typography address,
+.post-typography figure,
+.post-typography fieldset,
+.post-typography hr {
+  margin-top: $spacer;
+  margin-right: 0;
+  margin-bottom: $spacer;
+  margin-left: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.post-typography details > *:not(summary):last-child {
+  margin-bottom: $spacer;
+}
+
+//
+// Images
+//
+
+.post-typography img,
+.post-typography svg {
+  @include img-fluid();
+  vertical-align: middle;
+  @include border-radius($border-radius);
+}
+
+.post-typography .tr-caption-container .tr-caption {
+  padding-top: .5rem;
+  @include font-size(90%);
+  color: $text-muted;
+  text-align: center;
+}
+
+//
+// Tables
+//
+
+.post-typography table:not([class]) {
+  @extend .table;
+  @extend .table-bordered;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 0; // remove border from `@extend .table-bordered`
+}
+
+.post-typography table:not([class]) caption {
+  margin: 0;
+  padding: 0;
+  padding-top: .75rem;
+  color: $text-muted;
+  text-align: left;
+  caption-side: bottom;
+}
+
+//
+// Blockquotes
+//
+
+.post-typography blockquote:not([class]) {
+  padding: 1rem;
+  @include font-size($font-size-base * 1.25);
+  background-color: $light;
+  border-left: 4px solid $primary;
+  @include border-radius($border-radius);
+}
+
+.post-typography blockquote:not([class]) footer {
+  @include font-size(90%);
+  color: $text-muted;
+
+  &::before {
+    content: "\2014\00A0"; // em dash, nbsp
+  }
+}
+
+//
+// Figures
+//
+
+.post-typography figure img,
+.post-typography figure svg {
+  margin-bottom: .5rem;
+}
+
+.post-typography figure figcaption {
+  margin: 0;
+  padding: 0;
+  @include font-size(90%);
+  color: $text-muted;
+  text-align: center;
+}
+</bp:sass>

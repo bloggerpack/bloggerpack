@@ -1,0 +1,29 @@
+{#
+Usage:
+
+<b:widget id='Image1' locked='false' title='Image' type='Image' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='displayUrl'>{image_url}</b:widget-setting>
+    <b:widget-setting name='displayWidth'>{number}</b:widget-setting>
+    <b:widget-setting name='displayHeight'>{number}</b:widget-setting>
+    <b:widget-setting name='sectionWidth'>{number}</b:widget-setting>
+    <b:widget-setting name='shrinkToFit'>true|false</b:widget-setting>
+    <b:widget-setting name='link'>{url}</b:widget-setting>
+    <b:widget-setting name='caption'>{string}</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Image"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      {% template "./_image.xml" %}
+    </div>
+  </b:includable>
+</bp:template>

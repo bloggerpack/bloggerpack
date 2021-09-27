@@ -1,0 +1,6 @@
+<bp:template>
+  <b:comment>### Body ###</b:comment>
+  <div class='post-default-body post-typography mb-3 mb-0-last-child'>
+    <data:post.body/>
+  </div>
+</bp:template>

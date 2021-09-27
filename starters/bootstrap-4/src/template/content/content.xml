@@ -1,15 +1,17 @@
 <bp:template>
   <div class='content py-3 py-lg-5' id='content'>
-    <div class='container'>
+    <div class='container-md'>
       <div class='row'>
-        <main class='col-12 col-lg-8 mb-3 mb-lg-0' id='main'>
-          <b:section class='main-section' id='main-section' maxwidgets='1' name='Main section' showaddelement='no'>
-            {% template "./main-widgets/Blog1.xml" %}
+        <main class='col-12 col-lg-8 main' id='main'>
+          <b:section class='main-section' id='main-section' maxwidgets='2' name='Main section' showaddelement='no'>
+            {% template "./main-widgets/FeaturedPost1.xml" %}
+            {% template "./main-widgets/Blog1/Blog1.xml" %}
           </b:section>
         </main>
-        <aside class='col-12 col-lg-4' id='sidebar'>
+        <aside class='col-12 col-lg-4 sidebar' id='sidebar'>
           <b:section class='sidebar-section' id='sidebar-section' name='Sidebar section'>
-            {% template "./sidebar-widgets/HTML2.xml" %}
+            {% template "./sidebar-widgets/PopularPosts1.xml" %}
+            {% template "./sidebar-widgets/BlogArchive1.xml" %}
           </b:section>
         </aside>
       </div>
@@ -18,8 +20,76 @@
 </bp:template>
 
 <bp:sass>
-.content {
-  background-color: $gray-200;
+//
+// Variables
+//
+
+$content-gutter-width: $spacer !default;
+
+//
+// Content
+//
+
+.content > .container,
+.content > .container-sm,
+.content > .container-md,
+.content > .container-lg,
+.content > .container-xl,
+.content > .container-fluid {
+  > .row {
+    margin-top: -$content-gutter-width;
+    margin-right: $content-gutter-width * -.5;
+    margin-left: $content-gutter-width * -.5;
+
+    > .main,
+    > .sidebar {
+      margin-top: $content-gutter-width;
+      padding-right: $content-gutter-width * .5;
+      padding-left: $content-gutter-width * .5;
+    }
+  }
+}
+
+//
+// Main widget
+//
+
+.main-section > .widget {
+  margin-top: 0;
+  margin-bottom: $content-gutter-width;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:not(.Blog) {
+    @extend .card;
+    @include box-shadow($box-shadow-sm);
+  }
+
+  // Widget title
+
+  &:not(.Blog) > .title {
+    @extend .card-header;
+    @include font-size($h6-font-size);
+  }
+
+  // Widget content
+
+  &:not(.Blog) > .widget-content {
+    @extend .card-body;
+
+    @include media-breakpoint-up(md) {
+      padding: $spacer * 3;
+    }
+
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 //
@@ -27,18 +97,23 @@
 //
 
 .sidebar-section > .widget {
+  margin-top: 0;
+  margin-bottom: $content-gutter-width;
   @extend .card;
-  margin-bottom: 1rem;
   @include box-shadow($box-shadow-sm);
 
   &:last-child {
     margin-bottom: 0;
   }
 
+  // Widget title
+
   > .title {
     @extend .card-header;
-    @include font-size($h5-font-size);
+    @include font-size($h6-font-size);
   }
+
+  // Widget content
 
   > .widget-content {
     @extend .card-body;
@@ -48,6 +123,29 @@
     }
     > :last-child {
       margin-bottom: 0;
+    }
+
+    // Override Bootstrap list group
+
+    > .list-group {
+      margin: -$card-spacer-x;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      @include border-radius(0);
+
+      > .list-group-item {
+        border-width: 0 0 $list-group-border-width;
+
+        &:last-child {
+          border-bottom-width: 0;
+        }
+      }
+    }
+    &:first-child > .list-group:first-child {
+      @include border-top-radius($card-inner-border-radius);
+    }
+    > .list-group:last-child {
+      @include border-bottom-radius($card-inner-border-radius);
     }
   }
 }

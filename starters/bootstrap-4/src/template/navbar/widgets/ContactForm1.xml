@@ -1,0 +1,22 @@
+{# Navbar dropdown contact form (using `ContactForm` widget) #}
+
+<bp:template>
+  <b:widget id='ContactForm1' locked='false' title='Contact' type='ContactForm' version='2' visible='true'>
+    <b:includable id='main'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='navbar-nav navbar-nav-contact-form'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Contact"'/>
+          </a>
+          <div class='dropdown-menu p-3' style='min-width: 300px;'>
+            <b:class cond='data:widget.sectionId == "navbar-section-right"' name='dropdown-menu-right'/>
+            {% template "defaultmarkups/gadgets/ContactForm/_form.xml" %}
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>

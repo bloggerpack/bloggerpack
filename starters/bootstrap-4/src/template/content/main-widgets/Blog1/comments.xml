@@ -1,243 +1,284 @@
+{#
+Notes:
+
+Comments padding:       `p-2 p-sm-3`   (a) => `p-{a1} p-sm-{a2}`
+Comment spacer:         `mt-2 mt-sm-3` (a) => `mt-{a1} mt-sm-{a2}`
+Comment padding:        `p-3 p-md-4`   (b) => `p-{b1} p-md-{b2}`
+Comment content spacer: `mb-3 mb-md-4` (b) => `mb-{b1} mb-md-{b2}`
+
+Comment children margin left: `ml-3 ml-md-4`
+#}
+
 <bp:template>
-  <b:comment>### Single page | Static page ###</b:comment>
+  {% set commentsPadding = "p-2 p-sm-3" %}
+  {% set commentSpacer   = "mt-2 mt-sm-3" %}
+
+  {% set commentPadding       = "p-3 p-md-4" %}
+  {% set commentContentSpacer = "mb-3 mb-md-4" %}
+
+  {% set commentChildrenMarginLeft = "ml-3 ml-md-4" %}
 
   <b:if cond='data:view.isPost or data:view.isPage'>
     <b:loop values='data:posts' var='post'>
       <b:if cond='data:post.allowComments'>
-        <div class='comments' id='comments'>
+        <div class='comments card bg-light shadow-sm mb-3 mb-0-last-child' id='comments'>
 
           <b:comment>### Title ###</b:comment>
-          <h1 class='comments-title'>
+          <h1 class='card-header h5 d-flex align-items-center'>
             <data:messages.comments/>
-            <small>
+            <span class='badge badge-primary badge-pill ml-1'>
               <data:post.numberOfComments/>
-            </small>
+            </span>
           </h1>
 
-          <b:comment>### New comments are not allowed ###</b:comment>
-          <b:if cond='!data:post.allowNewComments'>
-            <div class='comment-warning' role='alert'>
-              <data:post.noNewCommentsText/>
-            </div>
-          </b:if>
+          <div class='card-body {{ commentsPadding }}'>
+            <b:comment>### New comments are not allowed ###</b:comment>
+            <b:if cond='!data:post.allowNewComments'>
+              <div class='alert alert-warning m-0' role='alert'>
+                <data:post.noNewCommentsText/>
+              </div>
+            </b:if>
 
-          <b:comment>### Comment list ###</b:comment>
-          <b:if cond='data:post.comments.notEmpty'>
-            <ol class='comment-list'>
-              <b:loop values='data:post.comments where (c => not c.inReplyTo)' var='comment'>
-                <li expr:id='data:comment.anchorName'>
+            <b:comment>### Parent ###</b:comment>
+            <b:if cond='data:post.comments.notEmpty'>
+              <ol class='list-unstyled m-0'>
+                <b:loop index='i' values='data:post.comments where (c => not c.inReplyTo)' var='comment'>
+                  <li expr:id='data:comment.anchorName'>
 
-                  <div class='comment-block'>
-                    <b:class cond='data:comment.adminClass == data:post.adminClass' name='is-author'/>
-                    <b:comment>### Comment header ###</b:comment>
-                    <div class='comment-header'>
-                      <b:comment>### Col 1 ###</b:comment>
-                      <div class='comment-header-col-1'>
-                        <b:comment>### Comment avatar ###</b:comment>
-                        <b:if cond='data:comment.authorPhoto'>
-                          <img class='comment-avatar' expr:src='resizeImage(data:comment.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
-                        <b:else/>
-                          <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
-                            <title>icon</title>
-                            <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
-                            <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
-                          </svg>
-                        </b:if>
-                      </div><!-- /.comment-header-col-1 -->
-                      <b:comment>### Col 2 ###</b:comment>
-                      <div class='comment-header-col-2'>
-                        <b:comment>### Comment author ###</b:comment>
-                        <div class='comment-author'>
-                          <b:if cond='data:comment.authorUrl'>
-                            <a expr:href='data:comment.authorUrl'>
-                              <data:comment.author/>
-                            </a>
+                    <div class='card card-body {{ commentPadding }} shadow-sm'>
+                      <b:class cond='(data:i != 0) or (data:i == 0 and !data:post.allowNewComments)' name='{{ commentSpacer }}'/>
+                      <b:class cond='data:comment.adminClass == data:post.adminClass' name='is-author'/>
+
+                      <b:comment>### Header ###</b:comment>
+                      <div class='row no-gutters align-items-center {{ commentContentSpacer }}'>
+                        <div class='col-auto mr-2'>
+                          <b:comment>### Avatar ###</b:comment>
+                          <b:if cond='data:comment.authorPhoto'>
+                            <img class='rounded-circle' expr:src='resizeImage(data:comment.authorAvatarSrc, 42)' expr:alt='data:comment.author' height='42' width='42'/>
                           <b:else/>
-                            <data:comment.author/>
+                            <svg class='rounded-circle' height='42' viewBox='0 0 512 512' width='42' xmlns='http://www.w3.org/2000/svg'>
+                              <title>Avatar</title>
+                              <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+                              <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+                            </svg>
                           </b:if>
-                          <b:comment>### Comment author badge ###</b:comment>
-                          <b:if cond='data:comment.adminClass == data:post.adminClass'>
-                            <span class='comment-author-badge'>Author</span>
-                          </b:if>
-                        </div><!-- /.comment-author -->
-                        <b:comment>### Comment meta ###</b:comment>
-                        <div class='comment-meta'>
-                          <a expr:href='data:comment.url'>#</a>
-                          <span><data:comment.timestamp/></span>
-                        </div><!-- /.comment-meta -->
-                      </div><!-- /.comment-header-col-2 -->
-                    </div><!-- /.comment-header -->
-                    <b:comment>### Comment body ###</b:comment>
-                    <div class='comment-body'>
-                      <b:if cond='data:comment.isDeleted'>
-                        <div class='comment-warning' role='alert'>
-                          <data:comment.body/>
-                        </div>
-                      <b:else/>
-                        <div class='comment-text'>
-                          <data:comment.body/>
-                        </div>
-                      </b:if>
-                    </div><!-- /.comment-body -->
-                    <b:comment>### Comment actions ###</b:comment>
-                    <div class='comment-actions'>
-                      <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-                        <a expr:href='"javascript:replyTo(&amp;quot;" + data:comment.id + "&amp;quot;);"'>
-                          Reply
-                        </a>
-                        <span>&#183;</span>
-                      </b:if>
-                      <a expr:href='data:comment.deleteUrl'>
-                        Delete
-                      </a>
-                    </div><!-- /.comment-actions -->
-                  </div><!-- /.comment-block -->
+                        </div><!-- /col -->
 
-                  <b:comment>### Reply form container ###</b:comment>
-                  <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
-                    <div class='reply-form-container' expr:id='"r" + data:comment.id'/>
-                  </b:if>
-
-                  <b:comment>### Children ###</b:comment>
-                  <b:if cond='data:post.comments any (c => c.inReplyTo == data:comment.id)'>
-                    <ul class='comment-list-children'>
-                      <b:loop values='data:post.comments where (c => c.inReplyTo == data:comment.id)' var='reply'>
-                        <li expr:id='data:reply.anchorName'>
-
-                          <div class='comment-block'>
-                            <b:class cond='data:reply.adminClass == data:post.adminClass' name='is-author'/>
-                            <b:comment>### Comment header ###</b:comment>
-                            <div class='comment-header'>
-                              <b:comment>### Col 1 ###</b:comment>
-                              <div class='comment-header-col-1'>
-                                <b:comment>### Comment avatar ###</b:comment>
-                                <b:if cond='data:reply.authorPhoto'>
-                                  <img class='comment-avatar' expr:src='resizeImage(data:reply.authorAvatarSrc, 42)' expr:alt='data:comment.author'/>
-                                <b:else/>
-                                  <svg class='comment-avatar' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
-                                    <title>icon</title>
-                                    <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
-                                    <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
-                                  </svg>
-                                </b:if>
-                              </div><!-- /.comment-header-col-1 -->
-                              <b:comment>### Col 2 ###</b:comment>
-                              <div class='comment-header-col-2'>
-                                <b:comment>### Comment author ###</b:comment>
-                                <div class='comment-author'>
-                                  <b:if cond='data:reply.authorUrl'>
-                                    <a expr:href='data:reply.authorUrl'>
-                                      <data:reply.author/>
-                                    </a>
-                                  <b:else/>
-                                    <data:reply.author/>
-                                  </b:if>
-                                  <b:comment>### Comment author badge ###</b:comment>
-                                  <b:if cond='data:reply.adminClass == data:post.adminClass'>
-                                    <span class='comment-author-badge'>Author</span>
-                                  </b:if>
-                                </div><!-- /.comment-author -->
-                                <b:comment>### Comment meta ###</b:comment>
-                                <div class='comment-meta'>
-                                  <a expr:href='data:reply.url'>#</a>
-                                  <span><data:reply.timestamp/></span>
-                                </div><!-- /.comment-meta -->
-                              </div><!-- /.comment-header-col-2 -->
-                            </div><!-- /.comment-header -->
-                            <b:comment>### Comment body ###</b:comment>
-                            <div class='comment-body'>
-                              <b:if cond='data:reply.isDeleted'>
-                                <div class='comment-warning' role='alert'>
-                                  <data:reply.body/>
-                                </div>
-                              <b:else/>
-                                <div class='comment-text'>
-                                  <data:reply.body/>
-                                </div>
-                              </b:if>
-                            </div><!-- /.comment-body -->
-                            <b:comment>### Comment actions ###</b:comment>
-                            <div class='comment-actions'>
-                              <a expr:href='data:reply.deleteUrl'>
-                                Delete
+                        <div class='col'>
+                          <div class='d-flex align-items-center'>
+                            <b:comment>### Name ###</b:comment>
+                            <b:if cond='data:comment.authorUrl'>
+                              <a class='font-weight-bold' expr:href='data:comment.authorUrl'>
+                                <data:comment.author/>
                               </a>
-                            </div><!-- /.comment-actions -->
-                          </div><!-- /.comment-block -->
+                            <b:else/>
+                              <span class='font-weight-bold'>
+                                <data:comment.author/>
+                              </span>
+                            </b:if>
+                            <b:comment>### Author badge ###</b:comment>
+                            <b:if cond='data:comment.adminClass == data:post.adminClass'>
+                              <svg class='d-inline-block text-white bg-primary rounded-circle ml-1' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>
+                              </svg>
+                            </b:if>
+                          </div>
 
-                        </li>
-                      </b:loop>
-                    </ul><!-- /.comment-list-children -->
+                          <div class='small'>
+                            <b:comment>### Timestamp ###</b:comment>
+                            <a expr:href='data:comment.url'>#</a>
+                            <span class='text-muted'><data:comment.timestamp/></span>
+                          </div>
+                        </div><!-- /col -->
+                      </div><!-- /Header -->
+
+                      <b:comment>### Body ###</b:comment>
+                      <div class='{{ commentContentSpacer }}'>
+                        <b:if cond='data:comment.isDeleted'>
+                          <div class='alert alert-warning m-0' role='alert'>
+                            <data:comment.body/>
+                          </div>
+                        <b:else/>
+                          <data:comment.body/>
+                        </b:if>
+                      </div><!-- /Body -->
+
+                      <b:comment>### Actions ###</b:comment>
+                      <div class='d-flex align-items-center mb-0'>
+                        <b:comment>### Reply ###</b:comment>
+                        <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+                          <a class='text-primary text-decoration-none' expr:href='"javascript:replyTo(&amp;quot;" + data:comment.id + "&amp;quot;);"' expr:title='data:messages.postAComment'>
+                            <svg fill='currentColor' height='24' viewBox='0 0 16 16' width='24' xmlns='http://www.w3.org/2000/svg'>
+                              <path d='M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.499.499 0 0 0 .042-.028l3.984-2.933zM7.8 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z'/>
+                            </svg>
+                          </a>
+                        </b:if>
+                        <b:comment>### Delete ###</b:comment>
+                        <a class='text-danger text-decoration-none ml-2' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+                          <svg fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                            <path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z'/>
+                            <path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z' fill-rule='evenodd'/>
+                          </svg>
+                        </a>
+                      </div><!-- /Actions -->
+                    </div><!-- /.card -->
+
+                    <b:comment>### Reply form container ###</b:comment>
+                    <b:if cond='!data:comment.isDeleted and data:post.allowNewComments'>
+                      <div class='{{ commentChildrenMarginLeft }}' expr:id='"r" + data:comment.id'/>
+                    </b:if>
+
+                    <b:comment>### Children ###</b:comment>
+                    <b:if cond='data:post.comments any (c => c.inReplyTo == data:comment.id)'>
+                      <ul class='list-unstyled mt-0 mb-0 {{ commentChildrenMarginLeft }}'>
+                        <b:loop values='data:post.comments where (c => c.inReplyTo == data:comment.id)' var='reply'>
+                          <li expr:id='data:reply.anchorName'>
+
+                            <div class='card card-body {{ commentPadding }} shadow-sm {{ commentSpacer }}'>
+                              <b:class cond='data:reply.adminClass == data:post.adminClass' name='is-author'/>
+
+                              <b:comment>### Header ###</b:comment>
+                              <div class='row no-gutters align-items-center {{ commentContentSpacer }}'>
+                                <div class='col-auto mr-2'>
+                                  <b:comment>### Avatar ###</b:comment>
+                                  <b:if cond='data:reply.authorPhoto'>
+                                    <img class='rounded-circle' expr:src='resizeImage(data:reply.authorAvatarSrc, 42)' expr:alt='data:reply.author' height='42' width='42'/>
+                                  <b:else/>
+                                    <svg class='rounded-circle' height='42' viewBox='0 0 512 512' width='42' xmlns='http://www.w3.org/2000/svg'>
+                                      <title>Avatar</title>
+                                      <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+                                      <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+                                    </svg>
+                                  </b:if>
+                                </div><!-- /col -->
+
+                                <div class='col'>
+                                  <div class='d-flex align-items-center'>
+                                    <b:comment>### Name ###</b:comment>
+                                    <b:if cond='data:reply.authorUrl'>
+                                      <a class='font-weight-bold' expr:href='data:reply.authorUrl'>
+                                        <data:reply.author/>
+                                      </a>
+                                    <b:else/>
+                                      <span class='font-weight-bold'>
+                                        <data:reply.author/>
+                                      </span>
+                                    </b:if>
+                                    <b:comment>### Author badge ###</b:comment>
+                                    <b:if cond='data:reply.adminClass == data:post.adminClass'>
+                                      <svg class='d-inline-block text-white bg-primary rounded-circle ml-1' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                                        <path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/>
+                                      </svg>
+                                    </b:if>
+                                  </div>
+
+                                  <div class='small'>
+                                    <b:comment>### Timestamp ###</b:comment>
+                                    <a expr:href='data:reply.url'>#</a>
+                                    <span class='text-muted'><data:reply.timestamp/></span>
+                                  </div>
+                                </div><!-- /col -->
+                              </div><!-- /Header -->
+
+                              <b:comment>### Body ###</b:comment>
+                              <div class='{{ commentContentSpacer }}'>
+                                <b:if cond='data:reply.isDeleted'>
+                                  <div class='alert alert-warning m-0' role='alert'>
+                                    <data:reply.body/>
+                                  </div>
+                                <b:else/>
+                                  <data:reply.body/>
+                                </b:if>
+                              </div><!-- /Body -->
+
+                              <b:comment>### Actions ###</b:comment>
+                              <div class='d-flex align-items-center mb-0'>
+                                <b:comment>### Delete ###</b:comment>
+                                <a class='text-danger text-decoration-none' expr:href='data:reply.deleteUrl' expr:title='data:messages.deleteComment'>
+                                  <svg fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                                    <path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z'/>
+                                    <path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z' fill-rule='evenodd'/>
+                                  </svg>
+                                </a>
+                              </div><!-- /Actions -->
+                            </div><!-- /.card -->
+
+                          </li>
+                        </b:loop>
+                      </ul><!-- /children list -->
+                    </b:if><!-- /children -->
+
+                  </li>
+                </b:loop>
+              </ol><!-- /parent list -->
+            </b:if><!-- /parent -->
+
+            <b:comment>### Pagination ###</b:comment>
+            <b:if cond='data:post.commentPagingRequired'>
+              <nav class='card card-body {{ commentPadding }} shadow-sm d-flex flex-wrap justify-content-between {{ commentSpacer }}'>
+                <div>
+                  <a expr:href='data:post.olderLinkUrl'>
+                    <data:post.olderLinkText/>
+                  </a>
+                  <a expr:href='data:post.oldestLinkUrl'>
+                    <data:post.oldestLinkText/>
+                  </a>
+                </div>
+
+                <div>
+                  <data:post.commentRangeText/>
+                </div>
+
+                <div>
+                  <a expr:href='data:post.newestLinkUrl'>
+                    <data:post.newestLinkText/>
+                  </a>
+                  <a expr:href='data:post.newerLinkUrl'>
+                    <data:post.newerLinkText/>
+                  </a>
+                </div>
+              </nav><!-- /.card -->
+            </b:if>
+
+            <b:comment>### Form ###</b:comment>
+            <b:if cond='data:post.allowNewComments'>
+              <div id='init-form-container'>
+                <div class='card card-body {{ commentPadding }} shadow-sm' id='comment-form'>
+                  <b:class cond='data:post.comments.notEmpty' name='{{ commentSpacer }}'/>
+                  <h4 class='mt-0 mb-2'><data:messages.postAComment/></h4>
+                  <b:if cond='data:this.messages.blogComment != ""'>
+                    <p class='mt-0 mb-3'><data:this.messages.blogComment/></p>
                   </b:if>
+                  <a class='d-none' expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                  <iframe class='blogger-iframe-colorize blogger-comment-from-post w-100 border-0' expr:height='data:cmtIframeInitialHeight ?: "90px"' id='comment-editor' name='comment-editor' src=''/>
+                  <data:post.cmtfpIframe/>
+                  <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
+                  <a class='btn btn-sm btn-light mt-2' href='javascript:replyTo(0);' id='cancel-reply'>Cancel</a>
+                </div><!-- /.card -->
 
-                </li>
-              </b:loop>
-            </ol><!-- /.comment-list -->
-          </b:if>
+                {% asset %}
+                  <script>
+                  //<![CDATA[
+                  var commentEditorSrc = document.getElementById('comment-editor').src;
+                  function replyTo(id) {
+                    var form = document.getElementById('comment-form');
+                    var iframe = document.getElementById('comment-editor');
+                    var initFormContainer = document.getElementById('init-form-container');
+                    var replyFormContainer = document.getElementById('r' + id);
+                    var container = id ? replyFormContainer : initFormContainer;
+                    var part = commentEditorSrc.split('#');
 
-          <b:comment>### Comment pagination ###</b:comment>
-          <b:if cond='data:post.commentPagingRequired'>
-            <nav class='comment-pagination comment-block'>
-              <div>
-                <a expr:href='data:post.olderLinkUrl'>
-                  <data:post.olderLinkText/>
-                </a>
-                <a expr:href='data:post.oldestLinkUrl'>
-                  <data:post.oldestLinkText/>
-                </a>
-              </div>
+                    container.insertBefore(form, null);
+                    iframe.src = id ? part[0] + '&parentID=' + id + '#' + part[1] : part[0] + '#' + part[1];
+                  }
+                  //]]>
+                  </script>
+                {% endasset %}
+              </div><!-- /#init-form-container -->
+            </b:if>
+          </div><!-- /.card-body -->
 
-              <div>
-                <data:post.commentRangeText/>
-              </div>
-
-              <div>
-                <a expr:href='data:post.newestLinkUrl'>
-                  <data:post.newestLinkText/>
-                </a>
-                <a expr:href='data:post.newerLinkUrl'>
-                  <data:post.newerLinkText/>
-                </a>
-              </div>
-            </nav>
-          </b:if>
-
-          <b:comment>### Comment form ###</b:comment>
-          <b:if cond='data:post.allowNewComments'>
-            <div class='init-form-container' id='init-form-container'>
-              <div class='comment-form comment-block' id='comment-form'>
-                <h4 class='comment-form-title'><data:messages.postAComment/></h4>
-                <b:if cond='data:this.messages.blogComment != ""'>
-                  <p class='comment-form-message'><data:this.messages.blogComment/></p>
-                </b:if>
-                <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
-                <iframe class='blogger-iframe-colorize blogger-comment-from-post comment-editor' expr:height='data:cmtIframeInitialHeight ?: "90px"' id='comment-editor' name='comment-editor' src=''/>
-                <data:post.cmtfpIframe/>
-                <script>BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);</script>
-                <a class='comment-cancel-reply' href='javascript:replyTo(0);'>Cancel</a>
-              </div><!-- /.comment-form -->
-
-              {% asset %}
-                <script>
-                //<![CDATA[
-                var commentEditorSrc = document.getElementById('comment-editor').src.split('#');
-                function replyTo(id) {
-                  var form = document.getElementById('comment-form');
-                  var iframe = document.getElementById('comment-editor');
-                  var replyFormContainer = document.getElementById('r' + id);
-                  var initFormContainer = document.getElementById('init-form-container');
-                  var container = id ? replyFormContainer : initFormContainer;
-                  var part = commentEditorSrc;
-
-                  container.insertBefore(form, null);
-                  iframe.src = id ? part[0] + '&parentID=' + id + '#' + part[1] : part[0] + '#' + part[1];
-                }
-                //]]>
-                </script>
-              {% endasset %}
-            </div><!-- /.init-form-container -->
-          </b:if>
-
-        </div><!-- /.comments -->
+        </div><!-- /.comments.card -->
       </b:if><!-- /data:post.allowComments -->
     </b:loop>
   </b:if>
@@ -245,252 +286,17 @@
 
 <bp:sass>
 //
-// Variables
-//
-
-$comments-font-size-base: $font-size-base !default;
-
-$comments-padding:       .75rem !default;
-$comments-bg-color:      $gray-100 !default;
-$comments-border-width:  1px !default;
-$comments-border-color:  $gray-300 !default;
-$comments-border-radius: $border-radius !default;
-$comments-box-shadow:    $box-shadow-sm !default;
-
-$comments-title-color: $gray-900 !default;
-
-$comment-block-spacer:           1rem !default;
-$comment-block-padding:          1rem !default;
-$comment-block-color:            $gray-900 !default;
-$comment-block-bg-color:         #fff !default;
-$comment-block-border-width:     1px !default;
-$comment-block-border-color:     $gray-300 !default;
-$comment-block-border-radius:    $border-radius !default;
-$comment-block-box-shadow:       $box-shadow-sm !default;
-$comment-block-link-color:       $link-color !default;
-$comment-block-link-hover-color: $link-hover-color !default;
-
-$comment-author-badge-color:         #fff !default;
-$comment-author-badge-bg-color:      $gray-800 !default;
-$comment-author-badge-border-radius: $border-radius !default;
-
-$comment-meta-color: $text-muted !default;
-
-$comment-warning-padding:       .5rem .75rem !default;
-$comment-warning-color:         #856404 !default;
-$comment-warning-bg-color:      #fff3cd !default;
-$comment-warning-border-width:  1px !default;
-$comment-warning-border-color:  #ffeeba !default;
-$comment-warning-border-radius: $border-radius !default;
-
-//
 // Base class
 //
 
 .comments {
-  margin-bottom: 1rem;
-  padding: $comments-padding;
-  background-color: $comments-bg-color;
-  border: $comments-border-width solid $comments-border-color;
-  @include border-radius($comments-border-radius);
-  @include box-shadow($comments-box-shadow);
-
-  &:last-child {
-    margin-bottom: 0;
+  // stylelint-disable selector-max-id
+  #cancel-reply {
+    display: block;
   }
-}
-
-//
-// Comments title
-//
-
-.comments-title {
-  margin-top: 0;
-  margin-bottom: $comment-block-spacer;
-  color: $comments-title-color;
-  @include font-size($comments-font-size-base * 2.5);
-}
-
-.comments-title small {
-  display: inline-flex; // remove whitespace
-  font-size: 80%;
-}
-.comments-title small::before {
-  content: "\0028";
-}
-.comments-title small::after {
-  content: "\0029";
-}
-
-//
-// Comment list
-//
-
-.comment-list,
-.comment-list-children {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.comment-list-children > li,
-.reply-form-container {
-  margin-left: 2rem;
-}
-
-//
-// Comment block
-//
-
-.comment-block {
-  margin-top: $comment-block-spacer;
-  padding: $comment-block-padding;
-  color: $comment-block-color;
-  background-color: $comment-block-bg-color;
-  border: $comment-block-border-width solid $comment-block-border-color;
-  @include border-radius($comment-block-border-radius);
-  @include box-shadow($comment-block-box-shadow);
-}
-
-.comment-block a {
-  display: inline-block;
-  color: $comment-block-link-color;
-}
-.comment-block a:hover,
-.comment-block a:focus {
-  color: $comment-block-link-hover-color;
-}
-
-//
-// Comment alert
-//
-
-.comment-warning {
-  margin-top: $comment-block-spacer;
-  padding: $comment-warning-padding;
-  color: $comment-warning-color;
-  @include font-size($comments-font-size-base);
-  background-color: $comment-warning-bg-color;
-  border: $comment-warning-border-width solid $comment-warning-border-color;
-  @include border-radius($comment-warning-border-radius);
-}
-
-//
-// Comment content
-//
-
-// Comment header
-//
-
-.comment-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: .75rem;
-  line-height: 1.35;
-}
-.comment-header-col-1 {
-  width: auto;
-  margin-right: .5rem;
-}
-.comment-header-col-2 {
-  width: 100%;
-}
-
-// Avatar
-
-.comment-avatar {
-  width: 42px;
-  height: 42px;
-  vertical-align: middle;
-  @include border-radius(50%);
-}
-
-// Author
-
-.comment-author {
-  font-weight: 500;
-  @include font-size($comments-font-size-base);
-}
-.comment-author-badge {
-  position: relative;
-  top: -1px;
-  display: inline-block;
-  padding: .25em .4em;
-  color: $comment-author-badge-color;
-  font-weight: 500;
-  @include font-size($comments-font-size-base * .75);
-  line-height: 1;
-  background-color: $comment-author-badge-bg-color;
-  @include border-radius($comment-author-badge-border-radius);
-}
-
-// Meta
-
-.comment-meta {
-  color: $comment-meta-color;
-  @include font-size($comments-font-size-base * .875);
-}
-
-// Comment body
-//
-
-.comment-body {
-  margin-bottom: .75rem;
-  @include font-size($comments-font-size-base);
-}
-
-.comment-body .comment-warning {
-  margin-top: 0;
-}
-
-// Comment actions
-//
-
-.comment-actions {
-  @include font-size($comments-font-size-base * .875);
-}
-
-//
-// Comment pagination
-//
-
-.comment-pagination {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-//
-// Comment form
-//
-
-.comment-form-title,
-.comment-form-message {
-  margin-top: 0;
-  margin-bottom: .5rem;
-}
-.comment-form-title {
-  @include font-size($comments-font-size-base * 1.75);
-}
-.comment-form-message {
-  @include font-size($comments-font-size-base);
-}
-
-.comment-editor {
-  width: 100%;
-  border: 0;
-}
-// stylelint-disable-next-line
-a#comment-editor-src {
-  display: none;
-}
-
-.comment-cancel-reply {
-  display: inline-block;
-  margin-top: .25rem;
-}
-.init-form-container .comment-cancel-reply {
-  display: none;
+  #init-form-container #cancel-reply {
+    display: none;
+  }
+  // stylelint-enable selector-max-id
 }
 </bp:sass>

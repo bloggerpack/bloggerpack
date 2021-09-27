@@ -1,6 +1,7 @@
+{# Footer text (using `HTML` widget) #}
+
 <bp:template>
-  {# Footer description (using `HTML` widget) #}
-  <b:widget id='HTML1' locked='true' title='Text' type='HTML' visible='true'>
+  <b:widget id='HTML1' locked='true' title='Text' type='HTML' version='2' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='content'>
         <![CDATA[
@@ -9,9 +10,26 @@
       </b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
-      <div>
+      <div class='footer-text'>
         <data:content/>
       </div>
     </b:includable>
   </b:widget>
 </bp:template>
+
+<bp:sass>
+.footer-text {
+  color: inherit;
+
+  a {
+    color: inherit;
+    opacity: .75;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      opacity: 1;
+    }
+  }
+}
+</bp:sass>

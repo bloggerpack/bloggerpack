@@ -18,6 +18,8 @@
 
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+@import "highlightjs";
+@import "utilities";
 
-// Sass-in-Template (always last)
+// Sass-in-Template
 @import "sass-in-template/**/*.scss";

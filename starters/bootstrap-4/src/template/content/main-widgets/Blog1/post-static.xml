@@ -1,0 +1,15 @@
+{#
+Static page: https://example.blogspot.com/p/<permalink>.html
+#}
+
+<bp:template>
+  {% set view = "data:view.isPage" %}
+  {% set postClass = "post-static" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-title-single.xml" %}
+
+    {% template "./post-default/post-body.xml" %}
+  {% endblock %}
+</bp:template>

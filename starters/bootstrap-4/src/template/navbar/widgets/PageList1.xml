@@ -1,0 +1,38 @@
+{# Navbar dropdown page list (using `PageList` widget) #}
+
+<bp:template>
+  <b:widget id='PageList1' locked='false' title='Pages' type='PageList' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='pageListJson'>
+        <![CDATA[
+          {
+            'link0': {'href': 'https://example.com/1', 'title': 'External link 1', 'position': 1},
+            'link1': {'href': 'https://example.com/2', 'title': 'External link 2', 'position': 2}
+          }
+        ]]>
+      </b:widget-setting>
+      <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+      <b:include name='content'/>
+    </b:includable>
+    <b:includable id='content'>
+      <ul class='navbar-nav navbar-nav-page-list'>
+        <li class='nav-item dropdown'>
+          <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#'>
+            <b:eval expr='data:title ? data:title : "Pages"'/>
+          </a>
+          <div class='dropdown-menu'>
+            <b:class cond='data:widget.sectionId == "navbar-section-right"' name='dropdown-menu-right'/>
+            <b:loop values='data:links' var='link'>
+              <a class='dropdown-item' expr:href='data:link.href'>
+                <b:class cond='data:link.isCurrentPage' name='active'/>
+                <data:link.title/>
+              </a>
+            </b:loop>
+          </div>
+        </li>
+      </ul>
+    </b:includable>
+  </b:widget>
+</bp:template>

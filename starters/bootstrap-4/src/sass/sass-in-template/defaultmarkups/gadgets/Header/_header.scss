@@ -1,0 +1,85 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/defaultmarkups/gadgets/Header/_header.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Base class
+//
+
+.wg-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: inherit;
+  text-align: center;
+
+  // Image placement: REPLACE
+  &.image-placement-replace {
+    &.has-image img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  // Image placement: BEFORE_DESCRIPTION
+  &.image-placement-before-description {
+    &.has-image img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  // Image placement: BEHIND
+  &.image-placement-behind {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.has-image {
+      z-index: 1;
+    }
+    &.has-image::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-image: linear-gradient(rgba(#000, .25), rgba(#000, .25));
+      content: "";
+    }
+  }
+}
+
+//
+// Description
+//
+
+.wg-header-description {
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  > * {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

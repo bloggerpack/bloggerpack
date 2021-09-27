@@ -4,4 +4,17 @@
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+.footer-text {
+  color: inherit;
+
+  a {
+    color: inherit;
+    opacity: .75;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      opacity: 1;
+    }
+  }
+}

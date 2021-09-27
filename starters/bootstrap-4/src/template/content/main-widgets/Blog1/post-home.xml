@@ -1,0 +1,21 @@
+{#
+Homepage: https://example.blogspot.com
+#}
+
+<bp:template>
+  {% set view = "data:view.isHomepage" %}
+  {% set postClass = "post-home" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-featured-image.xml" %}
+
+    {% template "./post-default/post-title.xml" %}
+
+    {% template "./post-default/post-meta.xml" %}
+
+    {% template "./post-default/post-snippet.xml" %}
+
+    {% template "./post-default/post-labels.xml" %}
+  {% endblock %}
+</bp:template>

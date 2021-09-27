@@ -1,0 +1,23 @@
+{#
+Search (label) page:
+  - https://example.blogspot.com/search/label/<label-name>
+  - https://example.blogspot.com/search?label=<label-name>
+#}
+
+<bp:template>
+  {% set view = "data:view.isLabelSearch" %}
+  {% set postClass = "post-search-label" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-featured-image.xml" %}
+
+    {% template "./post-default/post-title.xml" %}
+
+    {% template "./post-default/post-meta.xml" %}
+
+    {% template "./post-default/post-snippet.xml" %}
+
+    {% template "./post-default/post-labels.xml" %}
+  {% endblock %}
+</bp:template>

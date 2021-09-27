@@ -1,0 +1,26 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/defaultmarkups/gadgets/Image/_image.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Image
+//
+
+.wg-image-image {
+  position: relative;
+  padding-top: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include border-radius($border-radius);
+  }
+}

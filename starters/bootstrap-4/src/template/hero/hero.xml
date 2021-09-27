@@ -1,0 +1,5 @@
+<bp:template>
+  <b:section class='hero-section bg-dark text-white' id='hero-section' maxwidgets='1' name='Hero section' showaddelement='no'>
+    {% template "./widgets/Header1.xml" %}
+  </b:section>
+</bp:template>

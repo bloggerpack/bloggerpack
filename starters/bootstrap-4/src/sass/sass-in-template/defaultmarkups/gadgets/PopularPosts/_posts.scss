@@ -1,0 +1,21 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/defaultmarkups/gadgets/PopularPosts/_posts.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// Featured image
+//
+
+.wg-popular-post-featured-image {
+  width: 140px;
+  overflow: hidden;
+
+  img,
+  svg {
+    max-width: 100%;
+    height: auto;
+    @include border-radius($border-radius);
+  }
+}

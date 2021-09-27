@@ -1,0 +1,6 @@
+<bp:template>
+  <b:comment>### Title ###</b:comment>
+  <h1 class='post-default-title-single mt-0 mb-3 mb-0-last-child'>
+    <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+  </h1>
+</bp:template>

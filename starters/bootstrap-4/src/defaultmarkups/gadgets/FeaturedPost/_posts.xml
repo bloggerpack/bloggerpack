@@ -1,0 +1,71 @@
+<bp:template>
+  <b:loop values='data:posts' var='post'>
+    <div class='wg-featured-post'>
+      <b:comment>### Featured image ###</b:comment>
+      <b:if cond='data:postDisplay.showFeaturedImage and data:post.featuredImage'>
+        <div class='wg-featured-post-featured-image mb-2 mb-0-last-child'>
+          <b:if cond='data:post.featuredImage.isYoutube'>
+            <a expr:href='data:post.link ?: data:post.url'>
+              <img>
+                <!-- src --><b:attr expr:value='data:post.featuredImage.youtubeMaxResDefaultUrl.isResizable ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 800, "16:9") : data:post.featuredImage.youtubeMaxResDefaultUrl' name='src'/>
+                <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+              </img>
+            </a>
+          <b:else/>
+            <a expr:href='data:post.link ?: data:post.url'>
+              <img>
+                <!-- src --><b:attr expr:value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 800, "16:9") : data:post.featuredImage' name='src'/>
+                <!-- alt --><b:attr expr:value='data:post.title ? data:post.title : data:messages.image' name='alt'/>
+              </img>
+            </a>
+          </b:if>
+        </div><!-- /.wg-featured-post-featured-image -->
+      </b:if>
+      <b:comment>### Title ###</b:comment>
+      <b:if cond='data:postDisplay.showTitle'>
+        <h5 class='wg-featured-post-title mt-0 mb-2 mb-0-last-child'>
+          <a class='wg-featured-post-title-link text-body text-primary-hover text-decoration-none' expr:href='data:post.link ?: data:post.url'>
+            <b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/>
+          </a>
+        </h5><!-- /.wg-featured-post-title -->
+      </b:if>
+      <b:comment>### Snippet ###</b:comment>
+      <b:if cond='data:postDisplay.showSnippet'>
+        <div class='wg-featured-post-snippet mb-2 mb-0-last-child'>
+          <b:if cond='data:postDisplay.showFeaturedImage or data:postDisplay.showTitle'>
+            <data:post.snippets.short/>
+          <b:else/>
+            <data:post.snippets.short/><br/>
+            <a expr:href='data:post.url'>
+              <b:attr expr:value='data:post.title ? data:post.title : ""' name='title'/>
+              <data:messages.keepReading/>
+            </a>
+          </b:if>
+        </div><!-- /.wg-featured-post-snippet -->
+      </b:if>
+    </div><!-- /.wg-featured-post -->
+  </b:loop>
+</bp:template>
+
+<bp:sass>
+//
+// Featured image
+//
+
+.wg-featured-post-featured-image {
+  position: relative;
+  padding-top: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include border-radius($border-radius);
+  }
+}
+</bp:sass>

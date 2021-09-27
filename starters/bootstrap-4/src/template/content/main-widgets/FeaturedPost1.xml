@@ -1,0 +1,11 @@
+<bp:template>
+  <b:widget cond='data:view.isHomepage' id='FeaturedPost1' locked='true' title='Featured post' type='FeaturedPost' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+      <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+      <b:widget-setting name='showSnippet'>false</b:widget-setting>
+      <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+      <b:widget-setting name='postId'/>
+    </b:widget-settings>
+  </b:widget>
+</bp:template>

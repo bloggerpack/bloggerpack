@@ -1,0 +1,26 @@
+{#
+Usage:
+
+<b:widget id='LinkList1' locked='false' title='Link list' type='LinkList' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='shownum'>{number}|empty</b:widget-setting>
+    <b:widget-setting name='sorting'>NONE|ALPHABETICAL|REVERSE_ALPHABETICAL</b:widget-setting>
+    <b:widget-setting name='text-{INDEX}'>{string}</b:widget-setting>
+    <b:widget-setting name='link-{INDEX}'>{url}</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Link list"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      {% template "./_list.xml" %}
+    </div>
+  </b:includable>
+</bp:template>

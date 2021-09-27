@@ -1,0 +1,26 @@
+{#
+Usage:
+
+<b:widget id='Header1' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='displayUrl'>{image_url}</b:widget-setting>
+    <b:widget-setting name='displayWidth'>{number}</b:widget-setting>
+    <b:widget-setting name='displayHeight'>{number}</b:widget-setting>
+    <b:widget-setting name='sectionWidth'>{number}</b:widget-setting>
+    <b:widget-setting name='useImage'>true|false</b:widget-setting>
+    <b:widget-setting name='shrinkToFit'>true|false</b:widget-setting>
+    <b:widget-setting name='imagePlacement'>BEHIND|REPLACE|BEFORE_DESCRIPTION</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    {% template "./_header.xml" %}
+  </b:includable>
+  {# Remove default includable #}
+  <b:includable id='behindImageStyle'/>
+  <b:includable id='description'/>
+  <b:includable id='image'/>
+  <b:includable id='title'/>
+</bp:template>

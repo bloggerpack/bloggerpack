@@ -4,4 +4,11 @@
 // ------------------------------------------------------------------------
 */
 
-/* Sass-in-Template is empty */
+.footer-links a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}

@@ -1,0 +1,174 @@
+//
+// Font size
+//
+
+.fs-1 {
+  @include font-size($h1-font-size !important);
+}
+.fs-2 {
+  @include font-size($h2-font-size !important);
+}
+.fs-3 {
+  @include font-size($h3-font-size !important);
+}
+.fs-4 {
+  @include font-size($h4-font-size !important);
+}
+.fs-5 {
+  @include font-size($h5-font-size !important);
+}
+.fs-6 {
+  @include font-size($h6-font-size !important);
+}
+
+//
+// Line height
+//
+
+.lh-1 {
+  line-height: 1 !important;
+}
+.lh-sm {
+  line-height: 1.25 !important;
+}
+.lh-base {
+  line-height: $line-height-base !important;
+}
+.lh-lg {
+  line-height: 2 !important;
+}
+
+//
+// Hover
+//
+
+// Text color
+
+.text-body-hover:hover {
+  color: $body-color !important;
+}
+.text-white-hover:hover {
+  color: $white !important;
+}
+.text-muted-hover:hover {
+  color: $text-muted !important;
+}
+
+@each $color, $value in $theme-colors {
+  .text-#{$color}-hover:hover {
+    color: $value !important;
+  }
+}
+
+// Background color
+
+.bg-white-hover:hover {
+  background-color: $white !important;
+}
+.bg-transparent-hover:hover {
+  background-color: transparent !important;
+}
+
+@each $color, $value in $theme-colors {
+  .bg-#{$color}-hover:hover {
+    background-color: $value !important;
+  }
+}
+
+// Border color
+
+.border-white-hover:hover {
+  border-color: $white !important;
+}
+
+@each $color, $value in $theme-colors {
+  .border-#{$color}-hover:hover {
+    border-color: $value !important;
+  }
+}
+
+//
+// Margin and padding subtraction for first and last element
+//
+
+.mt-0-first-child:first-child {
+  margin-top: 0 !important;
+}
+.mr-0-first-child:first-child {
+  margin-right: 0 !important;
+}
+.mb-0-first-child:first-child {
+  margin-bottom: 0 !important;
+}
+.ml-0-first-child:first-child {
+  margin-left: 0 !important;
+}
+
+.mt-0-last-child:last-child {
+  margin-top: 0 !important;
+}
+.mr-0-last-child:last-child {
+  margin-right: 0 !important;
+}
+.mb-0-last-child:last-child {
+  margin-bottom: 0 !important;
+}
+.ml-0-last-child:last-child {
+  margin-left: 0 !important;
+}
+
+.pt-0-first-child:first-child {
+  padding-top: 0 !important;
+}
+.pr-0-first-child:first-child {
+  padding-right: 0 !important;
+}
+.pb-0-first-child:first-child {
+  padding-bottom: 0 !important;
+}
+.pl-0-first-child:first-child {
+  padding-left: 0 !important;
+}
+
+.pt-0-last-child:last-child {
+  padding-top: 0 !important;
+}
+.pr-0-last-child:last-child {
+  padding-right: 0 !important;
+}
+.pb-0-last-child:last-child {
+  padding-bottom: 0 !important;
+}
+.pl-0-last-child:last-child {
+  padding-left: 0 !important;
+}
+
+//
+// Border subtraction for first and last element
+//
+
+.border-top-0-first-child:first-child {
+  border-top: 0 !important;
+}
+.border-right-0-first-child:first-child {
+  border-right: 0 !important;
+}
+.border-bottom-0-first-child:first-child {
+  border-bottom: 0 !important;
+}
+.border-left-0-first-child:first-child {
+  border-left: 0 !important;
+}
+
+.border-top-0-last-child:last-child {
+  border-top: 0 !important;
+}
+.border-right-0-last-child:last-child {
+  border-right: 0 !important;
+}
+.border-bottom-0-last-child:last-child {
+  border-bottom: 0 !important;
+}
+.border-left-0-last-child:last-child {
+  border-left: 0 !important;
+}

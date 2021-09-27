@@ -1,0 +1,23 @@
+{#
+Single page: https://example.blogspot.com/<year>/<month>/<permalink>.html
+#}
+
+<bp:template>
+  {% set view = "data:view.isPost" %}
+  {% set postClass = "post-single" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-labels.xml" %}
+
+    {% template "./post-default/post-title-single.xml" %}
+
+    {% template "./post-default/post-meta.xml" %}
+
+    {% template "./post-default/post-body.xml" %}
+  {% endblock %}
+
+  {% block after %}
+    {% template "./post-default/post-share.xml" %}
+  {% endblock %}
+</bp:template>

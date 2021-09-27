@@ -1,0 +1,19 @@
+{#
+Usage:
+
+<b:widget id='ContactForm1' locked='false' title='Contact' type='ContactForm' version='2' visible='true'/>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Contact"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      {% template "./_form.xml" %}
+    </div>
+  </b:includable>
+</bp:template>

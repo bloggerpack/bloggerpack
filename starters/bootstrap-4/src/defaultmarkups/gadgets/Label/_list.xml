@@ -1,0 +1,15 @@
+<bp:template>
+  <div class='wg-label-list list-group'>
+    <b:loop values='data:labels' var='label'>
+      <a class='list-group-item list-group-item-action d-flex justify-content-between align-items-center' expr:href='appendParams(data:label.url, { max-results: "12" })'>
+        <b:class cond='data:view.url.canonical and (data:view.search.label == data:label.name)' name='active'/>
+        <data:label.name/>
+        <b:if cond='data:this.showFreqNumbers'>
+          <span class='badge badge-secondary ml-2' style='min-width: 30px;'>
+            <data:label.count/>
+          </span>
+        </b:if>
+      </a>
+    </b:loop>
+  </div>
+</bp:template>

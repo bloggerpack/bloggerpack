@@ -1,0 +1,129 @@
+<bp:template>
+  <b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+      <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+      <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+      <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+      <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+      <b:widget-setting name='weekPattern'>MMMM d</b:widget-setting>
+      <b:widget-setting name='chronological'>false</b:widget-setting>
+      <b:widget-setting name='showPosts'>false</b:widget-setting>
+      <b:widget-setting name='frequency'>DAILY</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='BlogSearch10' locked='false' title='Search' type='BlogSearch' version='2' visible='true'/>
+  <b:widget id='ContactForm10' locked='false' title='Contact' type='ContactForm' version='2' visible='true'/>
+  <b:widget id='FeaturedPost10' locked='false' title='Featured post' type='FeaturedPost' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+      <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+      <b:widget-setting name='showSnippet'>true</b:widget-setting>
+      <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+      <b:widget-setting name='postId'/>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='HTML10' locked='false' title='HTML/JavaScript' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>
+        <![CDATA[
+          <p>Hello, world!</p>
+        ]]>
+      </b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Header10' locked='false' title='(Header)' type='Header' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>https://via.placeholder.com/1200x630/343a40/6c757d?text=IMAGE</b:widget-setting>
+      <b:widget-setting name='displayWidth'>1200</b:widget-setting>
+      <b:widget-setting name='displayHeight'>630</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>1200</b:widget-setting>
+      <b:widget-setting name='useImage'>true</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Image10' locked='false' title='Image' type='Image' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>https://via.placeholder.com/512x512/343a40/6c757d?text=IMAGE</b:widget-setting>
+      <b:widget-setting name='displayWidth'>512</b:widget-setting>
+      <b:widget-setting name='displayHeight'>512</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>512</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='link'>https://github.com/bloggerpack/bloggerpack</b:widget-setting>
+      <b:widget-setting name='caption'>Hello, world!</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Label10' locked='false' title='Labels' type='Label' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='LinkList10' locked='false' title='Link list' type='LinkList' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='shownum'/>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='text-0'>Blogger</b:widget-setting>
+      <b:widget-setting name='link-0'>https://blogger.com/</b:widget-setting>
+      <b:widget-setting name='text-1'>Bloggerpack</b:widget-setting>
+      <b:widget-setting name='link-1'>https://github.com/bloggerpack/bloggerpack</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='PageList10' locked='false' title='Page list' type='PageList' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='pageListJson'>
+        <![CDATA[
+          {
+            'home': {'href': '/', 'title': 'Home', 'position': 0},
+            'link0': {'href': 'https://blogger.com/', 'title': 'Blogger', 'position': 1},
+            'link1': {'href': 'https://github.com/bloggerpack/bloggerpack', 'title': 'Bloggerpack', 'position': 2}
+          }
+        ]]>
+      </b:widget-setting>
+      <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='PopularPosts10' locked='false' title='Popular posts' type='PopularPosts' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+      <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+      <b:widget-setting name='showSnippets'>false</b:widget-setting>
+      <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Profile10' locked='false' title='Profile' type='Profile' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showaboutme'>true</b:widget-setting>
+      <b:widget-setting name='showlocation'>true</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Text1' locked='false' title='Text' type='Text' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>
+        <![CDATA[
+          Hello, world!
+        ]]>
+      </b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='TextList10' locked='false' title='Text list' type='TextList' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='shownum'>5</b:widget-setting>
+      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+      <b:widget-setting name='item-0'>Item 1</b:widget-setting>
+      <b:widget-setting name='item-1'>Item 2</b:widget-setting>
+      <b:widget-setting name='item-2'>Item 3</b:widget-setting>
+      <b:widget-setting name='item-3'>Item 4</b:widget-setting>
+      <b:widget-setting name='item-4'>Item 5</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+  <b:widget id='Translate10' locked='false' title='Translate' type='Translate' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayMode'>VERTICAL</b:widget-setting>
+    </b:widget-settings>
+  </b:widget>
+</bp:template>

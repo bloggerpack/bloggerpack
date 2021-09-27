@@ -1,0 +1,109 @@
+<bp:template>
+  <b:comment>### Team ###</b:comment>
+  <b:if cond='data:team'>
+    <b:loop values='data:authors' var='author'>
+      <div class='wg-profile wg-profile-team text-center bg-light rounded mb-3 mb-0-last-child'>
+        <b:class expr:name='data:author.display-name'/>
+        <b:comment>### Header ###</b:comment>
+        <div class='wg-profile-header bg-primary rounded-top'/>
+        <b:comment>### Photo ###</b:comment>
+        <div class='wg-profile-image'>
+          <b:if cond='data:author.authorPhoto.image'>
+            <a expr:href='data:author.userUrl'>
+              <img expr:alt='data:messages.myPhoto' expr:height='data:author.authorPhoto.height' expr:src='data:author.authorPhoto.image' expr:width='data:author.authorPhoto.width'/>
+            </a>
+          <b:else/>
+            <svg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+              <title>icon</title>
+              <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+              <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+            </svg>
+          </b:if>
+        </div><!-- /.wg-profile-image -->
+        <b:comment>### Body ###</b:comment>
+        <div class='wg-profile-body pt-2 pr-3 pb-3 pl-3'>
+          <b:comment>### Name ###</b:comment>
+          <div class='wg-profile-block mb-2 mb-0-last-child'>
+            <a class='wg-profile-name d-inline-block fs-6 font-weight-bold text-body lh-sm text-decoration-none' expr:href='data:author.userUrl'>
+              <data:author.display-name/>
+            </a>
+          </div>
+        </div><!-- /.wg-profile-body -->
+      </div><!-- /.wg-profile.wg-profile-team -->
+    </b:loop>
+  <b:else/>
+    <b:comment>### Individual ###</b:comment>
+    <div class='wg-profile wg-profile-individual text-center bg-light rounded'>
+      <b:class expr:name='data:displayname'/>
+      <b:comment>### Header ###</b:comment>
+      <div class='wg-profile-header bg-primary rounded-top'/>
+      <b:comment>### Photo ###</b:comment>
+      <div class='wg-profile-image'>
+        <b:if cond='data:authorPhoto.image'>
+          <a expr:href='data:userUrl'>
+            <img expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
+          </a>
+        <b:else/>
+          <svg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+            <title>icon</title>
+            <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+            <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+          </svg>
+        </b:if>
+      </div><!-- /.wg-profile-image -->
+      <b:comment>### Body ###</b:comment>
+      <div class='wg-profile-body pt-2 pr-3 pb-3 pl-3'>
+        <b:class cond='data:showlocation and data:location != &quot;&quot;' name='has-location'/>
+        <b:comment>### Name ###</b:comment>
+        <div class='wg-profile-block mb-2 mb-0-last-child'>
+          <a class='wg-profile-name d-inline-block fs-6 font-weight-bold text-body lh-sm text-decoration-none' expr:href='data:userUrl'>
+            <data:displayname/>
+          </a>
+        </div>
+        <b:comment>### About ###</b:comment>
+        <b:if cond='data:aboutme != ""'>
+          <div class='wg-profile-block mb-2 mb-0-last-child'>
+            <div class='wg-profile-text font-weight-normal small text-muted lh-sm'><data:aboutme/></div>
+          </div>
+        </b:if>
+        <b:comment>### Location ###</b:comment>
+        <b:if cond='data:showlocation and data:location != ""'>
+          <div class='wg-profile-block mb-2 mb-0-last-child'>
+            <div class='wg-profile-text font-weight-normal small text-muted lh-sm'><data:location/></div>
+          </div>
+        </b:if>
+      </div><!-- /.wg-profile-body -->
+    </div><!-- /.wg-profile.wg-profile-individual -->
+  </b:if>
+</bp:template>
+
+<bp:sass>
+//
+// Header
+//
+
+.wg-profile-header {
+  height: 100px;
+}
+
+//
+// Photo
+//
+
+.wg-profile-image {
+  position: relative;
+  top: -50px;
+  margin-bottom: -50px;
+
+  img,
+  svg {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    max-height: 100px;
+    vertical-align: middle;
+    border: 5px solid rgba(#fff, .5);
+    @include border-radius(50%);
+  }
+}
+</bp:sass>

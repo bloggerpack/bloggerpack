@@ -1,0 +1,36 @@
+{#
+Usage:
+
+<b:widget id='PageList1' locked='false' title='Page list' type='PageList' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='pageListJson'>
+      <![CDATA[
+        {
+          'home': {'href': '/', 'title': '{string}', 'position': {INDEX}},
+          'link{INDEX}': {'href': '{url}', 'title': '{string}', 'position': {INDEX}}
+        }
+      ]]>
+    </b:widget-setting>
+    <b:widget-setting name='homeTitle'>{string}</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Page list"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      {% template "./_list.xml" %}
+    </div>
+  </b:includable>
+  {# Remove default includable #}
+  <b:includable id='overflowButton'/>
+  <b:includable id='overflowablePageList'/>
+  <b:includable id='pageLink'/>
+  <b:includable id='pageList'/>
+</bp:template>

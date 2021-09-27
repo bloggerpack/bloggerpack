@@ -21,15 +21,13 @@ You can now start to create your awesome Blogger theme!
 
 ## Sharing
 
-You can share your Bloggerpack based theme on GitHub.
-
-Use the `bloggerpack-theme` keyword within GitHub topics.
+You can share your theme on GitHub and use the `bloggerpack-theme` keyword within GitHub topics.
 
 ## Documentation
 
 - [Bloggerpack](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack)
 - [bloggerpack-create](https://github.com/bloggerpack/bloggerpack/tree/main/packages/bloggerpack-create)
-- [Bootstrap](https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/docs/4.6/)
 
 ## Changelog
 

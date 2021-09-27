@@ -1,8 +1,8 @@
 <bp:template>
   <b:comment>Show footer if the `footer-section` has any widgets or has any visible widgets.</b:comment>
   <b:if cond='data:widgets any (w =&gt; w.sectionId == "footer-section")'>
-    <footer class='footer py-3 py-lg-5' id='footer'>
-      <div class='container'>
+    <footer class='footer bg-dark text-white py-4 py-lg-5' id='footer'>
+      <div class='container-md'>
         <b:section class='footer-section' id='footer-section' maxwidgets='2' name='Footer section' showaddelement='no'>
           {% template "./widgets/LinkList2.xml" %}
           {% template "./widgets/HTML1.xml" %}
@@ -13,26 +13,12 @@
 </bp:template>
 
 <bp:sass>
-.footer {
-  color: $gray-500;
-  background-color: $dark;
-}
-
-.footer a {
-  color: $gray-200;
-
-  &:hover,
-  &:focus {
-    color: #fff;
-  }
-}
-
 //
 // Widget
 //
 
 .footer-section > .widget {
-  margin-bottom: 1rem;
+  margin-bottom: $spacer;
 
   &:last-child {
     margin-bottom: 0;

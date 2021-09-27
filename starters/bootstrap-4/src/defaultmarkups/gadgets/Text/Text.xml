@@ -1,0 +1,24 @@
+{#
+Usage:
+
+<b:widget id='Text1' locked='false' title='Text' type='Text' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'>
+      <![CDATA[
+        Content
+      ]]>
+    </b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Text"'/>
+    </h3>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</bp:template>

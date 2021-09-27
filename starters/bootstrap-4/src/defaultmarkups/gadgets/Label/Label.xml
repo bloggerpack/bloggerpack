@@ -1,0 +1,34 @@
+{#
+Usage:
+
+<b:widget id='Label1' locked='false' title='Labels' type='Label' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='sorting'>ALPHA|FREQUENCY</b:widget-setting>
+    <b:widget-setting name='display'>LIST|CLOUD</b:widget-setting>
+    <b:widget-setting name='showType'>ALL|USER_SELECTED</b:widget-setting>
+    <b:widget-setting name='selectedLabelsList'>{Label1, Label2, Label3}|empty</b:widget-setting>
+    <b:widget-setting name='showFreqNumbers'>true|false</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Labels"'/>
+    </h3>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <b:include cond='data:this.display == "list"' name='list'/>
+      <b:include cond='data:this.display == "cloud"' name='cloud'/>
+    </div>
+  </b:includable>
+  <b:includable id='list'>
+    {% template "./_list.xml" %}
+  </b:includable>
+  <b:includable id='cloud'>
+    {% template "./_cloud.xml" %}
+  </b:includable>
+</bp:template>

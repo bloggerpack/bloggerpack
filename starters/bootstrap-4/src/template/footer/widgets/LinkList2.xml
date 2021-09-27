@@ -1,6 +1,7 @@
+{# Footer nav (using `LinkList` widget) #}
+
 <bp:template>
-  {# Footer nav (using `LinkList` widget) #}
-  <b:widget id='LinkList2' locked='true' title='Nav' type='LinkList' visible='true'>
+  <b:widget id='LinkList2' locked='true' title='Nav' type='LinkList' version='2' visible='true'>
     <b:widget-settings>
       <b:widget-setting name='shownum'/>
       <b:widget-setting name='sorting'>NONE</b:widget-setting>
@@ -13,7 +14,7 @@
       <b:include name='content'/>
     </b:includable>
     <b:includable id='content'>
-      <ul class='list-inline mb-0'>
+      <ul class='footer-links list-inline m-0'>
         <b:loop values='data:links' var='link'>
           <li class='list-inline-item'>
             <a expr:href='data:link.target'>
@@ -25,3 +26,14 @@
     </b:includable>
   </b:widget>
 </bp:template>
+
+<bp:sass>
+.footer-links a {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}
+</bp:sass>

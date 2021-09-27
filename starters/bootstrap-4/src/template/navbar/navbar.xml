@@ -1,38 +1,266 @@
 <bp:template>
-  <nav class='navbar navbar-expand-lg navbar-dark bg-dark' id='navbar'>
-    <div class='container'>
+  {% set mainNavbarBreakpoint = "lg" %}
 
-      <a class='navbar-brand' expr:href='data:blog.homepageUrl'>
+  <nav class='navbar navbar-expand-{{ mainNavbarBreakpoint }} navbar-dark py-3 bg-primary shadow main-navbar' id='mainNavbar'>
+    <div class='container-md position-relative'>
+
+      <a class='navbar-brand order-0' expr:href='data:blog.homepageUrl'>
         <data:blog.title/>
       </a>
 
+      <div class='navbar-search-toggler order-1 order-{{ mainNavbarBreakpoint }}-12 ml-auto'>
+        <button class='btn btn-link p-0 shadow-none' id='mainNavbarSearchOpen' type='button'>
+          <b:class cond='data:widgets any (w =&gt; w.sectionId in {"navbar-section-left", "navbar-section-right"})' name='ml-{{ mainNavbarBreakpoint }}-2 mr-3 mr-{{ mainNavbarBreakpoint }}-0'/>
+          <svg fill='currentColor' height='32' viewBox='0 0 16 16' width='20' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/>
+          </svg>
+        </button>
+      </div>
+
       <b:comment>Show the collapsible content if the `navbar-section-left` or `navbar-section-right` has any widgets or has any visible widgets.</b:comment>
       <b:if cond='data:widgets any (w =&gt; w.sectionId in {"navbar-section-left", "navbar-section-right"})'>
-        <button aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarCollapse' data-toggle='collapse' type='button'>
-          <span class='navbar-toggler-icon'></span>
-        </button>
+        <div class='navbar-collapse-toggler d-block d-{{ mainNavbarBreakpoint }}-none order-2'>
+          <button class='btn btn-link p-0 shadow-none' data-target='#mainNavbarCollapse' data-toggle='collapse' type='button'>
+            <svg fill='currentColor' height='32' viewBox='0 0 16 16' width='32' xmlns='http://www.w3.org/2000/svg'>
+              <path d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z' fill-rule='evenodd'/>
+            </svg>
+          </button>
+        </div>
 
-        <div class='collapse navbar-collapse' id='navbarCollapse'>
+        <div class='navbar-collapse collapse order-3' id='mainNavbarCollapse'>
           <b:comment>Show the `navbar-section-left` if it has any widgets or has any visible widgets.</b:comment>
           <b:if cond='data:widgets any (w =&gt; w.sectionId == "navbar-section-left")'>
-            <b:section class='navbar-section-left d-lg-flex align-items-lg-center' id='navbar-section-left' name='Navbar left section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then uncheck the (Visible) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar right section).' showaddelement='no'>
-              {% template "./navbar-left-widgets/Label1.xml" %}
-              {% template "./navbar-left-widgets/LinkList1.xml" %}
-              {% template "./navbar-left-widgets/PageList1.xml" %}
+            <b:section class='navbar-section-left d-{{ mainNavbarBreakpoint }}-flex align-items-{{ mainNavbarBreakpoint }}-center' id='navbar-section-left' name='Navbar left section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then turn off the (Show) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar right section).' showaddelement='no'>
+              {% template "./widgets/Label1.xml" %}
+              {% template "./widgets/PageList1.xml" %}
+              {% template "./widgets/LinkList1.xml" %}
             </b:section>
           </b:if>
 
           <b:comment>Show the `navbar-section-right` if it has any widgets or has any visible widgets.</b:comment>
           <b:if cond='data:widgets any (w =&gt; w.sectionId == "navbar-section-right")'>
-            <b:section class='navbar-section-right ml-auto d-lg-flex align-items-lg-center' id='navbar-section-right' name='Navbar right section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then uncheck the (Visible) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar left section).' showaddelement='no'>
-              {% template "./navbar-right-widgets/Profile1.xml" %}
-              {% template "./navbar-right-widgets/ContactForm1.xml" %}
-              {% template "./navbar-right-widgets/BlogSearch1.xml" %}
+            <b:section class='navbar-section-right ml-auto d-{{ mainNavbarBreakpoint }}-flex align-items-{{ mainNavbarBreakpoint }}-center' id='navbar-section-right' name='Navbar right section — ### Please do not remove the custom gadgets in this section. ### If you want to hide the gadgets, you can edit and then turn off the (Show) option. ### You can reorder the gadgets. ### You can also move the gadgets to (Navbar left section).' showaddelement='no'>
+              {% template "./widgets/Profile1.xml" %}
+              {% template "./widgets/ContactForm1.xml" %}
             </b:section>
           </b:if>
         </div>
       </b:if>
 
+      <div class='navbar-search d-flex align-items-center' id='mainNavbarSearch'>
+        <form class='navbar-search-form row no-gutters' expr:action='data:blog.searchUrl'>
+          <div class='col'>
+            <input autocomplete='off' class='form-control py-0 px-3' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' id='mainNavbarSearchInput' name='q' type='text'/>
+          </div>
+          <div class='col-auto d-flex align-items-center mr-2'>
+            <div class='border-right' style='height: 20px;'/>
+          </div>
+          <div class='col-auto d-flex align-items-center'>
+            <button class='btn btn-link px-2 text-muted shadow-none d-flex align-items-center h-100' id='mainNavbarSearchClose' type='button'>
+              <svg fill='currentColor' height='14' viewBox='0 0 16 16' width='14' xmlns='http://www.w3.org/2000/svg'>
+                <path d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/>
+              </svg>
+            </button>
+          </div>
+          <div class='col-auto d-flex align-items-center'>
+            <button class='btn btn-link pl-2 pr-3 text-primary shadow-none d-flex align-items-center h-100' type='submit'>
+              <svg fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
+                <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </nav>
 </bp:template>
+
+<bp:sass>
+//
+// Variables
+//
+
+$main-navbar-search-height:             40px !default;
+$main-navbar-search-bg:                 $white !default;
+$main-navbar-search-color:              $gray-900 !default;
+$main-navbar-search-placeholder-color:  $gray-600 !default;
+$main-navbar-search-border-radius:      50rem !default;
+
+//
+// Main navbar
+//
+
+.main-navbar {
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-toggle::after {
+    width: .75em;
+    height: .75em;
+    margin-left: .255em;
+    background-repeat: no-repeat;
+    background-size: .75em;
+    border: 0;
+    transition: transform .2s ease-in-out;
+  }
+  .show > .dropdown-toggle::after {
+    transform: rotate(-180deg);
+  }
+
+  // Search
+
+  .navbar-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out, opacity .3s ease-in-out;
+
+    @include media-breakpoint-up(md) {
+      right: $grid-gutter-width * .5;
+      left: $grid-gutter-width * .5;
+      width: calc(100% - #{$grid-gutter-width});
+    }
+    @include media-breakpoint-up(lg) {
+      left: calc(50% - 250px);
+      width: 500px;
+    }
+
+    &.open {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .navbar-search-form {
+      width: 100%;
+      height: $main-navbar-search-height;
+      background-color: $main-navbar-search-bg;
+      @include border-radius($main-navbar-search-border-radius);
+      @include box-shadow($box-shadow-sm);
+
+      .form-control {
+        width: 100%;
+        height: $main-navbar-search-height;
+        color: $main-navbar-search-color;
+        line-height: $main-navbar-search-height;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: none;
+
+        &::placeholder {
+          color: $main-navbar-search-placeholder-color;
+        }
+      }
+
+      &.row > :first-child > :first-child {
+        @include border-left-radius($main-navbar-search-border-radius);
+      }
+      &.row > :last-child > :last-child {
+        @include border-right-radius($main-navbar-search-border-radius);
+      }
+    }
+  }
+
+  &.navbar-search-open {
+    .navbar-brand,
+    .navbar-search-toggler,
+    .navbar-collapse-toggler,
+    .navbar-collapse {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+    }
+  }
+  &.navbar-search-hidden {
+    .navbar-brand,
+    .navbar-search-toggler,
+    .navbar-collapse-toggler,
+    .navbar-collapse {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility .3s ease-in-out, opacity .3s ease-in-out;
+      transition-delay: .3s;
+    }
+  }
+
+  // Themes
+
+  &.navbar-light {
+    .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle:hover::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-hover-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle.active::after,
+    .show > .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-light-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .btn-link {
+      color: $navbar-light-color;
+    }
+    .btn-link:hover,
+    .btn-link:focus {
+      color: $navbar-light-hover-color;
+    }
+  }
+  &.navbar-dark {
+    .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle:hover::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-hover-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .dropdown-toggle.active::after,
+    .show > .dropdown-toggle::after {
+      background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$navbar-dark-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+    }
+    .btn-link {
+      color: $navbar-dark-color;
+    }
+    .btn-link:hover,
+    .btn-link:focus {
+      color: $navbar-dark-hover-color;
+    }
+  }
+}
+</bp:sass>
+
+<bp:js>
+const mainNavbar = document.querySelector('#mainNavbar');
+const mainNavbarSearch = document.querySelector('#mainNavbarSearch');
+const mainNavbarSearchOpen = document.querySelector('#mainNavbarSearchOpen');
+const mainNavbarSearchClose = document.querySelector('#mainNavbarSearchClose');
+
+if (mainNavbar !== null) {
+  mainNavbarSearchOpen.addEventListener('click', () => {
+    mainNavbar.classList.remove('navbar-search-hidden');
+    mainNavbar.classList.add('navbar-search-open');
+    $('#mainNavbarCollapse').collapse('hide');
+
+    mainNavbarSearch.classList.add('open');
+  });
+
+  mainNavbarSearchClose.addEventListener('click', () => {
+    mainNavbarSearch.classList.remove('open');
+
+    mainNavbar.classList.remove('navbar-search-open');
+    mainNavbar.classList.add('navbar-search-hidden');
+    setTimeout(() => {
+      mainNavbar.classList.remove('navbar-search-hidden');
+    }, 500);
+  });
+}
+</bp:js>

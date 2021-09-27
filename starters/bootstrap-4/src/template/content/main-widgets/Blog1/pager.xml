@@ -1,36 +1,35 @@
 <bp:template>
   <b:if cond='data:posts.notEmpty and !data:view.isPage'>
-    <nav class='pager d-flex flex-nowrap justify-content-between' id='pager'>
-      <a class='btn btn-outline-primary' id='pager-newer' role='button'>
-        <b:attr expr:value='data:newerPageUrl ? data:newerPageUrl : "#"' name='href'/>
-        <b:class cond='!data:newerPageUrl' name='disabled'/>
-        <data:messages.newer/>
-      </a>
+    <nav class='pager d-flex justify-content-center mb-3 mb-0-last-child' id='pager'>
+      <ul class='pagination m-0'>
+        <li class='page-item'>
+          <b:class cond='!data:newerPageUrl' name='disabled'/>
+          <b:if cond='data:newerPageUrl'>
+            <a class='page-link' expr:href='data:newerPageUrl'>
+              &#171; <data:messages.newer/>
+            </a>
+          <b:else/>
+            <span class='page-link'>&#171; <data:messages.newer/></span>
+          </b:if>
+        </li>
 
-      <a class='btn btn-outline-primary' id='pager-home' role='button'>
-        <b:attr expr:value='data:blog.homepageUrl' name='href'/>
-        <data:messages.home/>
-      </a>
+        <li class='page-item'>
+          <a class='page-link' expr:href='data:blog.homepageUrl'>
+            <data:messages.home/>
+          </a>
+        </li>
 
-      <a class='btn btn-outline-primary' id='pager-older' role='button'>
-        <b:attr expr:value='data:olderPageUrl ? data:olderPageUrl : "#"' name='href'/>
-        <b:class cond='!data:olderPageUrl' name='disabled'/>
-        <data:messages.older/>
-      </a>
+        <li class='page-item'>
+          <b:class cond='!data:olderPageUrl' name='disabled'/>
+          <b:if cond='data:olderPageUrl'>
+            <a class='page-link' expr:href='data:olderPageUrl'>
+              <data:messages.older/> &#187;
+            </a>
+          <b:else/>
+            <span class='page-link'><data:messages.older/> &#187;</span>
+          </b:if>
+        </li>
+      </ul>
     </nav>
   </b:if>
 </bp:template>
-
-<bp:sass>
-//
-// Base class
-//
-
-.pager {
-  margin-bottom: 1rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-</bp:sass>

@@ -1,0 +1,23 @@
+{#
+Usage:
+
+<b:widget id='PopularPosts1' locked='false' title='Popular posts' type='PopularPosts' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='numItemsToShow'>{1-10}</b:widget-setting>
+    <b:widget-setting name='showThumbnails'>true|false</b:widget-setting>
+    <b:widget-setting name='showSnippets'>true|false</b:widget-setting>
+    <b:widget-setting name='timeRange'>ALL_TIME|LAST_YEAR|LAST_MONTH|LAST_WEEK</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Popular posts"'/>
+    </h3>
+    <div class='widget-content'>
+      {% template "./_posts.xml" %}
+    </div>
+  </b:includable>
+</bp:template>

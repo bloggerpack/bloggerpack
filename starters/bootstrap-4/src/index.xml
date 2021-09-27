@@ -1,11 +1,139 @@
 <bp:template>
   {% extends "./base.xml" %}
 
+  {% block css %}
+    {# Main CSS (Sass) #}
+    {% asset %}
+      <b:if cond='!data:view.isLayoutMode'>
+      <style>
+      {% asset "./sass/dist/style.css" %}
+      </style>
+      </b:if>
+    {% endasset %}
+
+    {# Main CSS (Skin) #}
+    {% asset %}
+      <b:if cond='!data:view.isLayoutMode'>
+      <b:skin>
+      <![CDATA[
+      {% asset "./skin/dist/style.css" %}
+      ]]>
+      </b:skin>
+      </b:if>
+    {% endasset %}
+
+    {# Layout Mode CSS #}
+    {% asset %}
+      <b:if cond='data:view.isLayoutMode'>
+      <b:template-skin>
+      <![CDATA[
+      body#layout .container::after,
+      body#layout .container-sm::after,
+      body#layout .container-md::after,
+      body#layout .container-lg::after,
+      body#layout .container-xl::after,
+      body#layout .container-fluid::after,
+      body#layout .section::after {
+        display: block;
+        clear: both;
+        content: "";
+      }
+      body#layout #main,
+      body#layout #sidebar {
+        float: left;
+      }
+      body#layout #main {
+        width: 60%;
+      }
+      body#layout #sidebar {
+        width: 40%;
+      }
+      ]]>
+      </b:template-skin>
+      </b:if>
+    {% endasset %}
+  {% endblock %}
+
   {% block body %}
-    {% template "./template/navbar/navbar.xml" %}
+    <b:if cond='!data:view.isError'>
+      <a class='sr-only sr-only-focusable' href='#main'>
+        <data:messages.skipToMainContent/>
+      </a>
 
-    {% template "./template/content/content.xml" %}
+      {% template "./template/navbar/navbar.xml" %}
 
-    {% template "./template/footer/footer.xml" %}
+      <b:if cond='data:view.isHomepage'>
+        {% template "./template/hero/hero.xml" %}
+      </b:if>
+
+      {% template "./template/content/content.xml" %}
+
+      {% template "./template/footer/footer.xml" %}
+    </b:if>
+
+    <b:if cond='data:view.isError'>
+      {% template "./template/404.xml" %}
+    </b:if>
+  {% endblock %}
+
+  {% block js %}
+    {# Main JS #}
+    {% asset %}
+      <script>
+      //<![CDATA[
+      {% asset "./js/dist/script.js" %}
+      //]]>
+      </script>
+    {% endasset %}
+  {% endblock %}
+
+  {% block defaultmarkups %}
+    <b:defaultmarkups>
+      <b:defaultmarkup type='BlogArchive'>
+        {% template "./defaultmarkups/gadgets/BlogArchive/BlogArchive.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='BlogSearch'>
+        {% template "./defaultmarkups/gadgets/BlogSearch/BlogSearch.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='ContactForm'>
+        {% template "./defaultmarkups/gadgets/ContactForm/ContactForm.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='FeaturedPost'>
+        {% template "./defaultmarkups/gadgets/FeaturedPost/FeaturedPost.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='HTML'>
+        {% template "./defaultmarkups/gadgets/HTML/HTML.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Header'>
+        {% template "./defaultmarkups/gadgets/Header/Header.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Image'>
+        {% template "./defaultmarkups/gadgets/Image/Image.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Label'>
+        {% template "./defaultmarkups/gadgets/Label/Label.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='LinkList'>
+        {% template "./defaultmarkups/gadgets/LinkList/LinkList.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='PageList'>
+        {% template "./defaultmarkups/gadgets/PageList/PageList.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='PopularPosts'>
+        {% template "./defaultmarkups/gadgets/PopularPosts/PopularPosts.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Profile'>
+        {% template "./defaultmarkups/gadgets/Profile/Profile.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Text'>
+        {% template "./defaultmarkups/gadgets/Text/Text.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='TextList'>
+        {% template "./defaultmarkups/gadgets/TextList/TextList.xml" %}
+      </b:defaultmarkup>
+      <b:defaultmarkup type='Translate'>
+        {% template "./defaultmarkups/gadgets/Translate/Translate.xml" %}
+      </b:defaultmarkup>
+    </b:defaultmarkups>
   {% endblock %}
 </bp:template>

@@ -1,0 +1,10 @@
+<bp:template>
+  <b:comment>### Snippet ###</b:comment>
+  <div class='post-default-snippet post-typography mb-3 mb-0-last-child'>
+    <b:if cond='data:post.hasJumpLink'>
+      <data:post.body/>
+    <b:else/>
+      <data:post.snippets.short/>
+    </b:if>
+  </div>
+</bp:template>

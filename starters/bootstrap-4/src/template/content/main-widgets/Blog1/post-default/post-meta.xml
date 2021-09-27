@@ -1,0 +1,64 @@
+<bp:template>
+  <b:comment>### Meta ###</b:comment>
+  <div class='post-default-meta row no-gutters align-items-center small text-muted mb-3 mb-0-last-child'>
+    <div class='col-auto mr-2'>
+      <b:comment>### Author photo ###</b:comment>
+      <b:with value='42' var='size'>
+        <b:with value='"1:1"' var='ratio'>
+          <b:if cond='data:post.author and data:post.author.authorPhoto'>
+            <b:tag name='img'>
+              <!-- class --><b:class name='rounded-circle'/>
+              <!-- width --><b:attr name='width' value='42'/>
+              <!-- height --><b:attr name='height' value='42'/>
+              <!-- src --><b:attr expr:value='data:post.author.authorPhoto.image.isResizable ? resizeImage(data:post.author.authorPhoto.image, data:size, data:ratio) : data:post.author.authorPhoto.image' name='src'/>
+              <!-- alt --><b:attr expr:value='data:post.author.name' name='alt'/>
+            </b:tag>
+          <b:else/><!-- fallback -->
+            <svg class='rounded-circle' height='42' viewBox='0 0 512 512' width='42' xmlns='http://www.w3.org/2000/svg'>
+              <title>Avatar</title>
+              <path fill='#ff5722' d='M 4.4504803e-7,0 H 512 V 512 H 4.4504803e-7 Z'/>
+              <path fill='#ffffff' d='m 256.00001,255.99998 c 39.45313,0 71.42854,-27.97852 71.42854,-62.50001 C 327.42855,158.97848 295.4531,131 256.00001,131 c -39.45313,0 -71.42861,27.97848 -71.42861,62.49997 0,34.52149 31.97548,62.50001 71.42861,62.50001 z m 49.99998,15.62502 h -9.31919 c -12.38838,4.98044 -26.17186,7.81248 -40.68079,7.81248 -14.50896,0 -28.23662,-2.83204 -40.68083,-7.81248 H 206 c -41.40624,0 -75,29.39449 -75,65.625 v 20.31251 C 131,370.50195 142.99777,381 157.7857,381 H 354.21425 C 369.00225,381 381,370.50195 381,357.56251 V 337.25 c 0,-36.23051 -33.59374,-65.62504 -75.00001,-65.625 z'/>
+            </svg>
+          </b:if>
+        </b:with>
+      </b:with>
+    </div><!-- /col -->
+
+    <div class='col'>
+      <div>
+        <b:comment>### Author name ###</b:comment>
+        <span><data:messages.by/></span>
+        <b:if cond='data:post.author.profileUrl'>
+          <a expr:href='data:post.author.profileUrl'>
+            <b:eval expr='data:post.author ? data:post.author.name : "Anonymous"'/>
+          </a>
+        <b:else/><!-- no profileUrl -->
+          <span><b:eval expr='data:post.author ? data:post.author.name : "Anonymous"'/></span>
+        </b:if>
+        <b:comment>### Date (published) ###</b:comment>
+        <!-- separator --><span>·</span>
+        <span>Published:</span>
+        <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+          <data:post.date/>
+        </time>
+      </div>
+
+      <div>
+        <b:comment>### Date (updated) ###</b:comment>
+        <span>Last updated:</span>
+        <time expr:datetime='data:post.lastUpdated.iso8601' expr:title='data:post.lastUpdated.iso8601'>
+          <data:post.lastUpdated/>
+        </time>
+        <b:comment>### Comments link ###</b:comment>
+        <b:if cond='data:post.allowComments'>
+          <!-- separator --><span>·</span>
+          <a expr:href='data:post.commentsUrl'>
+            <b:message name='messages.numberOfComments'>
+              <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+            </b:message>
+          </a>
+        </b:if>
+      </div>
+    </div><!-- /col -->
+  </div><!-- /.post-default-meta.row -->
+</bp:template>

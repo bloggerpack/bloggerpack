@@ -1,0 +1,21 @@
+{#
+Search (query) page: https://example.blogspot.com/search?q=<query>
+#}
+
+<bp:template>
+  {% set view = "data:view.search.query" %}
+  {% set postClass = "post-search-query" %}
+  {% extends "./post-default/layout.xml" %}
+
+  {% block content %}
+    {% template "./post-default/post-featured-image.xml" %}
+
+    {% template "./post-default/post-title.xml" %}
+
+    {% template "./post-default/post-meta.xml" %}
+
+    {% template "./post-default/post-snippet.xml" %}
+
+    {% template "./post-default/post-labels.xml" %}
+  {% endblock %}
+</bp:template>

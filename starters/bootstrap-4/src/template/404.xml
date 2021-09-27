@@ -1,0 +1,15 @@
+<bp:template>
+  <div class='d-flex align-items-center justify-content-center text-center p-3 vh-100'>
+    <div>
+      <h1 class='display-1 mt-0 mb-3'>404</h1>
+      <p class='mt-0 mb-3'>
+        <data:messages.theresNothingHere/>
+      </p>
+      <p class='m-0'>
+        <a class='btn btn-link text-uppercase text-decoration-none' expr:href='data:blog.homepageUrl'>
+          <data:messages.home/>
+        </a>
+      </p>
+    </div>
+  </div>
+</bp:template>

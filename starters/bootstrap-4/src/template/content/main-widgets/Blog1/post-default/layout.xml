@@ -1,0 +1,31 @@
+{#
+Usage:
+
+{% set view = "data:view.<type>" %}
+{% set postClass = "post-<name>" %}
+{% extends "path/to/post-default/layout.xml" %}
+
+{% block content %}
+  ...
+{% endblock %}
+#}
+
+<bp:template>
+  <b:if cond='{{ view }}'>
+    <b:if cond='data:posts.notEmpty'>
+
+      {% block before %}{% endblock %}
+
+      <b:loop values='data:posts' var='post'>
+        <article class='post-default{% if postClass %} {{ postClass }}{% endif %} card card-body p-md-5 shadow-sm mb-3 mb-0-last-child' expr:id='"post-" + data:post.id'>
+
+          {% block content %}{% endblock %}
+
+        </article>
+      </b:loop>
+
+      {% block after %}{% endblock %}
+
+    </b:if>
+  </b:if>
+</bp:template>

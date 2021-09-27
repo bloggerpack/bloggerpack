@@ -1,0 +1,62 @@
+<bp:template>
+  <form class='wg-contact-form' expr:id='data:widget.instanceId + "_contact-form"' name='contact-form'>
+    <div class='form-group'>
+      <label expr:for='data:widget.instanceId + "_contact-form-name"'><data:contactFormNameMsg/></label>
+      <input class='form-control contact-form-name' expr:id='data:widget.instanceId + "_contact-form-name"' expr:placeholder='data:contactFormNameMsg' name='name' size='30' type='text'/>
+    </div>
+    <div class='form-group'>
+      <label expr:for='data:widget.instanceId + "_contact-form-email"'><data:contactFormEmailMsg/> <span class='text-danger'>*</span></label>
+      <input class='form-control contact-form-email' expr:id='data:widget.instanceId + "_contact-form-email"' expr:placeholder='data:contactFormEmailMsg' name='email' required='required' size='30' type='email'/>
+    </div>
+    <div class='form-group'>
+      <label expr:for='data:widget.instanceId + "_contact-form-email-message"'><data:contactFormMessageMsg/> <span class='text-danger'>*</span></label>
+      <textarea class='form-control contact-form-email-message' cols='25' expr:id='data:widget.instanceId + "_contact-form-email-message"' expr:placeholder='data:contactFormMessageMsg' name='email-message' required='required' rows='5'/>
+    </div>
+    <div>
+      <button class='contact-form-button contact-form-button-submit' expr:id='data:widget.instanceId + "_contact-form-submit"' type='submit'>
+        <data:contactFormSendMsg/>
+      </button>
+      <div class='contact-form-error-message' expr:id='data:widget.instanceId + "_contact-form-error-message"'/>
+      <div class='contact-form-success-message' expr:id='data:widget.instanceId + "_contact-form-success-message"'/>
+    </div>
+  </form>
+</bp:template>
+
+<bp:sass>
+//
+// Contact form
+//
+
+.wg-contact-form {
+  .contact-form-button {
+    @extend .btn;
+    @extend .btn-secondary;
+  }
+
+  .contact-form-success-message,
+  .contact-form-error-message {
+    display: none;
+  }
+
+  .contact-form-success-message-with-border,
+  .contact-form-error-message-with-border {
+    @extend .alert;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .contact-form-success-message-with-border {
+    @extend .alert-success;
+  }
+  .contact-form-error-message-with-border {
+    @extend .alert-danger;
+
+    .contact-form-cross {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: .25rem;
+    }
+  }
+}
+</bp:sass>

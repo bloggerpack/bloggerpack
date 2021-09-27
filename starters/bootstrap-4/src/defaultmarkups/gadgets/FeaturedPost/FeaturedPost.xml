@@ -1,0 +1,24 @@
+{#
+Usage:
+
+<b:widget id='FeaturedPost1' locked='false' title='Featured post' type='FeaturedPost' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='showFirstImage'>true|false</b:widget-setting>
+    <b:widget-setting name='showPostTitle'>true|false</b:widget-setting>
+    <b:widget-setting name='showSnippet'>true|false</b:widget-setting>
+    <b:widget-setting name='useMostRecentPost'>true|false</b:widget-setting>
+    <b:widget-setting name='postId'>{post_ID}|empty</b:widget-setting>
+  </b:widget-settings>
+</b:widget>
+#}
+
+<bp:template>
+  <b:includable id='main' var='this'>
+    <h3 class='title'>
+      <b:eval expr='data:title ? data:title : "Featured post"'/>
+    </h3>
+    <div class='widget-content'>
+      {% template "./_posts.xml" %}
+    </div>
+  </b:includable>
+</bp:template>

@@ -1,0 +1,136 @@
+<bp:template>
+  <b:comment>### REPLACE ###</b:comment>
+  <b:if cond='data:imagePlacement == "REPLACE"'>
+    <div class='wg-header image-placement-replace'>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:image'>
+          <a expr:href='data:blog.homepageUrl'>
+            <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+          </a>
+        </b:if>
+      </div><!-- /.container -->
+    </div><!-- /.wg-header -->
+  </b:if>
+  <b:comment>### BEFORE_DESCRIPTION ###</b:comment>
+  <b:if cond='data:imagePlacement == "BEFORE_DESCRIPTION"'>
+    <div class='wg-header image-placement-before-description'>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:image'>
+          <a expr:href='data:blog.homepageUrl'>
+            <img expr:alt='data:title ? data:title : data:messages.image' expr:src='data:image'/>
+          </a>
+        </b:if>
+        <b:if cond='data:description'>
+          <div class='wg-header-description fs-5 font-weight-light mt-3 mt-0-first-child mx-auto' style='max-width: 700px;'>
+            <data:description/>
+          </div>
+        </b:if>
+      </div><!-- /.container -->
+    </div><!-- /.wg-header -->
+  </b:if>
+  <b:comment>### BEHIND ###</b:comment>
+  <b:if cond='data:imagePlacement == "BEHIND"'>
+    <div class='wg-header image-placement-behind'>
+      <b:attr cond='data:image' expr:value='"background-image: url(" + data:image + ");"' name='style'/>
+      <b:class cond='data:image' name='has-image'/>
+      <div class='container'>
+        <b:if cond='data:title'>
+          <h1 class='wg-header-title fs-1 font-weight-bold lh-sm m-0'>
+            <a class='wg-header-title-link text-reset text-decoration-none' expr:href='data:blog.homepageUrl'>
+              <data:title/>
+            </a>
+          </h1>
+        </b:if>
+        <b:if cond='data:description'>
+          <div class='wg-header-description fs-5 font-weight-light mt-3 mt-0-first-child mx-auto' style='max-width: 700px;'>
+            <data:description/>
+          </div>
+        </b:if>
+      </div><!-- /.container -->
+    </div><!-- /.wg-header -->
+  </b:if>
+</bp:template>
+
+<bp:sass>
+//
+// Base class
+//
+
+.wg-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: inherit;
+  text-align: center;
+
+  // Image placement: REPLACE
+  &.image-placement-replace {
+    &.has-image img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  // Image placement: BEFORE_DESCRIPTION
+  &.image-placement-before-description {
+    &.has-image img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  // Image placement: BEHIND
+  &.image-placement-behind {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.has-image {
+      z-index: 1;
+    }
+    &.has-image::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-image: linear-gradient(rgba(#000, .25), rgba(#000, .25));
+      content: "";
+    }
+  }
+}
+
+//
+// Description
+//
+
+.wg-header-description {
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  > * {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+</bp:sass>

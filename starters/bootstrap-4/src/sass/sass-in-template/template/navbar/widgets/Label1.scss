@@ -1,0 +1,23 @@
+/*
+// ------------------------------------------------------------------------
+// Template path: src/template/navbar/widgets/Label1.xml
+// ------------------------------------------------------------------------
+*/
+
+//
+// List
+//
+
+.navbar-nav-label-list {
+  .dropdown-item {
+    &.active .badge {
+      color: $component-active-bg;
+      background-color: $component-active-color;
+    }
+    &:not(.active):hover .badge,
+    &:not(.active):focus .badge {
+      color: $component-active-color;
+      background-color: $component-active-bg;
+    }
+  }
+}
