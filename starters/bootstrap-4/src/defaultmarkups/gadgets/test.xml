@@ -1,3 +1,11 @@
+{#
+Usage:
+
+<b:section id='test-section'>
+  {% template "path/to/defaultmarkups/gadgets/test.xml" %}
+</b:section>
+#}
+
 <bp:template>
   <b:widget id='BlogArchive10' locked='false' title='Archive' type='BlogArchive' version='2' visible='true'>
     <b:widget-settings>
