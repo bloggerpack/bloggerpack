@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-blank@1.2.3...@bloggerpack/starter-blank@1.3.0) (2021-09-27)
+
+
+### Features
+
+* **plugins and starters:** update structure, task, and the docs ([8def769](https://github.com/bloggerpack/bloggerpack/commit/8def769e580cfa99489d51a6fbe2f90a59e53c6a))
+* Update base layout, add 404 template and update code ([ad8902a](https://github.com/bloggerpack/bloggerpack/commit/ad8902a353929d57b2e9a0119b803797b1c28f98))
+
+
+
+
+
 ## [1.2.3](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-blank@1.2.2...@bloggerpack/starter-blank@1.2.3) (2021-07-01)
 
 **Note:** Version bump only for package @bloggerpack/starter-blank

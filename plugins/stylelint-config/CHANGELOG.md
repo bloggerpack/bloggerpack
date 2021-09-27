@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/stylelint-config@1.0.2...@bloggerpack/stylelint-config@1.1.0) (2021-09-27)
+
+
+### Features
+
+* Disable `declaration-no-important`, `selector-class-pattern` and `selector-max-id` ([c46e6ce](https://github.com/bloggerpack/bloggerpack/commit/c46e6ce205bcdf41c94bebfce3d5b872afd537d4))
+
+
+
+
+
 ## [1.0.2](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/stylelint-config@1.0.1...@bloggerpack/stylelint-config@1.0.2) (2021-07-01)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-bootstrap-4@1.2.3...@bloggerpack/starter-bootstrap-4@1.3.0) (2021-09-27)
+
+
+### Features
+
+* **plugins and starters:** update structure, task, and the docs ([8def769](https://github.com/bloggerpack/bloggerpack/commit/8def769e580cfa99489d51a6fbe2f90a59e53c6a))
+* Redesign and add defaultmarkups for gadgets ([3376be6](https://github.com/bloggerpack/bloggerpack/commit/3376be6789143797487a05664adbf6235b703b38))
+
+
+
+
+
 ## [1.2.3](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-bootstrap-4@1.2.2...@bloggerpack/starter-bootstrap-4@1.2.3) (2021-07-01)
 
 **Note:** Version bump only for package @bloggerpack/starter-bootstrap-4

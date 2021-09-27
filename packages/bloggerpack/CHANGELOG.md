@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.2.0...bloggerpack@1.3.0) (2021-09-27)
+
+
+### Bug Fixes
+
+* Avoid errors when using relative path ([0a74092](https://github.com/bloggerpack/bloggerpack/commit/0a74092eb687744479b6d59b55850e294e016f83))
+
+
+### Features
+
+* **deps:** Bump dependencies ([655018e](https://github.com/bloggerpack/bloggerpack/commit/655018e593ba3ee892c75fb3b462e62d92d8cfee))
+* Migrate Sass compiler to use Dart Sass ([74972e8](https://github.com/bloggerpack/bloggerpack/commit/74972e8c398f91ffed610c41396d9a230534f367))
+
+
+
+
+
 # [1.2.0](https://github.com/bloggerpack/bloggerpack/compare/bloggerpack@1.1.1...bloggerpack@1.2.0) (2021-07-01)
 
 
