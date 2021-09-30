@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-bootstrap-4@1.3.0...@bloggerpack/starter-bootstrap-4@1.3.1) (2021-09-30)
+
+
+### Bug Fixes
+
+* disable function-calc-no-invalid ([62b1b4c](https://github.com/bloggerpack/bloggerpack/commit/62b1b4c606e1bfcf7d60b75e40bada26c2831709))
+
+
+
+
+
 # [1.3.0](https://github.com/bloggerpack/bloggerpack/compare/@bloggerpack/starter-bootstrap-4@1.2.3...@bloggerpack/starter-bootstrap-4@1.3.0) (2021-09-27)
 
 

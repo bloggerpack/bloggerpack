@@ -1,6 +1,6 @@
 {
   "name": "@bloggerpack/starter-blank",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Blank starter theme for Bloggerpack.",
   "license": "MIT",
   "homepage": "https://github.com/bloggerpack/bloggerpack/tree/main/starters/blank#readme",
@@ -34,6 +34,6 @@
   "devDependencies": {
     "@bloggerpack/eslint-config": "1.0.2",
     "@bloggerpack/stylelint-config": "1.1.0",
-    "bloggerpack": "1.3.0"
+    "bloggerpack": "1.3.1"
   }
 }
