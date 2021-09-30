@@ -54,7 +54,7 @@
     "@rollup/plugin-node-resolve": "13.0.5",
     "@rollup/stream": "2.0.0",
     "@taufik-nurrohman/quote": "0.0.14",
-    "autoprefixer": "10.3.6",
+    "autoprefixer": "9.8.6",
     "chalk": "4.1.2",
     "chokidar": "3.5.2",
     "commander": "8.2.0",
