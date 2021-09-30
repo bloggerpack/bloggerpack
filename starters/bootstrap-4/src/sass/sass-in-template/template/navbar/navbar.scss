@@ -55,6 +55,7 @@ $main-navbar-search-border-radius:      50rem !default;
     @include media-breakpoint-up(md) {
       right: $grid-gutter-width * .5;
       left: $grid-gutter-width * .5;
+      // stylelint-disable-next-line function-calc-no-invalid
       width: calc(100% - #{$grid-gutter-width});
     }
     @include media-breakpoint-up(lg) {
